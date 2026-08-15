@@ -67,7 +67,7 @@ def fit_temperature_map(s: np.ndarray, y: np.ndarray):
     return lambda z: agg.sigmoid(z / t), {"t": round(float(t), 4)}
 
 
-def fit_platt_map(s: np.ndarray, y: np.ndarray):
+def fit_platt_map(s: np.ndarray, y: np.ndarray, allow_nonpositive: bool = False):
     """sigmoid(a*s + b). Monotone whenever a > 0, which is asserted downstream.
 
     Fitted by L-BFGS on the exact log-loss rather than by the gradient descent
@@ -87,8 +87,11 @@ def fit_platt_map(s: np.ndarray, y: np.ndarray):
     a, b = float(r.x[0]) / sd, float(r.x[1])
     # The rank-drift assertion downstream catches a NEGATIVE slope only because
     # raw AUROC sits far from 0.5 here; it provably cannot catch a degenerate
-    # near-zero slope (constant predictions drift 0). Assert directly.
-    assert a > 1e-8, f"platt slope a={a} is not positive; fit is degenerate"
+    # near-zero slope (constant predictions drift 0). Assert directly — except
+    # for arms whose registered PURPOSE is signal absence (the uncapped M6
+    # ablation): a ~zero or negative slope there is the result, not a defect.
+    if not allow_nonpositive:
+        assert a > 1e-8, f"platt slope a={a} is not positive; fit is degenerate"
     return lambda q: agg.sigmoid(a * q + b), {"a": round(a, 6), "b": round(b, 4)}
 
 

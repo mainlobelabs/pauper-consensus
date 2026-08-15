@@ -86,6 +86,9 @@ def latin_square(agents: list[str], roles: list[str], index: int) -> dict[str, s
     return {a: roles[(i + index) % len(roles)] for i, a in enumerate(agents)}
 
 
+HOONIFY_BASE = "https://api.hoonify.ai/v1"
+
+
 class Client:
     def __init__(self, backend: str = "local", timeout: float = 900.0):
         self.backend = backend
@@ -98,6 +101,16 @@ class Client:
                 raise RuntimeError(
                     "OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. "
                     "Set it, or run with backend='local'."
+                )
+        elif backend == "hoonify":
+            # OpenAI-compatible paid GLM lane (v2 panel A'); endpoint and key
+            # location are the owner's solon-harness [providers.hoonify] config.
+            self.base = HOONIFY_BASE
+            self.key = os.environ.get("HOONIFY_API_KEY", "")
+            if not self.key:
+                raise RuntimeError(
+                    "HOONIFY_API_KEY is unset; the GLM lane cannot run. "
+                    "It lives in ~/.config/solon/harness.env (exp.envfile loads it)."
                 )
         else:
             raise ValueError(backend)
@@ -184,10 +197,19 @@ class Client:
                     raise RuntimeError(f"provider error: {str(j['error'])[:200]}")
                 msg = j["choices"][0]["message"]
                 resolved = j.get("model", "")
-                if resolved and model.split("/")[-1] not in resolved:
-                    raise RuntimeError(
-                        f"model substitution: asked {model}, served {resolved}"
-                    )
+                # Local ids carry no provider prefix, so exact equality is the
+                # only honest check there; substring containment would wave
+                # through an extension-substitution (qwen3.8-27b-instruct for
+                # qwen3.8-27b). Remote providers echo provider-prefixed or
+                # revision-suffixed ids, where containment of the model's own
+                # name is the strongest portable test.
+                if resolved:
+                    ok = (resolved == model if self.backend == "local"
+                          else model.split("/")[-1] in resolved)
+                    if not ok:
+                        raise RuntimeError(
+                            f"model substitution: asked {model}, served {resolved}"
+                        )
                 return Generation(
                     item_id=item.item_id,
                     agent=agent,

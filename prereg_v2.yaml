@@ -1,0 +1,635 @@
+# V2 pre-registration. FROZEN AT TAG TIME, before any v2 generation call.
+# Panel composition amended pre-tag 2026-08-15 (owner): panelA rebuilt as
+# qwen3.8-local + laguna-openrouter + GLM-5.2-hoonify; panelB unchanged.
+# Review findings from the pre-tag adversarial verification are incorporated;
+# every registered quantity has a frozen implementation in exp/e1_v2.py.
+protocol_version: '2.0'
+frozen_at: '2026-08-15'
+freeze_discipline: This registration is committed and git-tagged BEFORE any v2 generation
+  call. v1 failed its own R0 A9 tagging requirement (recorded in the git tag prereg-retrospective-2026-08-15
+  — an annotated tag, not a file — and the DECISIONS.md 2026-08-15 entries); v2 does not.
+  The panel composition was amended 2026-08-15 (owner directive) BEFORE the tag; nothing moves
+  after it. Smoke-test evidence for every pinned endpoint is recorded in the freeze commit.
+estimand: Performance of the same two FIXED panels as v1 over a negation-family corpus with
+  depth-5 enrichment. Not an average causal effect of architectures (assumption M10 unchanged).
+motivating_evidence: 'All post-hoc, gathered 2026-08-15 over the frozen v1 cache, recorded
+  in DECISIONS.md and the path-battery scratch artifacts: (a) the v1 primary flip is a calibration-parameterisation
+  artifact (intercept-only at the frozen slope captures 98.8% of the Platt improvement); (b)
+  v1 test splits held only 14-16 scorable negatives, and only positive-polarity falsehoods
+  ever score (0/607 negative-polarity props scored); (c) proposition-level consensus correctness
+  degrades ~-0.14/qdep step (local) while answer-level accuracy is saturated at qdep<=3; (d)
+  ~90% of wrong denials are extraction artifacts whose traces affirm the positive elsewhere.'
+panels:
+  panelA:
+    role: NEW panel (v1 local panel abandoned, see panel_history)
+    cross_family:
+      qwen:
+        backend: local
+        model: qwen3.8-27b
+      laguna:
+        backend: openrouter
+        model: poolside/laguna-xs-2.1:free
+      glm:
+        backend: hoonify
+        model: zai-org/GLM-5.2
+    resolution_rule: exact pinned id or the panel is DROPPED; substitution forbidden
+    family_disjointness: 'qwen/poolside/zhipu vs panelB nvidia/openai/google: disjoint'
+    smoke_test: 'REQUIRED before tag: exp/smoke_v2.py output recorded in the freeze commit'
+    cost_note: GLM-5.2 via Hoonify is PAID ($1.40/$4.40 per 1M, no provider-side ceiling);
+      the call cap below is the only guard. Est. 150 calls ~= USD 2-3.
+  panelB:
+    role: continuing panel, unchanged from v1 openrouter panel
+    cross_family:
+      nemotron:
+        backend: openrouter
+        model: nvidia/nemotron-3-super-120b-a12b:free
+      gptoss:
+        backend: openrouter
+        model: openai/gpt-oss-20b:free
+      gemma:
+        backend: openrouter
+        model: google/gemma-4-26b-a4b-it:free
+    resolution_rule: exact pinned id or the panel is DROPPED; substitution forbidden
+    smoke_test: REQUIRED before tag (endpoints churn; v1 freeze predates today by a week)
+dataset:
+  sources:
+    depth-3: hitachi-nlp/proofwriter_processed_OWA depth-3/test
+    depth-5: hitachi-nlp/proofwriter_processed_OWA depth-5/test
+  construction: '78 negation-family items reused verbatim from the v1 corpus plus the 72 depth-5
+    negation-family items with the highest positive-polarity-falsehood counts (T11 design
+    V2, built before this freeze). Ordering rule: slots 0..149; a slot of residue r (mod 3)
+    takes the next reused item whose V1 index had residue r (ascending v1 idx), else the next
+    unused new item in sorted-id order. This preserves every reused item''s latin-square role
+    assignment and therefore its v1 cache keys (234 cached generations per panel). exp/v2_dataset.py
+    re-verifies all of this at load time. The explicit item list below is AUTHORITATIVE and
+    overrides this narrative; boundary ties in the depth-5 top-72 selection were resolved
+    in the pre-freeze battery artifact (scratchpad design_ids_V2, 2026-08-15) whose output
+    the list is.'
+  n_items: 150
+  n_reused_depth3: 78
+  n_new_depth5: 72
+  n_calibration: 50
+  n_test: 100
+  split_seed: 20260807
+  selection:
+    min_target_qdep: 2
+    require_conjunctive: true
+  counts:
+    y0_props: 744
+    y0_positive_polarity: 202
+    projected_scored_test_negatives: 80-83 (Wilson band 68-95), from the measured 62.0% pos-pol
+      y=0 scoring rate; PROJECTION, not a gate
+  items:
+  - id: RelNeg-OWA-D3-1276::Q8
+    source: depth-3
+    v1_idx: 3
+  - id: AttNeg-OWA-D3-1547::Q7
+    source: depth-3
+    v1_idx: 1
+  - id: AttNeg-OWA-D3-377::Q7
+    source: depth-3
+    v1_idx: 8
+  - id: AttNeg-OWA-D3-1081::Q6
+    source: depth-3
+    v1_idx: 15
+  - id: AttNeg-OWA-D3-1258::Q8
+    source: depth-3
+    v1_idx: 7
+  - id: AttNeg-OWA-D3-246::Q6
+    source: depth-3
+    v1_idx: 14
+  - id: AttNeg-OWA-D3-1408::Q5
+    source: depth-3
+    v1_idx: 18
+  - id: AttNeg-OWA-D3-566::Q5
+    source: depth-3
+    v1_idx: 13
+  - id: AttNeg-OWA-D3-1078::Q5
+    source: depth-3
+    v1_idx: 29
+  - id: RelNeg-OWA-D3-405::Q7
+    source: depth-3
+    v1_idx: 36
+  - id: RelNeg-OWA-D3-688::Q5
+    source: depth-3
+    v1_idx: 16
+  - id: RelNeg-OWA-D3-16::Q6
+    source: depth-3
+    v1_idx: 32
+  - id: RelNeg-OWA-D3-666::Q5
+    source: depth-3
+    v1_idx: 39
+  - id: RelNeg-OWA-D3-792::Q8
+    source: depth-3
+    v1_idx: 19
+  - id: AttNeg-OWA-D3-1214::Q6
+    source: depth-3
+    v1_idx: 35
+  - id: RelNeg-OWA-D3-1464::Q8
+    source: depth-3
+    v1_idx: 48
+  - id: AttNeg-OWA-D3-1581::Q8
+    source: depth-3
+    v1_idx: 25
+  - id: AttNeg-OWA-D3-1148::Q6
+    source: depth-3
+    v1_idx: 38
+  - id: AttNeg-OWA-D3-667::Q7
+    source: depth-3
+    v1_idx: 51
+  - id: RelNeg-OWA-D3-440::Q8
+    source: depth-3
+    v1_idx: 28
+  - id: RelNeg-OWA-D3-1022::Q7
+    source: depth-3
+    v1_idx: 44
+  - id: RelNeg-OWA-D3-1017::Q7
+    source: depth-3
+    v1_idx: 54
+  - id: AttNeg-OWA-D3-1233::Q6
+    source: depth-3
+    v1_idx: 34
+  - id: RelNeg-OWA-D3-935::Q6
+    source: depth-3
+    v1_idx: 50
+  - id: RelNeg-OWA-D3-108::Q5
+    source: depth-3
+    v1_idx: 60
+  - id: AttNeg-OWA-D3-575::Q5
+    source: depth-3
+    v1_idx: 37
+  - id: AttNeg-OWA-D3-160::Q6
+    source: depth-3
+    v1_idx: 62
+  - id: RelNeg-OWA-D3-1413::Q8
+    source: depth-3
+    v1_idx: 63
+  - id: RelNeg-OWA-D3-1505::Q7
+    source: depth-3
+    v1_idx: 49
+  - id: RelNeg-OWA-D3-1121::Q8
+    source: depth-3
+    v1_idx: 74
+  - id: AttNeg-OWA-D3-1326::Q8
+    source: depth-3
+    v1_idx: 69
+  - id: RelNeg-OWA-D3-1095::Q8
+    source: depth-3
+    v1_idx: 52
+  - id: AttNeg-OWA-D3-994::Q6
+    source: depth-3
+    v1_idx: 86
+  - id: AttNeg-OWA-D3-844::Q6
+    source: depth-3
+    v1_idx: 72
+  - id: AttNeg-OWA-D3-1642::Q7
+    source: depth-3
+    v1_idx: 55
+  - id: AttNeg-OWA-D3-1413::Q8
+    source: depth-3
+    v1_idx: 92
+  - id: AttNeg-OWA-D3-486::Q6
+    source: depth-3
+    v1_idx: 84
+  - id: AttNeg-OWA-D3-429::Q6
+    source: depth-3
+    v1_idx: 58
+  - id: AttNeg-OWA-D3-1701::Q7
+    source: depth-3
+    v1_idx: 95
+  - id: RelNeg-OWA-D3-870::Q7
+    source: depth-3
+    v1_idx: 87
+  - id: AttNeg-OWA-D3-1411::Q6
+    source: depth-3
+    v1_idx: 67
+  - id: AttNeg-OWA-D3-249::Q8
+    source: depth-3
+    v1_idx: 101
+  - id: AttNeg-OWA-D3-975::Q8
+    source: depth-3
+    v1_idx: 93
+  - id: AttNeg-OWA-D3-372::Q6
+    source: depth-3
+    v1_idx: 70
+  - id: RelNeg-OWA-D3-1203::Q8
+    source: depth-3
+    v1_idx: 104
+  - id: RelNeg-OWA-D3-1572::Q7
+    source: depth-3
+    v1_idx: 99
+  - id: AttNeg-OWA-D3-17::Q6
+    source: depth-3
+    v1_idx: 76
+  - id: RelNeg-OWA-D3-889::Q7
+    source: depth-3
+    v1_idx: 107
+  - id: RelNeg-OWA-D3-1315::Q8
+    source: depth-3
+    v1_idx: 105
+  - id: AttNeg-OWA-D3-858::Q6
+    source: depth-3
+    v1_idx: 79
+  - id: RelNeg-OWA-D3-471::Q5
+    source: depth-3
+    v1_idx: 119
+  - id: RelNeg-OWA-D3-156::Q7
+    source: depth-3
+    v1_idx: 108
+  - id: RelNeg-OWA-D3-846::Q8
+    source: depth-3
+    v1_idx: 88
+  - id: AttNeg-OWA-D3-1619::Q7
+    source: depth-3
+    v1_idx: 122
+  - id: AttNeg-OWA-D3-385::Q6
+    source: depth-3
+    v1_idx: 111
+  - id: RelNeg-OWA-D3-851::Q5
+    source: depth-3
+    v1_idx: 91
+  - id: AttNeg-OWA-D3-533::Q8
+    source: depth-3
+    v1_idx: 125
+  - id: AttNeg-OWA-D3-554::Q6
+    source: depth-3
+    v1_idx: 129
+  - id: AttNeg-OWA-D3-1074::Q5
+    source: depth-3
+    v1_idx: 94
+  - id: RelNeg-OWA-D3-1026::Q5
+    source: depth-3
+    v1_idx: 131
+  - id: AttNeg-OWA-D3-602::Q8
+    source: depth-3
+    v1_idx: 132
+  - id: RelNeg-OWA-D3-1558::Q6
+    source: depth-3
+    v1_idx: 97
+  - id: RelNeg-OWA-D3-26::Q8
+    source: depth-3
+    v1_idx: 134
+  - id: RelNeg-OWA-D3-847::Q6
+    source: depth-3
+    v1_idx: 138
+  - id: RelNeg-OWA-D3-376::Q6
+    source: depth-3
+    v1_idx: 109
+  - id: AttNeg-OWA-D3-1552::Q6
+    source: depth-3
+    v1_idx: 137
+  - id: AttNeg-OWA-D5-1006::Q12
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D3-1431::Q7
+    source: depth-3
+    v1_idx: 112
+  - id: AttNeg-OWA-D3-596::Q8
+    source: depth-3
+    v1_idx: 143
+  - id: AttNeg-OWA-D5-1010::Q11
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D3-510::Q8
+    source: depth-3
+    v1_idx: 118
+  - id: RelNeg-OWA-D3-903::Q5
+    source: depth-3
+    v1_idx: 146
+  - id: AttNeg-OWA-D5-1053::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D3-1288::Q7
+    source: depth-3
+    v1_idx: 121
+  - id: AttNeg-OWA-D3-831::Q6
+    source: depth-3
+    v1_idx: 149
+  - id: AttNeg-OWA-D5-1054::Q11
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D3-713::Q5
+    source: depth-3
+    v1_idx: 130
+  - id: AttNeg-OWA-D5-106::Q6
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-1082::Q5
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D3-783::Q7
+    source: depth-3
+    v1_idx: 133
+  - id: AttNeg-OWA-D5-1084::Q5
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-1135::Q9
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D3-212::Q6
+    source: depth-3
+    v1_idx: 136
+  - id: AttNeg-OWA-D5-1137::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-1154::Q10
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D3-1099::Q5
+    source: depth-3
+    v1_idx: 139
+  - id: AttNeg-OWA-D5-1217::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-199::Q11
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D3-1726::Q8
+    source: depth-3
+    v1_idx: 142
+  - id: AttNeg-OWA-D5-206::Q11
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-209::Q9
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D3-905::Q5
+    source: depth-3
+    v1_idx: 148
+  - id: AttNeg-OWA-D5-219::Q10
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-22::Q11
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-307::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-373::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-403::Q7
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-413::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-473::Q6
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-516::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-521::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-528::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-547::Q7
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-560::Q5
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-567::Q10
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-596::Q10
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-604::Q9
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-615::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-629::Q5
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-656::Q6
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-683::Q10
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-6::Q9
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-710::Q7
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-748::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-751::Q11
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-774::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-812::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-822::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-850::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-874::Q10
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-875::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-884::Q7
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-897::Q8
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-89::Q9
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-937::Q12
+    source: depth-5
+    v1_idx: null
+  - id: AttNeg-OWA-D5-97::Q10
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-1038::Q6
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-130::Q10
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-201::Q9
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-254::Q7
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-27::Q8
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-374::Q12
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-409::Q5
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-450::Q6
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-479::Q6
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-631::Q11
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-638::Q12
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-645::Q11
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-685::Q6
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-694::Q5
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-715::Q12
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-750::Q11
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-767::Q7
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-794::Q8
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-858::Q7
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-87::Q5
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-88::Q5
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-915::Q11
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-937::Q9
+    source: depth-5
+    v1_idx: null
+  - id: RelNeg-OWA-D5-99::Q10
+    source: depth-5
+    v1_idx: null
+  source_sha256:
+    depth-3: cb2d37e46c1ef92c850807850c6204f230751799d0bc3fbab82a40ce96a7235a
+    depth-5: 66d2dea934af4f01797656a2381ccb578710b7efec21023869e1a56811499046
+generation:
+  cell: cross_family_diverse_role only (no E0 factorial in v2)
+  roles: latin_square(cross_family key order, [forward, backward, skeptic], v2 item index)
+  seed: 1
+  temperature: 0.7
+  max_tokens: 3000
+  preflight: 'run_generate_v2 must verify before ANY network call: panelB resolves exactly
+    234 reused cache hits and 216 new calls; panelA resolves 0 reused and 450 new calls. Any
+    deviation aborts.'
+  quota_cap:
+    panelB:
+      planned_new_calls: 216
+      cap_with_retry_allowance: 260
+      backend_mix: openrouter 216
+    panelA:
+      planned_new_calls: 450
+      cap_with_retry_allowance: 540
+      backend_mix: local 150 (unmetered) + openrouter 150 + hoonify 150
+    openrouter_daily_check: planned openrouter total 366 (+20% = 440) vs measured 1000/day
+      allowance
+    rule: abort the panel when CUMULATIVE attempted calls (persisted in out/attempts_v2_<panel>.json
+      across re-runs) would exceed its cap
+E1_v2:
+  primary:
+    metric: held-out item-stratified delta log-loss, WCT-EM vs covariate baseline
+    delta: 0.02
+    calibration_map: 'Platt: sigmoid(a*s + b), a>0, fitted on the calibration split by exact
+      ML (L-BFGS on the NLL, score standardised by calib sd during fitting), exactly the frozen
+      implementation in exp/recalib.py fit_platt_map. Applied to every score arm identically.
+      This registers the intercept the v1 map lacked; v1 temperature calibration is reported
+      as an ablation.'
+    baseline: 'same covariate logistic as v1 (qdep, n_emitting, n_claims, text_len/50; fit_logistic
+      400 iters lr 0.1 l2 1.0). REGISTERED SENSITIVITY: the exact-ML refit of the same baseline
+      is reported alongside; the primary verdict is stated against the v1-style fit, and any
+      verdict difference between the two baselines is reported, not resolved.'
+    interval: item-block bootstrap, 2000 resamples, seed 20260807, 95%
+    decision_rule: protocol 1.1 three-way at delta
+  co_primary:
+    metric: precision@k, k = number of test propositions affirmed by >=2 agents
+    comparator: WCT-EM (Platt-calibrated) precision@k MINUS covariate baseline (gd fit) precision@k,
+      k and both precisions recomputed inside every resample
+    interval: item-block bootstrap, 2000 resamples, seed 20260807, 95%
+    delta: 0.05
+    decision_rule: protocol 1.1 three-way at delta, computed in exp/e1_v2.py run_arms
+  arms:
+  - WCT-EM (primary)
+  - WCT-U
+  - WCT-C
+  - covariate_baseline (gd + exact-ML sensitivity)
+  - prevalence_only (constant; no calibration map)
+  - uncapped M6 ablation (Platt by the same ML procedure; slope sign UNCONSTRAINED — the ablation
+    registers signal absence, so a ~zero or negative slope is its expected result, not a fit
+    failure)
+  registered_instrument_variants:
+    S1_deny_self_contradiction: 'A deny observation is DROPPED (set to missing) when the SAME
+      trace affirms the proposition positively elsewhere: normalised token sequence "subj
+      verb obj" from the proposition representation appears in a different segment containing
+      no negation token. Frozen implementation: exp/e1_v2.py deny_filter. Motivation: measured
+      deny precision 0.153 (self-contradicted) vs 0.798 (uncontradicted) on v1. Analysed with
+      the identical primary formula; reported as S1, never substituted for the primary.'
+    S2_step_exemption_extractor: 'extract.py behaviour plus: a segment rejected SOLELY by
+      the "step " _NOISE prefix and carrying a _DERIVE_CUE match is admitted. Frozen implementation:
+      exp/e1_v2.py extract_s2. Requires re-alignment (local embedding + CPU NLI; zero API
+      quota; run only after all generation completes, per GOTCHAS single-slot rule). Reported
+      as S2.'
+    rule: primary uses the UNMODIFIED v1 instrument; S1/S2 are secondaries
+  registered_descriptives:
+  - proposition-level vote_correctness by qdep bin 0-5, per panel (exp/e1_v2.py depth_descriptives)
+  - unanimity rate and unanimous-vote correctness by qdep bin, plus unanimous_correct pooled
+    over qdep>=4
+  - within-item AUROC on Platt-calibrated WCT-EM, item-block bootstrap 1000 resamples, delta
+    0.55, three-way decision (v1 continuity)
+  nulls:
+    within_item_truth_permutation: 1000
+  exclusions: 'identical to v1: Unknown propositions excluded from primary; zero-emission
+    propositions unrankable; no noneg stratum exists by construction'
+  registered_predictions:
+  - 'P1: with an intercept-bearing registered map and ~5x the test negatives, the primary
+    returns GO on panelB (continuing panel) AND on panelA (new panel, generalisation). NOTE:
+    the strongest v1 claim — that v1 panel A itself flips to GO under an intercept — is NOT
+    testable in v2, because that panel no longer exists; its evidence remains the post-hoc
+    v1 diagnostic only.'
+  - 'P2: in depth_descriptives, vote_correctness is weakly decreasing across populated qdep
+    bins 1-5 (no bin exceeds its predecessor by more than 0.02) on both panels, AND pooled_qdep_ge4
+    unanimous_correct < 0.90 on at least one panel.'
+  - 'P3: S1 improves the primary: the point estimate of the WCT-EM_vs_covariate_gd delta_log_loss
+    is strictly larger under S1 than under the primary instrument, on both panels.'
+  planned_exploratory_not_registered: 'WARP/RAWR path-citation rates and any derivation-level
+    analysis: to be run with the 2026-08-15 battery toolkit method, reported as exploratory.
+    Deliberately NOT registered: the toolkit is not frozen in this repo.'
+analysis_code_freeze: exp/v2_dataset.py, exp/run_generate_v2.py and exp/e1_v2.py are committed
+  in the tagged freeze commit; the implementations ARE the registration of every formula named
+  above.
+panel_history: 'The v1 local panel (thinkingcap-qwen3.6-27b, laguna-xs-2.1, ornith-1.0-35b)
+  is ABANDONED for v2: two of three models left the local catalogue after v1 and the owner
+  directed (2026-08-15, pre-tag) not to restore them. panelA is therefore a NEW panel — qwen3.8
+  local, laguna-xs-2.1 via OpenRouter, GLM-5.2 via Hoonify — sharing the qwen and laguna FAMILIES
+  with the dead panel but no serving stack, so none of its v1 cache is reusable and no result
+  on it is a v1-panel-A replication. All amendments precede the freeze tag; nothing moves
+  after it.'
