@@ -85,6 +85,10 @@ def fit_platt_map(s: np.ndarray, y: np.ndarray):
 
     r = minimize(nll, np.array([1.0, 0.0]), method="L-BFGS-B")
     a, b = float(r.x[0]) / sd, float(r.x[1])
+    # The rank-drift assertion downstream catches a NEGATIVE slope only because
+    # raw AUROC sits far from 0.5 here; it provably cannot catch a degenerate
+    # near-zero slope (constant predictions drift 0). Assert directly.
+    assert a > 1e-8, f"platt slope a={a} is not positive; fit is degenerate"
     return lambda q: agg.sigmoid(a * q + b), {"a": round(a, 6), "b": round(b, 4)}
 
 
@@ -245,8 +249,8 @@ def main() -> int:
             print(f"  covariate_baseline  logloss {cb['test_log_loss']:.4f}  "
                   f"auroc {cb['test_auroc']:.4f}  mean_pred {cb['mean_predicted']:.3f}")
             for arm, rec in r["arms"].items():
-                print(f"  {arm}  (AUROC {rec['auroc_raw_score']:.4f}, "
-                      f"identical under every map)")
+                print(f"  {arm}  (raw-score AUROC {rec['auroc_raw_score']:.4f}; "
+                      f"exact under temperature/platt, isotonic drift flagged per row)")
                 for m, v in rec["maps"].items():
                     d = v["delta_log_loss_vs_covariate"]
                     tag = " <-REGISTERED" if v["registered"] else ""
