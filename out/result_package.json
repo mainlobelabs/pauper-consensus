@@ -1,0 +1,1951 @@
+{
+  "artifact_map": {
+    "out/cache/": "immutable content-hashed generation, embedding and NLI artifacts; all analysis re-runs over this at zero inference cost",
+    "out/dataset_manifest.json": "item ids, depth and answer histograms, conjunctive-rule counts",
+    "out/e0_summary.json": "E0 2x2 factorial: per-cell accuracy, rho, M_eff, double-fault, dose-response",
+    "out/e1_summary.json": "E1 primary/co-primary/descriptive, nulls, EM parameters, alignment audit",
+    "out/generation_index.json": "every generation: item, agent, model, role, seed, cell, trace length, error",
+    "out/m0_ceiling.txt": "M0 invariants I8-I14: design effect, oracle ceiling, estimator comparison, power",
+    "out/m0_simulate.txt": "M0 invariants I1-I5 against known ground truth, plus the D9 paired heterogeneous-panel result",
+    "prereg.yaml": "the pre-registration frozen at R0"
+  },
+  "failed_and_negative_results": [
+    "local:E1[all_items]_primary_WCT-C: inconclusive (estimate 0.03912, delta 0.02)",
+    "local:E1[all_items]_primary_WCT-EM: stop (estimate -0.15877, delta 0.02)",
+    "local:E1[all_items]_primary_WCT-U: stop (estimate -0.11143, delta 0.02)",
+    "local:E1[negation_theories]_primary_WCT-C: inconclusive (estimate 0.05057, delta 0.02)",
+    "local:E1[negation_theories]_primary_WCT-EM: inconclusive (estimate 0.00112, delta 0.02)",
+    "local:E1[negation_theories]_primary_WCT-U: inconclusive (estimate -0.00859, delta 0.02)",
+    "local:E1[noneg_theories]: undefined (estimate None, delta None)",
+    "openrouter:E1[noneg_theories]: undefined (estimate None, delta None)",
+    "E0 registered prediction FAILED for diverse_role: cross-family rho 0.08047 is not below same-family rho -0.02174 (reduction -0.10221)"
+  ],
+  "gates": {
+    "local:E1[all_items]_primary_WCT-C": {
+      "ci": [
+        -0.01725,
+        0.09797
+      ],
+      "decision": "inconclusive",
+      "delta": 0.02,
+      "estimate": 0.03912,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "local"
+    },
+    "local:E1[all_items]_primary_WCT-EM": {
+      "ci": [
+        -0.24946,
+        -0.07022
+      ],
+      "decision": "stop",
+      "delta": 0.02,
+      "estimate": -0.15877,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "local"
+    },
+    "local:E1[all_items]_primary_WCT-U": {
+      "ci": [
+        -0.19665,
+        -0.02651
+      ],
+      "decision": "stop",
+      "delta": 0.02,
+      "estimate": -0.11143,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "local"
+    },
+    "local:E1[all_items]_within_item_auroc": {
+      "ci": [
+        0.83333,
+        1.0
+      ],
+      "decision": "go",
+      "degenerate_interval": false,
+      "delta": 0.55,
+      "estimate": 0.90476,
+      "metric": "within-item AUROC, WCT-EM",
+      "panel": "local"
+    },
+    "local:E1[negation_theories]_primary_WCT-C": {
+      "ci": [
+        -0.0476,
+        0.14568
+      ],
+      "decision": "inconclusive",
+      "delta": 0.02,
+      "estimate": 0.05057,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "local"
+    },
+    "local:E1[negation_theories]_primary_WCT-EM": {
+      "ci": [
+        -0.10406,
+        0.10805
+      ],
+      "decision": "inconclusive",
+      "delta": 0.02,
+      "estimate": 0.00112,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "local"
+    },
+    "local:E1[negation_theories]_primary_WCT-U": {
+      "ci": [
+        -0.12041,
+        0.10117
+      ],
+      "decision": "inconclusive",
+      "delta": 0.02,
+      "estimate": -0.00859,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "local"
+    },
+    "local:E1[negation_theories]_within_item_auroc": {
+      "ci": [
+        0.83333,
+        1.0
+      ],
+      "decision": "go",
+      "degenerate_interval": false,
+      "delta": 0.55,
+      "estimate": 0.90476,
+      "metric": "within-item AUROC, WCT-EM",
+      "panel": "local"
+    },
+    "local:E1[noneg_theories]": {
+      "decision": "undefined",
+      "metric": "not evaluable",
+      "panel": "local",
+      "prevalence": 1.0,
+      "reason": "test split contains a single class; truth discrimination is undefined here by construction"
+    },
+    "openrouter:E1[all_items]_primary_WCT-C": {
+      "ci": [
+        0.04323,
+        0.2078
+      ],
+      "decision": "go",
+      "delta": 0.02,
+      "estimate": 0.13211,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[all_items]_primary_WCT-EM": {
+      "ci": [
+        0.03667,
+        0.19722
+      ],
+      "decision": "go",
+      "delta": 0.02,
+      "estimate": 0.12249,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[all_items]_primary_WCT-U": {
+      "ci": [
+        0.01705,
+        0.18418
+      ],
+      "decision": "go",
+      "delta": 0.02,
+      "estimate": 0.1069,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[all_items]_within_item_auroc": {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "decision": "go",
+      "degenerate_interval": true,
+      "delta": 0.55,
+      "estimate": 1.0,
+      "metric": "within-item AUROC, WCT-EM",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[negation_theories]_primary_WCT-C": {
+      "ci": [
+        0.21127,
+        0.33966
+      ],
+      "decision": "go",
+      "delta": 0.02,
+      "estimate": 0.27004,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[negation_theories]_primary_WCT-EM": {
+      "ci": [
+        0.2229,
+        0.34282
+      ],
+      "decision": "go",
+      "delta": 0.02,
+      "estimate": 0.27741,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[negation_theories]_primary_WCT-U": {
+      "ci": [
+        0.21072,
+        0.33381
+      ],
+      "decision": "go",
+      "delta": 0.02,
+      "estimate": 0.26682,
+      "metric": "delta log-loss vs covariate baseline",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[negation_theories]_within_item_auroc": {
+      "ci": [
+        1.0,
+        1.0
+      ],
+      "decision": "go",
+      "degenerate_interval": true,
+      "delta": 0.55,
+      "estimate": 1.0,
+      "metric": "within-item AUROC, WCT-EM",
+      "panel": "openrouter"
+    },
+    "openrouter:E1[noneg_theories]": {
+      "decision": "undefined",
+      "metric": "not evaluable",
+      "panel": "openrouter",
+      "prevalence": 1.0,
+      "reason": "test split contains a single class; truth discrimination is undefined here by construction"
+    }
+  },
+  "panel_comparison": {
+    "all_items": {
+      "local": {
+        "ci": [
+          -0.24946,
+          -0.07022
+        ],
+        "decision": "stop",
+        "estimate": -0.15877
+      },
+      "openrouter": {
+        "ci": [
+          0.03667,
+          0.19722
+        ],
+        "decision": "go",
+        "estimate": 0.12249
+      },
+      "verdict_flips": true
+    },
+    "negation_theories": {
+      "local": {
+        "ci": [
+          -0.10406,
+          0.10805
+        ],
+        "decision": "inconclusive",
+        "estimate": 0.00112
+      },
+      "openrouter": {
+        "ci": [
+          0.2229,
+          0.34282
+        ],
+        "decision": "go",
+        "estimate": 0.27741
+      },
+      "verdict_flips": true
+    }
+  },
+  "reproduction": {
+    "decode": {
+      "max_tokens": 3000,
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "temperature": 0.7
+    },
+    "git_commit": "c82d045b064517373fc5184f2bbd9564fc98071f",
+    "git_dirty": true,
+    "panels": {
+      "local": {
+        "backend": "local",
+        "cross_family": {
+          "laguna": "laguna-xs-2.1",
+          "ornith": "ornith-1.0-35b",
+          "qwen": "thinkingcap-qwen3.6-27b"
+        },
+        "excluded": {
+          "deepseek-v4-flash": "fails to load on this host (GOTCHAS.md)",
+          "ornith-1.0-35b-mtp-apex": "same family as ornith-1.0-35b; counting both would inflate apparent panel diversity while sharing training lineage\n"
+        },
+        "role": "replication",
+        "same_family": {
+          "ornith_a": "ornith-1.0-35b",
+          "ornith_b": "ornith-1.0-35b",
+          "ornith_c": "ornith-1.0-35b"
+        }
+      },
+      "openrouter": {
+        "backend": "openrouter",
+        "cross_family": {
+          "gemma": "google/gemma-4-26b-a4b-it:free",
+          "gptoss": "openai/gpt-oss-20b:free",
+          "nemotron": "nvidia/nemotron-3-super-120b-a12b:free"
+        },
+        "deviation_from_protocol": "EXPERIMENT.md R0 A2 asks for FIVE pinned families. Only four distinct families currently hold working free endpoints, and one of those is shared with the local panel, so this panel is M=3. M=3 is odd, which is what D11 actually requires, and it matches the local panel so the two are comparable; but the five-family target is not met and no result here should be read as if it were.\n",
+        "e0_calib_subset": 30,
+        "excluded": {
+          "google/gemma-4-31b-it:free": "provider returned 429 at smoke test",
+          "inclusionai/ling-3.0-flash:free": "no longer served free",
+          "nvidia/nemotron-3-ultra-550b-a55b:free": "same family as nemotron-3-super; counting both would inflate apparent panel diversity while sharing training lineage\n",
+          "poolside/laguna-m.1:free": "404, no endpoints",
+          "poolside/laguna-s-2.1:free": "poolside also supplies the local panel's laguna-xs-2.1; including it would make the two panels share a family and weaken the replication\n"
+        },
+        "measured_quota": {
+          "free_requests_per_day": 1000,
+          "spend_limit": null,
+          "usage_at_freeze": 0
+        },
+        "role": "primary",
+        "same_family": {
+          "nemotron_a": "nvidia/nemotron-3-super-120b-a12b:free",
+          "nemotron_b": "nvidia/nemotron-3-super-120b-a12b:free",
+          "nemotron_c": "nvidia/nemotron-3-super-120b-a12b:free"
+        },
+        "status": "active"
+      }
+    },
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "python": "3.12.13",
+    "seeds": {
+      "bootstrap": 20260807,
+      "dataset_split": 20260807,
+      "decode": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "results": {
+    "e0_summary": {
+      "cells": {
+        "cross_family_diverse_role": {
+          "agents": [
+            "laguna",
+            "ornith",
+            "qwen"
+          ],
+          "best_agent_accuracy": 0.9917,
+          "cell": "cross_family_diverse_role",
+          "consensus_accuracy": 0.9833,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 0.95833,
+            "n_boot": 2000,
+            "point": 0.98333,
+            "se": 0.01185
+          },
+          "dependence": {
+            "cap_1_over_rho": 12.427,
+            "m": 3,
+            "m_eff": 2.5841,
+            "rho": 0.08047,
+            "rho_pairs": [
+              0.0349,
+              0.2256,
+              -0.0191
+            ]
+          },
+          "double_fault": {
+            "independent": 0.00248,
+            "observed": 0.00556,
+            "ratio": 2.243
+          },
+          "gain_over_best_agent": -0.0084,
+          "gain_over_mean_single": 0.0472,
+          "item_ids": [
+            "AttNeg-OWA-D3-1074::Q5",
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1148::Q6",
+            "AttNeg-OWA-D3-1214::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1288::Q7",
+            "AttNeg-OWA-D3-1326::Q8",
+            "AttNeg-OWA-D3-1408::Q5",
+            "AttNeg-OWA-D3-1411::Q6",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-1552::Q6",
+            "AttNeg-OWA-D3-1581::Q8",
+            "AttNeg-OWA-D3-160::Q6",
+            "AttNeg-OWA-D3-1619::Q7",
+            "AttNeg-OWA-D3-1642::Q7",
+            "AttNeg-OWA-D3-1701::Q7",
+            "AttNeg-OWA-D3-1726::Q8",
+            "AttNeg-OWA-D3-17::Q6",
+            "AttNeg-OWA-D3-212::Q6",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-249::Q8",
+            "AttNeg-OWA-D3-372::Q6",
+            "AttNeg-OWA-D3-377::Q7",
+            "AttNeg-OWA-D3-385::Q6",
+            "AttNeg-OWA-D3-429::Q6",
+            "AttNeg-OWA-D3-486::Q6",
+            "AttNeg-OWA-D3-510::Q8",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-566::Q5",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-596::Q8",
+            "AttNeg-OWA-D3-602::Q8",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-831::Q6",
+            "AttNeg-OWA-D3-858::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-109::Q5",
+            "AttNoneg-OWA-D3-1103::Q7",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1155::Q6",
+            "AttNoneg-OWA-D3-1273::Q8",
+            "AttNoneg-OWA-D3-1306::Q6",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-1537::Q5",
+            "AttNoneg-OWA-D3-1578::Q6",
+            "AttNoneg-OWA-D3-1586::Q7",
+            "AttNoneg-OWA-D3-1751::Q5",
+            "AttNoneg-OWA-D3-1754::Q8",
+            "AttNoneg-OWA-D3-1755::Q8",
+            "AttNoneg-OWA-D3-182::Q8",
+            "AttNoneg-OWA-D3-1900::Q5",
+            "AttNoneg-OWA-D3-1906::Q5",
+            "AttNoneg-OWA-D3-1928::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-426::Q8",
+            "AttNoneg-OWA-D3-482::Q7",
+            "AttNoneg-OWA-D3-486::Q7",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-786::Q5",
+            "AttNoneg-OWA-D3-829::Q8",
+            "AttNoneg-OWA-D3-82::Q8",
+            "AttNoneg-OWA-D3-852::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "AttNoneg-OWA-D3-942::Q5",
+            "RelNeg-OWA-D3-1017::Q7",
+            "RelNeg-OWA-D3-1022::Q7",
+            "RelNeg-OWA-D3-1026::Q5",
+            "RelNeg-OWA-D3-1095::Q8",
+            "RelNeg-OWA-D3-1121::Q8",
+            "RelNeg-OWA-D3-1203::Q8",
+            "RelNeg-OWA-D3-1315::Q8",
+            "RelNeg-OWA-D3-1431::Q7",
+            "RelNeg-OWA-D3-1572::Q7",
+            "RelNeg-OWA-D3-16::Q6",
+            "RelNeg-OWA-D3-376::Q6",
+            "RelNeg-OWA-D3-405::Q7",
+            "RelNeg-OWA-D3-471::Q5",
+            "RelNeg-OWA-D3-666::Q5",
+            "RelNeg-OWA-D3-688::Q5",
+            "RelNeg-OWA-D3-713::Q5",
+            "RelNeg-OWA-D3-846::Q8",
+            "RelNeg-OWA-D3-847::Q6",
+            "RelNeg-OWA-D3-889::Q7",
+            "RelNeg-OWA-D3-903::Q5",
+            "RelNeg-OWA-D3-905::Q5",
+            "RelNoneg-OWA-D3-1070::Q5",
+            "RelNoneg-OWA-D3-107::Q6",
+            "RelNoneg-OWA-D3-1129::Q6",
+            "RelNoneg-OWA-D3-1343::Q5",
+            "RelNoneg-OWA-D3-134::Q8",
+            "RelNoneg-OWA-D3-1363::Q6",
+            "RelNoneg-OWA-D3-138::Q6",
+            "RelNoneg-OWA-D3-1570::Q8",
+            "RelNoneg-OWA-D3-1595::Q5",
+            "RelNoneg-OWA-D3-165::Q6",
+            "RelNoneg-OWA-D3-222::Q5",
+            "RelNoneg-OWA-D3-306::Q7",
+            "RelNoneg-OWA-D3-365::Q8",
+            "RelNoneg-OWA-D3-374::Q8",
+            "RelNoneg-OWA-D3-381::Q5",
+            "RelNoneg-OWA-D3-525::Q5",
+            "RelNoneg-OWA-D3-53::Q5",
+            "RelNoneg-OWA-D3-651::Q6",
+            "RelNoneg-OWA-D3-721::Q5",
+            "RelNoneg-OWA-D3-835::Q5"
+          ],
+          "mean_single_accuracy": 0.9361,
+          "n_items": 120,
+          "pairwise_disagreement": 0.1167,
+          "per_agent_accuracy": {
+            "laguna": 0.8583,
+            "ornith": 0.9583,
+            "qwen": 0.9917
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "laguna": 0.8333,
+            "ornith": 0.975,
+            "qwen": 0.9917
+          }
+        },
+        "cross_family_same_role": {
+          "agents": [
+            "laguna",
+            "ornith",
+            "qwen"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "cross_family_same_role",
+          "consensus_accuracy": 1.0,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 2000,
+            "point": 1.0,
+            "se": 0.0
+          },
+          "dependence": {
+            "m": 3,
+            "m_eff": 3.0,
+            "rho": null
+          },
+          "double_fault": {
+            "independent": 0.0,
+            "observed": 0.0,
+            "ratio": null
+          },
+          "gain_over_best_agent": 0.0,
+          "gain_over_mean_single": 0.0222,
+          "item_ids": [
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "RelNeg-OWA-D3-1022::Q7",
+            "RelNeg-OWA-D3-1026::Q5",
+            "RelNeg-OWA-D3-1099::Q5",
+            "RelNeg-OWA-D3-1505::Q7",
+            "RelNeg-OWA-D3-1558::Q6",
+            "RelNeg-OWA-D3-1572::Q7",
+            "RelNeg-OWA-D3-440::Q8",
+            "RelNeg-OWA-D3-870::Q7",
+            "RelNoneg-OWA-D3-1070::Q5",
+            "RelNoneg-OWA-D3-1363::Q6",
+            "RelNoneg-OWA-D3-1371::Q5",
+            "RelNoneg-OWA-D3-1503::Q8",
+            "RelNoneg-OWA-D3-1570::Q8",
+            "RelNoneg-OWA-D3-1595::Q5",
+            "RelNoneg-OWA-D3-222::Q5",
+            "RelNoneg-OWA-D3-374::Q8",
+            "RelNoneg-OWA-D3-721::Q5"
+          ],
+          "mean_single_accuracy": 0.9778,
+          "n_items": 45,
+          "pairwise_disagreement": 0.0444,
+          "per_agent_accuracy": {
+            "laguna": 0.9333,
+            "ornith": 1.0,
+            "qwen": 1.0
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "laguna": 0.6889,
+            "ornith": 0.9333,
+            "qwen": 1.0
+          }
+        },
+        "same_family_diverse_role": {
+          "agents": [
+            "ornith_a",
+            "ornith_b",
+            "ornith_c"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "same_family_diverse_role",
+          "consensus_accuracy": 1.0,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 2000,
+            "point": 1.0,
+            "se": 0.0
+          },
+          "dependence": {
+            "cap_1_over_rho": null,
+            "m": 3,
+            "m_eff": 3.1364,
+            "rho": -0.02174,
+            "rho_pairs": [
+              -0.0217
+            ]
+          },
+          "double_fault": {
+            "independent": 0.00015,
+            "observed": 0.0,
+            "ratio": 0.0
+          },
+          "gain_over_best_agent": 0.0,
+          "gain_over_mean_single": 0.0142,
+          "item_ids": [
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "RelNeg-OWA-D3-1022::Q7",
+            "RelNeg-OWA-D3-1026::Q5",
+            "RelNeg-OWA-D3-1099::Q5",
+            "RelNeg-OWA-D3-1505::Q7",
+            "RelNeg-OWA-D3-1572::Q7",
+            "RelNeg-OWA-D3-16::Q6",
+            "RelNeg-OWA-D3-440::Q8",
+            "RelNeg-OWA-D3-870::Q7",
+            "RelNoneg-OWA-D3-1070::Q5",
+            "RelNoneg-OWA-D3-107::Q6",
+            "RelNoneg-OWA-D3-1363::Q6",
+            "RelNoneg-OWA-D3-1371::Q5",
+            "RelNoneg-OWA-D3-1503::Q8",
+            "RelNoneg-OWA-D3-1595::Q5",
+            "RelNoneg-OWA-D3-222::Q5",
+            "RelNoneg-OWA-D3-365::Q8",
+            "RelNoneg-OWA-D3-374::Q8",
+            "RelNoneg-OWA-D3-651::Q6"
+          ],
+          "mean_single_accuracy": 0.9858,
+          "n_items": 47,
+          "pairwise_disagreement": 0.0284,
+          "per_agent_accuracy": {
+            "ornith_a": 0.9787,
+            "ornith_b": 0.9787,
+            "ornith_c": 1.0
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "ornith_a": 0.9149,
+            "ornith_b": 0.9787,
+            "ornith_c": 0.9787
+          }
+        },
+        "same_family_same_role": {
+          "agents": [
+            "ornith_a",
+            "ornith_b",
+            "ornith_c"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "same_family_same_role",
+          "consensus_accuracy": 0.98,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 0.94,
+            "n_boot": 2000,
+            "point": 0.98,
+            "se": 0.01915
+          },
+          "dependence": {
+            "cap_1_over_rho": 1.0,
+            "m": 3,
+            "m_eff": 1.0,
+            "rho": 1.0,
+            "rho_pairs": [
+              1.0
+            ]
+          },
+          "double_fault": {
+            "independent": 0.00013,
+            "observed": 0.00667,
+            "ratio": 50.0
+          },
+          "gain_over_best_agent": -0.02,
+          "gain_over_mean_single": -0.0067,
+          "item_ids": [
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "RelNeg-OWA-D3-1022::Q7",
+            "RelNeg-OWA-D3-1026::Q5",
+            "RelNeg-OWA-D3-1099::Q5",
+            "RelNeg-OWA-D3-1505::Q7",
+            "RelNeg-OWA-D3-1558::Q6",
+            "RelNeg-OWA-D3-1572::Q7",
+            "RelNeg-OWA-D3-16::Q6",
+            "RelNeg-OWA-D3-440::Q8",
+            "RelNeg-OWA-D3-870::Q7",
+            "RelNoneg-OWA-D3-1070::Q5",
+            "RelNoneg-OWA-D3-107::Q6",
+            "RelNoneg-OWA-D3-1363::Q6",
+            "RelNoneg-OWA-D3-1371::Q5",
+            "RelNoneg-OWA-D3-1503::Q8",
+            "RelNoneg-OWA-D3-1570::Q8",
+            "RelNoneg-OWA-D3-1595::Q5",
+            "RelNoneg-OWA-D3-222::Q5",
+            "RelNoneg-OWA-D3-365::Q8",
+            "RelNoneg-OWA-D3-374::Q8",
+            "RelNoneg-OWA-D3-651::Q6",
+            "RelNoneg-OWA-D3-721::Q5"
+          ],
+          "mean_single_accuracy": 0.9867,
+          "n_items": 50,
+          "pairwise_disagreement": 0.0133,
+          "per_agent_accuracy": {
+            "ornith_a": 1.0,
+            "ornith_b": 0.98,
+            "ornith_c": 0.98
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "ornith_a": 0.94,
+            "ornith_b": 1.0,
+            "ornith_c": 1.0
+          }
+        }
+      },
+      "coverage": {
+        "cached": 900,
+        "missing": 0,
+        "planned": 900
+      },
+      "dose_response": {
+        "note": "gain regressed on MEASURED M_eff; compare against the M0 curve in m0/simulate.py report_i1_i2, which is the same quantity under known ground truth.",
+        "points": [
+          {
+            "cell": "same_family_same_role",
+            "gain": -0.0067,
+            "m_eff": 1.0
+          },
+          {
+            "cell": "same_family_diverse_role",
+            "gain": 0.0142,
+            "m_eff": 3.1364
+          },
+          {
+            "cell": "cross_family_same_role",
+            "gain": 0.0222,
+            "m_eff": 3.0
+          },
+          {
+            "cell": "cross_family_diverse_role",
+            "gain": 0.0472,
+            "m_eff": 2.5841
+          }
+        ],
+        "slope": 0.01367
+      },
+      "registered_contrast_family_diversity": {
+        "diverse_role": {
+          "cross_family_m_eff": 2.5841,
+          "cross_family_rho": 0.08047,
+          "rho_reduction": -0.10221,
+          "same_family_m_eff": 3.1364,
+          "same_family_rho": -0.02174
+        },
+        "same_role": {
+          "cross_family_m_eff": 3.0,
+          "cross_family_rho": null,
+          "rho_reduction": null,
+          "same_family_m_eff": 1.0,
+          "same_family_rho": 1.0
+        }
+      }
+    },
+    "e0_summary_openrouter": {
+      "cells": {
+        "cross_family_diverse_role": {
+          "agents": [
+            "gemma",
+            "gptoss",
+            "nemotron"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "cross_family_diverse_role",
+          "consensus_accuracy": 1.0,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 2000,
+            "point": 1.0,
+            "se": 0.0
+          },
+          "dependence": {
+            "m": 3,
+            "m_eff": 3.0,
+            "rho": null
+          },
+          "double_fault": {
+            "independent": 0.0,
+            "observed": 0.0,
+            "ratio": null
+          },
+          "gain_over_best_agent": 0.0,
+          "gain_over_mean_single": 0.0246,
+          "item_ids": [
+            "AttNeg-OWA-D3-1074::Q5",
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1148::Q6",
+            "AttNeg-OWA-D3-1214::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1288::Q7",
+            "AttNeg-OWA-D3-1326::Q8",
+            "AttNeg-OWA-D3-1408::Q5",
+            "AttNeg-OWA-D3-1411::Q6",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-1552::Q6",
+            "AttNeg-OWA-D3-1581::Q8",
+            "AttNeg-OWA-D3-160::Q6",
+            "AttNeg-OWA-D3-1619::Q7",
+            "AttNeg-OWA-D3-1642::Q7",
+            "AttNeg-OWA-D3-1701::Q7",
+            "AttNeg-OWA-D3-1726::Q8",
+            "AttNeg-OWA-D3-17::Q6",
+            "AttNeg-OWA-D3-212::Q6",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-249::Q8",
+            "AttNeg-OWA-D3-372::Q6",
+            "AttNeg-OWA-D3-377::Q7",
+            "AttNeg-OWA-D3-385::Q6",
+            "AttNeg-OWA-D3-429::Q6",
+            "AttNeg-OWA-D3-486::Q6",
+            "AttNeg-OWA-D3-510::Q8",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-566::Q5",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-596::Q8",
+            "AttNeg-OWA-D3-602::Q8",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-831::Q6",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-858::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-109::Q5",
+            "AttNoneg-OWA-D3-1103::Q7",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1155::Q6",
+            "AttNoneg-OWA-D3-1273::Q8",
+            "AttNoneg-OWA-D3-1306::Q6",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-1537::Q5",
+            "AttNoneg-OWA-D3-1573::Q5",
+            "AttNoneg-OWA-D3-1578::Q6",
+            "AttNoneg-OWA-D3-1586::Q7",
+            "AttNoneg-OWA-D3-1751::Q5",
+            "AttNoneg-OWA-D3-1754::Q8",
+            "AttNoneg-OWA-D3-1755::Q8",
+            "AttNoneg-OWA-D3-182::Q8",
+            "AttNoneg-OWA-D3-1900::Q5",
+            "AttNoneg-OWA-D3-1906::Q5",
+            "AttNoneg-OWA-D3-1928::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-426::Q8",
+            "AttNoneg-OWA-D3-482::Q7",
+            "AttNoneg-OWA-D3-486::Q7",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-786::Q5",
+            "AttNoneg-OWA-D3-829::Q8",
+            "AttNoneg-OWA-D3-82::Q8",
+            "AttNoneg-OWA-D3-852::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "AttNoneg-OWA-D3-942::Q5",
+            "RelNeg-OWA-D3-1017::Q7",
+            "RelNeg-OWA-D3-1022::Q7",
+            "RelNeg-OWA-D3-1026::Q5",
+            "RelNeg-OWA-D3-108::Q5",
+            "RelNeg-OWA-D3-1099::Q5",
+            "RelNeg-OWA-D3-1121::Q8",
+            "RelNeg-OWA-D3-1203::Q8",
+            "RelNeg-OWA-D3-1276::Q8",
+            "RelNeg-OWA-D3-1315::Q8",
+            "RelNeg-OWA-D3-1413::Q8",
+            "RelNeg-OWA-D3-1431::Q7",
+            "RelNeg-OWA-D3-1464::Q8",
+            "RelNeg-OWA-D3-1505::Q7",
+            "RelNeg-OWA-D3-1558::Q6",
+            "RelNeg-OWA-D3-156::Q7",
+            "RelNeg-OWA-D3-1572::Q7",
+            "RelNeg-OWA-D3-16::Q6",
+            "RelNeg-OWA-D3-26::Q8",
+            "RelNeg-OWA-D3-376::Q6",
+            "RelNeg-OWA-D3-405::Q7",
+            "RelNeg-OWA-D3-440::Q8",
+            "RelNeg-OWA-D3-471::Q5",
+            "RelNeg-OWA-D3-666::Q5",
+            "RelNeg-OWA-D3-688::Q5",
+            "RelNeg-OWA-D3-713::Q5",
+            "RelNeg-OWA-D3-783::Q7",
+            "RelNeg-OWA-D3-792::Q8",
+            "RelNeg-OWA-D3-846::Q8",
+            "RelNeg-OWA-D3-847::Q6",
+            "RelNeg-OWA-D3-851::Q5",
+            "RelNeg-OWA-D3-870::Q7",
+            "RelNeg-OWA-D3-889::Q7",
+            "RelNeg-OWA-D3-903::Q5",
+            "RelNeg-OWA-D3-905::Q5",
+            "RelNeg-OWA-D3-935::Q6",
+            "RelNoneg-OWA-D3-1068::Q8",
+            "RelNoneg-OWA-D3-1070::Q5",
+            "RelNoneg-OWA-D3-107::Q6",
+            "RelNoneg-OWA-D3-1129::Q6",
+            "RelNoneg-OWA-D3-1180::Q5",
+            "RelNoneg-OWA-D3-1195::Q5",
+            "RelNoneg-OWA-D3-1206::Q6",
+            "RelNoneg-OWA-D3-1343::Q5",
+            "RelNoneg-OWA-D3-134::Q8",
+            "RelNoneg-OWA-D3-1363::Q6",
+            "RelNoneg-OWA-D3-1371::Q5",
+            "RelNoneg-OWA-D3-138::Q6",
+            "RelNoneg-OWA-D3-1503::Q8",
+            "RelNoneg-OWA-D3-1549::Q8",
+            "RelNoneg-OWA-D3-1570::Q8",
+            "RelNoneg-OWA-D3-1595::Q5",
+            "RelNoneg-OWA-D3-165::Q6",
+            "RelNoneg-OWA-D3-222::Q5",
+            "RelNoneg-OWA-D3-306::Q7",
+            "RelNoneg-OWA-D3-311::Q6",
+            "RelNoneg-OWA-D3-365::Q8",
+            "RelNoneg-OWA-D3-374::Q8",
+            "RelNoneg-OWA-D3-381::Q5",
+            "RelNoneg-OWA-D3-525::Q5",
+            "RelNoneg-OWA-D3-53::Q5",
+            "RelNoneg-OWA-D3-563::Q5",
+            "RelNoneg-OWA-D3-633::Q7",
+            "RelNoneg-OWA-D3-651::Q6",
+            "RelNoneg-OWA-D3-65::Q6",
+            "RelNoneg-OWA-D3-721::Q5",
+            "RelNoneg-OWA-D3-794::Q8",
+            "RelNoneg-OWA-D3-835::Q5",
+            "RelNoneg-OWA-D3-912::Q8"
+          ],
+          "mean_single_accuracy": 0.9754,
+          "n_items": 149,
+          "pairwise_disagreement": 0.0492,
+          "per_agent_accuracy": {
+            "gemma": 0.9262,
+            "gptoss": 1.0,
+            "nemotron": 1.0
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "gemma": 0.7852,
+            "gptoss": 0.7718,
+            "nemotron": 0.9664
+          }
+        },
+        "cross_family_same_role": {
+          "agents": [
+            "gemma",
+            "gptoss",
+            "nemotron"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "cross_family_same_role",
+          "consensus_accuracy": 1.0,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 2000,
+            "point": 1.0,
+            "se": 0.0
+          },
+          "dependence": {
+            "m": 3,
+            "m_eff": 3.0,
+            "rho": null
+          },
+          "double_fault": {
+            "independent": 0.0,
+            "observed": 0.0,
+            "ratio": null
+          },
+          "gain_over_best_agent": 0.0,
+          "gain_over_mean_single": 0.0,
+          "item_ids": [
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "RelNeg-OWA-D3-1022::Q7"
+          ],
+          "mean_single_accuracy": 1.0,
+          "n_items": 30,
+          "pairwise_disagreement": 0.0,
+          "per_agent_accuracy": {
+            "gemma": 1.0,
+            "gptoss": 1.0,
+            "nemotron": 1.0
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "gemma": 0.8,
+            "gptoss": 0.9,
+            "nemotron": 1.0
+          }
+        },
+        "same_family_diverse_role": {
+          "agents": [
+            "nemotron_a",
+            "nemotron_b",
+            "nemotron_c"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "same_family_diverse_role",
+          "consensus_accuracy": 1.0,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 2000,
+            "point": 1.0,
+            "se": 0.0
+          },
+          "dependence": {
+            "m": 3,
+            "m_eff": 3.0,
+            "rho": null
+          },
+          "double_fault": {
+            "independent": 0.0,
+            "observed": 0.0,
+            "ratio": null
+          },
+          "gain_over_best_agent": 0.0,
+          "gain_over_mean_single": 0.0,
+          "item_ids": [
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "RelNeg-OWA-D3-1022::Q7"
+          ],
+          "mean_single_accuracy": 1.0,
+          "n_items": 30,
+          "pairwise_disagreement": 0.0,
+          "per_agent_accuracy": {
+            "nemotron_a": 1.0,
+            "nemotron_b": 1.0,
+            "nemotron_c": 1.0
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "nemotron_a": 0.9,
+            "nemotron_b": 0.9,
+            "nemotron_c": 0.9667
+          }
+        },
+        "same_family_same_role": {
+          "agents": [
+            "nemotron_a",
+            "nemotron_b",
+            "nemotron_c"
+          ],
+          "best_agent_accuracy": 1.0,
+          "cell": "same_family_same_role",
+          "consensus_accuracy": 1.0,
+          "consensus_ci": {
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 2000,
+            "point": 1.0,
+            "se": 0.0
+          },
+          "dependence": {
+            "m": 3,
+            "m_eff": 3.0,
+            "rho": null
+          },
+          "double_fault": {
+            "independent": 0.0,
+            "observed": 0.0,
+            "ratio": null
+          },
+          "gain_over_best_agent": 0.0,
+          "gain_over_mean_single": 0.0,
+          "item_ids": [
+            "AttNeg-OWA-D3-1078::Q5",
+            "AttNeg-OWA-D3-1081::Q6",
+            "AttNeg-OWA-D3-1233::Q6",
+            "AttNeg-OWA-D3-1258::Q8",
+            "AttNeg-OWA-D3-1413::Q8",
+            "AttNeg-OWA-D3-1547::Q7",
+            "AttNeg-OWA-D3-246::Q6",
+            "AttNeg-OWA-D3-533::Q8",
+            "AttNeg-OWA-D3-554::Q6",
+            "AttNeg-OWA-D3-575::Q5",
+            "AttNeg-OWA-D3-667::Q7",
+            "AttNeg-OWA-D3-844::Q6",
+            "AttNeg-OWA-D3-975::Q8",
+            "AttNeg-OWA-D3-994::Q6",
+            "AttNoneg-OWA-D3-1052::Q6",
+            "AttNoneg-OWA-D3-1119::Q5",
+            "AttNoneg-OWA-D3-1393::Q8",
+            "AttNoneg-OWA-D3-1481::Q6",
+            "AttNoneg-OWA-D3-1510::Q5",
+            "AttNoneg-OWA-D3-251::Q8",
+            "AttNoneg-OWA-D3-26::Q8",
+            "AttNoneg-OWA-D3-377::Q6",
+            "AttNoneg-OWA-D3-408::Q8",
+            "AttNoneg-OWA-D3-584::Q5",
+            "AttNoneg-OWA-D3-663::Q8",
+            "AttNoneg-OWA-D3-6::Q7",
+            "AttNoneg-OWA-D3-751::Q6",
+            "AttNoneg-OWA-D3-853::Q5",
+            "AttNoneg-OWA-D3-911::Q7",
+            "RelNeg-OWA-D3-1022::Q7"
+          ],
+          "mean_single_accuracy": 1.0,
+          "n_items": 30,
+          "pairwise_disagreement": 0.0,
+          "per_agent_accuracy": {
+            "nemotron_a": 1.0,
+            "nemotron_b": 1.0,
+            "nemotron_c": 1.0
+          },
+          "same_wrong_convergence": 0.0,
+          "states_conjunctive_step": {
+            "nemotron_a": 1.0,
+            "nemotron_b": 0.9333,
+            "nemotron_c": 0.9333
+          }
+        }
+      },
+      "coverage": {
+        "cached": 720,
+        "missing": 0,
+        "planned": 720
+      },
+      "dose_response": {
+        "note": "gain regressed on MEASURED M_eff; compare against the M0 curve in m0/simulate.py report_i1_i2, which is the same quantity under known ground truth.",
+        "points": [
+          {
+            "cell": "same_family_same_role",
+            "gain": 0.0,
+            "m_eff": 3.0
+          },
+          {
+            "cell": "same_family_diverse_role",
+            "gain": 0.0,
+            "m_eff": 3.0
+          },
+          {
+            "cell": "cross_family_same_role",
+            "gain": 0.0,
+            "m_eff": 3.0
+          },
+          {
+            "cell": "cross_family_diverse_role",
+            "gain": 0.0246,
+            "m_eff": 3.0
+          }
+        ],
+        "slope": 0.00102
+      },
+      "registered_contrast_family_diversity": {
+        "diverse_role": {
+          "cross_family_m_eff": 3.0,
+          "cross_family_rho": null,
+          "rho_reduction": null,
+          "same_family_m_eff": 3.0,
+          "same_family_rho": null
+        },
+        "same_role": {
+          "cross_family_m_eff": 3.0,
+          "cross_family_rho": null,
+          "rho_reduction": null,
+          "same_family_m_eff": 3.0,
+          "same_family_rho": null
+        }
+      }
+    },
+    "e1_summary": {
+      "coverage": {
+        "cached": 900,
+        "missing": 0,
+        "planned": 900
+      },
+      "strata": {
+        "all_items": {
+          "agents": [
+            "laguna",
+            "ornith",
+            "qwen"
+          ],
+          "alignment_audit": {
+            "aligner_self_identification": {
+              "accuracy": 0.9724,
+              "n_probes": 1483,
+              "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+              "wrong_polarity": 0,
+              "wrong_proposition": 41
+            },
+            "claims": 24621,
+            "lexical_reference": {
+              "n_predicted": 1197,
+              "n_reference": 1460,
+              "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+              "recall_mean": 0.6899
+            },
+            "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+            "observations": 1197,
+            "same_agent_conflicts": 853
+          },
+          "arms": {
+            "WCT-C": {
+              "test_accuracy": 0.93598,
+              "test_auroc": 0.90044,
+              "test_log_loss": 0.18125
+            },
+            "WCT-EM": {
+              "test_accuracy": 0.875,
+              "test_auroc": 0.89103,
+              "test_log_loss": 0.38472
+            },
+            "WCT-U": {
+              "test_accuracy": 0.8628,
+              "test_auroc": 0.90014,
+              "test_log_loss": 0.3386
+            },
+            "covariate_baseline": {
+              "test_accuracy": 0.95122,
+              "test_auroc": 0.59786,
+              "test_log_loss": 0.20966
+            },
+            "prevalence_only": {
+              "test_accuracy": 0.95122,
+              "test_auroc": 0.5,
+              "test_log_loss": 0.19842
+            },
+            "uncapped": {
+              "test_accuracy": 0.95122,
+              "test_auroc": 0.50691,
+              "test_log_loss": 0.22341
+            }
+          },
+          "co_primary_precision_at_k": {
+            "WCT-EM": 0.99127,
+            "WCT-U": 0.99563,
+            "covariate_baseline": 0.96507,
+            "k": 229
+          },
+          "em_parameters": {
+            "agents": [
+              "laguna",
+              "ornith",
+              "qwen"
+            ],
+            "coverage_given_false": [
+              0.6404,
+              0.8982,
+              0.9794
+            ],
+            "coverage_given_true": [
+              0.4687,
+              0.873,
+              0.8741
+            ],
+            "false_positive_rate": [
+              0.4373,
+              0.1903,
+              0.1383
+            ],
+            "note": "estimated from the vote matrix alone; no truth labels consumed",
+            "sensitivity": [
+              0.9558,
+              0.9562,
+              0.9923
+            ]
+          },
+          "n_items": 150,
+          "n_props": 502,
+          "permutation_null": {
+            "n_perm": 1000,
+            "null_mean": 0.61216,
+            "null_sd": 0.06385,
+            "observed": 0.89103,
+            "p": 0.001
+          },
+          "prevalence": 0.9442,
+          "primary_delta_log_loss_vs_covariate": {
+            "WCT-C": {
+              "decision": "inconclusive",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.09797,
+                "lo": -0.01725,
+                "n_items": 100,
+                "point": 0.03912,
+                "sd_items": 0.29654
+              }
+            },
+            "WCT-EM": {
+              "decision": "stop",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": -0.07022,
+                "lo": -0.24946,
+                "n_items": 100,
+                "point": -0.15877,
+                "sd_items": 0.46041
+              }
+            },
+            "WCT-U": {
+              "decision": "stop",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": -0.02651,
+                "lo": -0.19665,
+                "n_items": 100,
+                "point": -0.11143,
+                "sd_items": 0.4371
+              }
+            }
+          },
+          "stratum": "all_items",
+          "temperatures": {
+            "WCT-C": 1.333,
+            "WCT-EM": 2.776,
+            "WCT-U": 0.972
+          },
+          "within_item_auroc": {
+            "decision": "go",
+            "delta": 0.55,
+            "hi": 1.0,
+            "lo": 0.83333,
+            "n_boot": 1000,
+            "point": 0.90476,
+            "se": 0.04214
+          }
+        },
+        "negation_theories": {
+          "agents": [
+            "laguna",
+            "ornith",
+            "qwen"
+          ],
+          "alignment_audit": {
+            "aligner_self_identification": {
+              "accuracy": 0.9777,
+              "n_probes": 807,
+              "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+              "wrong_polarity": 0,
+              "wrong_proposition": 18
+            },
+            "claims": 12694,
+            "lexical_reference": {
+              "n_predicted": 621,
+              "n_reference": 765,
+              "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+              "recall_mean": 0.6569
+            },
+            "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+            "observations": 621,
+            "same_agent_conflicts": 400
+          },
+          "arms": {
+            "WCT-C": {
+              "test_accuracy": 0.86517,
+              "test_auroc": 0.90336,
+              "test_log_loss": 0.30173
+            },
+            "WCT-EM": {
+              "test_accuracy": 0.86517,
+              "test_auroc": 0.89294,
+              "test_log_loss": 0.34999
+            },
+            "WCT-U": {
+              "test_accuracy": 0.85393,
+              "test_auroc": 0.89699,
+              "test_log_loss": 0.36252
+            },
+            "covariate_baseline": {
+              "test_accuracy": 0.91011,
+              "test_auroc": 0.6032,
+              "test_log_loss": 0.32965
+            },
+            "prevalence_only": {
+              "test_accuracy": 0.91011,
+              "test_auroc": 0.5,
+              "test_log_loss": 0.31675
+            },
+            "uncapped": {
+              "test_accuracy": 0.91011,
+              "test_auroc": 0.50174,
+              "test_log_loss": 0.34136
+            }
+          },
+          "co_primary_precision_at_k": {
+            "WCT-EM": 0.98374,
+            "WCT-U": 0.99187,
+            "covariate_baseline": 0.9187,
+            "k": 123
+          },
+          "em_parameters": {
+            "agents": [
+              "laguna",
+              "ornith",
+              "qwen"
+            ],
+            "coverage_given_false": [
+              0.603,
+              0.8869,
+              0.9469
+            ],
+            "coverage_given_true": [
+              0.4463,
+              0.8944,
+              0.882
+            ],
+            "false_positive_rate": [
+              0.4186,
+              0.107,
+              0.036
+            ],
+            "note": "estimated from the vote matrix alone; no truth labels consumed",
+            "sensitivity": [
+              0.9496,
+              0.939,
+              0.9876
+            ]
+          },
+          "n_items": 78,
+          "n_props": 260,
+          "permutation_null": {
+            "n_perm": 1000,
+            "null_mean": 0.58435,
+            "null_sd": 0.06908,
+            "observed": 0.89294,
+            "p": 0.001
+          },
+          "prevalence": 0.8923,
+          "primary_delta_log_loss_vs_covariate": {
+            "WCT-C": {
+              "decision": "inconclusive",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.14568,
+                "lo": -0.0476,
+                "n_items": 55,
+                "point": 0.05057,
+                "sd_items": 0.37329
+              }
+            },
+            "WCT-EM": {
+              "decision": "inconclusive",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.10805,
+                "lo": -0.10406,
+                "n_items": 55,
+                "point": 0.00112,
+                "sd_items": 0.39947
+              }
+            },
+            "WCT-U": {
+              "decision": "inconclusive",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.10117,
+                "lo": -0.12041,
+                "n_items": 55,
+                "point": -0.00859,
+                "sd_items": 0.42279
+              }
+            }
+          },
+          "stratum": "negation_theories",
+          "temperatures": {
+            "WCT-C": 1.405,
+            "WCT-EM": 2.945,
+            "WCT-U": 0.924
+          },
+          "within_item_auroc": {
+            "decision": "go",
+            "delta": 0.55,
+            "hi": 1.0,
+            "lo": 0.83333,
+            "n_boot": 1000,
+            "point": 0.90476,
+            "se": 0.04138
+          }
+        },
+        "noneg_theories": {
+          "error": "test split contains a single class; truth discrimination is undefined here by construction",
+          "n_items": 72,
+          "n_props": 242,
+          "prevalence": 1.0,
+          "stratum": "noneg_theories"
+        }
+      }
+    },
+    "e1_summary_openrouter": {
+      "coverage": {
+        "cached": 720,
+        "missing": 0,
+        "planned": 720
+      },
+      "strata": {
+        "all_items": {
+          "agents": [
+            "gemma",
+            "gptoss",
+            "nemotron"
+          ],
+          "alignment_audit": {
+            "aligner_self_identification": {
+              "accuracy": 0.9724,
+              "n_probes": 1483,
+              "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+              "wrong_polarity": 0,
+              "wrong_proposition": 41
+            },
+            "claims": 15599,
+            "lexical_reference": {
+              "n_predicted": 1121,
+              "n_reference": 1398,
+              "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+              "recall_mean": 0.6782
+            },
+            "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+            "observations": 1121,
+            "same_agent_conflicts": 195
+          },
+          "arms": {
+            "WCT-C": {
+              "test_accuracy": 0.98077,
+              "test_auroc": 0.99197,
+              "test_log_loss": 0.09732
+            },
+            "WCT-EM": {
+              "test_accuracy": 0.97115,
+              "test_auroc": 0.99197,
+              "test_log_loss": 0.10686
+            },
+            "WCT-U": {
+              "test_accuracy": 0.96795,
+              "test_auroc": 0.99113,
+              "test_log_loss": 0.12338
+            },
+            "covariate_baseline": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.65616,
+              "test_log_loss": 0.21116
+            },
+            "prevalence_only": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.5,
+              "test_log_loss": 0.19662
+            },
+            "uncapped": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.52385,
+              "test_log_loss": 0.22428
+            }
+          },
+          "co_primary_precision_at_k": {
+            "WCT-EM": 1.0,
+            "WCT-U": 1.0,
+            "covariate_baseline": 0.9693,
+            "k": 228
+          },
+          "em_parameters": {
+            "agents": [
+              "gemma",
+              "gptoss",
+              "nemotron"
+            ],
+            "coverage_given_false": [
+              0.4545,
+              0.6828,
+              0.9467
+            ],
+            "coverage_given_true": [
+              0.493,
+              0.8585,
+              0.8858
+            ],
+            "false_positive_rate": [
+              0.104,
+              0.0237,
+              0.2298
+            ],
+            "note": "estimated from the vote matrix alone; no truth labels consumed",
+            "sensitivity": [
+              0.8281,
+              0.9842,
+              0.9985
+            ]
+          },
+          "n_items": 150,
+          "n_props": 484,
+          "permutation_null": {
+            "n_perm": 1000,
+            "null_mean": 0.60709,
+            "null_sd": 0.09235,
+            "observed": 0.99197,
+            "p": 0.001
+          },
+          "prevalence": 0.9401,
+          "primary_delta_log_loss_vs_covariate": {
+            "WCT-C": {
+              "decision": "go",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.2078,
+                "lo": 0.04323,
+                "n_items": 100,
+                "point": 0.13211,
+                "sd_items": 0.41942
+              }
+            },
+            "WCT-EM": {
+              "decision": "go",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.19722,
+                "lo": 0.03667,
+                "n_items": 100,
+                "point": 0.12249,
+                "sd_items": 0.41114
+              }
+            },
+            "WCT-U": {
+              "decision": "go",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.18418,
+                "lo": 0.01705,
+                "n_items": 100,
+                "point": 0.1069,
+                "sd_items": 0.42431
+              }
+            }
+          },
+          "stratum": "all_items",
+          "temperatures": {
+            "WCT-C": 1.212,
+            "WCT-EM": 1.669,
+            "WCT-U": 0.491
+          },
+          "within_item_auroc": {
+            "decision": "go",
+            "delta": 0.55,
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 1000,
+            "point": 1.0,
+            "se": 0.0
+          }
+        },
+        "negation_theories": {
+          "agents": [
+            "gemma",
+            "gptoss",
+            "nemotron"
+          ],
+          "alignment_audit": {
+            "aligner_self_identification": {
+              "accuracy": 0.9777,
+              "n_probes": 807,
+              "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+              "wrong_polarity": 0,
+              "wrong_proposition": 18
+            },
+            "claims": 8489,
+            "lexical_reference": {
+              "n_predicted": 593,
+              "n_reference": 736,
+              "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+              "recall_mean": 0.6819
+            },
+            "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+            "observations": 593,
+            "same_agent_conflicts": 108
+          },
+          "arms": {
+            "WCT-C": {
+              "test_accuracy": 0.98802,
+              "test_auroc": 1.0,
+              "test_log_loss": 0.05629
+            },
+            "WCT-EM": {
+              "test_accuracy": 0.98802,
+              "test_auroc": 1.0,
+              "test_log_loss": 0.04803
+            },
+            "WCT-U": {
+              "test_accuracy": 0.98204,
+              "test_auroc": 1.0,
+              "test_log_loss": 0.05905
+            },
+            "covariate_baseline": {
+              "test_accuracy": 0.8982,
+              "test_auroc": 0.69608,
+              "test_log_loss": 0.31898
+            },
+            "prevalence_only": {
+              "test_accuracy": 0.91617,
+              "test_auroc": 0.5,
+              "test_log_loss": 0.32604
+            },
+            "uncapped": {
+              "test_accuracy": 0.91617,
+              "test_auroc": 0.55439,
+              "test_log_loss": 0.33468
+            }
+          },
+          "co_primary_precision_at_k": {
+            "WCT-EM": 1.0,
+            "WCT-U": 1.0,
+            "covariate_baseline": 0.94531,
+            "k": 128
+          },
+          "em_parameters": {
+            "agents": [
+              "gemma",
+              "gptoss",
+              "nemotron"
+            ],
+            "coverage_given_false": [
+              0.4232,
+              0.7208,
+              0.95
+            ],
+            "coverage_given_true": [
+              0.4923,
+              0.9069,
+              0.8942
+            ],
+            "false_positive_rate": [
+              0.1288,
+              0.0269,
+              0.1164
+            ],
+            "note": "estimated from the vote matrix alone; no truth labels consumed",
+            "sensitivity": [
+              0.8127,
+              0.9871,
+              0.9973
+            ]
+          },
+          "n_items": 78,
+          "n_props": 250,
+          "permutation_null": {
+            "n_perm": 1000,
+            "null_mean": 0.62019,
+            "null_sd": 0.09333,
+            "observed": 1.0,
+            "p": 0.001
+          },
+          "prevalence": 0.884,
+          "primary_delta_log_loss_vs_covariate": {
+            "WCT-C": {
+              "decision": "go",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.33966,
+                "lo": 0.21127,
+                "n_items": 55,
+                "point": 0.27004,
+                "sd_items": 0.24892
+              }
+            },
+            "WCT-EM": {
+              "decision": "go",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.34282,
+                "lo": 0.2229,
+                "n_items": 55,
+                "point": 0.27741,
+                "sd_items": 0.23101
+              }
+            },
+            "WCT-U": {
+              "decision": "go",
+              "delta": 0.02,
+              "delta_log_loss": {
+                "hi": 0.33381,
+                "lo": 0.21072,
+                "n_items": 55,
+                "point": 0.26682,
+                "sd_items": 0.23987
+              }
+            }
+          },
+          "stratum": "negation_theories",
+          "temperatures": {
+            "WCT-C": 1.357,
+            "WCT-EM": 2.054,
+            "WCT-U": 0.539
+          },
+          "within_item_auroc": {
+            "decision": "go",
+            "delta": 0.55,
+            "hi": 1.0,
+            "lo": 1.0,
+            "n_boot": 1000,
+            "point": 1.0,
+            "se": 0.0
+          }
+        },
+        "noneg_theories": {
+          "error": "test split contains a single class; truth discrimination is undefined here by construction",
+          "n_items": 72,
+          "n_props": 234,
+          "prevalence": 1.0,
+          "stratum": "noneg_theories"
+        }
+      }
+    }
+  }
+}

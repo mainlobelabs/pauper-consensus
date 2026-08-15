@@ -1,0 +1,114 @@
+=== waiting for the OpenRouter run ===
+=== waiting for the OpenRouter run ===
+openrouter generation exited at Sat 08 Aug 2026 09:26:04 PM AEST
+=== waiting for the local embedding server on :1234 ===
+:1234 is up after 0s
+=== purging errored cache entries so they are retried, not frozen in ===
+=== refill pass (cache hits + retries) ===
+  640/720  errors=0  0.0min elapsed  eta 0min
+  650/720  errors=0  0.0min elapsed  eta 0min
+  660/720  errors=0  0.0min elapsed  eta 0min
+  670/720  errors=0  0.0min elapsed  eta 0min
+  680/720  errors=0  0.0min elapsed  eta 0min
+  690/720  errors=0  0.0min elapsed  eta 0min
+  700/720  errors=0  0.0min elapsed  eta 0min
+  710/720  errors=0  0.0min elapsed  eta 0min
+  720/720  errors=0  0.0min elapsed  eta 0min
+done: 720 generations, 0 errors, cache={'embed': 303, 'generation': 1510, 'nli': 605}
+=== E0 (openrouter) ===
+  consensus 1.0000  (mean single 1.0000, best 1.0000)
+  rho None  M_eff 3.0  double-fault ratio None
+
+cross_family_same_role: n=30
+  per-agent {'gemma': 1.0, 'gptoss': 1.0, 'nemotron': 1.0}
+  consensus 1.0000  (mean single 1.0000, best 1.0000)
+  rho None  M_eff 3.0  double-fault ratio None
+
+cross_family_diverse_role: n=149
+  per-agent {'gemma': 0.9262, 'gptoss': 1.0, 'nemotron': 1.0}
+  consensus 1.0000  (mean single 0.9754, best 1.0000)
+  rho None  M_eff 3.0  double-fault ratio None
+
+wrote out/e0_summary_openrouter.json
+registered contrast: {
+  "same_role": {
+    "cross_family_rho": null,
+    "same_family_rho": null,
+    "rho_reduction": null,
+    "cross_family_m_eff": 3.0,
+    "same_family_m_eff": 3.0
+  },
+  "diverse_role": {
+    "cross_family_rho": null,
+    "same_family_rho": null,
+    "rho_reduction": null,
+    "cross_family_m_eff": 3.0,
+    "same_family_m_eff": 3.0
+  }
+}
+=== E1 (openrouter) ===
+coverage {'planned': 720, 'cached': 720, 'missing': 0}; usable items 150
+[all_items] propositions 484 (calib 172, test 312) items 150 prevalence 0.9401
+[negation_theories] propositions 250 (calib 83, test 167) items 78 prevalence 0.8840
+[noneg_theories] propositions 234 (calib 89, test 145) items 72 prevalence 1.0000
+
+===== all_items =====
+  n_props 484  items 150  prevalence 0.9401
+    WCT-U                logloss   0.1234  auroc  0.99113  acc 0.9679
+    WCT-EM               logloss   0.1069  auroc  0.99197  acc 0.9711
+    WCT-C                logloss   0.0973  auroc  0.99197  acc 0.9808
+    covariate_baseline   logloss   0.2112  auroc  0.65616  acc 0.9551
+    uncapped             logloss   0.2243  auroc  0.52385  acc 0.9551
+    prevalence_only      logloss   0.1966  auroc      0.5  acc 0.9551
+    PRIMARY WCT-EM     dLL +0.1225 [+0.0367,+0.1972] -> GO
+    PRIMARY WCT-U      dLL +0.1069 [+0.0170,+0.1842] -> GO
+    PRIMARY WCT-C      dLL +0.1321 [+0.0432,+0.2078] -> GO
+    within-item AUROC 1.0 [1.0,1.0] -> GO
+    permutation null p=0.001 (observed 0.99197, null 0.60709)
+
+===== negation_theories =====
+  n_props 250  items 78  prevalence 0.884
+    WCT-U                logloss   0.0590  auroc      1.0  acc 0.9820
+    WCT-EM               logloss   0.0480  auroc      1.0  acc 0.9880
+    WCT-C                logloss   0.0563  auroc      1.0  acc 0.9880
+    covariate_baseline   logloss   0.3190  auroc  0.69608  acc 0.8982
+    uncapped             logloss   0.3347  auroc  0.55439  acc 0.9162
+    prevalence_only      logloss   0.3260  auroc      0.5  acc 0.9162
+    PRIMARY WCT-EM     dLL +0.2774 [+0.2229,+0.3428] -> GO
+    PRIMARY WCT-U      dLL +0.2668 [+0.2107,+0.3338] -> GO
+    PRIMARY WCT-C      dLL +0.2700 [+0.2113,+0.3397] -> GO
+    within-item AUROC 1.0 [1.0,1.0] -> GO
+    permutation null p=0.001 (observed 1.0, null 0.62019)
+
+===== noneg_theories =====
+  n_props=234 prevalence=1.0
+  test split contains a single class; truth discrimination is undefined here by construction
+
+wrote out/e1_summary_openrouter.json
+=== result package ===
+    "ci": [
+      0.83333,
+      1.0
+    ],
+    "decision": "go"
+  },
+  "E1[noneg_theories]": {
+    "metric": "not evaluable",
+    "decision": "undefined",
+    "reason": "test split contains a single class; truth discrimination is undefined here by construction",
+    "prevalence": 1.0
+  }
+}
+
+negative / inconclusive:
+  - E1[all_items]_primary_WCT-C: inconclusive (estimate 0.03912, delta 0.02)
+  - E1[all_items]_primary_WCT-EM: stop (estimate -0.15877, delta 0.02)
+  - E1[all_items]_primary_WCT-U: stop (estimate -0.11143, delta 0.02)
+  - E1[negation_theories]_primary_WCT-C: inconclusive (estimate 0.05057, delta 0.02)
+  - E1[negation_theories]_primary_WCT-EM: inconclusive (estimate 0.00112, delta 0.02)
+  - E1[negation_theories]_primary_WCT-U: inconclusive (estimate -0.00859, delta 0.02)
+  - E1[noneg_theories]: undefined (estimate None, delta None)
+  - E0 registered prediction FAILED for diverse_role: cross-family rho 0.08047 is not below same-family rho -0.02174 (reduction -0.10221)
+
+wrote out/result_package.json
+=== OPENROUTER PANEL DONE at Sun 09 Aug 2026 12:19:51 AM AEST ===

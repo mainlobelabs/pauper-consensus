@@ -1,0 +1,7202 @@
+[
+  {
+    "item_id": "AttNeg-OWA-D3-1074::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 774,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1986,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1099,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 710,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1248,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1148::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1513,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1214::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1652,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1213,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1562,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 836,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1777,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1288::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 640,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1326::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1022,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1408::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1369,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1411::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 761,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1793,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 734,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 572,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 672,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1552::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1664,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1581::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1222,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-160::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1435,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1619::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1259,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1642::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 780,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1701::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1396,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1726::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1144,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-17::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1646,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-212::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 564,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1638,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1010,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-249::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2383,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-372::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 776,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-377::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1558,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-385::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1229,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-429::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 915,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-486::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1038,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-510::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1226,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1679,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1109,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1362,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 966,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-566::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 501,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 636,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 891,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-596::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1467,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-602::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1326,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1333,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1751,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-831::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3761,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1102,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1104,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-858::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1243,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 879,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 755,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1818,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1216,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 871,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 675,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-109::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1434,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1103::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1011,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 848,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1109,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1155::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 735,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1273::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2266,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1306::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 806,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1275,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 647,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1392,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1329,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 848,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 969,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1537::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2172,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1573::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1497,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1578::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1005,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1586::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 992,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1751::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 994,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1754::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2175,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1755::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1810,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-182::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 793,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1900::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1272,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1906::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2088,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1928::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1193,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1170,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 987,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1915,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1320,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 896,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 899,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1792,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1434,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-426::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1454,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-482::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 897,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-486::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2105,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1647,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1483,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1587,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1372,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1665,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 735,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 966,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 634,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-786::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1919,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-829::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1304,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-82::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1548,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-852::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1176,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1206,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 612,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1643,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1434,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-942::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1909,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1017::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1347,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2220,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1415,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1026::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1714,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-108::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1990,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1095::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4130,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1099::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1079,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1121::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1944,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1203::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3297,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1276::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2540,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1315::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1339,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1413::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2306,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1431::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1306,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1464::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2891,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1505::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1848,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1558::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1060,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-156::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2939,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1572::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3670,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-16::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1897,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-26::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4020,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-376::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1198,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-405::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1794,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-440::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1070,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-471::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1374,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-666::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2760,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-688::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1787,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-713::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 854,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-783::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1221,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-792::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3210,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-846::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3469,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-847::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1019,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-851::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1441,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-870::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1808,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-889::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2678,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-903::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1520,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-905::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2254,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-935::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3128,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1068::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3866,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1070::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2486,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-107::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1926,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1129::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2169,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1180::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1625,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1195::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 598,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1206::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2173,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1343::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1876,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-134::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2003,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1363::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1425,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1371::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1996,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-138::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 943,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1503::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5259,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1549::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1333,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1570::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3044,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1595::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2081,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-165::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1258,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-222::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1807,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-306::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1822,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-311::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4923,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-365::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2796,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-374::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1612,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-381::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2131,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-525::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1596,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-53::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1004,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-563::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2105,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-633::Q7",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 970,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-651::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2650,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-65::Q6",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4558,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-721::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2356,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-794::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2310,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-835::Q5",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1023,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-912::Q8",
+    "agent": "gemma",
+    "model": "google/gemma-4-26b-a4b-it:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3407,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1074::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1454,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3234,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2327,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2327,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3234,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1777,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2888,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1699,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2009,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2752,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2043,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2043,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2752,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1697,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1560,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2349,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2862,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1148::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3007,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1214::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3680,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5849,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 5308,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 5308,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 5849,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 5173,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3744,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 4151,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 4844,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4901,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1817,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1817,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 4901,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2065,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3387,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2137,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 3699,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1288::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2848,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1326::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3789,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1408::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1757,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1411::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2496,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4114,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3013,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3013,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 4114,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2003,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3583,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2919,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1602,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2857,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2637,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2637,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2857,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2744,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2512,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1854,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1551,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1552::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3952,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1581::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3306,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-160::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2428,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1619::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3488,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1642::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2493,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1701::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2889,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1726::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2821,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-17::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5945,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-212::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2501,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2544,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3479,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3479,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2544,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2144,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2725,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2858,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1957,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-249::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2606,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-372::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2920,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-377::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3229,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-385::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4433,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-429::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4354,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-486::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5604,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-510::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4048,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3750,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1822,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1822,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3750,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2629,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2533,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2155,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2336,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4750,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3130,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3130,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 4750,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2501,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 4784,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 3192,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 4000,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-566::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2251,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2248,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1648,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1648,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2248,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2142,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1688,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1958,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1630,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-596::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2597,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-602::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4848,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3620,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2611,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2611,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3620,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 3191,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2590,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2169,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 3760,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-831::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3537,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3312,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1736,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1736,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3312,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2864,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3685,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1769,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2645,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-858::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3454,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2063,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2083,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2083,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2063,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2201,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1730,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1572,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2680,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6122,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3294,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3294,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 6122,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 3333,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3747,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 3192,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 6623,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3668,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1738,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1738,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3668,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1865,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1703,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2596,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2214,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-109::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2243,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1103::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1347,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1341,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1771,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1771,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 1341,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1994,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2269,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 3173,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1698,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1155::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2627,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1273::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2707,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1306::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2687,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3056,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3207,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3207,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3056,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2737,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1802,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2621,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2856,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2633,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2256,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2256,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2633,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2005,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1947,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1990,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2282,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1279,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2355,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2355,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 1279,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1644,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1904,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1697,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1784,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1537::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2294,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1573::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2230,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1578::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2651,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1586::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2260,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1751::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2647,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1754::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3898,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1755::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4712,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-182::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2884,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1900::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1814,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1906::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2541,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1928::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1580,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3531,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2324,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2324,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3531,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2628,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 4848,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2041,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 4892,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2725,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1487,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1487,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2725,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2053,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2544,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1563,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2021,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2400,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2104,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2104,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2400,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1678,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3386,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2043,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2911,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5820,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3800,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3800,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 5820,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 3938,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2851,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 3302,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2316,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-426::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5137,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-482::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3778,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-486::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2699,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1735,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2082,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2082,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 1735,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1551,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1809,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1374,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 1339,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3603,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3764,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 3764,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 3603,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 3661,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 4674,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 3334,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 3154,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2751,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1859,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1859,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2751,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2383,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2118,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2047,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2291,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2204,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2536,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 2536,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2204,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2543,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2918,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1664,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 3248,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-786::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3393,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-829::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4640,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-82::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4875,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-852::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2467,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2094,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1704,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1704,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2094,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 2141,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 1648,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 1843,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2043,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2334,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1806,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 1806,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 2334,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 1967,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 2224,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 2237,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 2172,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-942::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2543,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1017::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3512,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5292,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 4520,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "same_family_same_role",
+    "chars": 4520,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron_a",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "same_family_diverse_role",
+    "chars": 5292,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 2,
+    "cell": "same_family_same_role",
+    "chars": 4424,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron_b",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 2,
+    "cell": "same_family_diverse_role",
+    "chars": 3674,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "neutral",
+    "seed": 3,
+    "cell": "same_family_same_role",
+    "chars": 4920,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "nemotron_c",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 3,
+    "cell": "same_family_diverse_role",
+    "chars": 5612,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1026::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2871,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-108::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4948,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1095::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 21964,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1099::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3159,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1121::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 9676,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1203::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 7264,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1276::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 9402,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1315::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5778,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1413::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5327,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1431::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4545,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1464::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 7863,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1505::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3552,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1558::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 24548,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-156::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6531,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1572::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6339,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-16::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 8567,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-26::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 8398,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-376::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 11194,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-405::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4568,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-440::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 9656,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-471::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4097,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-666::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4450,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-688::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4932,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-713::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3128,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-783::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4357,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-792::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5853,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-846::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5954,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-847::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3341,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-851::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5258,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-870::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 7598,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-889::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5499,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-903::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3675,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-905::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5444,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-935::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4083,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1068::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6707,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1070::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4125,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-107::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5575,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1129::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3404,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1180::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2408,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1195::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2800,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1206::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 8808,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1343::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2039,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-134::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6727,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1363::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3843,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1371::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3144,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-138::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2986,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1503::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5960,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1549::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6043,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1570::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4256,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1595::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3928,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-165::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4552,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-222::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3094,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-306::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2882,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-311::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4682,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-365::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6113,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-374::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3507,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-381::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3856,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-525::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3613,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-53::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4110,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-563::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6297,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-633::Q7",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4178,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-651::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4974,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-65::Q6",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 9279,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-721::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2986,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-794::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4057,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-835::Q5",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3290,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-912::Q8",
+    "agent": "nemotron",
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 9177,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1074::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 841,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1591,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1078::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 724,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2108,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1081::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 5250,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1148::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2963,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1214::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2456,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6654,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1233::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3644,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3847,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1258::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1781,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1288::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2935,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1326::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1699,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1408::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1269,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1411::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3257,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1837,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1413::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1889,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1657,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1547::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1627,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1552::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3048,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1581::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2496,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-160::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3642,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1619::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1709,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1642::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1426,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1701::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1861,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-1726::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2777,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-17::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4008,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-212::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2874,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3756,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-246::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3407,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-249::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3122,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-372::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4428,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-377::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2303,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-385::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3247,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-429::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1959,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-486::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2505,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-510::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4014,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2593,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-533::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1265,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2735,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-554::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2333,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-566::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2125,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1669,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-575::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2691,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-596::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1851,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-602::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3085,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1339,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-667::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2602,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-831::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2630,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1525,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-844::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2051,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-858::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4262,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2523,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-975::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1759,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3359,
+    "error": ""
+  },
+  {
+    "item_id": "AttNeg-OWA-D3-994::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3595,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 881,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1052::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1948,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-109::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1220,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1103::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 786,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2197,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1119::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2651,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1155::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1866,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1273::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5493,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1306::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 976,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2002,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1393::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2633,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2445,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1481::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1191,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2189,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1510::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1728,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1537::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2302,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1573::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1297,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1578::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2705,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1586::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2016,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1751::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1337,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1754::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2218,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1755::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4368,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-182::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1263,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1900::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1202,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1906::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3064,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-1928::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1552,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1356,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-251::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2679,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2756,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-26::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1735,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2153,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-377::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3336,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3470,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-408::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3684,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-426::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3754,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-482::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3291,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-486::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1867,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1854,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-584::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1575,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2027,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-663::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2870,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1760,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-6::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 2101,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1928,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-751::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 3533,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-786::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1813,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-829::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1650,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-82::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4164,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-852::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3946,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1523,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-853::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1439,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1099,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-911::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 1709,
+    "error": ""
+  },
+  {
+    "item_id": "AttNoneg-OWA-D3-942::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5181,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1017::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2665,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2631,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1022::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "neutral",
+    "seed": 1,
+    "cell": "cross_family_same_role",
+    "chars": 4631,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1026::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1510,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-108::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3386,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1095::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 10816,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1099::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2643,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1121::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4542,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1203::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 10142,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1276::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4711,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1315::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4121,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1413::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3186,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1431::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 10851,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1464::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2508,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1505::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3323,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1558::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5985,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-156::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2228,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-1572::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3553,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-16::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3989,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-26::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4187,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-376::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3126,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-405::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2906,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-440::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4793,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-471::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4928,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-666::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 6132,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-688::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4977,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-713::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2320,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-783::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3860,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-792::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3424,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-846::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4517,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-847::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2073,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-851::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4057,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-870::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3715,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-889::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2056,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-903::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2617,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-905::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4076,
+    "error": ""
+  },
+  {
+    "item_id": "RelNeg-OWA-D3-935::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3137,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1068::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5255,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1070::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2497,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-107::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 4976,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1129::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2847,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1180::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3301,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1195::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3447,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1206::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3729,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1343::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2809,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-134::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5993,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1363::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2124,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1371::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1942,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-138::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5080,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1503::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2550,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1549::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5759,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1570::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2642,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-1595::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2091,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-165::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3573,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-222::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2269,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-306::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2502,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-311::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 8360,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-365::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 7428,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-374::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2024,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-381::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2312,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-525::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3558,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-53::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2904,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-563::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2853,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-633::Q7",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3077,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-651::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3794,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-65::Q6",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 5756,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-721::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "forward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 3548,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-794::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 2502,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-835::Q5",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "skeptic",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 1777,
+    "error": ""
+  },
+  {
+    "item_id": "RelNoneg-OWA-D3-912::Q8",
+    "agent": "gptoss",
+    "model": "openai/gpt-oss-20b:free",
+    "role": "backward",
+    "seed": 1,
+    "cell": "cross_family_diverse_role",
+    "chars": 7083,
+    "error": ""
+  }
+]

@@ -1,0 +1,195 @@
+=== waiting for generation to finish ===
+generation process exited at Sat 08 Aug 2026 04:06:55 AM AEST
+=== purging any errored cache entries ===
+cached generations: 846
+=== step 1: refill gaps (cache hits + retries) ===
+  720/900  errors=0  1.4min elapsed  eta 0min
+  730/900  errors=0  1.4min elapsed  eta 0min
+  740/900  errors=0  1.4min elapsed  eta 0min
+  750/900  errors=0  1.4min elapsed  eta 0min
+  760/900  errors=0  1.4min elapsed  eta 0min
+  770/900  errors=0  1.4min elapsed  eta 0min
+  780/900  errors=0  1.4min elapsed  eta 0min
+  790/900  errors=0  1.4min elapsed  eta 0min
+  800/900  errors=0  1.4min elapsed  eta 0min
+  810/900  errors=0  1.4min elapsed  eta 0min
+  820/900  errors=0  1.4min elapsed  eta 0min
+  830/900  errors=0  1.4min elapsed  eta 0min
+  840/900  errors=0  1.4min elapsed  eta 0min
+  850/900  errors=0  1.4min elapsed  eta 0min
+  860/900  errors=0  1.4min elapsed  eta 0min
+  870/900  errors=0  1.4min elapsed  eta 0min
+  880/900  errors=0  1.4min elapsed  eta 0min
+  890/900  errors=0  1.4min elapsed  eta 0min
+  900/900  errors=0  1.4min elapsed  eta 0min
+done: 900 generations, 0 errors, cache={'embed': 15, 'generation': 850, 'nli': 29}
+=== step 2: E0 ===
+generation coverage: {'planned': 900, 'cached': 900, 'missing': 0}
+
+same_family_same_role: n=50
+  per-agent {'ornith_a': 1.0, 'ornith_b': 0.98, 'ornith_c': 0.98}
+  consensus 0.9800  (mean single 0.9867, best 1.0000)
+  rho 1.0  M_eff 1.0  double-fault ratio 50.0
+
+same_family_diverse_role: n=47
+  per-agent {'ornith_a': 0.9787, 'ornith_b': 0.9787, 'ornith_c': 1.0}
+  consensus 1.0000  (mean single 0.9858, best 1.0000)
+  rho -0.02174  M_eff 3.1364  double-fault ratio 0.0
+
+cross_family_same_role: n=45
+  per-agent {'laguna': 0.9333, 'ornith': 1.0, 'qwen': 1.0}
+  consensus 1.0000  (mean single 0.9778, best 1.0000)
+  rho None  M_eff 3.0  double-fault ratio None
+
+cross_family_diverse_role: n=120
+  per-agent {'laguna': 0.8583, 'ornith': 0.9583, 'qwen': 0.9917}
+  consensus 0.9833  (mean single 0.9361, best 0.9917)
+  rho 0.08047  M_eff 2.5841  double-fault ratio 2.243
+
+wrote out/e0_summary.json
+registered contrast: {
+  "same_role": {
+    "cross_family_rho": null,
+    "same_family_rho": 1.0,
+    "rho_reduction": null,
+    "cross_family_m_eff": 3.0,
+    "same_family_m_eff": 1.0
+  },
+  "diverse_role": {
+    "cross_family_rho": 0.08047,
+    "same_family_rho": -0.02174,
+    "rho_reduction": -0.10221,
+    "cross_family_m_eff": 2.5841,
+    "same_family_m_eff": 3.1364
+  }
+}
+=== step 3: E1 (NLI on CPU; the long pole) ===
+    },
+    "prevalence_only": {
+      "test_log_loss": 0.19842,
+      "test_auroc": 0.5,
+      "test_accuracy": 0.95122
+    }
+  },
+  "primary_delta_log_loss_vs_covariate": {
+    "WCT-EM": {
+      "delta_log_loss": {
+        "point": -0.15877,
+        "lo": -0.24946,
+        "hi": -0.07022,
+        "sd_items": 0.46041,
+        "n_items": 100
+      },
+      "delta": 0.02,
+      "decision": "stop"
+    },
+    "WCT-U": {
+      "delta_log_loss": {
+        "point": -0.11143,
+        "lo": -0.19665,
+        "hi": -0.02651,
+        "sd_items": 0.4371,
+        "n_items": 100
+      },
+      "delta": 0.02,
+      "decision": "stop"
+    },
+    "WCT-C": {
+      "delta_log_loss": {
+        "point": 0.03912,
+        "lo": -0.01725,
+        "hi": 0.09797,
+        "sd_items": 0.29654,
+        "n_items": 100
+      },
+      "delta": 0.02,
+      "decision": "inconclusive"
+    }
+  },
+  "within_item_auroc": {
+    "point": 0.90476,
+    "lo": 0.83333,
+    "hi": 1.0,
+    "se": 0.04214,
+    "n_boot": 1000,
+    "delta": 0.55,
+    "decision": "go"
+  },
+  "permutation_null": {
+    "observed": 0.89103,
+    "null_mean": 0.61216,
+    "null_sd": 0.06385,
+    "p": 0.001,
+    "n_perm": 1000
+  },
+  "alignment_audit": {
+    "aligner_self_identification": {
+      "n_probes": 1483,
+      "accuracy": 0.9724,
+      "wrong_proposition": 41,
+      "wrong_polarity": 0,
+      "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure."
+    },
+    "lexical_reference": {
+      "n_reference": 1460,
+      "n_predicted": 1197,
+      "recall_mean": 0.6899,
+      "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong."
+    },
+    "same_agent_conflicts": 853,
+    "observations": 1197,
+    "claims": 24621,
+    "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0)."
+  }
+}
+
+wrote out/e1_summary.json
+=== step 4: M0 artifacts ===
+    se=0.0237, 95% half-width +/-0.046 -> smallest detectable AUROC 0.546
+
+all ceiling invariants passed
+  the random draw of per-source reliabilities, not estimator noise.
+
+all simulator invariants (I1-I5) passed
+=== step 5: result package ===
+  "E1_primary_WCT-EM": {
+    "metric": "delta log-loss vs covariate baseline",
+    "delta": 0.02,
+    "estimate": -0.15877,
+    "ci": [
+      -0.24946,
+      -0.07022
+    ],
+    "decision": "stop"
+  },
+  "E1_primary_WCT-U": {
+    "metric": "delta log-loss vs covariate baseline",
+    "delta": 0.02,
+    "estimate": -0.11143,
+    "ci": [
+      -0.19665,
+      -0.02651
+    ],
+    "decision": "stop"
+  },
+  "E1_within_item_auroc": {
+    "metric": "within-item AUROC, WCT-EM",
+    "delta": 0.55,
+    "estimate": 0.90476,
+    "ci": [
+      0.83333,
+      1.0
+    ],
+    "decision": "go"
+  }
+}
+
+negative / inconclusive:
+  - E1_primary_WCT-C: inconclusive (estimate 0.03912, delta 0.02)
+  - E1_primary_WCT-EM: stop (estimate -0.15877, delta 0.02)
+  - E1_primary_WCT-U: stop (estimate -0.11143, delta 0.02)
+  - E0 registered prediction FAILED for diverse_role: cross-family rho 0.08047 is not below same-family rho -0.02174 (reduction -0.10221)
+  - OpenRouter replication panel NOT RUN: OPENROUTER_API_KEY unset, so the primary panel of the pre-registration is missing and every result is single-panel
+
+wrote out/result_package.json
+=== ALL DONE at Sat 08 Aug 2026 09:15:48 AM AEST ===
