@@ -1,0 +1,208 @@
+# WCT pre-registration manifest (protocol EXPERIMENT.md 3.1)
+#
+# Frozen at R0. Every threshold, delta, split and analysis choice below is fixed
+# BEFORE any experimental generation. Results are recorded against these values
+# regardless of outcome. Moving any delta after results are visible destroys the
+# pre-registration (DECISIONS.md 2026-07-27, OQ1).
+
+protocol_version: "1.0"
+frozen_at: "2026-08-07"
+schema_version: "1"
+
+# ---------------------------------------------------------------- estimand
+estimand: >
+  Performance of a FIXED panel of named models and role prompts over a sampled
+  distribution of ProofWriter OWA items. This is not an average causal effect of
+  "architectures in general" (assumption M10). Generalisation requires
+  replication with an independently chosen panel, which is why the OpenRouter
+  panel is run as a second, independently selected panel rather than as extra n.
+
+# ---------------------------------------------------------------- panels
+panels:
+  local:
+    role: replication
+    backend: local
+    # 3 distinct families. Odd panel size per D11: an even panel decides ~26.5%
+    # of binary propositions by coin flip at p=0.70.
+    cross_family:
+      qwen: thinkingcap-qwen3.6-27b
+      laguna: laguna-xs-2.1
+      ornith: ornith-1.0-35b
+    # same-family control = self-consistency: one model, three seeds
+    same_family:
+      ornith_a: ornith-1.0-35b
+      ornith_b: ornith-1.0-35b
+      ornith_c: ornith-1.0-35b
+    excluded:
+      deepseek-v4-flash: "fails to load on this host (GOTCHAS.md)"
+      ornith-1.0-35b-mtp-apex: >
+        same family as ornith-1.0-35b; counting both would inflate apparent
+        panel diversity while sharing training lineage
+  openrouter:
+    role: primary
+    backend: openrouter
+    status: active
+    # R0 A1, MEASURED 2026-08-08 against /api/v1/key, not read off the public
+    # catalogue: is_free_tier=false (purchased credits present), so the account
+    # carries the 1,000 free-model requests/day allowance; usage was 0 at freeze.
+    measured_quota:
+      free_requests_per_day: 1000
+      usage_at_freeze: 0
+      spend_limit: null
+    # Three DISTINCT families, none of which appears in the local panel, so the
+    # two panels are independently selected rather than partially overlapping.
+    # That is what makes this a replication with a different panel rather than
+    # extra n on the same one (assumption M10).
+    cross_family:
+      nemotron: nvidia/nemotron-3-super-120b-a12b:free
+      gptoss: openai/gpt-oss-20b:free
+      gemma: google/gemma-4-26b-a4b-it:free
+    same_family:
+      nemotron_a: nvidia/nemotron-3-super-120b-a12b:free
+      nemotron_b: nvidia/nemotron-3-super-120b-a12b:free
+      nemotron_c: nvidia/nemotron-3-super-120b-a12b:free
+    # R0 A5: request cap must fit the envelope with 20% retry allowance.
+    # E1 treatment cell on all 150 items (450) + the three E0 factorial cells on
+    # a 30-item calibration subset (270) = 720, and 720 * 1.2 = 864 < 1000.
+    # The full 900-call plan used locally would not fit.
+    e0_calib_subset: 30
+    excluded:
+      "poolside/laguna-s-2.1:free": >
+        poolside also supplies the local panel's laguna-xs-2.1; including it
+        would make the two panels share a family and weaken the replication
+      "inclusionai/ling-3.0-flash:free": "no longer served free"
+      "google/gemma-4-31b-it:free": "provider returned 429 at smoke test"
+      "poolside/laguna-m.1:free": "404, no endpoints"
+      "nvidia/nemotron-3-ultra-550b-a55b:free": >
+        same family as nemotron-3-super; counting both would inflate apparent
+        panel diversity while sharing training lineage
+    deviation_from_protocol: >
+      EXPERIMENT.md R0 A2 asks for FIVE pinned families. Only four distinct
+      families currently hold working free endpoints, and one of those is
+      shared with the local panel, so this panel is M=3. M=3 is odd, which is
+      what D11 actually requires, and it matches the local panel so the two are
+      comparable; but the five-family target is not met and no result here
+      should be read as if it were.
+
+decode:
+  temperature: 0.7
+  max_tokens: 3000
+  seeds: [1, 2, 3]
+
+roles: [neutral, forward, backward, skeptic]
+role_assignment: latin_square   # role is orthogonal to agent identity (defect D4)
+
+# ---------------------------------------------------------------- dataset
+dataset:
+  source: hitachi-nlp/proofwriter_processed_OWA
+  config: depth-3
+  split: test
+  selection:
+    require_conjunctive: true    # exercises protocol invariant 7
+    min_target_qdep: 2           # target question needs real derivation, not lookup
+  n_calibration: 50
+  n_test: 100
+  split_seed: 20260807
+  split_level: item              # defect D5: claims are nested within items
+
+# ---------------------------------------------------------------- E0
+E0:
+  design: 2x2 factorial (family diversity x role diversity), M=3 per cell
+  cells: [same_family_same_role, same_family_diverse_role,
+          cross_family_same_role, cross_family_diverse_role]
+  measured:
+    - per-agent accuracy
+    - pairwise disagreement rate
+    - double-fault rate
+    - residual error correlation rho (conditional on item difficulty)
+    - M_eff = M / (1 + (M-1)*rho)
+    - consensus accuracy
+    - same-wrong-answer convergence
+  gate: none   # E0 is calibration and measurement; it makes no continuation claim
+  prediction: >
+    Registered directional prediction: cross-family cells show lower residual
+    error correlation than same-family cells, hence higher M_eff. If they do
+    not, the family-diversity premise (a) of Claim A is falsified at its
+    cheapest test and E1's panel contrast loses its rationale.
+
+# ---------------------------------------------------------------- E1
+E1:
+  unit: canonical proposition, nested within item
+  ground_truth: >
+    ProofWriter OWA closure. Propositions answering True map to Y=1 and False to
+    Y=0; Unknown propositions are EXCLUDED from the primary analysis and
+    reported separately, because "the theory does not decide this" is a
+    different quantity from proposition falsity.
+  primary:
+    metric: held-out item-stratified delta log-loss, WCT-EM vs covariate baseline
+    delta: 0.02          # nats; smallest reduction worth acting on
+    interval: item-block bootstrap, 2000 resamples, 95%
+  co_primary:
+    metric: precision@k at the selector's operating point
+    k_rule: number of propositions the panel affirms at least twice
+    delta: 0.05
+  descriptive:
+    metric: within-item AUROC of WCT-EM score against proposition truth
+    delta: 0.55
+    detectability_note: >
+      m0/ceiling.py gives smallest detectable AUROC 0.546 at 40 items with
+      across-item sd 0.15. At 100 test items the half-width is +/-0.029, so
+      delta=0.55 sits above the detection floor. Feasibility precedes power
+      (protocol 1.1).
+  covariate_baseline:
+    features: [agent identity, dependency depth, claim length, self-reported confidence]
+    note: >
+      Receives IDENTICAL calibration treatment to WCT-EM. Any advantage must
+      survive that, or it is an artifact of one arm being tuned.
+  nulls:
+    within_item_truth_permutation: 1000
+  robustness:
+    shared_judge_subsample: 0.20   # second embedding/NLI stack on a fixed 20%
+  arms:
+    - WCT-U      # uniform unique-source, the reference
+    - WCT-EM     # three-state Dawid-Skene, truth latent, PRIMARY unsupervised arm (D9)
+    - WCT-C      # calibrated on labelled calibration items only
+    - uncapped   # ablation: claim instances not capped per agent (tests M6)
+    - single_best_calibration_selected
+  decision_rule: >
+    Go if the CI excludes zero in the beneficial direction AND the point
+    estimate is at least delta. Stop if the upper bound is below delta or the
+    effect is harmful. Otherwise inconclusive (protocol 1.1). A failed gate
+    PARKS the workstream for a human go/no-go; it never auto-abandons
+    (DECISIONS.md, OQ2).
+
+# ---------------------------------------------------------------- measurement
+measurement:
+  embedding:
+    model: text-embedding-nomic-embed-text-v1.5
+    endpoint: local :1234
+    use: retrieval prefilter ONLY; cosine is never multiplied into the evidence score
+  nli:
+    model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+    revision: PIN_AT_DOWNLOAD
+    device: cpu
+    top_k: 8              # set from measured throughput at R0 A3
+    store: raw bidirectional probabilities, unthresholded
+  alignment:
+    method: constrained clustering on bidirectional entailment
+    audit: alignment precision/recall against ProofWriter canonical propositions
+    note: >
+      Because canonical propositions are known, alignment quality is MEASURED
+      against ground truth rather than assumed (assumption M5). This is the
+      check that distinguishes "agreement measures reasoning" from "agreement
+      measures the mapper".
+  one_vote_rule: >
+    At most one observation per (agent, proposition), enforced in cluster.py.
+    Verbosity must not become voting power (assumption M6).
+
+# ---------------------------------------------------------------- exclusions
+exclusions:
+  - generations with empty trace after one recorded retry
+  - items where fewer than 2 agents returned a usable trace
+  - propositions with answer Unknown (from the primary analysis only)
+
+analyst_degrees_of_freedom: >
+  Deltas were explored on M0 SIMULATION with known ground truth before any real
+  inference, then frozen here (DECISIONS.md, OQ1). They are not moved after
+  E0/E1 results are visible. Any deviation from this file is recorded as a
+  protocol deviation in DECISIONS.md with its date, not silently applied.
