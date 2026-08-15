@@ -3,3 +3,13 @@ __pycache__/
 *.pyc
 .agent/
 artifacts/
+
+# Regenerable caches: local nomic endpoint + in-process CPU NLI, zero API quota
+# to rebuild. out/cache/generation/ is NOT ignored -- it cost real quota and is
+# the artifact that makes analysis re-runnable at zero inference cost.
+out/cache/embed/
+out/cache/nli/
+.pytest_cache/
+
+# Personal, not project content
+signal-*.pdf

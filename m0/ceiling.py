@@ -18,8 +18,13 @@ from math import sqrt
 import numpy as np
 from scipy.stats import norm
 
-RNG = np.random.default_rng(0)
-M_PANEL = 4  # panel size used in the illustrative tables; R0 pins the real value
+# Each report seeds its OWN generator. A single module-level RNG threaded
+# through every report in call order makes each table depend on which tables ran
+# before it, so running one report alone reproduces different numbers than
+# running the file. For a paper whose claims are traceable to these tables that
+# is a reproducibility defect, not a stylistic one.
+SEEDS = {"gain": 20260807, "estimators": 20260808}
+M_PANEL = 5  # odd, per D11; R0 pins the panel actually used
 
 
 # --------------------------------------------------------------------- I8
@@ -52,6 +57,7 @@ def correlated_panel(n, m, p, r, rng):
 
 
 def report_gain_and_ceiling(n=400_000):
+    rng = np.random.default_rng(SEEDS["gain"])
     print("=" * 74)
     print(f"I11 MAJORITY GAIN vs ORACLE CEILING (M={M_PANEL}, Gaussian copula, {n:,} sims)")
     print("=" * 74)
@@ -59,17 +65,20 @@ def report_gain_and_ceiling(n=400_000):
           f"{'oracle':>9} {'headroom':>9}")
     for p in [0.60, 0.70, 0.80]:
         for r in [0.0, 0.2, 0.4]:
-            correct = correlated_panel(n, M_PANEL, p, r, RNG)
+            correct = correlated_panel(n, M_PANEL, p, r, rng)
             phi = np.corrcoef(correct[:, 0].astype(float),
                               correct[:, 1].astype(float))[0, 1]
             s = correct.sum(1)
-            maj = (s > M_PANEL / 2) | ((s == M_PANEL / 2) & (RNG.random(n) < 0.5))
+            maj = (s > M_PANEL / 2) | ((s == M_PANEL / 2) & (rng.random(n) < 0.5))
             oracle = s > 0  # any source correct => a perfect selector could find it
             assert oracle.mean() >= maj.mean() - 1e-9, "oracle must bound any selector"
             print(f"{p:>9.2f} {phi:>9.3f} {maj.mean():>9.3f} {maj.mean() - p:>+8.3f} "
                   f"{oracle.mean():>9.3f} {oracle.mean() - p:>+9.3f}")
     print("\n  'headroom' bounds E3's achievable effect. If the pilot's measured")
-    print("  headroom is below delta, the end-to-end gate is unwinnable — stop there.\n")
+    print("  headroom is below delta, the end-to-end gate is unwinnable — stop there.")
+    print("  This oracle is deliberately generous: it credits the panel whenever")
+    print("  ANY source is right, which no unsupervised selector can achieve. It")
+    print("  is an upper bound, so it can only rule gates OUT, never in.\n")
 
 
 # ---------------------------------------------------------------- I9 + I10
@@ -111,42 +120,81 @@ def simulate_votes(k, ps, rng):
     return t, v
 
 
-def report_estimators(k=1200, reps=30):
+def report_estimators(k=1200, reps=30, n_boot=2000):
+    """I9/I10, reported as PAIRED per-panel differences.
+
+    Two things are deliberately not done the obvious way.
+
+    First, the single-source baseline is split in two. `oracle_single` is
+    max(true accuracy), which requires truth labels to identify and is therefore
+    an upper bound no unlabelled method can be asked to clear.
+    `calib_single` picks the best source on the first half of the propositions
+    and scores it on the second, which is what an analyst can actually do. An
+    earlier version of this file reported only the oracle and described it as
+    "the best single source", which overstates the baseline.
+
+    Second, the EM-minus-uniform gap is reported as a paired difference with a
+    bootstrap interval rather than as a ratio of column means. The across-rep sd
+    of each column is dominated by the random draw of per-source reliabilities,
+    which is common to both estimators and cancels within a panel; quoting an
+    unpaired ratio hides that the comparison is far tighter than the columns
+    suggest.
+    """
+    rng = np.random.default_rng(SEEDS["estimators"])
     print("=" * 74)
     print("I9/I10  UNIFORM (WCT-U) vs LATENT-TRUTH EM (WCT-EM) — neither uses labels")
     print("=" * 74)
     out = {}
     for spread, desc in [(0.0, "homogeneous   p=.70 for all sources"),
                          (0.225, "heterogeneous p in [.52,.93]")]:
-        acc = {kk: [] for kk in ("best_single", "uniform", "ds_em", "oracle_wt")}
+        names = ("calib_single", "oracle_single", "uniform", "ds_em", "oracle_wt")
+        acc = {kk: [] for kk in names}
         for _ in range(reps):
-            ps = np.clip(0.70 + spread * RNG.standard_normal(M_PANEL), 0.52, 0.93)
-            t, v = simulate_votes(k, ps, RNG)
-            acc["best_single"].append(ps.max())
+            ps = np.clip(0.70 + spread * rng.standard_normal(M_PANEL), 0.52, 0.93)
+            t, v = simulate_votes(k, ps, rng)
+            half = k // 2
+            correct = (v == np.where(t == 1, 1, -1)[:, None])
+            chosen = int(np.argmax(correct[:half].mean(0)))
+            acc["calib_single"].append(float(correct[half:, chosen].mean()))
+            acc["oracle_single"].append(float(correct[half:].mean(0).max()))
             acc["uniform"].append((((v.sum(1) > 0).astype(int)) == t).mean())
             acc["ds_em"].append((((dawid_skene(v) > 0.5).astype(int)) == t).mean())
             w = np.log(ps / (1 - ps))  # true log-odds weights: bound for any weighting
             acc["oracle_wt"].append((((v @ w > 0).astype(int)) == t).mean())
         print(f"\n  {desc}")
-        for name in ("best_single", "uniform", "ds_em", "oracle_wt"):
+        for name in names:
             arr = np.array(acc[name])
-            print(f"    {name:>12}: {arr.mean():.4f}  (sd {arr.std():.4f})")
-        out[desc[:3]] = {kk: float(np.mean(vv)) for kk, vv in acc.items()}
+            print(f"    {name:>14}: {arr.mean():.4f}  (sd across panels {arr.std(ddof=1):.4f})")
+        out[desc[:3]] = {kk: np.array(vv) for kk, vv in acc.items()}
 
     hom, het = out["hom"], out["het"]
-    # I9: uniform weighting is misspecified on a heterogeneous panel
-    assert het["uniform"] < het["best_single"], \
-        "expected uniform aggregation to lose to the best single source when sources differ"
-    # I10: EM matches uniform when sources are equal, beats it when they are not
-    assert abs(hom["ds_em"] - hom["uniform"]) < 0.01, \
+    # I9: uniform weighting is misspecified once per-source reliability spreads
+    assert het["uniform"].mean() < het["oracle_single"].mean(), \
+        "uniform aggregation should lose to an ORACLE-selected single source " \
+        "when sources differ"
+    # I10: EM costs nothing when sources are equal, and helps when they are not
+    assert abs(hom["ds_em"].mean() - hom["uniform"].mean()) < 0.01, \
         "EM should not cost anything on a homogeneous panel"
-    assert het["ds_em"] > het["uniform"] + 0.01, \
-        "EM should recover most of the oracle-weighting gap on a heterogeneous panel"
-    recovered = ((het["ds_em"] - het["uniform"])
-                 / max(het["oracle_wt"] - het["uniform"], 1e-9))
-    print(f"\n  WCT-EM recovers {recovered:.0%} of the uniform -> oracle-weight gap,")
-    print("  using no truth labels. A heterogeneous panel is exactly the regime the")
-    print("  OpenRouter pool is in, so WCT-U alone would understate the method.\n")
+
+    d = het["ds_em"] - het["uniform"]
+    gap = het["oracle_wt"] - het["uniform"]
+    boot = np.array([d[rng.integers(0, reps, reps)].mean() for _ in range(n_boot)])
+    lo, hi = np.quantile(boot, [0.025, 0.975])
+    frac = d / np.maximum(gap, 1e-9)
+    fboot = np.array([frac[rng.integers(0, reps, reps)].mean() for _ in range(n_boot)])
+    flo, fhi = np.quantile(fboot, [0.025, 0.975])
+    assert lo > 0, "I10: EM must beat uniform on a heterogeneous panel"
+
+    print(f"\n  PAIRED WCT-EM - WCT-U (heterogeneous): {d.mean():+.4f}"
+          f"  95% CI [{lo:+.4f}, {hi:+.4f}] over {reps} panels")
+    print(f"  Share of the uniform -> oracle-weight gap recovered: {frac.mean():.0%}"
+          f"  95% CI [{flo:.0%}, {fhi:.0%}]")
+    print(f"  Achievable single-source baseline (calibration-selected):"
+          f" {het['calib_single'].mean():.4f}")
+    print(f"  Oracle single source (needs labels, upper bound only):"
+          f" {het['oracle_single'].mean():.4f}")
+    print("  WCT-EM uses no truth labels. A heterogeneous panel is the regime a")
+    print("  mixed free-model pool is in, so WCT-U alone would understate it.\n")
 
 
 # --------------------------------------------------------------------- power
