@@ -15,13 +15,16 @@ from wct import nodes
 from wct.schema import Item, Proposition
 
 CANDIDATES = [
-    # (label, backend, model)
-    ("panelA'  qwen-local", "local", "qwen3.8-27b"),
-    ("panelA'  laguna-or ", "openrouter", "poolside/laguna-xs-2.1:free"),
-    ("panelA'  glm-hoon  ", "hoonify", "zai-org/GLM-5.2"),
-    ("panelB   nemotron  ", "openrouter", "nvidia/nemotron-3-super-120b-a12b:free"),
-    ("panelB   gptoss    ", "openrouter", "openai/gpt-oss-20b:free"),
-    ("panelB   gemma     ", "openrouter", "google/gemma-4-26b-a4b-it:free"),
+    # (label, backend, model, base_url, expected_resolved)
+    # qwen serves on the :8083 llama-server under stale launch alias
+    # 'ornith35'; GGUF identity verified (Qwen3.8-27B-Q4_K_M, 27.3B params)
+    ("panelA'  qwen-local", "local", "qwen3.8-27b",
+     "http://127.0.0.1:8083/v1", "ornith35"),
+    ("panelA'  laguna-or ", "openrouter", "poolside/laguna-xs-2.1:free", None, None),
+    ("panelA'  glm-hoon  ", "hoonify", "zai-org/GLM-5.2", None, None),
+    ("panelB   nemotron  ", "openrouter", "nvidia/nemotron-3-super-120b-a12b:free", None, None),
+    ("panelB   gptoss    ", "openrouter", "openai/gpt-oss-20b:free", None, None),
+    ("panelB   gemma     ", "openrouter", "google/gemma-4-26b-a4b-it:free", None, None),
 ]
 
 # A tiny throwaway theory: real prompt shape, not an experimental item, so the
@@ -42,16 +45,20 @@ _PROBE = Item(
 
 
 def main() -> int:
-    loaded = load_harness_env()
-    print(f"env: loaded {len(loaded)} keys: {', '.join(loaded) or '(none new)'}")
+    import sys
+    only = sys.argv[1] if len(sys.argv) > 1 else ""
+    picked = [c for c in CANDIDATES if only in c[0] or only in c[1]]
+    if any(c[1] != "local" for c in picked):
+        loaded = load_harness_env()
+        print(f"env: loaded {len(loaded)} keys: {', '.join(loaded) or '(none new)'}")
     failures = 0
-    for label, backend, model in CANDIDATES:
+    for label, backend, model, base, expected in picked:
         t0 = time.time()
         try:
-            client = nodes.Client(backend, timeout=180.0)
+            client = nodes.Client(backend, timeout=180.0, base_url=base)
             g = client.generate(_PROBE, agent="smoke", model=model,
                                 role="neutral", seed=1, temperature=0.7,
-                                max_tokens=2000)
+                                max_tokens=2000, expected_resolved=expected)
             el = time.time() - t0
             if g.error:
                 print(f"FAIL {label} [{backend}] {model}: {g.error[:120]}")
@@ -64,7 +71,7 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001 — smoke test reports, never raises
             print(f"FAIL {label} [{backend}] {model}: {type(e).__name__}: {str(e)[:120]}")
             failures += 1
-    print(f"\n{len(CANDIDATES) - failures}/{len(CANDIDATES)} endpoints pass")
+    print(f"\n{len(picked) - failures}/{len(picked)} endpoints pass")
     return 1 if failures else 0
 
 

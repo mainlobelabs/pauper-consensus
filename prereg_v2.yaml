@@ -4,7 +4,7 @@
 # Review findings from the pre-tag adversarial verification are incorporated;
 # every registered quantity has a frozen implementation in exp/e1_v2.py.
 protocol_version: '2.0'
-frozen_at: '2026-08-15'
+frozen_at: '2026-08-16'
 freeze_discipline: This registration is committed and git-tagged BEFORE any v2 generation
   call. v1 failed its own R0 A9 tagging requirement (recorded in the git tag prereg-retrospective-2026-08-15
   — an annotated tag, not a file — and the DECISIONS.md 2026-08-15 entries); v2 does not.
@@ -26,6 +26,15 @@ panels:
       qwen:
         backend: local
         model: qwen3.8-27b
+        base: http://127.0.0.1:8083/v1
+        expected_resolved: ornith35
+        identity_evidence: 'The :8083 llama-server answers under stale launch alias ''ornith35''
+          — NOT the ornith-1.0-35b model of v1 panel A. Verified 2026-08-16 via /props: model_path
+          /home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf,
+          n_params 27,320,697,856, aliases [''ornith35'',''qwen3.8-27b'']. The registered
+          request id is qwen3.8-27b; the registered expected echo is ornith35; any other echo
+          is a substitution and aborts. The :1234 LM Studio catalogue lists qwen3.8-27b but
+          400s on completion (smoke 2026-08-15) and is not used.'
       laguna:
         backend: openrouter
         model: poolside/laguna-xs-2.1:free
@@ -34,7 +43,8 @@ panels:
         model: zai-org/GLM-5.2
     resolution_rule: exact pinned id or the panel is DROPPED; substitution forbidden
     family_disjointness: 'qwen/poolside/zhipu vs panelB nvidia/openai/google: disjoint'
-    smoke_test: 'REQUIRED before tag: exp/smoke_v2.py output recorded in the freeze commit'
+    smoke_test: 'DONE 2026-08-15/16, evidence in out/smoke_v2_evidence.txt (freeze commit):
+      laguna-or and glm-hoonify pass; qwen passes on the :8083 base above.'
     cost_note: GLM-5.2 via Hoonify is PAID ($1.40/$4.40 per 1M, no provider-side ceiling);
       the call cap below is the only guard. Est. 150 calls ~= USD 2-3.
   panelB:
@@ -50,7 +60,8 @@ panels:
         backend: openrouter
         model: google/gemma-4-26b-a4b-it:free
     resolution_rule: exact pinned id or the panel is DROPPED; substitution forbidden
-    smoke_test: REQUIRED before tag (endpoints churn; v1 freeze predates today by a week)
+    smoke_test: 'DONE 2026-08-15, evidence in out/smoke_v2_evidence.txt: all three endpoints
+      pass.'
 dataset:
   sources:
     depth-3: hitachi-nlp/proofwriter_processed_OWA depth-3/test

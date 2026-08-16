@@ -50,6 +50,8 @@ def build_plan(items, panel: dict) -> list[dict]:
         for a in agents:
             plan.append(dict(item=it, agent=a, backend=cross[a]["backend"],
                              model=cross[a]["model"], role=rot[a],
+                             base=cross[a].get("base"),
+                             expected_resolved=cross[a].get("expected_resolved"),
                              seed=1, cell="cross_family_diverse_role"))
     return plan
 
@@ -103,18 +105,21 @@ def preflight(plan, panel_name: str) -> list[tuple[dict, str]]:
 
 
 def assert_local_models_served(panel: dict) -> None:
-    pinned = {c["model"] for c in panel["cross_family"].values()
-              if c["backend"] == "local"}
-    if not pinned:
-        return
-    with urllib.request.urlopen(f"{nodes.LOCAL_BASE}/models", timeout=15) as r:
-        served = {m["id"] for m in json.load(r)["data"]}
-    absent = pinned - served
-    if absent:
-        raise SystemExit(
-            f"ABORT: pinned local models not served: {sorted(absent)}. "
-            "Substitution is forbidden (prereg_v2 resolution_rule). "
-            "No calls were made.")
+    for c in panel["cross_family"].values():
+        if c["backend"] != "local":
+            continue
+        base = c.get("base") or nodes.LOCAL_BASE
+        with urllib.request.urlopen(f"{base}/models", timeout=15) as r:
+            data = json.load(r)["data"]
+        # a llama-server may answer under a launch alias; the pinned request
+        # id must appear among the served ids OR their alias lists
+        ok = any(c["model"] == m["id"] or c["model"] in (m.get("aliases") or [])
+                 for m in data)
+        if not ok:
+            raise SystemExit(
+                f"ABORT: pinned local model {c['model']} not served at {base} "
+                f"(served: {[m['id'] for m in data]}). Substitution is "
+                "forbidden (prereg_v2 resolution_rule). No calls were made.")
 
 
 def main() -> int:
@@ -150,7 +155,7 @@ def main() -> int:
     # model once (GOTCHAS), and remote backends batch together.
     todo.sort(key=lambda pk: (pk[0]["backend"], pk[0]["model"], pk[0]["item"].item_id))
 
-    clients: dict[str, nodes.Client] = {}
+    clients: dict[tuple, nodes.Client] = {}
     index, errors = [], 0
     t0 = time.time()
     for n, (p, _key) in enumerate(todo, 1):
@@ -162,10 +167,13 @@ def main() -> int:
             break
         attempts += 1
         ledger.write_text(json.dumps({"attempts": attempts}))
-        cl = clients.setdefault(p["backend"], nodes.Client(p["backend"]))
+        ckey = (p["backend"], p["base"])
+        cl = clients.setdefault(
+            ckey, nodes.Client(p["backend"], base_url=p["base"]))
         g = cl.generate(
             p["item"], p["agent"], p["model"], p["role"], seed=p["seed"],
             temperature=dec["temperature"], max_tokens=dec["max_tokens"],
+            expected_resolved=p["expected_resolved"],
         )
         errors += bool(g.error)
         index.append(dict(item_id=p["item"].item_id, agent=p["agent"],

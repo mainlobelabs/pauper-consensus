@@ -90,7 +90,8 @@ HOONIFY_BASE = "https://api.hoonify.ai/v1"
 
 
 class Client:
-    def __init__(self, backend: str = "local", timeout: float = 900.0):
+    def __init__(self, backend: str = "local", timeout: float = 900.0,
+                 base_url: str | None = None):
         self.backend = backend
         if backend == "local":
             self.base, self.key = LOCAL_BASE, "not-needed"
@@ -114,6 +115,8 @@ class Client:
                 )
         else:
             raise ValueError(backend)
+        if base_url:                       # per-agent serving override (v2)
+            self.base = base_url
         self.http = httpx.Client(timeout=timeout)
 
     def generate(
@@ -125,6 +128,7 @@ class Client:
         seed: int = 0,
         temperature: float = 0.7,
         max_tokens: int = 3000,
+        expected_resolved: str | None = None,
     ) -> Generation:
         prompt = build_prompt(item, role)
         key = cache.cache_key(
@@ -141,7 +145,8 @@ class Client:
         if hit is not None:
             return Generation(**hit)
 
-        gen = self._call(item, agent, model, role, prompt, seed, temperature, max_tokens)
+        gen = self._call(item, agent, model, role, prompt, seed, temperature,
+                         max_tokens, expected_resolved)
         # Failures are NOT cached. The cache is write-once, so persisting an
         # error would make a transient fault permanent: a 400 caused by the
         # server swapping models under contention would be frozen in as though
@@ -151,7 +156,8 @@ class Client:
             cache.put("generation", key, gen.__dict__)
         return gen
 
-    def _call(self, item, agent, model, role, prompt, seed, temperature, max_tokens):
+    def _call(self, item, agent, model, role, prompt, seed, temperature,
+              max_tokens, expected_resolved=None):
         body = {
             "model": model,
             "messages": [{"role": "user", "content": prompt}],
@@ -202,13 +208,23 @@ class Client:
                 # through an extension-substitution (qwen3.8-27b-instruct for
                 # qwen3.8-27b). Remote providers echo provider-prefixed or
                 # revision-suffixed ids, where containment of the model's own
-                # name is the strongest portable test.
+                # name is the strongest portable test. `expected_resolved`
+                # covers a server whose launch ALIAS differs from the model's
+                # honest name (the :8083 llama-server answers 'ornith35' while
+                # serving the registered Qwen3.8-27B GGUF): the registration
+                # pins the expected echo and anything else is a substitution.
                 if resolved:
-                    ok = (resolved == model if self.backend == "local"
-                          else model.split("/")[-1] in resolved)
+                    if expected_resolved is not None:
+                        ok = resolved == expected_resolved
+                    elif self.backend == "local":
+                        ok = resolved == model
+                    else:
+                        ok = model.split("/")[-1] in resolved
                     if not ok:
                         raise RuntimeError(
-                            f"model substitution: asked {model}, served {resolved}"
+                            f"model substitution: asked {model} "
+                            f"(expected echo {expected_resolved or model}), "
+                            f"served {resolved}"
                         )
                 return Generation(
                     item_id=item.item_id,
