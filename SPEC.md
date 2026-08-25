@@ -76,9 +76,12 @@ Two design choices do the work:
 
 ## 4. Corpus and ground truth
 
-- Corpus: 30 authored news-style articles (LLM-assisted drafting, human-checked),
-  each centered on a real-world topic **post-dating the training cutoff of every
-  panel model**. Each article contains at least one **in-passing mention** of a
+- Corpus: 30 authored news-style articles, each centered on a real-world topic
+  **post-dating the training cutoff of every panel model**. Where a complete
+  real news article on the event exists, it is used **verbatim** (source URL
+  recorded in the manifest, which makes the fact-check pass cheaper); otherwise
+  it is LLM-assisted drafting from web-verified facts. Either way, human-checked
+  and fact-checked per the rules below. Each article contains at least one **in-passing mention** of a
   secondary fact, so that some seeded claims are true only in the sense of being
   mentioned, and some questions about them have no answer in the text. Topic
   list frozen at Phase 0. Worked example: an article about SynthID watermarking
@@ -219,12 +222,27 @@ Two design choices do the work:
 - P5: the jury's consensus flags a strictly larger share of the solver's
   non-ENTAIL claims than of its ENTAIL claims on test articles (the verification
   layer catches the solver's hallucinations, not its facts).
+- P6 (co-designer's prediction, pre-registered 2026-08-25, in his words:
+  "a more capable near-frontier model is likely to confidently bullshit an
+  answer, and having the jury double-check it will materially improve the
+  accuracy of the model. Out of 30 questions, if it bullshits 25, the jury
+  stops that at under 10, which I'm saying is a 50 percent increase in
+  trustworthiness of reporting missing knowledge beyond what's available in
+  the revisited text"): on test articles, over the solver's pool-matched
+  claims on UNSPECIFIED propositions (questions the article does not answer),
+  (a) the solver bullshits a confident answer on at least 50 percent of them,
+  and (b) the jury-consensus gate (dropping low-consensus claims) removes at
+  least half of those wrong answers, i.e. the false-answer rate on
+  UNSPECIFIED questions drops from at least 50 percent to under 33 percent.
 
 Each prediction carries a power note: the tolerance is set from observed bin
 noise where a bin is involved, not from aspiration (the source study's lesson
 C9). P5's power note requires the test articles to yield at least 100
 pool-matched solver claims of each class; if not, P5 is reported descriptive
-only and the article count is raised before the next lock.
+only and the article count is raised before the next lock. P6's power note
+requires the test articles to yield at least 30 pool-matched solver claims on
+UNSPECIFIED propositions (the 30-question denominator of the prediction); if
+not, P6 is reported descriptive only.
 
 ## 9. Baselines, in order of stringency
 

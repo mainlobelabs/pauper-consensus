@@ -4,6 +4,35 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-25
 
+- Cutoff probe, qwen3.8-27b (orcarouter merge), 8 probes, 2026-08-25
+  (cutoff-probe/probes.md): the model is verified blind to the 2026-08-14 to
+  2026-08-25 band (Flores quake, Hurricane Lala, USS Abraham Lincoln, Hawk Fire
+  all unknown; 2022 canary known). It self-reports a cutoff of 2026-01, but the
+  October 2025 control (first $5T market cap) came back "Apple" instead of
+  Nvidia, so the self-report is not trusted and the topic window is NOT
+  widened: it stays 2026-08-14 to 2026-08-25, which is guaranteed
+  post-cutoff for the whole panel by the release-date argument alone. Reason:
+  a self-reported cutoff is an unverifiable claim about the merge's
+  fine-tune data; the release date is a fact.
+- Thesis-relevant bonus from the probe: the 27B makes confident factual errors
+  on pre-cutoff knowledge (the P7 control miss). The jury therefore has
+  something to catch even on items where the cutoff gap does not apply.
+  Marked for the thesis: the verification layer's value does not depend on
+  the cutoff gap being the only error source.
+- Corpus decision: real news articles used **verbatim** where a complete
+  article on the event exists (source URL in the manifest), drafted otherwise.
+  Reason: verbatim articles are fact-dense, real, and cheaper to fact-check
+  because the original is on record. As of today: 6 full single-topic
+  articles collected (3 on the Flores quake, 2 on the Lincoln, 1 on Lala) plus
+  ~10 headline digests to expand; target is 30, so drafting still dominates.
+- P6 pre-registered: the co-designer's prediction (near-frontier models
+  confidently bullshit; the jury gate cuts wrong answers on not-in-text
+  questions by at least half, ~25/30 wrong down to under 10/30). Frozen in
+  SPEC section 8 with a 30-claim power note; descriptive-only if the test
+  articles yield fewer than 30 UNSPECIFIED solver claims.
+
+## 2026-08-25 (earlier)
+
 - Redesign v0.10 (co-designer, Andryo): the corpus is now 30 authored
   news-style articles about real-world topics that post-date every panel model's
   training cutoff, instead of ProofWriter. Falsehoods are designed in: each

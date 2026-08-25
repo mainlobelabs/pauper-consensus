@@ -28,12 +28,23 @@ a pilot, and it says so on purpose.
   difficulty stated, E0 as a reported number, solver confidence = token
   probabilities, leave-one-out is each voter in turn, freeze-scope sentence.
   Nothing locked, nothing trained, no corpus built.
+- 2026-08-25: cutoff probe run against the live 27B (cutoff-probe/probes.md).
+  The 2026-08-14 to 2026-08-25 window is verified blind for the 27B (self-
+  reported cutoff 2026-01, not trusted, window not widened). P6
+  (co-designer's jury-gate prediction) pre-registered in SPEC section 8.
+  Verbatim-article option added to the corpus rules.
+- 2026-08-25: repo moving to the marzukia GitHub account; all commits
+  re-attributed to Andryo; remote to be pushed once the new PAT arrives.
 
 ## Next step
 
-Task 1: pick the 30 post-cutoff topics. Each must post-date the training
-cutoff of all six models; write down the cutoff date per family in the
-candidate list.
+Task 1, in progress. Window fixed at 2026-08-14 to 2026-08-25 (guaranteed
+post-cutoff for all six models by release date; verified blind for the 27B).
+Have ~10 verified candidate events and 6 full verbatim articles (3 Flores
+quake, 2 Lincoln, 1 Lala) plus ~10 headline digests. Remaining: collect ~20
+more detail-rich events from the window, pick the final 30 topics, record the
+cutoff date per family (4B cutoffs stay placeholders until those models are
+served and probed, tasks 11-12).
 
 ## Task list (in order)
 
@@ -118,8 +129,17 @@ candidate list.
   byte-identical; label-flip probe run; every number traceable to a committed
   artifact.
 
+## Repo and record-keeping
+
+1. [ ] Re-attribute all commits to Andryo (marzukia identity), rewrite history
+   locally, set repo-local git identity.
+2. [ ] Create the repo under marzukia on GitHub (private) with his new PAT,
+   push, verify. The PAT lives at ~/.secrets/github-andryo.pat (chmod 600);
+   the commit-as-Andryo workflow is the `commit-as-andryo` skill.
+
 ## Standing rules
 
 - One phase's "verify" must pass before the next starts.
 - Any change to a frozen quantity is a new registration, not an edit.
 - Post-hoc analyses are labelled post-hoc, always.
+- Commits in this repo are authored and committed as Andryo, not Frank.
