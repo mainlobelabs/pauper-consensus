@@ -190,9 +190,9 @@ Two design choices do the work:
   adversarial review": the extra expensive same-family compute call the
   product would otherwise make, and it doubles as the registered arm: the
   solver answering the claims as a sixth, un-tuned proposer, so the
-  oracle-vs-consensus decomposition includes the strong model. The exact
-  prompt is the co-designer's (supplied by link; text pending into the frozen
-  prompts).
+   oracle-vs-consensus decomposition includes the strong model. The prompt is
+   drafted from the co-designer's quoted wording (he dropped the link
+   question; final text frozen in `prereg.yaml`).
 - Memorization check: train/calibration accuracy gap reported per proposer. A
   gap above 10 points is logged in DECISIONS.md and read as memorization risk.
 - Weights frozen and content-hashed after training; hashes recorded in the
@@ -202,7 +202,8 @@ Two design choices do the work:
 
 - Jury task: one claim at a time. In: the article (evidence) plus one claim in
   question form. Out: `{ answer: PASS|FAIL, reason: <text> }`. The frozen
-  prompt (the co-designer's, exact text pending): "Answer this question only
+   prompt (drafted from the co-designer's quoted wording; final text in
+   `prereg.yaml`): "Answer this question only
   based on the information available on this article. [question]", carrying
   the prosecution's instruction that the verdict rests solely on the article.
   One call per claim (40 per article per juror), so cost and TTFT are

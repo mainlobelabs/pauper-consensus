@@ -68,9 +68,9 @@ This track is a pilot, and it says so on purpose.
   target = wrapper with the native output verbatim as reason, so the LoRA
   learns only the wrapper). Losslessness check per adapter on untrained
   articles: base-vs-fine-tuned output agreement plus PPL of the base native
-  outputs under the fine-tuned model (1.0 = lossless). Remaining open item:
-  the co-designer's exact prompt text (supplied by link) for the frozen
-  prompts.
+   outputs under the fine-tuned model (1.0 = lossless). No open items: he
+   dropped the prompt-link question ("don't worry about it"); the frozen
+   prompt is drafted from his quoted wording (task 9).
 
 ## Next step
 
@@ -78,8 +78,8 @@ ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
 is done and the 30-topic selection is approved. When the go-ahead comes: (a)
 task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
 Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
-keep-30; (b) bank the co-designer's exact claim-verification prompt text
-(supplied by link) into the frozen prompts, then pick the 1-4B jury families
+keep-30; (b) draft the frozen claim-verification prompt from his quoted
+wording (no link; he dropped the question), then pick the 1-4B jury families
 under the documented-cutoff filter (task 9); (c) freeze the corpus
 (prereg.yaml + git tag, task 10); then task 2, the label rubric.
 
@@ -113,7 +113,7 @@ under the documented-cutoff filter (task 9); (c) freeze the corpus
        record each family's documented cutoff in the manifest; write the frozen
        prompts: the 27B solver prompt (no contract, ordinary answers, the
        without-prompt baseline control) and the claim-verification prompt (the
-       jury contract: the co-designer's exact wording from his link - "Answer
+       jury contract: the co-designer's quoted wording - "Answer
        this question only based on the information available on this
        article. [question]" - one call per claim, out `{ answer: PASS|FAIL,
        reason }`, verdict rests solely on the article), plus the covariate

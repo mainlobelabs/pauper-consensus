@@ -9,8 +9,9 @@ Decision log. One entry per significant decision, with the reason. Newest first.
     the article. WITH the frozen claim-verification prompt = the juror's
     exercise (the frontier self-review control); WITHOUT it = the ordinary
     defendant answers (the baseline control). There is no third run (no
-    "no-article" mode). The exact prompt is the co-designer's (supplied by
-    link; text pending into the frozen prompts before the tag).
+     "no-article" mode). The prompt wording comes from the co-designer's own
+     quote in the thread; he dropped the link question ("don't worry about
+     it"), so the frozen prompt is drafted from that quote (task 9).
   - Jury contract restructured: one call per claim (article plus the claim in
     question form), out `{ answer: PASS|FAIL, reason }`. Vocabulary changed
     from AFFIRM|DENY to PASS|FAIL per his prompt. NOT_STATED maps to the
