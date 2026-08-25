@@ -1,7 +1,11 @@
 # SPEC: wave-consensus
 
-Status: DRAFT v0.12, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
-`prereg.yaml` and git-tagging it before any training or generation.
+Status: DRAFT v0.13, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
+`prereg.yaml` and git-tagging it before any training or generation. v0.13: the
+null control is with-prompt versus without-prompt (the blind mode was dropped),
+one call per claim under the co-designer's claim-verification prompt, PASS|FAIL
+verdict vocabulary, self-distilled training targets (the LoRA learns only the
+wrapper), and the losslessness check on untrained articles.
 
 ## 1. What this is
 
@@ -39,8 +43,8 @@ conditions, not pipelines.
 Two design choices do the work:
 
 - **Structured proposers.** Each jury member is LoRA fine-tuned to emit a strict
-  voting block over a fixed proposition list. Voting becomes exact match on
-  proposition IDs; the alignment layer disappears.
+  verdict per claim: `{ answer: PASS|FAIL, reason }`. Voting becomes exact
+  match on claim IDs; the alignment layer disappears.
 - **Cutoff-gap articles.** Each test item is a short news-style article about a
   real-world event that post-dates the training cutoff of every model in the
   panel. A cutoff is not a wall, so the design does not assume it: the cutoff
@@ -135,8 +139,8 @@ Two design choices do the work:
   by the author with a frozen rubric as **ENTAIL** (the article supports it),
   **CONTRADICT** (the article states the opposite), or **UNSPECIFIED** (the
   article is silent). The gate's binary target is ENTAIL vs non-ENTAIL: a
-  correct vote affirms exactly the ENTAIL propositions. UNSPECIFIED is the
-  hallucination class: affirming an UNSPECIFIED proposition is a false claim of
+  correct verdict passes exactly the ENTAIL propositions. UNSPECIFIED is the
+  hallucination class: passing an UNSPECIFIED proposition is a false claim of
   the kind a verification layer exists to catch.
 - Split: **article-level**, not proposition-level. Whole articles are assigned
   to one role (10 train, 10 calibration, 10 test) so no proposition from a seen
@@ -176,17 +180,19 @@ Two design choices do the work:
   articles. Saturation (above 95 percent) is a design failure and triggers a
   re-tune (oracle re-emergence).
 - **Null control (frontier self-review, the co-designer's sharpening,
-  2026-08-25): the solver runs on the test articles in two further modes.
-  Blind mode**: the 20 seed questions with NO article (parametric memory only),
-  documenting what the frontier model knows about the post-cutoff topics from
-  memory alone. **Juror mode**: the full 40-proposition pool plus the article
-  under the frozen voting contract (vote block only, no free CoT, temperature
-  0), the same exercise as the jurors. The juror-mode solver is the control for
-  "a frontier model doing its own adversarial review": the extra expensive
-  same-family compute call the product would otherwise make.
-- Registered arm (cheap, always run): the solver also votes on the pool as a
-  sixth, un-tuned proposer, so the oracle-vs-consensus decomposition includes
-  the strong model.
+  2026-08-25, clarified same day): the solver runs on the test articles in two
+   modes, and the difference is the prompt. **WITH the prompt**: the frozen
+  claim-verification prompt (article plus the claim in question form, the
+  prosecution's instruction, PASS/FAIL plus reason), the same exercise as the
+  jurors. WITHOUT the prompt (the baseline control)**: the ordinary defendant
+  answers (article plus question, natural answer, no contract). The
+  with-prompt run is the control for "a frontier model doing its own
+  adversarial review": the extra expensive same-family compute call the
+  product would otherwise make, and it doubles as the registered arm: the
+  solver answering the claims as a sixth, un-tuned proposer, so the
+  oracle-vs-consensus decomposition includes the strong model. The exact
+  prompt is the co-designer's (supplied by link; text pending into the frozen
+  prompts).
 - Memorization check: train/calibration accuracy gap reported per proposer. A
   gap above 10 points is logged in DECISIONS.md and read as memorization risk.
 - Weights frozen and content-hashed after training; hashes recorded in the
@@ -194,20 +200,50 @@ Two design choices do the work:
 
 ## 6. Task and output contract (frozen at Phase 0, exact grammar in `prereg.yaml`)
 
-- Jury task: the article (evidence) plus the full 40-proposition list (claims)
-  in. Out: an optional THINK block, then one vote line per proposition,
-  `P{id}: AFFIRM|DENY`. The frozen prompt carries the prosecution's instruction:
-  jurors base their yes or no solely on the evidence. Strict on the vote block,
-  unconstrained on the THINK block (free thinking is what keeps the five
-  families from making identical mistakes).
+- Jury task: one claim at a time. In: the article (evidence) plus one claim in
+  question form. Out: `{ answer: PASS|FAIL, reason: <text> }`. The frozen
+  prompt (the co-designer's, exact text pending): "Answer this question only
+  based on the information available on this article. [question]", carrying
+  the prosecution's instruction that the verdict rests solely on the article.
+  One call per claim (40 per article per juror), so cost and TTFT are
+  accounted per claim. The answer field is strict (PASS or FAIL; an explicit
+  NOT_STATED maps to the silence cell and is kept so the three-state estimator
+  survives); the reason field is free (the model's own grounding; free
+  thinking is what keeps the five families from making identical mistakes).
+- **Self-distilled training data (the co-designer's low-perturbation scheme,
+  2026-08-25): before any fine-tuning, each base family is run zero-shot on
+  its own training slice with the jury prompt, and its exact native output is
+  captured. The fine-tuning target is not the gold label and not the verbatim
+  output: it is `{ answer: <PASS|FAIL parsed from the native output>,
+  reason: <the native output verbatim> }`. The LoRA therefore learns only the
+  wrapper: the instruction style, the JSON contract, and the answer field; the
+  reasoning content is the family's own native grounding. Perturbation is
+  minimal, and each family's native competence and blind spots survive the
+  fine-tune, which is what keeps the five voters decorrelated (RQ3). The
+  zero-shot 1-4B jury baseline (P4) is this same native output scored on the
+  same task, so fine-tuning versus native is a direct comparison.
+- **Losslessness check (the co-designer's perturbation proof, 2026-08-25):
+  for each adapter, base and fine-tuned are run on articles the family was NOT
+  trained on (the 10 calibration articles, untrained for every family) with the
+  same jury prompt. Two numbers, per family: (a) exact-match agreement between
+  the base and fine-tuned outputs (answers, then reasons), and (b) the
+  perplexity of the base model's native outputs under the fine-tuned model,
+  reported as a PPL ratio against the base's self-PPL (1.0 is lossless). This
+  is the direct measurement of how much the LoRA perturbed the family, and it
+  is what makes RQ3's decorrelation claim an observed property instead of an
+  assumption. Descriptive, per family; an adapter whose fine-tuned outputs
+  diverge from native on untrained articles is flagged as perturbed, and its
+  share of the consensus is reported separately.
 - CoT ablation, registered: the jury is trained in **two variants** on the same
-  data, votes-only and think-then-vote. Both are run on the test articles; the
-  comparison is reported, not predicted. Ten adapters total (2 variants x 5
-  families).
+  data: the reason-included target (think-then-vote; the reason field carries
+  the native grounding) and the votes-only target (`{ answer }` only, no
+  reason). Both are run on the test articles; the comparison is reported, not
+  predicted. Ten adapters total (2 variants x 5 families).
 - Solver task: article plus its 20 questions in, free-form trace and answers
-  out. No contract. Solver claims are matched to pool propositions by the
-  author's seed mapping (each question's answer maps to its seeded
-  propositions); unmatched claims are logged, not scored.
+  out. No contract (this is the without-prompt baseline control). Solver
+  claims are matched to pool propositions by the author's seed mapping (each
+  question's answer maps to its seeded propositions); unmatched claims are
+  logged, not scored.
 - Parse failures are logged as missing observations; parse rate reported per
   proposer (target: 100 percent by construction) and per solver question.
 
@@ -216,7 +252,7 @@ Two design choices do the work:
 - Vote matrix by **exact match** on proposition IDs, jury x pool. Silence is an
   explicit cell state, not a missing value.
 - Arms:
-  - WCT-U: uniform signed support (distinct affirm minus distinct deny).
+  - WCT-U: uniform signed support (distinct pass minus distinct fail).
   - WCT-EM: three-state Dawid-Skene, unsupervised (the registered primary arm).
   - Ablation, claim-instance counting (verbosity-weighted; expected to fail).
   - Ablation, single best proposer (calibrated), the oracle reference.
@@ -249,11 +285,11 @@ Two design choices do the work:
   dropped). The solver's confidence is the mean token probability of the answer
   span, frozen in `prereg.yaml`, so the comparison is against a measured
   quantity, not a verbalized self-report.
-- Frontier self-review control (the null control): the solver's juror-mode votes
-  on the same pool are scored exactly like a juror's votes, giving the
-  "frontier model doing its own adversarial review" arm. The blind-mode run is
-  a validity baseline for the cutoff gap (what the frontier model knows from
-  memory alone) and is reported, not a gate.
+- Frontier self-review control (the null control): the solver's with-prompt
+  verdicts on the same claims are scored exactly like the jurors' verdicts,
+  giving the "frontier model doing its own adversarial review" arm. The
+  without-prompt run is the defendant's claims themselves (the baseline
+  control, the source of what is verified); it is reported, not a separate arm.
 - Pass criterion (null-control comparison, the co-designer's sharpening,
   2026-08-25): across the corpus of test articles and questions, the juror
   system (the defendant's claims gated by the 1-4B jury consensus) passes if
@@ -323,27 +359,28 @@ requires the test articles to yield at least 30 pool-matched solver claims on
   have >50% compute effort whilst marginally being better at bullshit
   detection"): (a) the 5-juror consensus outperforms the single best juror on
   false-claim rate on the test articles (mechanism: same-family blind spots);
-  (b) the juror consensus's raw compute effort exceeds 50 percent of the 27B's
-  while its false-claim rate is lower than the control's (marginally better at
-  bullshit detection). Raw compute effort is aggregate parameter scale times
-  tokens processed, confirmed by the co-designer's arithmetic: 4x 4B = 16B of
-  parameters, roughly half the 27B, and the ensemble also processes more
-  tokens (one vote block per family per article), so the >50 percent prediction
-  holds in FLOPs even though each token is cheaper. The value is therefore not
-  raw compute savings but infrastructure: the jury fans out onto cheap
-  hardware the 27B cannot run on (minimum hardware, TTFT, fan-out), while the
-  alternative stays a single expensive same-family call. Power note: P7(b)
-  requires complete token and parameter accounting for every arm (defendant,
-  blind, juror, 5-juror).
+   (b) the juror consensus's raw compute effort exceeds 50 percent of the 27B's
+   while its false-claim rate is lower than the control's (marginally better at
+   bullshit detection). Raw compute effort is aggregate parameter scale times
+   tokens processed, confirmed by the co-designer's arithmetic: 4x 4B = 16B of
+   parameters, roughly half the 27B, and the ensemble also processes more
+   calls and tokens (one call per claim per family), so the >50 percent
+   prediction holds in FLOPs even though each token is cheaper. The value is
+   therefore not raw compute savings but infrastructure: the jury fans out
+   onto cheap hardware the 27B cannot run on (minimum hardware, TTFT,
+   fan-out), while the alternative stays a single expensive same-family call.
+   Power note: P7(b) requires complete token and parameter accounting for
+   every arm (defendant baseline, with-prompt control, 5-juror).
 
 ## 9. Baselines, in order of stringency
 
 1. Trivial base rate (floor).
 2. Single best proposer, calibrated (the oracle reference).
-3. Zero-shot 1-4B jury on the same articles (comparability and the P4 arm).
-4. Frontier self-review: the solver voting on the same pool under the same
-   contract (the null control; the pass criterion in section 7 compares the
-   gated system against this arm).
+3. Zero-shot 1-4B jury on the same articles: the native outputs scored on the
+   same task (comparability and the P4 arm).
+4. Frontier self-review: the solver answering the same claims under the frozen
+   claim-verification prompt (the null control; the pass criterion in section 7
+   compares the gated system against this arm).
 5. Covariate logistic regression (the registered bar).
 6. Optional: a small supervised verifier trained on the calibration labels
    (the strong-baseline the source study omitted).

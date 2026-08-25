@@ -4,6 +4,43 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-25
 
+- Co-designer reply, SPEC v0.13 (2026-08-25):
+  - The "blind" flag is RESOLVED: the two 27B runs differ in the prompt, not
+    the article. WITH the frozen claim-verification prompt = the juror's
+    exercise (the frontier self-review control); WITHOUT it = the ordinary
+    defendant answers (the baseline control). There is no third run (no
+    "no-article" mode). The exact prompt is the co-designer's (supplied by
+    link; text pending into the frozen prompts before the tag).
+  - Jury contract restructured: one call per claim (article plus the claim in
+    question form), out `{ answer: PASS|FAIL, reason }`. Vocabulary changed
+    from AFFIRM|DENY to PASS|FAIL per his prompt. NOT_STATED maps to the
+    silence cell and is kept so the three-state estimator survives. Reason:
+    per-claim calls make cost and TTFT accountable per claim, which the pass
+    criterion requires.
+  - Training scheme: self-distillation (his low-perturbation idea). Before
+    any fine-tuning, capture each base family's exact zero-shot native output
+    on the training slice under the jury prompt ("Answer this question only
+    based on the information available on this article. [question]"). Target =
+    `{ answer: PASS|FAIL parsed from the native output, reason: the native
+    output verbatim }`. The LoRA learns only the wrapper (instruction style,
+    JSON contract, answer field); the reasoning content is the family's own
+    native grounding. Reason: minimal perturbation preserves each family's
+    native competence and blind spots, which is exactly what keeps the five
+    voters decorrelated (RQ3). The P4 zero-shot baseline is the same native
+    output scored on the same task, so fine-tuning versus native is a direct
+    comparison.
+  - Losslessness check (his perturbation proof): for each adapter, run base
+    and fine-tuned on articles the family was NOT trained on (the calibration
+    split, untrained for every family) and show the answers are lossless;
+    report per family exact-match output agreement and the perplexity of the
+    base's native outputs under the fine-tuned model (PPL ratio, 1.0 =
+    lossless). This is the direct measurement of the level of PPL the LoRA
+    introduces, and it turns RQ3's decorrelation from an assumption into an
+    observed property.
+  - Consequences: the with-prompt 27B run doubles as the registered
+    solver-as-proposer arm (one run, two roles). The CoT ablation is
+    redefined as reason-included target versus votes-only target (`{ answer }`
+    only).
 - Design pass with the co-designer, SPEC v0.12 (2026-08-25), several
   sign-offs in one message:
   - Courtroom vocabulary adopted: harness = prosecutor, 27B = defendant,

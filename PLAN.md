@@ -5,13 +5,15 @@ Living plan. Update at the end of each working session: current state, next step
 ## Purpose
 
 Independently conduct the wave-consensus experiment (see SPEC.md): author a
-cutoff-gap news corpus with designed falsehoods, fine-tune five small 4B
-proposers to vote on proposition lists, run an untouched 27B solver on the same
-items, and determine whether the jury consensus predicts proposition truth and
-flags the solver's false claims beyond a fitted covariate baseline, the single
-best proposer, and zero-shot 4B models. The ProofWriter microworld is re-run
-with the same structured instrument as the controlled comparison. This track is
-a pilot, and it says so on purpose.
+cutoff-gap news corpus with designed falsehoods, fine-tune five small 1-4B
+proposers (the jury) to verdict on claims per call, self-distilled so each
+LoRA learns only the output wrapper, run an untouched 27B solver (the
+defendant) on the same items, and determine whether the jury consensus predicts
+proposition truth and flags the solver's false claims beyond the 27B's own
+with-prompt self-review (the null control), a fitted covariate baseline, the
+single best proposer, and the zero-shot 1-4B jury. The ProofWriter microworld
+is re-run with the same structured instrument as the controlled comparison.
+This track is a pilot, and it says so on purpose.
 
 ## Current state
 
@@ -56,8 +58,19 @@ a pilot, and it says so on purpose.
   Task list renumbered to 28. His follow-up reply: P7 compute basis confirmed
   (raw FLOPs, 4x 4B = 16B, roughly half the 27B), comparable margin widened
   to 10 points (2 was under noise), cost branch is strictly lower cost with
-  the ratio reported. One flag remains open: the context of "blind" in the
-  null control, which he asked to be clarified before confirming.
+  the ratio reported.
+- 2026-08-25: co-designer reply, SPEC v0.13. The "blind" flag is RESOLVED:
+  the null control is with-prompt (the juror's exercise under the frozen
+  claim-verification prompt) versus without-prompt (the ordinary defendant
+  answers, the baseline control); no third run. The jury contract is
+  restructured to one call per claim, out `{ answer: PASS|FAIL, reason }`.
+  Training is self-distilled (capture each family's zero-shot native output;
+  target = wrapper with the native output verbatim as reason, so the LoRA
+  learns only the wrapper). Losslessness check per adapter on untrained
+  articles: base-vs-fine-tuned output agreement plus PPL of the base native
+  outputs under the fine-tuned model (1.0 = lossless). Remaining open item:
+  the co-designer's exact prompt text (supplied by link) for the frozen
+  prompts.
 
 ## Next step
 
@@ -65,9 +78,9 @@ ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
 is done and the 30-topic selection is approved. When the go-ahead comes: (a)
 task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
 Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
-keep-30; (b) resolve the one open flag in SPEC v0.12 (the context of
-"blind" in the null control), then pick the 1-4B jury families under the
-documented-cutoff filter (task 9); (c) freeze the corpus
+keep-30; (b) bank the co-designer's exact claim-verification prompt text
+(supplied by link) into the frozen prompts, then pick the 1-4B jury families
+under the documented-cutoff filter (task 9); (c) freeze the corpus
 (prereg.yaml + git tag, task 10); then task 2, the label rubric.
 
 ## Task list (in order)
@@ -98,9 +111,13 @@ documented-cutoff filter (task 9); (c) freeze the corpus
        training cutoff before 2026-08-14 - a family with an unclear or later
        cutoff is not selected, probe only if the documentation is unclear);
        record each family's documented cutoff in the manifest; write the frozen
-       prompts: the 27B solver prompt and the jury vote contract (with the
-       prosecution's instruction to vote solely on the evidence), plus the
-       covariate feature list.
+       prompts: the 27B solver prompt (no contract, ordinary answers, the
+       without-prompt baseline control) and the claim-verification prompt (the
+       jury contract: the co-designer's exact wording from his link - "Answer
+       this question only based on the information available on this
+       article. [question]" - one call per claim, out `{ answer: PASS|FAIL,
+       reason }`, verdict rests solely on the article), plus the covariate
+       feature list.
 10. [ ] Freeze: article-level split 10/10/10 with a fixed seed, hash the topics,
       articles, pools, and labels, write `prereg.yaml`, git-tag
       `prereg-waveconsensus-v1`. No fine-tuning before this tag.
@@ -114,11 +131,12 @@ documented-cutoff filter (task 9); (c) freeze the corpus
 12. [ ] Contamination run: for every test article, each juror answers the 20
        seed questions with the article and without. Flag anything answered
        above chance from memory; re-select or relabel it.
-13. [ ] Run the 27B null control on the test articles: blind mode (the 20
-       seed questions with no article, parametric only) and juror mode (the
-       40-proposition pool plus the article, frozen contract, vote block only,
-       temperature 0). Capture token probabilities, tokens, GPU-seconds, and
-       TTFT per run.
+13. [ ] Run the 27B null control on the test articles: WITH the frozen
+       claim-verification prompt (the juror's exercise, one call per claim,
+       temperature 0) and WITHOUT it (the ordinary defendant answers, the
+       baseline control). The with-prompt run doubles as the registered
+       solver-as-proposer arm. Capture token probabilities, tokens,
+       GPU-seconds, and TTFT per run.
 14. [ ] Difficulty check: zero-shot 1-4B accuracy on the test articles should
        sit around 80 to 90 percent. Higher means the task is too easy and the
        models will saturate into oracles; re-tune the pool.
@@ -128,15 +146,23 @@ documented-cutoff filter (task 9); (c) freeze the corpus
 
 ### Training and generation
 
-15. [ ] LoRA fine-tune each family on its own slice of the 10 training
-       articles, in two variants (votes-only, think-then-vote), 10 adapters
-       total, distinct seeds.
-16. [ ] Competence check per adapter: 75 to 92 percent on the calibration
-       articles, train/calibration gap no more than 10 points.
+15. [ ] Build the self-distilled targets: capture each base family's exact
+       zero-shot native output on the 10 training articles under the jury
+       prompt (before any adapter exists), then target = { answer: PASS|FAIL
+       parsed from the native output, reason: the native output verbatim }.
+       LoRA fine-tune each family on its own targets, in two variants
+       (votes-only, reason-included), 10 adapters total, distinct seeds.
+16. [ ] Competence and perturbation check per adapter: 75 to 92 percent on the
+       calibration articles, train/calibration gap no more than 10 points, and
+       the losslessness check (base vs fine-tuned on the calibration articles,
+       untrained for every family): exact-match output agreement and PPL of
+       the base native outputs under the fine-tuned model, PPL ratio reported
+       per family (1.0 = lossless).
 17. [ ] Run the 27B defendant mode on the 10 test articles, frozen prompt,
        token probabilities captured, tokens and TTFT recorded.
-18. [ ] Collect the jury votes: 10 adapters times 10 test articles, persisted
-       call caps and attempt ledgers, tokens and TTFT per adapter.
+18. [ ] Collect the jury verdicts: one call per claim, 10 adapters times 10
+       test articles times 40 claims, persisted call caps and attempt
+       ledgers, tokens and TTFT per adapter and per claim.
 19. [ ] Re-run the microworld arm: the same structured instrument on the
        frozen ProofWriter split, for the conditions-not-pipelines comparison.
 - Verify: every adapter in the competence band; gaps logged in DECISIONS.md;
