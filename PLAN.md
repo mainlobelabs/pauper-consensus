@@ -49,13 +49,15 @@ a pilot, and it says so on purpose.
   vocabulary adopted (prosecutor/defendant/jury/evidence, vote solely on the
   evidence). Null control added: the 27B runs blind mode (questions, no
   article) and juror mode (pool + article, frozen contract); the pass
-  criterion is beat the self-review control, or match it within a margin at
-  <=10 percent of its cost. Jury relaxed to 1-4B, older/smaller preferred.
+  criterion is beat the self-review control, or match it within 10 points at
+  lower cost (ratio reported). Jury relaxed to 1-4B, older/smaller preferred.
   RQ6 jury-size sweep (1/3/5) and RQ7 3x 1B arm (phase 2) added. P7
   pre-registered (his words). Cost/TTFT/minimum-hardware reporting added.
-  Task list renumbered to 28. Flagged for his confirmation before lock: the
-  "blind" reading (no article), the "compute effort" basis in P7, and the
-  comparable-margin number.
+  Task list renumbered to 28. His follow-up reply: P7 compute basis confirmed
+  (raw FLOPs, 4x 4B = 16B, roughly half the 27B), comparable margin widened
+  to 10 points (2 was under noise), cost branch is strictly lower cost with
+  the ratio reported. One flag remains open: the context of "blind" in the
+  null control, which he asked to be clarified before confirming.
 
 ## Next step
 
@@ -63,9 +65,9 @@ ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
 is done and the 30-topic selection is approved. When the go-ahead comes: (a)
 task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
 Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
-keep-30; (b) resolve the three flagged items in SPEC v0.12 (blind reading,
-P7 compute-effort basis, comparable margin), then pick the 1-4B jury families
-under the documented-cutoff filter (task 9); (c) freeze the corpus
+keep-30; (b) resolve the one open flag in SPEC v0.12 (the context of
+"blind" in the null control), then pick the 1-4B jury families under the
+documented-cutoff filter (task 9); (c) freeze the corpus
 (prereg.yaml + git tag, task 10); then task 2, the label rubric.
 
 ## Task list (in order)

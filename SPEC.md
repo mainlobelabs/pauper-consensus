@@ -258,12 +258,15 @@ Two design choices do the work:
   2026-08-25): across the corpus of test articles and questions, the juror
   system (the defendant's claims gated by the 1-4B jury consensus) passes if
   either (a) it outright outperforms the frontier self-review control on
-  false-claim rate, or (b) it is comparable to the control within 2 percentage
-  points of false-claim rate at 10 percent or less of the control's compute
-  cost. The 2 percentage point margin is Frank's proposed number, flagged for
-  co-designer confirmation before lock. Cost is USD at our amortized serving
-  price. Compute cost and hosting cost are first-class evaluation axes, not
-  footnotes.
+  false-claim rate (the 95 percent bootstrap CI of the difference entirely
+  below zero), or (b) it is comparable to the control within 10 percentage
+  points of false-claim rate (point estimate, bootstrap CI reported) at a
+  lower total compute cost. The 10 point band is the noise-scale margin per
+  the co-designer: a tighter 2 point band falls under noise at the
+  test-corpus sample size. The cost ratio (juror system versus control, USD at
+  our amortized serving price) is reported as a headline number; the pass
+  branch requires strictly lower cost, not a fixed ratio. Compute cost and
+  hosting cost are first-class evaluation axes, not footnotes.
 - Cost and serving metrics, reported per arm: total input and output tokens,
   GPU-seconds, USD cost, median TTFT, and the minimum hardware that serves the
   arm at target concurrency (this is the fan-out value: the jury runs on cheap
@@ -320,13 +323,18 @@ requires the test articles to yield at least 30 pool-matched solver claims on
   have >50% compute effort whilst marginally being better at bullshit
   detection"): (a) the 5-juror consensus outperforms the single best juror on
   false-claim rate on the test articles (mechanism: same-family blind spots);
-  (b) the juror consensus's raw compute effort (token count) exceeds 50 percent
-  of the frontier self-review control's while its false-claim rate is lower
-  than the control's (marginally better at bullshit detection). Flag, for
-  co-designer confirmation before lock: "compute effort" is read as raw
-  token/FLOP effort relative to the control, not USD cost, because the pass
-  criterion's 10 percent figure is a USD cost ratio. Power note: P7(b) requires
-  complete token accounting for every arm (defendant, blind, juror, 5-juror).
+  (b) the juror consensus's raw compute effort exceeds 50 percent of the 27B's
+  while its false-claim rate is lower than the control's (marginally better at
+  bullshit detection). Raw compute effort is aggregate parameter scale times
+  tokens processed, confirmed by the co-designer's arithmetic: 4x 4B = 16B of
+  parameters, roughly half the 27B, and the ensemble also processes more
+  tokens (one vote block per family per article), so the >50 percent prediction
+  holds in FLOPs even though each token is cheaper. The value is therefore not
+  raw compute savings but infrastructure: the jury fans out onto cheap
+  hardware the 27B cannot run on (minimum hardware, TTFT, fan-out), while the
+  alternative stays a single expensive same-family call. Power note: P7(b)
+  requires complete token and parameter accounting for every arm (defendant,
+  blind, juror, 5-juror).
 
 ## 9. Baselines, in order of stringency
 

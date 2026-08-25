@@ -23,9 +23,12 @@ Decision log. One entry per significant decision, with the reason. Newest first.
     "just make the frontier model review itself".
   - Pass criterion pre-registered: across the corpus, the juror-gated system
     passes if it outright outperforms the self-review control on false-claim
-    rate, or is comparable at <=10 percent of the control's compute cost.
-    Cost is USD at our amortized serving price; compute cost and hosting are
-    first-class evaluation axes. Reporting metrics fixed: tokens, GPU-seconds,
+    rate (95 percent CI below zero), or is comparable within 10 percentage
+    points at a strictly lower total compute cost (the cost ratio is reported
+    as a headline number). The comparable band is 10 points, not the tighter
+    proposal: per the co-designer, 2 points falls under noise at the
+    test-corpus sample size. Cost is USD at our amortized serving price;
+    compute cost and hosting are first-class evaluation axes. Reporting metrics fixed: tokens, GPU-seconds,
     USD, median TTFT, minimum hardware per arm.
   - RQ6 added: how many jurors for a meaningful change; gated false-claim
     rate at jury size 1/3/5, the 3-juror arm pre-specified as the top three
@@ -39,12 +42,16 @@ Decision log. One entry per significant decision, with the reason. Newest first.
   Reason for the whole pass: it sharpens the experiment from "the jury helps"
   to "the jury beats the frontier model's own self-review at a fraction of the
   cost", which is the sellable claim.
-  Flagged for co-designer confirmation before lock (in SPEC): (1) "blind" is
-  read as questions with NO article; (2) P7's "compute effort" is read as raw
-  token/FLOP effort relative to the control, not USD, because the pass
-  criterion's 10 percent figure is a USD cost ratio; (3) the comparable
-  margin in the pass criterion is Frank's proposed 2 percentage points on
-  false-claim rate.
+  Flag status after the co-designer's reply (same day): (1) "blind" is still
+  OPEN - he asked for the context of the word clarified before confirming
+  whether it means "questions with no article" (a third 27B run) or "the
+  ordinary defendant answers" (no new run); (2) P7's "compute effort" is
+  CONFIRMED as raw compute (parameter scale times tokens), with his arithmetic
+  4x 4B = 16B, roughly half the 27B - the value story is infrastructure
+  fan-out, not raw compute savings; (3) the comparable margin is set at 10
+  percentage points (the 2 point proposal was too tight, under noise) and the
+  cost branch is strictly lower total cost with the ratio reported, not a
+  fixed 10 percent ratio.
 - 4B cutoff policy downgraded (co-designer sign-off): the jury families'
   cutoffs are established by their documented training windows at model
   selection (hard filter: documented cutoff before 2026-08-14; probe only if
