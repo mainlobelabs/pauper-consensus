@@ -1,6 +1,6 @@
 # SPEC: wave-consensus
 
-Status: DRAFT v0.10, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
+Status: DRAFT v0.11, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
 `prereg.yaml` and git-tagging it before any training or generation.
 
 ## 1. What this is
@@ -19,6 +19,12 @@ wave-consensus moves the experiment to the other side of that boundary, and adds
 a second axis the source study never had: a strong solver that is never
 fine-tuned, whose trace is verified by a jury of cheap fine-tuned proposers.
 
+Scope: this track is a pilot, and it says so on purpose. It de-risks the locked
+run on a real-world corpus; it does not replace the microworld. The source
+study's ProofWriter microworld is kept as the controlled case study and re-run
+with the same structured instrument as this track, so the two tracks compare
+conditions, not pipelines.
+
 Two design choices do the work:
 
 - **Structured proposers.** Each jury member is LoRA fine-tuned to emit a strict
@@ -26,11 +32,14 @@ Two design choices do the work:
   proposition IDs; the alignment layer disappears.
 - **Cutoff-gap articles.** Each test item is a short news-style article about a
   real-world event that post-dates the training cutoff of every model in the
-  panel. No model can answer from parametric memory, so any confident claim must
-  be grounded in the article, or it is a hallucination. Falsehoods are designed
-  into the item, not left to chance: each article contains claims it supports,
-  claims it contradicts, and, via in-passing mentions, claims it is silent on.
-  The silent class is where real hallucinations live.
+  panel. A cutoff is not a wall, so the design does not assume it: the cutoff
+  gap buys the property that a confident claim has to come from the text, and
+  that property is verified per item (section 4) by running each model on the
+  questions without the article. Falsehoods are designed into the item, not
+  left to chance: each article contains claims it supports, claims it
+  contradicts, and, via in-passing mentions, claims it is silent on. The silent
+  class is where real hallucinations live, and it is the kind of negative the
+  microworld could not measure.
 
 ## 2. Why this form (link to the critique)
 
@@ -76,6 +85,11 @@ Two design choices do the work:
   that mentions in passing "Claude recently implemented fingerprinting" without
   a date; the seeded question "when did Claude implement fingerprinting?" then
   has the correct answer "not stated in the article".
+- The text is the oracle: a proposition's truth is defined by what the article
+  states, not by what is actually true. A single wrong in-passing mention
+  silently relabels a batch of claims, so every real-world fact in every
+  article (named entities, features, dates) is fact-checked against the web
+  before the corpus locks.
 - Proposition pool: 40 propositions per article, seeded by 20 questions. Each
   question generates its true variant, false variants, and negative-polarity
   variants. Target mix per article: roughly 50 percent entailed (true), 25
@@ -116,9 +130,10 @@ Two design choices do the work:
   This is the product frame: the customer's frontier model is never migrated or
   tuned.
 - Jury: **5 base models in the 4B class from distinct families** (family list
-  frozen at Phase 0), served locally on hydrogen, each LoRA fine-tuned on a
-  **disjoint slice** of the training articles with a different seed and, where
-  possible, a different recipe, to keep error correlation low. Target
+  frozen at Phase 0), served locally on hydrogen, none of them sharing lineage
+  with the solver's family, each LoRA fine-tuned on a **disjoint slice** of the
+  training articles with a different seed and, where possible, a different
+  recipe, to keep error correlation low. Target
   competence: 75 to 92 percent proposition-level accuracy on the calibration
   articles. Saturation (above 95 percent) is a design failure and triggers a
   re-tune (oracle re-emergence).
@@ -159,7 +174,16 @@ Two design choices do the work:
   - Base rate (trivial predictor), the floor.
 - Baseline: logistic regression on article length, pool position, claim length,
   polarity, and question type, fitted on the calibration split only. The feature
-  list is pinned in `prereg.yaml` and stated to be model-free.
+  list is pinned in `prereg.yaml` and stated to be model-free. The registered
+  bar is this covariate baseline; a signal that only beats the base rate does
+  not pass.
+- Task difficulty is a known difference from the source study and is stated in
+  the report: the label mix is 50 percent ENTAIL, the source corpus was about
+  95 percent true, so this task is intrinsically easier and a positive result
+  is partly task difficulty, not transfer.
+- E0: pairwise proposition-level residual error correlation across voters,
+  reported as a number. "Independent enough" is a measurement, not an
+  assumption.
 - Calibration: Platt map, sigmoid(a*s + b), fitted on the calibration split by
   exact MLE. Temperature kept as an ablation. The calibration map and the
   baseline have the same degrees of freedom (the source study's lesson D1).
@@ -173,7 +197,9 @@ Two design choices do the work:
   articles, the jury consensus score separates the solver's ENTAIL claims from
   its non-ENTAIL claims. Reported: flag precision, flag recall, and the change
   in claim accuracy from solver alone to solver-plus-jury (low-consensus claims
-  dropped).
+  dropped). The solver's confidence is the mean token probability of the answer
+  span, frozen in `prereg.yaml`, so the comparison is against a measured
+  quantity, not a verbalized self-report.
 - Decision rule (the C11 fix, explicit): go requires the point estimate at or
   above delta **and** the bootstrap interval excluding zero. If the point clears
   delta but the bound does not, the verdict is INCONCLUSIVE. Degenerate intervals
@@ -182,8 +208,9 @@ Two design choices do the work:
 ## 8. Registered predictions (frozen at lock, falsifiable)
 
 - P1: WCT-EM primary returns GO on the fine-tuned jury.
-- P2: the leave-one-proposer-out primary remains GO for every single member
-  removed, including the solver-as-proposer (consensus, not oracle).
+- P2: the leave-one-proposer-out primary remains GO with each voter removed in
+  turn, not just the strongest (removing the winner first would be post-hoc
+  winner selection), including the solver-as-proposer (consensus, not oracle).
 - P3: claim-instance counting AUROC is below 0.65 on the test split (the
   one-vote-per-source invariant holds).
 - P4: the delta log-loss advantage over the base rate on the fine-tuned jury is
@@ -215,7 +242,10 @@ only and the article count is raised before the next lock.
 - `prereg.yaml` written, committed, and git-tagged (`prereg-waveconsensus-v1`)
   before any fine-tuning or generation it covers. The topic list, the 30
   articles, the proposition pools, and the labels are content-hashed into the
-  registration artifact: the corpus is frozen before the jury is trained.
+  registration artifact: the corpus is frozen before the jury is trained. A
+  flipped result cannot be explained by post-hoc changes to the instrument;
+  that is what the freeze buys. It does not fix a flawed instrument, and it
+  freezes the single-labeler bias along with everything else.
 - Implementations-are-the-registration clause, plus the explicit decision-rule
   boundary clause from section 7.
 - Generation cache content-hashed and immutable; analysis re-runs at zero
@@ -251,5 +281,7 @@ only and the article count is raised before the next lock.
   registered prediction (P2).
 - Small corpus (30 articles): framed as the pilot that de-risks the locked run;
   census go/no-go at 60 non-ENTAIL test propositions; scale-up path documented.
+- Easier task than the source study (50 percent ENTAIL, not 95 percent): stated
+  in the report, not hidden.
 - Budget: 4B-class LoRA adapters fit sequentially on hydrogen's RTX 5000 Pro
   48GB; the 27B runs zero-shot. Call caps persist.
