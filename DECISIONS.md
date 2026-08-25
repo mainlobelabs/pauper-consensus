@@ -4,6 +4,12 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-25
 
+- Corpus topics APPROVED (co-designer sign-off): the 30-topic selection in
+  corpus/topics.md is locked in as the working set. Kept: T01-T05, T08, T10,
+  T12, T13-T30, T32, T34, T35, T36. Dropped: T06, T07, T09, T11 (unverified or
+  thin), T31, T33 (single-fact). Sign-off says "hang fire": record the decision
+  and stop; the freeze (prereg.yaml + tag, task 10) and the label rubric (task 2)
+  wait for the go-ahead. T08 and T12 still need the task-4 fact-check pass.
 - Cutoff probe, qwen3.8-27b (orcarouter merge), 8 probes, 2026-08-25
   (cutoff-probe/probes.md): the model is verified blind to the 2026-08-14 to
   2026-08-25 band (Flores quake, Hurricane Lala, USS Abraham Lincoln, Hawk Fire

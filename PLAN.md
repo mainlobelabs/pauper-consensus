@@ -33,18 +33,23 @@ a pilot, and it says so on purpose.
   reported cutoff 2026-01, not trusted, window not widened). P6
   (co-designer's jury-gate prediction) pre-registered in SPEC section 8.
   Verbatim-article option added to the corpus rules.
-- 2026-08-25: repo moving to the marzukia GitHub account; all commits
-  re-attributed to Andryo; remote to be pushed once the new PAT arrives.
+- 2026-08-25: repo moved to the marzukia GitHub account; all commits
+  re-attributed to Andryo; pushed and verified on GitHub's side.
+- 2026-08-25: 36 topic candidates collected (corpus/topics.md): 12 existing +
+  24 new from Wikipedia current events + 20 reserve. The 30-topic selection is
+  APPROVED by the co-designer (drop T06, T07, T09, T11, T31, T33). Sign-off
+  came with "hang fire": record and stop; freeze and label rubric wait for the
+  go-ahead.
 
 ## Next step
 
-Task 1, in progress. Window fixed at 2026-08-14 to 2026-08-25 (guaranteed
-post-cutoff for all six models by release date; verified blind for the 27B).
-Have ~10 verified candidate events and 6 full verbatim articles (3 Flores
-quake, 2 Lincoln, 1 Lala) plus ~10 headline digests. Remaining: collect ~20
-more detail-rich events from the window, pick the final 30 topics, record the
-cutoff date per family (4B cutoffs stay placeholders until those models are
-served and probed, tasks 11-12).
+ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
+is done and the 30-topic selection is approved. When the go-ahead comes: (a)
+task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
+Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
+keep-30; (b) record the cutoff date per family (4B cutoffs stay placeholders
+until those models are served and probed, tasks 11-12); (c) freeze the corpus
+(prereg.yaml + git tag, task 10); then task 2, the label rubric.
 
 ## Task list (in order)
 

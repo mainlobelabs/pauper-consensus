@@ -92,7 +92,11 @@ T54 Conakry landfill collapse, Guinea, at least 30 killed (08-23, BBC).
 T55 Billings, Montana, 8 killed in domestic shooting + house fire (08-23, People).
 T56 Graeme Dott found guilty of child sex abuse (08-24, Guardian).
 
-## Tentative selection (30 of 36) - pending co-designer sign-off
+## Selection (30 of 36) - APPROVED 2026-08-25
+
+Co-designer sign-off received 2026-08-25 ("approve, then hang fire"). This is
+the working 30. Freeze (prereg.yaml + git tag, task 10) is on hold until the
+go-ahead; T08 and T12 still need the task-4 fact-check pass before freeze.
 
 Drop 6 (weakest fact density / least self-contained / unverified):
 - T06 ballroom SCOTUS filing (unverified, needs case details)
