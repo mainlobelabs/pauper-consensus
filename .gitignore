@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# uv / venv
+.venv/
+.python-version
+
+# tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# data and run artifacts (kept out of git, content-hashed on disk)
+data/
+out/
+cache/
+runs/
+*.parquet
+*.ckpt
+*.safetensors
+*.gguf
+
+# OS
+.DS_Store
