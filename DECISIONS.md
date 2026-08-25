@@ -4,6 +4,17 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-25
 
+- 4B cutoff policy downgraded (co-designer sign-off): the jury families'
+  cutoffs are established by their documented training windows at model
+  selection (hard filter: documented cutoff before 2026-08-14; probe only if
+  the documentation is unclear), not by a per-family probe battery. Reason:
+  the jury task is text-conditional, so memory only matters on the silent
+  (UNSPECIFIED) class where the text is silent; a base model's documented
+  training window is a reliable claim, unlike the 27B community merge (unknown
+  fine-tune data, self-report failed the P7 control). The per-item
+  contamination check stays as written and is the real verification, since it
+  also catches fine-tune-data leakage (cross-article fact overlap in the
+  training slices), which the pretraining cutoff cannot.
 - Corpus topics APPROVED (co-designer sign-off): the 30-topic selection in
   corpus/topics.md is locked in as the working set. Kept: T01-T05, T08, T10,
   T12, T13-T30, T32, T34, T35, T36. Dropped: T06, T07, T09, T11 (unverified or

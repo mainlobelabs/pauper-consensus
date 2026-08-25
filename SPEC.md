@@ -88,6 +88,17 @@ Two design choices do the work:
   that mentions in passing "Claude recently implemented fingerprinting" without
   a date; the seeded question "when did Claude implement fingerprinting?" then
   has the correct answer "not stated in the article".
+- Cutoff verification policy: the 27B solver's cutoff was verified by direct
+  probing (cutoff-probe/probes.md, 2026-08-25: blind to the 2026-08-14 to
+  2026-08-25 window; self-report not trusted). The 4B jury families' cutoffs are
+  established by their documented training windows at model selection (hard
+  filter: documented cutoff before 2026-08-14; a family with an unclear or
+  later cutoff is not selected; probing only if the documentation is unclear).
+  Reason: the jury task is text-conditional, so memory only matters on the
+  silent (UNSPECIFIED) class, and a base model's documented training window is
+  a reliable claim, unlike the 27B merge's unknown fine-tune data. The per-item
+  contamination check below is the verification either way, and it also covers
+  fine-tune-data leakage, which the pretraining cutoff cannot.
 - The text is the oracle: a proposition's truth is defined by what the article
   states, not by what is actually true. A single wrong in-passing mention
   silently relabels a batch of claims, so every real-world fact in every

@@ -40,6 +40,11 @@ a pilot, and it says so on purpose.
   APPROVED by the co-designer (drop T06, T07, T09, T11, T31, T33). Sign-off
   came with "hang fire": record and stop; freeze and label rubric wait for the
   go-ahead.
+- 2026-08-25: 4B cutoff policy downgraded (co-designer sign-off): documented
+  training window at family selection (hard filter, before 2026-08-14) replaces
+  the per-family probe battery; the per-item contamination check stays as the
+  verification and also covers fine-tune-data leakage. Recorded in SPEC (cutoff
+  verification policy) and DECISIONS.
 
 ## Next step
 
@@ -47,16 +52,19 @@ ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
 is done and the 30-topic selection is approved. When the go-ahead comes: (a)
 task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
 Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
-keep-30; (b) record the cutoff date per family (4B cutoffs stay placeholders
-until those models are served and probed, tasks 11-12); (c) freeze the corpus
+keep-30; (b) pick the 4B families under the documented-cutoff filter (task 9)
+and record their documented training windows; (c) freeze the corpus
 (prereg.yaml + git tag, task 10); then task 2, the label rubric.
 
 ## Task list (in order)
 
 ### Corpus and registration (before any model runs)
 
-1. [ ] Pick the 30 topics. Each must post-date the training cutoff of all six
-      models. Record the cutoff date per family.
+1. [x] Pick the 30 topics (approved by the co-designer 2026-08-25,
+       corpus/topics.md; 36 candidates, 6 dropped). Each post-dates the
+       training cutoff of all six models. Cutoff dates recorded: 27B probed
+       (cutoff-probe/probes.md); 4B families carry their documented training
+       windows at selection (task 9 filter).
 2. [ ] Write the label rubric first: what counts as ENTAIL, CONTRADICT,
       UNSPECIFIED, with worked examples of the CONTRADICT vs UNSPECIFIED
       boundary.
@@ -72,8 +80,11 @@ until those models are served and probed, tasks 11-12); (c) freeze the corpus
 7. [ ] Label all 1,200 propositions with the rubric.
 8. [ ] Re-check 10 percent of the labels from scratch; log the agreement rate.
 9. [ ] Pick the five 4B families (distinct from each other, none the 27B's
-      family); write the frozen prompts: the 27B solver prompt and the jury
-      vote contract, plus the covariate feature list.
+       family, documented training cutoff before 2026-08-14 - a family with an
+       unclear or later cutoff is not selected, probe only if the
+       documentation is unclear); record each family's documented cutoff in the
+       manifest; write the frozen prompts: the 27B solver prompt and the jury
+       vote contract, plus the covariate feature list.
 10. [ ] Freeze: article-level split 10/10/10 with a fixed seed, hash the topics,
       articles, pools, and labels, write `prereg.yaml`, git-tag
       `prereg-waveconsensus-v1`. No fine-tuning before this tag.
