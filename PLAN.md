@@ -45,6 +45,17 @@ a pilot, and it says so on purpose.
   the per-family probe battery; the per-item contamination check stays as the
   verification and also covers fine-tune-data leakage. Recorded in SPEC (cutoff
   verification policy) and DECISIONS.
+- 2026-08-25: design pass with the co-designer (SPEC v0.12). Courtroom
+  vocabulary adopted (prosecutor/defendant/jury/evidence, vote solely on the
+  evidence). Null control added: the 27B runs blind mode (questions, no
+  article) and juror mode (pool + article, frozen contract); the pass
+  criterion is beat the self-review control, or match it within a margin at
+  <=10 percent of its cost. Jury relaxed to 1-4B, older/smaller preferred.
+  RQ6 jury-size sweep (1/3/5) and RQ7 3x 1B arm (phase 2) added. P7
+  pre-registered (his words). Cost/TTFT/minimum-hardware reporting added.
+  Task list renumbered to 28. Flagged for his confirmation before lock: the
+  "blind" reading (no article), the "compute effort" basis in P7, and the
+  comparable-margin number.
 
 ## Next step
 
@@ -52,8 +63,9 @@ ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
 is done and the 30-topic selection is approved. When the go-ahead comes: (a)
 task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
 Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
-keep-30; (b) pick the 4B families under the documented-cutoff filter (task 9)
-and record their documented training windows; (c) freeze the corpus
+keep-30; (b) resolve the three flagged items in SPEC v0.12 (blind reading,
+P7 compute-effort basis, comparable margin), then pick the 1-4B jury families
+under the documented-cutoff filter (task 9); (c) freeze the corpus
 (prereg.yaml + git tag, task 10); then task 2, the label rubric.
 
 ## Task list (in order)
@@ -79,12 +91,14 @@ and record their documented training windows; (c) freeze the corpus
       both polarities.
 7. [ ] Label all 1,200 propositions with the rubric.
 8. [ ] Re-check 10 percent of the labels from scratch; log the agreement rate.
-9. [ ] Pick the five 4B families (distinct from each other, none the 27B's
-       family, documented training cutoff before 2026-08-14 - a family with an
-       unclear or later cutoff is not selected, probe only if the
-       documentation is unclear); record each family's documented cutoff in the
-       manifest; write the frozen prompts: the 27B solver prompt and the jury
-       vote contract, plus the covariate feature list.
+9. [ ] Pick the five jury families (distinct from each other, none the 27B's
+       family, each 1-4B, older and smaller base models preferred, documented
+       training cutoff before 2026-08-14 - a family with an unclear or later
+       cutoff is not selected, probe only if the documentation is unclear);
+       record each family's documented cutoff in the manifest; write the frozen
+       prompts: the 27B solver prompt and the jury vote contract (with the
+       prosecution's instruction to vote solely on the evidence), plus the
+       covariate feature list.
 10. [ ] Freeze: article-level split 10/10/10 with a fixed seed, hash the topics,
       articles, pools, and labels, write `prereg.yaml`, git-tag
       `prereg-waveconsensus-v1`. No fine-tuning before this tag.
@@ -94,53 +108,66 @@ and record their documented training windows; (c) freeze the corpus
 
 ### Zero-shot checks (before training)
 
-11. [ ] Serve the 27B and the five 4Bs locally on hydrogen; smoke test.
-12. [ ] Contamination run: for every test article, each 4B answers the 20
-      seed questions with the article and without. Flag anything answered
-      above chance from memory; re-select or relabel it.
-13. [ ] Difficulty check: zero-shot 4B accuracy on the test articles should sit
-      around 80 to 90 percent. Higher means the task is too easy and the models
-      will saturate into oracles; re-tune the pool.
+11. [ ] Serve the 27B and the five jurors locally on hydrogen; smoke test.
+12. [ ] Contamination run: for every test article, each juror answers the 20
+       seed questions with the article and without. Flag anything answered
+       above chance from memory; re-select or relabel it.
+13. [ ] Run the 27B null control on the test articles: blind mode (the 20
+       seed questions with no article, parametric only) and juror mode (the
+       40-proposition pool plus the article, frozen contract, vote block only,
+       temperature 0). Capture token probabilities, tokens, GPU-seconds, and
+       TTFT per run.
+14. [ ] Difficulty check: zero-shot 1-4B accuracy on the test articles should
+       sit around 80 to 90 percent. Higher means the task is too easy and the
+       models will saturate into oracles; re-tune the pool.
 - Verify: contamination table in the manifest, flags resolved or documented;
-  difficulty band recorded per family.
+   difficulty band recorded per family; null control runs complete with full
+   cost accounting.
 
 ### Training and generation
 
-14. [ ] LoRA fine-tune each family on its own slice of the 10 training
-      articles, in two variants (votes-only, think-then-vote), 10 adapters
-      total, distinct seeds.
-15. [ ] Competence check per adapter: 75 to 92 percent on the calibration
-      articles, train/calibration gap no more than 10 points.
-16. [ ] Run the 27B on the 10 test articles, frozen prompt, token
-      probabilities captured.
-17. [ ] Collect the jury votes: 10 adapters times 10 test articles, persisted
-      call caps and attempt ledgers.
-18. [ ] Re-run the microworld arm: the same structured instrument on the
-      frozen ProofWriter split, for the conditions-not-pipelines comparison.
+15. [ ] LoRA fine-tune each family on its own slice of the 10 training
+       articles, in two variants (votes-only, think-then-vote), 10 adapters
+       total, distinct seeds.
+16. [ ] Competence check per adapter: 75 to 92 percent on the calibration
+       articles, train/calibration gap no more than 10 points.
+17. [ ] Run the 27B defendant mode on the 10 test articles, frozen prompt,
+       token probabilities captured, tokens and TTFT recorded.
+18. [ ] Collect the jury votes: 10 adapters times 10 test articles, persisted
+       call caps and attempt ledgers, tokens and TTFT per adapter.
+19. [ ] Re-run the microworld arm: the same structured instrument on the
+       frozen ProofWriter split, for the conditions-not-pipelines comparison.
 - Verify: every adapter in the competence band; gaps logged in DECISIONS.md;
   weights frozen and content-hashed; cache complete, ledgers within caps, parse
   rates reported.
 
 ### Analysis and report (tagged code, run unmodified)
 
-19. [ ] Build the vote matrix by exact match on proposition IDs; silence as
-      state. Run the arms: WCT-U, WCT-EM, claim-instance ablation, single best
-      proposer, base rate, covariate baseline. Platt calibration on the
-      calibration split only.
-20. [ ] Primary and co-primary gates; within-article permutation null, 10,000
-      draws.
-21. [ ] Leave-one-voter-out, all six voters in turn, including the solver
-      (P2).
-22. [ ] E0: pairwise proposition-level residual error correlation across
-      voters (RQ3).
-23. [ ] Compare votes-only versus think-then-vote, reported not predicted.
-24. [ ] Solver-value numbers (RQ4/P5): flag precision and recall on the 27B's
-      false claims versus its true claims, against its token-probability
-      confidence, 27B alone versus 27B plus panel.
-25. [ ] Write the report: results tables, predictions confirmed/failed at
-      equal prominence, invariants, the worked example (one in-passing
-      mention, one hallucinated date, one panel flag), task difficulty stated,
-      post-hoc diagnostics labelled, independent-recomputation note.
+20. [ ] Build the vote matrix by exact match on proposition IDs; silence as
+       state. Run the arms: WCT-U, WCT-EM, claim-instance ablation, single best
+       proposer, base rate, frontier self-review control, covariate baseline.
+       Platt calibration on the calibration split only.
+21. [ ] Primary and co-primary gates; within-article permutation null, 10,000
+       draws.
+22. [ ] Leave-one-voter-out, all six voters in turn, including the solver
+       (P2).
+23. [ ] E0: pairwise proposition-level residual error correlation across
+       voters (RQ3).
+24. [ ] Compare votes-only versus think-then-vote, reported not predicted.
+25. [ ] Solver-value numbers (RQ4/P5): flag precision and recall on the 27B's
+       false claims versus its true claims, against its token-probability
+       confidence, 27B alone versus 27B plus panel.
+26. [ ] Null control comparison (the pass criterion): defendant claims gated by
+       the jury versus the 27B juror-mode control across the corpus, plus the
+       cost table (tokens, GPU-seconds, USD, TTFT, minimum hardware per arm)
+       and the P7 test.
+27. [ ] Jury-size sweep (RQ6): gated false-claim rate at jury size 1 (single
+       best juror), 3 (pre-specified top three by calibration accuracy), 5.
+28. [ ] Write the report: results tables, predictions confirmed/failed at
+       equal prominence, invariants, the pass criterion verdict, the worked
+       example (one in-passing mention, one hallucinated date, one panel flag),
+       task difficulty stated, post-hoc diagnostics labelled,
+       independent-recomputation note.
 - Verify: all numbers in `out/*.summary.json`; independent re-run
   byte-identical; label-flip probe run; every number traceable to a committed
   artifact.

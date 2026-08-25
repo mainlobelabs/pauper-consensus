@@ -1,6 +1,6 @@
 # SPEC: wave-consensus
 
-Status: DRAFT v0.11, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
+Status: DRAFT v0.12, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
 `prereg.yaml` and git-tagging it before any training or generation.
 
 ## 1. What this is
@@ -18,6 +18,17 @@ the proposition level.
 wave-consensus moves the experiment to the other side of that boundary, and adds
 a second axis the source study never had: a strong solver that is never
 fine-tuned, whose trace is verified by a jury of cheap fine-tuned proposers.
+
+Working vocabulary (the co-designer's courtroom frame, adopted 2026-08-25): the
+harness/framework is the **prosecutor**; the qwen3.8-27B solver is the
+**defendant**; the fine-tuned proposers are the **jurors**; the article is the
+**evidence** (a stand-in for RAG); the solver's answers are the defendant's
+**claims**; the prosecution presents each claim with the evidence and instructs
+the jurors to base their yes or no solely on the evidence; the gate's output is
+the **verdict**. The point of the exercise, in the co-designer's words: the jury
+can be "way older models ... or even smaller models", and the point is to
+"materially improve the hallucination of significantly better [models] with
+cheap shitty models".
 
 Scope: this track is a pilot, and it says so on purpose. It de-risks the locked
 run on a real-world corpus; it does not replace the microworld. The source
@@ -73,6 +84,16 @@ Two design choices do the work:
   on claim accuracy? This is the product question.
 - RQ5 (optional, phase 2): How does the consensus advantage vary as proposer
   competence rises through the 70, 80, 90 percent regimes?
+- RQ6: How many jurors are required for a meaningful change in the gated
+  frontier model? Report the gated false-claim rate at jury size 1 (the single
+  best juror), 3, and 5. The 3-juror arm is pre-specified as the three
+  families with the highest zero-shot calibration accuracy (deterministic, no
+  post-hoc selection). Descriptive: where the marginal gain flattens is an
+  operational rule for the minimum viable jury, not a prediction.
+- RQ7 (optional, phase 2): Can three 1B models achieve the same? A 3x 1B
+  jury, fine-tuned on disjoint slices under the same contract, compared against
+  the 5x 1-4B jury and the frontier self-review control. Secondary: reported if
+  compute permits, does not gate the primary analysis.
 
 ## 4. Corpus and ground truth
 
@@ -143,14 +164,26 @@ Two design choices do the work:
   chain-of-thought trace with final answers. Its claims are what gets verified.
   This is the product frame: the customer's frontier model is never migrated or
   tuned.
-- Jury: **5 base models in the 4B class from distinct families** (family list
+- Jury: **5 base models from distinct families, each 1-4B** (family list
   frozen at Phase 0), served locally on hydrogen, none of them sharing lineage
   with the solver's family, each LoRA fine-tuned on a **disjoint slice** of the
   training articles with a different seed and, where possible, a different
-  recipe, to keep error correlation low. Target
+  recipe, to keep error correlation low. Older base models and smaller models
+  are permitted and in fact preferred: the exercise is about cheap models doing
+  the verification, and an older documented cutoff sits further from the topic
+  window. Target
   competence: 75 to 92 percent proposition-level accuracy on the calibration
   articles. Saturation (above 95 percent) is a design failure and triggers a
   re-tune (oracle re-emergence).
+- **Null control (frontier self-review, the co-designer's sharpening,
+  2026-08-25): the solver runs on the test articles in two further modes.
+  Blind mode**: the 20 seed questions with NO article (parametric memory only),
+  documenting what the frontier model knows about the post-cutoff topics from
+  memory alone. **Juror mode**: the full 40-proposition pool plus the article
+  under the frozen voting contract (vote block only, no free CoT, temperature
+  0), the same exercise as the jurors. The juror-mode solver is the control for
+  "a frontier model doing its own adversarial review": the extra expensive
+  same-family compute call the product would otherwise make.
 - Registered arm (cheap, always run): the solver also votes on the pool as a
   sixth, un-tuned proposer, so the oracle-vs-consensus decomposition includes
   the strong model.
@@ -161,10 +194,12 @@ Two design choices do the work:
 
 ## 6. Task and output contract (frozen at Phase 0, exact grammar in `prereg.yaml`)
 
-- Jury task: article plus the full 40-proposition list in. Out: an optional
-  THINK block, then one vote line per proposition, `P{id}: AFFIRM|DENY`. Strict
-  on the vote block, unconstrained on the THINK block (free thinking is what
-  keeps the five families from making identical mistakes).
+- Jury task: the article (evidence) plus the full 40-proposition list (claims)
+  in. Out: an optional THINK block, then one vote line per proposition,
+  `P{id}: AFFIRM|DENY`. The frozen prompt carries the prosecution's instruction:
+  jurors base their yes or no solely on the evidence. Strict on the vote block,
+  unconstrained on the THINK block (free thinking is what keeps the five
+  families from making identical mistakes).
 - CoT ablation, registered: the jury is trained in **two variants** on the same
   data, votes-only and think-then-vote. Both are run on the test articles; the
   comparison is reported, not predicted. Ten adapters total (2 variants x 5
@@ -214,6 +249,29 @@ Two design choices do the work:
   dropped). The solver's confidence is the mean token probability of the answer
   span, frozen in `prereg.yaml`, so the comparison is against a measured
   quantity, not a verbalized self-report.
+- Frontier self-review control (the null control): the solver's juror-mode votes
+  on the same pool are scored exactly like a juror's votes, giving the
+  "frontier model doing its own adversarial review" arm. The blind-mode run is
+  a validity baseline for the cutoff gap (what the frontier model knows from
+  memory alone) and is reported, not a gate.
+- Pass criterion (null-control comparison, the co-designer's sharpening,
+  2026-08-25): across the corpus of test articles and questions, the juror
+  system (the defendant's claims gated by the 1-4B jury consensus) passes if
+  either (a) it outright outperforms the frontier self-review control on
+  false-claim rate, or (b) it is comparable to the control within 2 percentage
+  points of false-claim rate at 10 percent or less of the control's compute
+  cost. The 2 percentage point margin is Frank's proposed number, flagged for
+  co-designer confirmation before lock. Cost is USD at our amortized serving
+  price. Compute cost and hosting cost are first-class evaluation axes, not
+  footnotes.
+- Cost and serving metrics, reported per arm: total input and output tokens,
+  GPU-seconds, USD cost, median TTFT, and the minimum hardware that serves the
+  arm at target concurrency (this is the fan-out value: the jury runs on cheap
+  hardware the solver cannot).
+- Jury-size sweep (RQ6): the gated false-claim rate at jury size 1, 3, 5, with
+  the 3-juror arm pre-specified as the three highest-calibration-accuracy
+  families. Descriptive curve; the minimum viable jury is an operational
+  decision, not a prediction.
 - Decision rule (the C11 fix, explicit): go requires the point estimate at or
   above delta **and** the bootstrap interval excluding zero. If the point clears
   delta but the bound does not, the verdict is INCONCLUSIVE. Degenerate intervals
@@ -252,18 +310,36 @@ C9). P5's power note requires the test articles to yield at least 100
 pool-matched solver claims of each class; if not, P5 is reported descriptive
 only and the article count is raised before the next lock. P6's power note
 requires the test articles to yield at least 30 pool-matched solver claims on
-UNSPECIFIED propositions (the 30-question denominator of the prediction); if
-not, P6 is reported descriptive only.
+  UNSPECIFIED propositions (the 30-question denominator of the prediction); if
+  not, P6 is reported descriptive only.
+- P7 (co-designer's prediction, pre-registered 2026-08-25, in his words:
+  "I predict that a consensus will outperform a single model specially on the
+  grounds of same family blind spots. Additionally, smaller models could be
+  easily fanned out into cheap infrastructure this is a huge value add over
+  another expensive compute call to same family. I predict the consensus will
+  have >50% compute effort whilst marginally being better at bullshit
+  detection"): (a) the 5-juror consensus outperforms the single best juror on
+  false-claim rate on the test articles (mechanism: same-family blind spots);
+  (b) the juror consensus's raw compute effort (token count) exceeds 50 percent
+  of the frontier self-review control's while its false-claim rate is lower
+  than the control's (marginally better at bullshit detection). Flag, for
+  co-designer confirmation before lock: "compute effort" is read as raw
+  token/FLOP effort relative to the control, not USD cost, because the pass
+  criterion's 10 percent figure is a USD cost ratio. Power note: P7(b) requires
+  complete token accounting for every arm (defendant, blind, juror, 5-juror).
 
 ## 9. Baselines, in order of stringency
 
 1. Trivial base rate (floor).
 2. Single best proposer, calibrated (the oracle reference).
-3. Zero-shot 4B jury on the same articles (comparability and the P4 arm).
-4. Covariate logistic regression (the registered bar).
-5. Optional: a small supervised verifier trained on the calibration labels
+3. Zero-shot 1-4B jury on the same articles (comparability and the P4 arm).
+4. Frontier self-review: the solver voting on the same pool under the same
+   contract (the null control; the pass criterion in section 7 compares the
+   gated system against this arm).
+5. Covariate logistic regression (the registered bar).
+6. Optional: a small supervised verifier trained on the calibration labels
    (the strong-baseline the source study omitted).
-6. Contamination runs (no-article, with-article) are validity checks, not
+7. Contamination runs (no-article, with-article) are validity checks, not
    baselines; they are logged in the manifest before the test run is seen.
 
 ## 10. Registration discipline

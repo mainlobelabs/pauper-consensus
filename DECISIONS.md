@@ -4,6 +4,47 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-25
 
+- Design pass with the co-designer, SPEC v0.12 (2026-08-25), several
+  sign-offs in one message:
+  - Courtroom vocabulary adopted: harness = prosecutor, 27B = defendant,
+    fine-tuned proposers = jurors, article = evidence (stand-in for RAG),
+    solver answers = claims, gate output = verdict. The prosecution instructs
+    jurors to base their yes/no solely on the evidence. Reason: it makes the
+    product frame legible and pins the jurors' task to the text.
+  - Point of the exercise, in his words: the jury can be "way older models ...
+    or even smaller models"; the point is to "materially improve the
+    hallucination of significantly better [models] with cheap shitty models".
+    Jury size class relaxed from 4B to 1-4B, older/smaller preferred.
+  - Null control added: the 27B runs twice extra on the test articles, blind
+    mode (20 seed questions, no article, parametric only) and juror mode
+    (40-proposition pool plus article, frozen contract, vote block only,
+    temp 0). The juror-mode 27B is the "frontier model doing its own
+    adversarial review" control. Reason: without it, the jury's value could be
+    "just make the frontier model review itself".
+  - Pass criterion pre-registered: across the corpus, the juror-gated system
+    passes if it outright outperforms the self-review control on false-claim
+    rate, or is comparable at <=10 percent of the control's compute cost.
+    Cost is USD at our amortized serving price; compute cost and hosting are
+    first-class evaluation axes. Reporting metrics fixed: tokens, GPU-seconds,
+    USD, median TTFT, minimum hardware per arm.
+  - RQ6 added: how many jurors for a meaningful change; gated false-claim
+    rate at jury size 1/3/5, the 3-juror arm pre-specified as the top three
+    calibration-accuracy families. Descriptive curve.
+  - RQ7 added (optional, phase 2): can 3x 1B models achieve the same?
+  - P7 pre-registered in his words: consensus outperforms a single model
+    (same-family blind spots); small models fan out into cheap infrastructure,
+    a huge value add over another expensive same-family compute call; he
+    predicts the consensus will have >50 percent compute effort whilst
+    marginally better at bullshit detection.
+  Reason for the whole pass: it sharpens the experiment from "the jury helps"
+  to "the jury beats the frontier model's own self-review at a fraction of the
+  cost", which is the sellable claim.
+  Flagged for co-designer confirmation before lock (in SPEC): (1) "blind" is
+  read as questions with NO article; (2) P7's "compute effort" is read as raw
+  token/FLOP effort relative to the control, not USD, because the pass
+  criterion's 10 percent figure is a USD cost ratio; (3) the comparable
+  margin in the pass criterion is Frank's proposed 2 percentage points on
+  false-claim rate.
 - 4B cutoff policy downgraded (co-designer sign-off): the jury families'
   cutoffs are established by their documented training windows at model
   selection (hard filter: documented cutoff before 2026-08-14; probe only if
