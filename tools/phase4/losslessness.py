@@ -84,6 +84,7 @@ def main() -> None:
         print(f"== {base}: loading base model for self-PPL", flush=True)
         model, tokenizer = mlx_lm.load(str(Path(args.model_dir) / base))
         per: dict[str, dict[int, float]] = {}
+        done = 0
         for tid in sorted(CALIB):
             per[tid] = {}
             for i in range(1, 41):
@@ -91,6 +92,9 @@ def main() -> None:
                 if r is None:
                     continue
                 per[tid][i] = ppl_under(model, tokenizer, r["raw"])
+                done += 1
+                if done % 50 == 0:
+                    print(f"   {base} self-PPL {done}/400", flush=True)
         base_self_ppl[base] = per
         del model, tokenizer
         gc.collect()
@@ -138,6 +142,7 @@ def main() -> None:
         print(f"== {tag}: loading fused model for PPL", flush=True)
         fmodel, ftoken = mlx_lm.load(str(Path(args.fused_dir) / tag))
         ratio: list[dict] = []
+        done = 0
         for tid in sorted(CALIB):
             for i in range(1, 41):
                 key = (tid, str(i))
@@ -147,6 +152,9 @@ def main() -> None:
                 self_ppl = self_per[tid].get(i)
                 if self_ppl is None or not ft_ppl:
                     continue
+                done += 1
+                if done % 50 == 0:
+                    print(f"   {tag} ft-PPL {done}/400", flush=True)
                 ratio.append(
                     {
                         "article": tid,
