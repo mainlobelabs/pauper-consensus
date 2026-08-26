@@ -50,13 +50,14 @@ def load_records(jsonl: Path, tids: set[str]) -> dict[tuple[str, str], dict]:
 
 def ppl_under(model, tokenizer, text: str) -> float:
     import mlx.core as mx
+    import mlx.nn as nn
 
     ids = tokenizer.encode(text)
     if len(ids) < 2:
         return float("nan")
     input_ids = mx.array([ids])
     logits = model(input_ids)[0]  # (S, V)
-    logprobs = mx.log_softmax(logits)
+    logprobs = nn.log_softmax(logits)
     total = 0.0
     for t in range(len(ids) - 1):
         total += float(logprobs[t, ids[t + 1]].item())
