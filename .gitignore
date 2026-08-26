@@ -15,14 +15,10 @@ build/
 .ruff_cache/
 .mypy_cache/
 
-# data and run artifacts (kept out of git, content-hashed on disk)
+# data and caches (run artifacts under out/ and runs/ ARE committed:
+# critical per Andryo 2026-08-26, "just commit them"; they are text)
 data/
-out/
 cache/
-runs/
-# probe run archives ARE committed (critical, Andryo 2026-08-26): small,
-# and the raw model outputs must be in the repo, not only on helium
-!cutoff-probe/runs/
 *.parquet
 *.ckpt
 *.safetensors
