@@ -73,8 +73,9 @@ def git_hash() -> str:
 
 def run_step(cmd: list[str], log_path: Path) -> int:
     log_path.parent.mkdir(parents=True, exist_ok=True)
-    log_path.write_text("$ " + " ".join(cmd) + f"\n\n{datetime.now(UTC).isoformat()}\n\n")
     with log_path.open("a") as log:
+        log.write("\n$ " + " ".join(cmd) + f"\n\n{datetime.now(UTC).isoformat()}\n\n")
+        log.flush()
         p = subprocess.run(cmd, stdout=log, stderr=subprocess.STDOUT)
     return p.returncode
 
@@ -88,6 +89,10 @@ def main() -> None:
     ap.add_argument("--variants", default="reason_included,votes_only")
     ap.add_argument("--skip-fuse", action="store_true")
     ap.add_argument("--parallel", type=int, default=1, help="concurrent trainings (1 = sequential)")
+    ap.add_argument(
+        "--tag", default="", help="comma-separated model__variant tags to run (default: full grid)"
+    )
+    ap.add_argument("--lr", default="1e-4", help="learning rate override for this run")
     args = ap.parse_args()
 
     models = [m.strip() for m in args.models.split(",") if m.strip()]
@@ -96,17 +101,24 @@ def main() -> None:
     datasets = Path(args.datasets)
     model_dir = Path(args.model_dir)
 
-    recipe = {
-        "generated_utc": datetime.now(UTC).isoformat(),
-        "repo": str(REPO),
-        "git_hash": git_hash(),
-        "mlx_lm": MLX_LM,
-        "mlx_lm_defaults": MLX_LM_DEFAULTS,
-        "parallel": args.parallel,
-        "seeds": SEEDS,
-        "base_weight_hashes": {},
-        "adapters": {},
-    }
+    recipe_path = run_dir / "phase4_recipe.json"
+    if recipe_path.exists():
+        recipe = json.loads(recipe_path.read_text())
+        recipe["generated_utc"] = datetime.now(UTC).isoformat()
+        recipe["git_hash"] = git_hash()
+        recipe["parallel"] = args.parallel
+    else:
+        recipe = {
+            "generated_utc": datetime.now(UTC).isoformat(),
+            "repo": str(REPO),
+            "git_hash": git_hash(),
+            "mlx_lm": MLX_LM,
+            "mlx_lm_defaults": MLX_LM_DEFAULTS,
+            "parallel": args.parallel,
+            "seeds": SEEDS,
+            "base_weight_hashes": {},
+            "adapters": {},
+        }
 
     def train_one(m: str, v: str) -> tuple[str, dict]:
         tag = f"{m}__{v}"
@@ -134,7 +146,7 @@ def main() -> None:
             "--iters",
             "200",
             "--learning-rate",
-            "1e-4",
+            args.lr,
             "--max-seq-length",
             "2048",
             "--val-batches",
@@ -180,6 +192,9 @@ def main() -> None:
     for m in models:
         recipe["base_weight_hashes"][m] = weight_hashes(model_dir / m)
     tasks = [(m, v) for m in models for v in variants]
+    if args.tag:
+        wanted = {t.strip() for t in args.tag.split(",") if t.strip()}
+        tasks = [t for t in tasks if f"{t[0]}__{t[1]}" in wanted]
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.parallel) as ex:
         for tag, entry in ex.map(lambda t: train_one(t[0], t[1]), tasks):
             recipe["adapters"][tag] = entry
