@@ -93,6 +93,12 @@ def main() -> None:
         "--tag", default="", help="comma-separated model__variant tags to run (default: full grid)"
     )
     ap.add_argument("--lr", default="1e-4", help="learning rate override for this run")
+    ap.add_argument("--batch", default="4", help="batch size override for this run")
+    ap.add_argument(
+        "--max-seq",
+        default="2048",
+        help="max sequence length (data max is ~760 tokens; lower for models that OOM at 2048)",
+    )
     args = ap.parse_args()
 
     models = [m.strip() for m in args.models.split(",") if m.strip()]
@@ -142,13 +148,13 @@ def main() -> None:
             "--num-layers",
             "16",
             "--batch-size",
-            "4",
+            args.batch,
             "--iters",
             "200",
             "--learning-rate",
             args.lr,
             "--max-seq-length",
-            "2048",
+            args.max_seq,
             "--val-batches",
             "50",
             "--steps-per-report",
@@ -201,7 +207,10 @@ def main() -> None:
 
     (run_dir / "phase4_recipe.json").write_text(json.dumps(recipe, indent=2) + "\n")
     print(f"wrote {run_dir / 'phase4_recipe.json'}")
-    bad = [t for t, e in recipe["adapters"].items() if e["status"].endswith("failed")]
+    ran = {f"{m}__{v}" for m, v in tasks}
+    bad = [
+        t for t in sorted(ran) if recipe["adapters"].get(t, {}).get("status", "").endswith("failed")
+    ]
     if bad:
         print("FAILED:", bad)
         sys.exit(1)
