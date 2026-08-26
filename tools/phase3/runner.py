@@ -619,6 +619,7 @@ def run_contamination(args: argparse.Namespace) -> None:
 def run_native(args: argparse.Namespace) -> None:
     out = Path(args.out) / "native"
     out.mkdir(parents=True, exist_ok=True)
+    models = args.models
     splits = article_ids_by_split()
     tids = (
         splits["train"] + splits["calibration"] + splits["test"]
@@ -632,7 +633,7 @@ def run_native(args: argparse.Namespace) -> None:
             "purpose": "zero-shot native outputs under the frozen contract; "
             "train = self-distillation targets, calibration = baseline fit + "
             "losslessness base, test = P4 zero-shot baseline",
-            "models": {m: OMLX_URL for m in JURORS},
+            "models": {m: OMLX_URL for m in models},
             "split": args.split,
             "articles": tids,
             "endpoints": {OMLX_URL: endpoint_info(OMLX_URL)},
@@ -641,13 +642,13 @@ def run_native(args: argparse.Namespace) -> None:
     spend = Spend(out / "spend_state.json")
     writers: dict[str, object] = {}
     done: set[tuple] = set()
-    for m in JURORS:
+    for m in models:
         fh, d = open_jsonl(out / f"{m}.jsonl", args.resume)
         writers[m] = fh
         done |= d
     work = [
         (m, tid, i)
-        for m in JURORS
+        for m in models
         for tid in tids
         for i in range(1, 41)
         if (m, tid, str(i), "contract") not in done
@@ -767,8 +768,14 @@ def main() -> None:
     p.add_argument("--out", default=str(DEFAULT_RUNS / "2026-08-26-phase3"))
     p.add_argument("--split", default="all", choices=["all", "train", "calibration", "test"])
     p.add_argument("--mode", default="baseline", choices=["baseline", "self-review"])
+    p.add_argument(
+        "--models",
+        default=",".join(JURORS),
+        help="comma-separated model list for native (default: all 5 jurors)",
+    )
     p.add_argument("--resume", action="store_true")
     args = p.parse_args()
+    args.models = [m.strip() for m in args.models.split(",") if m.strip()]
     if args.run == "smoke":
         run_smoke(args)
     elif args.run == "contamination":
