@@ -21,6 +21,7 @@ Stdlib only (subprocess). Deterministic per recipe manifest.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import json
 import subprocess
 import sys
@@ -86,6 +87,7 @@ def main() -> None:
     ap.add_argument("--models", required=True)
     ap.add_argument("--variants", default="reason_included,votes_only")
     ap.add_argument("--skip-fuse", action="store_true")
+    ap.add_argument("--parallel", type=int, default=1, help="concurrent trainings (1 = sequential)")
     args = ap.parse_args()
 
     models = [m.strip() for m in args.models.split(",") if m.strip()]
@@ -100,81 +102,86 @@ def main() -> None:
         "git_hash": git_hash(),
         "mlx_lm": MLX_LM,
         "mlx_lm_defaults": MLX_LM_DEFAULTS,
+        "parallel": args.parallel,
         "seeds": SEEDS,
         "base_weight_hashes": {},
         "adapters": {},
     }
 
-    for m in models:
+    def train_one(m: str, v: str) -> tuple[str, dict]:
+        tag = f"{m}__{v}"
         base = model_dir / m
-        recipe["base_weight_hashes"][m] = weight_hashes(base)
-        for v in variants:
-            tag = f"{m}__{v}"
-            dset = datasets / tag
-            adapter = run_dir / "adapters" / tag
-            fused = run_dir / "fused" / tag
-            cmd = [
-                MLX_LM,
-                "lora",
-                "--model",
-                str(base),
-                "--train",
-                "--data",
-                str(dset),
-                "--fine-tune-type",
-                "lora",
-                "--optimizer",
-                "adamw",
-                "--mask-prompt",
-                "--num-layers",
-                "16",
-                "--batch-size",
-                "4",
-                "--iters",
-                "200",
-                "--learning-rate",
-                "1e-4",
-                "--max-seq-length",
-                "2048",
-                "--val-batches",
-                "50",
-                "--steps-per-report",
-                "10",
-                "--steps-per-eval",
-                "50",
-                "--seed",
-                str(SEEDS[m]),
-                "--adapter-path",
-                str(adapter),
-            ]
-            log = run_dir / "logs" / f"{tag}.train.log"
-            print(f"== training {tag}", flush=True)
-            rc = run_step(cmd, log)
-            entry = {"cmd": cmd, "train_log": str(log), "train_rc": rc}
-            if rc != 0:
-                entry["status"] = "train_failed"
-                recipe["adapters"][tag] = entry
-                continue
-            if args.skip_fuse:
-                entry["status"] = "trained"
-            else:
-                fcmd = [
-                    "/opt/homebrew/bin/mlx_lm.fuse",
-                    "--model",
-                    str(base),
-                    "--adapter-path",
-                    str(adapter),
-                    "--save-path",
-                    str(fused),
-                ]
-                flog = run_dir / "logs" / f"{tag}.fuse.log"
-                print(f"== fusing {tag}", flush=True)
-                frc = run_step(fcmd, flog)
-                entry["fuse_cmd"] = fcmd
-                entry["fuse_log"] = str(flog)
-                entry["fuse_rc"] = frc
-                entry["fused_dir"] = str(fused)
-                entry["status"] = "fused" if frc == 0 else "fuse_failed"
+        dset = datasets / tag
+        adapter = run_dir / "adapters" / tag
+        fused = run_dir / "fused" / tag
+        cmd = [
+            MLX_LM,
+            "lora",
+            "--model",
+            str(base),
+            "--train",
+            "--data",
+            str(dset),
+            "--fine-tune-type",
+            "lora",
+            "--optimizer",
+            "adamw",
+            "--mask-prompt",
+            "--num-layers",
+            "16",
+            "--batch-size",
+            "4",
+            "--iters",
+            "200",
+            "--learning-rate",
+            "1e-4",
+            "--max-seq-length",
+            "2048",
+            "--val-batches",
+            "50",
+            "--steps-per-report",
+            "10",
+            "--steps-per-eval",
+            "50",
+            "--seed",
+            str(SEEDS[m]),
+            "--adapter-path",
+            str(adapter),
+        ]
+        log = run_dir / "logs" / f"{tag}.train.log"
+        print(f"== training {tag}", flush=True)
+        rc = run_step(cmd, log)
+        entry = {"cmd": cmd, "train_log": str(log), "train_rc": rc}
+        if rc != 0:
+            entry["status"] = "train_failed"
+            return tag, entry
+        if args.skip_fuse:
+            entry["status"] = "trained"
+            return tag, entry
+        fcmd = [
+            "/opt/homebrew/bin/mlx_lm.fuse",
+            "--model",
+            str(base),
+            "--adapter-path",
+            str(adapter),
+            "--save-path",
+            str(fused),
+        ]
+        flog = run_dir / "logs" / f"{tag}.fuse.log"
+        print(f"== fusing {tag}", flush=True)
+        frc = run_step(fcmd, flog)
+        entry["fuse_cmd"] = fcmd
+        entry["fuse_log"] = str(flog)
+        entry["fuse_rc"] = frc
+        entry["fused_dir"] = str(fused)
+        entry["status"] = "fused" if frc == 0 else "fuse_failed"
+        return tag, entry
+
+    for m in models:
+        recipe["base_weight_hashes"][m] = weight_hashes(model_dir / m)
+    tasks = [(m, v) for m in models for v in variants]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=args.parallel) as ex:
+        for tag, entry in ex.map(lambda t: train_one(t[0], t[1]), tasks):
             recipe["adapters"][tag] = entry
 
     (run_dir / "phase4_recipe.json").write_text(json.dumps(recipe, indent=2) + "\n")
