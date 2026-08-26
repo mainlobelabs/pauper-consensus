@@ -94,6 +94,7 @@ def main() -> None:
     )
     ap.add_argument("--lr", default="1e-4", help="learning rate override for this run")
     ap.add_argument("--batch", default="4", help="batch size override for this run")
+    ap.add_argument("--iters", default="200", help="training steps override")
     ap.add_argument(
         "--max-seq",
         default="2048",
@@ -150,7 +151,7 @@ def main() -> None:
             "--batch-size",
             args.batch,
             "--iters",
-            "200",
+            args.iters,
             "--learning-rate",
             args.lr,
             "--max-seq-length",
