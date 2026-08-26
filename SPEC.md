@@ -1,9 +1,11 @@
 # SPEC: wave-consensus
 
-Status: DRAFT v0.13, 2026-08-25. Not locked. Lock happens at Phase 0 by writing
-`prereg.yaml` and git-tagging it before any training or generation. v0.13: the
-null control is with-prompt versus without-prompt (the blind mode was dropped),
-one call per claim under the co-designer's claim-verification prompt, PASS|FAIL
+Status: DRAFT v0.14, 2026-08-25. Not locked. Lock happens at Phase 2 (the
+registration freeze) by writing `prereg.yaml` and git-tagging it before any
+training or generation. v0.14: primary jury below 4B (1-2B preferred) with a
+pre-registered 4B fallback, phase numbers aligned with PLAN. v0.13: the null
+control is with-prompt versus without-prompt (the blind mode was dropped), one
+call per claim under the co-designer's claim-verification prompt, PASS|FAIL
 verdict vocabulary, self-distilled training targets (the LoRA learns only the
 wrapper), and the losslessness check on untrained articles.
 
@@ -95,9 +97,11 @@ Two design choices do the work:
   post-hoc selection). Descriptive: where the marginal gain flattens is an
   operational rule for the minimum viable jury, not a prediction.
 - RQ7 (optional, phase 2): Can three 1B models achieve the same? A 3x 1B
-  jury, fine-tuned on disjoint slices under the same contract, compared against
-  the 5x 1-4B jury and the frontier self-review control. Secondary: reported if
-  compute permits, does not gate the primary analysis.
+  jury, fine-tuned on disjoint slices under the same contract, compared
+  against the full 5-juror jury and the frontier self-review control. With
+  the primary jury now below 4B, this arm is the size-floor question (how
+  small can the jury go). Reported if compute permits, does not gate the
+  primary analysis.
 
 ## 4. Corpus and ground truth
 
@@ -109,13 +113,13 @@ Two design choices do the work:
   and fact-checked per the rules below. Each article contains at least one **in-passing mention** of a
   secondary fact, so that some seeded claims are true only in the sense of being
   mentioned, and some questions about them have no answer in the text. Topic
-  list frozen at Phase 0. Worked example: an article about SynthID watermarking
+  list frozen at Phase 2. Worked example: an article about SynthID watermarking
   that mentions in passing "Claude recently implemented fingerprinting" without
   a date; the seeded question "when did Claude implement fingerprinting?" then
   has the correct answer "not stated in the article".
 - Cutoff verification policy: the 27B solver's cutoff was verified by direct
   probing (cutoff-probe/probes.md, 2026-08-25: blind to the 2026-08-14 to
-  2026-08-25 window; self-report not trusted). The 4B jury families' cutoffs are
+  2026-08-25 window; self-report not trusted). The jury families' cutoffs are
   established by their documented training windows at model selection (hard
   filter: documented cutoff before 2026-08-14; a family with an unclear or
   later cutoff is not selected; probing only if the documentation is unclear).
@@ -168,17 +172,25 @@ Two design choices do the work:
   chain-of-thought trace with final answers. Its claims are what gets verified.
   This is the product frame: the customer's frontier model is never migrated or
   tuned.
-- Jury: **5 base models from distinct families, each 1-4B** (family list
-  frozen at Phase 0), served locally on hydrogen, none of them sharing lineage
+- Jury: **5 base models from distinct families, each below 4B** (family list
+  frozen at Phase 2), served locally on hydrogen, none of them sharing lineage
   with the solver's family, each LoRA fine-tuned on a **disjoint slice** of the
   training articles with a different seed and, where possible, a different
-  recipe, to keep error correlation low. Older base models and smaller models
-  are permitted and in fact preferred: the exercise is about cheap models doing
-  the verification, and an older documented cutoff sits further from the topic
-  window. Target
-  competence: 75 to 92 percent proposition-level accuracy on the calibration
-  articles. Saturation (above 95 percent) is a design failure and triggers a
-  re-tune (oracle re-emergence).
+  recipe, to keep error correlation low. **The primary jury is below 4B, with
+  1-2B preferred** (the co-designer's call, 2026-08-25): if the mechanism
+  works on models that small, the hypothesis is proven at its strongest form,
+  and the cost story is the best it can be. **Pre-registered fallback**: if a
+  below-4B candidate family misses the competence band at Phase 4, the jury is
+  filled from the 4B class for that family (declared at registration, applied
+  family-by-family, the report labels which class ran). Older base models and
+  smaller models are permitted and in fact preferred: the exercise is about
+  cheap models doing the verification, and an older documented cutoff sits
+  further from the topic window. If the below-4B jury passes the pass
+  criterion, any 4B run is a descriptive ceiling check (phase 2), not part of
+  the proof. Target competence: 75 to 92 percent proposition-level accuracy
+  on the calibration articles. Saturation (above 95 percent) is a design
+  failure and triggers a re-tune (oracle re-emergence); under-competence
+  (below 75 percent) triggers the fallback for that family.
 - **Null control (frontier self-review, the co-designer's sharpening,
   2026-08-25, clarified same day): the solver runs on the test articles in two
    modes, and the difference is the prompt. **WITH the prompt**: the frozen
@@ -198,7 +210,7 @@ Two design choices do the work:
 - Weights frozen and content-hashed after training; hashes recorded in the
   registration artifact.
 
-## 6. Task and output contract (frozen at Phase 0, exact grammar in `prereg.yaml`)
+## 6. Task and output contract (frozen at Phase 2, exact grammar in `prereg.yaml`)
 
 - Jury task: one claim at a time. In: the article (evidence) plus one claim in
   question form. Out: `{ answer: PASS|FAIL, reason: <text> }`. The frozen
@@ -293,7 +305,8 @@ Two design choices do the work:
   control, the source of what is verified); it is reported, not a separate arm.
 - Pass criterion (null-control comparison, the co-designer's sharpening,
   2026-08-25): across the corpus of test articles and questions, the juror
-  system (the defendant's claims gated by the 1-4B jury consensus) passes if
+  system (the defendant's claims gated by the jury consensus, below-4B primary
+  with the registered 4B fallback where applied) passes if
   either (a) it outright outperforms the frontier self-review control on
   false-claim rate (the 95 percent bootstrap CI of the difference entirely
   below zero), or (b) it is comparable to the control within 10 percentage

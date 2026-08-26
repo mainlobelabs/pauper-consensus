@@ -4,6 +4,21 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-25
 
+- Primary jury below 4B, PLAN restructured into phases (co-designer's call,
+  SPEC v0.14): the five jurors are each below 4B, 1-2B preferred. Reason:
+  "if it works there already our hypothesis is proven" - if the jury
+  mechanism works on models that small, the hypothesis (cheap small models
+  materially improve the hallucination of a much better model) is proven at
+  its strongest form, and the cost story is the best it can be. Pre-registered
+  fallback: if a below-4B candidate family misses the competence band
+  (75-92 percent) at Phase 4, the jury is filled from the 4B class for that
+  family - declared at registration, applied family-by-family, labelled in
+  the report. If the below-4B jury passes the pass criterion, 4B runs are a
+  descriptive ceiling check (phase 2), not part of the proof. RQ7 (3x 1B)
+  reframed as the size-floor question. PLAN now has Phases 0-6 with concrete
+  steps, deliverables, and gates per phase; SPEC phase numbers aligned (lock =
+  Phase 2, the registration freeze). One-pager published to webdrop for his
+  review.
 - Co-designer reply, SPEC v0.13 (2026-08-25):
   - The "blind" flag is RESOLVED: the two 27B runs differ in the prompt, not
     the article. WITH the frozen claim-verification prompt = the juror's
