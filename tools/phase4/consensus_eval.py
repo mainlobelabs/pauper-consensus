@@ -45,7 +45,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "phase3"))
-from analyze import CORPUS, EXPECT, article_ids_by_split, load_labels  # noqa: E402
+from analyze import CORPUS, EXPECT, article_ids_by_split  # noqa: E402
 
 FAMILIES = [
     "llama-3.2-3b-instruct",
@@ -217,8 +217,16 @@ def _auroc(score: np.ndarray, label: np.ndarray) -> float:
 # ----------------------------------------------------- covariate baseline
 
 
-def build_features(tids: set[str], labels, meta: dict, articles: dict) -> dict:
-    """(tid, item) -> feature vector."""
+def load_raw_labels() -> dict[str, list[dict]]:
+    """tid -> list of {id, proposition, label, ...} (raw corpus label files)."""
+    out: dict[str, list[dict]] = {}
+    for f in sorted(CORPUS.glob("labels/T*.json")):
+        out[f.stem] = json.loads(f.read_text())
+    return out
+
+
+def build_features(tids: set[str], labels: dict, meta: dict, articles: dict) -> dict:
+    """(tid, item) -> feature vector. labels = load_raw_labels()."""
     feats: dict[tuple[str, int], np.ndarray] = {}
     trap_vocab = sorted({r["trap_type"] for v in meta.values() for r in v})
     for tid in tids:
@@ -295,7 +303,7 @@ def main() -> None:
     rng = np.random.default_rng(RNG_SEED)
     splits = article_ids_by_split()
     test_ids, calib_ids = set(splits["test"]), set(splits["calibration"])
-    labels = load_labels()
+    labels = load_raw_labels()
     meta = json.loads((CORPUS / "pool" / "metadata.json").read_text())
     articles = {t: (CORPUS / "articles" / f"{t}.md").read_text() for t in test_ids | calib_ids}
 
