@@ -211,7 +211,8 @@ def _auroc(score: np.ndarray, label: np.ndarray) -> float:
     n_pos = label.sum()
     n_neg = len(label) - n_pos
     sum_ranks_pos = ranks[label == 1].sum()
-    return float((sum_ranks_pos - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg))
+    # ranks are 1 = highest score, so invert the Mann-Whitney statistic
+    return float(1.0 - (sum_ranks_pos - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg))
 
 
 # ----------------------------------------------------- covariate baseline
