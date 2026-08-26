@@ -157,9 +157,8 @@ Concrete steps, in order:
    feature list (task 9).
 
 Tasks: 1 (done), 2 (done), 3 (done), 4 (done), 5 (done), 6 (done),
-7 (done), 8 (done), 9 (prompts + covariates drafted in prompts/; open:
-1,200 question-form renderings in corpus/pool/question_form/ and
-corpus/pool/metadata.json).
+7 (done), 8 (done), 9 (done: prompts/ + 1,200 question-form renderings in
+corpus/pool/question_form/ + corpus/pool/metadata.json).
 Deliverables: corpus/ (articles, questions, pools, labels), manifest.json,
 prompts/.
 - Verify: every fact web-checked with a source logged; rubric with worked

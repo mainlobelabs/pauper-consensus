@@ -2,6 +2,44 @@
 
 Decision log. One entry per significant decision, with the reason. Newest first.
 
+## 2026-08-26
+
+- Disputed-pin adjudication rules for the 30-article covariate pass
+  (task 9, corpus/pool/metadata.json). Eight articles carry a manifest
+  `disputed` field (cross-source split on one pin). Four cases decide the
+  marking: (a) article SILENT on the disputed point, pin proposition in
+  the UNSPECIFIED block -> disputed_pin on that pin (T02-031/032/034).
+  (b) article pins a DISCRETE identity/name/age/date where reporting
+  splits -> disputed_pin on the ENTAIL proposition carrying the article's
+  pin (T18-005/006, T24-010, T36-006). (c) article states two conflicting
+  figures and the proposition pins an EXACT/FINAL total the article never
+  pins -> figure_conflict on the UNSPECIFIED pin, ENTAIL pins carrying the
+  stated figures stay none (T13-031, T25-031, T35-031). (d) article silent
+  on the RELATION between two stated disputed figures -> disputed_pin
+  (T30-039). Reason: disputed_pin marks cells where the ground truth is
+  itself contested across sources (the article's pin is defensible but not
+  the world's truth), which the report must handle separately from
+  figure_conflict, where the proposition merely fabricates precision the
+  article never has. Both stay distinct covariates so the prereg can test
+  whether the jury degrades differently on contested ground truth vs
+  fabricated precision.
+- Question-form conversion fixed to a POLAR form before any rendering was
+  frozen (task 9, corpus pass). Every pool proposition renders as
+  "Is it true that {proposition, verbatim, minus trailing period}?" with
+  the asserted value kept. Reason: the jury contract's output is a verdict
+  ON THE CLAIM ({ answer: PASS|FAIL|NOT_STATED, reason }), so the claim
+  must be present in the prompt. The earlier draft interrogativized by
+  DELETING the asserted value (wh-form: "What were Lala's sustained winds
+  on August 16?"); with the value absent the jury could never answer FAIL
+  for a wrong figure, so every wrong-number CONTRADICT would be
+  indistinguishable from ENTAIL and the gate binary (PASS vs not-PASS)
+  collapses. Polar form keeps the claim verbatim (auditable, trivial
+  content hash), preserves negations as-is, and is one mechanical rule
+  for all 1,200 propositions. Consequence: the seeded wh-questions in
+  corpus/questions are the solver baseline task only; the jury contract
+  uses the polar forms. Recorded before Phase 2 freeze, so no
+  re-registration needed.
+
 ## 2026-08-25
 
 - Primary jury below 4B, PLAN restructured into phases (co-designer's call,

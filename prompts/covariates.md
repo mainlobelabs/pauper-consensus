@@ -23,12 +23,22 @@ fields, so the analysis is reproducible from the results files alone.
 - `gold_label` (ENTAIL | CONTRADICT | UNSPECIFIED)
 - `gate_label` (1 = ENTAIL, 0 = not)
 - `question_form_id` (row id in `corpus/pool/question_form/`)
-- `seed_type` (direct_fact | passing_mention | silence_trap |
-  derived_polarity) formalized from the P1-4/P1-5 seed notes
-- `trap_type` (none | disputed_pin | unit_swap | figure_conflict);
-  current instances: unit_swap T02-024, T12-023, T19-032, T35-031,
-  T25-031, T36-021; disputed pins T02, T13, T18, T24, T25, T30, T35, T36
-- `polarity` (affirmative | negative claim)
+- `fact_role` (direct_fact | passing_mention | silence) formalized from
+  the P1-4/P1-5 seed notes: direct_fact = a main stated fact of the
+  article (or a deliberate misstatement of one); passing_mention = a
+  secondary fact mentioned in passing (stated, partial, or misstated);
+  silence = the article is silent on the point (the UNSPECIFIED class)
+- `trap_type` (none | unit_swap | figure_conflict | disputed_pin):
+  unit_swap = asserted value is a unit or digit transposition of the
+  article's (known: T02-024, T12-023, T19-032, T36-021); figure_conflict
+  = the article states two different figures for the same quantity and
+  the proposition pins a total (known: T25-031, T35-031); disputed_pin =
+  the point is one of the manifest's disputed pins (articles T02, T13,
+  T18, T24, T25, T30, T35, T36); none otherwise
+- `polarity` (affirmative | negative claim; negative = the proposition is
+  a negation of a point)
+- `seeded_by` (list of seeded-question numbers whose target is this
+  proposition; empty if none)
 - `proposition_word_count`
 - `number_entity_count` (figures in the proposition)
 - `date_entity_count`

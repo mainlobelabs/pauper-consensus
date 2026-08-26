@@ -32,8 +32,9 @@ Shared conventions:
 The jury contract takes "the claim in question form". The 40-proposition
 pool is declarative. Each proposition needs a frozen question-form
 rendering (40 per article, 1,200 total), stored in
-`corpus/pool/question_form/T##.md`, produced by the conversion rule in
-`jury_contract.md` and content-hashed at the Phase 2 freeze. The 20
-seeded per article reuse the `corpus/questions/T##.md` text where the
-proposition is the question's target; the other 20 are rendered by the
-rule. This pass is open; it is part of the task 9 deliverable.
+`corpus/pool/question_form/T##.md`, produced by the polar conversion rule
+in `jury_contract.md` ("Is it true that {proposition}?", claim verbatim)
+and content-hashed at the Phase 2 freeze. The seed mapping (which pool
+propositions each seeded question targets, for solver scoring) is
+formalized in `corpus/pool/metadata.json`. This pass is open; it is part
+of the task 9 deliverable.

@@ -75,23 +75,35 @@ maps to the silence cell, which keeps the three-state estimator
 
 ## Question-form conversion rule (for `corpus/pool/question_form/`)
 
-The pool is declarative; the contract takes question form. Conversion is
-deterministic:
+The pool is declarative; the contract takes question form. The question
+form is a POLAR question that encodes the full claim, asserted value
+included. The verdict is about the claim, so the claim must be in the
+prompt: if the asserted value were deleted (a wh-question), the jury
+could never answer FAIL for a wrong figure, and CONTRADICT would collapse
+into ENTAIL. (Fixed 2026-08-26, before any rendering was frozen; the
+earlier wh-form draft is superseded.)
 
-1. If the proposition is the target of a seeded question in
-   `corpus/questions/T##.md`, reuse that question text verbatim.
-2. Otherwise, interrogativize the asserted value: replace the asserted
-   figure/name/date/category with the matching interrogative
-   ("was", "what", "how many", "which", "when", "where"), keeping every
-   other word of the proposition intact. One question per proposition,
-   same subject and time frame, no leading clues beyond the proposition
-   itself.
+Conversion is one mechanical rule, applied to all 1,200 propositions:
+
+    "Is it true that {proposition text, verbatim, without trailing period}?"
+
+No words are added, removed, or reworded beyond the prefix. The
+proposition appears verbatim inside the question, so the question form
+is auditable against the pool (and content-hashes are trivial). Negations
+in the proposition are preserved as-is ("Is it true that Lala did not
+make a direct landfall?").
 
 Examples:
 
 - "Lala's sustained winds on August 16 were 105 miles per hour." ->
-  "What were Lala's sustained winds on August 16?"
+  "Is it true that Lala's sustained winds on August 16 were 105 miles per hour?"
+- "Lala did not make a direct landfall on the Island of Hawaiʻi." ->
+  "Is it true that Lala did not make a direct landfall on the Island of Hawaiʻi?"
 - "The five other senior executives all received 18-year sentences." ->
-  "What sentences did the five other senior executives receive?"
+  "Is it true that the five other senior executives all received 18-year sentences?"
+
+The seeded questions in `corpus/questions/T##.md` (wh-form, natural
+answers) are the SOLVER baseline task, not the jury task. They stay as
+is; the jury contract uses the polar forms only.
 
 Renderings are frozen at the Phase 2 content hash.

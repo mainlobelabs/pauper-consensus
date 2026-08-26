@@ -1,0 +1,9560 @@
+{
+ "T01": [
+  {
+   "id": "T01-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "T01-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T01-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T01-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T01-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T01-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T01-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T01-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T01-010",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T01-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T01-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-016",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T01-017",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T01-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T01-019",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T01-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-025",
+   "fact_role": "passing_mention",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-029",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-030",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T01-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T02": [
+  {
+   "id": "T02-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T02-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T02-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T02-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T02-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T02-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T02-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T02-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T02-009",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T02-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T02-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T02-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-013",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T02-014",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-017",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T02-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-019",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T02-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-031",
+   "fact_role": "silence",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T02-032",
+   "fact_role": "silence",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T02-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-034",
+   "fact_role": "silence",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T02-040",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T03": [
+  {
+   "id": "T03-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T03-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T03-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T03-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T03-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T03-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T03-007",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T03-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T03-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T03-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T03-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T03-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T03-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": [
+    10,
+    20
+   ]
+  },
+  {
+   "id": "T03-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T03-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T03-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T03-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T03-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T03-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T04": [
+  {
+   "id": "T04-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T04-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T04-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T04-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T04-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4,
+    5
+   ]
+  },
+  {
+   "id": "T04-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T04-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T04-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T04-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T04-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T04-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T04-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T04-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T04-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T04-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T04-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T04-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T04-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T04-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T05": [
+  {
+   "id": "T05-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T05-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T05-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T05-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T05-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T05-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T05-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T05-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T05-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T05-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T05-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12,
+    20
+   ]
+  },
+  {
+   "id": "T05-013",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T05-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T05-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T05-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-017",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T05-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16,
+    17
+   ]
+  },
+  {
+   "id": "T05-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T05-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  }
+ ],
+ "T08": [
+  {
+   "id": "T08-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T08-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "T08-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T08-004",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T08-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T08-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T08-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T08-009",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "T08-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T08-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T08-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T08-014",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-015",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T08-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T08-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17,
+    18
+   ]
+  },
+  {
+   "id": "T08-020",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T08-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T08-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T10": [
+  {
+   "id": "T10-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T10-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T10-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T10-004",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T10-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T10-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T10-007",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T10-009",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8,
+    9
+   ]
+  },
+  {
+   "id": "T10-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T10-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T10-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T10-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13,
+    14
+   ]
+  },
+  {
+   "id": "T10-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15,
+    16
+   ]
+  },
+  {
+   "id": "T10-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T10-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T10-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T10-019",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-035",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-039",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T10-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T12": [
+  {
+   "id": "T12-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T12-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T12-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T12-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T12-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5,
+    17
+   ]
+  },
+  {
+   "id": "T12-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T12-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7,
+    8
+   ]
+  },
+  {
+   "id": "T12-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T12-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T12-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T12-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T12-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T12-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T12-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T12-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T12-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T12-019",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T12-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T12-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T12-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T13": [
+  {
+   "id": "T13-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T13-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T13-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "T13-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T13-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "T13-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T13-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T13-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "T13-009",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T13-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T13-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T13-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T13-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-015",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T13-017",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T13-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T13-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T13-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T13-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T14": [
+  {
+   "id": "T14-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T14-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "T14-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T14-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T14-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T14-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2,
+    8
+   ]
+  },
+  {
+   "id": "T14-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T14-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-011",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T14-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T14-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T14-015",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T14-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T14-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T14-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T14-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T14-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T15": [
+  {
+   "id": "T15-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T15-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T15-003",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "T15-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T15-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T15-007",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "T15-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8,
+    9,
+    16
+   ]
+  },
+  {
+   "id": "T15-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T15-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T15-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11,
+    12
+   ]
+  },
+  {
+   "id": "T15-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T15-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T15-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T15-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T15-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T15-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T15-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T15-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T16": [
+  {
+   "id": "T16-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "T16-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T16-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T16-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T16-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T16-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T16-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T16-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T16-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6,
+    19
+   ]
+  },
+  {
+   "id": "T16-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T16-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T16-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T16-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T16-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T16-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T16-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T16-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T16-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T17": [
+  {
+   "id": "T17-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "T17-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T17-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T17-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "T17-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6,
+    8
+   ]
+  },
+  {
+   "id": "T17-007",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T17-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10,
+    11
+   ]
+  },
+  {
+   "id": "T17-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T17-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T17-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T17-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T17-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T17-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T17-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T17-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T17-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T17-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T17-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T18": [
+  {
+   "id": "T18-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T18-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "T18-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7,
+    8
+   ]
+  },
+  {
+   "id": "T18-005",
+   "fact_role": "direct_fact",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T18-006",
+   "fact_role": "direct_fact",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T18-007",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T18-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T18-010",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-011",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T18-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7,
+    8,
+    10
+   ]
+  },
+  {
+   "id": "T18-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T18-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T18-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T18-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T18-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T18-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16,
+    17
+   ]
+  },
+  {
+   "id": "T18-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T18-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T19": [
+  {
+   "id": "T19-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T19-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T19-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T19-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T19-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T19-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T19-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T19-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T19-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T19-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T19-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T19-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T19-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T19-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T19-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T19-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T19-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T19-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T19-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T19-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-032",
+   "fact_role": "silence",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T19-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T20": [
+  {
+   "id": "T20-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    3
+   ]
+  },
+  {
+   "id": "T20-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "T20-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T20-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T20-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T20-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T20-007",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T20-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8,
+    10
+   ]
+  },
+  {
+   "id": "T20-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T20-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T20-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T20-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13,
+    14
+   ]
+  },
+  {
+   "id": "T20-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T20-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T20-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T20-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T20-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T20-020",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    20
+   ]
+  },
+  {
+   "id": "T20-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-028",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T20-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T21": [
+  {
+   "id": "T21-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T21-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T21-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T21-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T21-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T21-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T21-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T21-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T21-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T21-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11,
+    12
+   ]
+  },
+  {
+   "id": "T21-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T21-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T21-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T21-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T21-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T21-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T21-017",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T21-019",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-035",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-039",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T21-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T22": [
+  {
+   "id": "T22-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T22-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T22-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T22-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T22-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T22-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T22-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T22-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T22-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T22-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T22-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6,
+    7
+   ]
+  },
+  {
+   "id": "T22-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T22-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T22-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T22-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T22-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T22-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18,
+    20
+   ]
+  },
+  {
+   "id": "T22-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T22-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T22-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-035",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T22-040",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T23": [
+  {
+   "id": "T23-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    3
+   ]
+  },
+  {
+   "id": "T23-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T23-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T23-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T23-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T23-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T23-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T23-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T23-009",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T23-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T23-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T23-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T23-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T23-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T23-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T23-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T23-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T23-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T23-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T23-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-034",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-035",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T23-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T24": [
+  {
+   "id": "T24-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    5
+   ]
+  },
+  {
+   "id": "T24-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T24-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "T24-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T24-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T24-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T24-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T24-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T24-009",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-010",
+   "fact_role": "direct_fact",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T24-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T24-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T24-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13,
+    14
+   ]
+  },
+  {
+   "id": "T24-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T24-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T24-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T24-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T24-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T24-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T24-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T25": [
+  {
+   "id": "T25-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T25-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T25-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T25-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "T25-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T25-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T25-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T25-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T25-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T25-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T25-011",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T25-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T25-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T25-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T25-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T25-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T25-018",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T25-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17,
+    18
+   ]
+  },
+  {
+   "id": "T25-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T25-040",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T26": [
+  {
+   "id": "T26-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T26-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T26-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T26-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T26-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T26-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T26-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T26-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T26-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T26-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T26-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T26-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12,
+    13
+   ]
+  },
+  {
+   "id": "T26-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T26-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T26-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T26-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "T26-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T26-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T26-020",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T26-040",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T27": [
+  {
+   "id": "T27-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "T27-002",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4,
+    5
+   ]
+  },
+  {
+   "id": "T27-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T27-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T27-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T27-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "T27-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T27-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T27-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T27-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T27-012",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T27-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T27-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T27-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T27-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T27-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T27-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T27-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T27-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T27-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T28": [
+  {
+   "id": "T28-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T28-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T28-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T28-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T28-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3,
+    4
+   ]
+  },
+  {
+   "id": "T28-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T28-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T28-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T28-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T28-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T28-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T28-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T28-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T28-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T28-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T28-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T28-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T28-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T28-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    20
+   ]
+  },
+  {
+   "id": "T28-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    20
+   ]
+  },
+  {
+   "id": "T28-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-033",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-035",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-036",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T28-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T29": [
+  {
+   "id": "T29-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T29-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2,
+    4
+   ]
+  },
+  {
+   "id": "T29-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T29-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T29-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T29-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "T29-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T29-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T29-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T29-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T29-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T29-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T29-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T29-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16,
+    17
+   ]
+  },
+  {
+   "id": "T29-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T29-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T29-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T29-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    20
+   ]
+  },
+  {
+   "id": "T29-020",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-039",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T29-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T30": [
+  {
+   "id": "T30-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "T30-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T30-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T30-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T30-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T30-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T30-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T30-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T30-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    12
+   ]
+  },
+  {
+   "id": "T30-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T30-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T30-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T30-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T30-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T30-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15,
+    16
+   ]
+  },
+  {
+   "id": "T30-016",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T30-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T30-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T30-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-039",
+   "fact_role": "silence",
+   "trap_type": "disputed_pin",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T30-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T32": [
+  {
+   "id": "T32-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    3
+   ]
+  },
+  {
+   "id": "T32-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T32-003",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T32-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2,
+    6
+   ]
+  },
+  {
+   "id": "T32-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T32-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T32-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T32-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T32-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T32-011",
+   "fact_role": "passing_mention",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T32-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T32-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T32-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T32-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T32-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T32-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T32-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T32-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-024",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-025",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-036",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T32-040",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T34": [
+  {
+   "id": "T34-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1,
+    2
+   ]
+  },
+  {
+   "id": "T34-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T34-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T34-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T34-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T34-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T34-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T34-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T34-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10
+   ]
+  },
+  {
+   "id": "T34-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T34-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T34-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T34-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T34-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T34-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15,
+    16
+   ]
+  },
+  {
+   "id": "T34-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T34-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T34-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T34-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    20
+   ]
+  },
+  {
+   "id": "T34-021",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-026",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-027",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-029",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-031",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T34-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T35": [
+  {
+   "id": "T35-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T35-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T35-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T35-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T35-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T35-006",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T35-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T35-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T35-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T35-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "T35-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T35-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T35-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T35-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T35-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T35-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T35-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T35-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T35-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    18
+   ]
+  },
+  {
+   "id": "T35-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    19
+   ]
+  },
+  {
+   "id": "T35-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-022",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-023",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-039",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T35-040",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ],
+ "T36": [
+  {
+   "id": "T36-001",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    1
+   ]
+  },
+  {
+   "id": "T36-002",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-003",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T36-004",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    5
+   ]
+  },
+  {
+   "id": "T36-005",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    6
+   ]
+  },
+  {
+   "id": "T36-006",
+   "fact_role": "direct_fact",
+   "trap_type": "disputed_pin",
+   "polarity": "affirmative",
+   "seeded_by": [
+    2
+   ]
+  },
+  {
+   "id": "T36-007",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    4
+   ]
+  },
+  {
+   "id": "T36-008",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    3
+   ]
+  },
+  {
+   "id": "T36-009",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-010",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    7
+   ]
+  },
+  {
+   "id": "T36-011",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    8
+   ]
+  },
+  {
+   "id": "T36-012",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    9
+   ]
+  },
+  {
+   "id": "T36-013",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    10,
+    19
+   ]
+  },
+  {
+   "id": "T36-014",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    11
+   ]
+  },
+  {
+   "id": "T36-015",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    12
+   ]
+  },
+  {
+   "id": "T36-016",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    13
+   ]
+  },
+  {
+   "id": "T36-017",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    14
+   ]
+  },
+  {
+   "id": "T36-018",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    15
+   ]
+  },
+  {
+   "id": "T36-019",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    16
+   ]
+  },
+  {
+   "id": "T36-020",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": [
+    17
+   ]
+  },
+  {
+   "id": "T36-021",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-022",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-023",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-024",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-025",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-026",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-027",
+   "fact_role": "direct_fact",
+   "trap_type": "unit_swap",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-028",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-029",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-030",
+   "fact_role": "direct_fact",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-031",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-032",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-033",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-034",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-035",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-036",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "affirmative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-037",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-038",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-039",
+   "fact_role": "silence",
+   "trap_type": "figure_conflict",
+   "polarity": "negative",
+   "seeded_by": []
+  },
+  {
+   "id": "T36-040",
+   "fact_role": "silence",
+   "trap_type": "none",
+   "polarity": "negative",
+   "seeded_by": []
+  }
+ ]
+}
