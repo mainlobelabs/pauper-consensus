@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T03-001",
+    "proposition": "The USS Abraham Lincoln is heading home to San Diego after a deployment in the Middle East.",
+    "label": "ENTAIL",
+    "evidence": "The USS Abraham Lincoln is heading home to San Diego after a record-breaking deployment in the Middle East",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-002",
+    "proposition": "The Lincoln's deployment has stretched to 272 consecutive days at sea.",
+    "label": "ENTAIL",
+    "evidence": "has stretched to 272 consecutive days at sea",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-003",
+    "proposition": "The Lincoln's deployment is the longest in Navy history.",
+    "label": "ENTAIL",
+    "evidence": "272 consecutive days at sea, the longest in Navy history.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-004",
+    "proposition": "The carrier was initially scheduled for a roughly six-month deployment.",
+    "label": "ENTAIL",
+    "evidence": "The carrier was initially scheduled for a roughly six-month deployment",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-005",
+    "proposition": "The Lincoln was rerouted to the Middle East earlier this year after the war with Iran began.",
+    "label": "ENTAIL",
+    "evidence": "was rerouted to the Middle East earlier this year after the war with Iran began.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-006",
+    "proposition": "Some families reported substandard conditions on the ship in recent weeks.",
+    "label": "ENTAIL",
+    "evidence": "In recent weeks, some families reported substandard conditions on the ship",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-007",
+    "proposition": "Todd Sickinger is a San Diego father whose son Devynn is aboard the Lincoln.",
+    "label": "ENTAIL",
+    "evidence": "Todd Sickinger, a San Diego father whose son Devynn is aboard the Lincoln",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-008",
+    "proposition": "Sickinger learned about the homecoming when he saw the news.",
+    "label": "ENTAIL",
+    "evidence": "learned about the homecoming when he saw the news",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-009",
+    "proposition": "Sickinger's son reported that the captain had just announced the homecoming.",
+    "label": "ENTAIL",
+    "evidence": "he got back to me and said the captain just announced that",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-010",
+    "proposition": "The journey home to San Diego takes just over a month.",
+    "label": "ENTAIL",
+    "evidence": "The journey takes just over a month.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-011",
+    "proposition": "Some families reported sailors struggling mentally during the deployment.",
+    "label": "ENTAIL",
+    "evidence": "some families reported substandard conditions on the ship and sailors struggling mentally.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-012",
+    "proposition": "Devynn has not experienced any of the issues reported by other families.",
+    "label": "ENTAIL",
+    "evidence": "Devynn has not experienced any of the issues reported by other families during the deployment.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-013",
+    "proposition": "It remains unclear whether the Lincoln will make any port stops on the way home.",
+    "label": "ENTAIL",
+    "evidence": "It remains unclear exactly when the Lincoln will arrive back in San Diego or whether the ship will make any port stops on the way home.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-014",
+    "proposition": "The exact time of the Lincoln's arrival back in San Diego has not been established.",
+    "label": "ENTAIL",
+    "evidence": "It remains unclear exactly when the Lincoln will arrive back in San Diego",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-015",
+    "proposition": "The Lincoln's deployment was not originally planned for the Middle East.",
+    "label": "ENTAIL",
+    "evidence": "was rerouted to the Middle East earlier this year after the war with Iran began",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-016",
+    "proposition": "Sickinger said the crew should come home to a hero's welcome.",
+    "label": "ENTAIL",
+    "evidence": "\"I think they should come home to a hero's welcome, and they should be forever remembered as doing a great job,\" Sickinger said.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-017",
+    "proposition": "The war with Iran began earlier this year.",
+    "label": "ENTAIL",
+    "evidence": "was rerouted to the Middle East earlier this year after the war with Iran began.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-018",
+    "proposition": "The report was made by KGTV San Diego.",
+    "label": "ENTAIL",
+    "evidence": "SAN DIEGO (KGTV)",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-019",
+    "proposition": "Sickinger is eager to reunite with his son.",
+    "label": "ENTAIL",
+    "evidence": "he is eager to reunite with his son.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-020",
+    "proposition": "Sickinger hopes the crew will have the chance to make stops along the way to rest and recharge.",
+    "label": "ENTAIL",
+    "evidence": "Sickinger hopes the crew will have the chance to make stops along the way to rest and recharge",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-021",
+    "proposition": "The Lincoln's deployment is the shortest in Navy history.",
+    "label": "CONTRADICT",
+    "evidence": "272 consecutive days at sea, the longest in Navy history.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-022",
+    "proposition": "The carrier was scheduled for a three-month deployment.",
+    "label": "CONTRADICT",
+    "evidence": "initially scheduled for a roughly six-month deployment",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-023",
+    "proposition": "The Lincoln's deployment has stretched to 172 consecutive days at sea.",
+    "label": "CONTRADICT",
+    "evidence": "has stretched to 272 consecutive days at sea",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-024",
+    "proposition": "The ship was rerouted to the Middle East after the war with Iraq began.",
+    "label": "CONTRADICT",
+    "evidence": "after the war with Iran began.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-025",
+    "proposition": "Devynn experienced some of the issues reported by other families.",
+    "label": "CONTRADICT",
+    "evidence": "Devynn has not experienced any of the issues reported by other families during the deployment.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-026",
+    "proposition": "The captain did not announce the homecoming to the crew.",
+    "label": "CONTRADICT",
+    "evidence": "he got back to me and said the captain just announced that",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-027",
+    "proposition": "No families reported substandard conditions on the ship.",
+    "label": "CONTRADICT",
+    "evidence": "some families reported substandard conditions on the ship and sailors struggling mentally.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-028",
+    "proposition": "The exact arrival time in San Diego has been confirmed.",
+    "label": "CONTRADICT",
+    "evidence": "It remains unclear exactly when the Lincoln will arrive back in San Diego",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-029",
+    "proposition": "The journey home to San Diego takes less than a week.",
+    "label": "CONTRADICT",
+    "evidence": "The journey takes just over a month.",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-030",
+    "proposition": "The Lincoln was not rerouted to the Middle East this year.",
+    "label": "CONTRADICT",
+    "evidence": "was rerouted to the Middle East earlier this year",
+    "silence_reason": null
+  },
+  {
+    "id": "T03-031",
+    "proposition": "The captain of the USS Abraham Lincoln is Sarah Chen.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the captain is referenced but not named in the article"
+  },
+  {
+    "id": "T03-032",
+    "proposition": "The carrier's home port is Norfolk, Virginia.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "San Diego is the stated destination; the home port is not stated"
+  },
+  {
+    "id": "T03-033",
+    "proposition": "The ship will make exactly two port stops on the way home.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "whether the ship will make port stops is unclear; no number is stated"
+  },
+  {
+    "id": "T03-034",
+    "proposition": "The Lincoln's deployment began on February 20, 2026.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the deployment's start date is not stated"
+  },
+  {
+    "id": "T03-035",
+    "proposition": "The ship carried more than 5,000 crew members.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the crew size is not stated"
+  },
+  {
+    "id": "T03-036",
+    "proposition": "The substandard conditions reported by families included food shortages.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "substandard conditions are reported; their nature is not specified"
+  },
+  {
+    "id": "T03-037",
+    "proposition": "The ship has not suffered any combat damage during the deployment.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "combat damage is not mentioned in the article"
+  },
+  {
+    "id": "T03-038",
+    "proposition": "No sailors were injured during the deployment.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "injuries are not mentioned in the article"
+  },
+  {
+    "id": "T03-039",
+    "proposition": "The war with Iran has not affected any other US ships.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the article discusses only the Lincoln; the effect on other ships is not stated"
+  },
+  {
+    "id": "T03-040",
+    "proposition": "The extended deployment did not cost the Navy any additional money.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the cost of the deployment is not stated in the article"
+  }
+]

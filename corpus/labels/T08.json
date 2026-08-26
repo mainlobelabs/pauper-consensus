@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T08-001",
+    "proposition": "Mike Lindell's campaign withheld the $825,000 payment on Monday.",
+    "label": "ENTAIL",
+    "evidence": "Mike Lindell's campaign on Monday withheld the $825,000 payment",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-002",
+    "proposition": "The payment is required to trigger a statewide hand recount of the Republican primary for Minnesota governor.",
+    "label": "ENTAIL",
+    "evidence": "the $825,000 payment required to trigger a statewide hand recount of the Republican primary for Minnesota governor",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-003",
+    "proposition": "Lindell's campaign called the state's proposed recount scope \"unlawful.\"",
+    "label": "ENTAIL",
+    "evidence": "calling the state's proposed recount scope \"unlawful.\"",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-004",
+    "proposition": "Mike Lindell is the MyPillow founder.",
+    "label": "ENTAIL",
+    "evidence": "The MyPillow founder",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-005",
+    "proposition": "Lindell secured the endorsement of President Donald Trump for the race.",
+    "label": "ENTAIL",
+    "evidence": "who secured the endorsement of President Donald Trump for the race",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-006",
+    "proposition": "Lindell finished second to Lisa Demuth in the August 11 primary.",
+    "label": "ENTAIL",
+    "evidence": "finished second to Minnesota House Speaker Lisa Demuth in the August 11 primary",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-007",
+    "proposition": "Lindell received 134,282 votes in the primary.",
+    "label": "ENTAIL",
+    "evidence": "receiving 134,282 votes to Demuth's 179,683.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-008",
+    "proposition": "Demuth received 179,683 votes in the primary.",
+    "label": "ENTAIL",
+    "evidence": "to Demuth's 179,683.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-009",
+    "proposition": "Lisa Demuth is the Minnesota House Speaker.",
+    "label": "ENTAIL",
+    "evidence": "Minnesota House Speaker Lisa Demuth",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-010",
+    "proposition": "The Secretary of State's plan would count only the votes cast for Lindell and Demuth.",
+    "label": "ENTAIL",
+    "evidence": "the Secretary of State's plan would count only the votes cast for Lindell and Demuth",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-011",
+    "proposition": "The campaign cited Minnesota Statute 204C.35 in its argument.",
+    "label": "ENTAIL",
+    "evidence": "The campaign cited Minnesota Statute 204C.35",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-012",
+    "proposition": "Lindell has asked the state to waive the payment deadline until a court can rule on the scope of the recount.",
+    "label": "ENTAIL",
+    "evidence": "Lindell has asked the state to waive the payment deadline until a court can rule on the scope of the recount.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-013",
+    "proposition": "The State Canvassing Board approved the contingent recount plan on Aug. 18.",
+    "label": "ENTAIL",
+    "evidence": "after it was approved by the State Canvassing Board on Aug. 18",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-014",
+    "proposition": "Steve Simon is the Minnesota Secretary of State.",
+    "label": "ENTAIL",
+    "evidence": "a spokesperson for Minnesota Secretary of State Steve Simon said.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-015",
+    "proposition": "Paul Linnell is the elections director of the Secretary of State's office.",
+    "label": "ENTAIL",
+    "evidence": "names Paul Linnell, the office's director of elections",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-016",
+    "proposition": "Linnell was named state recount official with authority to appoint deputy officials at counting sites.",
+    "label": "ENTAIL",
+    "evidence": "as state recount official, with authority to appoint deputy officials at counting sites across the state.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-017",
+    "proposition": "The recount would be open to the public and media.",
+    "label": "ENTAIL",
+    "evidence": "The recount would be open to the public and media.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-018",
+    "proposition": "There have been no official findings of fraud or irregularity in the primary results.",
+    "label": "ENTAIL",
+    "evidence": "There have been no official findings of fraud or irregularity in the primary results.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-019",
+    "proposition": "Demuth will face Sen. Amy Klobuchar in the November 3 general election.",
+    "label": "ENTAIL",
+    "evidence": "Demuth will face Sen. Amy Klobuchar in the November 3 general election.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-020",
+    "proposition": "Governor Tim Walz is not running again.",
+    "label": "ENTAIL",
+    "evidence": "Governor Tim Walz, who is not running again",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-021",
+    "proposition": "Lindell's campaign made the $825,000 payment on schedule.",
+    "label": "CONTRADICT",
+    "evidence": "on Monday withheld the $825,000 payment required to trigger a statewide hand recount",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-022",
+    "proposition": "The primary was held on August 12.",
+    "label": "CONTRADICT",
+    "evidence": "the August 11 primary",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-023",
+    "proposition": "Lindell received 179,683 votes in the primary.",
+    "label": "CONTRADICT",
+    "evidence": "receiving 134,282 votes to Demuth's 179,683.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-024",
+    "proposition": "Lindell finished first in the Republican primary.",
+    "label": "CONTRADICT",
+    "evidence": "finished second to Minnesota House Speaker Lisa Demuth",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-025",
+    "proposition": "The Secretary of State's plan would count the votes for all seven candidates.",
+    "label": "CONTRADICT",
+    "evidence": "would count only the votes cast for Lindell and Demuth, leaving out the votes for the other five Republican candidates on the ballot.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-026",
+    "proposition": "The State Canvassing Board approved the recount plan on August 11.",
+    "label": "CONTRADICT",
+    "evidence": "approved by the State Canvassing Board on Aug. 18",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-027",
+    "proposition": "The campaign conceded the primary on election night.",
+    "label": "CONTRADICT",
+    "evidence": "Lindell said he would not concede until every vote was counted",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-028",
+    "proposition": "The recount plan was not approved by the State Canvassing Board.",
+    "label": "CONTRADICT",
+    "evidence": "after it was approved by the State Canvassing Board on Aug. 18",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-029",
+    "proposition": "Lindell did not receive an endorsement from President Trump.",
+    "label": "CONTRADICT",
+    "evidence": "who secured the endorsement of President Donald Trump for the race",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-030",
+    "proposition": "Demuth will not face Amy Klobuchar in the general election.",
+    "label": "CONTRADICT",
+    "evidence": "Demuth will face Sen. Amy Klobuchar in the November 3 general election.",
+    "silence_reason": null
+  },
+  {
+    "id": "T08-031",
+    "proposition": "The hand recount will cost more than $1 million.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the $825,000 trigger payment is stated; the total cost of the recount is not stated"
+  },
+  {
+    "id": "T08-032",
+    "proposition": "Lindell's team found vote-counting errors at three polling places.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the team spotted anomalies it needed time to review; no polling places are named"
+  },
+  {
+    "id": "T08-033",
+    "proposition": "The August 18 canvass included public comment.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "Aug. 18 is the Canvassing Board's approval of the plan; public comment is not mentioned"
+  },
+  {
+    "id": "T08-034",
+    "proposition": "Voter turnout in the August 11 primary was 40 percent.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "vote totals are stated; the turnout percentage is not stated"
+  },
+  {
+    "id": "T08-035",
+    "proposition": "A judge will rule on the scope of the recount by September 1.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "Lindell asked for a court ruling; no ruling date is stated"
+  },
+  {
+    "id": "T08-036",
+    "proposition": "Lindell is running for a second term in a prior office he held.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "Lindell is running for governor; any prior office he held is not stated"
+  },
+  {
+    "id": "T08-037",
+    "proposition": "The court has not set a deadline for the recount.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the payment deadline is stated; a court deadline for the recount is not stated"
+  },
+  {
+    "id": "T08-038",
+    "proposition": "The other five Republican candidates did not support Lindell's recount effort.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the other candidates' positions on the recount are not stated"
+  },
+  {
+    "id": "T08-039",
+    "proposition": "The state has not extended the payment deadline.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "Lindell has asked the state to waive the deadline; the state's response is not stated"
+  },
+  {
+    "id": "T08-040",
+    "proposition": "The recount dispute has not been covered by Minnesota media.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the dispute has become its own campaign story; media coverage is not stated"
+  }
+]

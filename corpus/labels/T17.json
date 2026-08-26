@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T17-001",
+    "proposition": "TikTok and its Chinese parent company ByteDance agreed to a $400 million settlement on Friday.",
+    "label": "ENTAIL",
+    "evidence": "TikTok and its Chinese parent company ByteDance on Friday agreed to a $400 million settlement",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-002",
+    "proposition": "The settlement resolves the US Justice Department's lawsuit alleging the app violated children's online privacy.",
+    "label": "ENTAIL",
+    "evidence": "to resolve the US Justice Department's lawsuit alleging the short-video app violated children's online privacy.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-003",
+    "proposition": "TikTok will pay $300 million immediately.",
+    "label": "ENTAIL",
+    "evidence": "TikTok will pay $300 million immediately",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-004",
+    "proposition": "TikTok will pay an additional $100 million upon entry of an order vacating the 2019 consent decree.",
+    "label": "ENTAIL",
+    "evidence": "an additional $100 million upon entry of an order vacating a prior consent decree entered in 2019",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-005",
+    "proposition": "The prior consent decree was entered in 2019 with the Federal Trade Commission.",
+    "label": "ENTAIL",
+    "evidence": "a prior consent decree entered in 2019 with the Federal Trade Commission",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-006",
+    "proposition": "The 2019 consent decree was entered against Musical.ly, TikTok's predecessor.",
+    "label": "ENTAIL",
+    "evidence": "against TikTok's predecessor, Musical.ly.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-007",
+    "proposition": "The settlement represents one of the largest recoveries ever under the Children's Online Privacy Protection Act.",
+    "label": "ENTAIL",
+    "evidence": "one of the largest recoveries ever obtained in a case under the Children's Online Privacy Protection Act",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-008",
+    "proposition": "The Children's Online Privacy Protection Act was enacted in 2000.",
+    "label": "ENTAIL",
+    "evidence": "a federal law enacted in 2000",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-009",
+    "proposition": "COPPA requires services directed at children to obtain parental consent before collecting personal information from users under age 13.",
+    "label": "ENTAIL",
+    "evidence": "requires services directed at children to obtain parental consent before collecting personal information from users under age 13.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-010",
+    "proposition": "The Justice Department filed the lawsuit in 2024.",
+    "label": "ENTAIL",
+    "evidence": "The Justice Department filed the lawsuit in 2024",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-011",
+    "proposition": "The lawsuit was filed in the US District Court for the Central District of California.",
+    "label": "ENTAIL",
+    "evidence": "in the US District Court for the Central District of California",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-012",
+    "proposition": "The case was referred to the Justice Department by the Federal Trade Commission.",
+    "label": "ENTAIL",
+    "evidence": "on referral from the Federal Trade Commission.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-013",
+    "proposition": "The suit accused TikTok and ByteDance of collecting vast amounts of data on millions of users under 13.",
+    "label": "ENTAIL",
+    "evidence": "The suit accused TikTok and ByteDance of collecting vast amounts of data on millions of users under 13",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-014",
+    "proposition": "The suit accused the companies of failing to honor requests from parents who wanted their children's accounts deleted.",
+    "label": "ENTAIL",
+    "evidence": "failing to honor requests from parents who wanted their children's accounts deleted",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-015",
+    "proposition": "Musical.ly paid a $5.7 million fine as part of the 2019 consent decree.",
+    "label": "ENTAIL",
+    "evidence": "As part of the 2019 consent decree, Musical.ly had paid a $5.7 million fine for COPPA violations.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-016",
+    "proposition": "The Justice Department said TikTok has undergone significant changes since the suit, including to its ownership.",
+    "label": "ENTAIL",
+    "evidence": "the justice department said that since it sued the platform, TikTok has \"undergone significant changes,\" including to its ownership",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-017",
+    "proposition": "The settlement involves TikTok's operations in China.",
+    "label": "ENTAIL",
+    "evidence": "The settlement involves TikTok's operations in China.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-018",
+    "proposition": "Dozens of US states are suing Meta over COPPA.",
+    "label": "ENTAIL",
+    "evidence": "COPPA is also the law that dozens of US states are now suing Meta over.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-019",
+    "proposition": "TikTok did not pay any of the settlement before Friday.",
+    "label": "ENTAIL",
+    "evidence": "on Friday agreed to a $400 million settlement ... TikTok will pay $300 million immediately",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-020",
+    "proposition": "The 2019 consent decree did not require a $400 million payment.",
+    "label": "ENTAIL",
+    "evidence": "As part of the 2019 consent decree, Musical.ly had paid a $5.7 million fine for COPPA violations.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-021",
+    "proposition": "TikTok agreed to a $200 million settlement.",
+    "label": "CONTRADICT",
+    "evidence": "agreed to a $400 million settlement",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-022",
+    "proposition": "TikTok will pay $500 million immediately.",
+    "label": "CONTRADICT",
+    "evidence": "TikTok will pay $300 million immediately",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-023",
+    "proposition": "COPPA was enacted in 2010.",
+    "label": "CONTRADICT",
+    "evidence": "a federal law enacted in 2000",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-024",
+    "proposition": "The Justice Department filed the lawsuit in 2019.",
+    "label": "CONTRADICT",
+    "evidence": "The Justice Department filed the lawsuit in 2024",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-025",
+    "proposition": "The lawsuit was filed in the US District Court for the Southern District of New York.",
+    "label": "CONTRADICT",
+    "evidence": "in the US District Court for the Central District of California",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-026",
+    "proposition": "Musical.ly paid a $57 million fine in 2019.",
+    "label": "CONTRADICT",
+    "evidence": "Musical.ly had paid a $5.7 million fine for COPPA violations.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-027",
+    "proposition": "The settlement involves TikTok's operations in Europe.",
+    "label": "CONTRADICT",
+    "evidence": "The settlement involves TikTok's operations in China.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-028",
+    "proposition": "COPPA does not require parental consent for users under age 13.",
+    "label": "CONTRADICT",
+    "evidence": "requires services directed at children to obtain parental consent before collecting personal information from users under age 13.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-029",
+    "proposition": "The case was not referred by the Federal Trade Commission.",
+    "label": "CONTRADICT",
+    "evidence": "on referral from the Federal Trade Commission.",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-030",
+    "proposition": "TikTok and ByteDance did not agree to the settlement.",
+    "label": "CONTRADICT",
+    "evidence": "TikTok and its Chinese parent company ByteDance on Friday agreed to a $400 million settlement",
+    "silence_reason": null
+  },
+  {
+    "id": "T17-031",
+    "proposition": "A federal judge has approved the settlement.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the parties agreed to the settlement; judicial approval is not stated"
+  },
+  {
+    "id": "T17-032",
+    "proposition": "The judge overseeing the case is based in California.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the court is in the Central District of California; the individual judge is not named"
+  },
+  {
+    "id": "T17-033",
+    "proposition": "TikTok admitted fault as part of the settlement.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "admission of fault is not stated"
+  },
+  {
+    "id": "T17-034",
+    "proposition": "The $300 million will be paid in a single wire transfer.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the payment method is not stated"
+  },
+  {
+    "id": "T17-035",
+    "proposition": "The settlement includes a fund for the families of affected children.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "a victims' fund is not stated"
+  },
+  {
+    "id": "T17-036",
+    "proposition": "ByteDance's chief executive commented on the settlement.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "a CEO comment is not stated"
+  },
+  {
+    "id": "T17-037",
+    "proposition": "The settlement was not announced by the Justice Department.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the announcing body is not stated"
+  },
+  {
+    "id": "T17-038",
+    "proposition": "The 2019 consent decree has not been vacated.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the decree is to be vacated as part of the settlement; its current status is not stated"
+  },
+  {
+    "id": "T17-039",
+    "proposition": "The settlement has not been appealed by TikTok.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "an appeal is not stated"
+  },
+  {
+    "id": "T17-040",
+    "proposition": "The $300 million immediate payment has not been made.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the payment status is not stated"
+  }
+]

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T22-001",
+    "proposition": "Bangladesh's parliament elected Mirza Fakhrul Islam Alamgir as president on Thursday.",
+    "label": "ENTAIL",
+    "evidence": "Bangladesh's parliament on Thursday elected ruling party veteran Mirza Fakhrul Islam Alamgir as the country's 23rd president",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-002",
+    "proposition": "Alamgir is the country's 23rd president.",
+    "label": "ENTAIL",
+    "evidence": "as the country's 23rd president",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-003",
+    "proposition": "The vote was the first contested presidential election in 35 years.",
+    "label": "ENTAIL",
+    "evidence": "in the first contested presidential election in 35 years.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-004",
+    "proposition": "Alamgir is 78 years old.",
+    "label": "ENTAIL",
+    "evidence": "Alamgir, 78",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-005",
+    "proposition": "Alamgir is a stalwart of the Bangladesh Nationalist Party.",
+    "label": "ENTAIL",
+    "evidence": "a stalwart of the Bangladesh Nationalist Party (BNP)",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-006",
+    "proposition": "Alamgir won with 255 votes.",
+    "label": "ENTAIL",
+    "evidence": "won with 255 votes",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-007",
+    "proposition": "His opponent was Colonel (retd) Oli Ahmed, 84.",
+    "label": "ENTAIL",
+    "evidence": "defeating Colonel (retd) Oli Ahmed, 84",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-008",
+    "proposition": "Oli Ahmed is the chairman of the Liberal Democratic Party.",
+    "label": "ENTAIL",
+    "evidence": "the chairman of the Liberal Democratic Party",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-009",
+    "proposition": "Oli Ahmed was the nominee of the 11-party opposition alliance led by Jamaat-e-Islami.",
+    "label": "ENTAIL",
+    "evidence": "the nominee of the 11-party opposition alliance led by Jamaat-e-Islami",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-010",
+    "proposition": "Oli Ahmed received 88 votes.",
+    "label": "ENTAIL",
+    "evidence": "who received 88 votes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-011",
+    "proposition": "Of the 349 members of parliament eligible to vote, 343 cast ballots.",
+    "label": "ENTAIL",
+    "evidence": "Of the 349 members of parliament eligible to vote, 343 cast ballots",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-012",
+    "proposition": "The chief election commissioner, AMM Nasir Uddin, declared Alamgir the winner.",
+    "label": "ENTAIL",
+    "evidence": "the chief election commissioner, AMM Nasir Uddin, declared Alamgir the winner.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-013",
+    "proposition": "Every presidential election since October 1991 had been uncontested.",
+    "label": "ENTAIL",
+    "evidence": "Every presidential election since the country became a parliamentary democracy in October 1991 had been uncontested.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-014",
+    "proposition": "The post fell vacant last month following the resignation of Mohammed Shahabuddin.",
+    "label": "ENTAIL",
+    "evidence": "The post fell vacant last month following the resignation of the former president, Mohammed Shahabuddin",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-015",
+    "proposition": "Shahabuddin stepped down for health reasons.",
+    "label": "ENTAIL",
+    "evidence": "who stepped down for health reasons.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-016",
+    "proposition": "The former president was a close ally of ousted Prime Minister Sheikh Hasina.",
+    "label": "ENTAIL",
+    "evidence": "The former president was a close ally of ousted Prime Minister Sheikh Hasina.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-017",
+    "proposition": "Alamgir has served as the BNP's secretary-general since 2016.",
+    "label": "ENTAIL",
+    "evidence": "Alamgir has served as the BNP's secretary-general since 2016",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-018",
+    "proposition": "Executive authority rests with the government headed by Prime Minister Tarique Rahman.",
+    "label": "ENTAIL",
+    "evidence": "executive authority rests with the government headed by Prime Minister Tarique Rahman",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-019",
+    "proposition": "Tarique Rahman was sworn in on February 17.",
+    "label": "ENTAIL",
+    "evidence": "who was sworn in on February 17.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-020",
+    "proposition": "Alamgir took the oath of office on Friday at the Darbar Hall of Bangabhaban.",
+    "label": "ENTAIL",
+    "evidence": "Alamgir took the oath of office on Friday at the Darbar Hall of Bangabhaban, the presidential palace.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-021",
+    "proposition": "Alamgir won with 355 votes.",
+    "label": "CONTRADICT",
+    "evidence": "won with 255 votes",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-022",
+    "proposition": "The election was held on Friday.",
+    "label": "CONTRADICT",
+    "evidence": "parliament on Thursday elected",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-023",
+    "proposition": "Oli Ahmed received 188 votes.",
+    "label": "CONTRADICT",
+    "evidence": "who received 88 votes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-024",
+    "proposition": "249 members of parliament were eligible to vote.",
+    "label": "CONTRADICT",
+    "evidence": "Of the 349 members of parliament eligible to vote",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-025",
+    "proposition": "Every presidential election since 1991 had been contested.",
+    "label": "CONTRADICT",
+    "evidence": "Every presidential election since the country became a parliamentary democracy in October 1991 had been uncontested.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-026",
+    "proposition": "Shahabuddin resigned over a corruption scandal.",
+    "label": "CONTRADICT",
+    "evidence": "who stepped down for health reasons.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-027",
+    "proposition": "Tarique Rahman was sworn in on February 27.",
+    "label": "CONTRADICT",
+    "evidence": "who was sworn in on February 17.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-028",
+    "proposition": "Alamgir did not take the oath of office on Friday.",
+    "label": "CONTRADICT",
+    "evidence": "Alamgir took the oath of office on Friday",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-029",
+    "proposition": "The vote was not the first contested presidential election in 35 years.",
+    "label": "CONTRADICT",
+    "evidence": "in the first contested presidential election in 35 years.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-030",
+    "proposition": "The former president was not a close ally of Sheikh Hasina.",
+    "label": "CONTRADICT",
+    "evidence": "The former president was a close ally of ousted Prime Minister Sheikh Hasina.",
+    "silence_reason": null
+  },
+  {
+    "id": "T22-031",
+    "proposition": "The last contested presidential election in Bangladesh was in 1981.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the first contested vote in 35 years is stated; the date of the previous contested vote is not stated"
+  },
+  {
+    "id": "T22-032",
+    "proposition": "Alamgir is standing for a second term as president.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "he was elected as the country's 23rd president; whether he previously held the office is not stated"
+  },
+  {
+    "id": "T22-033",
+    "proposition": "The opposition alliance filed a petition to overturn the result.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "an opposition petition is not stated"
+  },
+  {
+    "id": "T22-034",
+    "proposition": "Bangladesh's next presidential election will be held in 2031.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the date of the next election is not stated"
+  },
+  {
+    "id": "T22-035",
+    "proposition": "Alamgir won by a margin of 167 votes.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the two vote totals (255 and 88) are stated; the margin between them is not stated"
+  },
+  {
+    "id": "T22-036",
+    "proposition": "No women ran in the presidential election.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the two named candidates are both men; the full candidate list is not stated"
+  },
+  {
+    "id": "T22-037",
+    "proposition": "The opposition did not announce Oli Ahmed as its candidate until last week.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the date of the opposition's nomination is not stated"
+  },
+  {
+    "id": "T22-038",
+    "proposition": "The oath of office was not witnessed by any dignitaries.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the witnesses at the oath are not stated"
+  },
+  {
+    "id": "T22-039",
+    "proposition": "The parliamentary vote was not broadcast on national television.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the broadcast of the vote is not stated"
+  },
+  {
+    "id": "T22-040",
+    "proposition": "Alamgir's election did not reopen debate over the constitution.",
+    "label": "CONTRADICT",
+    "evidence": "His election has reopened debate over the party whip system under Article 70 of the constitution.",
+    "silence_reason": null
+  }
+]

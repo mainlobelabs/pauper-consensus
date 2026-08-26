@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T01-001",
+    "proposition": "At least 47 people were killed by the magnitude 7.7 earthquake off Flores island.",
+    "label": "ENTAIL",
+    "evidence": "A powerful earthquake struck off the coast of Indonesia early on Saturday, killing at least 47 people ... The epicenter of the magnitude 7.7 earthquake hit off the coast of the island of Flores",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-002",
+    "proposition": "The US Geological Survey placed the epicenter of the earthquake off Flores at a depth of 10 kilometers.",
+    "label": "ENTAIL",
+    "evidence": "The epicenter of the magnitude 7.7 earthquake hit off the coast of the island of Flores at a shallow depth of 10 kilometers (6.2 miles), the US Geological Survey (USGS) said.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-003",
+    "proposition": "BMKG recorded the first quake at 4:58 am.",
+    "label": "ENTAIL",
+    "evidence": "Indonesia's Meteorology, Climatology, and Geophysics Agency (BMKG) recorded the first quake at 4:58 am (2158 GMT) at a depth of 15 km (9 miles)",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-004",
+    "proposition": "The main shock was followed by dozens of aftershocks.",
+    "label": "ENTAIL",
+    "evidence": "the powerful magnitude 7.7 earthquake, which was followed by dozens of aftershocks",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-005",
+    "proposition": "BMKG issued a tsunami warning for part of East Nusa Tenggara, West Nusa Tenggara, South Sulawesi and Southeast Sulawesi provinces.",
+    "label": "ENTAIL",
+    "evidence": "BMKG issued a tsunami warning for part of East Nusa Tenggara, West Nusa Tenggara, South Sulawesi and Southeast Sulawesi provinces",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-006",
+    "proposition": "The tsunami warning was lifted about three hours after the quake.",
+    "label": "ENTAIL",
+    "evidence": "before the warning was lifted about three hours after the quake.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-007",
+    "proposition": "Tsunami waves of less than 1 meter were recorded in several areas of Indonesia.",
+    "label": "ENTAIL",
+    "evidence": "Tsunami waves of less than 1 meter (3 feet) were recorded in several areas of the country",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-008",
+    "proposition": "The waiting room at the Pelni port terminal in Maumere collapsed.",
+    "label": "ENTAIL",
+    "evidence": "I saw that the waiting room at the Pelni port terminal in Maumere had collapsed",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-009",
+    "proposition": "At least one priest suffered a broken leg after jumping from the second floor of a building.",
+    "label": "ENTAIL",
+    "evidence": "At least one priest suffered a broken leg after jumping from the second floor of a building during the quake.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-010",
+    "proposition": "Guidelbertus Tanga is the rector of Ritapiret Seminary on Flores.",
+    "label": "ENTAIL",
+    "evidence": "Guidelbertus Tanga, rector of Ritapiret Seminary on Flores said.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-011",
+    "proposition": "Hundreds of people evacuated in nearby Nagekeo regency.",
+    "label": "ENTAIL",
+    "evidence": "State television also showed hundreds of people evacuating in nearby Nagekeo regency.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-012",
+    "proposition": "A hospital in the district of Ende moved its patients outside.",
+    "label": "ENTAIL",
+    "evidence": "Local TV footage showed a hospital in the district of Ende in East Nusa Tenggara Province moving patients outside.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-013",
+    "proposition": "The quake caused power outages in cities and villages, hindering rescue operations.",
+    "label": "ENTAIL",
+    "evidence": "causing power outages in cities and villages, severely hindering rescue operations.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-014",
+    "proposition": "East Nusa Tenggara police chief Rudi Darmoko reported communication disruptions.",
+    "label": "ENTAIL",
+    "evidence": "East Nusa Tenggara police chief Rudi Darmoko said. ... there are communication disruptions",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-015",
+    "proposition": "Residents of Maumere were told to move to higher ground before the warning was lifted.",
+    "label": "ENTAIL",
+    "evidence": "Before the tsunami warning was lifted, residents of Maumere on Flores Island were told to move to higher ground, according to AFP.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-016",
+    "proposition": "Indonesia is located on the so-called Ring of Fire.",
+    "label": "ENTAIL",
+    "evidence": "Indonesia is located on the so-called \"Ring of Fire,\" a region of heightened seismic activity in the Pacific basin that stretches from Southeast Asia to Japan.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-017",
+    "proposition": "A tsunami following the 1992 magnitude 7 earthquake on Flores killed about 2,500 people.",
+    "label": "ENTAIL",
+    "evidence": "1992, magnitude 7: A tsunami following a strong earthquake on the southeastern island of Flores killed about 2,500 people.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-018",
+    "proposition": "The 2004 quake off Sumatra triggered a tsunami that killed 170,000 people in Indonesia.",
+    "label": "ENTAIL",
+    "evidence": "2004, magnitude 9.1: A quake struck off the coast of Sumatra triggering a tsunami that killed 170,000 in Indonesia",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-019",
+    "proposition": "The 2018 quake and tsunami in Palu left more than 4,300 people dead or missing.",
+    "label": "ENTAIL",
+    "evidence": "2018, magnitude 7.5: A quake and a subsequent tsunami in Palu on Sulawesi island left more than 4,300 people dead or missing.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-020",
+    "proposition": "No more than 46 people died in the Flores earthquake.",
+    "label": "CONTRADICT",
+    "evidence": "At least 47 people have died",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-021",
+    "proposition": "The Flores earthquake measured magnitude 8.2.",
+    "label": "CONTRADICT",
+    "evidence": "the powerful magnitude 7.7 earthquake",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-022",
+    "proposition": "The US Geological Survey placed the epicenter at a depth of 100 kilometers.",
+    "label": "CONTRADICT",
+    "evidence": "at a shallow depth of 10 kilometers (6.2 miles), the US Geological Survey (USGS) said",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-023",
+    "proposition": "BMKG recorded the first quake at 2:58 pm.",
+    "label": "CONTRADICT",
+    "evidence": "recorded the first quake at 4:58 am (2158 GMT)",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-024",
+    "proposition": "The tsunami warning was lifted 12 hours after the quake.",
+    "label": "CONTRADICT",
+    "evidence": "the warning was lifted about three hours after the quake",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-025",
+    "proposition": "The 2004 tsunami killed 17,000 people in Indonesia.",
+    "label": "CONTRADICT",
+    "evidence": "triggering a tsunami that killed 170,000 in Indonesia",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-026",
+    "proposition": "The waiting room at the Pelni port terminal in Maumere was not damaged.",
+    "label": "CONTRADICT",
+    "evidence": "the waiting room at the Pelni port terminal in Maumere had collapsed",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-027",
+    "proposition": "No aftershocks followed the main shock off Flores.",
+    "label": "CONTRADICT",
+    "evidence": "which was followed by dozens of aftershocks",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-028",
+    "proposition": "The tsunami warning was never lifted.",
+    "label": "CONTRADICT",
+    "evidence": "The tsunami warning was later lifted.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-029",
+    "proposition": "The 1992 Flores earthquake was not followed by a tsunami.",
+    "label": "CONTRADICT",
+    "evidence": "A tsunami following a strong earthquake on the southeastern island of Flores killed about 2,500 people.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-030",
+    "proposition": "The 2018 Palu earthquake killed fewer than 4,300 people.",
+    "label": "CONTRADICT",
+    "evidence": "left more than 4,300 people dead or missing.",
+    "silence_reason": null
+  },
+  {
+    "id": "T01-031",
+    "proposition": "Exactly 47 people died in the Flores earthquake.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the article states a floor (at least 47), not an exact count"
+  },
+  {
+    "id": "T01-032",
+    "proposition": "The Red Cross confirmed the death toll in Flores.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the Red Cross is not mentioned anywhere in the article"
+  },
+  {
+    "id": "T01-033",
+    "proposition": "A tsunami warning was issued for Bali province.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the warning covered part of four named provinces; Bali is not named"
+  },
+  {
+    "id": "T01-034",
+    "proposition": "Yohanna Embu's house was destroyed in the quake.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "Embu is quoted about the port terminal; her own house is not mentioned"
+  },
+  {
+    "id": "T01-035",
+    "proposition": "The aftershocks continued for a week.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "dozens of aftershocks are stated; no duration is given"
+  },
+  {
+    "id": "T01-036",
+    "proposition": "A magnitude 7.0 aftershock was recorded after the main shock.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "only a magnitude 6.1 aftershock is named; other magnitudes are not stated"
+  },
+  {
+    "id": "T01-037",
+    "proposition": "No building in Maumere was completely destroyed by the quake.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "part of a building collapsed in Maumere; whether any building was completely destroyed is not stated"
+  },
+  {
+    "id": "T01-038",
+    "proposition": "No one was injured in Nagekeo regency.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "evacuations in Nagekeo are stated; injuries there are not stated"
+  },
+  {
+    "id": "T01-039",
+    "proposition": "The tsunami waves did not reach Maumere.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "tsunami waves were recorded in several areas; Maumere is not named as an area"
+  },
+  {
+    "id": "T01-040",
+    "proposition": "The power outages did not last more than a day.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "power outages are stated; their duration is not stated"
+  }
+]

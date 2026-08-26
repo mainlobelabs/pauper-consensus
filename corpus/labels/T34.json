@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T34-001",
+    "proposition": "Four of the most important works by Antonello da Messina were stolen from a museum in Messina.",
+    "label": "ENTAIL",
+    "evidence": "Four of the most important works of art by the 15th-century Renaissance master Antonello da Messina were stolen during a national holiday from a museum in the Sicilian port city of Messina",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-002",
+    "proposition": "The theft took place during a national holiday.",
+    "label": "ENTAIL",
+    "evidence": "were stolen during a national holiday",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-003",
+    "proposition": "The museum is the Regional Interdisciplinary Museum, or MuMe.",
+    "label": "ENTAIL",
+    "evidence": "the Regional Interdisciplinary Museum, or MuMe",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-004",
+    "proposition": "Thieves gained access at around 9:50 p.m. on Saturday.",
+    "label": "ENTAIL",
+    "evidence": "at around 9:50 p.m. on Saturday",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-005",
+    "proposition": "The city was celebrating Ferragosto and the La Vara religious festival.",
+    "label": "ENTAIL",
+    "evidence": "as the city celebrated Ferragosto and the La Vara religious festival",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-006",
+    "proposition": "Three or four masked intruders entered through a side gate.",
+    "label": "ENTAIL",
+    "evidence": "Three or four masked intruders entered through a side gate",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-007",
+    "proposition": "Part of the perimeter railing was bent or cut.",
+    "label": "ENTAIL",
+    "evidence": "where part of the perimeter railing was bent or cut",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-008",
+    "proposition": "The museum's alarms and video surveillance systems were functioning.",
+    "label": "ENTAIL",
+    "evidence": "The museum's alarms and video surveillance systems were functioning",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-009",
+    "proposition": "The robbery took just a few minutes.",
+    "label": "ENTAIL",
+    "evidence": "the robbery took just a few minutes",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-010",
+    "proposition": "All five surviving wooden panels of the San Gregorio Polyptych were removed from their frames.",
+    "label": "ENTAIL",
+    "evidence": "All five surviving wooden panels of the San Gregorio Polyptych, an altarpiece signed and dated to 1473, were removed from their frames",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-011",
+    "proposition": "The San Gregorio Polyptych is an altarpiece signed and dated to 1473.",
+    "label": "ENTAIL",
+    "evidence": "an altarpiece signed and dated to 1473",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-012",
+    "proposition": "The thieves abandoned two of the panels against a low wall outside the museum.",
+    "label": "ENTAIL",
+    "evidence": "the thieves abandoned two of them against a low wall outside the museum",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-013",
+    "proposition": "A citizen noticed the abandoned panels and called police.",
+    "label": "ENTAIL",
+    "evidence": "a citizen noticed them and called police",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-014",
+    "proposition": "The third stolen work was a small double-sided panel taken from an armored display case.",
+    "label": "ENTAIL",
+    "evidence": "a small double-sided panel taken from an armored display case",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-015",
+    "proposition": "One side of the double-sided panel depicts the Virgin and Child with a Franciscan monk.",
+    "label": "ENTAIL",
+    "evidence": "depicting the Virgin and Child with a Franciscan monk on one side",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-016",
+    "proposition": "The polyptych was made for the Monastero di San Gregorio, destroyed in the 1908 earthquake.",
+    "label": "ENTAIL",
+    "evidence": "made for the Monastero di San Gregorio, destroyed in the 1908 earthquake",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-017",
+    "proposition": "The polyptych was the only work by the painter that had never left his home city of Messina.",
+    "label": "ENTAIL",
+    "evidence": "it was the only work by the painter that had never left his home city of Messina",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-018",
+    "proposition": "Art expert Alberto Fiz valued the stolen works at 70 to 80 million euros, up to about $93 million.",
+    "label": "ENTAIL",
+    "evidence": "Art expert Alberto Fiz valued the stolen works at 70 to 80 million euros, up to about $93 million",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-019",
+    "proposition": "MuMe director Marisa Mercurio told ANSA that the museum was devastated.",
+    "label": "ENTAIL",
+    "evidence": "MuMe director Marisa Mercurio told ANSA. \"We are devastated by what happened.",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-020",
+    "proposition": "The alarm was apparently deactivated by a custodian.",
+    "label": "ENTAIL",
+    "evidence": "after the alarm was apparently deactivated by a custodian",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-021",
+    "proposition": "Two of Antonello da Messina's works were stolen from the museum.",
+    "label": "CONTRADICT",
+    "evidence": "Four of the most important works of art by the 15th-century Renaissance master Antonello da Messina were stolen",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-022",
+    "proposition": "The thieves gained access at around 9:50 a.m. on Saturday.",
+    "label": "CONTRADICT",
+    "evidence": "at around 9:50 p.m. on Saturday",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-023",
+    "proposition": "The museum's alarms and video surveillance systems were not functioning.",
+    "label": "CONTRADICT",
+    "evidence": "The museum's alarms and video surveillance systems were functioning",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-024",
+    "proposition": "The robbery took more than an hour.",
+    "label": "CONTRADICT",
+    "evidence": "the robbery took just a few minutes",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-025",
+    "proposition": "The San Gregorio Polyptych is signed and dated to 1573.",
+    "label": "CONTRADICT",
+    "evidence": "an altarpiece signed and dated to 1473",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-026",
+    "proposition": "All five surviving panels of the polyptych were recovered.",
+    "label": "CONTRADICT",
+    "evidence": "the thieves abandoned two of them against a low wall outside the museum",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-027",
+    "proposition": "The double-sided panel depicts the Virgin and Child on both sides.",
+    "label": "CONTRADICT",
+    "evidence": "depicting the Virgin and Child with a Franciscan monk on one side and the dead Christ on the other",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-028",
+    "proposition": "The Monastero di San Gregorio survived the 1908 earthquake.",
+    "label": "CONTRADICT",
+    "evidence": "the Monastero di San Gregorio, destroyed in the 1908 earthquake",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-029",
+    "proposition": "Alberto Fiz valued the stolen works at 7 to 8 million euros.",
+    "label": "CONTRADICT",
+    "evidence": "valued the stolen works at 70 to 80 million euros",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-030",
+    "proposition": "The thieves did not abandon any panels outside the museum.",
+    "label": "CONTRADICT",
+    "evidence": "the thieves abandoned two of them against a low wall outside the museum",
+    "silence_reason": null
+  },
+  {
+    "id": "T34-031",
+    "proposition": "The San Gregorio Polyptych was insured for 100 million euros.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article gives an expert valuation but says nothing about insurance."
+  },
+  {
+    "id": "T34-032",
+    "proposition": "The art dealer for whom the heist was carried out has been named.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article says the heist is believed to have been carried out on commission for an art dealer, but no dealer is named."
+  },
+  {
+    "id": "T34-033",
+    "proposition": "The custodian who deactivated the alarm was on paid leave.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article says the alarm was apparently deactivated by a custodian but gives no details about that custodian's work status."
+  },
+  {
+    "id": "T34-034",
+    "proposition": "The stolen works were moved out of the museum in a van.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article does not describe how or with what vehicle the stolen works were moved."
+  },
+  {
+    "id": "T34-035",
+    "proposition": "The La Vara festival ends on September 1.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article mentions the La Vara festival as the reason the museum was unattended but gives no dates for the festival."
+  },
+  {
+    "id": "T34-036",
+    "proposition": "The internal inspection will be led by the culture ministry.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article says Renato Schifani launched an internal inspection but does not state who will lead it."
+  },
+  {
+    "id": "T34-037",
+    "proposition": "The two abandoned panels were not damaged.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article does not state the condition of the two abandoned panels."
+  },
+  {
+    "id": "T34-038",
+    "proposition": "No suspect has been arrested.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article says an investigation has been opened but mentions no arrests."
+  },
+  {
+    "id": "T34-039",
+    "proposition": "The recovered Cezanne, Renoir and Matisse paintings were not stolen from Sicily.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article says Italian authorities recovered three stolen paintings but never states where they were stolen from."
+  },
+  {
+    "id": "T34-040",
+    "proposition": "The side gate used by the intruders did not have a video camera.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "The article says the video surveillance systems were functioning but never states whether the side gate itself was covered by a camera."
+  }
+]

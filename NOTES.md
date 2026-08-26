@@ -289,9 +289,41 @@ rial), T19 #32 ("nearly three hours" vs pinned 171 min), T35 #31 (at least
 6 pinned exactly), T25 #31 (100+ and 49 both stated, exact total never
 pinned), T36 #21 (34 vs 44 cap). Both polarities present in every class.
 
-Open: P1-6 label all 1,200 per rubric (corpus/labels/T##.md, rubric record
-format), P1-7 10% re-check from scratch, P1-8 jury families, P1-9 prompts.
-Manifest label_counts/split_role fill at Phase 2.
+P1-6 labels (task 7): COMPLETE 2026-08-26. corpus/labels/T##.json, 40
+records per article, 1,200 total (JSON arrays, not .md as the open note
+suggested; chosen for machine readability by the jury pipeline). Record
+format per rubric: {id, proposition, label, evidence, silence_reason}; id
+T##-### zero-padded; proposition verbatim from corpus/pool; evidence =
+quotable span for ENTAIL/CONTRADICT, silence_reason = short string for
+UNSPECIFIED. Final tally 599 ENTAIL / 309 CONTRADICT / 292 UNSPECIFIED
+(49.9/25.8/24.3 vs 50/25/25 design). Per-article counts in
+corpus/manifest.json label_counts (all 30 filled). Validated: all 30 parse,
+40 records each, ids sequential, field constraints hold, proposition text
+matches pool verbatim.
+
+Relabeling decisions (label follows rubric over pool design intent): T01 #20
+"no more than 46 died" = CONTRADICT (negation of stated "at least 47");
+T16 #33 "E2EE introduced after the girl's death" = UNSPECIFIED (death date
+not stated, ordering is inference); T20 #28 "match ended in a JDT win" =
+UNSPECIFIED (only "Bergson levelled in the 88th minute" stated); T22 #32
+"second term" + #35 "margin 167" = UNSPECIFIED (only the two totals stated,
+margin never computed in text); T23 #40 "crisis did not spread beyond the
+industry" = UNSPECIFIED ("across the industry" does not exclude "beyond");
+T28 #35 "Hoge is chief medical officer" = CONTRADICT (article: "Moderna
+President Stephen Hoge"); T32 #40 "Australian ban did not include Facebook"
+= CONTRADICT (article: "platforms including Facebook"); T35 #40 "the 822
+drones were not destroyed overnight" = CONTRADICT (direct negation of stated
+fact).
+
+Mid-session fix: T02/T03/T04/T05/T18 label files had been transcribed from
+a pre-final pool draft (94 propositions off). Pool (committed e28ce76) is
+canonical; all five files rewritten to the committed pool text and each
+affected label re-verified against the article. T02 #23 trap became 30
+inches vs stated 43.55 inches; T02 #24 unit-swap trap (105 mph vs stated 65
+mph / 105 km/h) preserved as designed.
+
+Open: P1-7 10% re-check from scratch (log agreement rate), P1-8 jury
+families, P1-9 prompts. Manifest split_role/sha256 fill at Phase 2.
 
 ## Phase 0 (done)
 

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T24-001",
+    "proposition": "All seven people on board the safari helicopter were killed on Wednesday.",
+    "label": "ENTAIL",
+    "evidence": "All seven people on board a safari helicopter, six passengers and a pilot, were killed on Wednesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-002",
+    "proposition": "The seven people on board were six passengers and a pilot.",
+    "label": "ENTAIL",
+    "evidence": "six passengers and a pilot",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-003",
+    "proposition": "The helicopter crashed in the foothills of Mount Ololokwe in Samburu County, central Kenya.",
+    "label": "ENTAIL",
+    "evidence": "crashed in the foothills of Mount Ololokwe in Samburu County, central Kenya",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-004",
+    "proposition": "The aircraft was a Eurocopter EC130 B4.",
+    "label": "ENTAIL",
+    "evidence": "the group's Eurocopter EC130 B4",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-005",
+    "proposition": "The helicopter was operated by Lady Lori Helicopters.",
+    "label": "ENTAIL",
+    "evidence": "operated by Lady Lori Helicopters",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-006",
+    "proposition": "The crash occurred at 9:13 a.m. (06:13 GMT).",
+    "label": "ENTAIL",
+    "evidence": "crashed at 9:13 a.m. (06:13 GMT)",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-007",
+    "proposition": "The helicopter departed from the Loisaba Conservancy.",
+    "label": "ENTAIL",
+    "evidence": "after departing the Loisaba Conservancy",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-008",
+    "proposition": "The flight was a scenic charter toward the Ewaso Ng'iro area.",
+    "label": "ENTAIL",
+    "evidence": "on a scenic charter toward the Ewaso Ng'iro area.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-009",
+    "proposition": "The Kenya Red Cross said difficult terrain and a fire at the crash site hampered search and recovery.",
+    "label": "ENTAIL",
+    "evidence": "The Kenya Red Cross said difficult terrain and a fire at the crash site hampered search and recovery efforts.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-010",
+    "proposition": "Michele Sensi-Contugi, 44, was among the dead.",
+    "label": "ENTAIL",
+    "evidence": "Among the dead were Michele Sensi-Contugi, 44",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-011",
+    "proposition": "Sensi-Contugi was director general of Ecuador's strategic intelligence center.",
+    "label": "ENTAIL",
+    "evidence": "director general of Ecuador's strategic intelligence center",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-012",
+    "proposition": "Stephany Hollihan, 42, was Sensi-Contugi's wife.",
+    "label": "ENTAIL",
+    "evidence": "his wife, Stephany Hollihan, 42",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-013",
+    "proposition": "Hollihan was a fashion designer who also held US citizenship.",
+    "label": "ENTAIL",
+    "evidence": "a fashion designer who also held US citizenship.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-014",
+    "proposition": "Five of the six passengers killed were US citizens.",
+    "label": "ENTAIL",
+    "evidence": "five of the six passengers killed were US citizens",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-015",
+    "proposition": "NBC News reported that one of the American victims was Jose Suarez, a prominent television executive.",
+    "label": "ENTAIL",
+    "evidence": "NBC News reported that one of them was Jose Suarez, a prominent television executive.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-016",
+    "proposition": "Sensi-Contugi was appointed head of national intelligence in January 2024.",
+    "label": "ENTAIL",
+    "evidence": "was appointed head of national intelligence in January 2024.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-017",
+    "proposition": "President Daniel Noboa declared three days of national mourning and ordered a state funeral.",
+    "label": "ENTAIL",
+    "evidence": "Noboa declared three days of national mourning and ordered a state funeral.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-018",
+    "proposition": "The pilot was identified as Josh Outram, an American.",
+    "label": "ENTAIL",
+    "evidence": "The pilot was identified as Josh Outram, an American.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-019",
+    "proposition": "Mount Ololokwe is a sacred mountain for the Samburu people.",
+    "label": "ENTAIL",
+    "evidence": "Mount Ololokwe is a sacred mountain for the Samburu people",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-020",
+    "proposition": "Mount Ololokwe's summit rises 2,000 metres above sea level.",
+    "label": "ENTAIL",
+    "evidence": "its summit rising 2,000 metres above sea level",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-021",
+    "proposition": "Four people were killed in the Kenya helicopter crash.",
+    "label": "CONTRADICT",
+    "evidence": "All seven people on board a safari helicopter ... were killed on Wednesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-022",
+    "proposition": "The helicopter crashed on Thursday.",
+    "label": "CONTRADICT",
+    "evidence": "were killed on Wednesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-023",
+    "proposition": "The aircraft was an Airbus H125.",
+    "label": "CONTRADICT",
+    "evidence": "the group's Eurocopter EC130 B4",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-024",
+    "proposition": "The crash occurred at 4:13 p.m.",
+    "label": "CONTRADICT",
+    "evidence": "crashed at 9:13 a.m. (06:13 GMT)",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-025",
+    "proposition": "Stephany Hollihan was 52 years old.",
+    "label": "CONTRADICT",
+    "evidence": "his wife, Stephany Hollihan, 42",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-026",
+    "proposition": "All six passengers were US citizens.",
+    "label": "CONTRADICT",
+    "evidence": "five of the six passengers killed were US citizens",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-027",
+    "proposition": "Sensi-Contugi was appointed head of national intelligence in January 2022.",
+    "label": "CONTRADICT",
+    "evidence": "was appointed head of national intelligence in January 2024.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-028",
+    "proposition": "Noboa did not declare a period of national mourning.",
+    "label": "CONTRADICT",
+    "evidence": "Noboa declared three days of national mourning",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-029",
+    "proposition": "No fire broke out at the crash site.",
+    "label": "CONTRADICT",
+    "evidence": "a fire at the crash site hampered search and recovery efforts.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-030",
+    "proposition": "The pilot was not an American.",
+    "label": "CONTRADICT",
+    "evidence": "The pilot was identified as Josh Outram, an American.",
+    "silence_reason": null
+  },
+  {
+    "id": "T24-031",
+    "proposition": "The helicopter's registration number was 5Y-GYM.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the registration number is not stated"
+  },
+  {
+    "id": "T24-032",
+    "proposition": "The crash was caused by engine failure.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the cause of the crash is not stated"
+  },
+  {
+    "id": "T24-033",
+    "proposition": "The six passengers had booked the flight for a wedding.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the flight was a scenic charter; the purpose of the trip is not stated"
+  },
+  {
+    "id": "T24-034",
+    "proposition": "Jose Suarez worked for NBC.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "NBC News is the reporting outlet; Suarez's employer is not stated"
+  },
+  {
+    "id": "T24-035",
+    "proposition": "The state funeral will be held in Quito.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the location of the state funeral is not stated"
+  },
+  {
+    "id": "T24-036",
+    "proposition": "The helicopter's last maintenance was performed in Nairobi.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "maintenance is not stated"
+  },
+  {
+    "id": "T24-037",
+    "proposition": "The Loisaba Conservancy is not in Samburu County.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the conservancy's location is not stated"
+  },
+  {
+    "id": "T24-038",
+    "proposition": "The pilot's family has not commented.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the pilot's family's comments are not stated"
+  },
+  {
+    "id": "T24-039",
+    "proposition": "The seven bodies were not identified within 24 hours.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the identification timeline is not stated"
+  },
+  {
+    "id": "T24-040",
+    "proposition": "The helicopter flyover companies did not operate on the day of the crash.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the flyover companies' operations on the crash day are not stated"
+  }
+]

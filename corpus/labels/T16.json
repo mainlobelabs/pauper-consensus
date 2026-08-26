@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T16-001",
+    "proposition": "Brazil's National Data Protection Authority ordered Discord to suspend its \"Go Live\" livestreaming feature.",
+    "label": "ENTAIL",
+    "evidence": "Brazil's National Data Protection Authority (ANPD) on Wednesday ordered Discord to suspend its \"Go Live\" livestreaming feature",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-002",
+    "proposition": "The order was issued on Wednesday.",
+    "label": "ENTAIL",
+    "evidence": "on Wednesday ordered Discord to suspend its \"Go Live\" livestreaming feature",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-003",
+    "proposition": "The order follows the case of a 13-year-old girl who was encouraged to take her own life during a broadcast.",
+    "label": "ENTAIL",
+    "evidence": "after a 13-year-old girl was encouraged to take her own life during a broadcast on the platform.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-004",
+    "proposition": "The order gives Discord three business days to comply.",
+    "label": "ENTAIL",
+    "evidence": "The order gives Discord three business days to comply",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-005",
+    "proposition": "Discord can appeal the order within 10 business days.",
+    "label": "ENTAIL",
+    "evidence": "the platform can appeal within 10 business days.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-006",
+    "proposition": "Discord's text messaging and voice channels continue despite the order.",
+    "label": "ENTAIL",
+    "evidence": "text messaging and voice channels continue.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-007",
+    "proposition": "The livestreaming feature must remain suspended until Discord proves it has put adequate protective measures in place for minors.",
+    "label": "ENTAIL",
+    "evidence": "must remain suspended until the company proves it has put adequate protective measures in place for minors",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-008",
+    "proposition": "The protective measures may include age verification.",
+    "label": "ENTAIL",
+    "evidence": "which may include age verification.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-009",
+    "proposition": "The investigation began on Friday.",
+    "label": "ENTAIL",
+    "evidence": "The investigation began on Friday",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-010",
+    "proposition": "The 13-year-old girl lived in central-western Brazil.",
+    "label": "ENTAIL",
+    "evidence": "after the death of the 13-year-old girl in central-western Brazil.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-011",
+    "proposition": "The Discord livestream in which the girl was pressured lasted 45 minutes.",
+    "label": "ENTAIL",
+    "evidence": "during a 45-minute Discord livestream she was pressured to end her life",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-012",
+    "proposition": "The ANPD found \"robust evidence\" that Discord failed to take reasonable steps to protect minors.",
+    "label": "ENTAIL",
+    "evidence": "The ANPD said it found \"robust evidence\" that Discord failed to take reasonable steps to prevent minors from being exposed to content promoting violence, self-harm and suicide.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-013",
+    "proposition": "Discord's livestreaming system prevents it from accessing the content of video streams while they are happening.",
+    "label": "ENTAIL",
+    "evidence": "the company's livestreaming system prevents it from accessing the content of video streams while they are happening",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-014",
+    "proposition": "Discord introduced end-to-end encryption to its communications in early March.",
+    "label": "ENTAIL",
+    "evidence": "a product change in early March, when Discord introduced end-to-end encryption to its communications",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-015",
+    "proposition": "Discord faces fines of up to 50 million reais per violation.",
+    "label": "ENTAIL",
+    "evidence": "Discord faces fines of up to 50 million reais (about $9.67 million) per violation.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-016",
+    "proposition": "The fine of up to 50 million reais is about $9.67 million.",
+    "label": "ENTAIL",
+    "evidence": "50 million reais (about $9.67 million)",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-017",
+    "proposition": "The agency said livestreams have repeatedly been used in connection with serious crimes in Brazil.",
+    "label": "ENTAIL",
+    "evidence": "The agency said livestreams have repeatedly been used in connection with serious crimes in Brazil",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-018",
+    "proposition": "The suspension is a preventive measure while the company strengthens safeguards.",
+    "label": "ENTAIL",
+    "evidence": "the suspension is a preventive measure while the company strengthens safeguards.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-019",
+    "proposition": "Discord's livestreaming system cannot automatically detect violations in real time.",
+    "label": "ENTAIL",
+    "evidence": "it cannot automatically detect violations in real time",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-020",
+    "proposition": "Discord itself is not blocked in Brazil by the order.",
+    "label": "ENTAIL",
+    "evidence": "Discord itself will not be blocked",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-021",
+    "proposition": "The order was issued on Friday.",
+    "label": "CONTRADICT",
+    "evidence": "on Wednesday ordered Discord to suspend its \"Go Live\" livestreaming feature",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-022",
+    "proposition": "The ANPD gave Discord 30 business days to comply.",
+    "label": "CONTRADICT",
+    "evidence": "The order gives Discord three business days to comply",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-023",
+    "proposition": "The girl who was pressured during the livestream was 15 years old.",
+    "label": "CONTRADICT",
+    "evidence": "a 13-year-old girl was encouraged to take her own life",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-024",
+    "proposition": "The livestream in which the girl was pressured lasted 4 hours and 50 minutes.",
+    "label": "CONTRADICT",
+    "evidence": "during a 45-minute Discord livestream",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-025",
+    "proposition": "Discord faces fines of up to 5 million reais per violation.",
+    "label": "CONTRADICT",
+    "evidence": "fines of up to 50 million reais (about $9.67 million) per violation.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-026",
+    "proposition": "The order blocks all of Discord's services in Brazil.",
+    "label": "CONTRADICT",
+    "evidence": "Discord itself will not be blocked; text messaging and voice channels continue.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-027",
+    "proposition": "Discord can appeal the order within three business days.",
+    "label": "CONTRADICT",
+    "evidence": "the platform can appeal within 10 business days.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-028",
+    "proposition": "The ANPD did not find robust evidence that Discord failed to protect minors.",
+    "label": "CONTRADICT",
+    "evidence": "The ANPD said it found \"robust evidence\" that Discord failed to take reasonable steps",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-029",
+    "proposition": "Discord's system can automatically detect violations in real time.",
+    "label": "CONTRADICT",
+    "evidence": "it cannot automatically detect violations in real time",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-030",
+    "proposition": "The suspension is not a preventive measure.",
+    "label": "CONTRADICT",
+    "evidence": "the suspension is a preventive measure while the company strengthens safeguards.",
+    "silence_reason": null
+  },
+  {
+    "id": "T16-031",
+    "proposition": "The 13-year-old girl's name was released by authorities.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the girl's name is not released in the article"
+  },
+  {
+    "id": "T16-032",
+    "proposition": "The host of the Discord server was arrested.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the arrest of the server host is not mentioned"
+  },
+  {
+    "id": "T16-033",
+    "proposition": "The end-to-end encryption was introduced after the girl's death.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the encryption change is stated as early March and the death as the Friday the investigation began; the exact date of the death is not stated, so the ordering is an inference"
+  },
+  {
+    "id": "T16-034",
+    "proposition": "Discord's CEO commented publicly on the decision.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "a CEO comment is not stated"
+  },
+  {
+    "id": "T16-035",
+    "proposition": "More than 100 minors watched the 45-minute livestream.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the number of viewers is not stated"
+  },
+  {
+    "id": "T16-036",
+    "proposition": "The agency's investigation did not consider the girl's server.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the scope of the investigation is not stated"
+  },
+  {
+    "id": "T16-037",
+    "proposition": "Discord has not appealed the decision.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the appeal window is stated; whether Discord has appealed is not stated"
+  },
+  {
+    "id": "T16-038",
+    "proposition": "The suspension will be lifted before the end of the month.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the suspension remains until safeguards are proved; a lifting date is not stated"
+  },
+  {
+    "id": "T16-039",
+    "proposition": "The 50 million reais fine is a one-time payment.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the fine is per violation; the total exposure is not stated"
+  },
+  {
+    "id": "T16-040",
+    "proposition": "The 45-minute livestream was not recorded by Discord.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "whether the stream was recorded is not stated"
+  }
+]

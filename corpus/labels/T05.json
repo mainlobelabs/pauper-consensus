@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T05-001",
+    "proposition": "Total US public debt has topped $40 trillion for the first time.",
+    "label": "ENTAIL",
+    "evidence": "Total US debt has topped $40 trillion for the first time ... total public debt outstanding at $40.047 trillion on Tuesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-002",
+    "proposition": "The US Treasury Department said the milestone was reached on Wednesday.",
+    "label": "ENTAIL",
+    "evidence": "the Treasury Department said on Wednesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-003",
+    "proposition": "Total public debt outstanding was $40.047 trillion on Tuesday.",
+    "label": "ENTAIL",
+    "evidence": "total public debt outstanding at $40.047 trillion on Tuesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-004",
+    "proposition": "The total includes Treasury securities held by the public of $32.266 trillion.",
+    "label": "ENTAIL",
+    "evidence": "a total that includes Treasury securities held by the public of $32.266 trillion",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-005",
+    "proposition": "Intra-governmental debt holdings were $7.782 trillion.",
+    "label": "ENTAIL",
+    "evidence": "intra-governmental debt holdings of $7.782 trillion.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-006",
+    "proposition": "A decade ago, the national debt stood at about $19.4 trillion.",
+    "label": "ENTAIL",
+    "evidence": "A decade ago, the national debt stood at about $19.4 trillion",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-007",
+    "proposition": "The government's total borrowing has more than doubled in ten years.",
+    "label": "ENTAIL",
+    "evidence": "the government's total borrowing has more than doubled in ten years.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-008",
+    "proposition": "The debt is now growing at roughly $90,000 every second.",
+    "label": "ENTAIL",
+    "evidence": "the debt is now growing at roughly $90,000 every second.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-009",
+    "proposition": "The $40 trillion total works out to approximately $117,000 per person.",
+    "label": "ENTAIL",
+    "evidence": "the $40 trillion total works out to approximately $117,000 per person.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-010",
+    "proposition": "The US reported a $432.3 billion deficit for July.",
+    "label": "ENTAIL",
+    "evidence": "Treasury also reported a $432.3 billion deficit for July",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-011",
+    "proposition": "The July deficit was the highest monthly total in more than five years.",
+    "label": "ENTAIL",
+    "evidence": "the highest monthly total in more than five years",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-012",
+    "proposition": "The year-to-date shortfall is nearing $1.8 trillion.",
+    "label": "ENTAIL",
+    "evidence": "the year-to-date shortfall nearing $1.8 trillion.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-013",
+    "proposition": "The US population is about 343 million.",
+    "label": "ENTAIL",
+    "evidence": "At a population of about 343 million",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-014",
+    "proposition": "The public share of the debt is near 100 percent of GDP.",
+    "label": "ENTAIL",
+    "evidence": "The public share of the debt is now near 100 percent of GDP",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-015",
+    "proposition": "The total debt passed $30 trillion just four and a half years ago.",
+    "label": "ENTAIL",
+    "evidence": "the total passed $30 trillion just four and a half years ago.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-016",
+    "proposition": "The Congressional Joint Economic Committee calculated the growth rate of the debt.",
+    "label": "ENTAIL",
+    "evidence": "The Congressional Joint Economic Committee calculated that the debt is now growing at roughly $90,000 every second.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-017",
+    "proposition": "Some models predicted the $40 trillion milestone would arrive months later than it did.",
+    "label": "ENTAIL",
+    "evidence": "the landmark figure was reached months earlier than some models predicted",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-018",
+    "proposition": "Lost revenue from invalidated tariffs contributed to the milestone arriving early.",
+    "label": "ENTAIL",
+    "evidence": "in part because of billions of dollars in lost revenue from President Donald Trump's invalidated tariffs.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-019",
+    "proposition": "Ballooning costs for social safety-net programs and interest payments far outstrip revenues.",
+    "label": "ENTAIL",
+    "evidence": "ballooning costs for social safety-net programs and interest payments far outstrip revenues held back by tax cuts.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-020",
+    "proposition": "The US national debt had never topped $40 trillion before this milestone.",
+    "label": "ENTAIL",
+    "evidence": "Total US debt has topped $40 trillion for the first time",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-021",
+    "proposition": "US total debt first topped $40 trillion a decade ago.",
+    "label": "CONTRADICT",
+    "evidence": "Total US debt has topped $40 trillion for the first time ... A decade ago, the national debt stood at about $19.4 trillion",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-022",
+    "proposition": "Total public debt outstanding was $45.047 trillion on Tuesday.",
+    "label": "CONTRADICT",
+    "evidence": "total public debt outstanding at $40.047 trillion on Tuesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-023",
+    "proposition": "The July deficit was $232.3 billion.",
+    "label": "CONTRADICT",
+    "evidence": "a $432.3 billion deficit for July",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-024",
+    "proposition": "The national debt stood at about $29.4 trillion a decade ago.",
+    "label": "CONTRADICT",
+    "evidence": "A decade ago, the national debt stood at about $19.4 trillion",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-025",
+    "proposition": "The debt is growing at roughly $9,000 every second.",
+    "label": "CONTRADICT",
+    "evidence": "growing at roughly $90,000 every second.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-026",
+    "proposition": "The US population is about 243 million.",
+    "label": "CONTRADICT",
+    "evidence": "At a population of about 343 million",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-027",
+    "proposition": "The $40 trillion milestone was not announced by the Treasury Department.",
+    "label": "CONTRADICT",
+    "evidence": "Total US debt has topped $40 trillion for the first time, the Treasury Department said on Wednesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-028",
+    "proposition": "The July deficit was not the highest monthly total in more than five years.",
+    "label": "CONTRADICT",
+    "evidence": "the highest monthly total in more than five years",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-029",
+    "proposition": "Total debt has not passed $30 trillion.",
+    "label": "CONTRADICT",
+    "evidence": "the total passed $30 trillion just four and a half years ago.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-030",
+    "proposition": "Tax cuts have not held back revenues.",
+    "label": "CONTRADICT",
+    "evidence": "revenues held back by tax cuts.",
+    "silence_reason": null
+  },
+  {
+    "id": "T05-031",
+    "proposition": "The Treasury Secretary called the milestone a warning sign.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "no quote from the Treasury Secretary is given in the article"
+  },
+  {
+    "id": "T05-032",
+    "proposition": "Interest payments are now the largest line item in the federal budget.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the budget's line-item ranking is not stated"
+  },
+  {
+    "id": "T05-033",
+    "proposition": "The $432.3 billion July deficit was driven by a single one-time payment.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the composition of the July deficit is not broken down in the article"
+  },
+  {
+    "id": "T05-034",
+    "proposition": "The US national debt topped $40 trillion because of the war with Iran.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the war with Iran is not mentioned in the article"
+  },
+  {
+    "id": "T05-035",
+    "proposition": "The Washington Post was the only outlet to report the milestone.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the Washington Post is cited for the prediction detail; whether it was the only outlet is not stated"
+  },
+  {
+    "id": "T05-036",
+    "proposition": "The debt-to-GDP ratio is below 100 percent.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "only the public share is stated as near 100 percent of GDP; the total debt-to-GDP ratio is not stated"
+  },
+  {
+    "id": "T05-037",
+    "proposition": "The federal budget deficit for 2025 was about $1.9 trillion.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the 2025 annual deficit is not stated; only the 2026 year-to-date shortfall is given"
+  },
+  {
+    "id": "T05-038",
+    "proposition": "The Treasury did not give a forecast for when the debt will reach $45 trillion.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "no forecast for reaching $45 trillion is given in the article"
+  },
+  {
+    "id": "T05-039",
+    "proposition": "No member of Congress commented on the milestone.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "no member of Congress is quoted or mentioned in the article"
+  },
+  {
+    "id": "T05-040",
+    "proposition": "The national debt has been trending down over the past year.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "no trend over the past year is stated in the article"
+  }
+]

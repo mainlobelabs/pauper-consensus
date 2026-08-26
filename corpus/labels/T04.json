@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T04-001",
+    "proposition": "The Hawk Fire started in the hills northwest of Reno on Saturday.",
+    "label": "ENTAIL",
+    "evidence": "A fast-growing wildfire that began Saturday in the hills northwest of Reno",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-002",
+    "proposition": "The Hawk Fire had burned more than 15,000 acres by late Sunday.",
+    "label": "ENTAIL",
+    "evidence": "had burned more than 15,000 acres by late Sunday",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-003",
+    "proposition": "The Hawk Fire had zero containment as of late Sunday.",
+    "label": "ENTAIL",
+    "evidence": "by late Sunday with zero containment",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-004",
+    "proposition": "Nevada Governor Joe Lombardo declared a state of emergency in Washoe County.",
+    "label": "ENTAIL",
+    "evidence": "Nevada Governor Joe Lombardo declared a state of emergency in Washoe County.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-005",
+    "proposition": "The fire was first reported around 11:25 am on Saturday.",
+    "label": "ENTAIL",
+    "evidence": "first reported around 11:25 a.m. Saturday near Hawk Meadow Trail",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-006",
+    "proposition": "The fire began near Hawk Meadow Trail in the Peavine Peak area of the Humboldt-Toiyabe National Forest.",
+    "label": "ENTAIL",
+    "evidence": "near Hawk Meadow Trail in the Peavine Peak area of the Humboldt-Toiyabe National Forest",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-007",
+    "proposition": "Officials attributed the fire to human causes.",
+    "label": "ENTAIL",
+    "evidence": "Officials attributed the fire to human causes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-008",
+    "proposition": "Roughly 42,000 residents are under evacuation orders.",
+    "label": "ENTAIL",
+    "evidence": "roughly 42,000 residents under evacuation orders",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-009",
+    "proposition": "An additional 45,000 people are in the adjacent warning zone.",
+    "label": "ENTAIL",
+    "evidence": "an additional 45,000 people in the adjacent warning zone.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-010",
+    "proposition": "More than 13,700 residences sit inside the evacuation area.",
+    "label": "ENTAIL",
+    "evidence": "More than 13,700 residences sit inside the evacuation area.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-011",
+    "proposition": "Six people were injured.",
+    "label": "ENTAIL",
+    "evidence": "Six people were injured.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-012",
+    "proposition": "The \"GO NOW\" evacuation zone expanded to the edge of the University of Nevada campus.",
+    "label": "ENTAIL",
+    "evidence": "By Sunday the \"GO NOW\" evacuation zone had expanded to the edge of the University of Nevada campus",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-013",
+    "proposition": "Strong winds made it difficult for firefighters to hold the line.",
+    "label": "ENTAIL",
+    "evidence": "Strong winds made it difficult for firefighters to hold the line",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-014",
+    "proposition": "The governor authorized one CH-47 Chinook and one UH-60 Black Hawk helicopter to support the response.",
+    "label": "ENTAIL",
+    "evidence": "the governor authorized one CH-47 Chinook helicopter, one UH-60 Black Hawk and 72 National Guard security personnel to support the response.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-015",
+    "proposition": "The governor authorized 72 National Guard security personnel.",
+    "label": "ENTAIL",
+    "evidence": "72 National Guard security personnel to support the response.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-016",
+    "proposition": "US Highway 395 was closed between Parr Boulevard and Red Rock Road.",
+    "label": "ENTAIL",
+    "evidence": "US Highway 395 was closed between Parr Boulevard and Red Rock Road",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-017",
+    "proposition": "The declaration directs all state agencies to work through the Nevada Emergency Operations Center.",
+    "label": "ENTAIL",
+    "evidence": "The declaration directs all state agencies to work through the Nevada Emergency Operations Center",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-018",
+    "proposition": "The fire began in an area near the California state line.",
+    "label": "ENTAIL",
+    "evidence": "near Hawk Meadow Trail in the Peavine Peak area of the Humboldt-Toiyabe National Forest, where rugged foothills ringed by homes and businesses sit near the California state line.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-019",
+    "proposition": "Authorities urged people to be prepared to stay away for several days.",
+    "label": "ENTAIL",
+    "evidence": "Authorities urged people to be prepared to stay away for several days.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-020",
+    "proposition": "The Hawk Fire was not caused by lightning.",
+    "label": "ENTAIL",
+    "evidence": "Officials attributed the fire to human causes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-021",
+    "proposition": "The Hawk Fire started on Sunday.",
+    "label": "CONTRADICT",
+    "evidence": "A fast-growing wildfire that began Saturday in the hills northwest of Reno",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-022",
+    "proposition": "The fire had burned more than 50,000 acres by late Sunday.",
+    "label": "CONTRADICT",
+    "evidence": "had burned more than 15,000 acres by late Sunday",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-023",
+    "proposition": "The fire was at 50 percent containment.",
+    "label": "CONTRADICT",
+    "evidence": "by late Sunday with zero containment",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-024",
+    "proposition": "The state of emergency was declared for Douglas County.",
+    "label": "CONTRADICT",
+    "evidence": "declared a state of emergency in Washoe County.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-025",
+    "proposition": "Officials attributed the fire to a lightning strike.",
+    "label": "CONTRADICT",
+    "evidence": "Officials attributed the fire to human causes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-026",
+    "proposition": "Roughly 12,000 residents were under evacuation orders.",
+    "label": "CONTRADICT",
+    "evidence": "roughly 42,000 residents under evacuation orders",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-027",
+    "proposition": "No one was injured by the fire.",
+    "label": "CONTRADICT",
+    "evidence": "Six people were injured.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-028",
+    "proposition": "The fire was not spreading quickly.",
+    "label": "CONTRADICT",
+    "evidence": "which is spreading quickly and threatening homes and structures",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-029",
+    "proposition": "No state of emergency was declared in Washoe County.",
+    "label": "CONTRADICT",
+    "evidence": "declared a state of emergency in Washoe County.",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-030",
+    "proposition": "The fire started in the hills southeast of Reno.",
+    "label": "CONTRADICT",
+    "evidence": "in the hills northwest of Reno",
+    "silence_reason": null
+  },
+  {
+    "id": "T04-031",
+    "proposition": "The Hawk Fire was started by a power line.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the fire is human-caused; the specific mechanism is not stated"
+  },
+  {
+    "id": "T04-032",
+    "proposition": "The fire was started by a campfire.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the specific human cause is not stated"
+  },
+  {
+    "id": "T04-033",
+    "proposition": "The fire's burned area will exceed 100,000 acres by the end of the week.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "no forecast of the final size is given"
+  },
+  {
+    "id": "T04-034",
+    "proposition": "The name Hawk Fire was chosen by the local fire agency.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the origin of the name is not stated"
+  },
+  {
+    "id": "T04-035",
+    "proposition": "The University of Nevada campus was evacuated.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the evacuation zone reached the edge of the campus; the campus's own evacuation status is not stated"
+  },
+  {
+    "id": "T04-036",
+    "proposition": "Homes were lost to the fire.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "homes were threatened; losses are not stated"
+  },
+  {
+    "id": "T04-037",
+    "proposition": "The fire did not cross into California.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the fire began near the state line; whether it crossed is not stated"
+  },
+  {
+    "id": "T04-038",
+    "proposition": "No structures were destroyed by the fire.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "homes and structures were threatened; destruction is not stated"
+  },
+  {
+    "id": "T04-039",
+    "proposition": "The six injured people were not hospitalized.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "injuries are stated; hospitalization is not mentioned"
+  },
+  {
+    "id": "T04-040",
+    "proposition": "Firefighters did not use the authorized helicopters in the response.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the helicopters were authorized; their use in the response is not stated"
+  }
+]

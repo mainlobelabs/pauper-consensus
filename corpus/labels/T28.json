@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T28-001",
+    "proposition": "Moderna and Merck said on Wednesday that the personalized mRNA vaccine reduced the risk of melanoma returning or spreading.",
+    "label": "ENTAIL",
+    "evidence": "Moderna and Merck said on Wednesday that a personalized mRNA cancer vaccine reduced the risk of melanoma returning or spreading",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-002",
+    "proposition": "The result came from a late-stage trial.",
+    "label": "ENTAIL",
+    "evidence": "in a late-stage trial",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-003",
+    "proposition": "Moderna's shares surged as much as 160 percent.",
+    "label": "ENTAIL",
+    "evidence": "sent Moderna's shares surging as much as 160%.",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-004",
+    "proposition": "The results were topline results from the Phase 3 INTerpath-001 trial.",
+    "label": "ENTAIL",
+    "evidence": "topline results from the Phase 3 INTerpath-001 trial",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-005",
+    "proposition": "The therapy is intismeran autogene, an mRNA-based individualized neoantigen therapy.",
+    "label": "ENTAIL",
+    "evidence": "intismeran autogene, an mRNA-based individualized neoantigen therapy",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-006",
+    "proposition": "The trial combined intismeran with Merck's Keytruda.",
+    "label": "ENTAIL",
+    "evidence": "in combination with Merck's immunotherapy Keytruda (pembrolizumab)",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-007",
+    "proposition": "Keytruda's generic name is pembrolizumab.",
+    "label": "ENTAIL",
+    "evidence": "Keytruda (pembrolizumab)",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-008",
+    "proposition": "The primary endpoint was recurrence-free survival.",
+    "label": "ENTAIL",
+    "evidence": "the primary endpoint of recurrence-free survival (RFS)",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-009",
+    "proposition": "The key secondary endpoint was distant metastasis-free survival.",
+    "label": "ENTAIL",
+    "evidence": "the key secondary endpoint of distant metastasis-free survival (DMFS)",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-010",
+    "proposition": "The trial enrolled patients with completely resected stage IIB-IV cutaneous melanoma.",
+    "label": "ENTAIL",
+    "evidence": "in patients with completely resected stage IIB-IV cutaneous melanoma",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-011",
+    "proposition": "The enrolled patients had not received prior systemic therapy.",
+    "label": "ENTAIL",
+    "evidence": "who had not received prior systemic therapy.",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-012",
+    "proposition": "The trial enrolled 1,137 patients.",
+    "label": "ENTAIL",
+    "evidence": "The trial enrolled 1,137 patients",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-013",
+    "proposition": "Patients were randomized 2:1.",
+    "label": "ENTAIL",
+    "evidence": "randomized 2:1",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-014",
+    "proposition": "Intismeran was dosed every three weeks for up to nine doses.",
+    "label": "ENTAIL",
+    "evidence": "intismeran, dosed every three weeks for up to nine doses",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-015",
+    "proposition": "Keytruda was dosed every six weeks for up to nine cycles.",
+    "label": "ENTAIL",
+    "evidence": "Keytruda every six weeks for up to nine cycles",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-016",
+    "proposition": "This was the first positive Phase 3 readout for an individualized neoantigen therapy.",
+    "label": "ENTAIL",
+    "evidence": "the first positive Phase 3 readout for an individualized neoantigen therapy",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-017",
+    "proposition": "The five-year Phase 2b KEYNOTE-942 data was presented at the 2026 ASCO Annual Meeting.",
+    "label": "ENTAIL",
+    "evidence": "five-year follow-up data from the Phase 2b KEYNOTE-942 trial, presented at the 2026 ASCO Annual Meeting",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-018",
+    "proposition": "In the Phase 2b trial, the combination reduced the risk of recurrence or death by 49 percent.",
+    "label": "ENTAIL",
+    "evidence": "the combination reduced the risk of recurrence or death by 49%",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-019",
+    "proposition": "Merck paid $200 million upfront to begin the alliance.",
+    "label": "ENTAIL",
+    "evidence": "Merck paid $200 million upfront to begin the alliance",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-020",
+    "proposition": "Merck paid $250 million in 2022 to exercise its option for intismeran.",
+    "label": "ENTAIL",
+    "evidence": "$250 million in 2022 to exercise its option for intismeran.",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-021",
+    "proposition": "Moderna's shares fell 160 percent after the announcement.",
+    "label": "CONTRADICT",
+    "evidence": "sent Moderna's shares surging as much as 160%.",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-022",
+    "proposition": "The trial enrolled 113 patients.",
+    "label": "CONTRADICT",
+    "evidence": "The trial enrolled 1,137 patients",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-023",
+    "proposition": "The trial randomized patients 1:2.",
+    "label": "CONTRADICT",
+    "evidence": "randomized 2:1",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-024",
+    "proposition": "Intismeran was dosed every six weeks.",
+    "label": "CONTRADICT",
+    "evidence": "intismeran, dosed every three weeks for up to nine doses",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-025",
+    "proposition": "The Phase 2b trial reduced the risk of recurrence or death by 94 percent.",
+    "label": "CONTRADICT",
+    "evidence": "reduced the risk of recurrence or death by 49%",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-026",
+    "proposition": "The companies announced the results on Thursday.",
+    "label": "CONTRADICT",
+    "evidence": "said on Wednesday",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-027",
+    "proposition": "Merck paid $200 million in 2022 to exercise its option.",
+    "label": "CONTRADICT",
+    "evidence": "Merck paid $200 million upfront to begin the alliance and $250 million in 2022 to exercise its option for intismeran.",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-028",
+    "proposition": "The vaccine did not reduce the risk of melanoma returning or spreading.",
+    "label": "CONTRADICT",
+    "evidence": "reduced the risk of melanoma returning or spreading",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-029",
+    "proposition": "The results were not statistically significant.",
+    "label": "CONTRADICT",
+    "evidence": "demonstrated statistically significant and clinically meaningful improvements",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-030",
+    "proposition": "Merck and Moderna have not been research partners since 2016.",
+    "label": "CONTRADICT",
+    "evidence": "Merck and Moderna have been research partners since 2016.",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-031",
+    "proposition": "The vaccine's most common side effect was fatigue.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "side effects are not stated"
+  },
+  {
+    "id": "T28-032",
+    "proposition": "Intismeran will be priced at $150,000 per patient.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "pricing is not stated"
+  },
+  {
+    "id": "T28-033",
+    "proposition": "The data will be presented at the 2027 ASCO Annual Meeting.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "an upcoming international medical meeting is stated; its identity and year are not stated"
+  },
+  {
+    "id": "T28-034",
+    "proposition": "The FDA received the filing on August 1.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "engagement with regulators is planned; a filing date is not stated"
+  },
+  {
+    "id": "T28-035",
+    "proposition": "Stephen Hoge is Moderna's chief medical officer.",
+    "label": "CONTRADICT",
+    "evidence": "Moderna President Stephen Hoge said",
+    "silence_reason": null
+  },
+  {
+    "id": "T28-036",
+    "proposition": "The 49 percent reduction in the Phase 2b trial was measured at three years.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the 49 percent figure is from five-year follow-up data; a three-year timepoint is not stated"
+  },
+  {
+    "id": "T28-037",
+    "proposition": "No patients in the trial died during treatment.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "deaths during treatment are not stated"
+  },
+  {
+    "id": "T28-038",
+    "proposition": "The trial did not include any patients from the United States.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the nationalities of trial patients are not stated"
+  },
+  {
+    "id": "T28-039",
+    "proposition": "The alliance has not produced any other product.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "other products of the alliance are not stated"
+  },
+  {
+    "id": "T28-040",
+    "proposition": "No regulator has approved the vaccine.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "regulatory approval is pending; no approval is stated"
+  }
+]

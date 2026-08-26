@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated": "2026-08-26",
-  "notes": "Corpus manifest for the 30-article wave-consensus corpus. source.role is 'original' for verbatim articles (the article IS that source) and 'anchor' for drafted articles (the article used to fact-check the draft). in_passing_mentions are the secondary facts deliberately included in each article, with question seeds useful for Phase 1 task 4. disputed records where the article pins one figure of a DISPUTED fact from the fact-check pass; the conflicting figure is pool CONTRADICT material. label_counts and split_role are filled at Phase 2.",
+  "notes": "Corpus manifest for the 30-article wave-consensus corpus. source.role is 'original' for verbatim articles (the article IS that source) and 'anchor' for drafted articles (the article used to fact-check the draft). in_passing_mentions are the secondary facts deliberately included in each article, with question seeds useful for Phase 1 task 4. disputed records where the article pins one figure of a DISPUTED fact from the fact-check pass; the conflicting figure is pool CONTRADICT material. label_counts filled in P1-6 (corpus/labels); split_role and sha256 filled at Phase 2.",
   "articles": [
     {
       "id": "T01",
@@ -18,7 +18,8 @@
         { "fact": "1992 Flores M7 tsunami killed about 2,500; 2004 M9.1 killed 170,000 in Indonesia", "claim_seed_hint": "How many died in the 1992 Flores tsunami?" },
         { "fact": "Tsunami warning covered East/West Nusa Tenggara, South and Southeast Sulawesi; lifted about three hours after the quake", "claim_seed_hint": "Which provinces got the tsunami warning?" },
         { "fact": "Ritapiret Seminary rector Guidelbertus Tanga; one priest with a broken leg", "claim_seed_hint": "What injury did the priest sustain?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 19, "CONTRADICT": 11, "UNSPECIFIED": 10 }
     },
     {
       "id": "T02",
@@ -38,7 +39,8 @@
       "disputed": {
         "peak winds": { "pinned_in_article": null, "article_says": "not stated (only 65 mph TS winds on Aug 16)", "conflicting": "75 vs 80 knots reported by different outlets during landfall" },
         "deaths": { "pinned_in_article": null, "article_says": "no deaths mentioned", "conflicting": "1 vs 2 deaths reported by different outlets" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T03",
@@ -52,7 +54,8 @@
         { "fact": "Deployment originally planned at roughly six months; rerouted to Middle East after war with Iran began", "claim_seed_hint": "Why was the Lincoln rerouted to the Middle East?" },
         { "fact": "Journey home takes just over a month", "claim_seed_hint": "How long is the journey back to San Diego?" },
         { "fact": "Some families reported substandard conditions and sailors struggling mentally", "claim_seed_hint": "What conditions did families report on the ship?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T04",
@@ -67,7 +70,8 @@
         { "fact": "More than 13,700 residences inside the evacuation area; six people injured", "claim_seed_hint": "How many residences are in the evacuation area?" },
         { "fact": "Governor authorized one CH-47 Chinook, one UH-60 Black Hawk, 72 National Guard personnel", "claim_seed_hint": "What air support did the governor authorize?" },
         { "fact": "US Highway 395 closed between Parr Boulevard and Red Rock Road", "claim_seed_hint": "Which highway was closed?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T05",
@@ -82,7 +86,8 @@
         { "fact": "Joint Economic Committee: growing at roughly $90,000 per second; about $117,000 per person at 343 million population", "claim_seed_hint": "How fast is the debt growing per the JEC?" },
         { "fact": "July deficit $432.3 billion, highest monthly total in more than five years; year-to-date near $1.8 trillion", "claim_seed_hint": "What was the July deficit?" },
         { "fact": "Washington Post: milestone reached months earlier than some models predicted, partly due to invalidated tariffs", "claim_seed_hint": "Why was the milestone reached earlier than some models predicted?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T08",
@@ -97,7 +102,8 @@
         { "fact": "Campaign cites Minnesota Statute 204C.35; plan would count only Lindell and Demuth votes, leaving out five other Republican candidates", "claim_seed_hint": "Which statute does the campaign cite?" },
         { "fact": "Contingent recount plan approved by State Canvassing Board on Aug 18; Paul Linnell, director of elections, named state recount official", "claim_seed_hint": "Who was named state recount official?" },
         { "fact": "Demuth faces Sen. Amy Klobuchar in the Nov 3 general; Gov. Tim Walz not running again", "claim_seed_hint": "Who will Demuth face in the general election?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T10",
@@ -112,7 +118,8 @@
         { "fact": "Matthew Morey, 19, of Delaware County drowned in the Mississinewa River", "claim_seed_hint": "Where did Matthew Morey drown?" },
         { "fact": "White River crest 24.60 ft in Hamilton County around 3:30 am Aug 15, breaking a 100+ year record", "claim_seed_hint": "What record did the White River break?" },
         { "fact": "Storms swept over half of the state's 92 counties; more than 350,000 residents lost power", "claim_seed_hint": "How many counties were affected?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T12",
@@ -127,7 +134,8 @@
         { "fact": "UAE said it was ending all trade relations with Iran ahead of the announcement", "claim_seed_hint": "What did the UAE say before the announcement?" },
         { "fact": "Rial at record low, roughly 2.02 million per dollar", "claim_seed_hint": "What was the rial rate this week?" },
         { "fact": "US-Israel war on Iran entered its sixth month", "claim_seed_hint": "What month of the war is it per this article?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T13",
@@ -145,7 +153,8 @@
       ],
       "disputed": {
         "death toll": { "pinned_in_article": "80", "article_says": "80 after Sunday recoveries", "conflicting": "AP reported 84, BBC 93 in later tallies" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T14",
@@ -160,7 +169,8 @@
         { "fact": "Case rests on a 1998 FBI interview, 2008 LAPD interview (Biggie Smalls investigation), 2009 LV police interview, and 2019 memoir Compton Street Legend", "claim_seed_hint": "Which four statements form the prosecution's case?" },
         { "fact": "Defense attorney Michael Sanft calls the statements fiction", "claim_seed_hint": "Who is the defense attorney?" },
         { "fact": "Prosecution expects 35-45 witnesses; trial up to six weeks", "claim_seed_hint": "How long is the trial expected to last?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T15",
@@ -174,7 +184,8 @@
         { "fact": "Operations halted in 1991 after the ouster of President Siad Barre", "claim_seed_hint": "When did Somali Airlines stop operating?" },
         { "fact": "July 2025: agreement involving two Airbus A320 aircraft; October 2025 target missed", "claim_seed_hint": "What aircraft were in the July 2025 restart agreement?" },
         { "fact": "Aden Adde International Airport served by Ethiopian, Qatar, Turkish Airlines", "claim_seed_hint": "Which carriers currently serve Mogadishu?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T16",
@@ -188,7 +199,8 @@
         { "fact": "45-minute livestream in which the 13-year-old was pressured to end her life", "claim_seed_hint": "How long was the livestream?" },
         { "fact": "Discord introduced end-to-end encryption in early March, limiting in-stream access", "claim_seed_hint": "What product change did the ANPD point to?" },
         { "fact": "Fines up to 50 million reais (about $9.67 million) per violation", "claim_seed_hint": "How much is the maximum fine per violation?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T17",
@@ -203,7 +215,8 @@
         { "fact": "COPPA enacted in 2000", "claim_seed_hint": "When was COPPA enacted?" },
         { "fact": "DOJ filed the suit in 2024 in the Central District of California on FTC referral", "claim_seed_hint": "Where was the lawsuit filed?" },
         { "fact": "Dozens of US states are suing Meta over COPPA", "claim_seed_hint": "Who else are states suing under COPPA?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T18",
@@ -221,7 +234,8 @@
       ],
       "disputed": {
         "winning robot/team": { "pinned_in_article": "Tiangong Ultra (Beijing Humanoid Robot Innovation Center)", "article_says": "Tiangong Ultra won its heat", "conflicting": "earlier reports named the robot 'Lightning' under team Tianzhuo vs X-Humanoid" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T19",
@@ -236,7 +250,8 @@
         { "fact": "IMAX's highest-grossing release ever, outpacing Avatar at $271M in that format", "claim_seed_hint": "What is the IMAX record it broke?" },
         { "fact": "Crossed $1B on Aug 7; only third R-rated film after D&W and Joker", "claim_seed_hint": "When did the film cross $1 billion?" },
         { "fact": "D&W holds R-rated opening weekend record at $444.7M; YTD #2 behind Spider-Man: Brand New Day at $2.039B", "claim_seed_hint": "Which film is ahead of it for the year?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T20",
@@ -252,7 +267,8 @@
         { "fact": "No league loss since a 1-0 defeat by Terengganu in April 2021", "claim_seed_hint": "When was JDT's last league defeat?" },
         { "fact": "May 2022: came from 2-1 down vs Sri Pahang, Bergson equalized in the 88th minute", "claim_seed_hint": "Who scored in the run's only serious scare?" },
         { "fact": "Owned by Johor Crown Prince Tunku Ismail; managed by Xisco Munoz; 12-time defending champions; 3-3 preseason friendly vs Chelsea; only Southeast Asian club to win the AFC Cup (2015)", "claim_seed_hint": "Who owns the club and which continental trophy has it won?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 9, "UNSPECIFIED": 11 }
     },
     {
       "id": "T21",
@@ -267,7 +283,8 @@
         { "fact": "US tariffs cover roughly $20B of Canadian exports, about 5% of bilateral trade; ordered under Section 338 of the Tariff Act of 1930; stack on a 10% levy", "claim_seed_hint": "How much trade do the US tariffs cover and under which statute?" },
         { "fact": "Trump announced them July 20; originally set for Aug 19 with a three-day pause", "claim_seed_hint": "When were the tariffs originally set to take effect?" },
         { "fact": "USTR Jamieson Greer: no future talks planned", "claim_seed_hint": "What did the USTR say about future talks?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T22",
@@ -282,7 +299,8 @@
         { "fact": "Vacancy after Mohammed Shahabuddin resigned last month for health reasons", "claim_seed_hint": "Why did the presidency fall vacant?" },
         { "fact": "Alamgir has been BNP secretary-general since 2016", "claim_seed_hint": "What is Alamgir's party role?" },
         { "fact": "PM Tarique Rahman sworn in February 17; oath at Darbar Hall, Bangabhaban", "claim_seed_hint": "When was the prime minister sworn in?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T23",
@@ -297,7 +315,8 @@
         { "fact": "Five other executives sentenced to 6-18 years; 56 people sentenced in total", "claim_seed_hint": "How many people were sentenced in connection with the collapse?" },
         { "fact": "2024: CSRC fined Hui 47M yuan and banned him from the securities market for life", "claim_seed_hint": "What did the CSRC do in 2024?" },
         { "fact": "At its peak Evergrande employed about 200,000 people; 2021 default triggered the industry property crisis", "claim_seed_hint": "How many people did Evergrande employ at its peak?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T24",
@@ -315,7 +334,8 @@
       ],
       "disputed": {
         "Sensi-Contugi age": { "pinned_in_article": "44", "article_says": "44", "conflicting": "NST reported 42" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T25",
@@ -333,7 +353,8 @@
       ],
       "disputed": {
         "death toll": { "pinned_in_article": "more than 100 (Red Cross/local officials)", "article_says": "more than 100, official ministry toll 49", "conflicting": "official 49 vs local sources ~100" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T26",
@@ -349,7 +370,8 @@
         { "fact": "Gang members targeted the home of Dr. Jean 'Bill' Pape, who runs an NGO for HIV/TB patients", "claim_seed_hint": "Whose home was targeted?" },
         { "fact": "Viv Ansanm, the gang coalition the US has designated a foreign terrorist organization, set fire to 25 homes", "claim_seed_hint": "Which gang coalition is US-designated as an FTO?" },
         { "fact": "1.5 million people displaced; more than 3,050 killed Jan-Jun per UN", "claim_seed_hint": "How many people have been displaced by gang violence?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T27",
@@ -364,7 +386,8 @@
         { "fact": "HTS/al-Nusrah Front's SDGT designation revoked and removed from the SDN List; Cuba, North Korea and Iran remain designated", "claim_seed_hint": "Which countries remain on the list?" },
         { "fact": "Trump met al-Sharaa in Ankara in July", "claim_seed_hint": "Where did Trump meet al-Sharaa?" },
         { "fact": "Foreign Minister Asaad al-Shibani and central bank chief Safwat Raslan comments; envoy Tom Barrack quote", "claim_seed_hint": "What did the Syrian foreign minister say?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T28",
@@ -379,7 +402,8 @@
         { "fact": "Moderna President Stephen Hoge: thousands of patients could benefit as soon as next year if approved", "claim_seed_hint": "When could patients benefit per Hoge?" },
         { "fact": "Phase 2b five-year follow-up (KEYNOTE-942, ASCO 2026): 49% reduction in recurrence or death, 59% reduction in distant metastasis or death", "claim_seed_hint": "What did the Phase 2b five-year data show?" },
         { "fact": "Partners since 2016; Merck paid $200M upfront and $250M in 2022 to exercise its intismeran option", "claim_seed_hint": "How much did Merck pay to exercise its option?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T29",
@@ -395,7 +419,8 @@
         { "fact": "ECDC (data to Aug 19): 5,290 confirmed, 2,516 dead, 837 hospitalised in Ituri, North Kivu, Haut-Uele; spread to Uganda; first imported case in Europe", "claim_seed_hint": "What did ECDC report on August 20?" },
         { "fact": "At least 155 health workers infected, including 45 deaths", "claim_seed_hint": "How many health workers died?" },
         { "fact": "UN ICG allocated 70,000 Ervebo doses on ~Aug 20; Ervebo is approved for the Zaire strain, not evaluated against Bundibugyo, so doses go into a Phase 3 trial of the Zaire vaccine against Bundibugyo; ICG had already allocated 56,000 doses for 2021-Jul 2026", "claim_seed_hint": "Why can't the Ervebo doses be used directly against this outbreak's strain?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T30",
@@ -413,7 +438,8 @@
       ],
       "disputed": {
         "number freed": { "pinned_in_article": "131 (interim government official count)", "article_says": "131 freed; Vente Venezuela verified 43, Foro Penal at least 40", "conflicting": "NGO-confirmed counts lower (Foro Penal 17 early, ~80 by Aug 20 per Caracas Chronicles)" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T32",
@@ -427,7 +453,8 @@
         { "fact": "France would have been the first European country, after Australia barred under-16s from Facebook, TikTok and YouTube in December", "claim_seed_hint": "Which country enacted such a ban first?" },
         { "fact": "The ban implies every person, even an adult, must prove their age", "claim_seed_hint": "Who would the age proof requirement apply to?" },
         { "fact": "Macron ordered PM Sebastien Lecornu to re-work the bill; reform to take effect before Spring 2027 presidential election, where he cannot run a third term", "claim_seed_hint": "Who did Macron order to re-work the bill?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T34",
@@ -443,7 +470,8 @@
         { "fact": "Valued at 70-80 million euros (up to ~$93M) by expert Alberto Fiz", "claim_seed_hint": "What is the estimated value of the stolen works?" },
         { "fact": "Investigators focus on an internal accomplice after the alarm was apparently deactivated by a custodian; heist likely on commission for an art dealer", "claim_seed_hint": "Who apparently deactivated the alarm?" },
         { "fact": "Days earlier Italy recovered three stolen Cezanne, Renoir and Matisse paintings", "claim_seed_hint": "What other artworks were recovered days before?" }
-      ]
+      ],
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     },
     {
       "id": "T35",
@@ -461,7 +489,8 @@
       ],
       "disputed": {
         "killed in Russia": { "pinned_in_article": "at least 6", "article_says": "at least six people killed", "conflicting": "WION reported at least 7 (later toll 7 killed, 39 injured)" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 11, "UNSPECIFIED": 9 }
     },
     {
       "id": "T36",
@@ -480,7 +509,8 @@
       ],
       "disputed": {
         "cap start date": { "pinned_in_article": "September 3 (per ACP advisory)", "article_says": "from September 3", "conflicting": "Reuters/AJ/CNA reported the cap as starting September 4 (timezone split)" }
-      }
+      },
+      "label_counts": { "ENTAIL": 20, "CONTRADICT": 10, "UNSPECIFIED": 10 }
     }
   ]
 }

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T18-001",
+    "proposition": "A Chinese humanoid robot ran 100 metres in 9.39 seconds.",
+    "label": "ENTAIL",
+    "evidence": "A Chinese humanoid robot ran 100 metres in 9.39 seconds",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-002",
+    "proposition": "The race was a preliminary heat at the World Humanoid Robot Games in Beijing.",
+    "label": "ENTAIL",
+    "evidence": "in a preliminary heat at the World Humanoid Robot Games in Beijing",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-003",
+    "proposition": "The race took place on Saturday.",
+    "label": "ENTAIL",
+    "evidence": "on Saturday, faster than the men's world record",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-004",
+    "proposition": "The 9.39 second time is faster than the men's 100m world record.",
+    "label": "ENTAIL",
+    "evidence": "faster than the men's world record held by Jamaican sprinting great Usain Bolt.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-005",
+    "proposition": "The winning robot is named Tiangong Ultra.",
+    "label": "ENTAIL",
+    "evidence": "Tiangong Ultra, developed by the Beijing Humanoid Robot Innovation Center, won its heat",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-006",
+    "proposition": "Tiangong Ultra was developed by the Beijing Humanoid Robot Innovation Center.",
+    "label": "ENTAIL",
+    "evidence": "developed by the Beijing Humanoid Robot Innovation Center",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-007",
+    "proposition": "The race was held at the opening of the second edition of the games.",
+    "label": "ENTAIL",
+    "evidence": "at the opening of the second edition of the games",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-008",
+    "proposition": "The venue is Beijing's National Speed Skating Oval.",
+    "label": "ENTAIL",
+    "evidence": "held at Beijing's National Speed Skating Oval",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-009",
+    "proposition": "The venue is known as the Ice Ribbon.",
+    "label": "ENTAIL",
+    "evidence": "known as the Ice Ribbon.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-010",
+    "proposition": "Tiangong Ultra overtook Honor's Lightning near the finish.",
+    "label": "ENTAIL",
+    "evidence": "The robot overtook Honor's Lightning near the finish",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-011",
+    "proposition": "Tiangong Ultra fell behind early in the race.",
+    "label": "ENTAIL",
+    "evidence": "after falling behind early in the race",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-012",
+    "proposition": "Lightning finished in 9.47 seconds.",
+    "label": "ENTAIL",
+    "evidence": "Lightning finished in 9.47 seconds",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-013",
+    "proposition": "Lightning's 9.47 second time was also faster than Bolt's record.",
+    "label": "ENTAIL",
+    "evidence": "also faster than the 9.58-second record",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-014",
+    "proposition": "Usain Bolt's 9.58 second record was set at the 2009 World Athletics Championships.",
+    "label": "ENTAIL",
+    "evidence": "the 9.58-second record Bolt set at the 2009 World Athletics Championships.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-015",
+    "proposition": "At the end of the dash the robots slammed into a cushion wall and fell to the ground.",
+    "label": "ENTAIL",
+    "evidence": "the robots slammed into a cushion wall and fell to the ground to stop",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-016",
+    "proposition": "Footage showed the robots being carried off on stretchers.",
+    "label": "ENTAIL",
+    "evidence": "footage showed them being carried off on stretchers.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-017",
+    "proposition": "A humanoid robot from Honor completed a 100-metre sprint in 9.32 seconds during a trial of the games.",
+    "label": "ENTAIL",
+    "evidence": "a humanoid robot from Chinese smartphone maker Honor completed a 100-metre sprint in 9.32 seconds during a trial of the games",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-018",
+    "proposition": "The Honor robot hit a peak speed of 14.5 metres per second during the trial.",
+    "label": "ENTAIL",
+    "evidence": "at a peak speed of 14.5 metres per second.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-019",
+    "proposition": "The best time at last year's first edition of the games was 21.50 seconds.",
+    "label": "ENTAIL",
+    "evidence": "At last year's first edition of the games, the best time in the event was 21.50 seconds",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-020",
+    "proposition": "More than 2,000 robots from 666 teams are competing across 51 events.",
+    "label": "ENTAIL",
+    "evidence": "More than 2,000 robots from 666 teams are competing in Beijing across 51 events.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-021",
+    "proposition": "The Chinese robot ran 100 metres in 9.59 seconds.",
+    "label": "CONTRADICT",
+    "evidence": "ran 100 metres in 9.39 seconds",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-022",
+    "proposition": "The race took place in the final on Sunday.",
+    "label": "CONTRADICT",
+    "evidence": "in a preliminary heat at the World Humanoid Robot Games in Beijing on Saturday",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-023",
+    "proposition": "The winning robot was Honor's Lightning.",
+    "label": "CONTRADICT",
+    "evidence": "Tiangong Ultra, developed by the Beijing Humanoid Robot Innovation Center, won its heat",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-024",
+    "proposition": "Lightning finished in 10.47 seconds.",
+    "label": "CONTRADICT",
+    "evidence": "Lightning finished in 9.47 seconds",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-025",
+    "proposition": "Bolt's 9.58 second record was set at the 2008 Beijing Olympics.",
+    "label": "CONTRADICT",
+    "evidence": "the 9.58-second record Bolt set at the 2009 World Athletics Championships.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-026",
+    "proposition": "The best time at last year's first edition was 19.50 seconds.",
+    "label": "CONTRADICT",
+    "evidence": "the best time in the event was 21.50 seconds",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-027",
+    "proposition": "Fewer than 1,000 robots are competing in Beijing.",
+    "label": "CONTRADICT",
+    "evidence": "More than 2,000 robots from 666 teams are competing in Beijing",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-028",
+    "proposition": "Tiangong Ultra did not overtake Lightning near the finish.",
+    "label": "CONTRADICT",
+    "evidence": "The robot overtook Honor's Lightning near the finish",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-029",
+    "proposition": "The robots did not fall to the ground at the end of the dash.",
+    "label": "CONTRADICT",
+    "evidence": "slammed into a cushion wall and fell to the ground to stop",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-030",
+    "proposition": "The 9.39 second time was slower than Bolt's record.",
+    "label": "CONTRADICT",
+    "evidence": "faster than the men's world record held by Jamaican sprinting great Usain Bolt.",
+    "silence_reason": null
+  },
+  {
+    "id": "T18-031",
+    "proposition": "Tiangong Ultra's top speed during the 9.39 second race was 14.9 metres per second.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the 14.5 metres per second figure belongs to the Honor trial robot; Tiangong Ultra's top speed is not stated"
+  },
+  {
+    "id": "T18-032",
+    "proposition": "The lead engineer of Tiangong Ultra is Wang Lei.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "no engineer is named in the article"
+  },
+  {
+    "id": "T18-033",
+    "proposition": "The games will award medals to the winning robots.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "medals are not stated"
+  },
+  {
+    "id": "T18-034",
+    "proposition": "Tiangong Ultra will defend its record at the 2027 games.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "future participation is not stated"
+  },
+  {
+    "id": "T18-035",
+    "proposition": "The 9.32 second trial was the fastest time in the history of the games.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the 9.32 trial, 9.39 heat and 21.50 previous best are all stated; the comparison ranking them is not made in the article"
+  },
+  {
+    "id": "T18-036",
+    "proposition": "The 51 events include a marathon.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the list of events is not stated"
+  },
+  {
+    "id": "T18-037",
+    "proposition": "No robot was injured in the race.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the robots fell and were carried off on stretchers; injuries are not stated"
+  },
+  {
+    "id": "T18-038",
+    "proposition": "The trial was not broadcast on television.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "broadcast coverage of the trial is not stated"
+  },
+  {
+    "id": "T18-039",
+    "proposition": "The cushion wall was not added for the second edition of the games.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the history of the cushion wall is not stated"
+  },
+  {
+    "id": "T18-040",
+    "proposition": "The 9.39 second record was not announced by the organising committee.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the announcing body is not stated"
+  }
+]

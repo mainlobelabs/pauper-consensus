@@ -1,0 +1,282 @@
+[
+  {
+    "id": "T26-001",
+    "proposition": "At least 47 people were killed in the gang attack near Port-au-Prince.",
+    "label": "ENTAIL",
+    "evidence": "At least 47 people were killed and more than 50 others kidnapped after armed men attacked a once-peaceful community near Haiti's capital",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-002",
+    "proposition": "More than 50 people were kidnapped in the attack.",
+    "label": "ENTAIL",
+    "evidence": "more than 50 others kidnapped",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-003",
+    "proposition": "The attack happened earlier this week.",
+    "label": "ENTAIL",
+    "evidence": "earlier this week, the United Nations said Tuesday.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-004",
+    "proposition": "The United Nations reported the toll on Tuesday.",
+    "label": "ENTAIL",
+    "evidence": "the United Nations said Tuesday.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-005",
+    "proposition": "A powerful gang coalition raided the hillside community of Kenscoff.",
+    "label": "ENTAIL",
+    "evidence": "A powerful gang coalition raided the hillside community of Kenscoff",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-006",
+    "proposition": "Kenscoff is in the hills above Port-au-Prince.",
+    "label": "ENTAIL",
+    "evidence": "in the hills above Port-au-Prince",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-007",
+    "proposition": "The raid happened late on Sunday.",
+    "label": "ENTAIL",
+    "evidence": "late on Sunday, setting fire to homes and killing residents",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-008",
+    "proposition": "Kenscoff Mayor Jean Massillon called the raid a night of terror.",
+    "label": "ENTAIL",
+    "evidence": "Kenscoff Mayor Jean Massillon, who called it a night of terror.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-009",
+    "proposition": "Twenty-two of the victims were reportedly executed in a church compound.",
+    "label": "ENTAIL",
+    "evidence": "22 of the victims were reportedly executed in a church compound where displaced people had sought shelter.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-010",
+    "proposition": "At least five of the 47 people killed were children.",
+    "label": "ENTAIL",
+    "evidence": "At least five of the 47 people killed were children, the U.N. Integrated Office in Haiti said.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-011",
+    "proposition": "One gang leader is threatening to kill the hostages if authorities kill any gang members.",
+    "label": "ENTAIL",
+    "evidence": "one gang leader is threatening to kill the hostages if authorities kill any gang members as they try to secure the community.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-012",
+    "proposition": "Gang members targeted homes owned by Dr. Jean \"Bill\" Pape.",
+    "label": "ENTAIL",
+    "evidence": "Gang members targeted a church and homes, including those owned by Dr. Jean \"Bill\" Pape",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-013",
+    "proposition": "Pape runs a non-governmental organization in Haiti that helps patients with HIV and tuberculosis.",
+    "label": "ENTAIL",
+    "evidence": "a renowned doctor who runs a non-governmental organization in Haiti that helps patients with HIV and tuberculosis.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-014",
+    "proposition": "Two government employees were among the killed.",
+    "label": "ENTAIL",
+    "evidence": "two government employees were among the killed",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-015",
+    "proposition": "One of the government employees was the mayor's cousin, who served as his security detail.",
+    "label": "ENTAIL",
+    "evidence": "including his cousin, who served as his security detail.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-016",
+    "proposition": "Members of Viv Ansanm set fire to 25 homes.",
+    "label": "ENTAIL",
+    "evidence": "The mayor said members of Viv Ansanm, the gang coalition ... also set fire to 25 homes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-017",
+    "proposition": "The United States has designated Viv Ansanm as a foreign terrorist organization.",
+    "label": "ENTAIL",
+    "evidence": "the gang coalition that the United States has designated as a foreign terrorist organization",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-018",
+    "proposition": "Gang violence has displaced a record 1.5 million people across Haiti.",
+    "label": "ENTAIL",
+    "evidence": "Gang violence has displaced a record 1.5 million people across Haiti",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-019",
+    "proposition": "More than 3,050 people were reported killed in Haiti from January to June.",
+    "label": "ENTAIL",
+    "evidence": "more than 3,050 people were reported killed from January to June, the U.N. said.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-020",
+    "proposition": "The attacked community was once peaceful.",
+    "label": "ENTAIL",
+    "evidence": "attacked a once-peaceful community near Haiti's capital",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-021",
+    "proposition": "At least 147 people were killed in the attack near Port-au-Prince.",
+    "label": "CONTRADICT",
+    "evidence": "At least 47 people were killed",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-022",
+    "proposition": "Fewer than ten people were kidnapped in the attack.",
+    "label": "CONTRADICT",
+    "evidence": "more than 50 others kidnapped",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-023",
+    "proposition": "The raid happened late on Friday.",
+    "label": "CONTRADICT",
+    "evidence": "late on Sunday, setting fire to homes",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-024",
+    "proposition": "Kenscoff Mayor Jean Massillon called the raid a night of celebration.",
+    "label": "CONTRADICT",
+    "evidence": "who called it a night of terror.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-025",
+    "proposition": "Twelve of the victims were reportedly executed in a church compound.",
+    "label": "CONTRADICT",
+    "evidence": "22 of the victims were reportedly executed in a church compound",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-026",
+    "proposition": "The mayor said one government employee was among the killed.",
+    "label": "CONTRADICT",
+    "evidence": "two government employees were among the killed",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-027",
+    "proposition": "Gang members set fire to 125 homes.",
+    "label": "CONTRADICT",
+    "evidence": "also set fire to 25 homes.",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-028",
+    "proposition": "The United States did not designate Viv Ansanm as a foreign terrorist organization.",
+    "label": "CONTRADICT",
+    "evidence": "the gang coalition that the United States has designated as a foreign terrorist organization",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-029",
+    "proposition": "The gang leader did not threaten to kill the hostages.",
+    "label": "CONTRADICT",
+    "evidence": "one gang leader is threatening to kill the hostages",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-030",
+    "proposition": "At least five of the 47 people killed were not children.",
+    "label": "CONTRADICT",
+    "evidence": "At least five of the 47 people killed were children",
+    "silence_reason": null
+  },
+  {
+    "id": "T26-031",
+    "proposition": "The gang leader making the threat is named Felix.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the gang leader is not named in the article"
+  },
+  {
+    "id": "T26-032",
+    "proposition": "The kidnapped people were taken to the mountains north of Kenscoff.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the location of the hostages is not stated"
+  },
+  {
+    "id": "T26-033",
+    "proposition": "The ransom demanded for the hostages is $100,000.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "a ransom is not stated"
+  },
+  {
+    "id": "T26-034",
+    "proposition": "The 47 people killed were all found in their homes.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the locations where the victims were killed are not fully stated"
+  },
+  {
+    "id": "T26-035",
+    "proposition": "Dr. Pape's NGO receives government funding.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the NGO's funding is not stated"
+  },
+  {
+    "id": "T26-036",
+    "proposition": "The mayor lost his own home in the attack.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "homes were set fire to; the mayor's own home is not stated"
+  },
+  {
+    "id": "T26-037",
+    "proposition": "None of the kidnapped people have been released.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the release status of the hostages is not stated"
+  },
+  {
+    "id": "T26-038",
+    "proposition": "The 1.5 million displaced people are not in the north of the country.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the location of the displaced people is not stated"
+  },
+  {
+    "id": "T26-039",
+    "proposition": "The January-to-June death toll does not include the Kenscoff attack.",
+    "label": "UNSPECIFIED",
+    "evidence": null,
+    "silence_reason": "the relationship between the January-June toll and the attack is not stated"
+  },
+  {
+    "id": "T26-040",
+    "proposition": "The attack did not begin late on Sunday.",
+    "label": "CONTRADICT",
+    "evidence": "late on Sunday, setting fire to homes and killing residents",
+    "silence_reason": null
+  }
+]
