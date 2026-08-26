@@ -274,9 +274,24 @@ name and cause of rough water, T17 judge's name, T19 budget). Traps use
 plausible interrogatives, not "is it stated?" phrasing, so the solver must
 commit to an answer.
 
-Open: P1-5 pool (40/article, 50/25/25, both polarities), P1-6 label per
-rubric, P1-7 10% re-check, P1-8 jury families, P1-9 prompts. Manifest
-label_counts/split_role fill at Phase 2.
+P1-5 pool (task 6): COMPLETE 2026-08-26. corpus/pool/T##.md, 40
+propositions per article, 1,200 total, verified 30x40. Each file is
+class-neutral (numbered declarations only, no labels; labels come in P1-6
+into corpus/labels/). Designed mix per article: 20 ENTAIL (mostly positive
+claims, plus stated-negation ENTAILs like "Lala did not make direct
+landfall", "no official findings of fraud"), 10 CONTRADICT (5-7 positive:
+wrong numbers/dates/identities/roles + 3-5 negative: opposite polarity of
+stated facts), 10 UNSPECIFIED (positive: details the article never states,
+incl. the disputed pins, e.g. T02 deaths/peak winds, T13 exact toll, T35
+exact killed; negative: negations of unstated points). Notable designed
+traps: T02 #24 (65 mph vs 105 km/h unit swap), T12 #23 (2.02M vs 202,000
+rial), T19 #32 ("nearly three hours" vs pinned 171 min), T35 #31 (at least
+6 pinned exactly), T25 #31 (100+ and 49 both stated, exact total never
+pinned), T36 #21 (34 vs 44 cap). Both polarities present in every class.
+
+Open: P1-6 label all 1,200 per rubric (corpus/labels/T##.md, rubric record
+format), P1-7 10% re-check from scratch, P1-8 jury families, P1-9 prompts.
+Manifest label_counts/split_role fill at Phase 2.
 
 ## Phase 0 (done)
 
