@@ -1,0 +1,118 @@
+== gemma-3-4b-it: loading base model for self-PPL
+   gemma-3-4b-it self-PPL 50/400
+   gemma-3-4b-it self-PPL 100/400
+   gemma-3-4b-it self-PPL 150/400
+   gemma-3-4b-it self-PPL 200/400
+   gemma-3-4b-it self-PPL 250/400
+   gemma-3-4b-it self-PPL 300/400
+   gemma-3-4b-it self-PPL 350/400
+   gemma-3-4b-it self-PPL 400/400
+== llama-3.2-3b-instruct: loading base model for self-PPL
+   llama-3.2-3b-instruct self-PPL 50/400
+   llama-3.2-3b-instruct self-PPL 100/400
+   llama-3.2-3b-instruct self-PPL 150/400
+   llama-3.2-3b-instruct self-PPL 200/400
+   llama-3.2-3b-instruct self-PPL 250/400
+   llama-3.2-3b-instruct self-PPL 300/400
+   llama-3.2-3b-instruct self-PPL 350/400
+   llama-3.2-3b-instruct self-PPL 400/400
+== phi-4-mini-instruct: loading base model for self-PPL
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+   phi-4-mini-instruct self-PPL 50/400
+   phi-4-mini-instruct self-PPL 100/400
+   phi-4-mini-instruct self-PPL 150/400
+   phi-4-mini-instruct self-PPL 200/400
+   phi-4-mini-instruct self-PPL 250/400
+   phi-4-mini-instruct self-PPL 300/400
+   phi-4-mini-instruct self-PPL 350/400
+   phi-4-mini-instruct self-PPL 400/400
+== qwen35-4b: loading base model for self-PPL
+   qwen35-4b self-PPL 50/400
+   qwen35-4b self-PPL 100/400
+   qwen35-4b self-PPL 150/400
+   qwen35-4b self-PPL 200/400
+   qwen35-4b self-PPL 250/400
+   qwen35-4b self-PPL 300/400
+   qwen35-4b self-PPL 350/400
+   qwen35-4b self-PPL 400/400
+== gemma-3-4b-it__reason_included: loading fused model for PPL
+   gemma-3-4b-it__reason_included ft-PPL 50/400
+   gemma-3-4b-it__reason_included ft-PPL 100/400
+   gemma-3-4b-it__reason_included ft-PPL 150/400
+   gemma-3-4b-it__reason_included ft-PPL 200/400
+   gemma-3-4b-it__reason_included ft-PPL 250/400
+   gemma-3-4b-it__reason_included ft-PPL 300/400
+   gemma-3-4b-it__reason_included ft-PPL 350/400
+   gemma-3-4b-it__reason_included ft-PPL 400/400
+   gemma-3-4b-it__reason_included: agreement 0.9075, ppl ratio 0.7289
+== gemma-3-4b-it__votes_only: loading fused model for PPL
+   gemma-3-4b-it__votes_only ft-PPL 50/400
+   gemma-3-4b-it__votes_only ft-PPL 100/400
+   gemma-3-4b-it__votes_only ft-PPL 150/400
+   gemma-3-4b-it__votes_only ft-PPL 200/400
+   gemma-3-4b-it__votes_only ft-PPL 250/400
+   gemma-3-4b-it__votes_only ft-PPL 300/400
+   gemma-3-4b-it__votes_only ft-PPL 350/400
+   gemma-3-4b-it__votes_only ft-PPL 400/400
+   gemma-3-4b-it__votes_only: agreement 0.9325, ppl ratio 2865499.0487
+== llama-3.2-3b-instruct__reason_included: loading fused model for PPL
+   llama-3.2-3b-instruct__reason_included ft-PPL 50/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 100/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 150/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 200/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 250/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 300/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 350/400
+   llama-3.2-3b-instruct__reason_included ft-PPL 400/400
+   llama-3.2-3b-instruct__reason_included: agreement 0.8775, ppl ratio 0.5636
+== llama-3.2-3b-instruct__votes_only: loading fused model for PPL
+   llama-3.2-3b-instruct__votes_only ft-PPL 50/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 100/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 150/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 200/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 250/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 300/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 350/400
+   llama-3.2-3b-instruct__votes_only ft-PPL 400/400
+   llama-3.2-3b-instruct__votes_only: agreement 0.5825, ppl ratio 6.489
+== phi-4-mini-instruct__reason_included: loading fused model for PPL
+   phi-4-mini-instruct__reason_included ft-PPL 50/400
+   phi-4-mini-instruct__reason_included ft-PPL 100/400
+   phi-4-mini-instruct__reason_included ft-PPL 150/400
+   phi-4-mini-instruct__reason_included ft-PPL 200/400
+   phi-4-mini-instruct__reason_included ft-PPL 250/400
+   phi-4-mini-instruct__reason_included ft-PPL 300/400
+   phi-4-mini-instruct__reason_included ft-PPL 350/400
+   phi-4-mini-instruct__reason_included ft-PPL 400/400
+   phi-4-mini-instruct__reason_included: agreement 0.925, ppl ratio 1.1888
+== phi-4-mini-instruct__votes_only: loading fused model for PPL
+   phi-4-mini-instruct__votes_only ft-PPL 50/400
+   phi-4-mini-instruct__votes_only ft-PPL 100/400
+   phi-4-mini-instruct__votes_only ft-PPL 150/400
+   phi-4-mini-instruct__votes_only ft-PPL 200/400
+   phi-4-mini-instruct__votes_only ft-PPL 250/400
+   phi-4-mini-instruct__votes_only ft-PPL 300/400
+   phi-4-mini-instruct__votes_only ft-PPL 350/400
+   phi-4-mini-instruct__votes_only ft-PPL 400/400
+   phi-4-mini-instruct__votes_only: agreement 0.9375, ppl ratio 1.3167
+== qwen35-4b__reason_included: loading fused model for PPL
+   qwen35-4b__reason_included ft-PPL 50/400
+   qwen35-4b__reason_included ft-PPL 100/400
+   qwen35-4b__reason_included ft-PPL 150/400
+   qwen35-4b__reason_included ft-PPL 200/400
+   qwen35-4b__reason_included ft-PPL 250/400
+   qwen35-4b__reason_included ft-PPL 300/400
+   qwen35-4b__reason_included ft-PPL 350/400
+   qwen35-4b__reason_included ft-PPL 400/400
+   qwen35-4b__reason_included: agreement 0.6, ppl ratio 1.1757
+== qwen35-4b__votes_only: loading fused model for PPL
+   qwen35-4b__votes_only ft-PPL 50/400
+   qwen35-4b__votes_only ft-PPL 100/400
+   qwen35-4b__votes_only ft-PPL 150/400
+   qwen35-4b__votes_only ft-PPL 200/400
+   qwen35-4b__votes_only ft-PPL 250/400
+   qwen35-4b__votes_only ft-PPL 300/400
+   qwen35-4b__votes_only ft-PPL 350/400
+   qwen35-4b__votes_only ft-PPL 400/400
+   qwen35-4b__votes_only: agreement 0.9375, ppl ratio 22764.0599
+wrote /Volumes/nvme0/wave-consensus/runs/2026-08-26-phase4/losslessness.json

@@ -1,0 +1,35 @@
+{
+  "run": "phase4",
+  "archived_utc": "2026-08-27T09:05:00+00:00",
+  "host": "marzuki-helium",
+  "source": "/Volumes/nvme0/wave-consensus/runs/2026-08-26-phase4/",
+  "repo_git": "wave-consensus @ 9569218 (run start) .. b42ce67 (analysis)",
+  "serving": "omlx single-process serve on port 8101, 8 fine-tuned fused models symlinked into /Volumes/nvme0/omlx-models (model name = adapter tag); base models unchanged",
+  "finetuned": {
+    "purpose": "zero-shot contract outputs of the 8 self-distilled LoRA adapters under the frozen contract, train+calibration+test",
+    "command": "tools/phase3/runner.py native --models <8 tags> --out .../2026-08-26-phase4/finetuned --split all",
+    "calls": "9600 (8 models x 30 articles x 40 items)",
+    "parse_rate": "9125/9600 (95.05%)",
+    "log": "finetuned-run.log",
+    "records": "finetuned/native/<tag>.jsonl"
+  },
+  "adapters": {
+    "purpose": "trained LoRA weights (the primary trained artifacts)",
+    "count": 8,
+    "note": "one directory per family__variant; OLMoE-0125 excluded (phase 3 parse failure)"
+  },
+  "datasets": {
+    "purpose": "self-distillation training data per adapter (base-model native outputs kept as teacher targets)",
+    "note": "per-family recipe differences + distinct seeds (llama 7 / gemma 13 / phi4 42 / qwen35 99); see phase4_recipe.json"
+  },
+  "logs": {
+    "purpose": "per-adapter mlx-lm train + fuse logs"
+  },
+  "analysis": {
+    "losslessness": "losslessness.json + losslessness.log (tools/phase4/losslessness.py): (a) exact-match agreement of parsed answers, (b) PPL ratio finetuned/base on 10 calibration articles x 40 items",
+    "consensus": "consensus_eval.json + consensus_eval.log (tools/phase4/consensus_eval.py): WCT-EM (3-state MAP-EM Dawid-Skene) vs registered covariate baseline, article-block bootstrap 2000, truth-permutation null 10000, e0, P4/P5/P6"
+  },
+  "omitted": {
+    "fused/": "28G of fused full-model weights (8 x ~3.5GB) left on helium; derived = base model + adapter, reconstruct with mlx_lm.fuse"
+  }
+}

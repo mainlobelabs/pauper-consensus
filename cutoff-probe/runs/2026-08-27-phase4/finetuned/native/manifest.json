@@ -1,0 +1,187 @@
+{
+  "run": "native",
+  "started_utc": "2026-08-26T17:54:09.971257+00:00",
+  "host": "marzuki-helium",
+  "runner_git": "9569218",
+  "command": "tools/phase3/runner.py native --models llama-3.2-3b-instruct__reason_included,llama-3.2-3b-instruct__votes_only,gemma-3-4b-it__reason_included,gemma-3-4b-it__votes_only,phi-4-mini-instruct__reason_included,phi-4-mini-instruct__votes_only,qwen35-4b__reason_included,qwen35-4b__votes_only --out /Volumes/nvme0/wave-consensus/runs/2026-08-26-phase4/finetuned",
+  "purpose": "zero-shot native outputs under the frozen contract; train = self-distillation targets, calibration = baseline fit + losslessness base, test = P4 zero-shot baseline",
+  "models": {
+    "llama-3.2-3b-instruct__reason_included": "http://127.0.0.1:8101",
+    "llama-3.2-3b-instruct__votes_only": "http://127.0.0.1:8101",
+    "gemma-3-4b-it__reason_included": "http://127.0.0.1:8101",
+    "gemma-3-4b-it__votes_only": "http://127.0.0.1:8101",
+    "phi-4-mini-instruct__reason_included": "http://127.0.0.1:8101",
+    "phi-4-mini-instruct__votes_only": "http://127.0.0.1:8101",
+    "qwen35-4b__reason_included": "http://127.0.0.1:8101",
+    "qwen35-4b__votes_only": "http://127.0.0.1:8101"
+  },
+  "split": "all",
+  "articles": [
+    "T08",
+    "T10",
+    "T15",
+    "T16",
+    "T17",
+    "T19",
+    "T20",
+    "T24",
+    "T27",
+    "T32",
+    "T02",
+    "T03",
+    "T14",
+    "T18",
+    "T21",
+    "T23",
+    "T26",
+    "T30",
+    "T34",
+    "T36",
+    "T01",
+    "T04",
+    "T05",
+    "T12",
+    "T13",
+    "T22",
+    "T25",
+    "T28",
+    "T29",
+    "T35"
+  ],
+  "endpoints": {
+    "http://127.0.0.1:8101": {
+      "models": {
+        "object": "list",
+        "data": [
+          {
+            "id": "gemma-3-1b-it",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 32768
+          },
+          {
+            "id": "gemma-3-4b-it",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "gemma-3-4b-it__reason_included",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "gemma-3-4b-it__votes_only",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "llama-3.2-1b-instruct",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "llama-3.2-3b-instruct",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "llama-3.2-3b-instruct__reason_included",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "llama-3.2-3b-instruct__votes_only",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "olmoe-0125-instruct",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 4096
+          },
+          {
+            "id": "phi-4-mini-instruct",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "phi-4-mini-instruct__reason_included",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "phi-4-mini-instruct__votes_only",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "qwen35-4b",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "qwen35-4b__reason_included",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "qwen35-4b__votes_only",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "MarkItDown",
+            "object": "model",
+            "created": 1787766849,
+            "owned_by": "omlx",
+            "max_model_len": null
+          }
+        ]
+      }
+    }
+  },
+  "finished_utc": "2026-08-26T19:20:02.901804+00:00",
+  "stats": {
+    "n_calls": 9600,
+    "parsed_ok": 9125,
+    "spend": {
+      "llama-3.2-3b-instruct__reason_included": 1200,
+      "llama-3.2-3b-instruct__votes_only": 1200,
+      "gemma-3-4b-it__reason_included": 1200,
+      "gemma-3-4b-it__votes_only": 1200,
+      "phi-4-mini-instruct__reason_included": 1200,
+      "phi-4-mini-instruct__votes_only": 1200,
+      "qwen35-4b__reason_included": 1200,
+      "qwen35-4b__votes_only": 1200
+    }
+  }
+}

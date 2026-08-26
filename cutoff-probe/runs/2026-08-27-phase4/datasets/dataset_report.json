@@ -1,0 +1,114 @@
+{
+  "llama-3.2-3b-instruct__reason_included": {
+    "train": {
+      "kept": 392,
+      "excluded_unparsed": 8
+    },
+    "calibration": {
+      "kept": 394,
+      "excluded_unparsed": 6
+    },
+    "test": {
+      "kept": 392,
+      "excluded_unparsed": 8
+    }
+  },
+  "llama-3.2-3b-instruct__votes_only": {
+    "train": {
+      "kept": 392,
+      "excluded_unparsed": 8
+    },
+    "calibration": {
+      "kept": 394,
+      "excluded_unparsed": 6
+    },
+    "test": {
+      "kept": 392,
+      "excluded_unparsed": 8
+    }
+  },
+  "gemma-3-4b-it__reason_included": {
+    "train": {
+      "kept": 392,
+      "excluded_unparsed": 8
+    },
+    "calibration": {
+      "kept": 395,
+      "excluded_unparsed": 5
+    },
+    "test": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    }
+  },
+  "gemma-3-4b-it__votes_only": {
+    "train": {
+      "kept": 392,
+      "excluded_unparsed": 8
+    },
+    "calibration": {
+      "kept": 395,
+      "excluded_unparsed": 5
+    },
+    "test": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    }
+  },
+  "phi-4-mini-instruct__reason_included": {
+    "train": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "calibration": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "test": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    }
+  },
+  "phi-4-mini-instruct__votes_only": {
+    "train": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "calibration": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "test": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    }
+  },
+  "qwen35-4b__reason_included": {
+    "train": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "calibration": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "test": {
+      "kept": 399,
+      "excluded_unparsed": 1
+    }
+  },
+  "qwen35-4b__votes_only": {
+    "train": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "calibration": {
+      "kept": 400,
+      "excluded_unparsed": 0
+    },
+    "test": {
+      "kept": 399,
+      "excluded_unparsed": 1
+    }
+  }
+}

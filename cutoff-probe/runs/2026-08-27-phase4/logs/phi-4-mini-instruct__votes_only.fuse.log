@@ -1,0 +1,7 @@
+
+$ /opt/homebrew/bin/mlx_lm.fuse --model /Volumes/nvme0/omlx-models/phi-4-mini-instruct --adapter-path /Volumes/nvme0/wave-consensus/runs/2026-08-26-phase4/adapters/phi-4-mini-instruct__votes_only --save-path /Volumes/nvme0/wave-consensus/runs/2026-08-26-phase4/fused/phi-4-mini-instruct__votes_only
+
+2026-08-26T17:47:31.629677+00:00
+
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+Loading pretrained model
