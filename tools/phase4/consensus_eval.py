@@ -422,13 +422,24 @@ def main() -> None:
             flush=True,
         )
 
-    # P4: fine-tuned delta vs zero-shot delta
-    p4 = {
-        arm: out["arms"][arm]["delta_vs_cov"]
-        for arm in ("ft_reason_included", "ft_votes_only", "base_zeroshot")
-    }
+    # P4 (prereg): the fine-tuned jury's delta log-loss advantage over the
+    # BASE RATE is at least as large as the zero-shot 4B jury's advantage on
+    # the same articles. delta_vs_cov is reported for context.
+    p4 = {}
+    for arm in ("ft_reason_included", "ft_votes_only", "base_zeroshot"):
+        p4[arm] = {
+            "advantage_over_base_rate": round(
+                out["arms"][arm]["base_rate_logloss"] - out["arms"][arm]["em_logloss"],
+                5,
+            ),
+            "delta_vs_cov": out["arms"][arm]["delta_vs_cov"],
+        }
     p4["fine_tuned_beats_zeroshot"] = (
-        min(p4["ft_reason_included"], p4["ft_votes_only"]) >= p4["base_zeroshot"]
+        min(
+            p4["ft_reason_included"]["advantage_over_base_rate"],
+            p4["ft_votes_only"]["advantage_over_base_rate"],
+        )
+        >= p4["base_zeroshot"]["advantage_over_base_rate"]
     )
     out["P4"] = p4
 
