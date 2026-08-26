@@ -38,11 +38,17 @@ def test_jury_prompt_assembly():
 def test_solver_baseline_prompt_assembly():
     questions = [f"Question number {i}?" for i in range(1, 21)]
     p = runner.solver_baseline_prompt("Article body.", questions)
-    assert "1. Question number 1?" in p
-    assert "20. Question number 20?" in p
+    for i in range(1, 21):
+        assert f"{i}. Question number {i}?" in p, i
     assert "..." not in p
     assert runner.ARTICLE_PH not in p
     assert "Article body." in p
+    # the article's numbered lists must not be mistaken for the question list
+    tricky = "1. old line in article\n2. another"
+    p2 = runner.solver_baseline_prompt(tricky, questions)
+    for i in range(1, 21):
+        assert f"{i}. Question number {i}?" in p2, i
+    assert "1. old line in article" in p2
 
 
 def test_contamination_prompt_with_and_without():

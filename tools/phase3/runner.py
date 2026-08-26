@@ -207,17 +207,21 @@ def jury_prompt(article: str, claim: str) -> str:
 
 
 def solver_baseline_prompt(article: str, questions: list[str]) -> str:
-    t = frozen_template("solver_baseline")
-    out = []
-    for line in t.splitlines():
-        m = re.match(r"^(\d+)\.\s+\{question \d+[^}]*\}\s*$", line)
-        if m:
-            out.append(f"{int(m.group(1))}. {questions[int(m.group(1)) - 1]}")
-        elif line.strip() == "...":
-            continue
-        else:
-            out.append(line)
-    return "\n".join(out).replace(ARTICLE_PH, article.rstrip("\n")).rstrip("\n") + "\n"
+    """Expand the registered template's abbreviated question list (the
+    template shows 1, 2, '...', 20) into the full 20 questions, in order."""
+    t = frozen_template("solver_baseline").replace(ARTICLE_PH, article.rstrip("\n"))
+    marker = "Answer each question in order.\n"
+    head, sep, suffix = t.partition(marker)
+    if not sep:
+        raise ValueError("intro line not found in solver template")
+    lines = suffix.splitlines()
+    numbered = [i for i, line in enumerate(lines) if re.match(r"^\d+\.\s", line)]
+    if not numbered:
+        raise ValueError("question list not found in solver template")
+    first, last = numbered[0], max(i for i in numbered if re.match(r"^20\.\s", lines[i]))
+    block = [f"{i}. {q}" for i, q in enumerate(questions, 1)]
+    out = lines[:first] + block + lines[last + 1 :]
+    return (head + marker + "\n".join(out)).rstrip("\n") + "\n"
 
 
 def contamination_prompt(article: str, question: str, with_article: bool) -> str:
@@ -291,6 +295,7 @@ def ask(
         "temperature": 0,
         "max_tokens": max_tokens,
         "stream": True,
+        "stream_options": {"include_usage": True},
     }
     if model in THINKING_TOGGLE:
         body["chat_template_kwargs"] = {"enable_thinking": False}
