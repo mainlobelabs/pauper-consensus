@@ -2,6 +2,30 @@
 
 Known environment constraints and traps. Newest first.
 
+## 2026-08-26 (operations)
+
+- probe_jury.py takes the server ROOT as base_url (it appends
+  /v1/chat/completions itself). Passing .../8100/v1 doubles the prefix and
+  every call 404s. Use http://127.0.0.1:8100.
+- oMLX's real log is its internal logger at /tmp/omlx-serve.log; stdout of
+  `omlx serve` is nearly empty. Archive the internal logger. /tmp on
+  helium is volatile: copy logs out at run time. oMLX is left running on
+  helium (Andryo, 2026-08-26); models lazy-load on first request.
+- ARCHIVE ALL RUN ARTIFACTS AND LOGS. Extremely critical, per Andryo
+  2026-08-26. Every run (probes, zero-shot, fine-tuning, generation,
+  serving) must persist, at the time it runs, not from memory:
+  - Raw model outputs, one JSON object per call (the script's stdout).
+  - Server logs (oMLX/vLLM), download logs, stderr.
+  - A run manifest: date, host, software version, model id + weight
+    sha256, exact commands, git hash of the runner script.
+  Convention: on helium the run dir is
+  /Volumes/nvme0/wave-consensus/runs/<date>-<slug>/ (persistent volume;
+  /tmp on helium is volatile and already lost the first batch-3 probe
+  outputs), mirrored into the repo at cutoff-probe/runs/<date>-<slug>/
+  (probe runs) or runs/<date>-<slug>/ (everything else) and committed
+  before moving on. Never rely on console output: if it is not in a
+  file, it did not happen.
+
 ## 2026-08-25 (design)
 
 - "Post-cutoff" is fuzzy, not a wall. Cutoff dates differ per family and drift

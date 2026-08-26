@@ -1,0 +1,63 @@
+{
+  "run": "2026-08-26-batch3",
+  "task": "P1-8 jury cutoff probe (batch 3): OLMoE-1B-7B-0125-Instruct + Qwen3.5-4B",
+  "date": "2026-08-26",
+  "host": {
+    "name": "marzuki-helium",
+    "specs": "Mac Studio M3 Ultra, 28C, 96GB",
+    "run_dir": "/Volumes/nvme0/wave-consensus/runs/2026-08-26-batch3"
+  },
+  "server": {
+    "software": "omlx 0.6.3rc2",
+    "command": "omlx serve --model-dir /Volumes/nvme0/omlx-models --port 8100",
+    "log": "omlx-logger-final.log = oMLX internal logger /tmp/omlx-serve.log (cumulative, all three boots) + omlx-serve-first-boot.log (same internal logger, snapshot at 16:06) + omlx-serve.log (stdout capture of the probe-boot, 396 bytes)"
+  },
+  "models": {
+    "olmoe-0125-instruct": {
+      "source": "mlx-community/OLMoE-1B-7B-0125-Instruct-8bit",
+      "weight_sha256": {
+        "model-00001-of-00002.safetensors": "d02d73710ca2c9a09d2fc167307b480832e7a8bdd7da7a25274b011044a2b4ab",
+        "model-00002-of-00002.safetensors": "16fac38bdd20f40b5496d03f4405fdcca9fb490146a5a5d4db8d513db64fb4c4"
+      }
+    },
+    "qwen35-4b": {
+      "source": "mlx-community/Qwen3.5-4B-MLX-4bit",
+      "weight_sha256": {
+        "model.safetensors": "5fb9acd0246866381cf8c5c354c6db1019f6498eec4ccb4f5edcc71ffeacb2db"
+      }
+    }
+  },
+  "runner": {
+    "script": "cutoff-probe/probe_jury.py",
+    "script_sha256_repo": "83a4a501ccc392ad13a5b4fcf475adbe561ae04338fe9e892740ac43d575933f",
+    "git_blob": "e30268e9f4c4e5a525e5e16c51e65f183770653c",
+    "git_commit": "02598ac",
+    "note": "helium /tmp copy is the pre-ruff-format build (formatting-only diff, identical behavior)"
+  },
+  "command": "python3 probe_jury.py http://127.0.0.1:8100 olmoe-0125-instruct qwen35-4b",
+  "settings": {
+    "temperature": 0,
+    "max_tokens": 64,
+    "chat_template_kwargs": {"enable_thinking": false}
+  },
+  "events": [
+    "first run streamed to console only; raw outputs lost (this is why the archive rule now exists)",
+    "re-run 2026-08-26 16:03 hit HTTP 404: base_url was passed as .../8100/v1 but the script appends /v1/chat/completions itself, doubling the prefix",
+    "re-run 2026-08-26 with base_url http://127.0.0.1:8100 succeeded; probe_results.jsonl is from this run",
+    "verdicts from this run match the batch-3 table in cutoff-probe/probes.md exactly (same temp-0 determinism)",
+    "after the run, the probe-boot server and a leftover omlx-server from yesterday's session were both killed; Andryo then said 'leave omlx up', so a fresh server was started: /opt/homebrew/bin/omlx serve --model-dir /Volumes/nvme0/omlx-models --port 8100 (READY, models lazy-load on first request)"
+  ],
+  "verdicts": {
+    "olmoe-0125-instruct": "ELIGIBLE, window-blind (C1 CORRECT, no in-window probe CORRECT, P0 ~March 2023)",
+    "qwen35-4b": "ELIGIBLE, window-blind, temporal anchor 2024 (C1 CORRECT, P5 pre-window Vienna memory off by a year, P0 '2026')"
+  },
+  "artifacts": {
+    "probe_results.jsonl": "2bdaa718ac4bfb0de815270e702b4db20488b893c5fcf823ca60379c1c46c52e",
+    "probe_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 (empty)",
+    "omlx-logger-final.log": "9260c9cb27498478a3cbe16d8cb9a7c6aa8ed43f4da08487032ebc60e476505c",
+    "omlx-serve-first-boot.log": "665094cde812cd796a0dcffd555511ffb49318fe8c5c5a312d28f4b305fbdaa9",
+    "omlx-serve.log": "385e1f25986ebc0045c01ba376839dcf37f4515a47dc66c80a2eb176305f6171",
+    "dl-olmoe.log": "41ea71388a98aba3620dd083af256f0f25bb9dc32a9970e99302f98c18c80b3a",
+    "dl-qwen.log": "11af21fea019a6a809dd434cec23a507efc8ba9de9958886bec03553ee62fe54"
+  }
+}

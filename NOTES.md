@@ -439,6 +439,12 @@ corpus/pool/question_form/T##.md (40 per article) + content hashes, (b)
 formalize seed_type/trap_type/polarity into corpus/pool/metadata.json
 (covariates are currently reconstructable from NOTES.md prose only),
 (c) the 5 jury weights + fallbacks pulled to helium for self-distillation.
+Done 2026-08-26: batch-3 probe run artifacts (raw probe_results.jsonl +
+oMLX logger + dl logs + manifest.json) archived in
+cutoff-probe/runs/2026-08-26-batch3/ and committed. CRITICAL house rule
+now: every run archives logs + artifacts at run time (see GOTCHAS.md
+2026-08-26 and the CRITICAL note in PLAN.md). oMLX left running on helium
+per Andryo.
 
 ## Phase 0 (done)
 

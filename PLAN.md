@@ -2,6 +2,12 @@
 
 Living plan. Update at the end of each working session: current state, next step.
 
+CRITICAL (Andryo 2026-08-26): archive all run logs and artifacts at run time.
+Raw outputs + server/download logs + run manifest into the helium run dir
+(/Volumes/nvme0/wave-consensus/runs/<date>-<slug>/) and committed into the
+repo (cutoff-probe/runs/ for probes, runs/ otherwise) before moving on.
+Console output is not a record. Full convention: GOTCHAS.md 2026-08-26.
+
 ## Purpose
 
 Independently conduct the wave-consensus experiment (see SPEC.md): author a

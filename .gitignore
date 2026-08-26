@@ -20,6 +20,9 @@ data/
 out/
 cache/
 runs/
+# probe run archives ARE committed (critical, Andryo 2026-08-26): small,
+# and the raw model outputs must be in the repo, not only on helium
+!cutoff-probe/runs/
 *.parquet
 *.ckpt
 *.safetensors
