@@ -136,24 +136,38 @@ def read_question_form(tid: str) -> list[str]:
     return read_numbered(CORPUS / "pool" / "question_form" / f"{tid}.md")
 
 
-def read_labels(tid: str) -> dict[int, str]:
+def read_labels(tid: str) -> dict[str, str]:
     raw = json.loads((CORPUS / "labels" / f"{tid}.json").read_text())
-    return {int(r["id"]): r["label"] for r in raw}
+    return {r["id"]: r["label"] for r in raw}
 
 
 def read_metadata(tid: str) -> list[dict]:
     md = json.loads((CORPUS / "pool" / "metadata.json").read_text())
-    return [r for r in md if r["article"] == tid]
+    return md[tid]
+
+
+def _read_label_records(tid: str) -> list[dict]:
+    return json.loads((CORPUS / "labels" / f"{tid}.json").read_text())
 
 
 def contamination_targets_by_question(tid: str) -> dict[int, dict | None]:
-    """q number -> fact targets of the ENTAIL proposition seeded into it."""
+    """q number -> merged fact targets of the ENTAIL proposition(s) seeded
+    into it. None where the question seeds no ENTAIL proposition."""
     labels = read_labels(tid)
+    props = {r["id"]: r["proposition"] for r in _read_label_records(tid)}
     out: dict[int, dict | None] = {}
     for r in read_metadata(tid):
         for q in r["seeded_by"]:
-            if labels.get(r["id"]) == "ENTAIL":
-                out[q] = extract_targets(r["proposition"])
+            if labels.get(r["id"]) != "ENTAIL":
+                continue
+            t = extract_targets(props[r["id"]])
+            cur = out.get(q)
+            if cur is None:
+                out[q] = t
+            else:
+                cur["numbers"] = sorted(set(cur["numbers"]) | set(t["numbers"]))
+                cur["month_day"] = sorted(set(cur["month_day"]) | set(t["month_day"]))
+                cur["names"] = sorted(set(cur["names"]) | set(t["names"]))
     return out
 
 
