@@ -53,7 +53,10 @@ JURORS = [
     "qwen35-4b",
 ]
 SOLVER = "qwen3.8-27b"
-OMLX_URL = "http://127.0.0.1:8100"
+# Override with WAVE_OMLX_URL when the juror server is not on 8100 (e.g.
+# Andryo's managed omlx server occupies 8100 and the phase 3 serve is on
+# 8101).
+OMLX_URL = os.environ.get("WAVE_OMLX_URL", "http://127.0.0.1:8100")
 VLLM_URL = "http://100.95.144.25:8000"
 SPEND_CAP = 5000
 MAX_TOKENS_CONTRACT = 512
