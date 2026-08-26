@@ -1,0 +1,2657 @@
+{
+  "run_dir": "/Volumes/nvme0/wave-consensus/runs/2026-08-26-phase3",
+  "splits": {
+    "test": [
+      "T01",
+      "T04",
+      "T05",
+      "T12",
+      "T13",
+      "T22",
+      "T25",
+      "T28",
+      "T29",
+      "T35"
+    ],
+    "calibration": [
+      "T02",
+      "T03",
+      "T14",
+      "T18",
+      "T21",
+      "T23",
+      "T26",
+      "T30",
+      "T34",
+      "T36"
+    ],
+    "train": [
+      "T08",
+      "T10",
+      "T15",
+      "T16",
+      "T17",
+      "T19",
+      "T20",
+      "T24",
+      "T27",
+      "T32"
+    ]
+  },
+  "native": {
+    "llama-3.2-1b-instruct": {
+      "all": {
+        "n": 1200,
+        "parsed": 447,
+        "parse_rate": 0.3725,
+        "answer_dist": {
+          "PASS": 203,
+          "NOT_STATED": 26,
+          "FAIL": 218
+        },
+        "input_tokens": 753627,
+        "output_tokens": 61994,
+        "total_tokens": 815621,
+        "latency_ms_median": 1683.1,
+        "ttft_ms_median": 1515.5
+      },
+      "splits": {
+        "train": {
+          "parse": {
+            "n": 400,
+            "parsed": 149,
+            "parse_rate": 0.3725,
+            "answer_dist": {
+              "PASS": 70,
+              "NOT_STATED": 4,
+              "FAIL": 75
+            },
+            "input_tokens": 232862,
+            "output_tokens": 19586,
+            "total_tokens": 252448,
+            "latency_ms_median": 1921.2,
+            "ttft_ms_median": 1728.5
+          },
+          "accuracy": {
+            "n": 149,
+            "correct": 88,
+            "accuracy": 0.5906,
+            "gate_accuracy": 0.7383,
+            "class_counts": {
+              "PASS": 83,
+              "FAIL": 35,
+              "NOT_STATED": 31
+            },
+            "n_wrong": 61,
+            "wrong_sample": [
+              {
+                "article": "T08",
+                "item": 23,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T08",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T08",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T08",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 3,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 10,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 16,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 18,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 19,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T15",
+                "item": 10,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T15",
+                "item": 27,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T15",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T16",
+                "item": 2,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T16",
+                "item": 5,
+                "want": "PASS",
+                "got": "FAIL"
+              }
+            ]
+          }
+        },
+        "calibration": {
+          "parse": {
+            "n": 400,
+            "parsed": 132,
+            "parse_rate": 0.33,
+            "answer_dist": {
+              "PASS": 53,
+              "FAIL": 64,
+              "NOT_STATED": 15
+            },
+            "input_tokens": 261517,
+            "output_tokens": 21077,
+            "total_tokens": 282594,
+            "latency_ms_median": 1485.1,
+            "ttft_ms_median": 1231.8
+          },
+          "accuracy": {
+            "n": 132,
+            "correct": 75,
+            "accuracy": 0.5682,
+            "gate_accuracy": 0.75,
+            "class_counts": {
+              "PASS": 72,
+              "FAIL": 31,
+              "NOT_STATED": 29
+            },
+            "n_wrong": 57,
+            "wrong_sample": [
+              {
+                "article": "T02",
+                "item": 13,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 27,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T03",
+                "item": 9,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 11,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 14,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 17,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 27,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T03",
+                "item": 28,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T03",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T14",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 8,
+                "want": "PASS",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T18",
+                "item": 12,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 13,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 14,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 18,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 19,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 20,
+                "want": "PASS",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T18",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              }
+            ]
+          }
+        },
+        "test": {
+          "parse": {
+            "n": 400,
+            "parsed": 166,
+            "parse_rate": 0.415,
+            "answer_dist": {
+              "PASS": 80,
+              "FAIL": 79,
+              "NOT_STATED": 7
+            },
+            "input_tokens": 259248,
+            "output_tokens": 21331,
+            "total_tokens": 280579,
+            "latency_ms_median": 1560.5,
+            "ttft_ms_median": 1346.2
+          },
+          "accuracy": {
+            "n": 166,
+            "correct": 101,
+            "accuracy": 0.6084,
+            "gate_accuracy": 0.7771,
+            "class_counts": {
+              "PASS": 85,
+              "FAIL": 45,
+              "NOT_STATED": 36
+            },
+            "n_wrong": 65,
+            "wrong_sample": [
+              {
+                "article": "T01",
+                "item": 18,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T01",
+                "item": 19,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T01",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 27,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T01",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 20,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T05",
+                "item": 5,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 6,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 10,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 13,
+                "want": "PASS",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T05",
+                "item": 20,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              }
+            ]
+          },
+          "difficulty_check": 0.6084
+        }
+      }
+    },
+    "gemma-3-1b-it": {
+      "all": {
+        "n": 1200,
+        "parsed": 0,
+        "parse_rate": 0.0,
+        "answer_dist": {},
+        "input_tokens": 762491,
+        "output_tokens": 597149,
+        "total_tokens": 1359640,
+        "latency_ms_median": 13023.3,
+        "ttft_ms_median": 10885.0
+      },
+      "splits": {
+        "train": {
+          "parse": {
+            "n": 400,
+            "parsed": 0,
+            "parse_rate": 0.0,
+            "answer_dist": {},
+            "input_tokens": 236704,
+            "output_tokens": 199302,
+            "total_tokens": 436006,
+            "latency_ms_median": 25647.0,
+            "ttft_ms_median": 23508.4
+          },
+          "accuracy": {
+            "n": 0,
+            "correct": 0,
+            "accuracy": null,
+            "gate_accuracy": null,
+            "class_counts": {},
+            "n_wrong": 0,
+            "wrong_sample": []
+          }
+        },
+        "calibration": {
+          "parse": {
+            "n": 400,
+            "parsed": 0,
+            "parse_rate": 0.0,
+            "answer_dist": {},
+            "input_tokens": 263173,
+            "output_tokens": 194909,
+            "total_tokens": 458082,
+            "latency_ms_median": 12946.0,
+            "ttft_ms_median": 10805.8
+          },
+          "accuracy": {
+            "n": 0,
+            "correct": 0,
+            "accuracy": null,
+            "gate_accuracy": null,
+            "class_counts": {},
+            "n_wrong": 0,
+            "wrong_sample": []
+          }
+        },
+        "test": {
+          "parse": {
+            "n": 400,
+            "parsed": 0,
+            "parse_rate": 0.0,
+            "answer_dist": {},
+            "input_tokens": 262614,
+            "output_tokens": 202938,
+            "total_tokens": 465552,
+            "latency_ms_median": 12972.6,
+            "ttft_ms_median": 10829.5
+          },
+          "accuracy": {
+            "n": 0,
+            "correct": 0,
+            "accuracy": null,
+            "gate_accuracy": null,
+            "class_counts": {},
+            "n_wrong": 0,
+            "wrong_sample": []
+          },
+          "difficulty_check": null
+        }
+      }
+    },
+    "phi-4-mini-instruct": {
+      "all": {
+        "n": 1200,
+        "parsed": 1200,
+        "parse_rate": 1.0,
+        "answer_dist": {
+          "PASS": 616,
+          "FAIL": 340,
+          "NOT_STATED": 244
+        },
+        "input_tokens": 708181,
+        "output_tokens": 40850,
+        "total_tokens": 749031,
+        "latency_ms_median": 2459.3,
+        "ttft_ms_median": 2032.8
+      },
+      "splits": {
+        "train": {
+          "parse": {
+            "n": 400,
+            "parsed": 400,
+            "parse_rate": 1.0,
+            "answer_dist": {
+              "PASS": 200,
+              "FAIL": 109,
+              "NOT_STATED": 91
+            },
+            "input_tokens": 218120,
+            "output_tokens": 13806,
+            "total_tokens": 231926,
+            "latency_ms_median": 2580.9,
+            "ttft_ms_median": 2308.8
+          },
+          "accuracy": {
+            "n": 400,
+            "correct": 374,
+            "accuracy": 0.935,
+            "gate_accuracy": 0.97,
+            "class_counts": {
+              "PASS": 200,
+              "FAIL": 101,
+              "NOT_STATED": 99
+            },
+            "n_wrong": 26,
+            "wrong_sample": [
+              {
+                "article": "T08",
+                "item": 22,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T08",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T15",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T16",
+                "item": 21,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T17",
+                "item": 18,
+                "want": "PASS",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T17",
+                "item": 19,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T17",
+                "item": 26,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T17",
+                "item": 27,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T17",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T17",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T17",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T19",
+                "item": 23,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T19",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T20",
+                "item": 7,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T20",
+                "item": 27,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T20",
+                "item": 28,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T24",
+                "item": 14,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T24",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              }
+            ]
+          }
+        },
+        "calibration": {
+          "parse": {
+            "n": 400,
+            "parsed": 400,
+            "parse_rate": 1.0,
+            "answer_dist": {
+              "PASS": 207,
+              "FAIL": 116,
+              "NOT_STATED": 77
+            },
+            "input_tokens": 245877,
+            "output_tokens": 13635,
+            "total_tokens": 259512,
+            "latency_ms_median": 2431.6,
+            "ttft_ms_median": 2000.2
+          },
+          "accuracy": {
+            "n": 400,
+            "correct": 362,
+            "accuracy": 0.905,
+            "gate_accuracy": 0.9625,
+            "class_counts": {
+              "PASS": 200,
+              "FAIL": 104,
+              "NOT_STATED": 96
+            },
+            "n_wrong": 38,
+            "wrong_sample": [
+              {
+                "article": "T02",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 26,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T03",
+                "item": 28,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T14",
+                "item": 29,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T14",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T14",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T14",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 22,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T18",
+                "item": 27,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T18",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T21",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T21",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T21",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T21",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T23",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T23",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              }
+            ]
+          }
+        },
+        "test": {
+          "parse": {
+            "n": 400,
+            "parsed": 400,
+            "parse_rate": 1.0,
+            "answer_dist": {
+              "PASS": 209,
+              "FAIL": 115,
+              "NOT_STATED": 76
+            },
+            "input_tokens": 244184,
+            "output_tokens": 13409,
+            "total_tokens": 257593,
+            "latency_ms_median": 2413.2,
+            "ttft_ms_median": 1976.6
+          },
+          "accuracy": {
+            "n": 400,
+            "correct": 352,
+            "accuracy": 0.88,
+            "gate_accuracy": 0.955,
+            "class_counts": {
+              "PASS": 199,
+              "FAIL": 105,
+              "NOT_STATED": 96
+            },
+            "n_wrong": 48,
+            "wrong_sample": [
+              {
+                "article": "T01",
+                "item": 30,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T01",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T05",
+                "item": 17,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T05",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T12",
+                "item": 21,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T12",
+                "item": 26,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T12",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T12",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T12",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T13",
+                "item": 26,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              }
+            ]
+          },
+          "difficulty_check": 0.88
+        }
+      }
+    },
+    "olmoe-0125-instruct": {
+      "all": {
+        "n": 1200,
+        "parsed": 1191,
+        "parse_rate": 0.9925,
+        "answer_dist": {
+          "PASS": 794,
+          "NOT_STATED": 54,
+          "FAIL": 343
+        },
+        "input_tokens": 771077,
+        "output_tokens": 55327,
+        "total_tokens": 826404,
+        "latency_ms_median": 1266.2,
+        "ttft_ms_median": 1036.2
+      },
+      "splits": {
+        "train": {
+          "parse": {
+            "n": 400,
+            "parsed": 396,
+            "parse_rate": 0.99,
+            "answer_dist": {
+              "PASS": 264,
+              "NOT_STATED": 27,
+              "FAIL": 105
+            },
+            "input_tokens": 239866,
+            "output_tokens": 18920,
+            "total_tokens": 258786,
+            "latency_ms_median": 1263.5,
+            "ttft_ms_median": 1030.4
+          },
+          "accuracy": {
+            "n": 396,
+            "correct": 287,
+            "accuracy": 0.7247,
+            "gate_accuracy": 0.803,
+            "class_counts": {
+              "PASS": 198,
+              "FAIL": 100,
+              "NOT_STATED": 98
+            },
+            "n_wrong": 109,
+            "wrong_sample": [
+              {
+                "article": "T08",
+                "item": 20,
+                "want": "PASS",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T08",
+                "item": 23,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T08",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T08",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T08",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T08",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T15",
+                "item": 19,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T15",
+                "item": 22,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T15",
+                "item": 25,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T15",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              }
+            ]
+          }
+        },
+        "calibration": {
+          "parse": {
+            "n": 400,
+            "parsed": 398,
+            "parse_rate": 0.995,
+            "answer_dist": {
+              "PASS": 262,
+              "FAIL": 124,
+              "NOT_STATED": 12
+            },
+            "input_tokens": 265668,
+            "output_tokens": 18007,
+            "total_tokens": 283675,
+            "latency_ms_median": 1289.5,
+            "ttft_ms_median": 1081.5
+          },
+          "accuracy": {
+            "n": 398,
+            "correct": 277,
+            "accuracy": 0.696,
+            "gate_accuracy": 0.8216,
+            "class_counts": {
+              "PASS": 199,
+              "FAIL": 103,
+              "NOT_STATED": 96
+            },
+            "n_wrong": 121,
+            "wrong_sample": [
+              {
+                "article": "T02",
+                "item": 14,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 21,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 22,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 25,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 26,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 17,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 23,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T03",
+                "item": 25,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T03",
+                "item": 27,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T03",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              }
+            ]
+          }
+        },
+        "test": {
+          "parse": {
+            "n": 400,
+            "parsed": 397,
+            "parse_rate": 0.9925,
+            "answer_dist": {
+              "PASS": 268,
+              "FAIL": 114,
+              "NOT_STATED": 15
+            },
+            "input_tokens": 265543,
+            "output_tokens": 18400,
+            "total_tokens": 283943,
+            "latency_ms_median": 1259.2,
+            "ttft_ms_median": 1036.3
+          },
+          "accuracy": {
+            "n": 397,
+            "correct": 270,
+            "accuracy": 0.6801,
+            "gate_accuracy": 0.796,
+            "class_counts": {
+              "PASS": 197,
+              "FAIL": 104,
+              "NOT_STATED": 96
+            },
+            "n_wrong": 127,
+            "wrong_sample": [
+              {
+                "article": "T01",
+                "item": 20,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 23,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 25,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 26,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T01",
+                "item": 30,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T01",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T01",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 9,
+                "want": "PASS",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 21,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 26,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T04",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              }
+            ]
+          },
+          "difficulty_check": 0.6801
+        }
+      }
+    },
+    "qwen35-4b": {
+      "all": {
+        "n": 1200,
+        "parsed": 1199,
+        "parse_rate": 0.9992,
+        "answer_dist": {
+          "PASS": 635,
+          "FAIL": 326,
+          "NOT_STATED": 238
+        },
+        "input_tokens": 764206,
+        "output_tokens": 50526,
+        "total_tokens": 814732,
+        "latency_ms_median": 3543.1,
+        "ttft_ms_median": 2894.2
+      },
+      "splits": {
+        "train": {
+          "parse": {
+            "n": 400,
+            "parsed": 400,
+            "parse_rate": 1.0,
+            "answer_dist": {
+              "PASS": 213,
+              "FAIL": 104,
+              "NOT_STATED": 83
+            },
+            "input_tokens": 235462,
+            "output_tokens": 16510,
+            "total_tokens": 251972,
+            "latency_ms_median": 3497.6,
+            "ttft_ms_median": 2831.0
+          },
+          "accuracy": {
+            "n": 400,
+            "correct": 378,
+            "accuracy": 0.945,
+            "gate_accuracy": 0.9675,
+            "class_counts": {
+              "PASS": 200,
+              "FAIL": 101,
+              "NOT_STATED": 99
+            },
+            "n_wrong": 22,
+            "wrong_sample": [
+              {
+                "article": "T08",
+                "item": 30,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T08",
+                "item": 39,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T08",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 23,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T10",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T10",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T15",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T16",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T16",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T16",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T17",
+                "item": 27,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T17",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T17",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T17",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T19",
+                "item": 29,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T19",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T20",
+                "item": 28,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T24",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T24",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T27",
+                "item": 25,
+                "want": "FAIL",
+                "got": "PASS"
+              }
+            ]
+          }
+        },
+        "calibration": {
+          "parse": {
+            "n": 400,
+            "parsed": 400,
+            "parse_rate": 1.0,
+            "answer_dist": {
+              "PASS": 210,
+              "FAIL": 110,
+              "NOT_STATED": 80
+            },
+            "input_tokens": 265194,
+            "output_tokens": 16842,
+            "total_tokens": 282036,
+            "latency_ms_median": 3633.4,
+            "ttft_ms_median": 2960.4
+          },
+          "accuracy": {
+            "n": 400,
+            "correct": 373,
+            "accuracy": 0.9325,
+            "gate_accuracy": 0.975,
+            "class_counts": {
+              "PASS": 200,
+              "FAIL": 104,
+              "NOT_STATED": 96
+            },
+            "n_wrong": 27,
+            "wrong_sample": [
+              {
+                "article": "T02",
+                "item": 24,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T02",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T02",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T03",
+                "item": 26,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T03",
+                "item": 32,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T14",
+                "item": 28,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T14",
+                "item": 30,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T14",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T14",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T14",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T18",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T18",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T21",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T21",
+                "item": 39,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T21",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T23",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T23",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              }
+            ]
+          }
+        },
+        "test": {
+          "parse": {
+            "n": 400,
+            "parsed": 399,
+            "parse_rate": 0.9975,
+            "answer_dist": {
+              "PASS": 212,
+              "FAIL": 112,
+              "NOT_STATED": 75
+            },
+            "input_tokens": 263550,
+            "output_tokens": 17174,
+            "total_tokens": 280724,
+            "latency_ms_median": 3555.2,
+            "ttft_ms_median": 2949.6
+          },
+          "accuracy": {
+            "n": 399,
+            "correct": 366,
+            "accuracy": 0.9173,
+            "gate_accuracy": 0.9674,
+            "class_counts": {
+              "PASS": 199,
+              "FAIL": 104,
+              "NOT_STATED": 96
+            },
+            "n_wrong": 33,
+            "wrong_sample": [
+              {
+                "article": "T01",
+                "item": 24,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T01",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T04",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T05",
+                "item": 34,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 36,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T05",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T12",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T13",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T13",
+                "item": 37,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T13",
+                "item": 40,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T22",
+                "item": 26,
+                "want": "FAIL",
+                "got": "NOT_STATED"
+              },
+              {
+                "article": "T22",
+                "item": 31,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T22",
+                "item": 35,
+                "want": "NOT_STATED",
+                "got": "PASS"
+              },
+              {
+                "article": "T22",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T25",
+                "item": 26,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T25",
+                "item": 38,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              },
+              {
+                "article": "T28",
+                "item": 27,
+                "want": "FAIL",
+                "got": "PASS"
+              },
+              {
+                "article": "T28",
+                "item": 33,
+                "want": "NOT_STATED",
+                "got": "FAIL"
+              }
+            ]
+          },
+          "difficulty_check": 0.9173
+        }
+      }
+    }
+  },
+  "contamination": {
+    "llama-3.2-1b-instruct": {
+      "n_calls": 400,
+      "n_without_article": 200,
+      "n_flagged": 17,
+      "flagged": [
+        {
+          "article": "T01",
+          "question": 12,
+          "raw": "I don't have access to a search engine to provide information about the 1992 Flores earthquake and tsunami."
+        },
+        {
+          "article": "T01",
+          "question": 13,
+          "raw": "I don't have information on the number of people killed in the 2004 Sumatra tsunami in Indonesia."
+        },
+        {
+          "article": "T01",
+          "question": 14,
+          "raw": "I don't have access to a search engine to provide information on the number of deaths or missing persons in the 2018 Palu earthquake and tsunami."
+        },
+        {
+          "article": "T04",
+          "question": 13,
+          "raw": "I don't have access to a search engine to provide information on the number of National Guard security personnel authorized."
+        },
+        {
+          "article": "T05",
+          "question": 8,
+          "raw": "I don't have access to the specific article you're referring to, but I can provide some general information on the topic. According to various sources, the total amount of the $40 trillion in the Unit"
+        },
+        {
+          "article": "T05",
+          "question": 15,
+          "raw": "I'm sorry, but I cannot provide information on a specific date that is 30 trillion years ago."
+        },
+        {
+          "article": "T12",
+          "question": 3,
+          "raw": "I couldn't find any information on a person named Bessent, and I couldn't find any information on a person named Bessent being associated with a Second World War event."
+        },
+        {
+          "article": "T12",
+          "question": 5,
+          "raw": "I'm sorry, but I cannot provide information on specific sanctions imposed by the Treasury's Office of Foreign Assets Control (OFAC) without access to the latest and most accurate information."
+        },
+        {
+          "article": "T13",
+          "question": 1,
+          "raw": "I'm sorry, but I cannot verify the death toll from the Lake Kariba ferry disaster."
+        },
+        {
+          "article": "T13",
+          "question": 15,
+          "raw": "The article does not provide information about a country sharing Lake Kariba with Zimbabwe."
+        },
+        {
+          "article": "T25",
+          "question": 9,
+          "raw": "I'm sorry I cannot provide any information about what local officials and the Red Cross said on Wednesday about the toll."
+        },
+        {
+          "article": "T28",
+          "question": 2,
+          "raw": "I'm sorry, but I cannot verify the name of the Phase 3 trial."
+        },
+        {
+          "article": "T28",
+          "question": 18,
+          "raw": "I can't provide information on the specific percentage reductions from Phase 2b five-year data without more context or the article you're referring to."
+        },
+        {
+          "article": "T29",
+          "question": 1,
+          "raw": "I couldn't find any information on a specific DRC Ebola outbreak. The Democratic Republic of Congo (DRC) has experienced several Ebola outbreaks in the past, but I couldn't find any reliable sources i"
+        },
+        {
+          "article": "T29",
+          "question": 12,
+          "raw": "I do not have access to a search engine to provide information on the 2014-2016 West Africa outbreak."
+        },
+        {
+          "article": "T29",
+          "question": 14,
+          "raw": "I can't provide information on the 2014-2016 outbreak."
+        },
+        {
+          "article": "T35",
+          "question": 16,
+          "raw": "I don't have access to a search engine to provide information about the number of people killed and wounded in Kryvyi Rih."
+        }
+      ]
+    },
+    "gemma-3-1b-it": {
+      "n_calls": 400,
+      "n_without_article": 200,
+      "n_flagged": 16,
+      "flagged": [
+        {
+          "article": "T01",
+          "question": 12,
+          "raw": "According to the article, the 1992 Flores earthquake and tsunami killed 2,677 people.<end_of_turn>RONNIE H. HENDERSON<end_of_turn>\n<end_of_turn>\u06cc\u200d preoperative physician who treated the victims<end_of"
+        },
+        {
+          "article": "T01",
+          "question": 13,
+          "raw": "According to the article, the 2004 Sumatra tsunami killed 100,000 people.<end_of_turn>\u0439<end_of_turn> \u0987\u0989\u098f\u09a8 \u0c07\u0c28\u0c4d\u200c\u0c38\u0c4d\u0c1f\u0c3f\u0c1f\u0c4d\u0c2f\u0c42\u0c1f\u0c4d \u0c06\u0c2b\u0c4d \u0c07\u0c02\u0c1f\u0c30\u0c4d\u0c28\u0c47\u0c37\u0c28\u0c32\u0c4d \u0c30\u0c3f\u0c2a\u0c4b\u0c30\u0c4d\u0c1f\u0c3f\u0c02\u0c17\u0c4d \u0c05\u0c02\u0c21\u0c4d \u0c07\u0c2e\u0c47\u0c1c\u0c3f\u0c02\u0c17\u0c4d (UNRIS) \u0c28\u0c3f\u0c35\u0c47\u0c26\u0c3f\u0c15 \u0c2a\u0c4d\u0c30\u0c15\u0c3e\u0c30\u0c02.<end_of_turn>"
+        },
+        {
+          "article": "T01",
+          "question": 14,
+          "raw": "According to the article, 175 people died or went missing in the 2018 Palu earthquake and tsunami.<end_of_turn>jeno<end_of_turn> \u0987\u0989\u098f\u09a8.<end_of_turn> \u0987\u0989\u098f\u09a8<end_of_turn><end_of_turn><end_of_turn><end_of_t"
+        },
+        {
+          "article": "T04",
+          "question": 13,
+          "raw": "Please provide me with the article you are referring to! I need the text of the article to be able to answer your question about the number of National Guard security personnel authorized. \ud83d\ude0a\n<end_of_t"
+        },
+        {
+          "article": "T05",
+          "question": 8,
+          "raw": "I am sorry, but I do not have access to the internet to retrieve the article you are referring to. Therefore, I cannot answer your question about how much the $40 trillion works out to per person.<end"
+        },
+        {
+          "article": "T05",
+          "question": 15,
+          "raw": "Please provide me with the article you are referring to! I need the text of the article to answer your question. \ud83d\ude0a<end_of_turn>\n<end_of_turn>\u97f5 \n<end_of_turn>\u06cc \n<end_of_turn>William, the former CEO of "
+        },
+        {
+          "article": "T12",
+          "question": 6,
+          "raw": "Please provide me with the article! I need the text of the article to be able to answer your question about the jurisdictions of sanctioned parties. \ud83d\ude0a<end_of_turn> \u0a97\u0aaf\u0abe<end_of_turn>Apollo, a global fin"
+        },
+        {
+          "article": "T13",
+          "question": 1,
+          "raw": "I am sorry, but I do not have access to the internet to retrieve the information about the Lake Kariba ferry disaster.<end_of_turn>\u06cc f my knowledge base is limited to the data I was trained on.<end_of"
+        },
+        {
+          "article": "T13",
+          "question": 15,
+          "raw": "According to the article, **Zambia** shares Lake Kariba with Zimbabwe.<end_of_turn>yetanpi<end_of_turn><end_of_turn>Apex<end_of_turn>yetanpi<end_of_turn><end_of_turn><end_of_turn> Climber<end_of_turn>"
+        },
+        {
+          "article": "T25",
+          "question": 9,
+          "raw": "Please provide me with the article! I need the text of the article to be able to answer your question about what local officials and the Red Cross said about the toll. \ud83d\ude0a<end_of_turn>\u0d1e\u0d4d\u0d1e\u0d41\n<end_of_turn>"
+        },
+        {
+          "article": "T28",
+          "question": 2,
+          "raw": "Please provide me with the article! I need the text of the article to answer your question about the Phase 3 trial. \ud83d\ude0a\n<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>r"
+        },
+        {
+          "article": "T28",
+          "question": 15,
+          "raw": "Please provide me with the article! I need the text of the article to be able to answer your question. \ud83d\ude0a<end_of_turn>\n<end_of_turn><end_of_turn>Sudden cardiac death is the first positive Phase 3 reado"
+        },
+        {
+          "article": "T28",
+          "question": 20,
+          "raw": "Please provide me with the article you are referring to! I need the text of the article to be able to answer your question about Merck\u2019s upfront payment and 2022 spending. \ud83d\ude0a\n<end_of_turn>-<end_of_turn"
+        },
+        {
+          "article": "T29",
+          "question": 12,
+          "raw": "According to the article, the 2014-2016 West Africa outbreak took approximately **10-12 weeks** to reach 1,000 fatalities.<end_of_turn><end_of_turn>\u06cc\u0accgend<end_of_turn><end_of_turn>\u06cc\u0accgend<end_of_turn>i"
+        },
+        {
+          "article": "T29",
+          "question": 14,
+          "raw": "Please provide me with the article you are referring to! I need the text of the article to answer your question about the number of deaths during the 2014-2016 outbreak. \ud83d\ude0a\n<end_of_turn>rone<end_of_tur"
+        },
+        {
+          "article": "T35",
+          "question": 16,
+          "raw": "Please provide me with the article you are referring to! I need the text of the article to be able to answer your question about the number of deaths and wounded in Kryvyi Rih. \ud83d\ude0a<end_of_turn>ieux<end_"
+        }
+      ]
+    },
+    "phi-4-mini-instruct": {
+      "n_calls": 400,
+      "n_without_article": 200,
+      "n_flagged": 17,
+      "flagged": [
+        {
+          "article": "T01",
+          "question": 12,
+          "raw": "The 1992 Flores earthquake and tsunami killed 1,300 people."
+        },
+        {
+          "article": "T01",
+          "question": 13,
+          "raw": "The 2004 Sumatra tsunami killed approximately 227,898 people in Indonesia."
+        },
+        {
+          "article": "T01",
+          "question": 14,
+          "raw": "The article does not provide specific numbers on how many people died or went missing in the 2018 Palu quake and tsunami."
+        },
+        {
+          "article": "T04",
+          "question": 13,
+          "raw": "The provided text does not contain specific information about the number of National Guard security personnel authorized."
+        },
+        {
+          "article": "T05",
+          "question": 8,
+          "raw": "The article does not provide specific information on how much $40 trillion would amount to per person. To calculate this, you would need to know the population of the relevant group or country. If you"
+        },
+        {
+          "article": "T05",
+          "question": 15,
+          "raw": "The article does not provide a specific date or time frame for when the total passed $30 trillion."
+        },
+        {
+          "article": "T12",
+          "question": 17,
+          "raw": "The full name of the Treasury office that sanctioned the entities is the Office of Foreign Assets Control (OFAC)."
+        },
+        {
+          "article": "T13",
+          "question": 1,
+          "raw": "The article does not provide information on the death toll from the Lake Kariba ferry disaster."
+        },
+        {
+          "article": "T28",
+          "question": 2,
+          "raw": "The name of the Phase 3 trial is not provided in the information available."
+        },
+        {
+          "article": "T28",
+          "question": 15,
+          "raw": "The provided text does not contain enough information to determine which two categories of therapy had their first positive Phase 3 readout. Additional context or details from the article would be req"
+        },
+        {
+          "article": "T28",
+          "question": 18,
+          "raw": "The provided text does not contain specific information about the percentage reductions shown in the Phase 2b five-year data."
+        },
+        {
+          "article": "T29",
+          "question": 3,
+          "raw": "The article does not provide the specific number of new cases detected in the previous 24 hours."
+        },
+        {
+          "article": "T29",
+          "question": 12,
+          "raw": "The article does not provide specific information on how long it took for the 2014-2016 West Africa Ebola outbreak to reach 1,000 fatalities."
+        },
+        {
+          "article": "T29",
+          "question": 13,
+          "raw": "The article does not provide specific information on how long it took for the current outbreak to reach 2,000 deaths."
+        },
+        {
+          "article": "T29",
+          "question": 14,
+          "raw": "The article does not provide specific numbers of deaths or the countries affected by the 2014-2016 outbreak."
+        },
+        {
+          "article": "T35",
+          "question": 4,
+          "raw": "The provided text does not contain any information regarding the ranking of any entity or topic in 2026 as per Russian officials. Therefore, it is not possible to answer the question based on the give"
+        },
+        {
+          "article": "T35",
+          "question": 16,
+          "raw": "The article does not provide specific numbers on how many people were killed or wounded in Kryvyi Rih."
+        }
+      ]
+    },
+    "olmoe-0125-instruct": {
+      "n_calls": 400,
+      "n_without_article": 200,
+      "n_flagged": 23,
+      "flagged": [
+        {
+          "article": "T01",
+          "question": 12,
+          "raw": "The 1992 Flores earthquake and tsunami killed around 2,000 people."
+        },
+        {
+          "article": "T01",
+          "question": 13,
+          "raw": "The 2004 Sumatra tsunami killed approximately 230,000 people in Indonesia."
+        },
+        {
+          "article": "T01",
+          "question": 14,
+          "raw": "According to the article, the 2018 Palu quake and tsunami resulted in over 2,000 deaths and over 1,000 people missing."
+        },
+        {
+          "article": "T04",
+          "question": 4,
+          "raw": "The fire was first reported at approximately 11:25 p.m. on December 30, 2019, at the Ghost Ship warehouse in Oakland, California."
+        },
+        {
+          "article": "T04",
+          "question": 13,
+          "raw": "According to the article, the National Guard security personnel authorized were 45,000."
+        },
+        {
+          "article": "T05",
+          "question": 8,
+          "raw": "The $40 trillion total works out to approximately $12,000 per person."
+        },
+        {
+          "article": "T05",
+          "question": 15,
+          "raw": "The total passed $30 trillion approximately 6 months ago, specifically around September 2021."
+        },
+        {
+          "article": "T12",
+          "question": 5,
+          "raw": "The Treasury's Office of Foreign Assets Control (OFAC) sanctioned four entities, three individuals, and two vessels."
+        },
+        {
+          "article": "T13",
+          "question": 1,
+          "raw": "The Lake Kariba ferry disaster occurred on December 11, 1972, when a ferry carrying about 150 people sank in Lake Kariba, resulting in the deaths of at least 95 people. The exact number of fatalities "
+        },
+        {
+          "article": "T13",
+          "question": 15,
+          "raw": "Zambia shares Lake Kariba with Zimbabwe."
+        },
+        {
+          "article": "T25",
+          "question": 9,
+          "raw": "Local officials and the Red Cross stated that the death toll had risen to 15, with more than 100 people injured."
+        },
+        {
+          "article": "T28",
+          "question": 2,
+          "raw": "The Phase 3 trial for the COVID-19 vaccine developed by Pfizer and BioNTech is called BNT162b2 COVID-19 Vaccine Trial."
+        },
+        {
+          "article": "T28",
+          "question": 10,
+          "raw": "The randomization ratio in the study mentioned in the article is not explicitly stated. To determine the randomization ratio, one would need to understand the specific details of the study design, suc"
+        },
+        {
+          "article": "T28",
+          "question": 15,
+          "raw": "The first positive Phase 3 readout for therapies targeting COVID-19 was for a vaccine, specifically the Pfizer-BioNTech COVID-19 vaccine. This vaccine was developed rapidly using mRNA technology and w"
+        },
+        {
+          "article": "T28",
+          "question": 18,
+          "raw": "The Phase 2b five-year data showed a reduction of 33% in heart attacks and a reduction of 31% in strokes."
+        },
+        {
+          "article": "T29",
+          "question": 1,
+          "raw": "According to the article, the Democratic Republic of the Congo reported 1,152 cases and 932 deaths from the Ebola outbreak as of October 6, 2018."
+        },
+        {
+          "article": "T29",
+          "question": 3,
+          "raw": "The article does not provide specific numbers for new cases in the previous 24 hours. Therefore, based on the information available, we cannot determine the exact number of new cases detected in the p"
+        },
+        {
+          "article": "T29",
+          "question": 12,
+          "raw": "The 2014-2016 West Africa outbreak took approximately 18 months to reach 1,000 fatalities. It began in March 2014 and by September 2016, the total number of deaths had reached around 1,000."
+        },
+        {
+          "article": "T29",
+          "question": 13,
+          "raw": "The current outbreak reached 2,000 deaths in approximately 3 months, specifically within the period of March to May 2022."
+        },
+        {
+          "article": "T29",
+          "question": 14,
+          "raw": "The 2014-2016 outbreak killed approximately 11,000 people across several countries, including Nigeria, Niger, Cameroon, and Chad."
+        },
+        {
+          "article": "T29",
+          "question": 16,
+          "raw": "The three figures reported by the European Centre for Disease Prevention and Control (ECDC) as of October 25, 2021, are:\n\n1. The number of cases of COVID-19: 1,731,929\n2. The number of deaths due to C"
+        },
+        {
+          "article": "T29",
+          "question": 20,
+          "raw": "The UN's International Coordinating Group (ICG) allocated one dose of Ervebo to DRC."
+        },
+        {
+          "article": "T35",
+          "question": 16,
+          "raw": "According to the article, the attack in Kryvyi Rih resulted in the deaths of 2 people and injuries to 15 others."
+        }
+      ]
+    },
+    "qwen35-4b": {
+      "n_calls": 400,
+      "n_without_article": 200,
+      "n_flagged": 13,
+      "flagged": [
+        {
+          "article": "T01",
+          "question": 12,
+          "raw": "Based on the article provided, there is no information regarding the number of people killed by the 1992 Flores earthquake and tsunami."
+        },
+        {
+          "article": "T01",
+          "question": 13,
+          "raw": "Based on the article provided, there is no information regarding the number of people killed in the 2004 Sumatra tsunami in Indonesia."
+        },
+        {
+          "article": "T01",
+          "question": 14,
+          "raw": "Based on the information available in this article, I cannot answer your question because the provided text does not contain any data regarding the number of people who died or went missing in the 201"
+        },
+        {
+          "article": "T05",
+          "question": 8,
+          "raw": "I cannot answer this question because the provided article does not contain information about the population or the specific context (such as a country or region) associated with the $40 trillion figu"
+        },
+        {
+          "article": "T05",
+          "question": 15,
+          "raw": "I cannot answer this question because the provided article is empty, and no information regarding when the total passed $30 trillion is available in the text."
+        },
+        {
+          "article": "T12",
+          "question": 3,
+          "raw": "I cannot answer this question because the provided article does not contain any information about Bessent or any Second World War events."
+        },
+        {
+          "article": "T28",
+          "question": 2,
+          "raw": "I cannot answer this question because you have not provided the article containing the information. Please paste the text of the article, and I will identify the name of the Phase 3 trial for you."
+        },
+        {
+          "article": "T28",
+          "question": 20,
+          "raw": "I cannot answer this question because the provided article is empty or missing. There is no text available in your message to extract information about Merck's upfront payment or its 2022 payments."
+        },
+        {
+          "article": "T29",
+          "question": 3,
+          "raw": "I cannot answer this question because you have not provided the article containing the information. Please share the text or paste the relevant section of the article, and I will extract the number of"
+        },
+        {
+          "article": "T29",
+          "question": 12,
+          "raw": "Based on the article provided, there is no information regarding the 2014-2016 West Africa outbreak or the time it took to reach 1,000 fatalities."
+        },
+        {
+          "article": "T29",
+          "question": 13,
+          "raw": "I cannot answer this question because the provided article does not contain information about an outbreak, the number of deaths, or the time it took to reach 2,000 deaths."
+        },
+        {
+          "article": "T35",
+          "question": 4,
+          "raw": "I cannot answer this question because the provided article does not contain any information regarding rankings in 2026 or any statements from Russian officials about future rankings."
+        },
+        {
+          "article": "T35",
+          "question": 16,
+          "raw": "I cannot answer this question because the provided article is empty, and no information regarding casualties in Kryvyi Rih is available in the text."
+        }
+      ]
+    }
+  },
+  "solver-baseline": {
+    "n": 10,
+    "parsed": 0,
+    "parse_rate": 0.0,
+    "answer_dist": {},
+    "input_tokens": 7956,
+    "output_tokens": 3929,
+    "total_tokens": 11885,
+    "latency_ms_median": 5651.6,
+    "ttft_ms_median": 272.9
+  },
+  "self-review": {
+    "n": 400,
+    "parsed": 390,
+    "parse_rate": 0.975,
+    "answer_dist": {
+      "PASS": 197,
+      "FAIL": 131,
+      "NOT_STATED": 62
+    },
+    "input_tokens": 263550,
+    "output_tokens": 18363,
+    "total_tokens": 281913,
+    "latency_ms_median": 766.8,
+    "ttft_ms_median": 238.0,
+    "accuracy_test": {
+      "n": 390,
+      "correct": 358,
+      "accuracy": 0.9179,
+      "gate_accuracy": 0.9872,
+      "class_counts": {
+        "PASS": 194,
+        "FAIL": 103,
+        "NOT_STATED": 93
+      },
+      "n_wrong": 32,
+      "wrong_sample": [
+        {
+          "article": "T01",
+          "item": 31,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T01",
+          "item": 33,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T01",
+          "item": 36,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T01",
+          "item": 37,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T04",
+          "item": 31,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T04",
+          "item": 32,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T04",
+          "item": 35,
+          "want": "NOT_STATED",
+          "got": "PASS"
+        },
+        {
+          "article": "T05",
+          "item": 2,
+          "want": "PASS",
+          "got": "FAIL"
+        },
+        {
+          "article": "T05",
+          "item": 34,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T05",
+          "item": 35,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T05",
+          "item": 36,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T05",
+          "item": 37,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T05",
+          "item": 40,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T12",
+          "item": 33,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T12",
+          "item": 35,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T12",
+          "item": 36,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T13",
+          "item": 31,
+          "want": "NOT_STATED",
+          "got": "PASS"
+        },
+        {
+          "article": "T13",
+          "item": 34,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T13",
+          "item": 37,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        },
+        {
+          "article": "T22",
+          "item": 31,
+          "want": "NOT_STATED",
+          "got": "FAIL"
+        }
+      ]
+    }
+  },
+  "smoke": {
+    "n": 6,
+    "parsed": 5,
+    "parse_rate": 0.8333,
+    "answer_dist": {
+      "PASS": 5
+    },
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "latency_ms_median": 840.4,
+    "ttft_ms_median": 557.2
+  }
+}

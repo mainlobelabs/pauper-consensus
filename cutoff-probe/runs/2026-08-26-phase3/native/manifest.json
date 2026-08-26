@@ -1,0 +1,125 @@
+{
+  "run": "native",
+  "started_utc": "2026-08-26T08:17:31.117033+00:00",
+  "host": "marzuki-helium",
+  "runner_git": "b617ebe",
+  "command": "tools/phase3/runner.py native",
+  "purpose": "zero-shot native outputs under the frozen contract; train = self-distillation targets, calibration = baseline fit + losslessness base, test = P4 zero-shot baseline",
+  "models": {
+    "llama-3.2-1b-instruct": "http://127.0.0.1:8101",
+    "gemma-3-1b-it": "http://127.0.0.1:8101",
+    "phi-4-mini-instruct": "http://127.0.0.1:8101",
+    "olmoe-0125-instruct": "http://127.0.0.1:8101",
+    "qwen35-4b": "http://127.0.0.1:8101"
+  },
+  "split": "all",
+  "articles": [
+    "T08",
+    "T10",
+    "T15",
+    "T16",
+    "T17",
+    "T19",
+    "T20",
+    "T24",
+    "T27",
+    "T32",
+    "T02",
+    "T03",
+    "T14",
+    "T18",
+    "T21",
+    "T23",
+    "T26",
+    "T30",
+    "T34",
+    "T36",
+    "T01",
+    "T04",
+    "T05",
+    "T12",
+    "T13",
+    "T22",
+    "T25",
+    "T28",
+    "T29",
+    "T35"
+  ],
+  "endpoints": {
+    "http://127.0.0.1:8101": {
+      "models": {
+        "object": "list",
+        "data": [
+          {
+            "id": "gemma-3-1b-it",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 32768
+          },
+          {
+            "id": "gemma-3-4b-it",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "llama-3.2-1b-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "llama-3.2-3b-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "olmoe-0125-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 4096
+          },
+          {
+            "id": "phi-4-mini-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "qwen35-4b",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "MarkItDown",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": null
+          }
+        ]
+      }
+    }
+  },
+  "finished_utc": "2026-08-26T10:03:15.324421+00:00",
+  "stats": {
+    "n_calls": 6000,
+    "parsed_ok": 4037,
+    "spend": {
+      "llama-3.2-1b-instruct": 1200,
+      "gemma-3-1b-it": 1200,
+      "phi-4-mini-instruct": 1200,
+      "olmoe-0125-instruct": 1200,
+      "qwen35-4b": 1200
+    }
+  }
+}

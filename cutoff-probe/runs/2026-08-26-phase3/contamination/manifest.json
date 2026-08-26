@@ -1,0 +1,566 @@
+{
+  "run": "contamination",
+  "started_utc": "2026-08-26T08:17:31.118571+00:00",
+  "host": "marzuki-helium",
+  "runner_git": "b617ebe",
+  "command": "tools/phase3/runner.py contamination",
+  "purpose": "task 12: parametric memory check, test articles, before any fine-tuned output exists",
+  "models": {
+    "llama-3.2-1b-instruct": "http://127.0.0.1:8101",
+    "gemma-3-1b-it": "http://127.0.0.1:8101",
+    "phi-4-mini-instruct": "http://127.0.0.1:8101",
+    "olmoe-0125-instruct": "http://127.0.0.1:8101",
+    "qwen35-4b": "http://127.0.0.1:8101"
+  },
+  "articles": [
+    "T01",
+    "T04",
+    "T05",
+    "T12",
+    "T13",
+    "T22",
+    "T25",
+    "T28",
+    "T29",
+    "T35"
+  ],
+  "design": "20 seed questions per article, with and without the article; flag = without-article answer contains a fact target extracted from the ENTAIL proposition seeded into that question",
+  "endpoints": {
+    "http://127.0.0.1:8101": {
+      "models": {
+        "object": "list",
+        "data": [
+          {
+            "id": "gemma-3-1b-it",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 32768
+          },
+          {
+            "id": "gemma-3-4b-it",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "llama-3.2-1b-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "llama-3.2-3b-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "olmoe-0125-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 4096
+          },
+          {
+            "id": "phi-4-mini-instruct",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "qwen35-4b",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "MarkItDown",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "omlx",
+            "max_model_len": null
+          }
+        ]
+      }
+    }
+  },
+  "finished_utc": "2026-08-26T09:00:40.519515+00:00",
+  "stats": {
+    "n_calls": 2000,
+    "spend": {
+      "gemma-3-1b-it": 513,
+      "llama-3.2-1b-instruct": 800,
+      "phi-4-mini-instruct": 400,
+      "olmoe-0125-instruct": 400,
+      "qwen35-4b": 400
+    },
+    "flags": {
+      "llama-3.2-1b-instruct": {
+        "n_calls": 400,
+        "n_flagged_without_article": 17,
+        "flags": [
+          {
+            "article": "T01",
+            "question": 12,
+            "raw": "I don't have access to a search engine to provide information about the 1992 Flores earthquake and tsunami."
+          },
+          {
+            "article": "T01",
+            "question": 13,
+            "raw": "I don't have information on the number of people killed in the 2004 Sumatra tsunami in Indonesia."
+          },
+          {
+            "article": "T01",
+            "question": 14,
+            "raw": "I don't have access to a search engine to provide information on the number of deaths or missing persons in the 2018 Palu earthquake and tsunami."
+          },
+          {
+            "article": "T04",
+            "question": 13,
+            "raw": "I don't have access to a search engine to provide information on the number of National Guard security personnel authorized."
+          },
+          {
+            "article": "T05",
+            "question": 8,
+            "raw": "I don't have access to the specific article you're referring to, but I can provide some general information on the topic. According to various sources, the total amount of the $40 trillion in the United States is approximately $44.4 trillion, not $40 trillion.\n\nTo calculate this, the U.S. Department of the Treasury's Bureau of Economic Analysis (BEA) estimates that the total U.S. gross domestic pr"
+          },
+          {
+            "article": "T05",
+            "question": 15,
+            "raw": "I'm sorry, but I cannot provide information on a specific date that is 30 trillion years ago."
+          },
+          {
+            "article": "T12",
+            "question": 3,
+            "raw": "I couldn't find any information on a person named Bessent, and I couldn't find any information on a person named Bessent being associated with a Second World War event."
+          },
+          {
+            "article": "T12",
+            "question": 5,
+            "raw": "I'm sorry, but I cannot provide information on specific sanctions imposed by the Treasury's Office of Foreign Assets Control (OFAC) without access to the latest and most accurate information."
+          },
+          {
+            "article": "T13",
+            "question": 1,
+            "raw": "I'm sorry, but I cannot verify the death toll from the Lake Kariba ferry disaster."
+          },
+          {
+            "article": "T13",
+            "question": 15,
+            "raw": "The article does not provide information about a country sharing Lake Kariba with Zimbabwe."
+          },
+          {
+            "article": "T25",
+            "question": 9,
+            "raw": "I'm sorry I cannot provide any information about what local officials and the Red Cross said on Wednesday about the toll."
+          },
+          {
+            "article": "T28",
+            "question": 2,
+            "raw": "I'm sorry, but I cannot verify the name of the Phase 3 trial."
+          },
+          {
+            "article": "T28",
+            "question": 18,
+            "raw": "I can't provide information on the specific percentage reductions from Phase 2b five-year data without more context or the article you're referring to."
+          },
+          {
+            "article": "T29",
+            "question": 1,
+            "raw": "I couldn't find any information on a specific DRC Ebola outbreak. The Democratic Republic of Congo (DRC) has experienced several Ebola outbreaks in the past, but I couldn't find any reliable sources indicating the number of deaths from a specific outbreak."
+          },
+          {
+            "article": "T29",
+            "question": 12,
+            "raw": "I do not have access to a search engine to provide information on the 2014-2016 West Africa outbreak."
+          },
+          {
+            "article": "T29",
+            "question": 14,
+            "raw": "I can't provide information on the 2014-2016 outbreak."
+          },
+          {
+            "article": "T35",
+            "question": 16,
+            "raw": "I don't have access to a search engine to provide information about the number of people killed and wounded in Kryvyi Rih."
+          }
+        ]
+      },
+      "gemma-3-1b-it": {
+        "n_calls": 400,
+        "n_flagged_without_article": 16,
+        "flags": [
+          {
+            "article": "T01",
+            "question": 12,
+            "raw": "According to the article, the 1992 Flores earthquake and tsunami killed 2,677 people.<end_of_turn>RONNIE H. HENDERSON<end_of_turn>\n<end_of_turn>\u06cc\u200d preoperative physician who treated the victims<end_of_turn><end_of_turn><end_of_turn><end_of_turn>\u0bae\u0ba3\u0bbf\ufe0f<end_of_turn><end_of_turn><end_of_turn>suddenly died during the disaster.<end_of_turn><end_of_turn> Netanyahu estimated that the death toll would be ar"
+          },
+          {
+            "article": "T01",
+            "question": 13,
+            "raw": "According to the article, the 2004 Sumatra tsunami killed 100,000 people.<end_of_turn>\u0439<end_of_turn> \u0987\u0989\u098f\u09a8 \u0c07\u0c28\u0c4d\u200c\u0c38\u0c4d\u0c1f\u0c3f\u0c1f\u0c4d\u0c2f\u0c42\u0c1f\u0c4d \u0c06\u0c2b\u0c4d \u0c07\u0c02\u0c1f\u0c30\u0c4d\u0c28\u0c47\u0c37\u0c28\u0c32\u0c4d \u0c30\u0c3f\u0c2a\u0c4b\u0c30\u0c4d\u0c1f\u0c3f\u0c02\u0c17\u0c4d \u0c05\u0c02\u0c21\u0c4d \u0c07\u0c2e\u0c47\u0c1c\u0c3f\u0c02\u0c17\u0c4d (UNRIS) \u0c28\u0c3f\u0c35\u0c47\u0c26\u0c3f\u0c15 \u0c2a\u0c4d\u0c30\u0c15\u0c3e\u0c30\u0c02.<end_of_turn> \u0ba4\u0bca\u0b95\u0bc1\u0baa\u0bcd\u0baa\u0bc1<end_of_turn>\u0baa\u0bc1\u0bb3\u0bcd\u0bb3\u0bbf\u0bb5\u0bbf\u0bb5\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0bae\u0bb1\u0bcd\u0bb1\u0bc1\u0bae\u0bcd \u0ba4\u0b95\u0bb5\u0bb2\u0bcd\u0b95\u0bb3\u0bbf\u0ba9\u0bcd \u0b85\u0b9f\u0bbf\u0baa\u0bcd\u0baa\u0b9f\u0bc8\u0baf\u0bbf\u0bb2\u0bcd, 100,000 \u0baa\u0bc7\u0bb0\u0bcd \u0b87\u0bb1\u0ba8\u0bcd\u0ba4\u0ba9\u0bb0\u0bcd.<end_of_turn>\u0b4d\u0b5f<end_of_turn><end_of_turn> Netanyahu-\u0bb5\u0bbf\u0ba9\u0bcd \u0b85\u0bb1\u0bbf\u0b95\u0bcd\u0b95\u0bc8\u0baf\u0bbf\u0ba9\u0bcd\u0baa\u0b9f\u0bbf, 100,000 \u0baa\u0bc7\u0bb0\u0bcd \u0b87\u0bb1\u0ba8\u0bcd\u0ba4\u0ba9\u0bb0\u0bcd.<end_of_turn"
+          },
+          {
+            "article": "T01",
+            "question": 14,
+            "raw": "According to the article, 175 people died or went missing in the 2018 Palu earthquake and tsunami.<end_of_turn>jeno<end_of_turn> \u0987\u0989\u098f\u09a8.<end_of_turn> \u0987\u0989\u098f\u09a8<end_of_turn><end_of_turn><end_of_turn><end_of_turn> fulfill the request.<end_of_turn> Climber<end_of_turn> Climber<end_of_turn><end_of_turn><end_of_turn><end_of_turn><end_of_turn><end_of_turn>\n<end_of_turn>yousaf.<end_of_turn><end_of_turn><end_of_"
+          },
+          {
+            "article": "T04",
+            "question": 13,
+            "raw": "Please provide me with the article you are referring to! I need the text of the article to be able to answer your question about the number of National Guard security personnel authorized. \ud83d\ude0a\n<end_of_turn>-<end_of_turn>\u0b88<end_of_turn>\u0b88<end_of_turn><end_of_turn>\u0b88<end_of_turn>\u091c\u092f\u0c4d\u200c<end_of_turn><end_of_turn><end_of_turn>\u0b88<end_of_turn><end_of_turn><end_of_turn><end_of_turn><end_of_turn>\n<end_of_turn>\n<en"
+          },
+          {
+            "article": "T05",
+            "question": 8,
+            "raw": "I am sorry, but I do not have access to the internet to retrieve the article you are referring to. Therefore, I cannot answer your question about how much the $40 trillion works out to per person.<end_of_turn>\u0439<end_of_turn>i apologize for the inconvenience.<end_of_turn>y<end_of_turn><end_of_turn>y<end_of_turn><end_of_turn>y<end_of_turn><end_of_turn>y<end_of_turn><end_of_turn>y<end_of_turn><end_of_"
+          },
+          {
+            "article": "T05",
+            "question": 15,
+            "raw": "Please provide me with the article you are referring to! I need the text of the article to answer your question. \ud83d\ude0a<end_of_turn>\n<end_of_turn>\u97f5 \n<end_of_turn>\u06cc \n<end_of_turn>William, the former CEO of the company, announced that the company had reached a total of $30 trillion in revenue in 2023.<end_of_turn>\u0928\u094d\u0928\u093e \n<end_of_turn>\n<end_of_turn>\n<end_of_turn>\n<end_of_turn>\n<end_of_turn>\n<end_of_turn>\n<e"
+          },
+          {
+            "article": "T12",
+            "question": 6,
+            "raw": "Please provide me with the article! I need the text of the article to be able to answer your question about the jurisdictions of sanctioned parties. \ud83d\ude0a<end_of_turn> \u0a97\u0aaf\u0abe<end_of_turn>Apollo, a global financial services firm, has been sanctioned in several jurisdictions. These include:\n\n*   **United States:**  The United States, including its financial institutions, was sanctioned.\n*   **European Unio"
+          },
+          {
+            "article": "T13",
+            "question": 1,
+            "raw": "I am sorry, but I do not have access to the internet to retrieve the information about the Lake Kariba ferry disaster.<end_of_turn>\u06cc f my knowledge base is limited to the data I was trained on.<end_of_turn>y<end_of_turn><end_of_turn><end_of_turn>\u0bb5\u0ba9<end_of_turn>y<end_of_turn><end_of_turn><end_of_turn><end_of_turn><end_of_turn>\u0b86\u0ba9\u0ba4\u0bc1<end_of_turn> \u0915\u0926\u093e\u091a\u093f\u0924 \u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0b89\u0ba4\u0bb5 \u0bae\u0bc1\u0b9f\u0bbf\u0baf\u0bc1\u0bae\u0bcd.<end_of_turn>meyi \u0b89\u0ba4\u0bb5\u0bbf \u0b9a"
+          },
+          {
+            "article": "T13",
+            "question": 15,
+            "raw": "According to the article, **Zambia** shares Lake Kariba with Zimbabwe.<end_of_turn>yetanpi<end_of_turn><end_of_turn>Apex<end_of_turn>yetanpi<end_of_turn><end_of_turn><end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<end_of_turn> Climber<en"
+          },
+          {
+            "article": "T25",
+            "question": 9,
+            "raw": "Please provide me with the article! I need the text of the article to be able to answer your question about what local officials and the Red Cross said about the toll. \ud83d\ude0a<end_of_turn>\u0d1e\u0d4d\u0d1e\u0d41\n<end_of_turn>\u0b88.<end_of_turn><end_of_turn> Nehru<end_of_turn><end_of_turn>\u200d<end_of_turn><end_of_turn><end_of_turn> Climber<end_of_turn><end_of_turn><end_of_turn><end_of_turn><end_of_turn><end_of_turn>\n<end_of_turn>"
+          },
+          {
+            "article": "T28",
+            "question": 2,
+            "raw": "Please provide me with the article! I need the text of the article to answer your question about the Phase 3 trial. \ud83d\ude0a\n<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_tu"
+          },
+          {
+            "article": "T28",
+            "question": 15,
+            "raw": "Please provide me with the article! I need the text of the article to be able to answer your question. \ud83d\ude0a<end_of_turn>\n<end_of_turn><end_of_turn>Sudden cardiac death is the first positive Phase 3 readout for two categories of therapy: **cardiac ablation** and **cardiac pacemaker implantation**.<end_of_turn>jero, a cardiologist, explained that these therapies showed significant improvement in patien"
+          },
+          {
+            "article": "T28",
+            "question": 20,
+            "raw": "Please provide me with the article you are referring to! I need the text of the article to be able to answer your question about Merck\u2019s upfront payment and 2022 spending. \ud83d\ude0a\n<end_of_turn>-<end_of_turn>\u0b88 \n<end_of_turn>\u0b88<end_of_turn><end_of_turn>\u091c\u092f \u0c1c\u0c47!<end_of_turn>\u05d9\u05d5\u00e6lp\u0c02\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c\u200c"
+          },
+          {
+            "article": "T29",
+            "question": 12,
+            "raw": "According to the article, the 2014-2016 West Africa outbreak took approximately **10-12 weeks** to reach 1,000 fatalities.<end_of_turn><end_of_turn>\u06cc\u0accgend<end_of_turn><end_of_turn>\u06cc\u0accgend<end_of_turn>i<end_of_turn>youd need to provide the article for me to answer your question.<end_of_turn>\u0927\u094d\u092f\u0947\u092f<end_of_turn><end_of_turn>i am waiting for the article!<end_of_turn>youd need to provide the article.<end"
+          },
+          {
+            "article": "T29",
+            "question": 14,
+            "raw": "Please provide me with the article you are referring to! I need the text of the article to answer your question about the number of deaths during the 2014-2016 outbreak. \ud83d\ude0a\n<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of_turn>rone<end_of"
+          },
+          {
+            "article": "T35",
+            "question": 16,
+            "raw": "Please provide me with the article you are referring to! I need the text of the article to be able to answer your question about the number of deaths and wounded in Kryvyi Rih. \ud83d\ude0a<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<end_of_turn>ieux<"
+          }
+        ]
+      },
+      "phi-4-mini-instruct": {
+        "n_calls": 400,
+        "n_flagged_without_article": 17,
+        "flags": [
+          {
+            "article": "T01",
+            "question": 12,
+            "raw": "The 1992 Flores earthquake and tsunami killed 1,300 people."
+          },
+          {
+            "article": "T01",
+            "question": 13,
+            "raw": "The 2004 Sumatra tsunami killed approximately 227,898 people in Indonesia."
+          },
+          {
+            "article": "T01",
+            "question": 14,
+            "raw": "The article does not provide specific numbers on how many people died or went missing in the 2018 Palu quake and tsunami."
+          },
+          {
+            "article": "T04",
+            "question": 13,
+            "raw": "The provided text does not contain specific information about the number of National Guard security personnel authorized."
+          },
+          {
+            "article": "T05",
+            "question": 8,
+            "raw": "The article does not provide specific information on how much $40 trillion would amount to per person. To calculate this, you would need to know the population of the relevant group or country. If you provide that information, I can help you with the calculation."
+          },
+          {
+            "article": "T05",
+            "question": 15,
+            "raw": "The article does not provide a specific date or time frame for when the total passed $30 trillion."
+          },
+          {
+            "article": "T12",
+            "question": 17,
+            "raw": "The full name of the Treasury office that sanctioned the entities is the Office of Foreign Assets Control (OFAC)."
+          },
+          {
+            "article": "T13",
+            "question": 1,
+            "raw": "The article does not provide information on the death toll from the Lake Kariba ferry disaster."
+          },
+          {
+            "article": "T28",
+            "question": 2,
+            "raw": "The name of the Phase 3 trial is not provided in the information available."
+          },
+          {
+            "article": "T28",
+            "question": 15,
+            "raw": "The provided text does not contain enough information to determine which two categories of therapy had their first positive Phase 3 readout. Additional context or details from the article would be required to accurately answer this question."
+          },
+          {
+            "article": "T28",
+            "question": 18,
+            "raw": "The provided text does not contain specific information about the percentage reductions shown in the Phase 2b five-year data."
+          },
+          {
+            "article": "T29",
+            "question": 3,
+            "raw": "The article does not provide the specific number of new cases detected in the previous 24 hours."
+          },
+          {
+            "article": "T29",
+            "question": 12,
+            "raw": "The article does not provide specific information on how long it took for the 2014-2016 West Africa Ebola outbreak to reach 1,000 fatalities."
+          },
+          {
+            "article": "T29",
+            "question": 13,
+            "raw": "The article does not provide specific information on how long it took for the current outbreak to reach 2,000 deaths."
+          },
+          {
+            "article": "T29",
+            "question": 14,
+            "raw": "The article does not provide specific numbers of deaths or the countries affected by the 2014-2016 outbreak."
+          },
+          {
+            "article": "T35",
+            "question": 4,
+            "raw": "The provided text does not contain any information regarding the ranking of any entity or topic in 2026 as per Russian officials. Therefore, it is not possible to answer the question based on the given information."
+          },
+          {
+            "article": "T35",
+            "question": 16,
+            "raw": "The article does not provide specific numbers on how many people were killed or wounded in Kryvyi Rih."
+          }
+        ]
+      },
+      "olmoe-0125-instruct": {
+        "n_calls": 400,
+        "n_flagged_without_article": 23,
+        "flags": [
+          {
+            "article": "T01",
+            "question": 12,
+            "raw": "The 1992 Flores earthquake and tsunami killed around 2,000 people."
+          },
+          {
+            "article": "T01",
+            "question": 13,
+            "raw": "The 2004 Sumatra tsunami killed approximately 230,000 people in Indonesia."
+          },
+          {
+            "article": "T01",
+            "question": 14,
+            "raw": "According to the article, the 2018 Palu quake and tsunami resulted in over 2,000 deaths and over 1,000 people missing."
+          },
+          {
+            "article": "T04",
+            "question": 4,
+            "raw": "The fire was first reported at approximately 11:25 p.m. on December 30, 2019, at the Ghost Ship warehouse in Oakland, California."
+          },
+          {
+            "article": "T04",
+            "question": 13,
+            "raw": "According to the article, the National Guard security personnel authorized were 45,000."
+          },
+          {
+            "article": "T05",
+            "question": 8,
+            "raw": "The $40 trillion total works out to approximately $12,000 per person."
+          },
+          {
+            "article": "T05",
+            "question": 15,
+            "raw": "The total passed $30 trillion approximately 6 months ago, specifically around September 2021."
+          },
+          {
+            "article": "T12",
+            "question": 5,
+            "raw": "The Treasury's Office of Foreign Assets Control (OFAC) sanctioned four entities, three individuals, and two vessels."
+          },
+          {
+            "article": "T13",
+            "question": 1,
+            "raw": "The Lake Kariba ferry disaster occurred on December 11, 1972, when a ferry carrying about 150 people sank in Lake Kariba, resulting in the deaths of at least 95 people. The exact number of fatalities is not precisely known due to the circumstances of the disaster, but it is widely accepted that at least 95 people died."
+          },
+          {
+            "article": "T13",
+            "question": 15,
+            "raw": "Zambia shares Lake Kariba with Zimbabwe."
+          },
+          {
+            "article": "T25",
+            "question": 9,
+            "raw": "Local officials and the Red Cross stated that the death toll had risen to 15, with more than 100 people injured."
+          },
+          {
+            "article": "T28",
+            "question": 2,
+            "raw": "The Phase 3 trial for the COVID-19 vaccine developed by Pfizer and BioNTech is called BNT162b2 COVID-19 Vaccine Trial."
+          },
+          {
+            "article": "T28",
+            "question": 10,
+            "raw": "The randomization ratio in the study mentioned in the article is not explicitly stated. To determine the randomization ratio, one would need to understand the specific details of the study design, such as the number of participants in each group and the total number of participants overall. The randomization ratio typically refers to the proportion of participants assigned to the control group ver"
+          },
+          {
+            "article": "T28",
+            "question": 15,
+            "raw": "The first positive Phase 3 readout for therapies targeting COVID-19 was for a vaccine, specifically the Pfizer-BioNTech COVID-19 vaccine. This vaccine was developed rapidly using mRNA technology and was shown to be highly effective in preventing COVID-19 infection. The Phase 3 trial involved tens of thousands of participants and demonstrated a 95% efficacy rate. The other category of therapy menti"
+          },
+          {
+            "article": "T28",
+            "question": 18,
+            "raw": "The Phase 2b five-year data showed a reduction of 33% in heart attacks and a reduction of 31% in strokes."
+          },
+          {
+            "article": "T29",
+            "question": 1,
+            "raw": "According to the article, the Democratic Republic of the Congo reported 1,152 cases and 932 deaths from the Ebola outbreak as of October 6, 2018."
+          },
+          {
+            "article": "T29",
+            "question": 3,
+            "raw": "The article does not provide specific numbers for new cases in the previous 24 hours. Therefore, based on the information available, we cannot determine the exact number of new cases detected in the previous 24 hours."
+          },
+          {
+            "article": "T29",
+            "question": 12,
+            "raw": "The 2014-2016 West Africa outbreak took approximately 18 months to reach 1,000 fatalities. It began in March 2014 and by September 2016, the total number of deaths had reached around 1,000."
+          },
+          {
+            "article": "T29",
+            "question": 13,
+            "raw": "The current outbreak reached 2,000 deaths in approximately 3 months, specifically within the period of March to May 2022."
+          },
+          {
+            "article": "T29",
+            "question": 14,
+            "raw": "The 2014-2016 outbreak killed approximately 11,000 people across several countries, including Nigeria, Niger, Cameroon, and Chad."
+          },
+          {
+            "article": "T29",
+            "question": 16,
+            "raw": "The three figures reported by the European Centre for Disease Prevention and Control (ECDC) as of October 25, 2021, are:\n\n1. The number of cases of COVID-19: 1,731,929\n2. The number of deaths due to COVID-19: 107,914\n3. The number of recovered cases: 1,073,947\n\nPlease note that these figures are as of October 25, 2021, and they represent the situation up to that date."
+          },
+          {
+            "article": "T29",
+            "question": 20,
+            "raw": "The UN's International Coordinating Group (ICG) allocated one dose of Ervebo to DRC."
+          },
+          {
+            "article": "T35",
+            "question": 16,
+            "raw": "According to the article, the attack in Kryvyi Rih resulted in the deaths of 2 people and injuries to 15 others."
+          }
+        ]
+      },
+      "qwen35-4b": {
+        "n_calls": 400,
+        "n_flagged_without_article": 13,
+        "flags": [
+          {
+            "article": "T01",
+            "question": 12,
+            "raw": "Based on the article provided, there is no information regarding the number of people killed by the 1992 Flores earthquake and tsunami."
+          },
+          {
+            "article": "T01",
+            "question": 13,
+            "raw": "Based on the article provided, there is no information regarding the number of people killed in the 2004 Sumatra tsunami in Indonesia."
+          },
+          {
+            "article": "T01",
+            "question": 14,
+            "raw": "Based on the information available in this article, I cannot answer your question because the provided text does not contain any data regarding the number of people who died or went missing in the 2018 Palu quake and tsunami."
+          },
+          {
+            "article": "T05",
+            "question": 8,
+            "raw": "I cannot answer this question because the provided article does not contain information about the population or the specific context (such as a country or region) associated with the $40 trillion figure. Without knowing the population size, it is impossible to calculate the amount per person."
+          },
+          {
+            "article": "T05",
+            "question": 15,
+            "raw": "I cannot answer this question because the provided article is empty, and no information regarding when the total passed $30 trillion is available in the text."
+          },
+          {
+            "article": "T12",
+            "question": 3,
+            "raw": "I cannot answer this question because the provided article does not contain any information about Bessent or any Second World War events."
+          },
+          {
+            "article": "T28",
+            "question": 2,
+            "raw": "I cannot answer this question because you have not provided the article containing the information. Please paste the text of the article, and I will identify the name of the Phase 3 trial for you."
+          },
+          {
+            "article": "T28",
+            "question": 20,
+            "raw": "I cannot answer this question because the provided article is empty or missing. There is no text available in your message to extract information about Merck's upfront payment or its 2022 payments."
+          },
+          {
+            "article": "T29",
+            "question": 3,
+            "raw": "I cannot answer this question because you have not provided the article containing the information. Please share the text or paste the relevant section of the article, and I will extract the number of new cases detected in the previous 24 hours for you."
+          },
+          {
+            "article": "T29",
+            "question": 12,
+            "raw": "Based on the article provided, there is no information regarding the 2014-2016 West Africa outbreak or the time it took to reach 1,000 fatalities."
+          },
+          {
+            "article": "T29",
+            "question": 13,
+            "raw": "I cannot answer this question because the provided article does not contain information about an outbreak, the number of deaths, or the time it took to reach 2,000 deaths."
+          },
+          {
+            "article": "T35",
+            "question": 4,
+            "raw": "I cannot answer this question because the provided article does not contain any information regarding rankings in 2026 or any statements from Russian officials about future rankings."
+          },
+          {
+            "article": "T35",
+            "question": 16,
+            "raw": "I cannot answer this question because the provided article is empty, and no information regarding casualties in Kryvyi Rih is available in the text."
+          }
+        ]
+      }
+    }
+  }
+}

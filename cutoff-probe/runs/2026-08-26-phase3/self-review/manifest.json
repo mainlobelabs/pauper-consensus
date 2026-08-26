@@ -1,0 +1,69 @@
+{
+  "run": "self-review",
+  "started_utc": "2026-08-26T08:17:31.118136+00:00",
+  "host": "marzuki-helium",
+  "runner_git": "b617ebe",
+  "command": "tools/phase3/runner.py solver --mode self-review",
+  "purpose": "task 13: 27B with frozen contract on test articles (doubles as solver-as-proposer arm)",
+  "model": "qwen3.8-27b",
+  "endpoint": "http://100.95.144.25:8000",
+  "split": "test",
+  "articles": [
+    "T01",
+    "T04",
+    "T05",
+    "T12",
+    "T13",
+    "T22",
+    "T25",
+    "T28",
+    "T29",
+    "T35"
+  ],
+  "max_tokens": 512,
+  "endpoints": {
+    "http://100.95.144.25:8000": {
+      "models": {
+        "object": "list",
+        "data": [
+          {
+            "id": "qwen3.8-27b",
+            "object": "model",
+            "created": 1787732251,
+            "owned_by": "vllm",
+            "root": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
+            "parent": null,
+            "max_model_len": 262144,
+            "permission": [
+              {
+                "id": "modelperm-9dc18823527d41c4",
+                "object": "model_permission",
+                "created": 1787732251,
+                "allow_create_engine": false,
+                "allow_sampling": true,
+                "allow_logprobs": true,
+                "allow_search_indices": false,
+                "allow_view": true,
+                "allow_fine_tuning": false,
+                "organization": "*",
+                "group": null,
+                "is_blocking": false
+              }
+            ]
+          }
+        ]
+      },
+      "version": {
+        "version": "0.26.0"
+      }
+    }
+  },
+  "finished_utc": "2026-08-26T08:26:12.408909+00:00",
+  "stats": {
+    "n_calls": 400,
+    "parsed_ok": 390,
+    "spend": {
+      "qwen3.8-27b": 775
+    }
+  }
+}
