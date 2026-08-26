@@ -348,8 +348,65 @@ now 20/11/9; manifest label_counts updated. Prereg note: 99.2% is
 single-labeler self-consistency on a blind 10% recheck, not
 inter-annotator agreement.
 
-Open: P1-8 jury families, P1-9 prompts, Phase 2 freeze. Manifest
-split_role/sha256 fill at Phase 2.
+Open: P1-9 prompts, Phase 2 freeze. Manifest split_role/sha256 fill at
+Phase 2.
+
+## P1-8 jury family selection (done 2026-08-26)
+
+Selection rule (SPEC): five base models from five distinct organizations,
+each below 4B (1-2B preferred), documented training cutoff before
+2026-08-14; probing only where documentation is unclear; plus documented
+4B-class fallback candidates.
+
+Final set (recorded in corpus/manifest.json "jury"):
+
+1. meta-llama/Llama-3.2-1B-Instruct (1.23B, Meta). Cutoff 2023-12,
+   documented in the Llama 3.2 model card.
+2. google/gemma-3-1b-it (1.0B, Google). Cutoff 2024-08, documented in the
+   Gemma 3 model card. Gemma 4 (released 2026-04-02, E2B 2.3B effective,
+   cutoff 2025-01 documented, Apache 2.0) was evaluated as the Google
+   slot; kept Gemma 3 1B per Andryo decision (older cutoff, simpler
+   runtime). Gemma 4 E2B stays on the bench.
+3. microsoft/Phi-4-mini-instruct (3.8B, Microsoft). Cutoff 2024-06,
+   documented in the model card.
+4. allenai/OLMoE-1B-7B-0125-Instruct (1.3B active / 6.9B total MoE, Allen
+   AI). No documented cutoff in card or tech report (data: OLMoE-Mix =
+   DCLM-Baseline + Dolma 1.7, both pre-2024 sources) -> probed per policy.
+   Probe result: window-blind, self-reported cutoff circa 2023 (inconsistent
+   across probes), eligible.
+5. Qwen/Qwen3.5-4B (4.66B VLM, Gated DeltaNet hybrid, Alibaba). No
+   documented cutoff in the model card -> probed. Probe result: window-blind,
+   temporal anchor 2024, eligible.
+
+Same-family decision: the Qwen arm shares the solver's family (solver is a
+Qwen3.8-27B community merge). Andryo ruled this is not a confound if
+registered. Design treatment: registered as a contrast arm for the
+family-diversity mechanism. The prereg must report the 5-juror consensus
+and the 4-external-juror leave-one-out side by side so the headline never
+depends on the arm. Expected effect: the Qwen arm catches fewer solver
+UNSPECIFIED confabulations (shared parametric memory), so the arm-level
+per-class analysis is pre-registered too. Note: Qwen3.8 and Qwen3.5 share
+the Gated DeltaNet hybrid architecture (and likely the 248K tokenizer), so
+the arm is a close relative, which is what makes it a valid contrast.
+
+4B-class fallback candidates (documented): meta-llama/Llama-3.2-3B-Instruct
+(2023-12), google/gemma-3-4b-it (2024-08). Families without a 4B-class
+sibling (Phi, OLMoE, Qwen) take a registered cross-family fill.
+
+Bench (not selected): Gemma 4 E2B, SmolLM3 3B (cutoff 2025-06 documented),
+Falcon 3 1B (cutoff undocumented), Qwen3-4B (Qwen backup). Ruled out:
+empero-ai/Qwen3.8-4B (third-party distill, thin documentation), Gemma 2 2B
+(third-party cutoff, same family as Gemma 3), SmolLM2 1.7B (no explicit
+cutoff).
+
+Probe logistics: run on marzuki-helium per Andryo directive (hydrogen is
+reserved for the 27B solver deployment; do not disturb it). oMLX multi-model
+server, weights at /Volumes/nvme0/omlx-models/ (olmoe-0125-instruct 8bit,
+qwen35-4b 4bit), results in cutoff-probe/probes.md batch 3.
+
+Open: P1-9 prompts + covariate feature list, Phase 2 freeze. All five jury
+weights + fallbacks need to be pulled to helium for the self-distillation
+step (Phase 3).
 
 ## Phase 0 (done)
 

@@ -64,6 +64,37 @@ test the post-release band directly. Ground truths verified via tavily on
 - Side finding for RQ4: the solver makes confident pre-cutoff errors (P7), so
   there are errors for the jury to catch even without the cutoff gap.
 
+## Batch 3, 2026-08-26 (jury cutoff probes, P1-8)
+
+Host: marzuki-helium (M3 Ultra), oMLX server, port 8100. Models:
+allenai/OLMoE-1B-7B-0125-Instruct (8bit) and Qwen/Qwen3.5-4B (4bit,
+chat_template_kwargs.enable_thinking=false). Same frozen set as above,
+temp 0, max_tokens 64. Script: cutoff-probe/probe_jury.py. Server stopped
+after the run.
+
+| id | expected      | OLMoE-1B-7B-0125-Instruct (8bit)                                              | Qwen3.5-4B (4bit)                                                        |
+|----|---------------|-------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| C1 | Argentina     | CORRECT ("the final match was won by Argentina")                              | CORRECT (Argentina, 3-3, penalties 4-2)                                   |
+| P1 | at least 73   | UNKNOWN ("as of my last update in September 2023 ... no real-time databases") | UNKNOWN ("It is currently 2024 ... in the future")                        |
+| P2 | Lala          | UNKNOWN ("as of my last update in April 2023 ... not in my training data")    | UNKNOWN ("August 15, 2026 has not happened yet")                          |
+| P3 | 272 days      | no figure (interrogates the question premise)                                 | UNKNOWN ("has not happened ... As of today (2024)")                        |
+| C2 | Hawk Fire     | WRONG (confabulates "Reno-Tahoe Unified Fire Authority (RTUFA) Fire")         | UNKNOWN ("has not happened yet")                                          |
+| P4 | 2026-02-28    | UNKNOWN ("purely speculative ... no such conflict", cites early 2023)         | UNKNOWN ("There is no record of a 2026 US-Iran war")                      |
+| P5 | Dara (BG)     | UNKNOWN ("as of my last update in April 2023, I cannot provide ...")          | WRONG ("70th edition was scheduled ... May 2025", no winner)              |
+| P0 | n/a           | "March 2023" (self-report inconsistent: also Aug/Sep/Apr 2023 in other probes)| "2026" (vague)                                                            |
+
+Verdicts:
+- OLMoE-1B-7B-0125-Instruct: ELIGIBLE. C1 functional, no in-window probe
+  correct, window-blind. Cutoff estimate pre-2024, consistent with
+  OLMoE-Mix (DCLM-Baseline + Dolma 1.7). Self-report unreliable, behavior
+  consistent.
+- Qwen3.5-4B: ELIGIBLE. C1 functional, no in-window probe correct,
+  window-blind. Temporal anchor 2024; P5 shows a pre-window memory
+  (Vienna, off by a year), no window content. Registered same-family
+  contrast arm for the Qwen3.8 solver.
+
+## Scoring
+
 - CORRECT: answer matches the expected answer.
 - WRONG: confident but different.
 - UNKNOWN: hedged, "I don't know", or no answer.
