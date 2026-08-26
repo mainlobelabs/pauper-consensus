@@ -4,6 +4,26 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-26
 
+- Self-distillation target vocabulary: three-state (approved by Andryo
+  Marzuki, action button, 2026-08-26 evening). The prereg training
+  section reads "Target = {answer: PASS|FAIL parsed from the native
+  output, reason: native output verbatim}". The frozen jury contract is
+  three-state (PASS/FAIL/NOT_STATED), so the literal "PASS|FAIL"
+  wording admits three readings: (a) shorthand for the contract
+  vocabulary, (b) binary collapse with NOT_STATED mapped to FAIL, (c)
+  exclusion of NOT_STATED natives. Chosen: (a). The target answer is
+  whatever the model's own native output parsed to, including
+  NOT_STATED. Reason: only under (a) does the fine-tuned jury answer
+  under the frozen contract (the answer field can emit all three
+  states); under (b) the losslessness exact-match check dips on every
+  NOT_STATED cell for the wrong reason (base says NOT_STATED,
+  fine-tuned says FAIL); under (c) the wrapper never learns the
+  NOT_STATED answer, contradicting the "LoRA learns the wrapper
+  (instruction style, JSON contract, answer field)" description.
+  Unparsed native outputs are excluded under all readings: they carry
+  no valid target. Implemented in tools/phase4/make_dataset.py (no
+  change was needed; the builder already uses the parsed answer
+  verbatim).
 - Jury composition: the registered fallback rule is applied, and OLMoE
   is dropped; the panel runs four independent families (approved by
   Andryo Marzuki, action button, 2026-08-26 evening). Phase 3 zero-shot
