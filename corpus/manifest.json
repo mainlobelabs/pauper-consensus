@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "generated": "2026-08-26",
+  "notes": "Corpus manifest for the 30-article wave-consensus corpus. source.role is 'original' for verbatim articles (the article IS that source) and 'anchor' for drafted articles (the article used to fact-check the draft). in_passing_mentions are the secondary facts deliberately included in each article, with question seeds useful for Phase 1 task 4. disputed records where the article pins one figure of a DISPUTED fact from the fact-check pass; the conflicting figure is pool CONTRADICT material. label_counts and split_role are filled at Phase 2.",
+  "articles": [
+    {
+      "id": "T01",
+      "file": "corpus/articles/T01.md",
+      "topic": "M7.7 earthquake off Flores island, Indonesia",
+      "event_dates": "2026-08-15",
+      "source_type": "verbatim",
+      "source": { "name": "DW (with AFP, AP, Reuters)", "url": "https://www.dw.com/en/indonesia-strong-magnitude-77-earthquake-hits-off-coast-of-flores-island/a-78377990", "role": "original" },
+      "verbatim_notes": "Full article text including section headings, quotes, and historical context list. No removals.",
+      "in_passing_mentions": [
+        { "fact": "USGS depth 10 km vs BMKG depth 15 km for the same quake", "claim_seed_hint": "What depth did USGS / BMKG report?" },
+        { "fact": "BMKG first quake at 4:58 am local (2158 GMT)", "claim_seed_hint": "What time did the quake strike?" },
+        { "fact": "Aftershocks included one of magnitude 6.1", "claim_seed_hint": "What was the strongest aftershock?" },
+        { "fact": "1992 Flores M7 tsunami killed about 2,500; 2004 M9.1 killed 170,000 in Indonesia", "claim_seed_hint": "How many died in the 1992 Flores tsunami?" },
+        { "fact": "Tsunami warning covered East/West Nusa Tenggara, South and Southeast Sulawesi; lifted about three hours after the quake", "claim_seed_hint": "Which provinces got the tsunami warning?" },
+        { "fact": "Ritapiret Seminary rector Guidelbertus Tanga; one priest with a broken leg", "claim_seed_hint": "What injury did the priest sustain?" }
+      ]
+    },
+    {
+      "id": "T02",
+      "file": "corpus/articles/T02.md",
+      "topic": "Hurricane Lala batters Hawaii",
+      "event_dates": "2026-08-15",
+      "source_type": "verbatim",
+      "source": { "name": "NASA Earth Observatory (story by Lindsey Doermann)", "url": "https://science.nasa.gov/earth/earth-observatory/lala-batters-hawaii", "role": "original" },
+      "verbatim_notes": "Full article text including image captions. No removals.",
+      "in_passing_mentions": [
+        { "fact": "Highest rainfall 43.55 inches (110.6 cm) at Laupāhoehoe, coast northwest of Hilo, as of morning Aug 17", "claim_seed_hint": "Where was the storm's peak rainfall recorded?" },
+        { "fact": "Over 220,000 customers statewide without power as of afternoon Aug 16", "claim_seed_hint": "How many customers lost power?" },
+        { "fact": "Lala was a tropical storm at 65 mph sustained winds on Aug 16 (NHC)", "claim_seed_hint": "What were Lala's sustained winds on August 16?" },
+        { "fact": "Mauna Kea summit (over 13,000 ft / 4,000 m) saw blizzard conditions", "claim_seed_hint": "What conditions hit the summit of Mauna Kea?" },
+        { "fact": "El Niño underway as of mid-June 2026; Atlantic season relatively calm", "claim_seed_hint": "When did the El Niño start per this article?" }
+      ],
+      "disputed": {
+        "peak winds": { "pinned_in_article": null, "article_says": "not stated (only 65 mph TS winds on Aug 16)", "conflicting": "75 vs 80 knots reported by different outlets during landfall" },
+        "deaths": { "pinned_in_article": null, "article_says": "no deaths mentioned", "conflicting": "1 vs 2 deaths reported by different outlets" }
+      }
+    },
+    {
+      "id": "T03",
+      "file": "corpus/articles/T03.md",
+      "topic": "USS Abraham Lincoln heads home after record 272-day deployment",
+      "event_dates": "2026-08-14..21",
+      "source_type": "verbatim",
+      "source": { "name": "KGTV San Diego (10News), on-air report", "url": "https://www.10news.com/news/local-news/uss-abraham-lincoln-heads-home-after-record-breaking-deployment-in-the-middle-east", "role": "original" },
+      "verbatim_notes": "On-air broadcast converted to text with AI assistance (byline note preserved in article).",
+      "in_passing_mentions": [
+        { "fact": "Deployment originally planned at roughly six months; rerouted to Middle East after war with Iran began", "claim_seed_hint": "Why was the Lincoln rerouted to the Middle East?" },
+        { "fact": "Journey home takes just over a month", "claim_seed_hint": "How long is the journey back to San Diego?" },
+        { "fact": "Some families reported substandard conditions and sailors struggling mentally", "claim_seed_hint": "What conditions did families report on the ship?" }
+      ]
+    },
+    {
+      "id": "T04",
+      "file": "corpus/articles/T04.md",
+      "topic": "Hawk Fire spreads near Reno",
+      "event_dates": "2026-08-22..23",
+      "source_type": "drafted",
+      "source": { "name": "AP (anchor)", "url": "https://apnews.com/article/hawk-fire-reno-nevada-evacuations-aae2f4b77e2d4aa5678b365a2ee377e6", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Fire reported around 11:25 am Saturday near Hawk Meadow Trail, Peavine Peak area, Humboldt-Toiyabe National Forest; human-caused", "claim_seed_hint": "When and where did the Hawk Fire start?" },
+        { "fact": "45,000 people in the adjacent warning zone", "claim_seed_hint": "How many people are in the warning zone?" },
+        { "fact": "More than 13,700 residences inside the evacuation area; six people injured", "claim_seed_hint": "How many residences are in the evacuation area?" },
+        { "fact": "Governor authorized one CH-47 Chinook, one UH-60 Black Hawk, 72 National Guard personnel", "claim_seed_hint": "What air support did the governor authorize?" },
+        { "fact": "US Highway 395 closed between Parr Boulevard and Red Rock Road", "claim_seed_hint": "Which highway was closed?" }
+      ]
+    },
+    {
+      "id": "T05",
+      "file": "corpus/articles/T05.md",
+      "topic": "US national debt tops $40 trillion",
+      "event_dates": "2026-08-18/19",
+      "source_type": "drafted",
+      "source": { "name": "Reuters (anchor)", "url": "https://reuters.com/world/us-debt-crosses-40-trillion-threshold-after-doubling-under-trump-biden-2026-08-19/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Total $40.047 trillion on Tuesday: $32.266T held by public + $7.782T intra-governmental", "claim_seed_hint": "How much of the debt is intra-governmental?" },
+        { "fact": "Debt about $19.4 trillion a decade ago (doubled in ten years)", "claim_seed_hint": "What was the debt a decade ago?" },
+        { "fact": "Joint Economic Committee: growing at roughly $90,000 per second; about $117,000 per person at 343 million population", "claim_seed_hint": "How fast is the debt growing per the JEC?" },
+        { "fact": "July deficit $432.3 billion, highest monthly total in more than five years; year-to-date near $1.8 trillion", "claim_seed_hint": "What was the July deficit?" },
+        { "fact": "Washington Post: milestone reached months earlier than some models predicted, partly due to invalidated tariffs", "claim_seed_hint": "Why was the milestone reached earlier than some models predicted?" }
+      ]
+    },
+    {
+      "id": "T08",
+      "file": "corpus/articles/T08.md",
+      "topic": "Lindell withholds $825,000 Minnesota recount payment",
+      "event_dates": "2026-08-11..24",
+      "source_type": "drafted",
+      "source": { "name": "FOX9 (anchor)", "url": "https://www.fox9.com/news/mike-lindell-withholding-825k-recount-payment-calls-process-unlawful-aug-2026", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Aug 11 primary: Lindell 134,282 votes to Demuth's 179,683", "claim_seed_hint": "How many votes did each candidate get in the primary?" },
+        { "fact": "Lindell secured Trump's endorsement", "claim_seed_hint": "Whose endorsement did Lindell secure?" },
+        { "fact": "Campaign cites Minnesota Statute 204C.35; plan would count only Lindell and Demuth votes, leaving out five other Republican candidates", "claim_seed_hint": "Which statute does the campaign cite?" },
+        { "fact": "Contingent recount plan approved by State Canvassing Board on Aug 18; Paul Linnell, director of elections, named state recount official", "claim_seed_hint": "Who was named state recount official?" },
+        { "fact": "Demuth faces Sen. Amy Klobuchar in the Nov 3 general; Gov. Tim Walz not running again", "claim_seed_hint": "Who will Demuth face in the general election?" }
+      ]
+    },
+    {
+      "id": "T10",
+      "file": "corpus/articles/T10.md",
+      "topic": "At least 7 dead in Indiana flooding",
+      "event_dates": "2026-08-11..16",
+      "source_type": "drafted",
+      "source": { "name": "AP (anchor)", "url": "https://apnews.com/article/flooding-indiana-severe-weather-aa3624a3ff1a0d241f62ec980a23e856", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Victims: a 4-year-old boy, three men and three women", "claim_seed_hint": "Who were the confirmed victims?" },
+        { "fact": "James Briar, 31, cyclist, found in collapsed road in New Castle, Henry County, just before 4 am Aug 16", "claim_seed_hint": "How was James Briar killed?" },
+        { "fact": "Matthew Morey, 19, of Delaware County drowned in the Mississinewa River", "claim_seed_hint": "Where did Matthew Morey drown?" },
+        { "fact": "White River crest 24.60 ft in Hamilton County around 3:30 am Aug 15, breaking a 100+ year record", "claim_seed_hint": "What record did the White River break?" },
+        { "fact": "Storms swept over half of the state's 92 counties; more than 350,000 residents lost power", "claim_seed_hint": "How many counties were affected?" }
+      ]
+    },
+    {
+      "id": "T12",
+      "file": "corpus/articles/T12.md",
+      "topic": "US launches 'Operation Economic Outcast' against Iran",
+      "event_dates": "2026-08-19/21/24",
+      "source_type": "drafted",
+      "source": { "name": "AP (anchor)", "url": "https://apnews.com/article/iran-rial-currency-bessent-trade-august-24-2026-e367634d8853c8fa4a341132cd577f31", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "OFAC sanctioned nearly 60 entities, individuals and vessels in UAE, Hong Kong, China, Singapore, Switzerland", "claim_seed_hint": "How many entities did OFAC sanction?" },
+        { "fact": "Five targeted sectors: IRGC-linked cryptocurrency, weapons-related technologies, gold, airlines, shipping", "claim_seed_hint": "Which sectors do the sanctions target?" },
+        { "fact": "UAE said it was ending all trade relations with Iran ahead of the announcement", "claim_seed_hint": "What did the UAE say before the announcement?" },
+        { "fact": "Rial at record low, roughly 2.02 million per dollar", "claim_seed_hint": "What was the rial rate this week?" },
+        { "fact": "US-Israel war on Iran entered its sixth month", "claim_seed_hint": "What month of the war is it per this article?" }
+      ]
+    },
+    {
+      "id": "T13",
+      "file": "corpus/articles/T13.md",
+      "topic": "Lake Kariba ferry disaster, toll 80",
+      "event_dates": "2026-08-11..16",
+      "source_type": "drafted",
+      "source": { "name": "The Economic Times (anchor)", "url": "https://economictimes.indiatimes.com/news/international/world-news/death-toll-in-zimbabwe-ferry-capsizing-rises-to-80-police/articleshow/133276518.cms", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Government-run ferry Mbuya Nehanda overturned Tuesday en route from Kariba to northwest communities", "claim_seed_hint": "What was the ferry's name and when did it capsize?" },
+        { "fact": "Authorised for 90; carried 114 adults, five crew, plus an unspecified number of children", "claim_seed_hint": "How many people were on board vs the authorised capacity?" },
+        { "fact": "Zimbabwe disaster management agency: 77 people rescued", "claim_seed_hint": "How many people were rescued?" },
+        { "fact": "25 bodies recovered Saturday (toll 72) before Sunday's eight more", "claim_seed_hint": "How many bodies were recovered on Saturday?" },
+        { "fact": "Kariba sits nearly 280 km northwest of Harare; the lake is shared with Zambia", "claim_seed_hint": "Which country shares Lake Kariba with Zimbabwe?" }
+      ],
+      "disputed": {
+        "death toll": { "pinned_in_article": "80", "article_says": "80 after Sunday recoveries", "conflicting": "AP reported 84, BBC 93 in later tallies" }
+      }
+    },
+    {
+      "id": "T14",
+      "file": "corpus/articles/T14.md",
+      "topic": "Tupac Shakur murder trial of Keffe D Davis",
+      "event_dates": "2026-08-17",
+      "source_type": "drafted",
+      "source": { "name": "Las Vegas Review-Journal (anchor)", "url": "https://www.reviewjournal.com/crime/keffe-ds-conflicting-tupac-accounts-take-center-stage-at-trial-3866455/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Davis, 63, former leader of the South Side Compton Crips, pleaded not guilty to one count of murder with a deadly weapon", "claim_seed_hint": "What is Davis's age and gang affiliation?" },
+        { "fact": "Drive-by September 7, 1996 outside MGM Grand; Shakur died six days later; Knight grazed in the head", "claim_seed_hint": "When was Shakur shot and when did he die?" },
+        { "fact": "Case rests on a 1998 FBI interview, 2008 LAPD interview (Biggie Smalls investigation), 2009 LV police interview, and 2019 memoir Compton Street Legend", "claim_seed_hint": "Which four statements form the prosecution's case?" },
+        { "fact": "Defense attorney Michael Sanft calls the statements fiction", "claim_seed_hint": "Who is the defense attorney?" },
+        { "fact": "Prosecution expects 35-45 witnesses; trial up to six weeks", "claim_seed_hint": "How long is the trial expected to last?" }
+      ]
+    },
+    {
+      "id": "T15",
+      "file": "corpus/articles/T15.md",
+      "topic": "Somali Airlines to resume flights after 35-year hiatus",
+      "event_dates": "2026-08-15..19",
+      "source_type": "drafted",
+      "source": { "name": "SONNA (anchor)", "url": "https://sonna.so/en/article/Somali-Airlines-Expected-to-Resume-Flights-in-September", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Established 1964, known as the 'White Star'", "claim_seed_hint": "When was Somali Airlines established?" },
+        { "fact": "Operations halted in 1991 after the ouster of President Siad Barre", "claim_seed_hint": "When did Somali Airlines stop operating?" },
+        { "fact": "July 2025: agreement involving two Airbus A320 aircraft; October 2025 target missed", "claim_seed_hint": "What aircraft were in the July 2025 restart agreement?" },
+        { "fact": "Aden Adde International Airport served by Ethiopian, Qatar, Turkish Airlines", "claim_seed_hint": "Which carriers currently serve Mogadishu?" }
+      ]
+    },
+    {
+      "id": "T16",
+      "file": "corpus/articles/T16.md",
+      "topic": "Brazil orders Discord to suspend livestreaming",
+      "event_dates": "2026-08-12/17",
+      "source_type": "drafted",
+      "source": { "name": "BBC (anchor)", "url": "https://www.bbc.com/news/articles/cgewpqxyrddo", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Three business days to comply; 10 business days to appeal", "claim_seed_hint": "How many business days does Discord have to comply?" },
+        { "fact": "45-minute livestream in which the 13-year-old was pressured to end her life", "claim_seed_hint": "How long was the livestream?" },
+        { "fact": "Discord introduced end-to-end encryption in early March, limiting in-stream access", "claim_seed_hint": "What product change did the ANPD point to?" },
+        { "fact": "Fines up to 50 million reais (about $9.67 million) per violation", "claim_seed_hint": "How much is the maximum fine per violation?" }
+      ]
+    },
+    {
+      "id": "T17",
+      "file": "corpus/articles/T17.md",
+      "topic": "TikTok $400 million COPPA settlement",
+      "event_dates": "2026-08-21",
+      "source_type": "drafted",
+      "source": { "name": "US DOJ OPA (anchor)", "url": "https://www.justice.gov/opa/pr/justice-department-secures-400m-settlement-tiktok-and-bytedance-resolve-childrens-privacy", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "$300 million immediately + $100 million on vacatur of the 2019 FTC consent decree with Musical.ly", "claim_seed_hint": "How is the $400 million split?" },
+        { "fact": "Musical.ly paid a $5.7 million COPPA fine in 2019", "claim_seed_hint": "What did Musical.ly pay in 2019?" },
+        { "fact": "COPPA enacted in 2000", "claim_seed_hint": "When was COPPA enacted?" },
+        { "fact": "DOJ filed the suit in 2024 in the Central District of California on FTC referral", "claim_seed_hint": "Where was the lawsuit filed?" },
+        { "fact": "Dozens of US states are suing Meta over COPPA", "claim_seed_hint": "Who else are states suing under COPPA?" }
+      ]
+    },
+    {
+      "id": "T18",
+      "file": "corpus/articles/T18.md",
+      "topic": "Chinese robot beats Bolt's 100m record at World Humanoid Robot Games",
+      "event_dates": "2026-08-22",
+      "source_type": "drafted",
+      "source": { "name": "Reuters (anchor)", "url": "https://www.reuters.com/sports/chinese-humanoid-robot-lightning-beats-human-100m-world-record-state-media-says-2026-08-22/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Tiangong Ultra, developed by the Beijing Humanoid Robot Innovation Center", "claim_seed_hint": "Who developed the winning robot?" },
+        { "fact": "Honor's Lightning finished second in 9.47 seconds", "claim_seed_hint": "What time did the second robot finish?" },
+        { "fact": "Bolt's record 9.58s set at the 2009 World Athletics Championships", "claim_seed_hint": "Where and when did Bolt set the record?" },
+        { "fact": "Games held at the National Speed Skating Oval, 'the Ice Ribbon'; 2,000+ robots from 666 teams in 51 events", "claim_seed_hint": "Where were the games held and how many robots competed?" },
+        { "fact": "Honor robot ran 9.32s in a pre-games trial at 14.5 m/s peak; last year's best was 21.50s", "claim_seed_hint": "What was the best time at last year's first edition?" }
+      ],
+      "disputed": {
+        "winning robot/team": { "pinned_in_article": "Tiangong Ultra (Beijing Humanoid Robot Innovation Center)", "article_says": "Tiangong Ultra won its heat", "conflicting": "earlier reports named the robot 'Lightning' under team Tianzhuo vs X-Humanoid" }
+      }
+    },
+    {
+      "id": "T19",
+      "file": "corpus/articles/T19.md",
+      "topic": "The Odyssey becomes highest-grossing R-rated film of all time",
+      "event_dates": "2026-08-20/21",
+      "source_type": "drafted",
+      "source": { "name": "Variety (anchor)", "url": "https://variety.com/2026/film/box-office/the-odyssey-biggest-r-rated-movie-all-time-deadpool-wolverine-1236838976/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Overtakes Deadpool & Wolverine at $1.338 billion", "claim_seed_hint": "What record was the previous benchmark?" },
+        { "fact": "Landed July 17; ~$123M domestic debut; $516M domestic / $836M international", "claim_seed_hint": "What was the domestic opening?" },
+        { "fact": "IMAX's highest-grossing release ever, outpacing Avatar at $271M in that format", "claim_seed_hint": "What is the IMAX record it broke?" },
+        { "fact": "Crossed $1B on Aug 7; only third R-rated film after D&W and Joker", "claim_seed_hint": "When did the film cross $1 billion?" },
+        { "fact": "D&W holds R-rated opening weekend record at $444.7M; YTD #2 behind Spider-Man: Brand New Day at $2.039B", "claim_seed_hint": "Which film is ahead of it for the year?" }
+      ]
+    },
+    {
+      "id": "T20",
+      "file": "corpus/articles/T20.md",
+      "topic": "JDT set 109-game unbeaten league record",
+      "event_dates": "2026-08-21",
+      "source_type": "drafted",
+      "source": { "name": "Malay Mail (anchor)", "url": "https://www.malaymail.com/news/sports/2026-08-22/johor-darul-tazim-go-109-unbeaten-and-rewrite-football-record/232257", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "3-0 win over Kuching City, opening match of the 2026/27 Super League season", "claim_seed_hint": "Who did JDT beat to extend the record?" },
+        { "fact": "Previous record 108, set by ASEC Mimosas (Cote d'Ivoire) between 1989 and 1994", "claim_seed_hint": "Who held the previous world record?" },
+        { "fact": "Matched the record in May with 14-1 over Kelantan, biggest winning margin in league history", "claim_seed_hint": "How did JDT first match the record?" },
+        { "fact": "No league loss since a 1-0 defeat by Terengganu in April 2021", "claim_seed_hint": "When was JDT's last league defeat?" },
+        { "fact": "May 2022: came from 2-1 down vs Sri Pahang, Bergson equalized in the 88th minute", "claim_seed_hint": "Who scored in the run's only serious scare?" },
+        { "fact": "Owned by Johor Crown Prince Tunku Ismail; managed by Xisco Munoz; 12-time defending champions; 3-3 preseason friendly vs Chelsea; only Southeast Asian club to win the AFC Cup (2015)", "claim_seed_hint": "Who owns the club and which continental trophy has it won?" }
+      ]
+    },
+    {
+      "id": "T21",
+      "file": "corpus/articles/T21.md",
+      "topic": "US 50% tariffs on Canadian goods take effect",
+      "event_dates": "2026-08-22",
+      "source_type": "drafted",
+      "source": { "name": "Reuters (anchor)", "url": "https://www.reuters.com/business/carney-says-new-canadian-tariffs-us-goods-will-come-into-effect-september-8-2026-08-22/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Canada's retaliation takes effect September 8, the Tuesday after Labor Day", "claim_seed_hint": "When do Canada's retaliatory tariffs take effect?" },
+        { "fact": "Retaliation covers steel, dairy, household appliances, agricultural equipment, pulp and paper, electronics", "claim_seed_hint": "Which sectors do the Canadian tariffs cover?" },
+        { "fact": "US tariffs cover roughly $20B of Canadian exports, about 5% of bilateral trade; ordered under Section 338 of the Tariff Act of 1930; stack on a 10% levy", "claim_seed_hint": "How much trade do the US tariffs cover and under which statute?" },
+        { "fact": "Trump announced them July 20; originally set for Aug 19 with a three-day pause", "claim_seed_hint": "When were the tariffs originally set to take effect?" },
+        { "fact": "USTR Jamieson Greer: no future talks planned", "claim_seed_hint": "What did the USTR say about future talks?" }
+      ]
+    },
+    {
+      "id": "T22",
+      "file": "corpus/articles/T22.md",
+      "topic": "Bangladesh elects 23rd president in first contested vote in 35 years",
+      "event_dates": "2026-08-20/21",
+      "source_type": "drafted",
+      "source": { "name": "AP (anchor)", "url": "https://apnews.com/article/bangladesh-president-hasina-tarique-khaleda-9884e60119d1ba29053cb883fd75234b", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Alamgir 78 won 255 votes to Oli Ahmed's 88; 343 of 349 eligible MPs voted", "claim_seed_hint": "What was the vote count in the presidential election?" },
+        { "fact": "Every presidential election since October 1991 had been uncontested", "claim_seed_hint": "When was the last contested presidential election?" },
+        { "fact": "Vacancy after Mohammed Shahabuddin resigned last month for health reasons", "claim_seed_hint": "Why did the presidency fall vacant?" },
+        { "fact": "Alamgir has been BNP secretary-general since 2016", "claim_seed_hint": "What is Alamgir's party role?" },
+        { "fact": "PM Tarique Rahman sworn in February 17; oath at Darbar Hall, Bangabhaban", "claim_seed_hint": "When was the prime minister sworn in?" }
+      ]
+    },
+    {
+      "id": "T23",
+      "file": "corpus/articles/T23.md",
+      "topic": "Evergrande founder Hui Ka Yan sentenced to life",
+      "event_dates": "2026-08-20",
+      "source_type": "drafted",
+      "source": { "name": "Reuters (anchor)", "url": "https://www.reuters.com/world/china/china-evergrande-founder-sentenced-life-imprisonment-cctv-reports-2026-08-20/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "67-year-old Hui pleaded guilty in April to eight charges", "claim_seed_hint": "How old is Hui and how many charges did he plead guilty to?" },
+        { "fact": "Evergrande Group fined 8.82B yuan, Real Estate Group 7B yuan, combined 15.82B yuan (~$2.35B)", "claim_seed_hint": "What fines were imposed on the Evergrande groups?" },
+        { "fact": "Five other executives sentenced to 6-18 years; 56 people sentenced in total", "claim_seed_hint": "How many people were sentenced in connection with the collapse?" },
+        { "fact": "2024: CSRC fined Hui 47M yuan and banned him from the securities market for life", "claim_seed_hint": "What did the CSRC do in 2024?" },
+        { "fact": "At its peak Evergrande employed about 200,000 people; 2021 default triggered the industry property crisis", "claim_seed_hint": "How many people did Evergrande employ at its peak?" }
+      ]
+    },
+    {
+      "id": "T24",
+      "file": "corpus/articles/T24.md",
+      "topic": "Kenya helicopter crash kills seven including Ecuador's intelligence chief",
+      "event_dates": "2026-08-19",
+      "source_type": "drafted",
+      "source": { "name": "BBC and DW (anchors)", "url": "https://www.bbc.com/news/articles/clylkv4z59vo", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Eurocopter EC130 B4 operated by Lady Lori Helicopters crashed at 9:13 am (06:13 GMT) after departing Loisaba Conservancy en route to the Ewaso Ng'iro area", "claim_seed_hint": "What aircraft was involved and what time did it crash?" },
+        { "fact": "Five of six passengers were US citizens; NBC News reported one was Jose Suarez, a television executive", "claim_seed_hint": "How many of the passengers were US citizens?" },
+        { "fact": "Sensi-Contugi appointed head of national intelligence in January 2024; Noboa declared three days of national mourning", "claim_seed_hint": "When was Sensi-Contugi appointed head of intelligence?" },
+        { "fact": "Pilot identified as Josh Outram, an American", "claim_seed_hint": "Who was the pilot?" },
+        { "fact": "Mount Ololokwe is sacred to the Samburu people, summit 2,000 m above sea level", "claim_seed_hint": "What is the significance of Mount Ololokwe?" }
+      ],
+      "disputed": {
+        "Sensi-Contugi age": { "pinned_in_article": "44", "article_says": "44", "conflicting": "NST reported 42" }
+      }
+    },
+    {
+      "id": "T25",
+      "file": "corpus/articles/T25.md",
+      "topic": "Central African Republic closes gold mine that killed more than 100",
+      "event_dates": "2026-08-18..22",
+      "source_type": "drafted",
+      "source": { "name": "AP (anchor)", "url": "https://apnews.com/article/central-african-republic-gold-mine-closed-bf3cfcdbad6dae8a43fc0ec250a30aab", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Mines ministry official toll 49: 34 Central Africans, 13 Cameroonians, two Chadians", "claim_seed_hint": "What was the official death toll and its nationality breakdown?" },
+        { "fact": "Collapse Tuesday in Zamboye village near the Cameroon border", "claim_seed_hint": "Where did the mine collapse?" },
+        { "fact": "Seven injured taken to a hospital in Baboua, about 50 km from the site", "claim_seed_hint": "How many people were injured and where were they taken?" },
+        { "fact": "Site known locally as Moscow-RCA, beside the Kadei River on the Cameroon border", "claim_seed_hint": "What is the local name of the mine?" },
+        { "fact": "The Zamboye site had been closed before the accident, but illegal miners still worked there", "claim_seed_hint": "Was the mine officially open before the collapse?" }
+      ],
+      "disputed": {
+        "death toll": { "pinned_in_article": "more than 100 (Red Cross/local officials)", "article_says": "more than 100, official ministry toll 49", "conflicting": "official 49 vs local sources ~100" }
+      }
+    },
+    {
+      "id": "T26",
+      "file": "corpus/articles/T26.md",
+      "topic": "Haiti gang attack near Port-au-Prince: 47 dead, 50+ kidnapped",
+      "event_dates": "2026-08-23/25",
+      "source_type": "drafted",
+      "source": { "name": "NBC News / AP (anchor)", "url": "https://www.nbcnews.com/world/haiti/50-kidnapped-violent-gang-attack-haiti-leaves-47-dead-rcna594386", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Attack on Kenscoff, in the hills above Port-au-Prince, late Sunday", "claim_seed_hint": "Where did the attack take place?" },
+        { "fact": "Guterres: 22 of the victims reportedly executed in a church compound", "claim_seed_hint": "How many were reportedly executed in a church compound?" },
+        { "fact": "At least five of the 47 killed were children (BINUH)", "claim_seed_hint": "How many children were among the dead?" },
+        { "fact": "Gang members targeted the home of Dr. Jean 'Bill' Pape, who runs an NGO for HIV/TB patients", "claim_seed_hint": "Whose home was targeted?" },
+        { "fact": "Viv Ansanm, the gang coalition the US has designated a foreign terrorist organization, set fire to 25 homes", "claim_seed_hint": "Which gang coalition is US-designated as an FTO?" },
+        { "fact": "1.5 million people displaced; more than 3,050 killed Jan-Jun per UN", "claim_seed_hint": "How many people have been displaced by gang violence?" }
+      ]
+    },
+    {
+      "id": "T27",
+      "file": "corpus/articles/T27.md",
+      "topic": "US removes Syria from state sponsors of terrorism list",
+      "event_dates": "2026-08-24",
+      "source_type": "drafted",
+      "source": { "name": "US Treasury OFAC (anchor)", "url": "https://ofac.treasury.gov/recent-actions/20260824", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Took effect after a 45-day congressional review triggered when Trump notified Congress July 8", "claim_seed_hint": "What was the congressional review process?" },
+        { "fact": "Syria was on the list since 1979 under Hafez al-Assad; Bashar al-Assad toppled by rebels led by al-Sharaa in December 2024", "claim_seed_hint": "Since when was Syria on the list?" },
+        { "fact": "HTS/al-Nusrah Front's SDGT designation revoked and removed from the SDN List; Cuba, North Korea and Iran remain designated", "claim_seed_hint": "Which countries remain on the list?" },
+        { "fact": "Trump met al-Sharaa in Ankara in July", "claim_seed_hint": "Where did Trump meet al-Sharaa?" },
+        { "fact": "Foreign Minister Asaad al-Shibani and central bank chief Safwat Raslan comments; envoy Tom Barrack quote", "claim_seed_hint": "What did the Syrian foreign minister say?" }
+      ]
+    },
+    {
+      "id": "T28",
+      "file": "corpus/articles/T28.md",
+      "topic": "Merck-Moderna personalized mRNA melanoma vaccine meets Phase 3 goals",
+      "event_dates": "2026-08-19",
+      "source_type": "drafted",
+      "source": { "name": "Reuters (anchor)", "url": "https://www.reuters.com/legal/litigation/merck-moderna-say-melanoma-skin-cancer-vaccine-meets-goals-large-trial-2026-08-19/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Trial enrolled 1,137 patients randomized 2:1; intismeran 1 mg every three weeks up to nine doses; Keytruda 400 mg every six weeks", "claim_seed_hint": "How many patients were in the trial and what were the doses?" },
+        { "fact": "Moderna shares surged as much as 160%; Merck jumped 12%", "claim_seed_hint": "How did the stocks react?" },
+        { "fact": "Moderna President Stephen Hoge: thousands of patients could benefit as soon as next year if approved", "claim_seed_hint": "When could patients benefit per Hoge?" },
+        { "fact": "Phase 2b five-year follow-up (KEYNOTE-942, ASCO 2026): 49% reduction in recurrence or death, 59% reduction in distant metastasis or death", "claim_seed_hint": "What did the Phase 2b five-year data show?" },
+        { "fact": "Partners since 2016; Merck paid $200M upfront and $250M in 2022 to exercise its intismeran option", "claim_seed_hint": "How much did Merck pay to exercise its option?" }
+      ]
+    },
+    {
+      "id": "T29",
+      "file": "corpus/articles/T29.md",
+      "topic": "DRC Ebola outbreak becomes deadliest in country's history",
+      "event_dates": "2026-08-17/20",
+      "source_type": "drafted",
+      "source": { "name": "Al Jazeera (anchor)", "url": "https://www.aljazeera.com/news/2026/8/17/ebola-outbreak-in-dr-congo-becomes-deadliest-in-countrys-history", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Outbreak declared 15 May; the 17th in DRC since Ebola was discovered 50 years ago", "claim_seed_hint": "When was the outbreak declared?" },
+        { "fact": "May have been spreading undetected since February", "claim_seed_hint": "Since when might it have been spreading undetected?" },
+        { "fact": "2014-16 West Africa outbreak took ~5 months to reach 1,000 deaths and killed 11,325; this one reached 2,000 deaths in under 3 months", "claim_seed_hint": "How long did the 2014-16 outbreak take to reach 1,000 deaths?" },
+        { "fact": "ECDC (data to Aug 19): 5,290 confirmed, 2,516 dead, 837 hospitalised in Ituri, North Kivu, Haut-Uele; spread to Uganda; first imported case in Europe", "claim_seed_hint": "What did ECDC report on August 20?" },
+        { "fact": "At least 155 health workers infected, including 45 deaths", "claim_seed_hint": "How many health workers died?" },
+        { "fact": "UN ICG allocated 70,000 Ervebo doses on ~Aug 20; Ervebo is approved for the Zaire strain, not evaluated against Bundibugyo, so doses go into a Phase 3 trial of the Zaire vaccine against Bundibugyo; ICG had already allocated 56,000 doses for 2021-Jul 2026", "claim_seed_hint": "Why can't the Ervebo doses be used directly against this outbreak's strain?" }
+      ]
+    },
+    {
+      "id": "T30",
+      "file": "corpus/articles/T30.md",
+      "topic": "Venezuela releases 131 political prisoners",
+      "event_dates": "2026-08-14",
+      "source_type": "drafted",
+      "source": { "name": "Al Jazeera / AFP (anchor)", "url": "https://www.aljazeera.com/news/2026/8/15/venezuela-says-131-political-prisoners-freed-amid-post-maduro-talks", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Releases at El Rodeo I prison in Guatire, Miranda state, under 'alternative measures from incarceration' of the Program for Peace and Democratic Coexistence", "claim_seed_hint": "Where were the prisoners released from?" },
+        { "fact": "Rubio: 'a crucial step for the nation's reconciliation process'; 1,046 Venezuelans released since January 3", "claim_seed_hint": "How many total releases does Rubio cite?" },
+        { "fact": "US-brokered talks kicked off last week and wrapped up Wednesday, led by Dinorah Figuera and National Assembly President Jorge Rodriguez", "claim_seed_hint": "Who is leading the reconciliation talks?" },
+        { "fact": "Vente Venezuela independently verified 43 releases; Foro Penal confirmed at least 40", "claim_seed_hint": "How many releases did the opposition verify?" },
+        { "fact": "Foro Penal: 391 political prisoners remained behind bars as of Monday", "claim_seed_hint": "How many political prisoners remained as of Monday?" }
+      ],
+      "disputed": {
+        "number freed": { "pinned_in_article": "131 (interim government official count)", "article_says": "131 freed; Vente Venezuela verified 43, Foro Penal at least 40", "conflicting": "NGO-confirmed counts lower (Foro Penal 17 early, ~80 by Aug 20 per Caracas Chronicles)" }
+      }
+    },
+    {
+      "id": "T32",
+      "file": "corpus/articles/T32.md",
+      "topic": "France's Constitutional Council strikes down under-15 social media ban",
+      "event_dates": "2026-08-14",
+      "source_type": "drafted",
+      "source": { "name": "Reuters (anchor)", "url": "https://www.reuters.com/world/frances-top-court-rules-social-media-ban-curtails-freedom-expression-2026-08-14/", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Ruling on two parliamentary referrals; ban would have barred under-15s from Sept 1 with existing accounts closed within four months", "claim_seed_hint": "When was the ban supposed to take effect?" },
+        { "fact": "France would have been the first European country, after Australia barred under-16s from Facebook, TikTok and YouTube in December", "claim_seed_hint": "Which country enacted such a ban first?" },
+        { "fact": "The ban implies every person, even an adult, must prove their age", "claim_seed_hint": "Who would the age proof requirement apply to?" },
+        { "fact": "Macron ordered PM Sebastien Lecornu to re-work the bill; reform to take effect before Spring 2027 presidential election, where he cannot run a third term", "claim_seed_hint": "Who did Macron order to re-work the bill?" }
+      ]
+    },
+    {
+      "id": "T34",
+      "file": "corpus/articles/T34.md",
+      "topic": "Four Antonello da Messina works stolen from Messina museum",
+      "event_dates": "2026-08-15/16",
+      "source_type": "drafted",
+      "source": { "name": "The Guardian / AP (anchor)", "url": "https://www.theguardian.com/artanddesign/2026/aug/16/antonello-da-messina-renaissance-paintings-stolen-sicilian-museum-holiday", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Three or four masked intruders; perimeter railing bent or cut at a side gate; exterior door forced; alarms and CCTV functioning; robbery took a few minutes", "claim_seed_hint": "How did the thieves enter the museum?" },
+        { "fact": "All five San Gregorio Polyptych panels (signed and dated 1473) removed, two abandoned on a low wall outside; altarpiece made for the Monastero di San Gregorio, destroyed in the 1908 earthquake", "claim_seed_hint": "What happened to the fifth and sixth polyptych panels?" },
+        { "fact": "Double-sided panel (Virgin and Child with a Franciscan monk / dead Christ) dated 1465-1470, attributed to Antonello in 2003, bought by the Sicilian region at Christie's that year", "claim_seed_hint": "When was the double-sided panel attributed to Antonello?" },
+        { "fact": "Valued at 70-80 million euros (up to ~$93M) by expert Alberto Fiz", "claim_seed_hint": "What is the estimated value of the stolen works?" },
+        { "fact": "Investigators focus on an internal accomplice after the alarm was apparently deactivated by a custodian; heist likely on commission for an art dealer", "claim_seed_hint": "Who apparently deactivated the alarm?" },
+        { "fact": "Days earlier Italy recovered three stolen Cezanne, Renoir and Matisse paintings", "claim_seed_hint": "What other artworks were recovered days before?" }
+      ]
+    },
+    {
+      "id": "T35",
+      "file": "corpus/articles/T35.md",
+      "topic": "Ukraine's 822-drone attack on Russia, largest of 2026",
+      "event_dates": "2026-08-16",
+      "source_type": "drafted",
+      "source": { "name": "AP (anchor)", "url": "https://apnews.com/article/russia-ukraine-war-01294bf8744282086e8f76c8130e16ba", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Russia's MoD: 822 drones destroyed overnight; ~600 detected headed toward Moscow, a third destroyed over the Moscow region (Mayor Sergei Sobyanin)", "claim_seed_hint": "How many drones were heading toward Moscow?" },
+        { "fact": "Wildberries logistics facility and warehouse in Koledino, Moscow region, hit and burning", "claim_seed_hint": "Which facility near Moscow was hit?" },
+        { "fact": "Zelenskyy: Russia launched more than 1,500 drones into Ukraine over the past week", "claim_seed_hint": "How many drones did Russia launch last week?" },
+        { "fact": "Missile hit a Kyiv book market near Pochaina metro station, wounding six; Kryvyi Rih: 2 killed, 14 wounded; one more killed in Sumy", "claim_seed_hint": "What was hit in Kyiv?" },
+        { "fact": "War in its roughly fourth-and-a-half year", "claim_seed_hint": "What year of the war is it?" }
+      ],
+      "disputed": {
+        "killed in Russia": { "pinned_in_article": "at least 6", "article_says": "at least six people killed", "conflicting": "WION reported at least 7 (later toll 7 killed, 39 injured)" }
+      }
+    },
+    {
+      "id": "T36",
+      "file": "corpus/articles/T36.md",
+      "topic": "Panama Canal caps daily transits over El Nino drought",
+      "event_dates": "2026-08-20/21",
+      "source_type": "drafted",
+      "source": { "name": "DW (anchor)", "url": "https://www.dw.com/en/panama-canal-el-nino/a-78453054", "role": "anchor" },
+      "in_passing_mentions": [
+        { "fact": "Low water in the two artificial lakes, Gatun and Alajuela, that feed the canal", "claim_seed_hint": "Which lakes feed the canal?" },
+        { "fact": "Rainfall May-August about 34% below historical average; water contributions 44% below", "claim_seed_hint": "How far below average was the rainfall?" },
+        { "fact": "Canal carries around 5% of global maritime trade; averaged 35 daily transits through June against ~40/day capacity", "claim_seed_hint": "What share of global maritime trade does the canal carry?" },
+        { "fact": "2023-2024 drought: in 2023 daily transits cut from 38 to 22", "claim_seed_hint": "What were transit numbers cut from and to in 2023?" },
+        { "fact": "Draft limits postponed: 14.63 m to Sept 2 and 14.48 m to Oct 1", "claim_seed_hint": "When do the draft restrictions take effect?" },
+        { "fact": "ACP administrator Ricaurte Vasquez: El Nino could last much longer than usual; 2026-27 event possibly among the strongest on record", "claim_seed_hint": "What did the canal administrator warn about El Nino?" }
+      ],
+      "disputed": {
+        "cap start date": { "pinned_in_article": "September 3 (per ACP advisory)", "article_says": "from September 3", "conflicting": "Reuters/AJ/CNA reported the cap as starting September 4 (timezone split)" }
+      }
+    }
+  ]
+}

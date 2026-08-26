@@ -239,10 +239,34 @@ identity/negation rules, 8 worked boundary cases (canonical: stated category
 CONTRADICT). Label record format with evidence span / silence reason.
 
 Committed b1cf460 (topics.md rewrite + NOTES.md), pushed. Rubric commit
-next.
+24f4aa6 pushed.
 
-Next: P1-3 draft 30 articles (verbatim where a full article exists, source
-URL in manifest; each with >=1 in-passing mention of a secondary fact).
+P1-3 articles (task 3): COMPLETE 2026-08-26. All 30 articles written in
+corpus/articles/T##.md (plain text: title, byline/outlet | date, body).
+3 verbatim: T01 (DW Flores quake, full text incl. headings/quotes), T02
+(NASA Earth Observatory Lala, full text incl. image captions), T03 (KGTV
+10News Lincoln, on-air report converted to text with AI assistance, note
+preserved). 27 drafted from web-verified facts (210-405 words each),
+5-9 paragraphs, no fabricated direct quotes (attribution only). Every
+article has >=1 in-passing mention of a secondary fact; the full list with
+claim seeds is in corpus/manifest.json (also records source name+URL per
+article, role original/anchor, and disputed pins: T02 winds 75/80kt +
+deaths 1/2 not stated in article; T13 toll 80 vs AP 84 / BBC 93; T18
+team/robot naming; T24 age 44 vs 42; T25 toll 100+ vs official 49; T30
+official 131 vs NGO-confirmed 43/~80; T35 killed 6 vs 7; T36 cap start
+3 Sept vs 4 Sept).
+
+Corrections applied while drafting (beyond the fact-check pass): T14
+defense counsel is Michael Sanft (prior note said Brian Buckmire); T13
+ferry Mbuya Nehanda described as government-run (RIDA/DFD naming differs by
+outlet, avoided the acronym); T20 framed as "opening match of the 2026/27
+Super League season" (Charity Shield naming disputed across sources); T18
+winner named Tiangong Ultra (Beijing Humanoid Robot Innovation Center) with
+Honor's Lightning 2nd at 9.47s.
+
+Open: P1-4 seed questions (20/article), then P1-5 pool (40/article),
+P1-6 label per rubric, P1-7 10% re-check, P1-8 jury families, P1-9
+prompts. Manifest label_counts/split_role fill at Phase 2.
 
 ## Phase 0 (done)
 
