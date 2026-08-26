@@ -264,9 +264,19 @@ Super League season" (Charity Shield naming disputed across sources); T18
 winner named Tiangong Ultra (Beijing Humanoid Robot Innovation Center) with
 Honor's Lightning 2nd at 9.47s.
 
-Open: P1-4 seed questions (20/article), then P1-5 pool (40/article),
-P1-6 label per rubric, P1-7 10% re-check, P1-8 jury families, P1-9
-prompts. Manifest label_counts/split_role fill at Phase 2.
+P1-4 seed questions (task 5): COMPLETE 2026-08-26. corpus/questions/T##.md,
+20 per article, 600 total, verified 30x20. Design: each file mixes
+answerable direct facts (names/numbers/dates/quantities), in-passing
+mention questions (several answerable, several partial), and silence traps
+(the UNSPECIFIED class: details the article never states, e.g. T02 deaths
+and peak winds, T03 captain's name and exact arrival date, T13 driver's
+name and cause of rough water, T17 judge's name, T19 budget). Traps use
+plausible interrogatives, not "is it stated?" phrasing, so the solver must
+commit to an answer.
+
+Open: P1-5 pool (40/article, 50/25/25, both polarities), P1-6 label per
+rubric, P1-7 10% re-check, P1-8 jury families, P1-9 prompts. Manifest
+label_counts/split_role fill at Phase 2.
 
 ## Phase 0 (done)
 
