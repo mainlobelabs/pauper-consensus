@@ -322,8 +322,34 @@ affected label re-verified against the article. T02 #23 trap became 30
 inches vs stated 43.55 inches; T02 #24 unit-swap trap (105 mph vs stated 65
 mph / 105 km/h) preserved as designed.
 
-Open: P1-7 10% re-check from scratch (log agreement rate), P1-8 jury
-families, P1-9 prompts. Manifest split_role/sha256 fill at Phase 2.
+## P1-7 10% re-check (done 2026-08-26)
+
+Selection: deterministic stratified sample, 4 items per article at 1-based
+positions 5, 15, 25, 35 = 120 of 1,200 (10%). Class mix of the sample by
+original labels: 60 ENTAIL / 31 CONTRADICT / 29 UNSPECIFIED. Selection file
+(id + proposition, labels hidden): /tmp/p17_selection.json (working file,
+not committed).
+
+Method: each article re-read, all 120 labels re-derived from scratch using
+article + proposition only (original labels not visible). Recheck output
+with per-item comparison: /tmp/p17_recheck.json.
+
+Result: 119/120 agree (99.2%). The single disagreement resolved in favor
+of the fresh label as an original labeling slip: T23 #35 "the five other
+senior executives all received 18-year sentences" was labeled UNSPECIFIED
+("individual sentences not broken down"), but the article states "ranging
+from six to 18 years", which contradicts "all 18-year" -> flipped to
+CONTRADICT with the stated range as the evidence span. After the fix:
+120/120 (100%).
+
+Corpus totals after the fix: 599 ENTAIL / 310 CONTRADICT / 291
+UNSPECIFIED (49.9 / 25.8 / 24.3 vs the 50/25/25 design). T23 counts are
+now 20/11/9; manifest label_counts updated. Prereg note: 99.2% is
+single-labeler self-consistency on a blind 10% recheck, not
+inter-annotator agreement.
+
+Open: P1-8 jury families, P1-9 prompts, Phase 2 freeze. Manifest
+split_role/sha256 fill at Phase 2.
 
 ## Phase 0 (done)
 
