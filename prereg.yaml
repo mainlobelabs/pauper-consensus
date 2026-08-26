@@ -1,0 +1,420 @@
+# wave-consensus pre-registration (frozen 2026-08-26, tag prereg-waveconsensus-v1)
+# Written before any fine-tuning or generation it covers. The
+# implementations ARE the registration: the committed corpus files,
+# prompts, and this artifact at git tag prereg-waveconsensus-v1.
+tag: prereg-waveconsensus-v1
+frozen: 2026-08-26
+authors:
+  - Andryo Marzuki (design, decisions, approvals)
+  - Jeremiah Mannings (co-designer)
+  - Frank (implementation, opencode agent)
+repo: github.com/marzukia/wave-consensus (private)
+spec: SPEC.md v0.14 (this file registers every quantity it defers)
+
+corpus:
+  articles: 30
+  propositions: 1200 (40 per article)
+  seed_questions: 600 (20 per article, solver baseline task only)
+  label_totals: {ENTAIL: 599, CONTRADICT: 310, UNSPECIFIED: 291}
+  labeler: single (Andryo Marzuki, disclosed)
+  recheck: 10 percent stratified blind recheck; 119/120 raw (99.2%),
+    120/120 after one original-label fix (T23-035). Self-consistency,
+    not inter-annotator agreement.
+  files:  # sha256 of every frozen corpus file
+    corpus/articles/T01.md: 0db3ff205e887471f013d8bb0251b20ecf343d8c0b8c939e3845a6d1f7daa72d
+    corpus/articles/T02.md: 29c71e0cbfa496e76c5602b472f97127e4de62a7fe1cbf70d0c6513d2bb05654
+    corpus/articles/T03.md: 2359051295b90dd200214c5a13f6f223b8d332ed4a18849738ec7c57b2031d57
+    corpus/articles/T04.md: fe15d9c1b282c3862b979f69f9eb22c339daea9d6ca716a92439771e8e369090
+    corpus/articles/T05.md: c186a3e2130b6728ecd31ffadb9e0c1b30e383ba348d2bdd42412ee8915c27c6
+    corpus/articles/T08.md: 4dbdf2db114e3671366bf4fdeda4650213d4a599d69940c70bda13eb2c5b0e11
+    corpus/articles/T10.md: a7a3ba6385849b8be5e65bb211dac6a311343ad82736890acb2774ebe1dc7185
+    corpus/articles/T12.md: 40b3fe4132f0b3b2cf42d4788c8c56f3c82e9531a9593a3a8fdf8be62c1fa9cd
+    corpus/articles/T13.md: f54580d71d84ed58e9db37796f6602aafe3b6369818a3a386127c59bf436e00a
+    corpus/articles/T14.md: d51dd0092bab5af1f9cad3debc3252cd0215d9bce73098ae40c3127e2f52625d
+    corpus/articles/T15.md: 0c09b49f8b5584e8ec78bf31fff13178e78e60cb6032bce0e49d99e4fe2bcefd
+    corpus/articles/T16.md: a256a337f58538c490ba362abd773d8b325e6c66b913da77d6ad9771e69c14e0
+    corpus/articles/T17.md: cbac79ebd082d5edd3df620f3f33349fb38540cab469822cca15f63704a6c936
+    corpus/articles/T18.md: 003d2302a3072f00e922d60d18cd063836ab069d0320bb4b4cfb8bd46f5c4c32
+    corpus/articles/T19.md: aab3c26bcc13491d1a6a3b61aaf8bc1887f139bc96864411d14c341de91d3218
+    corpus/articles/T20.md: bcd8513f60b62932b3a86c34dd1a361b25dd077e9ff5f12b14fb06ae92e0d07b
+    corpus/articles/T21.md: d3e076089e7dbb0cc7c3425dcbe91f557a7437c194c6dcf16fb695c939687749
+    corpus/articles/T22.md: 0df83ee61c7b86644560eff54811e712ea2ec181114d8218298d38a9bfb5f159
+    corpus/articles/T23.md: 04028d6bd1813fa9f05c5a013408457eb5bf729cf98fb479ba74df3c24bd06e5
+    corpus/articles/T24.md: 5d372d5291afc3c140cbd2d46f96a878300e88a78a94b69f9eebf2bd2f87b36b
+    corpus/articles/T25.md: e90700bcd1fd3d6869bc7b2908da8d565025d75ffca19761fe2c6cc1faa45772
+    corpus/articles/T26.md: 358cfe8658a25ecb5ae02e5cf436a316b5611afc950df87f4a91c5c30ab76ddd
+    corpus/articles/T27.md: 07136d4ed30d9b63910e7b861268cd4712e1fd09f03bb09b6a8c5c1fde0796b4
+    corpus/articles/T28.md: 7dfe5e5b5e246b31faf0eb9fa5ab7cdbd28e458fe34774952fdbba1a12e8f6be
+    corpus/articles/T29.md: 2fa3829f0f8100735e344d7816e25e3c639e09dd522e9078298976e13364cbb5
+    corpus/articles/T30.md: 5d1d786d3af622621e4d4f562f300c84709a8c2f929947d003595007eaa20bc4
+    corpus/articles/T32.md: a276c2d6e99716058f8b9043cd9734ffb9b3d22ee32f587f5e9c9699cf4e0564
+    corpus/articles/T34.md: b873320d31b7de6d2780ec19bb6197c0ab770f55227b0564536e0950807cf2c5
+    corpus/articles/T35.md: 973c84cf048a6bb0243f898c6873b26641a9d1469664871526d4a2328af38a76
+    corpus/articles/T36.md: 726d4efb91ac5af448f287b0f63d42dd6eaf7344954184fdb3ff17825fcaf300
+    corpus/labels/T01.json: c90dc068cea36be0cd87b7fd25fb5bc6737d6d4d30a7e13fa95ae2f59c8850d9
+    corpus/labels/T02.json: 2e4835c40deb091e3e765dae2e35bbbedc642e2197312c135071ef6a45691e13
+    corpus/labels/T03.json: b97ab8eb0d79181d5dbf8ec6a83ea8ce1d6ec486e69e2458b615298b71cde2b1
+    corpus/labels/T04.json: 8bbcc347bf3ce3c571c6599bcffb599350ff3e147e7378ef6cbb6f7f667c9822
+    corpus/labels/T05.json: 1eafd349044f86fe19f4bcfc33da957a87d6af10423a11f100f9da1a8b170f61
+    corpus/labels/T08.json: 4ada8469f83a3da33124a23f178e7fc150853f007691a276e0b2c1a35e6187c1
+    corpus/labels/T10.json: b67f5d3ff602f785ec3f68341f607c04c31f77a2477f5de0db975a28944e9baa
+    corpus/labels/T12.json: 6536aea31feeaaaa698d95a1dfe9d2cde16840b784339b601c8a56ad991aa4ed
+    corpus/labels/T13.json: 34b340f2739c9ad33532df68df42111de4dabbf3d39ebbb6ac40ad7f6e44b78c
+    corpus/labels/T14.json: 7318ff4701bb6bfd1b78808c9d6dcae69644d3a79aab4e37dcb23deb0f2facdc
+    corpus/labels/T15.json: 117088856e7088a91e108fc56569db12be8d6a0a1d3e8ed958d147571282e98a
+    corpus/labels/T16.json: 2963430d6435ffdfbc792d54064fc7675f22fca980637adb4f9e13b50249a3d1
+    corpus/labels/T17.json: b1cd71bef26973f3e9904a9b5801a6cf523080c1677e531622450fff1603c033
+    corpus/labels/T18.json: 1f166c4ddaaf990bb2a708cbf0404cd352c2c2adb89207f58af9101c10157775
+    corpus/labels/T19.json: 3dde9b755ceeaee2e907ca863712da9f2a184ebee00f468803dad3c907581687
+    corpus/labels/T20.json: 17346dc90acc3264a0614ae3afafffc1d5405d8ec990bc363b7b8e681a5a65ed
+    corpus/labels/T21.json: 4b7abe0727c889f81b6cde055a2d7f7115175ebbb2e2093b579288543c9109c9
+    corpus/labels/T22.json: 20199448aafd8cb32660f9b14f9f37ce33cb2d437167f989b4b9a56fd8fb1e9d
+    corpus/labels/T23.json: e6f9808575c9a525f286c8018e224e11d151a1709838e56d6b84b624c516fe7d
+    corpus/labels/T24.json: 125176945ac93fa2452de2645e6888d5b16b893e01c24cd234edd07dcadefc70
+    corpus/labels/T25.json: b62f61b6f7d24bb87b7660f38ef6a56f927d7376e5ac906bff0c990d81cdde44
+    corpus/labels/T26.json: 9f97b56cdcf6239adbeb6da97d64454beae83086fa98bcd5c056547a1b860c10
+    corpus/labels/T27.json: 100546b91df75527867f300f576f998ba86907ed5a0cc0e2ba8ece5e6a33aa30
+    corpus/labels/T28.json: 5a7c465bc3091dbf137f2c2ecdda36e22cc73f533405fcd6db9c9c9d09333493
+    corpus/labels/T29.json: 88af4340991fcfa600fee6b07569bd3bae305e986ada012dbf908662270b61aa
+    corpus/labels/T30.json: c9abac6ddf0f0d71860df0db29d4601abd351d3f1cf6c4d2e933baf1e8f8af82
+    corpus/labels/T32.json: a1ac3c97896ee85b78d8d6f6ea31acf20270dd33857a2ab81d8238b7ffc53251
+    corpus/labels/T34.json: 5d51ca39daffb326a55242cd917dcf8dadfe194a236dd9772ecb17703fb36ffb
+    corpus/labels/T35.json: 005dbaf0e75adfce37da870b4010284ed9e42ba7c9f42b00f4e594d5f59f20a3
+    corpus/labels/T36.json: 079c8a28ee48914f014f2efa08f9304d722c9a1cb64759275b50c8d9e19de609
+    corpus/pool/T01.md: 8a375a1f4b1040e0487166ed4612577a0f590c154157e5c816a50b1fc77f21fc
+    corpus/pool/T02.md: 83962fb5959108b49d01a630653b113ce683571910f194c9ee3d55c11803ca4a
+    corpus/pool/T03.md: 1999bebac473ad49a9a0a86f1ebe2fcd08dacc59e5e808e5a920849b7f1524e1
+    corpus/pool/T04.md: a1a5337cae25316e0ca0e36b5501ef8e277cb1a7d3ec5775ee240f9573fdbc34
+    corpus/pool/T05.md: b5af974fdf5b8aa5d687bf630712626a52344fe1719fc675dd0a82f5547e0e88
+    corpus/pool/T08.md: 9e8a2439e61d6989b447952229bac5d0597c4299f56a1ae6918dbf7a97f507f9
+    corpus/pool/T10.md: e50d71832412867645b5ec4338fea076b16fa0dd08428541480c0c64c64a2177
+    corpus/pool/T12.md: a97d5fdfbffc983724ffd7386ec91c48b5c0b52826f4db95eeae710ebae10b10
+    corpus/pool/T13.md: e091b8b54a87dbb6518390d245033399b349af18bcdd0ac2f71311ee783b301c
+    corpus/pool/T14.md: fc15f6a53ea2ee0b770546f3e59890eed5d8a6ebcb89619111e33c605e66e940
+    corpus/pool/T15.md: dff2866e92b9602882419e935ae7f492780665c0e0376dfb310cd2d493ce8588
+    corpus/pool/T16.md: cc3c1c4950d86d10c2848434c22964f03c248d2688578d23a17865ef525cf5a3
+    corpus/pool/T17.md: 975773a58e285fc91e81fde42049e2ccc064fac0d30569c3c196d4b731e39875
+    corpus/pool/T18.md: fc62fb95e9191824c30d08b1669f8fac57d3599d79dd6c4c4ecac074e3a06dfb
+    corpus/pool/T19.md: 0ae47cb19ec693bd3de165062e9df7c34998b8664b787131fb876db93f7973e9
+    corpus/pool/T20.md: aa36e1275c28a1751e24e7290ffde41493bd00a860de1bd4ab7d8dbba5c0bc48
+    corpus/pool/T21.md: aac90d07615a298c05d8624d04683c128316eafe2604b079297aa3fa2e8508ee
+    corpus/pool/T22.md: 1313f103a51b4fe69144c09ec719fe3e2bf9430449001348adc91d800c19d52e
+    corpus/pool/T23.md: 314b32e2e36a0f53979f95127d1815e0ce477872a33fdd86ce88baa102949212
+    corpus/pool/T24.md: 9983bff7735da89f6e0253b84bb818866c608a67402afa177865cff4e63ec8bc
+    corpus/pool/T25.md: 58d2eebd6cdbe768a3368fd6d568ac7a9bfc3338d538024cf55b2205458daef2
+    corpus/pool/T26.md: b267dbb8c25398cd527c50f67daae4fd2aba1440781164cb6288804a1b54051d
+    corpus/pool/T27.md: c67e8c68ffadedcec579286888fc90b252d2d5bd0e4bd8e8388a8e95efab42e5
+    corpus/pool/T28.md: b2df8b9ec5e35f0c0d93b0ffcac48a389eda21d32eb122a64b4e1849f573182b
+    corpus/pool/T29.md: 63226dbace88231b8a5abb221a947a0daa06348ab2216f8d207d4e107ae099ea
+    corpus/pool/T30.md: 8e5bd75d659cbc3e306d3384743c09eede50cf28870a0e3a32a5ffec1828c40e
+    corpus/pool/T32.md: e74ec26463a68e67e3c6076998e7f3b27d572c3f251ccb93b86f0468e633518d
+    corpus/pool/T34.md: 5c757d836840a9ae8793434a62e48b5424d8e8ffcd591561d83105c907ded112
+    corpus/pool/T35.md: ee0cbbe50abcc84d095192a4218aacd98b0a69796236c5ab8058d2bbdd0d38ea
+    corpus/pool/T36.md: 0b3ae1875c6ac16501c29c9049e01630af89ab58fd636a65d87574e4b40d0b26
+    corpus/pool/metadata.json: 902fa5ecff9ab4ac29d4d1344e6711a643ade932359304f3a15b71410d13279f
+    corpus/pool/question_form/T01.md: fad431f991a82f8f782cbe33d944ff8c1075dffb052bb0de8a7a996d31873fa7
+    corpus/pool/question_form/T02.md: 8e793707d685036283583b8b0a1f61041dddaa90ecf8079a9c333e4a48cfc278
+    corpus/pool/question_form/T03.md: e33ec226e103fcf31b6c53e61e32ecee8d72acc0da4f53b8f542509bbace15db
+    corpus/pool/question_form/T04.md: 4b5fdec6ecf666a30d55a1fcf5e67d597100a3264e657212e76aa08badd5f3a9
+    corpus/pool/question_form/T05.md: e080d4eaec3adcf49a33ff899cb9d7a711b27b2e9844a659ee10b483845ce9b6
+    corpus/pool/question_form/T08.md: a49c9c9c43020e4dda903d8248f5a7cb617a4cf9b3dafdf59133289916341fe6
+    corpus/pool/question_form/T10.md: 8185b6a0c3c1cc3341059da78684fdaf989761ae29a18bb4c03c6e62dcc42a11
+    corpus/pool/question_form/T12.md: 9e4b99ef9a726eeeb98d47c0e425b7817b50a1397d761dadf487222ada43422a
+    corpus/pool/question_form/T13.md: 38406f690fb952ea64312d7fcd8d79454f20473543264cf3ed3a9a9afbc3cef1
+    corpus/pool/question_form/T14.md: 7669fd280ec4a0dfbc02a9a014260df91f08b914bf555cce142b2e5ae93d174f
+    corpus/pool/question_form/T15.md: 7e02df264234aee32641cdb2528ede2a215439c7fdf7ae70d58314a08ba888e5
+    corpus/pool/question_form/T16.md: ccc1bb035c1e344d431cdc8db0516c0e3cd25c879f8ca9f31d5354dcbbb5617b
+    corpus/pool/question_form/T17.md: bdbe42154666721aeed46843925694bd445ccc37507def7831b0c97ab5ca3d76
+    corpus/pool/question_form/T18.md: 77ec19a1d9f65fabb3339e0600e743f0bb13dc593d6c4dbb6e6aa1ab122cf943
+    corpus/pool/question_form/T19.md: bb4c8f8c97e23d3177270bb91e354a26de399894a62c86e0a95f37029004ca83
+    corpus/pool/question_form/T20.md: e9c34d80d7b3f90705515a91a7ba97dae61c0a22121ff401b0d6e2c6f710158f
+    corpus/pool/question_form/T21.md: 4336fae0ebc065d75828432a9bb534250ad12694455eb8449d6826d4297f3525
+    corpus/pool/question_form/T22.md: 41038350b2df7d81a6d8a271e724700fcf868cc3a229a62a7ddb31312af9056c
+    corpus/pool/question_form/T23.md: c79e84cef7b8a111c98beee0773dbf043366ccac1bdb4c3c7250f6f8bd308b21
+    corpus/pool/question_form/T24.md: d4ce83504bfd71c15dd92c5e4f14d8d2e685bdeb17878a4a0edc1e4607baf8cc
+    corpus/pool/question_form/T25.md: c339d6352d9802d1e295f00cd807401ef20c0b7baff4abd0787325383eecc178
+    corpus/pool/question_form/T26.md: c9b5c171ad348b2d15a56d561f531d5b525499bae0f14418b73d86888b23086d
+    corpus/pool/question_form/T27.md: fed5255b7b3ed547fe298479fc930bbccb4412febe95b2160dcb1de0c9625e65
+    corpus/pool/question_form/T28.md: f47ba24506e2c18c1ee2625f59a5bddaf2bd7ac780951ff1562fe01cff9ede2a
+    corpus/pool/question_form/T29.md: 553d9973b7ba06fe17e08c728f20aabff6707d9b1cce50f4e734673159c9d804
+    corpus/pool/question_form/T30.md: 7c10eaeea578367ad76841ca67068dcf745d991b5de8a47d03a206b00bf80489
+    corpus/pool/question_form/T32.md: 19d3f8f16ffb807a01915ec8c6ce990f147cdb268a67196a3a788ce2be6104d8
+    corpus/pool/question_form/T34.md: 2506a80c2fe34e18edc220cd8b8626729e051a3d64e03d0652df1d4790befc05
+    corpus/pool/question_form/T35.md: 4f1481a0158cd9bbbdabe02f3948f80c181022247028fa1ceed37e0c58266825
+    corpus/pool/question_form/T36.md: 74d72cefe214793566ea38f5cb7ed06d76ed011c189a6f5000c868b94c8a5fa1
+    corpus/questions/T01.md: 1d9899c17abe7faaf2ab617ad7b23396e3cfab4863dbe81aa2ed399934c1f8ad
+    corpus/questions/T02.md: 52b20448b1d141ec462dc84c5e30442fd081ca847534b8512269983d926c626e
+    corpus/questions/T03.md: 67dd066cbd6d580b830771f057f3d01fdee9c34e4f57c5ef86ac1989ba1092f3
+    corpus/questions/T04.md: 474a88c656c9401bcd8779b8bd5de7b18e07388d437b561661b9ec0238ac8ed5
+    corpus/questions/T05.md: 723e0bf0a0fdaa75759415285b819607d0cee5197d9f1e5d7f2aea111b58a333
+    corpus/questions/T08.md: 527834414c29644008a119cb44e30f8cc1bf9a6bc56c620185ddbb8e90223bb4
+    corpus/questions/T10.md: 6dcfc044133918994ae918be6c24dfe9295056ef51ce66d6a7048411d04d9341
+    corpus/questions/T12.md: 40c6dade6bb1a4220e4f89cb7f64aa4887edd128a6e92fb397b6bef8cc715a47
+    corpus/questions/T13.md: 19982d54a2e728c968892a29b7c4759910f46ef5717f15f6c43f44ab7ceac541
+    corpus/questions/T14.md: 8fb074addf808e4ee7eb2da721b4a57d186e71cb5b0af9caf02fc06a36e2ae51
+    corpus/questions/T15.md: 8008becaf8c1f90610b32539b78ccd8451eb719c2e7b960489b4597ff8c60719
+    corpus/questions/T16.md: 9a3f0fc0e40b3fa859f34a95117d9dbf97c3c58edd8ff666b1b5373c9b400dcf
+    corpus/questions/T17.md: df60d3690b3a3dde1ae5c2a64af55f10e5e408ccb805d14ae29f2e8df1755783
+    corpus/questions/T18.md: 68c5921b59ce0f31eefe4a7532ccaca39415340bc0092f1d1e4f76a826ec624a
+    corpus/questions/T19.md: 160a354dd52eb488ff0ae626fe4162092135f61f029372fb52435fe1ffecfd30
+    corpus/questions/T20.md: bf842a470f581c7969571e7b31e3d897917c0dfb87c90e3d253f95b75848f332
+    corpus/questions/T21.md: 597dc635b7492d0fbe512f58d400153310cc488511713db98a435563a10da641
+    corpus/questions/T22.md: 257debd6320c01ccc0e9b75188baadb6b1586aaec2b71107ea4a78137edb0b65
+    corpus/questions/T23.md: eb4a0b8c075c55ca1cc8ca3c4c670c46a8411c2ac85fbe69d770dbb50a034df0
+    corpus/questions/T24.md: 046c220c5b32068c8bc49d20195b4ef8b899bbb67752f1c2b2d8740fb2d9c4d5
+    corpus/questions/T25.md: 4d82947b47aa9af3d5bd8654dd6d371b8c14bfe2e24644ed6c5dcdfc4f27aef8
+    corpus/questions/T26.md: 89208bc60fc33ca1b4351082ea00e196c7c30cf075121d863715251807870b9c
+    corpus/questions/T27.md: 564670914ef13c869935a4a4d7c6a14ad6fa1677736add06e10259277693e957
+    corpus/questions/T28.md: 90b97ecec6db8fda4f57688dbceafcdd24785c7bba3a5c6a0ce88078151d5e35
+    corpus/questions/T29.md: 09e54dfc3dbe0fa11daab9c29d66ee4142666a36324e40751a41ab7456745232
+    corpus/questions/T30.md: ad91d45a21802ac81166e5c2a0abb836e6f7f8bf30d0b023b041165800634939
+    corpus/questions/T32.md: 8f9c0bff2aaaf51d69b556a81cedd339a930052a63c88cf4b4cc6437bce2293b
+    corpus/questions/T34.md: 735227323543691a571c92c83276fc72d5be468eac83a4867d59fbce663a6164
+    corpus/questions/T35.md: 418eae433f3644a3b787e48e5d495efa63979d1e8a980d4765df7d476ac2ac27
+    corpus/questions/T36.md: ad90f1ad9a60568a9fd5f6136118bddfec77c042f9158bc015d6f3f200f166e1
+    corpus/rubric.md: 65b593ad53f0c7c70aaa89091f068ba204eca73fe143b496a3f868a65465126c
+    corpus/topics.md: d19c5a1a42076d65bd89d64df3cbdf836b9a0c35ecef2615b79951a8b7dd849e
+    prompts/README.md: c36160652344db2a3213e462a20205d892e8cf479fc59eef1af4283cf4568601
+    prompts/covariates.md: fe553ca334f0725eed2da8c0b41389648577c20a9dbcff5c149b1a46156278e2
+    prompts/jury_contract.md: a683a906ebb9bf14d286fb1fe139dd836cd89c9ee38959b09d75cd739803b9ed
+    prompts/solver_baseline.md: 94640b91f3a18ad91b7ed2035bdcf44a554c538bdaf5c5504c4ee18d12aaad92
+  manifest_sha256: 6b8ed796d8619c52361504e74a2599afb34914958f5f808aa3221cc4b0f1632e
+
+split:
+  algorithm: >-
+    ids = the 30 article ids sorted lexicographically;
+    python random.Random(42).shuffle(ids); the first 10 are train,
+    the next 10 calibration, the last 10 test. Article-level; no
+    proposition of a seen article appears in an unseen role.
+  seed: 42
+  train: ["T24", "T19", "T15", "T32", "T27", "T10", "T08", "T17", "T16", "T20"]
+  calibration: ["T14", "T30", "T36", "T26", "T21", "T34", "T02", "T18", "T23", "T03"]
+  test: ["T22", "T35", "T05", "T29", "T12", "T13", "T28", "T01", "T04", "T25"]
+  census:
+    non_entail_test: 201
+    threshold: 60
+    result: PASS
+
+solver:
+  model: qwen3.8-27b (community merge, Gated DeltaNet hybrid)
+  host: marzuki-hydrogen, vLLM, port 8000
+  fine_tuned: false
+  temperature: 0
+  thinking: off (chat_template_kwargs enable_thinking false)
+
+jury:
+  rule: >-
+    Five base models from five distinct organizations, each below 4B,
+    documented training cutoff before 2026-08-14; where documentation
+    is absent, the frozen probe set (cutoff-probe/probes.md) is the
+    eligibility gate (blind to the 2026-08-14..2026-08-25 window).
+  members:
+    - model: meta-llama/Llama-3.2-1B-Instruct
+      org: Meta
+      params: 1.23B
+      cutoff: 2023-12 (model card)
+    - model: google/gemma-3-1b-it
+      org: Google
+      params: 1.0B
+      cutoff: 2024-08 (model card)
+    - model: microsoft/Phi-4-mini-instruct
+      org: Microsoft
+      params: 3.8B
+      cutoff: 2024-06 (model card)
+    - model: allenai/OLMoE-1B-7B-0125-Instruct
+      org: Allen AI
+      params: 1.3B active / 6.9B total (MoE)
+      cutoff: undocumented; probed, window-blind, eligible
+    - model: Qwen/Qwen3.5-4B
+      org: Alibaba
+      params: 4.66B (VLM, Gated DeltaNet hybrid)
+      cutoff: undocumented; probed, window-blind, eligible
+  same_family_arm: >-
+    Qwen3.5-4B shares the solver's family (Qwen3.8-27B). Registered
+    as a contrast arm for the family-blind-spot mechanism, not a
+    confound. The prereg report must show 5-juror consensus and
+    4-external leave-one-out side by side, plus arm-level per-class
+    analysis; the headline never depends on the arm.
+  fallbacks_4b:
+    - meta-llama/Llama-3.2-3B-Instruct (cutoff 2023-12)
+    - google/gemma-3-4b-it (cutoff 2024-08)
+  fallback_rule: >-
+    Primary below 75 percent on the calibration set is replaced by its
+    same-family 4B-class sibling; families without a 4B sibling (Phi,
+    OLMoE, Qwen) take a registered cross-family fill from the 4B-class
+    candidates. Declared here, applied family-by-family, labelled in
+    the report.
+
+prompts:  # verbatim frozen user-message templates (no system message)
+  jury_contract: |
+    You are a careful fact-checker. A claim about the news article below is
+    stated in question form. Verify the claim against the article.
+    
+    <article>
+    {article text, verbatim from corpus/articles/T##.md}
+    </article>
+    
+    Answer this question only based on the information available on this
+    article.
+    
+    {claim in question form, verbatim from corpus/pool/question_form/T##.md}
+  solver_baseline: |
+    Below is a news article, followed by 20 questions about it.
+    
+    <article>
+    {article text, verbatim from corpus/articles/T##.md}
+    </article>
+    
+    Answer each question in order.
+    
+    1. {question 1, verbatim from corpus/questions/T##.md}
+    2. {question 2}
+    ...
+    20. {question 20}
+  parameters: {temperature: 0, max_tokens: 512, thinking: off}
+  question_form_rule: >-
+    "Is it true that {proposition text, verbatim, without trailing
+    period}?" applied to all 1200 pool propositions; negations
+    preserved as-is. Renderings in corpus/pool/question_form/,
+    content-hashed above.
+
+contract:
+  answers: [PASS, FAIL, NOT_STATED]
+  mapping: {PASS: ENTAIL, FAIL: CONTRADICT, NOT_STATED: UNSPECIFIED}
+  gate_binary: PASS vs not-PASS (ENTAIL vs non-ENTAIL)
+  calls: one call per claim (40 per article per proposer)
+  parse: strict JSON; failures are missing observations, never coerced;
+    parse rate reported per proposer
+
+arms:
+  primary: WCT-EM (three-state Dawid-Skene, unsupervised)
+  secondary: WCT-U (uniform signed support)
+  ablations:
+    - claim_instance_counting (verbosity-weighted; expected to fail)
+    - single_best_proposer_calibrated (oracle reference)
+  floor: base_rate
+
+baselines_in_order_of_stringency:
+  1: trivial base rate (floor)
+  2: single best proposer, calibrated (oracle reference)
+  3: zero-shot 1-4B jury native outputs on the same task (P4 arm)
+  4: frontier self-review (27B with the frozen jury contract on the
+     same claims; the null control the pass criterion compares against)
+  5: covariate logistic regression (the registered bar)
+  6: optional small supervised verifier trained on calibration labels
+
+covariate_baseline:
+  features: [article_length, pool_position, claim_length, polarity,
+             question_type]
+  fitted_on: calibration split only
+  note: model-free; the feature list is pinned here, not chosen after
+        seeing results
+
+metrics:
+  primary: >-
+    Held-out article-block delta log-loss, WCT-EM vs the covariate
+    baseline, delta threshold 0.02 nats, article-block bootstrap,
+    2000 resamples.
+  co_primary: within-article AUROC, WCT-EM vs ranked covariate baseline
+  null: within-article truth permutations, 10000 permutations
+  e0: pairwise proposition-level residual error correlation across
+      voters, reported as a number
+  calibration: Platt sigmoid(a*s+b), exact MLE on calibration split;
+                temperature kept as an ablation
+  solver_value: flag precision, flag recall, claim accuracy change
+                solver-alone vs solver-plus-jury (low-consensus claims
+                dropped); solver confidence = mean token probability
+                of the answer span
+  cost: per arm, total input/output tokens, GPU-seconds, USD, median
+        TTFT, minimum hardware at target concurrency
+  jury_size_sweep: gated false-claim rate at sizes 1/3/5; the 3-juror
+        arm is the three highest-calibration-accuracy families
+        (pre-specified); descriptive curve
+
+pass_criterion: >-
+    Across the test articles, the juror-gated system (defendant claims
+    gated by jury consensus, below-4B primary with the registered 4B
+    fallback where applied) PASSES if (a) it outperforms the frontier
+    self-review control on false-claim rate with the 95 percent
+    bootstrap CI of the difference entirely below zero, OR (b) it is
+    comparable within 10 percentage points of false-claim rate (point
+    estimate, bootstrap CI reported) at strictly lower total compute
+    cost (USD, amortized serving price). The cost ratio is a headline
+    number; the pass branch requires strictly lower cost, not a fixed
+    ratio.
+decision_rule: >-
+    GO requires the point estimate at or above delta AND the bootstrap
+    interval excluding zero. Point clears delta but the bound does
+    not: INCONCLUSIVE. Degenerate (zero-width) intervals are reported,
+    never silently interpreted.
+
+predictions:
+  P1: WCT-EM primary returns GO on the fine-tuned jury.
+  P2: Leave-one-proposer-out primary remains GO with each voter
+      removed in turn (including the solver-as-proposer, consensus
+      not oracle).
+  P3: Claim-instance counting AUROC below 0.65 on the test split
+      (one-vote-per-source invariant holds).
+  P4: Delta log-loss advantage over base rate on the fine-tuned jury
+      is at least as large as the zero-shot 4B jury's advantage on
+      the same articles.
+  P5: The jury consensus flags a strictly larger share of the solver's
+      non-ENTAIL claims than of its ENTAIL claims on test articles.
+      (power note) needs at least 100 pool-matched solver claims of
+      each class, else descriptive only.
+  P6: (co-designer's, verbatim intent) On test articles, over the
+      solver's pool-matched claims on UNSPECIFIED propositions,
+      (a) the solver bullshits a confident answer on at least 50
+      percent of them, and (b) the jury-consensus gate removes at
+      least half of those wrong answers (false-answer rate drops
+      from at least 50 percent to under 33 percent). (power note)
+      needs at least 30 such claims, else descriptive only.
+  P7: (a) The 5-juror consensus outperforms the single best juror on
+      false-claim rate (mechanism, same-family blind spots). (b) The
+      juror consensus's raw compute effort exceeds 50 percent of the
+      27B's while its false-claim rate is lower than the control's.
+      Raw compute effort = aggregate parameter scale x tokens.
+      (power note) needs complete token and parameter accounting for
+      every arm.
+
+training:
+  scheme: >-
+    Self-distillation. Before any fine-tuning, each base family runs
+    zero-shot on its own training slice under the jury contract and
+    its exact native output is captured. Target = {answer: PASS|FAIL
+    parsed from the native output, reason: native output verbatim}.
+    The LoRA learns only the wrapper (instruction style, JSON
+    contract, answer field); reasoning content stays native.
+  variants: [reason_included, votes_only]
+  adapters: 10 (2 variants x 5 families)
+  slices: >-
+    Disjoint 10-article training split per family, distinct seeds,
+    different recipe where possible, to keep error correlation low.
+  losslessness: >-
+    Per adapter, base and fine-tuned run on the 10 calibration
+    articles (untrained for every family): (a) exact-match agreement
+    of outputs, (b) PPL of the base native outputs under the
+    fine-tuned model as a ratio to the base self-PPL (1.0 lossless).
+    Descriptive, per family; divergent adapters are flagged
+    perturbed and their consensus share reported separately.
+
+contamination_check: >-
+    For every test article, each base juror answers the 20 seed
+    questions WITHOUT the article (parametric only) and WITH it,
+    before any fine-tuned output exists. Any question answered above
+    chance without the article is flagged parametric; flags are logged
+    before the fine-tuned test run is seen.
+
+spend_caps:  # hard cumulative per-model call caps, persisted across
+             # re-runs (runner maintains the counters)
+  qwen3_8_27b: 5000
+  each_juror_model: 5000
+
+discipline:
+  - Implementations are the registration. The committed files at the
+    tag are the record, not this prose.
+  - The decision-rule boundary clause (metrics.decision_rule) is the
+    C11 fix; it is explicit, not implied.
+  - Generation cache is content-hashed and immutable; analysis re-runs
+    at zero inference cost.
+  - DECISIONS.md and GOTCHAS.md are part of the record.

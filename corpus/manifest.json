@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "generated": "2026-08-26",
-  "notes": "Corpus manifest for the 30-article wave-consensus corpus. source.role is 'original' for verbatim articles (the article IS that source) and 'anchor' for drafted articles (the article used to fact-check the draft). in_passing_mentions are the secondary facts deliberately included in each article, with question seeds useful for Phase 1 task 4. disputed records where the article pins one figure of a DISPUTED fact from the fact-check pass; the conflicting figure is pool CONTRADICT material. label_counts filled in P1-6 (corpus/labels); split_role and sha256 filled at Phase 2.",
+  "notes": "Corpus manifest for the 30-article wave-consensus corpus. source.role is 'original' for verbatim articles (the article IS that source) and 'anchor' for drafted articles (the article used to fact-check the draft). in_passing_mentions are the secondary facts deliberately included in each article, with question seeds useful for Phase 1 task 4. disputed records where the article pins one figure of a DISPUTED fact from the fact-check pass; the conflicting figure is pool CONTRADICT material. label_counts filled in P1-6 (corpus/labels); split_role and sha256 filled at Phase 2 (frozen 2026-08-26, tag prereg-waveconsensus-v1).",
   "jury": {
     "selected": "2026-08-26",
     "solver": "orcarouter/Qwen3.8-27B-Uncensored-FP8 (served as qwen3.8-27b, hydrogen)",
@@ -119,7 +119,9 @@
         "ENTAIL": 19,
         "CONTRADICT": 11,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "test",
+      "sha256": "0db3ff205e887471f013d8bb0251b20ecf343d8c0b8c939e3845a6d1f7daa72d"
     },
     {
       "id": "T02",
@@ -171,7 +173,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "29c71e0cbfa496e76c5602b472f97127e4de62a7fe1cbf70d0c6513d2bb05654"
     },
     {
       "id": "T03",
@@ -203,7 +207,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "2359051295b90dd200214c5a13f6f223b8d332ed4a18849738ec7c57b2031d57"
     },
     {
       "id": "T04",
@@ -242,7 +248,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "test",
+      "sha256": "fe15d9c1b282c3862b979f69f9eb22c339daea9d6ca716a92439771e8e369090"
     },
     {
       "id": "T05",
@@ -281,7 +289,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "test",
+      "sha256": "c186a3e2130b6728ecd31ffadb9e0c1b30e383ba348d2bdd42412ee8915c27c6"
     },
     {
       "id": "T08",
@@ -320,7 +330,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "4dbdf2db114e3671366bf4fdeda4650213d4a599d69940c70bda13eb2c5b0e11"
     },
     {
       "id": "T10",
@@ -359,7 +371,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "train",
+      "sha256": "a7a3ba6385849b8be5e65bb211dac6a311343ad82736890acb2774ebe1dc7185"
     },
     {
       "id": "T12",
@@ -398,7 +412,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "test",
+      "sha256": "40b3fe4132f0b3b2cf42d4788c8c56f3c82e9531a9593a3a8fdf8be62c1fa9cd"
     },
     {
       "id": "T13",
@@ -444,7 +460,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "test",
+      "sha256": "f54580d71d84ed58e9db37796f6602aafe3b6369818a3a386127c59bf436e00a"
     },
     {
       "id": "T14",
@@ -483,7 +501,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "d51dd0092bab5af1f9cad3debc3252cd0215d9bce73098ae40c3127e2f52625d"
     },
     {
       "id": "T15",
@@ -518,7 +538,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "0c09b49f8b5584e8ec78bf31fff13178e78e60cb6032bce0e49d99e4fe2bcefd"
     },
     {
       "id": "T16",
@@ -553,7 +575,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "a256a337f58538c490ba362abd773d8b325e6c66b913da77d6ad9771e69c14e0"
     },
     {
       "id": "T17",
@@ -592,7 +616,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "cbac79ebd082d5edd3df620f3f33349fb38540cab469822cca15f63704a6c936"
     },
     {
       "id": "T18",
@@ -638,7 +664,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "003d2302a3072f00e922d60d18cd063836ab069d0320bb4b4cfb8bd46f5c4c32"
     },
     {
       "id": "T19",
@@ -677,7 +705,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "aab3c26bcc13491d1a6a3b61aaf8bc1887f139bc96864411d14c341de91d3218"
     },
     {
       "id": "T20",
@@ -720,7 +750,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 9,
         "UNSPECIFIED": 11
-      }
+      },
+      "split_role": "train",
+      "sha256": "bcd8513f60b62932b3a86c34dd1a361b25dd077e9ff5f12b14fb06ae92e0d07b"
     },
     {
       "id": "T21",
@@ -759,7 +791,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "d3e076089e7dbb0cc7c3425dcbe91f557a7437c194c6dcf16fb695c939687749"
     },
     {
       "id": "T22",
@@ -798,7 +832,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "test",
+      "sha256": "0df83ee61c7b86644560eff54811e712ea2ec181114d8218298d38a9bfb5f159"
     },
     {
       "id": "T23",
@@ -837,7 +873,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "04028d6bd1813fa9f05c5a013408457eb5bf729cf98fb479ba74df3c24bd06e5"
     },
     {
       "id": "T24",
@@ -883,7 +921,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "5d372d5291afc3c140cbd2d46f96a878300e88a78a94b69f9eebf2bd2f87b36b"
     },
     {
       "id": "T25",
@@ -929,7 +969,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "test",
+      "sha256": "e90700bcd1fd3d6869bc7b2908da8d565025d75ffca19761fe2c6cc1faa45772"
     },
     {
       "id": "T26",
@@ -972,7 +1014,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "358cfe8658a25ecb5ae02e5cf436a316b5611afc950df87f4a91c5c30ab76ddd"
     },
     {
       "id": "T27",
@@ -1011,7 +1055,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "train",
+      "sha256": "07136d4ed30d9b63910e7b861268cd4712e1fd09f03bb09b6a8c5c1fde0796b4"
     },
     {
       "id": "T28",
@@ -1050,7 +1096,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "test",
+      "sha256": "7dfe5e5b5e246b31faf0eb9fa5ab7cdbd28e458fe34774952fdbba1a12e8f6be"
     },
     {
       "id": "T29",
@@ -1093,7 +1141,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "test",
+      "sha256": "2fa3829f0f8100735e344d7816e25e3c639e09dd522e9078298976e13364cbb5"
     },
     {
       "id": "T30",
@@ -1139,7 +1189,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "5d1d786d3af622621e4d4f562f300c84709a8c2f929947d003595007eaa20bc4"
     },
     {
       "id": "T32",
@@ -1174,7 +1226,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "train",
+      "sha256": "a276c2d6e99716058f8b9043cd9734ffb9b3d22ee32f587f5e9c9699cf4e0564"
     },
     {
       "id": "T34",
@@ -1217,7 +1271,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "b873320d31b7de6d2780ec19bb6197c0ab770f55227b0564536e0950807cf2c5"
     },
     {
       "id": "T35",
@@ -1263,7 +1319,9 @@
         "ENTAIL": 20,
         "CONTRADICT": 11,
         "UNSPECIFIED": 9
-      }
+      },
+      "split_role": "test",
+      "sha256": "973c84cf048a6bb0243f898c6873b26641a9d1469664871526d4a2328af38a76"
     },
     {
       "id": "T36",
@@ -1313,7 +1371,15 @@
         "ENTAIL": 20,
         "CONTRADICT": 10,
         "UNSPECIFIED": 10
-      }
+      },
+      "split_role": "calibration",
+      "sha256": "726d4efb91ac5af448f287b0f63d42dd6eaf7344954184fdb3ff17825fcaf300"
     }
-  ]
+  ],
+  "frozen": {
+    "date": "2026-08-26",
+    "tag": "prereg-waveconsensus-v1",
+    "split_seed": 42,
+    "manifest_sha256_placeholder": true
+  }
 }

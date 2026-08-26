@@ -4,7 +4,43 @@ Running log of the experiment, newest entry first. Phase and task references
 point at PLAN.md. Decisions with a reason go to DECISIONS.md; this file is
 the working record (what was done, what was found, what is open).
 
-## Phase 1, in progress (started 2026-08-25)
+## Phase 2 - Registration freeze (done 2026-08-26, tag prereg-waveconsensus-v1)
+
+Task 10 complete. The corpus is frozen; no fine-tuning or generation before
+this tag.
+
+- Split: article-level 10/10/10, `random.Random(42).shuffle` over the sorted
+  30 ids (python, deterministic). train T24 T19 T15 T32 T27 T10 T08 T17 T16
+  T20; calibration T14 T30 T36 T26 T21 T34 T02 T18 T23 T03; test T22 T35 T05
+  T29 T12 T13 T28 T01 T04 T25. Manifest filled: per-article split_role +
+  sha256, version 2, frozen block; manifest sha256 in prereg.yaml.
+- Census go/no-go: 201 non-ENTAIL propositions on the test split (threshold
+  60). PASS.
+- Hashed into the registration: 157 frozen files (topics, rubric, 30
+  articles/questions/pools/question_form/labels, metadata.json, manifest,
+  4 prompt files). All hashes verified by re-computation after writing.
+- prereg.yaml written (tools/freeze_prereg.py, idempotent, re-run verified):
+  corpus + hashes, split + census, solver, jury (5 members + cutoffs +
+  same-family contrast arm + 4B fallbacks + fallback rule), verbatim frozen
+  prompt templates (jury contract + solver baseline) + call parameters +
+  polar question-form rule, contract (three-state mapping, gate binary,
+  strict JSON, missing-observation rule), arms, baselines in order of
+  stringency, covariate baseline feature list (pinned), all metrics
+  (primary delta 0.02 nats / bootstrap 2000, co-primary AUROC, null 10000
+  permutations, E0, Platt, solver-value, cost, RQ6 sweep), pass criterion
+  (a)/(b) + 10-point band, decision-rule boundary clause (INCONCLUSIVE
+  rule), predictions P1-P7 with power notes, self-distillation scheme +
+  2 variants + losslessness check, contamination check protocol, hard spend
+  caps (27B 5000 calls, each juror 5000, persisted counters).
+- Gotcha hit: hand-written YAML with plain multi-line scalars; colon+space
+  inside a continuation line ("Power note:", "mechanism:", trailing colon)
+  silently parses as a mapping. Fixed by rewording; the file now parses and
+  all values round-trip through a YAML parser before commit.
+
+Open: pull the 5 jury weights + 4B fallbacks to helium for self-distillation
+(MLX/bf16). Then Phase 3 zero-shot checks.
+
+## Phase 1 (done 2026-08-26, started 2026-08-25)
 
 Go-ahead from the co-designer 2026-08-25 ("Ok get going on P1"). Hang fire
 lifted.

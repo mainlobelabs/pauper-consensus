@@ -86,20 +86,31 @@ comparison. This track is a pilot, and it says so on purpose.
   proven at its strongest form. 4B is the pre-registered fallback (applied
   family-by-family if a below-4B candidate misses the competence band) and a
   descriptive ceiling check. PLAN restructured into Phases 0-6 with concrete
-  steps, deliverables, and gates per phase; SPEC jury section, RQ7, and
-  phase numbers aligned.
+   steps, deliverables, and gates per phase; SPEC jury section, RQ7, and
+   phase numbers aligned.
+- 2026-08-26: Phase 1 complete (go-ahead given 2026-08-25). All 30 articles,
+  600 seed questions, 1200-pool propositions, 1200 labels (599/310/291, 99.2%
+  blind recheck), jury selected (5 below-4B + 4B fallbacks), prompts drafted,
+  1200 question-form renderings, and corpus/pool/metadata.json (1200 covariate
+  records) all committed and pushed.
+- 2026-08-26: Phase 2 registration freeze (task 10) complete. Article-level
+  10/10/10 split (seed 42), 157 corpus/prompt files content-hashed, census
+  201 non-ENTAIL test props (threshold 60, PASS), prereg.yaml written and
+  YAML-verified, manifest filled (split_role + sha256, v2), tag
+  prereg-waveconsensus-v1 applied. No fine-tuning or generation before this
+  tag.
 
 ## Next step
 
-ON HOLD per co-designer sign-off ("approve, then hang fire"). Task 1 collection
-is done and the 30-topic selection is approved. When the go-ahead comes: (a)
-task-4 fact-check pass on T08 (Lindell recount) and T12 (Operation Economic
-Outcast, resolve the 21 Aug vs 24 Aug date conflict) plus the rest of the
-keep-30; (b) draft the frozen prompts from his quoted wording (task 9), then
-pick the five below-4B jury families plus 2-3 4B fallback candidates under
-the documented-cutoff filter (task 9); (c) Phase 2 freeze
-(prereg.yaml + git tag, task 10); then task 2, the label rubric, and the
-corpus proper.
+Phase 3 - zero-shot checks (tasks 11-14) on marzuki-helium: (a) pull the 5
+jury weights + 2 4B fallbacks to /Volumes/nvme0/omlx-models/ (MLX/bf16);
+(b) contamination run on the 10 test articles (each juror, 20 seed questions,
+with and without the article, before any fine-tuned output); (c) zero-shot
+native-output capture under the frozen jury contract on the train slice
+(self-distillation targets) and the P4 baseline; (d) the 27B solver baseline
+(30 calls, without prompt) and the frontier self-review control (1200 calls,
+with prompt). Every run archives logs + artifacts at run time (CRITICAL rule)
+into /Volumes/nvme0/wave-consensus/runs/<date>-<slug>/ and is committed.
 
 ## Phases and gates
 
@@ -177,7 +188,8 @@ Concrete steps, in order:
    pools and re-hash.
 5. Commit, tag `prereg-waveconsensus-v1`.
 
-Task: 10.
+Task: 10 (done 2026-08-26: split seed 42, 157 files hashed, census 201/60
+PASS, prereg.yaml written + verified, tag applied).
 - Verify: tag exists; every registered quantity in the spec has a line in
   prereg.yaml; decision-rule boundary clause present; census passes.
 Gate: no fine-tuning before this tag.
