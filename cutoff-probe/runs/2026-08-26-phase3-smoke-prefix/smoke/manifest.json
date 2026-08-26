@@ -1,0 +1,129 @@
+{
+  "run": "smoke",
+  "started_utc": "2026-08-26T07:51:58.211081+00:00",
+  "host": "marzuki-helium",
+  "runner_git": "858272f",
+  "command": "tools/phase3/runner.py smoke",
+  "models": {
+    "qwen3.8-27b": "http://100.95.144.25:8000",
+    "llama-3.2-1b-instruct": "http://127.0.0.1:8101",
+    "gemma-3-1b-it": "http://127.0.0.1:8101",
+    "phi-4-mini-instruct": "http://127.0.0.1:8101",
+    "olmoe-0125-instruct": "http://127.0.0.1:8101",
+    "qwen35-4b": "http://127.0.0.1:8101"
+  },
+  "purpose": "task 11: one real contract call per model before any phase 3 run",
+  "endpoints": {
+    "http://127.0.0.1:8101": {
+      "models": {
+        "object": "list",
+        "data": [
+          {
+            "id": "gemma-3-1b-it",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 32768
+          },
+          {
+            "id": "gemma-3-4b-it",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "llama-3.2-1b-instruct",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "llama-3.2-3b-instruct",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "olmoe-0125-instruct",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 4096
+          },
+          {
+            "id": "phi-4-mini-instruct",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 131072
+          },
+          {
+            "id": "qwen35-4b",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": 262144
+          },
+          {
+            "id": "MarkItDown",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "omlx",
+            "max_model_len": null
+          }
+        ]
+      }
+    },
+    "http://100.95.144.25:8000": {
+      "models": {
+        "object": "list",
+        "data": [
+          {
+            "id": "qwen3.8-27b",
+            "object": "model",
+            "created": 1787730718,
+            "owned_by": "vllm",
+            "root": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
+            "parent": null,
+            "max_model_len": 262144,
+            "permission": [
+              {
+                "id": "modelperm-9fb3df5a00e1d65e",
+                "object": "model_permission",
+                "created": 1787730718,
+                "allow_create_engine": false,
+                "allow_sampling": true,
+                "allow_logprobs": true,
+                "allow_search_indices": false,
+                "allow_view": true,
+                "allow_fine_tuning": false,
+                "organization": "*",
+                "group": null,
+                "is_blocking": false
+              }
+            ]
+          }
+        ]
+      },
+      "version": {
+        "version": "0.26.0"
+      }
+    }
+  },
+  "finished_utc": "2026-08-26T07:52:12.268639+00:00",
+  "stats": {
+    "n_calls": 6,
+    "parsed_ok": 0,
+    "spend": {
+      "qwen3.8-27b": 4,
+      "llama-3.2-1b-instruct": 1,
+      "gemma-3-1b-it": 1,
+      "phi-4-mini-instruct": 1,
+      "olmoe-0125-instruct": 1,
+      "qwen35-4b": 1
+    }
+  }
+}

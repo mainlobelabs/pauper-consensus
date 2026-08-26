@@ -1,0 +1,213 @@
+2026-08-26 17:50:47,670 - omlx.settings - INFO - Saved settings to /Users/andryo/.omlx/settings.json
+INFO:     Uvicorn running on http://0.0.0.0:8101 (Press CTRL+C to quit)
+2026-08-26 17:50:48,635 - omlx.scheduler - INFO - ChunkedKVCache patch: methods already present upstream, skipped: size
+2026-08-26 17:50:48,725 - omlx.server - INFO - CORS origins: ['*']
+2026-08-26 17:50:48,725 - omlx.model_settings - INFO - Loaded settings for 11 models
+2026-08-26 17:50:48,730 - omlx.model_discovery - INFO - Model type 'gemma3_text' has both embedding and LLM variants, but architecture ['Gemma3ForCausalLM'] is not an embedding architecture — treating as LLM
+2026-08-26 17:50:48,740 - omlx.model_discovery - INFO - Discovered model: gemma-3-1b-it (type: llm, engine: batched, size: 1.35GB)
+2026-08-26 17:50:48,757 - omlx.model_discovery - INFO - Discovered model: gemma-3-4b-it (type: vlm, engine: vlm, size: 5.55GB, text-only: 4.73GB)
+2026-08-26 17:50:48,758 - omlx.model_discovery - INFO - Discovered model: llama-3.2-1b-instruct (type: llm, engine: batched, size: 1.28GB)
+2026-08-26 17:50:48,759 - omlx.model_discovery - INFO - Discovered model: llama-3.2-3b-instruct (type: llm, engine: batched, size: 3.34GB)
+2026-08-26 17:50:48,764 - omlx.model_discovery - INFO - Discovered model: olmoe-0125-instruct (type: llm, engine: batched, size: 7.19GB)
+2026-08-26 17:50:48,764 - omlx.model_discovery - INFO - Discovered model: phi-4-mini-instruct (type: llm, engine: batched, size: 3.99GB)
+2026-08-26 17:50:48,767 - omlx.model_discovery - INFO - Discovered model: qwen35-4b (type: vlm, engine: vlm, size: 2.97GB, text-only: 2.31GB)
+2026-08-26 17:50:48,769 - omlx.engine_pool - INFO - Discovered 7 models
+2026-08-26 17:50:48,769 - omlx.server - WARNING - Default model 'Qwen3.6-35B-A3B-8bit-MTPLX-Optimized-Speed' not found, using first model
+2026-08-26 17:50:48,769 - omlx.server_metrics - INFO - Loaded all-time stats from /Users/andryo/.omlx/stats.json
+2026-08-26 17:50:48,769 - omlx.server - INFO - Server initialized with 7 models
+2026-08-26 17:50:48,769 - omlx.server - INFO - Default model: gemma-3-1b-it
+2026-08-26 17:50:48,769 - omlx.server - INFO - Memory guard tier: aggressive (guard on)
+2026-08-26 17:50:48,769 - omlx.server - INFO - Default max tokens: 32768
+2026-08-26 17:50:48,769 - omlx.server - INFO - API key authentication: enabled
+2026-08-26 17:50:48,770 - omlx.server - INFO - HF Downloader initialized
+2026-08-26 17:50:48,770 - omlx.server - INFO - ModelScope SDK not installed, MS downloader disabled
+2026-08-26 17:50:48,771 - omlx.server - INFO - oQ Quantizer initialized
+2026-08-26 17:50:48,772 - omlx.server - INFO - HF Uploader initialized
+INFO:     Started server process [43439]
+INFO:     Waiting for application startup.
+2026-08-26 17:50:48,786 - omlx.process_memory_enforcer - WARNING - iogpu.wired_limit_mb (92.0GB) leaves the OS less than 4.8GB of physical RAM (96.0GB); a large model load can trigger jetsam at this setting and strand the wired memory until reboot (#2184). Recommended maximum: 93388 MB.
+2026-08-26 17:50:48,789 - omlx.process_memory_enforcer - INFO - Metal wired limit raised: 0.0GB -> 92.0GB (target=92.0GB, iogpu sysctl cap=92.0GB)
+2026-08-26 17:50:48,789 - omlx.process_memory_enforcer - INFO - Process memory enforcer started (tier=aggressive, ceiling=89.2GB, interval=1.0s)
+INFO:     Application startup complete.
+2026-08-26 17:51:17,440 - omlx.engine_pool - INFO - Loading model: qwen35-4b
+2026-08-26 17:51:17,443 - omlx.utils.model_loading - INFO - M5 sorted gather_qmm reroute installed (issue #2267)
+2026-08-26 17:51:17,468 - omlx.patches.mlx_lm_mtp.qwen35_model - INFO - Qwen3.5/3.6 MTP model patch applied (PR 990)
+2026-08-26 17:51:17,471 - omlx.patches.mlx_lm_mtp.nemotron_h_chain - INFO - nemotron_h MTP chain patch applied (depth-k drafting, sequential fused verify, replay-free rollback)
+2026-08-26 17:51:17,472 - omlx.patches.qwen35_verify_qmm - INFO - MTP verify qmm patch applied (M=2..6 affine 4/8-bit)
+2026-08-26 17:51:17,476 - omlx.patches.mlx_vlm_mtp.qwen35_vlm_model - INFO - Patched mlx_vlm.models.qwen3_5.Model.sanitize for MTP
+2026-08-26 17:51:17,476 - omlx.patches.mlx_vlm_mtp.qwen35_moe_vlm_model - INFO - Patched mlx_vlm.models.qwen3_5_moe.Model.sanitize for MTP
+2026-08-26 17:51:17,483 - omlx.patches.mlx_vlm_inkling_compat - INFO - Inkling mlx-vlm compatibility patch applied
+2026-08-26 17:51:17,484 - omlx.patches.mlx_vlm_mtp.qwen35_moe_vlm_runtime - INFO - mlx-vlm Qwen3.5-MoE runtime MTP patch applied
+2026-08-26 17:51:17,484 - omlx.patches.mlx_vlm_mtp.qwen35_vlm_runtime - INFO - mlx-vlm Qwen3.5 (dense) runtime MTP patch applied
+2026-08-26 17:51:17,500 - omlx.patches.gemma4_verify_attention - INFO - gemma4 small-L verify attention patch applied (kernel + per-token)
+2026-08-26 17:51:17,500 - omlx.patches.mlx_vlm_mtp.gemma4_vlm_runtime - INFO - mlx-vlm Gemma 4 runtime MTP patch applied
+2026-08-26 17:51:17,500 - omlx.patches.mlx_vlm_mtp.inkling_vlm_runtime - INFO - mlx-vlm inkling runtime MTP patch applied
+2026-08-26 17:51:17,500 - omlx.utils.model_loading - INFO - mlx-vlm runtime MTP patch applied for /Volumes/nvme0/omlx-models/qwen35-4b (config declares mtp heads but checkpoint ships no mtp.* weights; MTPModule attachment skipped to keep strict load_weights happy)
+2026-08-26 17:51:17,500 - omlx.engine_core - INFO - MLX executor thread initialized: generation_stream = ThreadLocalStream(Device(gpu, 0), 4)
+2026-08-26 17:51:17,526 - omlx.patches.mlx_vlm_pixtral_torch_free - INFO - Pixtral torch-free processor patch installed (mlx-vlm PR #1502 backport + TokenizersBackend pin)
+2026-08-26 17:51:19,238 - omlx.engine.vlm - INFO - Vision feature cache enabled (SSD: /Users/andryo/.omlx/cache/vision_features)
+2026-08-26 17:51:19,818 - omlx.scheduler - INFO - Enlarging paged cache block_size=256 to 2048 for ArraysCache hybrid model (reduces boundary snapshot overhead)
+2026-08-26 17:51:19,827 - omlx.memory_monitor - INFO - MemoryMonitor initialized (estimator-only, eviction disabled)
+2026-08-26 17:51:19,833 - omlx.memory_monitor - INFO - Model info set: 32 layers (8 KVCache), 4 KV heads, 16 Q heads, 256 head_dim. Estimated memory per 64-token block: 2.00 MB
+2026-08-26 17:51:19,833 - omlx.scheduler - INFO - paged SSD-only mode: max_blocks=100000, block_size=2048 tokens
+2026-08-26 17:51:19,833 - omlx.cache.paged_cache - INFO - PagedCacheManager initialized: block_size=2048, initial_blocks=64, max_blocks=100000, max_tokens=204800000
+2026-08-26 17:51:19,833 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager initialized: dir=/Users/andryo/.omlx/cache, max_size=10.00 GB, hot_cache=8.00 GB, existing_files=0, disk_free=611.55 GB, cache_used=0 B, incompatible_files=0
+2026-08-26 17:51:19,833 - omlx.cache.paged_cache - INFO - paged SSD cache manager connected to PagedCacheManager
+2026-08-26 17:51:19,833 - omlx.cache.prefix_cache - INFO - PagedSSDCacheManager connected to BlockAwarePrefixCache
+2026-08-26 17:51:19,833 - omlx.scheduler - INFO - hot-cache-only mode enabled: hot_cache_max=8.00 GB, block_size=2048 tokens
+2026-08-26 17:51:19,833 - omlx.scheduler - INFO - hot-cache-only mode enabled: block_size=2048, max_blocks=100000
+2026-08-26 17:51:19,834 - omlx.engine_core - INFO - Engine started
+2026-08-26 17:51:19,834 - omlx.patches.sdpa256_attention - INFO - sdpa256 attention patch applied (head_dim=256 prefill, kv_len>=8192, tiled only when unfused exceeds guard headroom)
+2026-08-26 17:51:19,923 - omlx.patches.qwen35_fa256_attention - INFO - Qwen FA-256 dispatch budget auto-calibrated: 1.11e+10 work/s -> 110994457 (target 10ms/dispatch)
+2026-08-26 17:51:19,924 - omlx.patches.qwen35_fa256_attention - INFO - Qwen3.5/3.6 FA-256 steel attention patch applied (min_kv_len=2048, q_block=32, k_block=8, dispatch_budget=110994457)
+2026-08-26 17:51:19,925 - omlx.patches.qwen35_gdn_prework - INFO - Qwen3.5/3.6 fused GDN verify prework patch applied
+2026-08-26 17:51:19,925 - omlx.patches.qwen35_verify_sdpa_split - INFO - Qwen3.5/3.6 verify-width causal vector attention patch applied
+2026-08-26 17:51:19,926 - omlx.patches.qwen35_gdn_chunked - INFO - Qwen3.5/3.6 GDN prefill kernel patch applied (Metal, impl=blocked_seq, min_t=64)
+2026-08-26 17:51:19,926 - omlx.patches.qwen35_q4_mlp - INFO - Qwen quantized MLP prefill patch applied (variant=8, min_tokens=2048, q8_min_tokens=16384)
+2026-08-26 17:51:19,926 - omlx.patches.qwen35_q4_mlp - INFO - Qwen quantized prefill linear patch applied (variant=8, min_tokens=2048, q8_min_tokens=16384)
+2026-08-26 17:51:19,927 - omlx.patches.qwen35_moe_router - INFO - Qwen MoE fused router top-k patch applied
+2026-08-26 17:51:19,928 - omlx.patches.qwen35_moe_weighted_sum - INFO - Qwen3.5/3.6 MoE weighted-sum patch applied (min_tokens=1024)
+2026-08-26 17:51:19,929 - omlx.patches.qwen35_ragged_decode - INFO - qwen3_5 ragged decode threadgroup fallback patch applied
+2026-08-26 17:51:19,929 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager updated layer cache signature (32 layers, 2 unique types, turboquant_kv_bits=None, cachelist_subtypes=no)
+2026-08-26 17:51:19,986 - omlx.engine.vlm - INFO - VLM tool calling enabled: parser=qwen3_coder
+2026-08-26 17:51:19,988 - omlx.engine.vlm - INFO - VLMBatchedEngine loaded: /Volumes/nvme0/omlx-models/qwen35-4b
+2026-08-26 17:51:19,990 - omlx.engine_pool - INFO - Loaded model: qwen35-4b (actual: 3.56GB, local estimate: 2.97GB, full model: 2.97GB, total: 2.97GB)
+2026-08-26 17:51:19,992 - omlx.engine.vlm - INFO - Structured output requires xgrammar. Reinstall with: brew reinstall omlx --with-grammar
+2026-08-26 17:51:20,615 - omlx.scheduler - INFO - Enabled boundary cache snapshots for stateful non-sliceable cache layers
+2026-08-26 17:51:20,620 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=3.6ms/1, store_cache_main_boundary=0.2ms/1
+2026-08-26 17:51:20,621 - omlx.server - INFO - Chat completion: model=qwen35-4b, 8 tokens in 0.61s (13.1 tok/s), prompt: 12, finish_reason=length, max_tokens=8, request_max_tokens=8
+2026-08-26 17:51:28,260 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=7.1ms/2, store_cache_main_boundary=0.2ms/2
+2026-08-26 17:51:28,260 - omlx.server - INFO - Chat completion: model=qwen35-4b, 1 tokens in 0.22s (4.5 tok/s), prompt: 14, finish_reason=stop, max_tokens=8, request_max_tokens=8
+2026-08-26 17:51:59,187 - omlx.engine_pool - INFO - Loading model: llama-3.2-1b-instruct
+2026-08-26 17:51:59,794 - omlx.patches.qwen35_q4_mlp - INFO - Qwen mlx-lm quantized prefill linear patch applied (variant=8, min_tokens=2048, q8_min_tokens=16384)
+2026-08-26 17:52:00,001 - omlx.memory_monitor - INFO - MemoryMonitor initialized (estimator-only, eviction disabled)
+2026-08-26 17:52:00,001 - omlx.memory_monitor - INFO - Model info set: 16 layers (16 KVCache), 8 KV heads, 32 Q heads, 64 head_dim. Estimated memory per 64-token block: 2.00 MB
+2026-08-26 17:52:00,002 - omlx.scheduler - INFO - paged SSD-only mode: max_blocks=100000, block_size=256 tokens
+2026-08-26 17:52:00,002 - omlx.cache.paged_cache - INFO - PagedCacheManager initialized: block_size=256, initial_blocks=64, max_blocks=100000, max_tokens=25600000
+2026-08-26 17:52:00,002 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager initialized: dir=/Users/andryo/.omlx/cache, max_size=10.00 GB, hot_cache=8.00 GB, existing_files=0, disk_free=611.55 GB, cache_used=0 B, incompatible_files=0
+2026-08-26 17:52:00,002 - omlx.cache.paged_cache - INFO - paged SSD cache manager connected to PagedCacheManager
+2026-08-26 17:52:00,002 - omlx.cache.prefix_cache - INFO - PagedSSDCacheManager connected to BlockAwarePrefixCache
+2026-08-26 17:52:00,002 - omlx.scheduler - INFO - hot-cache-only mode enabled: hot_cache_max=8.00 GB, block_size=256 tokens
+2026-08-26 17:52:00,002 - omlx.scheduler - INFO - hot-cache-only mode enabled: block_size=256, max_blocks=100000
+2026-08-26 17:52:00,002 - omlx.engine_core - INFO - Engine started
+2026-08-26 17:52:00,002 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager updated layer cache signature (16 layers, 1 unique types, turboquant_kv_bits=None, cachelist_subtypes=no)
+2026-08-26 17:52:00,002 - omlx.engine.batched - INFO - BatchedEngine loaded: /Volumes/nvme0/omlx-models/llama-3.2-1b-instruct
+2026-08-26 17:52:00,003 - omlx.engine_pool - INFO - Loaded model: llama-3.2-1b-instruct (actual: 1.58GB, local estimate: 1.28GB, full model: 1.28GB, total: 4.25GB)
+2026-08-26 17:52:00,003 - omlx.engine.batched - INFO - Structured output requires xgrammar. Reinstall with: brew reinstall omlx --with-grammar
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+2026-08-26 17:52:00,722 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=2.6ms/1, store_cache_main_boundary=0.0ms/1, store_cache_main_collect=0.0ms/1, store_cache_main_dispatch=0.1ms/1, store_cache_worker_sync=0.2ms/1
+2026-08-26 17:52:00,723 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 102 tokens in 0.71s (832.5 tok/s), prompt: 1009, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:52:00,725 - omlx.engine_pool - INFO - Loading model: gemma-3-1b-it
+2026-08-26 17:52:03,560 - omlx.scheduler - INFO - Aligning paged cache block_size=256 to 512 (RotatingKVCache window_size=512, multiplier=1x)
+2026-08-26 17:52:03,560 - omlx.memory_monitor - INFO - MemoryMonitor initialized (estimator-only, eviction disabled)
+2026-08-26 17:52:03,561 - omlx.memory_monitor - INFO - Model info set: 26 layers (4 KVCache, rotating 22x@512), 1 KV heads, 4 Q heads, 256 head_dim. Estimated memory per 64-token block: 256.00 KB
+2026-08-26 17:52:03,561 - omlx.scheduler - INFO - paged SSD-only mode: max_blocks=100000, block_size=512 tokens
+2026-08-26 17:52:03,561 - omlx.cache.paged_cache - INFO - PagedCacheManager initialized: block_size=512, initial_blocks=64, max_blocks=100000, max_tokens=51200000
+2026-08-26 17:52:03,561 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager initialized: dir=/Users/andryo/.omlx/cache, max_size=10.00 GB, hot_cache=8.00 GB, existing_files=0, disk_free=611.55 GB, cache_used=0 B, incompatible_files=0
+2026-08-26 17:52:03,561 - omlx.cache.paged_cache - INFO - paged SSD cache manager connected to PagedCacheManager
+2026-08-26 17:52:03,561 - omlx.cache.prefix_cache - INFO - PagedSSDCacheManager connected to BlockAwarePrefixCache
+2026-08-26 17:52:03,561 - omlx.scheduler - INFO - hot-cache-only mode enabled: hot_cache_max=8.00 GB, block_size=512 tokens
+2026-08-26 17:52:03,561 - omlx.scheduler - INFO - hot-cache-only mode enabled: block_size=512, max_blocks=100000
+2026-08-26 17:52:03,561 - omlx.engine_core - INFO - Engine started
+2026-08-26 17:52:03,561 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager updated layer cache signature (26 layers, 2 unique types, turboquant_kv_bits=None, cachelist_subtypes=no)
+2026-08-26 17:52:03,562 - omlx.engine.batched - INFO - BatchedEngine loaded: /Volumes/nvme0/omlx-models/gemma-3-1b-it
+2026-08-26 17:52:03,564 - omlx.engine_pool - INFO - Loaded model: gemma-3-1b-it (actual: 1.63GB, local estimate: 1.35GB, full model: 1.35GB, total: 5.60GB)
+2026-08-26 17:52:03,564 - omlx.engine.batched - INFO - Structured output requires xgrammar. Reinstall with: brew reinstall omlx --with-grammar
+2026-08-26 17:52:06,521 - omlx.scheduler - INFO - Using boundary cache snapshot for 911a5524-bcb9-4f8c-9f08-05bbb88efaf8: storing 1024/1515 tokens (skipping trailing partial block, 1 intermediate snapshots)
+2026-08-26 17:52:06,526 - omlx.scheduler - INFO - Cache phase timings: boundary_capture_extract=0.0ms/1, boundary_capture_sync=2.8ms/1, cleanup_finished_sync=2.0ms/1, store_cache_main_boundary=0.1ms/1, store_cache_main_collect=0.0ms/1, store_cache_main_dispatch=0.1ms/1, store_cache_worker_sync=0.2ms/1
+2026-08-26 17:52:06,527 - omlx.server - INFO - Chat completion: model=gemma-3-1b-it, 512 tokens in 2.96s (239.7 tok/s), prompt: 1003, finish_reason=length, max_tokens=512, request_max_tokens=512
+2026-08-26 17:52:06,529 - omlx.engine_pool - INFO - Loading model: phi-4-mini-instruct
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+2026-08-26 17:52:08,225 - omlx.memory_monitor - INFO - MemoryMonitor initialized (estimator-only, eviction disabled)
+2026-08-26 17:52:08,226 - omlx.memory_monitor - INFO - Model info set: 32 layers (32 KVCache), 8 KV heads, 24 Q heads, 128 head_dim. Estimated memory per 64-token block: 8.00 MB
+2026-08-26 17:52:08,226 - omlx.scheduler - INFO - paged SSD-only mode: max_blocks=100000, block_size=256 tokens
+2026-08-26 17:52:08,226 - omlx.cache.paged_cache - INFO - PagedCacheManager initialized: block_size=256, initial_blocks=64, max_blocks=100000, max_tokens=25600000
+2026-08-26 17:52:08,226 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager initialized: dir=/Users/andryo/.omlx/cache, max_size=10.00 GB, hot_cache=8.00 GB, existing_files=0, disk_free=611.55 GB, cache_used=0 B, incompatible_files=0
+2026-08-26 17:52:08,226 - omlx.cache.paged_cache - INFO - paged SSD cache manager connected to PagedCacheManager
+2026-08-26 17:52:08,226 - omlx.cache.prefix_cache - INFO - PagedSSDCacheManager connected to BlockAwarePrefixCache
+2026-08-26 17:52:08,226 - omlx.scheduler - INFO - hot-cache-only mode enabled: hot_cache_max=8.00 GB, block_size=256 tokens
+2026-08-26 17:52:08,226 - omlx.scheduler - INFO - hot-cache-only mode enabled: block_size=256, max_blocks=100000
+2026-08-26 17:52:08,226 - omlx.engine_core - INFO - Engine started
+2026-08-26 17:52:08,227 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager updated layer cache signature (32 layers, 1 unique types, turboquant_kv_bits=None, cachelist_subtypes=no)
+2026-08-26 17:52:08,227 - omlx.engine.batched - INFO - BatchedEngine loaded: /Volumes/nvme0/omlx-models/phi-4-mini-instruct
+2026-08-26 17:52:08,229 - omlx.engine_pool - INFO - Loaded model: phi-4-mini-instruct (actual: 3.30GB, local estimate: 3.99GB, full model: 3.99GB, total: 9.59GB)
+2026-08-26 17:52:08,229 - omlx.engine.batched - INFO - Structured output requires xgrammar. Reinstall with: brew reinstall omlx --with-grammar
+2026-08-26 17:52:09,058 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=1.8ms/1, store_cache_main_boundary=0.0ms/1, store_cache_main_collect=0.0ms/1, store_cache_main_dispatch=0.1ms/1, store_cache_worker_sync=0.2ms/1
+2026-08-26 17:52:09,059 - omlx.server - INFO - Chat completion: model=phi-4-mini-instruct, 25 tokens in 0.79s (79522.9 tok/s), prompt: 956, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:52:09,061 - omlx.engine_pool - INFO - Loading model: olmoe-0125-instruct
+2026-08-26 17:52:10,761 - omlx.memory_monitor - INFO - MemoryMonitor initialized (estimator-only, eviction disabled)
+2026-08-26 17:52:10,762 - omlx.memory_monitor - INFO - Model info set: 16 layers (16 KVCache), 16 KV heads, 16 Q heads, 128 head_dim. Estimated memory per 64-token block: 8.00 MB
+2026-08-26 17:52:10,762 - omlx.scheduler - INFO - paged SSD-only mode: max_blocks=100000, block_size=256 tokens
+2026-08-26 17:52:10,762 - omlx.cache.paged_cache - INFO - PagedCacheManager initialized: block_size=256, initial_blocks=64, max_blocks=100000, max_tokens=25600000
+2026-08-26 17:52:10,762 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager initialized: dir=/Users/andryo/.omlx/cache, max_size=10.00 GB, hot_cache=8.00 GB, existing_files=0, disk_free=611.55 GB, cache_used=0 B, incompatible_files=0
+2026-08-26 17:52:10,762 - omlx.cache.paged_cache - INFO - paged SSD cache manager connected to PagedCacheManager
+2026-08-26 17:52:10,762 - omlx.cache.prefix_cache - INFO - PagedSSDCacheManager connected to BlockAwarePrefixCache
+2026-08-26 17:52:10,762 - omlx.scheduler - INFO - hot-cache-only mode enabled: hot_cache_max=8.00 GB, block_size=256 tokens
+2026-08-26 17:52:10,762 - omlx.scheduler - INFO - hot-cache-only mode enabled: block_size=256, max_blocks=100000
+2026-08-26 17:52:10,762 - omlx.engine_core - INFO - Engine started
+2026-08-26 17:52:10,762 - omlx.cache.paged_ssd_cache - INFO - PagedSSDCacheManager updated layer cache signature (16 layers, 1 unique types, turboquant_kv_bits=None, cachelist_subtypes=no)
+2026-08-26 17:52:10,762 - omlx.engine.batched - INFO - BatchedEngine loaded: /Volumes/nvme0/omlx-models/olmoe-0125-instruct
+2026-08-26 17:52:10,766 - omlx.engine_pool - INFO - Loaded model: olmoe-0125-instruct (actual: 7.29GB, local estimate: 7.19GB, full model: 7.19GB, total: 16.78GB)
+2026-08-26 17:52:10,766 - omlx.engine.batched - INFO - Structured output requires xgrammar. Reinstall with: brew reinstall omlx --with-grammar
+2026-08-26 17:52:11,320 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=1.3ms/1, store_cache_main_boundary=0.0ms/1, store_cache_main_collect=0.0ms/1, store_cache_main_dispatch=0.1ms/1, store_cache_worker_sync=0.2ms/1
+2026-08-26 17:52:11,321 - omlx.server - INFO - Chat completion: model=olmoe-0125-instruct, 67 tokens in 0.55s (1182.8 tok/s), prompt: 1065, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:52:12,266 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=10.6ms/3, store_cache_main_boundary=0.2ms/3
+2026-08-26 17:52:12,267 - omlx.server - INFO - Chat completion: model=qwen35-4b, 44 tokens in 0.94s (578.3 tok/s), prompt: 1014, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:54:15,481 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=14.2ms/4, store_cache_main_boundary=0.2ms/4
+2026-08-26 17:54:15,482 - omlx.server - INFO - Chat completion: model=qwen35-4b, 46 tokens in 1.09s (562.0 tok/s), prompt: 1060, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:54:15,838 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=4.6ms/2, store_cache_main_boundary=0.0ms/2, store_cache_main_collect=0.0ms/2, store_cache_main_dispatch=0.1ms/2, store_cache_worker_sync=0.2ms/1
+2026-08-26 17:54:15,839 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 55 tokens in 0.35s (143120.3 tok/s), prompt: 1054, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:54:17,602 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=17.6ms/5, store_cache_main_boundary=0.2ms/5
+2026-08-26 17:54:17,602 - omlx.server - INFO - Chat completion: model=qwen35-4b, 31 tokens in 0.85s (93951.3 tok/s), prompt: 1050, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:54:17,783 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=7.3ms/3, store_cache_main_boundary=0.0ms/3, store_cache_main_collect=0.0ms/3, store_cache_main_dispatch=0.2ms/3, store_cache_worker_sync=0.2ms/2
+2026-08-26 17:54:17,784 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 33 tokens in 0.18s (95295.6 tok/s), prompt: 1045, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:54:19,569 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=20.3ms/6, store_cache_main_boundary=0.2ms/6
+2026-08-26 17:54:19,570 - omlx.server - INFO - Chat completion: model=qwen35-4b, 36 tokens in 0.87s (1626.9 tok/s), prompt: 1051, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:54:19,805 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=10.1ms/4, store_cache_main_boundary=0.0ms/4, store_cache_main_collect=0.0ms/4, store_cache_main_dispatch=0.3ms/4, store_cache_worker_sync=0.3ms/3
+2026-08-26 17:54:19,806 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 49 tokens in 0.23s (114185.8 tok/s), prompt: 1045, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:46,652 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=23.9ms/7, store_cache_main_boundary=0.2ms/7
+2026-08-26 17:55:46,653 - omlx.server - INFO - Chat completion: model=qwen35-4b, 46 tokens in 1.11s (569.1 tok/s), prompt: 1136, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:47,028 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=12.8ms/5, store_cache_main_boundary=0.0ms/5, store_cache_main_collect=0.0ms/5, store_cache_main_dispatch=0.4ms/5, store_cache_worker_sync=0.3ms/4
+2026-08-26 17:55:47,029 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 59 tokens in 0.37s (154500.8 tok/s), prompt: 1125, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:48,751 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=27.4ms/8, store_cache_main_boundary=0.2ms/8
+2026-08-26 17:55:48,752 - omlx.server - INFO - Chat completion: model=qwen35-4b, 40 tokens in 0.93s (863.6 tok/s), prompt: 1126, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:48,974 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=13.8ms/6, store_cache_main_boundary=0.0ms/6, store_cache_main_collect=0.0ms/6, store_cache_main_dispatch=0.5ms/6, store_cache_worker_sync=0.4ms/5
+2026-08-26 17:55:48,975 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 45 tokens in 0.22s (146619.4 tok/s), prompt: 1116, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:50,971 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=30.9ms/9, store_cache_main_boundary=0.2ms/9
+2026-08-26 17:55:50,972 - omlx.server - INFO - Chat completion: model=qwen35-4b, 40 tokens in 0.93s (884.8 tok/s), prompt: 1127, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:51,266 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=16.3ms/7, store_cache_main_boundary=0.0ms/7, store_cache_main_collect=0.1ms/7, store_cache_main_dispatch=0.5ms/7, store_cache_worker_sync=0.4ms/6
+2026-08-26 17:55:51,267 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 70 tokens in 0.29s (2536.8 tok/s), prompt: 1116, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:52,607 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=34.4ms/10, store_cache_main_boundary=0.2ms/10
+2026-08-26 17:55:52,607 - omlx.server - INFO - Chat completion: model=qwen35-4b, 41 tokens in 0.74s (777.7 tok/s), prompt: 661, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:52,929 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=18.9ms/8, store_cache_main_boundary=0.0ms/8, store_cache_main_collect=0.1ms/8, store_cache_main_dispatch=0.6ms/8, store_cache_worker_sync=0.5ms/7
+2026-08-26 17:55:52,930 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 42 tokens in 0.32s (134705.2 tok/s), prompt: 641, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:54,192 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=37.4ms/11, store_cache_main_boundary=0.2ms/11
+2026-08-26 17:55:54,193 - omlx.server - INFO - Chat completion: model=qwen35-4b, 37 tokens in 0.70s (1320.8 tok/s), prompt: 660, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:54,367 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=21.5ms/9, store_cache_main_boundary=0.0ms/9, store_cache_main_collect=0.1ms/9, store_cache_main_dispatch=0.7ms/9, store_cache_worker_sync=0.5ms/8
+2026-08-26 17:55:54,368 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.17s (107398.7 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:56,238 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=41.0ms/12, store_cache_main_boundary=0.2ms/12
+2026-08-26 17:55:56,238 - omlx.server - INFO - Chat completion: model=qwen35-4b, 58 tokens in 0.81s (400.6 tok/s), prompt: 657, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:55:56,464 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=24.1ms/10, store_cache_main_boundary=0.0ms/10, store_cache_main_collect=0.1ms/10, store_cache_main_dispatch=0.7ms/10, store_cache_worker_sync=0.6ms/9
+2026-08-26 17:55:56,464 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 48 tokens in 0.22s (162988.1 tok/s), prompt: 637, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:24,543 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=26.7ms/11, store_cache_main_boundary=0.0ms/11, store_cache_main_collect=0.1ms/11, store_cache_main_dispatch=0.8ms/11, store_cache_worker_sync=0.6ms/10
+2026-08-26 17:56:24,544 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.33s (102301.8 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:24,779 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=29.3ms/12, store_cache_main_boundary=0.0ms/12, store_cache_main_collect=0.1ms/12, store_cache_main_dispatch=0.9ms/12, store_cache_worker_sync=0.7ms/11
+2026-08-26 17:56:24,780 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 48 tokens in 0.23s (135084.6 tok/s), prompt: 637, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:48,955 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=31.9ms/13, store_cache_main_boundary=0.0ms/13, store_cache_main_collect=0.1ms/13, store_cache_main_dispatch=1.0ms/13, store_cache_worker_sync=0.7ms/12
+2026-08-26 17:56:48,956 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.33s (102505.6 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:49,127 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=34.5ms/14, store_cache_main_boundary=0.0ms/14, store_cache_main_collect=0.1ms/14, store_cache_main_dispatch=1.0ms/14, store_cache_worker_sync=0.7ms/13
+2026-08-26 17:56:49,128 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.17s (88365.2 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:49,304 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=37.0ms/15, store_cache_main_boundary=0.0ms/15, store_cache_main_collect=0.1ms/15, store_cache_main_dispatch=1.1ms/15, store_cache_worker_sync=0.8ms/14
+2026-08-26 17:56:49,305 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.17s (101479.9 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:49,533 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=39.6ms/16, store_cache_main_boundary=0.0ms/16, store_cache_main_collect=0.1ms/16, store_cache_main_dispatch=1.2ms/16, store_cache_worker_sync=0.8ms/15
+2026-08-26 17:56:49,534 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 48 tokens in 0.23s (105794.7 tok/s), prompt: 637, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:49,772 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=42.1ms/17, store_cache_main_boundary=0.0ms/17, store_cache_main_collect=0.1ms/17, store_cache_main_dispatch=1.2ms/17, store_cache_worker_sync=0.9ms/16
+2026-08-26 17:56:49,773 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 48 tokens in 0.23s (140146.0 tok/s), prompt: 637, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:56:49,999 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=44.7ms/18, store_cache_main_boundary=0.0ms/18, store_cache_main_collect=0.1ms/18, store_cache_main_dispatch=1.3ms/18, store_cache_worker_sync=1.0ms/17
+2026-08-26 17:56:50,000 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 48 tokens in 0.22s (157678.5 tok/s), prompt: 637, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:57:14,083 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=47.3ms/19, store_cache_main_boundary=0.0ms/19, store_cache_main_collect=0.1ms/19, store_cache_main_dispatch=1.4ms/19, store_cache_worker_sync=1.0ms/18
+2026-08-26 17:57:14,084 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.32s (89753.2 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:57:37,007 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=49.9ms/20, store_cache_main_boundary=0.0ms/20, store_cache_main_collect=0.2ms/20, store_cache_main_dispatch=1.4ms/20, store_cache_worker_sync=1.0ms/19
+2026-08-26 17:57:37,008 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.32s (93.5 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512
+2026-08-26 17:57:37,185 - omlx.scheduler - INFO - Cache phase timings: cleanup_finished_sync=52.5ms/21, store_cache_main_boundary=0.0ms/21, store_cache_main_collect=0.2ms/21, store_cache_main_dispatch=1.5ms/21, store_cache_worker_sync=1.1ms/20
+2026-08-26 17:57:37,186 - omlx.server - INFO - Chat completion: model=llama-3.2-1b-instruct, 30 tokens in 0.17s (86601.1 tok/s), prompt: 640, finish_reason=stop, max_tokens=512, request_max_tokens=512

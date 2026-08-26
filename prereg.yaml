@@ -176,7 +176,7 @@ corpus:
     corpus/topics.md: d19c5a1a42076d65bd89d64df3cbdf836b9a0c35ecef2615b79951a8b7dd849e
     prompts/README.md: c36160652344db2a3213e462a20205d892e8cf479fc59eef1af4283cf4568601
     prompts/covariates.md: fe553ca334f0725eed2da8c0b41389648577c20a9dbcff5c149b1a46156278e2
-    prompts/jury_contract.md: a683a906ebb9bf14d286fb1fe139dd836cd89c9ee38959b09d75cd739803b9ed
+    prompts/jury_contract.md: f1396122bd8b3de3a01ae348573dcf75af1556194ea3d805a8f319f05c5dfb03
     prompts/solver_baseline.md: 94640b91f3a18ad91b7ed2035bdcf44a554c538bdaf5c5504c4ee18d12aaad92
   manifest_sha256: 6b8ed796d8619c52361504e74a2599afb34914958f5f808aa3221cc4b0f1632e
 
@@ -248,7 +248,19 @@ jury:
 prompts:  # verbatim frozen user-message templates (no system message)
   jury_contract: |
     You are a careful fact-checker. A claim about the news article below is
-    stated in question form. Verify the claim against the article.
+    stated in question form. Verify the claim against the article. Your verdict
+    must rest solely on the article: no outside knowledge, no prior beliefs, no
+    plausibility.
+    
+    Rules:
+    - PASS if the article states the claim or directly entails it.
+    - FAIL if the article states the opposite or gives a conflicting fact.
+    - NOT_STATED if the article does not contain the information the question
+      asks about.
+    
+    Reply with a single JSON object and nothing else:
+    {"answer": "PASS" | "FAIL" | "NOT_STATED", "reason": "<one or two sentences
+    grounding the verdict in the article>"}
     
     <article>
     {article text, verbatim from corpus/articles/T##.md}

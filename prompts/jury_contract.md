@@ -17,7 +17,19 @@ One call per claim. No system message. User message:
 
 ```
 You are a careful fact-checker. A claim about the news article below is
-stated in question form. Verify the claim against the article.
+stated in question form. Verify the claim against the article. Your verdict
+must rest solely on the article: no outside knowledge, no prior beliefs, no
+plausibility.
+
+Rules:
+- PASS if the article states the claim or directly entails it.
+- FAIL if the article states the opposite or gives a conflicting fact.
+- NOT_STATED if the article does not contain the information the question
+  asks about.
+
+Reply with a single JSON object and nothing else:
+{"answer": "PASS" | "FAIL" | "NOT_STATED", "reason": "<one or two sentences
+grounding the verdict in the article>"}
 
 <article>
 {article text, verbatim from corpus/articles/T##.md}
@@ -28,6 +40,16 @@ article.
 
 {claim in question form, verbatim from corpus/pool/question_form/T##.md}
 ```
+
+Amendment (2026-08-26, pre-generative, approved by Andryo Marzuki): the
+original freeze carried the JSON reply instruction and the three-state
+definitions only in the Contract prose below, not in the sent message. The
+Phase 3 smoke test (task 11) showed all six models answering in free prose
+(0/6 parseable). The Rules block and the JSON reply line were moved into the
+message, verbatim from the Contract section. The co-designer's quoted
+sentences are unchanged. Re-frozen and re-tagged at the amendment commit;
+the pre-fix smoke output is archived under
+cutoff-probe/runs/2026-08-26-phase3-smoke-prefix/.
 
 ## Contract
 

@@ -4,6 +4,33 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-26
 
+- Jury-contract message amended at Phase 3, pre-generative (approved by
+  Andryo Marzuki, action button, 2026-08-26 evening). The Phase 3 smoke
+  test (task 11) showed all six models answering the frozen jury message
+  in free prose: 0/6 parseable, including the 27B. Root cause: the
+  registered user message in prereg.yaml carried the verification task
+  and the article, but the JSON reply instruction and the PASS/FAIL/
+  NOT_STATED definitions existed only in the Contract prose of
+  prompts/jury_contract.md, not in the sent message. Fix: the Rules
+  block (definitions, verbatim from the Contract section) and the
+  "Reply with a single JSON object and nothing else" line were moved
+  into the message intro. The co-designer's quoted sentences
+  ("Answer this question only based on the information available on
+  this article." + the question) are unchanged, as is the claim
+  placement. Evidence before re-freezing (6 claims x 3 models): 27B and
+  Qwen3.5-4B 100 percent parseable; Qwen3.5-4B correctly emits
+  NOT_STATED on the "exactly 47" UNSPECIFIED cells where it previously
+  said FAIL (the definitions change verdicts, measured); Llama-3.2-1B
+  deterministically drops the closing brace on some cells at temp 0
+  (genuine output, handled as missing observations per the registered
+  contract). Consequence: re-frozen via tools/freeze_prereg.py; only the
+  prompts/jury_contract.md hash and the prereg.yaml prompt block change;
+  split, census, manifest sha256, and all other 156 corpus hashes are
+  byte-identical. Tag prereg-waveconsensus-v1 moved to the amendment
+  commit; pre-fix state at 5b35994. Pre-fix smoke output archived at
+  cutoff-probe/runs/2026-08-26-phase3-smoke-prefix/. Spend at time of
+  amendment: about 30 calls, all within the registered caps; no
+  registered generation run had started, so nothing is re-run.
 - Disputed-pin adjudication rules for the 30-article covariate pass
   (task 9, corpus/pool/metadata.json). Eight articles carry a manifest
   `disputed` field (cross-source split on one pin). Four cases decide the
