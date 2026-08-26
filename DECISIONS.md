@@ -4,6 +4,44 @@ Decision log. One entry per significant decision, with the reason. Newest first.
 
 ## 2026-08-26
 
+- Jury composition: the registered fallback rule is applied, and OLMoE
+  is dropped; the panel runs four independent families (approved by
+  Andryo Marzuki, action button, 2026-08-26 evening). Phase 3 zero-shot
+  calibration results trigger the prereg fallback rule (primary below 75
+  percent on the calibration set) for three families: llama-3.2-1b
+  (56.8 percent), gemma-3-1b (0 of 1200 outputs parseable under the
+  frozen contract), olmoe-0125 (69.6 percent). The rule replaces a
+  failed primary with its same-family 4B sibling: llama-3.2-1b ->
+  Llama-3.2-3B-Instruct, gemma-3-1b -> Gemma-3-4b-it, both already
+  downloaded. For the third trigger, OLMoE has no 4B sibling, so the
+  rule prescribes "a registered cross-family fill from the 4B-class
+  candidates" - but the only two candidates (Llama-3.2-3B, Gemma-3-4b)
+  are already consumed as sibling replacements, so the rule is
+  incomplete in exactly this case and any resolution is a post-freeze
+  decision. Two options: (a) double one model (5 seats, 4 sources), or
+  (b) drop OLMoE (4 seats, 4 sources). Chosen: (b). Reason: a doubled
+  model violates three registered properties at once - the
+  one-vote-per-source invariant (prediction P3), the training section's
+  requirement of distinct recipes to keep error correlation low (a
+  doubled model is correlation 1.0 with itself), and the leave-one-out
+  design of P2 (removing one of two identical seats changes nothing).
+  Mechanically, under a 3-of-5 majority the doubled model plus any one
+  vote is itself a majority, concentrating near-veto power in one
+  family. Dropping keeps all invariants intact; the prereg already
+  registers panel size as an analysis dimension (the 3-juror sweep arm
+  is defined by family), and the cost accounting (P7b, aggregate params
+  x tokens) is cheaper with four voters. Consequences, declared here:
+  the panel is llama-3.2-3b-instruct, gemma-3-4b-it, phi-4-mini-
+  instruct, qwen35-4b; the fine-tuned adapter count drops from the
+  registered 10 (2 variants x 5 families) to 8 (2 variants x 4
+  families); the headline "5-juror consensus" becomes 4-juror; the
+  5-seat weighted variant (double = whichever of the two 4B candidates
+  scores higher on calibration, tie alphabetical, deduped at
+  aggregation) is reported as a sensitivity analysis so the letter of
+  the fill-in rule is still testable. Phi-4-mini (calibration 90.5
+  percent) and Qwen3.5-4B (93.3 percent) keep their primary seats. The
+  prereg text is unchanged: this is an application of the registered
+  rule, labelled per the rule's own instruction.
 - Jury-contract message amended at Phase 3, pre-generative (approved by
   Andryo Marzuki, action button, 2026-08-26 evening). The Phase 3 smoke
   test (task 11) showed all six models answering the frozen jury message
