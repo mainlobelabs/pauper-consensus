@@ -408,6 +408,38 @@ Open: P1-9 prompts + covariate feature list, Phase 2 freeze. All five jury
 weights + fallbacks need to be pulled to helium for the self-distillation
 step (Phase 3).
 
+## P1-9 frozen prompts + covariates (drafted 2026-08-26)
+
+prompts/ created: README.md (index, shared conventions),
+solver_baseline.md (27B no-contract baseline: article + its 20 questions,
+natural answers, thinking off, temp 0, one call per article; claims
+matched to the pool by the seed mapping, unmatched logged not scored),
+jury_contract.md (the claim-verification contract: article + one claim in
+question form, out {"answer": PASS|FAIL|NOT_STATED, "reason": <text>},
+one call per claim, temp 0, max_tokens 512, strict JSON parse, parse
+failures = missing observations never coerced), covariates.md (feature
+list per article / claim / juror x claim / solver x question / family,
+plus RQ6 arm selection and cost metrics).
+
+Key decisions in the drafts:
+- The co-designer's quoted wording is kept verbatim in the contract:
+  "Answer this question only based on the information available on this
+  article." The three-state answer field (PASS/FAIL/NOT_STATED) is
+  explicit so the silence cell survives for the three-state estimator;
+  mapping PASS=ENTAIL, FAIL=CONTRADICT, NOT_STATED=UNSPECIFIED, gate
+  binary PASS vs not-PASS.
+- Final text freezes in prereg.yaml at Phase 2 (per SPEC section 6).
+- Question-form conversion rule frozen in jury_contract.md: seeded
+  propositions reuse corpus/questions text verbatim; the other 20 per
+  article are interrogativized on the asserted value (one question per
+  proposition, same subject + time frame, no leading clues).
+
+Open before Phase 2: (a) the 1,200 question-form renderings in
+corpus/pool/question_form/T##.md (40 per article) + content hashes, (b)
+formalize seed_type/trap_type/polarity into corpus/pool/metadata.json
+(covariates are currently reconstructable from NOTES.md prose only),
+(c) the 5 jury weights + fallbacks pulled to helium for self-distillation.
+
 ## Phase 0 (done)
 
 - SPEC v0.14, PLAN restructured into Phases 0-6, one-pager on webdrop
