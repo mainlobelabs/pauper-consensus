@@ -231,7 +231,18 @@ Batch 2 (verified 2026-08-25):
 Fact-check pass COMPLETE: all 30 kept topics verified. topics.md updated
 with corrected facts + DISPUTED markers.
 
-Next: P1-2 label rubric (CONTRADICT vs UNSPECIFIED boundary examples).
+P1-2 label rubric (task 2): corpus/rubric.md written and committed
+(b1cf460 follow-up). Three labels ENTAIL/CONTRADICT/UNSPECIFIED, article-as-
+oracle, direct-statement rule, both polarities per class, number/time/
+identity/negation rules, 8 worked boundary cases (canonical: stated category
++ unstated attribute = UNSPECIFIED; stated category + conflicting attribute =
+CONTRADICT). Label record format with evidence span / silence reason.
+
+Committed b1cf460 (topics.md rewrite + NOTES.md), pushed. Rubric commit
+next.
+
+Next: P1-3 draft 30 articles (verbatim where a full article exists, source
+URL in manifest; each with >=1 in-passing mention of a secondary fact).
 
 ## Phase 0 (done)
 
