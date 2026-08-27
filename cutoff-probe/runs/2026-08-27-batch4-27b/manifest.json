@@ -1,0 +1,52 @@
+{
+  "run": "2026-08-27-batch4-27b",
+  "task": "P13/P8-P14 window-extension cutoff probe (batch 4) for prereg v2: qwen3.8-27b blind window 2026-02-15 to 2026-08-27",
+  "date": "2026-08-27",
+  "host": {
+    "name": "vm-frank (marzuki-helium guest)",
+    "note": "client-side run; requests go over Tailscale to marzuki-hydrogen"
+  },
+  "server": {
+    "software": "vLLM on marzuki-hydrogen (100.95.144.25:8000), never-stopped service",
+    "model": "qwen3.8-27b",
+    "root": "orcarouter/Qwen3.8-27B-Uncensored-FP8",
+    "max_model_len": 262144
+  },
+  "runner": {
+    "script": "cutoff-probe/probe_batch4.py",
+    "script_sha256": "7a4699833985b13abf1e972c7c180db63dd5b8c19679fd36d338d86a5a1287f0",
+    "note": "new script written for batch 4 (v1 probe_jury.py frozen set untouched). Written in a dead session that died mid-edit; the written file had a SyntaxError (raw newline inside the thinking-tag string literal at the old line 113) plus one ruff-format nit. Both fixed pre-run: tag normalized to the escaped form and ruff format applied. Parses clean, ruff check + format pass."
+  },
+  "command": "python3 cutoff-probe/probe_batch4.py http://100.95.144.25:8000 qwen3.8-27b",
+  "settings": {
+    "temperature": 0,
+    "max_tokens": 64,
+    "chat_template_kwargs": {"enable_thinking": false},
+    "concurrency": 1
+  },
+  "events": [
+    "script written by a previous session that subsequently died mid-edit (backtick-in-thinking truncation pattern on qwen3.8-27b)",
+    "pre-run: fixed unterminated string literal (raw newline where the escaped /think tag was intended) and applied ruff format",
+    "smoke + full run: 8 sequential requests, all HTTP 200, total wall ~10s of model time",
+    "P12/P14 auto-scored WRONG by the substring scorer; manually re-scored UNKNOWN (denial / future-date hedge, no in-window specifics). Cause: markdown bold breaks the 'in the future' marker, and plain denial phrasing is not in the marker list",
+    "results table + verdicts recorded in cutoff-probe/probes.md (batch 4 section)"
+  ],
+  "results": {
+    "C1": "CORRECT (Argentina) - canary functional",
+    "P13": "UNKNOWN - cutoff lower bound before 2026-01-03",
+    "P8": "UNKNOWN - blind to 2026-02-08",
+    "P9": "UNKNOWN - blind to 2026-02-15 (window start)",
+    "P10": "UNKNOWN - blind to 2026-03-04",
+    "P11": "UNKNOWN - blind to 2026-06-06",
+    "P12": "auto-WRONG / manual UNKNOWN - blind to 2026-07-05 (confident denial, no match detail)",
+    "P14": "auto-WRONG / manual UNKNOWN - blind to 2026-07-28 (future-date hedge)"
+  },
+  "verdicts": {
+    "qwen3.8-27b": "BLIND across 2026-02-15 to 2026-08-27 (P8/P9/P10/P11/P12/P14 window-blind), joins P4 (Feb 28), P5 (May), batch 1 (Aug 15-22). P13 UNKNOWN pins cutoff lower bound before 2026-01-03. v2 window confirmed safe."
+  },
+  "artifacts": {
+    "probe_results.jsonl": "6656a03cffdfee3e40c6a1d501942683cb6be301b8d137b6a0024ffdbe56d899",
+    "probe_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 (empty)",
+    "probe_batch4.py": "7a4699833985b13abf1e972c7c180db63dd5b8c19679fd36d338d86a5a1287f0"
+  }
+}

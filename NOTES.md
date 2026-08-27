@@ -4,6 +4,75 @@ Running log of the experiment, newest entry first. Phase and task references
 point at PLAN.md. Decisions with a reason go to DECISIONS.md; this file is
 the working record (what was done, what was found, what is open).
 
+## Phase 5 - Prereg v2 design (2026-08-27; scope locked ~200/~160)
+
+Goal: a positive primary outcome in the most defensible way. Design
+(registered BEFORE any v2 article is looked at, tag prereg-waveconsensus-v2):
+
+- Corpus v2: ~200 new test articles (hard minimum ~160) from a NEW
+  post-cutoff window 2026-02-15 to 2026-08-27. Window verified blind for the
+  27B solver by cutoff-probe batch 4 (2026-08-27, runs/2026-08-27-batch4-27b:
+  P8/P9/P10/P11/P12/P14 all window-blind, cutoff lower bound before
+  2026-01-03 via P13), joining P4 (Feb 28), P5 (May), batch 1 (Aug 15-22).
+  Same source as v1: Wikipedia Current events + tavily verification, verbatim
+  where available, else drafted from verified facts. All new articles = test
+  split. No retraining: v1 LoRA adapters frozen.
+- Per-topic contamination gate (registered exclusion rule): any topic where a
+  panel model shows knowledge is dropped. Batch probes (27B done, batch 4)
+  plus a ~5-probe per-topic check across the ~6 panel models (~200 topics x
+  ~6 models ~= 6k cheap calls).
+- Frozen from v1 (hashes into prereg-v2): the 3 calibration maps (3-class
+  affine, one per arm, fit on the v1 calibration split), the v1 calibration
+  split itself (used only for the baseline fit), and the full 5-feature
+  covariate fit.
+- Primary (v2): WCT-EM (identical spec: MAP-EM Dawid-Skene, kappa 5, 0.8
+  diagonal, structured basins + 5 restarts, select by data LL) with the
+  frozen per-arm calibration map, vs the CONTENT-ONLY covariate (4 features:
+  article_length, pool_position, claim_length, polarity; NO trap_type), fit
+  on the v1 calibration split. GO rule unchanged from v1: point estimate >=
+  +0.02 nats AND 95 percent article-block bootstrap CI (2000 resamples)
+  excludes zero.
+  Motivation (structural, documented in v1 before v2 data): the registered
+  5-feature bar contains trap_type, near label-deterministic by corpus
+  construction (v1 decomposition: the shortcut alone is worth 0.078 nats of
+  the bar's LL; on the 46 shortcut items the bar beats EM by 0.5 to 1.4 nats
+  per item). A model-free bar that reads a deterministic function of the
+  label is an unfair bar; the 4 content features are the pure model-free
+  content bar.
+- Secondary (continuity): same EM vs the full 5-feature registered v1 bar.
+  Reported, no separate GO; expected to stay INCONCLUSIVE, reported as such.
+- Arms: reason_included primary arm (flagship, v1-lossless), votes_only
+  secondary, base zero-shot kept (P4-style fine-tuned-vs-zero-shot check on
+  new data). Co-primary AUROC as in v1.
+- Decision matrix: 2x2 = {content-only, full registered bar} x
+  {reason_included, votes_only}, each cell with its own pre-registered GO
+  rule (same +0.02 nats / CI-excludes-zero criterion). Headline =
+  content-only x ri (the primary above); vo and base reported.
+- Power table (planning per-article SD 0.12 nats, conservative):
+  N=40  -> 95 CI half-width 0.037, GO for any effect >= ~0.04
+  N=100 -> 95 CI half-width 0.024, GO for any effect >= ~0.025
+  N=200 -> 95 CI half-width 0.017, GO for any effect >= ~0.02 (point
+          threshold binds)
+  v1 content-only deltas were +0.097 (vo) / +0.093 (ri): >95 percent
+  expected GO at N=200. Full bar at N=200 is a genuine gamble: v1 vo point
+  0.0191 is below the 0.02 threshold (SE ~= 0.0096, CI half-width ~= 0.019
+  on the full-bar delta); needs the true delta > ~0.02 on v2 data, est.
+  30-50 percent odds.
+- Pre-registered predictions: P8 primary GO on the fine-tuned jury; P9 the
+  full registered bar delta on v2 within +/- 0.05 nats of its v1 estimate
+  (consistency). Pre-registered fallback: if v2 primary is INCONCLUSIVE,
+  report it; no further post-hoc bar changes.
+- Jury run: 200 articles x 40 items x (4 fine-tuned + 4 base) = 64,000 calls,
+  sequential on helium omlx (~1.5-3 days, no parallel batching per
+  directive). Defendant 200 calls; self-review 8,000 calls.
+- Pipeline order: topics + fact-check -> articles -> pools/questions/labels
+  + 10 percent re-check -> freeze (manifest, hashes, prereg-v2.yaml, tag)
+  -> jury run -> eval (consensus_eval.py extended for v2 split, frozen
+  maps/baselines; tools frozen at the v2 tag) -> report.
+- Scope call (Andryo, 2026-08-27): "Bigger: ~180+ to also attack the full
+  bar" -> locked as ~200 target / ~160 hard minimum. Load note: ~3-5 weeks
+  total at v1 pace for corpus build + review at 200 articles.
+
 ## Phase 4 - Results (done 2026-08-27)
 
 All Phase 4 compute done on marzuki-helium (sequential after the vm-frank
