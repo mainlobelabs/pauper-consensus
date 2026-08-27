@@ -107,6 +107,25 @@ false-claim rate makes the rate comparison low-power; the detection
 comparison (jury catch 0.829-0.905 vs self-review gate 0.987) is the
 informative one and still favors self-review.
 
+Shortcut-free decomposition (post-hoc, 2026-08-27, analysis/decomp.py).
+Test trap mix: none 354, unit_swap 36 (100 percent CONTRADICT),
+figure_conflict 10 (100 percent UNSPECIFIED), disputed_pin 0. Content-only
+covariate ablation (registered 5-feature bar minus trap_type, fit on
+calibration): test LL 0.3514 vs 0.2734 full, so the trap label shortcut is
+worth 0.078 nats to the bar by itself. Delta vs content-only covariate:
+ft_votes_only +0.0971 CI [+0.028, +0.150], ft_reason_included +0.0931 CI
+[+0.040, +0.132], both CIs entirely positive. Per-trap delta vs the full
+covariate: none (n=354) +0.1122 CI [+0.043, +0.172] (vo) and +0.1036 CI
+[+0.043, +0.152] (ri); unit_swap (n=36) -0.495 CI [-0.702, -0.277];
+figure_conflict (n=10) -1.424 CI [-2.209, -0.783] (vo). Per-article full
+delta: positive on 7/10 (vo) and 8/10 (ri); T35 is the outlier
+(-0.321/-0.211). Reading: the INCONCLUSIVE full-metric verdict is a
+composition artifact. On the 88.5 percent of test items with no label
+shortcut the jury beats the bar by about 0.10 nats with CIs excluding
+zero; the whole negative contribution comes from the 46 shortcut items
+where the bar wins 0.5 to 1.4 nats per item. Post-hoc: if a prereg v2
+expands the corpus, register the content-only covariate as a co-primary.
+
 Registered scoreboard (final): P1 INCONCLUSIVE (near-pass after
 calibration, no arm clears 0.02 or excludes zero); P2 NOT RUN
 (leave-one-proposer-out robustness, secondary); P3 NOT RUN
