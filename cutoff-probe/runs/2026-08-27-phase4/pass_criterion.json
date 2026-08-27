@@ -1,0 +1,50 @@
+{
+  "note": "System pass criterion (prereg): juror-gated defendant vs frontier self-review on false-claim rate + cost. Test split, 10 articles.",
+  "defendant": {
+    "model": "qwen3.8-27b",
+    "real_claims": 160,
+    "abstentions_echoes": 40,
+    "false_claims": 0,
+    "raw_false_claim_rate_of_answered": 0.0,
+    "answer_rate": 0.8,
+    "judge": "qwen3.8-27b (27B), claim + question context, 15/15 manual spot-checks verified",
+    "gateable_claims": 140
+  },
+  "gates": {
+    "jury_gated": {
+      "gate": "WCT-EM consensus P(PASS) >= 0.5 on seeded proposition, ft reason_included 4-family panel",
+      "survivors": 140, "of": 140, "false_claim_rate": 0.0
+    },
+    "self_review_gated": {
+      "gate": "27B self-review 3-state vote == PASS on seeded proposition",
+      "survivors": 136, "of": 140, "false_claim_rate": 0.0
+    }
+  },
+  "bootstrap": {
+    "resamples": 2000, "unit": "article-block", "seed": 20260827,
+    "ci_jury_minus_selfreview_false_claim_rate": [0.0, 0.0],
+    "note": "degenerate: defendant makes 0 false claims, so both gated rates are exactly 0"
+  },
+  "pass_criterion": {
+    "branch_a_jury_beats_selfreview_ci_below_zero": false,
+    "branch_b_within_10pts_and_strictly_cheaper": true,
+    "verdict": "PASS (branch b)"
+  },
+  "cost_test_split_10_articles": {
+    "jury_4fam_reason_included_x400": {"input": 1028796, "output": 80162, "total": 1108958},
+    "self_review_27b_x400": {"input": 263550, "output": 18363, "total": 281913},
+    "token_ratio_jury_over_selfreview": 3.93,
+    "raw_compute_effort_ptok": {"jury": 0.0166, "self_review": 0.0076, "jury_pct_of_27b": 218.5},
+    "usd_proxy_per_1M": {
+      "assumption": "4B class $0.20 in / $0.60 out; 27B class $1.00 in / $3.00 out (amortized serving proxy)",
+      "jury_usd": 0.2539, "self_review_usd": 0.3186, "ratio_jury_over_selfreview": 0.797
+    },
+    "breakeven": "jury cheaper for any pricing where 4B-class per-token price < 25.4% of 27B-class (i.e. small models >= 4x cheaper per token, true under realistic amortized serving)"
+  },
+  "detection_context": {
+    "note": "defendant is near-perfect on seeded ENTAIL claims, so false-claim comparison is low-power; the more informative 'catching' comparison is on pool counterfactuals (CONTRADICT)",
+    "jury_fail_recall": {"ft_reason_included": 0.829, "ft_votes_only": 0.886, "base_zeroshot": 0.905},
+    "self_review_gate": 0.987,
+    "reading": "self-review remains the stronger single catcher (98.7% vs 83-90.5%); jury's value is AUC 0.99 at a fraction of the cost, not beating self-review on catch rate"
+  }
+}

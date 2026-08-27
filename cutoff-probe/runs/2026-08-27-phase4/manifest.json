@@ -27,7 +27,9 @@
   },
   "analysis": {
     "losslessness": "losslessness.json + losslessness.log (tools/phase4/losslessness.py): (a) exact-match agreement of parsed answers, (b) PPL ratio finetuned/base on 10 calibration articles x 40 items",
-    "consensus": "consensus_eval.json + consensus_eval.log (tools/phase4/consensus_eval.py): WCT-EM (3-state MAP-EM Dawid-Skene) vs registered covariate baseline, article-block bootstrap 2000, truth-permutation null 10000, e0, P4/P5/P6"
+    "consensus": "consensus_eval.json + consensus_eval.log (tools/phase4/consensus_eval.py): WCT-EM (3-state MAP-EM Dawid-Skene) vs registered covariate baseline, article-block bootstrap 2000, truth-permutation null 10000, e0, P4/P5/P6",
+    "pass_criterion": "pass_criterion.json (system pass criterion + cost) + defendant_claims_judged.json (200 defendant seeded answers judged by 27B, 15/15 spot-checks verified)",
+    "scripts": "analysis/ one-off analysis: calib.py + calib_boot.py (3-class affine calibration + calibrated-delta article-block bootstrap 2000), catch.py (FAIL recall per juror vs consensus), consensus_acc.py (3-state argmax accuracy + gate), passcrit2.py (juror-gated vs self-review false-claim rate + CI), cost.py (token/USD cost + break-even)"
   },
   "omitted": {
     "fused/": "28G of fused full-model weights (8 x ~3.5GB) left on helium; derived = base model + adapter, reconstruct with mlx_lm.fuse"

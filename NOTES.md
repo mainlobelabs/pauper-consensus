@@ -4,6 +4,120 @@ Running log of the experiment, newest entry first. Phase and task references
 point at PLAN.md. Decisions with a reason go to DECISIONS.md; this file is
 the working record (what was done, what was found, what is open).
 
+## Phase 4 - Results (done 2026-08-27)
+
+All Phase 4 compute done on marzuki-helium (sequential after the vm-frank
+memory-pressure wedge; host rebooted once, no data lost). Artifacts in
+cutoff-probe/runs/2026-08-27-phase4/ (commit 1273339): 8 LoRA adapters,
+9600 fine-tuned contract outputs, datasets, train/fuse logs, losslessness +
+consensus eval. Fused weights (28G) left on helium, documented in manifest.
+
+Fine-tuned contract run: 9600/9600 calls, parse 9125/9600 (95.05 percent).
+Per-model three-state accuracy train/calibration/test (base zero-shot test in
+parentheses):
+- llama-3.2-3b__reason_included 89.50/92.25/89.75 (base 85.71)
+- llama-3.2-3b__votes_only 63.75/60.00/58.75 (base 85.71) - perturbed
+- gemma-3-4b-it__reason_included 88.16/88.69/83.50 (base 79.25)
+- gemma-3-4b-it__votes_only 83.50/84.50/78.50 (base 79.25)
+- phi-4-mini-instruct__reason_included 94.00/92.50/89.50 (base 88.00)
+- phi-4-mini-instruct__votes_only 93.50/92.75/89.00 (base 88.00)
+- qwen35-4b__reason_included 94.14/92.16/93.33 (base 91.73; parse 63.75 percent
+  on test, max_tokens 512 truncation of the reason field)
+- qwen35-4b__votes_only 95.25/93.22/91.00 (base 91.73)
+
+Losslessness (agreement, PPL ratio fine-tuned/base, flagged under 0.8
+agreement): reason_included arms are near-lossless (PPL 0.56-1.32, agreement
+87.75-92.5 percent). Flagged: llama-3.2-3b__votes_only (0.5825) and
+qwen35-4b__reason_included (0.6000), both from parse failures, not PPL
+drift. votes_only PPL ratios are large (thousands) from the shorter completion
+format, not semantic divergence.
+
+Consensus eval (tools/phase4/consensus_eval.py, test split, 400 items).
+WCT-EM = three-state MAP-EM Dawid-Skene (Dirichlet prior kappa 5, 0.8
+diagonal; structured basins + concentrated random restarts 5; selected by
+data log-likelihood). Covariate baseline = multinomial logistic on the pinned
+five features (question_type = trap_type, the only per-proposition type; all
+questions share the "Is it true that" surface form), fit on calibration only.
+
+Raw WCT-EM vs covariate (delta = cov - EM, prereg threshold +0.02 nats):
+- ft_reason_included: EM 0.5268 vs cov 0.2734, delta -0.2534, CI
+  [-0.453, -0.123]
+- ft_votes_only: EM 0.4921 vs cov 0.2734, delta -0.2187, CI [-0.423, -0.058]
+- base_zeroshot: EM 0.5842 vs cov 0.2734, delta -0.3108, CI [-0.508, -0.212]
+AUC (co-primary, PASS vs not-PASS): EM 0.992/0.995/0.988 vs cov 0.9985.
+e0 (residual error correlation): 0.284/0.345/0.454.
+
+KEY FINDING - the raw log-loss gap is a calibration artifact. The covariate
+is a logistic regression (inherently calibrated); the raw EM posterior is not
+(AUC tied at 0.99 but probabilities overconfident). After the prereg-listed
+calibration (three-class affine/Platt, exact MLE on the calibration split
+only), test log-loss:
+- ft_reason_included: EM 0.2583, delta +0.0151 (raw -0.2534)
+- ft_votes_only: EM 0.2543, delta +0.0191 (raw -0.2187)
+- base_zeroshot: EM 0.2777, delta -0.0043 (raw -0.3108, a tie)
+Temperature-only ablation (kappa-scaled posterior): deltas +0.0105/-0.0135/
+-0.0179. Both fine-tuned arms land on or above the covariate bar after
+calibration, just under the 0.02 nats GO threshold.
+
+Article-block bootstrap of the calibrated delta (2000 resamples; calibration
+map fixed, fit on calibration; EM refit per resample): ft_reason_included
+delta +0.0151 CI [-0.056, +0.069]; ft_votes_only +0.0191 CI [-0.073, +0.088];
+base_zeroshot -0.0043 CI [-0.122, +0.084]. All CIs cross zero and no point
+estimate clears 0.02: P1 is INCONCLUSIVE on all three arms per the decision
+rule (near-pass, favorable direction on the fine-tuned arms), not the clean
+fail the raw numbers imply.
+
+False-claim catch (FAIL recall on the 105 true counterfactuals, test):
+- consensus catch 0.829 (ft_ri) / 0.886 (ft_vo) / 0.905 (base); flag
+  precision 0.870/0.823/0.833
+- best single juror: llama 0.790 (ft_ri) / qwen35 0.971 (ft_vo) / qwen35
+  0.914 (base)
+- P7a (consensus beats best single juror on catch): holds on
+  reason_included (+0.038), not on votes_only (-0.086) or base (-0.010).
+  llama-3.2-3b__votes_only is degenerate (flags nothing, catch 0.000).
+
+System bars (test): 27B self-review three-state 91.79 percent, gate (binary
+FAIL) 98.72 percent. 27B self-review remains the stronger catcher; the
+juror-gated system is expected to land on pass-criterion branch (b)
+(comparable within 10 points at lower cost), not (a) strictly-better.
+
+P5/P6 are underpowered by corpus design: the 194 pool-matched solver claims
+on test are all ENTAIL (seed questions are built from ENTAIL propositions;
+5 UNSPECIFIED seeded corpus-wide, none on test). Descriptive only per the
+prereg power notes.
+
+Pass criterion (system level; artifacts in pass_criterion.json +
+defendant_claims_judged.json). Defendant 27B seeded answers on the 10 test
+articles: 200 questions, 160 real claims + 40 question-echoes (T22, T28
+abstained by echoing). Judge = 27B with question context, 15/15 manual
+spot-checks verified. 160/160 claims supported: defendant false-claim rate
+0.0 (of answered), answer rate 0.80. Gating the 140 gateable claims (tied to
+a pool proposition): jury consensus P(PASS)>=0.5 keeps 140/140, self-review
+PASS keeps 136/140, both false-claim rates 0.0, article-block bootstrap CI
+(jury - self-review) [0.0, 0.0] (degenerate: no false claims exist to
+separate). Branch (a) not met. Cost (test): jury 4 families x 400 =
+1,108,958 tokens vs self-review 281,913 tokens (3.93x tokens, on ~4B class
+vs 27B). USD proxy (4B $0.20/$0.60, 27B $1.00/$3.00 per 1M): jury $0.254 vs
+self-review $0.319, ratio 0.797. Break-even: jury cheaper for any pricing
+with 4B-class per-token price below 25.4 percent of 27B (small models 4x or
+more cheaper per token: true under realistic amortized serving). VERDICT:
+juror-gated system PASSES via branch (b): comparable false-claim rate (0 vs
+0, within 10 points) at strictly lower cost. Caveat: near-zero defendant
+false-claim rate makes the rate comparison low-power; the detection
+comparison (jury catch 0.829-0.905 vs self-review gate 0.987) is the
+informative one and still favors self-review.
+
+Registered scoreboard (final): P1 INCONCLUSIVE (near-pass after
+calibration, no arm clears 0.02 or excludes zero); P2 NOT RUN
+(leave-one-proposer-out robustness, secondary); P3 NOT RUN
+(claim-instance-counting AUROC invariant, secondary); P4 PASS (fine-tuned
+advantage over base rate 0.514/0.549 vs zero-shot 0.457); P5 descriptive
+(194 pool-matched claims all ENTAIL); P6 descriptive (n=0 UNSPECIFIED);
+P7a partial (consensus beats best single juror only on reason_included,
++0.038); P7b effort half met (jury 218.5 percent of 27B raw Ptok > 50
+percent, but false-claim rate ties the control at 0.0, not lower). System
+pass criterion: PASS via branch (b) (comparable at lower cost).
+
 ## Phase 2 - Registration freeze (done 2026-08-26, tag prereg-waveconsensus-v1)
 
 Task 10 complete. The corpus is frozen; no fine-tuning or generation before
