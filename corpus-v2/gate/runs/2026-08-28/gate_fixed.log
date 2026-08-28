@@ -1,0 +1,25 @@
+gate run: 70 calls (7 models x 12 probes/canaries), resume-skipped 14
+  25/70 C=0 W=17 U=8 E=0
+  50/70 C=2 W=38 U=10 E=0
+  70/70 C=5 W=54 U=11 E=0
+done: {'done': 70, 'correct': 5, 'wrong': 54, 'unknown': 11, 'errors': 0}
+canaries: {
+ "GC2": {
+  "llama-3.2-1b-instruct": "WRONG",
+  "llama-3.2-3b-instruct": "UNKNOWN",
+  "gemma-3-1b-it": "WRONG",
+  "phi-4-mini-instruct": "UNKNOWN",
+  "olmoe-0125-instruct": "UNKNOWN",
+  "gemma-3-4b-it": "WRONG",
+  "qwen35-4b": "UNKNOWN"
+ },
+ "GC1": {
+  "llama-3.2-1b-instruct": "CORRECT",
+  "llama-3.2-3b-instruct": "CORRECT",
+  "gemma-3-1b-it": "CORRECT",
+  "phi-4-mini-instruct": "CORRECT",
+  "gemma-3-4b-it": "CORRECT",
+  "olmoe-0125-instruct": "CORRECT",
+  "qwen35-4b": "CORRECT"
+ }
+}

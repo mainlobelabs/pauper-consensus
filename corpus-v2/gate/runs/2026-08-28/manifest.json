@@ -1,6 +1,6 @@
 {
-  "started": "2026-08-27T23:58:54.042010+00:00",
-  "git": "a9ac38838f75fd7201e5f8fc0b0d264267a0833b",
+  "started": "2026-08-28T01:43:40.210311+00:00",
+  "git": "aaeb5fffd78d7ced2efc5d9da84f96680257f769",
   "host": "100.83.162.43",
   "instances": [
     "8102",
@@ -35,18 +35,20 @@
     "retries": 3,
     "timeout_s": 300
   },
-  "probe_file": "corpus-v2/gate/probes.jsonl",
-  "probes_total": 100,
+  "probe_file": [
+    "/tmp/opencode/fixed_probes.jsonl"
+  ],
+  "probes_total": 10,
   "canaries": [
     "GC1",
     "GC2"
   ],
-  "finished": "2026-08-27T23:59:13.988441+00:00",
+  "finished": "2026-08-28T01:43:49.794550+00:00",
   "counters": {
-    "done": 84,
-    "correct": 11,
-    "wrong": 46,
-    "unknown": 27,
+    "done": 70,
+    "correct": 5,
+    "wrong": 54,
+    "unknown": 11,
     "errors": 0
   }
 }

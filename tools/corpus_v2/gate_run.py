@@ -194,7 +194,10 @@ def ask(host: str, port: int, model: str, question: str) -> tuple[str, str]:
             )
             with urllib.request.urlopen(req, timeout=300) as resp:
                 data = json.load(resp)
-            message = data["choices"][0].get("message", {})
+            choices = data.get("choices") or []
+            if not choices:
+                raise ValueError(f"no choices in response: {str(data)[:200]}")
+            message = choices[0].get("message", {})
             text = (message.get("content") or message.get("reasoning_content") or "").strip()
             if "\n</think>" in text or text.startswith("<think>"):
                 if "\n</think>" in text:
@@ -202,7 +205,13 @@ def ask(host: str, port: int, model: str, question: str) -> tuple[str, str]:
                 elif "</think>" in text:
                     text = text.split("</think>", 1)[1].strip()
             return text, ""
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, OSError) as e:
+        except (
+            urllib.error.URLError,
+            TimeoutError,
+            json.JSONDecodeError,
+            ValueError,
+            OSError,
+        ) as e:
             last_err = str(e)
             time.sleep(2 * (attempt + 1))
     return "", last_err
