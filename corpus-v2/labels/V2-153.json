@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-153-001",
+  "proposition": "Randy Bresnik, Frank Rubio, and Andre Douglas will crew Artemis III.",
+  "label": "ENTAIL",
+  "evidence": "astronauts Randy Bresnik, Frank Rubio, and Andre Douglas",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-002",
+  "proposition": "Luca Parmitano is an ESA astronaut.",
+  "label": "ENTAIL",
+  "evidence": "ESA astronaut Luca Parmitano",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-003",
+  "proposition": "The Artemis III mission is in late 2027.",
+  "label": "ENTAIL",
+  "evidence": "the Artemis III mission in late 2027",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-004",
+  "proposition": "The mission's goal is to evaluate rendezvous and docking operations.",
+  "label": "ENTAIL",
+  "evidence": "evaluate rendezvous and docking operations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-005",
+  "proposition": "The mission involves SpaceX's Starship HLS.",
+  "label": "ENTAIL",
+  "evidence": "SpaceX's Starship HLS",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-006",
+  "proposition": "The mission involves Blue Origin's Blue Moon spacecraft.",
+  "label": "ENTAIL",
+  "evidence": "Blue Origin's Blue Moon spacecraft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-007",
+  "proposition": "The flight will launch on the Space Launch System and Orion.",
+  "label": "ENTAIL",
+  "evidence": "on the Space Launch System and Orion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-008",
+  "proposition": "The launch will be from Kennedy Space Center.",
+  "label": "ENTAIL",
+  "evidence": "from Kennedy Space Center",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-009",
+  "proposition": "The campaign will last roughly two weeks in low Earth orbit.",
+  "label": "ENTAIL",
+  "evidence": "a roughly two-week campaign in low Earth orbit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-010",
+  "proposition": "The mission is modeled on the 1969 Apollo 9 mission.",
+  "label": "ENTAIL",
+  "evidence": "modeled on the 1969 Apollo 9 mission",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-011",
+  "proposition": "Blue Moon will launch first on the New Glenn rocket.",
+  "label": "ENTAIL",
+  "evidence": "will launch first on the New Glenn rocket",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-012",
+  "proposition": "Orion will dock with the Blue Moon lander for about two days.",
+  "label": "ENTAIL",
+  "evidence": "Orion will dock for about two days",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-013",
+  "proposition": "The crew will cross the hatch and test life support.",
+  "label": "ENTAIL",
+  "evidence": "the crew crosses the hatch and tests life support",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-014",
+  "proposition": "A test article of the SpaceX Starship lander will dock with Orion for about a day.",
+  "label": "ENTAIL",
+  "evidence": "A test article of the SpaceX Starship lander will then dock with Orion for about a day",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-015",
+  "proposition": "The crew will re-enter and splash down in the Pacific.",
+  "label": "ENTAIL",
+  "evidence": "re-enters and splashes down in the Pacific",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-016",
+  "proposition": "Bresnik, a retired US Marine Corps colonel, will command.",
+  "label": "ENTAIL",
+  "evidence": "Bresnik, a retired US Marine Corps colonel, will command",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-017",
+  "proposition": "Parmitano will be the first ESA astronaut on an Artemis mission.",
+  "label": "ENTAIL",
+  "evidence": "the first ESA astronaut on an Artemis mission",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-018",
+  "proposition": "Rubio holds the US single-flight record at 371 days in space.",
+  "label": "ENTAIL",
+  "evidence": "the US single-flight record at 371 days in space",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-019",
+  "proposition": "Douglas will fly for the first time.",
+  "label": "ENTAIL",
+  "evidence": "Douglas will fly for the first time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-020",
+  "proposition": "Artemis IV is the first crewed landing at the lunar South Pole planned for 2028.",
+  "label": "ENTAIL",
+  "evidence": "the first crewed landing at the lunar South Pole planned for 2028",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-021",
+  "proposition": "The mission is scheduled for late 2026.",
+  "label": "CONTRADICT",
+  "evidence": "the Artemis III mission in late 2027",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-022",
+  "proposition": "The campaign will last about two months.",
+  "label": "CONTRADICT",
+  "evidence": "a roughly two-week campaign in low Earth orbit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-023",
+  "proposition": "The mission is modeled on the 1969 Apollo 11 mission.",
+  "label": "CONTRADICT",
+  "evidence": "modeled on the 1969 Apollo 9 mission",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-024",
+  "proposition": "Starship will launch first on Falcon Heavy.",
+  "label": "CONTRADICT",
+  "evidence": "Blue Origin's Blue Moon lander will launch first on the New Glenn rocket",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-025",
+  "proposition": "The crew will splash down in the Atlantic.",
+  "label": "CONTRADICT",
+  "evidence": "splashes down in the Pacific",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-026",
+  "proposition": "Bresnik will serve as a mission specialist.",
+  "label": "CONTRADICT",
+  "evidence": "Bresnik, a retired US Marine Corps colonel, will command",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-027",
+  "proposition": "Parmitano is the second ESA astronaut on an Artemis mission.",
+  "label": "CONTRADICT",
+  "evidence": "the first ESA astronaut on an Artemis mission",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-028",
+  "proposition": "Rubio holds the US single-flight record at 271 days.",
+  "label": "CONTRADICT",
+  "evidence": "the US single-flight record at 371 days in space",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-029",
+  "proposition": "Artemis IV is planned for 2026.",
+  "label": "CONTRADICT",
+  "evidence": "planned for 2028",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-030",
+  "proposition": "Douglas is a veteran of three prior flights.",
+  "label": "CONTRADICT",
+  "evidence": "Douglas will fly for the first time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-153-031",
+  "proposition": "A backup crew was announced.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A backup crew is not mentioned."
+ },
+ {
+  "id": "V2-153-032",
+  "proposition": "The splashdown location is a specific region of the Pacific.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Splashdown coordinates are not given."
+ },
+ {
+  "id": "V2-153-033",
+  "proposition": "The crew will perform spacewalks.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Activities beyond life support testing and docking are not described."
+ },
+ {
+  "id": "V2-153-034",
+  "proposition": "The Starship test article will be crewed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The test article's crewing status is not described."
+ },
+ {
+  "id": "V2-153-035",
+  "proposition": "Blue Moon will remain in orbit for a specific total time.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Blue Moon's total time in orbit is not stated."
+ },
+ {
+  "id": "V2-153-036",
+  "proposition": "Jared Isaacman named the mission.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The mission's naming is not described."
+ },
+ {
+  "id": "V2-153-037",
+  "proposition": "SpaceX will be paid a specific amount for the mission.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Funding amounts are not given."
+ },
+ {
+  "id": "V2-153-038",
+  "proposition": "The crew will conduct science experiments.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Science payload details are not described."
+ },
+ {
+  "id": "V2-153-039",
+  "proposition": "Artemis IV will use the same crew.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Artemis IV's crew is not described."
+ },
+ {
+  "id": "V2-153-040",
+  "proposition": "The Pacific splashdown will be near a specific island.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Splashdown proximity is not described."
+ }
+]

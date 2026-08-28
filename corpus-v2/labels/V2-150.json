@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-150-001",
+  "proposition": "Death of a Salesman won six Tony Awards.",
+  "label": "ENTAIL",
+  "evidence": "wins the most Tony Awards in 2026 with six",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-002",
+  "proposition": "Death of a Salesman won Best Revival of a Play.",
+  "label": "ENTAIL",
+  "evidence": "including Best Revival of a Play",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-003",
+  "proposition": "Liberation, Ragtime, and Schmigadoon! each won four awards.",
+  "label": "ENTAIL",
+  "evidence": "Liberation, Ragtime, and Schmigadoon! win four each",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-004",
+  "proposition": "Liberation won Best Play.",
+  "label": "ENTAIL",
+  "evidence": "Liberation, by Bess Wohl, took Best Play",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-005",
+  "proposition": "Ragtime won Best Revival of a Musical.",
+  "label": "ENTAIL",
+  "evidence": "including Best Play, Best Revival of a Musical, and Best Musical respectively",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-006",
+  "proposition": "Schmigadoon! won Best Musical.",
+  "label": "ENTAIL",
+  "evidence": "Schmigadoon! won Best Musical for the book and original score by Cinco Paul",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-007",
+  "proposition": "The ceremony was the 79th annual Tony Awards.",
+  "label": "ENTAIL",
+  "evidence": "The 79th annual Tony Awards ceremony",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-008",
+  "proposition": "The ceremony was held at Radio City Music Hall in New York.",
+  "label": "ENTAIL",
+  "evidence": "was held at Radio City Music Hall in New York",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-009",
+  "proposition": "The ceremony took place on Sunday, 7 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Sunday, 7 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-010",
+  "proposition": "P!nk hosted the ceremony.",
+  "label": "ENTAIL",
+  "evidence": "and hosted by P!nk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-011",
+  "proposition": "Joe Mantello directed the revival.",
+  "label": "ENTAIL",
+  "evidence": "directed by Joe Mantello",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-012",
+  "proposition": "Nathan Lane, Laurie Metcalf, and Christopher Abbott starred in the production.",
+  "label": "ENTAIL",
+  "evidence": "starring Nathan Lane, Laurie Metcalf, and Christopher Abbott",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-013",
+  "proposition": "The production won Best Direction of a Play.",
+  "label": "ENTAIL",
+  "evidence": "also won Best Direction of a Play",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-014",
+  "proposition": "Laurie Metcalf won Best Actress in a Play.",
+  "label": "ENTAIL",
+  "evidence": "with Metcalf taking Best Actress in a Play",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-015",
+  "proposition": "The six awards set a record for the most won by a play revival.",
+  "label": "ENTAIL",
+  "evidence": "Its six awards set a record for the most won by a play revival",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-016",
+  "proposition": "Ragtime was a revival staged at the New York City Center.",
+  "label": "ENTAIL",
+  "evidence": "a revival staged at the New York City Center",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-017",
+  "proposition": "Ragtime won the leading actor and actress awards for a musical.",
+  "label": "ENTAIL",
+  "evidence": "including the leading actor and actress awards for a musical",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-018",
+  "proposition": "Cats: The Jellicle Ball brought its first Tony to a trans person in costume design.",
+  "label": "ENTAIL",
+  "evidence": "which brought its first Tony to a trans person in the costume design category",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-019",
+  "proposition": "The ceremony was broadcast on CBS and Paramount+.",
+  "label": "ENTAIL",
+  "evidence": "The ceremony was broadcast on CBS and Paramount+",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-020",
+  "proposition": "Cinco Paul wrote the book and original score for Schmigadoon!.",
+  "label": "ENTAIL",
+  "evidence": "for the book and original score by Cinco Paul",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-021",
+  "proposition": "Death of a Salesman won four Tony Awards.",
+  "label": "CONTRADICT",
+  "evidence": "wins the most Tony Awards in 2026 with six",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-022",
+  "proposition": "Liberation won Best Musical.",
+  "label": "CONTRADICT",
+  "evidence": "Liberation, by Bess Wohl, took Best Play",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-023",
+  "proposition": "The ceremony was held at the Metropolitan Opera House.",
+  "label": "CONTRADICT",
+  "evidence": "was held at Radio City Music Hall in New York",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-024",
+  "proposition": "Elton John hosted the ceremony.",
+  "label": "CONTRADICT",
+  "evidence": "and hosted by P!nk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-025",
+  "proposition": "Steven Soderbergh directed the revival.",
+  "label": "CONTRADICT",
+  "evidence": "directed by Joe Mantello",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-026",
+  "proposition": "The six awards set a record for the most won by a musical.",
+  "label": "CONTRADICT",
+  "evidence": "set a record for the most won by a play revival",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-027",
+  "proposition": "Nathan Lane won Best Actress in a Play.",
+  "label": "CONTRADICT",
+  "evidence": "with Metcalf taking Best Actress in a Play",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-028",
+  "proposition": "Ragtime was staged in London.",
+  "label": "CONTRADICT",
+  "evidence": "a revival staged at the New York City Center",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-029",
+  "proposition": "The ceremony was the 78th annual Tony Awards.",
+  "label": "CONTRADICT",
+  "evidence": "The 79th annual Tony Awards ceremony",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-030",
+  "proposition": "The ceremony was broadcast on NBC.",
+  "label": "CONTRADICT",
+  "evidence": "The ceremony was broadcast on CBS and Paramount+",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-150-031",
+  "proposition": "The audience voted on the winners.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The voting method is not described."
+ },
+ {
+  "id": "V2-150-032",
+  "proposition": "P!nk performed a song at the ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A host performance is not mentioned."
+ },
+ {
+  "id": "V2-150-033",
+  "proposition": "Nathan Lane accepted his award in person.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "How the awards were accepted is not described."
+ },
+ {
+  "id": "V2-150-034",
+  "proposition": "The six awards included Best Lighting Design.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Categories beyond the named ones are not listed."
+ },
+ {
+  "id": "V2-150-035",
+  "proposition": "Cats: The Jellicle Ball won multiple awards.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only the costume design win is mentioned."
+ },
+ {
+  "id": "V2-150-036",
+  "proposition": "Arthur Miller's estate attended the ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not described."
+ },
+ {
+  "id": "V2-150-037",
+  "proposition": "The ceremony drew a specific viewership.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Viewership numbers are not given."
+ },
+ {
+  "id": "V2-150-038",
+  "proposition": "Joe Mantello accepted the directing award on stage.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Acceptance is not described."
+ },
+ {
+  "id": "V2-150-039",
+  "proposition": "A tribute to a recent death was held at the ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Tributes are not mentioned."
+ },
+ {
+  "id": "V2-150-040",
+  "proposition": "Death of a Salesman will extend its run.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Future run plans are not described."
+ }
+]

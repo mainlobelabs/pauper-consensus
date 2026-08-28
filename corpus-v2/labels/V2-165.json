@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-165-001",
+  "proposition": "The Bank of Japan raised its interest rate to 1%.",
+  "label": "ENTAIL",
+  "evidence": "raises its interest rate to 1%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-002",
+  "proposition": "The previous rate was 0.75%.",
+  "label": "ENTAIL",
+  "evidence": "from 0.75%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-003",
+  "proposition": "1% is the highest level since 1995.",
+  "label": "ENTAIL",
+  "evidence": "the highest level since 1995",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-004",
+  "proposition": "The meeting closed on Tuesday, 16 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "which closed on Tuesday, 16 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-005",
+  "proposition": "The vote was 7-1.",
+  "label": "ENTAIL",
+  "evidence": "voted 7-1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-006",
+  "proposition": "The policy rate was lifted by 25 basis points.",
+  "label": "ENTAIL",
+  "evidence": "to lift the policy rate by 25 basis points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-007",
+  "proposition": "Toichiro Asada dissented for a hold.",
+  "label": "ENTAIL",
+  "evidence": "dissenting for a hold",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-008",
+  "proposition": "Asada was the first board member hand-picked by prime minister Sanae Takaichi.",
+  "label": "ENTAIL",
+  "evidence": "the first board member hand-picked by prime minister Sanae Takaichi",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-009",
+  "proposition": "Asada argued that Middle East growth risks outweighed inflation.",
+  "label": "ENTAIL",
+  "evidence": "Middle East growth risks outweighed inflation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-010",
+  "proposition": "The deposit facility rate was set at 1.0%.",
+  "label": "ENTAIL",
+  "evidence": "The deposit facility rate was set at 1.0%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-011",
+  "proposition": "The basic lending rate was set at 1.25%.",
+  "label": "ENTAIL",
+  "evidence": "the basic lending rate at 1.25%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-012",
+  "proposition": "The bank raised the rate to 0.75% in December.",
+  "label": "ENTAIL",
+  "evidence": "when the bank raised the rate to 0.75%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-013",
+  "proposition": "The hike had been widely expected.",
+  "label": "ENTAIL",
+  "evidence": "it had been widely expected",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-014",
+  "proposition": "The energy-price surge from the US-Israel war with Iran drove the move.",
+  "label": "ENTAIL",
+  "evidence": "The energy-price surge from the US-Israel war with Iran",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-015",
+  "proposition": "The yen is weak, near 160 to the dollar.",
+  "label": "ENTAIL",
+  "evidence": "a weak yen near 160 to the dollar",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-016",
+  "proposition": "Underlying inflation is approaching or exceeding the 2% target.",
+  "label": "ENTAIL",
+  "evidence": "underlying inflation approaching or exceeding the 2% target",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-017",
+  "proposition": "Shinichi Uchida is deputy governor.",
+  "label": "ENTAIL",
+  "evidence": "Deputy governor Shinichi Uchida",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-018",
+  "proposition": "The bank has been normalizing policy since March 2024.",
+  "label": "ENTAIL",
+  "evidence": "normalizing policy since March 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-019",
+  "proposition": "The bank ended its 17-year negative-rate era in March 2024.",
+  "label": "ENTAIL",
+  "evidence": "when it ended its 17-year negative-rate era",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-020",
+  "proposition": "The move aligns the BOJ with ECB tightening.",
+  "label": "ENTAIL",
+  "evidence": "aligns it with ECB tightening",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-021",
+  "proposition": "The bank cut its rate to 0.5%.",
+  "label": "CONTRADICT",
+  "evidence": "raises its interest rate to 1%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-022",
+  "proposition": "The previous rate was 1.25%.",
+  "label": "CONTRADICT",
+  "evidence": "from 0.75%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-023",
+  "proposition": "1% is the highest level since 2008.",
+  "label": "CONTRADICT",
+  "evidence": "the highest level since 1995",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-024",
+  "proposition": "The vote was unanimous.",
+  "label": "CONTRADICT",
+  "evidence": "voted 7-1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-025",
+  "proposition": "Asada voted for a 50-basis-point hike.",
+  "label": "CONTRADICT",
+  "evidence": "dissenting for a hold",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-026",
+  "proposition": "The deposit facility rate was set at 0.75%.",
+  "label": "CONTRADICT",
+  "evidence": "The deposit facility rate was set at 1.0%",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-027",
+  "proposition": "It was the third hike since December.",
+  "label": "CONTRADICT",
+  "evidence": "the first hike since December",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-028",
+  "proposition": "The yen is strong, near 100 to the dollar.",
+  "label": "CONTRADICT",
+  "evidence": "a weak yen near 160 to the dollar",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-029",
+  "proposition": "Underlying inflation is well below the 2% target.",
+  "label": "CONTRADICT",
+  "evidence": "underlying inflation approaching or exceeding the 2% target",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-030",
+  "proposition": "The bank began normalizing policy in 2022.",
+  "label": "CONTRADICT",
+  "evidence": "normalizing policy since March 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-165-031",
+  "proposition": "The bank set a forecast for the next hike.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A rate path forecast is not given."
+ },
+ {
+  "id": "V2-165-032",
+  "proposition": "Takaichi attended the meeting.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Takaichi's attendance is not described."
+ },
+ {
+  "id": "V2-165-033",
+  "proposition": "The 7-1 vote included the governor in favor.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Who voted how beyond Asada is not described."
+ },
+ {
+  "id": "V2-165-034",
+  "proposition": "Japan's 10-year bond yield moved after the decision.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Bond market reaction is not described."
+ },
+ {
+  "id": "V2-165-035",
+  "proposition": "The hike affects mortgage rates by a specific amount.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Mortgage impact is not quantified."
+ },
+ {
+  "id": "V2-165-036",
+  "proposition": "The ECB also hiked in June 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The timing of ECB moves is not stated."
+ },
+ {
+  "id": "V2-165-037",
+  "proposition": "The US-Israel war with Iran began in a specific month.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The war's start is not described."
+ },
+ {
+  "id": "V2-165-038",
+  "proposition": "The deposit facility rate changed for the first time since 2024.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The deposit facility's history is not described."
+ },
+ {
+  "id": "V2-165-039",
+  "proposition": "A separate written statement was published.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A separate statement is not mentioned."
+ },
+ {
+  "id": "V2-165-040",
+  "proposition": "The bank bought bonds at the meeting.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Open market operations are not described."
+ }
+]

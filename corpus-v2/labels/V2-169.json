@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-169-001",
+  "proposition": "The study was published in The Lancet.",
+  "label": "ENTAIL",
+  "evidence": "published in The Lancet",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-002",
+  "proposition": "Queen Mary University of London led the study.",
+  "label": "ENTAIL",
+  "evidence": "led by Queen Mary University of London",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-003",
+  "proposition": "Cancer Research UK funded the study.",
+  "label": "ENTAIL",
+  "evidence": "funded by Cancer Research UK",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-004",
+  "proposition": "The HPV vaccine has prevented around 200 deaths from cervical cancer in England.",
+  "label": "ENTAIL",
+  "evidence": "prevented around 200 deaths from cervical cancer in England",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-005",
+  "proposition": "No women aged 20-24 died from the disease between 2020 and 2024.",
+  "label": "ENTAIL",
+  "evidence": "no women aged 20-24 died from the disease between 2020 and 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-006",
+  "proposition": "Professor Peter Sasieni led the analysis.",
+  "label": "ENTAIL",
+  "evidence": "led by cancer epidemiologist Professor Peter Sasieni",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-007",
+  "proposition": "The analysis covered mortality data from 2001 to 2024.",
+  "label": "ENTAIL",
+  "evidence": "covered mortality data from 2001 to 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-008",
+  "proposition": "England's national vaccination programme was launched in 2008.",
+  "label": "ENTAIL",
+  "evidence": "launched in 2008",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-009",
+  "proposition": "For women aged 20-24 in 2020-24, the study found zero deaths against 23.1 expected.",
+  "label": "ENTAIL",
+  "evidence": "the study found zero deaths against 23.1 expected",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-010",
+  "proposition": "The result is a 100% mortality reduction.",
+  "label": "ENTAIL",
+  "evidence": "a 100% mortality reduction",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-011",
+  "proposition": "It is the first such result in England.",
+  "label": "ENTAIL",
+  "evidence": "the first such result in England",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-012",
+  "proposition": "Women aged 20-24 in 2015-19 showed an 80% mortality reduction.",
+  "label": "ENTAIL",
+  "evidence": "an 80% mortality reduction for women aged 20-24 in 2015-19",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-013",
+  "proposition": "Women aged 25-29 in 2020-24 showed a 69% mortality reduction.",
+  "label": "ENTAIL",
+  "evidence": "69% for women aged 25-29 in 2020-24",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-014",
+  "proposition": "The authors described the risk of dying before 30 in the vaccinated cohorts as near-zero.",
+  "label": "ENTAIL",
+  "evidence": "the risk of dying before 30 in the vaccinated cohorts as \"near-zero\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-015",
+  "proposition": "The benefit is expected to rise as the cohorts age.",
+  "label": "ENTAIL",
+  "evidence": "the benefit is expected to rise as the cohorts age",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-016",
+  "proposition": "Cancer Research UK called the findings an incredible milestone.",
+  "label": "ENTAIL",
+  "evidence": "an \"incredible milestone.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-017",
+  "proposition": "The authors cautioned that vaccine uptake is falling.",
+  "label": "ENTAIL",
+  "evidence": "vaccine uptake is falling",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-018",
+  "proposition": "The authors called for sustained investment and catch-up programmes.",
+  "label": "ENTAIL",
+  "evidence": "called for sustained investment and catch-up programmes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-019",
+  "proposition": "It is the first study to show the vaccine's impact on cervical cancer mortality.",
+  "label": "ENTAIL",
+  "evidence": "the first study to show the vaccine's impact on cervical cancer mortality",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-020",
+  "proposition": "Sasieni is a cancer epidemiologist.",
+  "label": "ENTAIL",
+  "evidence": "cancer epidemiologist Professor Peter Sasieni",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-021",
+  "proposition": "The study was published in The BMJ.",
+  "label": "CONTRADICT",
+  "evidence": "published in The Lancet",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-022",
+  "proposition": "Imperial College London led the study.",
+  "label": "CONTRADICT",
+  "evidence": "led by Queen Mary University of London",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-023",
+  "proposition": "The vaccine has prevented around 2,000 cervical cancer deaths in England.",
+  "label": "CONTRADICT",
+  "evidence": "prevented around 200 deaths",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-024",
+  "proposition": "The vaccination programme was launched in 2018.",
+  "label": "CONTRADICT",
+  "evidence": "launched in 2008",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-025",
+  "proposition": "The study found 10 deaths for women aged 20-24 in 2020-24.",
+  "label": "CONTRADICT",
+  "evidence": "the study found zero deaths against 23.1 expected",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-026",
+  "proposition": "Women aged 20-24 in 2015-19 showed a 50% mortality reduction.",
+  "label": "CONTRADICT",
+  "evidence": "an 80% mortality reduction for women aged 20-24 in 2015-19",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-027",
+  "proposition": "The authors said the benefit will fall as the cohorts age.",
+  "label": "CONTRADICT",
+  "evidence": "the benefit is expected to rise as the cohorts age",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-028",
+  "proposition": "Cancer Research UK called the findings unproven.",
+  "label": "CONTRADICT",
+  "evidence": "an \"incredible milestone.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-029",
+  "proposition": "The authors said vaccine uptake is rising.",
+  "label": "CONTRADICT",
+  "evidence": "vaccine uptake is falling",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-030",
+  "proposition": "It is the fifth study to show the vaccine's impact on mortality.",
+  "label": "CONTRADICT",
+  "evidence": "the first study to show the vaccine's impact on cervical cancer mortality",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-169-031",
+  "proposition": "The study included data on men.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Male mortality is not covered."
+ },
+ {
+  "id": "V2-169-032",
+  "proposition": "The 23.1 expected deaths used a specific model.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The expected-death model is not described."
+ },
+ {
+  "id": "V2-169-033",
+  "proposition": "Cervical cancer incidence fell by a specific percentage.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Incidence figures are not given."
+ },
+ {
+  "id": "V2-169-034",
+  "proposition": "The study compared England with other countries.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A country comparison is not made."
+ },
+ {
+  "id": "V2-169-035",
+  "proposition": "Vaccine uptake fell by a specific number of points.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An uptake figure is not given."
+ },
+ {
+  "id": "V2-169-036",
+  "proposition": "The catch-up programme targets a specific age range.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Catch-up ages are not stated."
+ },
+ {
+  "id": "V2-169-037",
+  "proposition": "The study was peer-reviewed by a named group.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Peer review details are not described."
+ },
+ {
+  "id": "V2-169-038",
+  "proposition": "The funding shaped the conclusions.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A conflict-of-interest statement is not described."
+ },
+ {
+  "id": "V2-169-039",
+  "proposition": "The zero-death finding holds in 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Data beyond 2024 are not covered."
+ },
+ {
+  "id": "V2-169-040",
+  "proposition": "Sasieni has published before on HPV.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Prior publications are not described."
+ }
+]

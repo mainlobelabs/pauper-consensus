@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-149-001",
+  "proposition": "Golden Tempo is an American thoroughbred.",
+  "label": "ENTAIL",
+  "evidence": "American thoroughbred Golden Tempo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-002",
+  "proposition": "Golden Tempo won the 158th Belmont Stakes.",
+  "label": "ENTAIL",
+  "evidence": "wins the 158th Belmont Stakes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-003",
+  "proposition": "The win came five weeks after winning the Kentucky Derby.",
+  "label": "ENTAIL",
+  "evidence": "five weeks after winning the Kentucky Derby",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-004",
+  "proposition": "Cherie DeVaux is the trainer.",
+  "label": "ENTAIL",
+  "evidence": "trainer Cherie DeVaux",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-005",
+  "proposition": "DeVaux is the second female trainer to train a winner in the third leg of the Triple Crown.",
+  "label": "ENTAIL",
+  "evidence": "the second female trainer to train a winner in the third leg of the Triple Crown",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-006",
+  "proposition": "Jose Ortiz rode Golden Tempo.",
+  "label": "ENTAIL",
+  "evidence": "Ridden by Jose Ortiz",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-007",
+  "proposition": "Golden Tempo won by 1-1/4 lengths.",
+  "label": "ENTAIL",
+  "evidence": "won by 1-1/4 lengths",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-008",
+  "proposition": "Commandment finished second.",
+  "label": "ENTAIL",
+  "evidence": "over Commandment",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-009",
+  "proposition": "Golden Tempo rallied from last place.",
+  "label": "ENTAIL",
+  "evidence": "rallying from last place",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-010",
+  "proposition": "The race had a $2 million purse.",
+  "label": "ENTAIL",
+  "evidence": "the $2 million race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-011",
+  "proposition": "The race was at Saratoga Race Course in Saratoga Springs, New York.",
+  "label": "ENTAIL",
+  "evidence": "at Saratoga Race Course in Saratoga Springs, New York",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-012",
+  "proposition": "The winning time was 2:03.49.",
+  "label": "ENTAIL",
+  "evidence": "in 2:03.49",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-013",
+  "proposition": "The crowd was 46,128.",
+  "label": "ENTAIL",
+  "evidence": "The crowd of 46,128",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-014",
+  "proposition": "A three-minute rain delay pushed the post time.",
+  "label": "ENTAIL",
+  "evidence": "a three-minute rain delay push the post time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-015",
+  "proposition": "A rainbow appeared over the winner's circle.",
+  "label": "ENTAIL",
+  "evidence": "a rainbow appeared over the winner's circle",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-016",
+  "proposition": "It was the final Belmont Stakes run at the Spa.",
+  "label": "ENTAIL",
+  "evidence": "the final Belmont Stakes run at the Spa",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-017",
+  "proposition": "The race returns to Belmont Park, Long Island, next year.",
+  "label": "ENTAIL",
+  "evidence": "before the race returns to Belmont Park, Long Island, next year",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-018",
+  "proposition": "DeVaux is 44.",
+  "label": "ENTAIL",
+  "evidence": "DeVaux, 44",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-019",
+  "proposition": "DeVaux had skipped the Preakness Stakes.",
+  "label": "ENTAIL",
+  "evidence": "had skipped the Preakness Stakes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-020",
+  "proposition": "DeVaux is the first woman to train winners of multiple Triple Crown races.",
+  "label": "ENTAIL",
+  "evidence": "the first woman to train winners of multiple Triple Crown races",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-021",
+  "proposition": "Golden Tempo won by a neck.",
+  "label": "CONTRADICT",
+  "evidence": "won by 1-1/4 lengths",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-022",
+  "proposition": "DeVaux is the first female trainer to win the Belmont.",
+  "label": "CONTRADICT",
+  "evidence": "the second female trainer to train a winner in the third leg of the Triple Crown",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-023",
+  "proposition": "The race was at Belmont Park.",
+  "label": "CONTRADICT",
+  "evidence": "at Saratoga Race Course in Saratoga Springs, New York",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-024",
+  "proposition": "The winning time was 2:30.49.",
+  "label": "CONTRADICT",
+  "evidence": "in 2:03.49",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-025",
+  "proposition": "The purse was $5 million.",
+  "label": "CONTRADICT",
+  "evidence": "the $2 million race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-026",
+  "proposition": "DeVaux is 54.",
+  "label": "CONTRADICT",
+  "evidence": "DeVaux, 44",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-027",
+  "proposition": "Golden Tempo won after leading from the start.",
+  "label": "CONTRADICT",
+  "evidence": "rallying from last place",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-028",
+  "proposition": "DeVaux ran the Preakness Stakes.",
+  "label": "CONTRADICT",
+  "evidence": "had skipped the Preakness Stakes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-029",
+  "proposition": "DeVaux was born in Kentucky.",
+  "label": "CONTRADICT",
+  "evidence": "Born in Saratoga Springs",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-030",
+  "proposition": "The next target is the Preakness Stakes.",
+  "label": "CONTRADICT",
+  "evidence": "the Travers Stakes on 29 August",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-149-031",
+  "proposition": "Golden Tempo is for sale after the win.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Ownership or sale is not mentioned."
+ },
+ {
+  "id": "V2-149-032",
+  "proposition": "Ortiz had ridden Golden Tempo before.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Ortiz's prior mounts are not described."
+ },
+ {
+  "id": "V2-149-033",
+  "proposition": "Commandment's jockey was a specific rider.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The second-place jockey is not named."
+ },
+ {
+  "id": "V2-149-034",
+  "proposition": "The rain delay affected the outcome.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The delay's impact is not described."
+ },
+ {
+  "id": "V2-149-035",
+  "proposition": "Golden Tempo's owner collected the purse.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The owner is not named."
+ },
+ {
+  "id": "V2-149-036",
+  "proposition": "DeVaux named the horse.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The horse's naming is not described."
+ },
+ {
+  "id": "V2-149-037",
+  "proposition": "The Travers entry is confirmed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The Travers is described as a target, possibly via the Haskell."
+ },
+ {
+  "id": "V2-149-038",
+  "proposition": "A post-race interview was broadcast.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not given."
+ },
+ {
+  "id": "V2-149-039",
+  "proposition": "Golden Tempo will rest before the Travers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Rest plans are not described."
+ },
+ {
+  "id": "V2-149-040",
+  "proposition": "DeVaux will keep training at the Spa.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her training base is not discussed."
+ }
+]

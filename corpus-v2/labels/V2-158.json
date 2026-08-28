@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-158-001",
+  "proposition": "John Healey resigned as UK Secretary of State for Defence.",
+  "label": "ENTAIL",
+  "evidence": "resigns as UK Secretary of State for Defence",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-002",
+  "proposition": "Healey resigned in protest at a lack of government funding for the British Armed Forces.",
+  "label": "ENTAIL",
+  "evidence": "in protest at a lack of government funding for the British Armed Forces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-003",
+  "proposition": "Healey said Starmer is putting the country's security at risk.",
+  "label": "ENTAIL",
+  "evidence": "prime minister Keir Starmer is putting the country's security at risk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-004",
+  "proposition": "Parliamentary Under-Secretary Al Carns also resigned.",
+  "label": "ENTAIL",
+  "evidence": "Parliamentary Under-Secretary Al Carns also resigns",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-005",
+  "proposition": "Healey wrote his resignation on Thursday, 11 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "wrote on Thursday, 11 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-006",
+  "proposition": "Healey said the prime minister was unable and the Treasury unwilling to commit the resources.",
+  "label": "ENTAIL",
+  "evidence": "the prime minister was \"unable\" and the Treasury \"unwilling\" to commit the resources",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-007",
+  "proposition": "The financial settlement rises from 2.6% of GDP next year to 2.68% by 2030.",
+  "label": "ENTAIL",
+  "evidence": "rising from 2.6% of GDP next year to 2.68% by 2030",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-008",
+  "proposition": "Healey wanted 3% by 2030.",
+  "label": "ENTAIL",
+  "evidence": "Healey wanted 3% by 2030",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-009",
+  "proposition": "Healey said he was forced to make decisions that would reduce the readiness of the forces.",
+  "label": "ENTAIL",
+  "evidence": "forced to make decisions that would reduce the readiness of our forces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-010",
+  "proposition": "Reports said the government offered only £13.5 billion over four years.",
+  "label": "ENTAIL",
+  "evidence": "the government offered only £13.5 billion over four years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-011",
+  "proposition": "The Ministry of Defence had requested £28 billion.",
+  "label": "ENTAIL",
+  "evidence": "the Ministry of Defence's request for £28 billion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-012",
+  "proposition": "Starmer said the government delivered the highest sustained increase in defence spending since the Cold War.",
+  "label": "ENTAIL",
+  "evidence": "the highest sustained increase in defence spending since the Cold War",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-013",
+  "proposition": "Dan Jarvis was named Healey's successor.",
+  "label": "ENTAIL",
+  "evidence": "Dan Jarvis, a former Army officer serving as security minister, was named Healey's successor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-014",
+  "proposition": "Jarvis was named on Thursday evening.",
+  "label": "ENTAIL",
+  "evidence": "on Thursday evening",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-015",
+  "proposition": "Jarvis is a former Army officer serving as security minister.",
+  "label": "ENTAIL",
+  "evidence": "a former Army officer serving as security minister",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-016",
+  "proposition": "Al Carns resigned hours later.",
+  "label": "ENTAIL",
+  "evidence": "Al Carns resigned hours later",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-017",
+  "proposition": "Carns said the plan was neither transformative enough nor sufficiently funded.",
+  "label": "ENTAIL",
+  "evidence": "the plan was \"neither transformative enough nor sufficiently funded.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-018",
+  "proposition": "About 1% capital-budget cuts were made across departments.",
+  "label": "ENTAIL",
+  "evidence": "about 1% capital-budget cuts across departments",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-019",
+  "proposition": "Healey is one of Starmer's most loyal cabinet allies.",
+  "label": "ENTAIL",
+  "evidence": "one of Starmer's most loyal cabinet allies",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-020",
+  "proposition": "The settlement is backloaded.",
+  "label": "ENTAIL",
+  "evidence": "and is backloaded",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-021",
+  "proposition": "Healey resigned over a budget surplus.",
+  "label": "CONTRADICT",
+  "evidence": "in protest at a lack of government funding",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-022",
+  "proposition": "Carns was reappointed as Parliamentary Under-Secretary.",
+  "label": "CONTRADICT",
+  "evidence": "Parliamentary Under-Secretary Al Carns also resigns",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-023",
+  "proposition": "The settlement rises to 3% of GDP by 2030.",
+  "label": "CONTRADICT",
+  "evidence": "rising from 2.6% of GDP next year to 2.68% by 2030",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-024",
+  "proposition": "Healey wanted 2.5% by 2030.",
+  "label": "CONTRADICT",
+  "evidence": "Healey wanted 3% by 2030",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-025",
+  "proposition": "The government offered £28 billion over four years.",
+  "label": "CONTRADICT",
+  "evidence": "offered only £13.5 billion over four years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-026",
+  "proposition": "The Ministry of Defence had requested £13.5 billion.",
+  "label": "CONTRADICT",
+  "evidence": "the Ministry of Defence's request for £28 billion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-027",
+  "proposition": "Starmer said the spending increase was the lowest since the Cold War.",
+  "label": "CONTRADICT",
+  "evidence": "the highest sustained increase in defence spending since the Cold War",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-028",
+  "proposition": "Dan Jarvis was appointed prime minister.",
+  "label": "CONTRADICT",
+  "evidence": "was named Healey's successor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-029",
+  "proposition": "Carns praised the plan as transformative.",
+  "label": "CONTRADICT",
+  "evidence": "the plan was \"neither transformative enough nor sufficiently funded.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-030",
+  "proposition": "Healey was a junior minister outside the cabinet.",
+  "label": "CONTRADICT",
+  "evidence": "one of Starmer's most loyal cabinet allies",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-158-031",
+  "proposition": "Healey will return to the backbench.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His future role is not stated."
+ },
+ {
+  "id": "V2-158-032",
+  "proposition": "The resignation triggered a no-confidence vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A no-confidence vote is not mentioned."
+ },
+ {
+  "id": "V2-158-033",
+  "proposition": "Other ministers threatened to resign.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Other resignations are not mentioned."
+ },
+ {
+  "id": "V2-158-034",
+  "proposition": "The Treasury offered a counter-proposal.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A counter-offer is not described."
+ },
+ {
+  "id": "V2-158-035",
+  "proposition": "Starmer met Healey in person.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The exchange was by letter."
+ },
+ {
+  "id": "V2-158-036",
+  "proposition": "The defence plan includes a specific weapons purchase.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Programme details are not listed."
+ },
+ {
+  "id": "V2-158-037",
+  "proposition": "Jarvis will keep the same financial settlement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Jarvis's plans are not described."
+ },
+ {
+  "id": "V2-158-038",
+  "proposition": "The £13.5 billion covers only a single programme.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "How the offer is allocated is not described."
+ },
+ {
+  "id": "V2-158-039",
+  "proposition": "Parliament debated the resignation on Friday.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A parliamentary debate is not mentioned."
+ },
+ {
+  "id": "V2-158-040",
+  "proposition": "Healey's letter was published in full.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Publication of the letter is not described."
+ }
+]

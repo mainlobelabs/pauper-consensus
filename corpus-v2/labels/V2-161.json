@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-161-001",
+  "proposition": "Toyota Racing won the 24 Hours of Le Mans.",
+  "label": "ENTAIL",
+  "evidence": "Toyota Racing wins the 24 Hours of Le Mans",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-002",
+  "proposition": "The winning car was driven by Mike Conway, Kamui Kobayashi, and Nyck de Vries.",
+  "label": "ENTAIL",
+  "evidence": "drivers Mike Conway, Kamui Kobayashi, and Nyck de Vries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-003",
+  "proposition": "It was Toyota's first victory in the event since 2022.",
+  "label": "ENTAIL",
+  "evidence": "its first victory in the event since 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-004",
+  "proposition": "It was Toyota's sixth overall victory.",
+  "label": "ENTAIL",
+  "evidence": "and sixth overall",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-005",
+  "proposition": "It was the 94th running of the race.",
+  "label": "ENTAIL",
+  "evidence": "the 94th running",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-006",
+  "proposition": "The race was the third round of the FIA World Endurance Championship.",
+  "label": "ENTAIL",
+  "evidence": "the third round of the FIA World Endurance Championship",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-007",
+  "proposition": "The race finished on Sunday, 14 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Sunday, 14 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-008",
+  "proposition": "The winning car completed 381 laps.",
+  "label": "ENTAIL",
+  "evidence": "after 381 laps",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-009",
+  "proposition": "The No. 20 BMW M Hybrid V8 finished second.",
+  "label": "ENTAIL",
+  "evidence": "beating the No. 20 BMW M Hybrid V8",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-010",
+  "proposition": "The margin was 10.913 seconds, the closest outright finish in WEC history.",
+  "label": "ENTAIL",
+  "evidence": "by 10.913 seconds, the closest outright finish in WEC history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-011",
+  "proposition": "The No. 8 Toyota was third, 20.4 seconds back.",
+  "label": "ENTAIL",
+  "evidence": "The No. 8 Toyota was third, 20.4 seconds back",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-012",
+  "proposition": "The win ends Ferrari's three-year winning streak.",
+  "label": "ENTAIL",
+  "evidence": "The win ends Ferrari's three-year winning streak at the race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-013",
+  "proposition": "The No. 12 Cadillac finished fourth.",
+  "label": "ENTAIL",
+  "evidence": "The No. 12 Cadillac and the No. 51 Ferrari were fourth and fifth",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-014",
+  "proposition": "The No. 35 Alpine finished sixth.",
+  "label": "ENTAIL",
+  "evidence": "the No. 35 Alpine sixth",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-015",
+  "proposition": "The No. 7 suffered a slow puncture and a driveshaft sensor issue early.",
+  "label": "ENTAIL",
+  "evidence": "suffered a slow puncture and a driveshaft sensor issue early",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-016",
+  "proposition": "Safe mode cut about 8km/h of power.",
+  "label": "ENTAIL",
+  "evidence": "a safe mode that cut about 8km/h of power",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-017",
+  "proposition": "Kobayashi also serves as team principal.",
+  "label": "ENTAIL",
+  "evidence": "Kobayashi, who also serves as team principal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-018",
+  "proposition": "A record crowd of 350,105 watched.",
+  "label": "ENTAIL",
+  "evidence": "A record crowd of 350,105 watched",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-019",
+  "proposition": "The win gives Toyota its 51st WEC victory.",
+  "label": "ENTAIL",
+  "evidence": "gives Toyota its 51st WEC victory",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-020",
+  "proposition": "It is Conway's second Le Mans win and de Vries's first.",
+  "label": "ENTAIL",
+  "evidence": "Conway's second Le Mans win and de Vries's first",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-021",
+  "proposition": "Toyota's last victory at Le Mans was in 2020.",
+  "label": "CONTRADICT",
+  "evidence": "its first victory in the event since 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-022",
+  "proposition": "The winning margin was 1.913 seconds.",
+  "label": "CONTRADICT",
+  "evidence": "by 10.913 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-023",
+  "proposition": "The No. 8 Toyota was fourth.",
+  "label": "CONTRADICT",
+  "evidence": "The No. 8 Toyota was third, 20.4 seconds back",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-024",
+  "proposition": "The win extends Ferrari's winning streak.",
+  "label": "CONTRADICT",
+  "evidence": "The win ends Ferrari's three-year winning streak",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-025",
+  "proposition": "The race was the fourth round of the WEC.",
+  "label": "CONTRADICT",
+  "evidence": "the third round of the FIA World Endurance Championship",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-026",
+  "proposition": "The winning car completed 318 laps.",
+  "label": "CONTRADICT",
+  "evidence": "after 381 laps",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-027",
+  "proposition": "Safe mode added about 8km/h of power.",
+  "label": "CONTRADICT",
+  "evidence": "a safe mode that cut about 8km/h of power",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-028",
+  "proposition": "Kobayashi is not the team principal.",
+  "label": "CONTRADICT",
+  "evidence": "Kobayashi, who also serves as team principal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-029",
+  "proposition": "The crowd was 35,015.",
+  "label": "CONTRADICT",
+  "evidence": "A record crowd of 350,105 watched",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-030",
+  "proposition": "It was de Vries's second Le Mans win.",
+  "label": "CONTRADICT",
+  "evidence": "de Vries's first",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-161-031",
+  "proposition": "The No. 7's average lap time was a specific figure.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Lap times are not given."
+ },
+ {
+  "id": "V2-161-032",
+  "proposition": "The BMW had a specific problem.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "BMW's race issues are not described."
+ },
+ {
+  "id": "V2-161-033",
+  "proposition": "The safety car was deployed for a specific incident.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The reason for the safety car is not stated."
+ },
+ {
+  "id": "V2-161-034",
+  "proposition": "Toyota will defend the title at a specific next race.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The next race is not described."
+ },
+ {
+  "id": "V2-161-035",
+  "proposition": "Conway set a fastest lap.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A fastest lap is not mentioned."
+ },
+ {
+  "id": "V2-161-036",
+  "proposition": "The record crowd exceeded last year's by a specific number.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A year-on-year crowd comparison is not given."
+ },
+ {
+  "id": "V2-161-037",
+  "proposition": "The No. 7 used a specific tire compound.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Tyre details are not given."
+ },
+ {
+  "id": "V2-161-038",
+  "proposition": "de Vries made his WEC debut this season.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "de Vries's season history is not described."
+ },
+ {
+  "id": "V2-161-039",
+  "proposition": "The drivers' title was clinched before the final lap.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "When the title was clinched is not stated."
+ },
+ {
+  "id": "V2-161-040",
+  "proposition": "The podium was held on Sunday.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Podium timing is not described."
+ }
+]

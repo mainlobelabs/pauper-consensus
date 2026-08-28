@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-175-001",
+  "proposition": "The International Maritime Organization announced an evacuation plan.",
+  "label": "ENTAIL",
+  "evidence": "The International Maritime Organization announces an evacuation plan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-002",
+  "proposition": "The plan is for ships stranded in the Persian Gulf.",
+  "label": "ENTAIL",
+  "evidence": "ships with 11,000 seafarers stranded in the Persian Gulf",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-003",
+  "proposition": "Around 500 to 600 ships are involved.",
+  "label": "ENTAIL",
+  "evidence": "around 500 to 600 ships",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-004",
+  "proposition": "Ships are to sail through the Strait of Hormuz after the ceasefire deal.",
+  "label": "ENTAIL",
+  "evidence": "to sail through the Strait of Hormuz after the ceasefire deal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-005",
+  "proposition": "The plan is to be coordinated with Iran and Oman.",
+  "label": "ENTAIL",
+  "evidence": "to be coordinated with Iran and Oman",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-006",
+  "proposition": "IMO secretary-general Arsenio Dominguez made the announcement.",
+  "label": "ENTAIL",
+  "evidence": "IMO secretary-general Arsenio Dominguez said",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-007",
+  "proposition": "The announcement was on Tuesday, 23 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Tuesday, 23 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-008",
+  "proposition": "Implementation runs in close cooperation with Iran, Oman, all other coastal states, the United States, and the maritime industry.",
+  "label": "ENTAIL",
+  "evidence": "in close cooperation with Iran, Oman, all other coastal states, the United States, and the maritime industry",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-009",
+  "proposition": "The plan provides two temporary sea lanes.",
+  "label": "ENTAIL",
+  "evidence": "two temporary sea lanes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-010",
+  "proposition": "The northern route is in Iranian waters and coordinated by Iran.",
+  "label": "ENTAIL",
+  "evidence": "a northern route in Iranian waters, coordinated by Iran",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-011",
+  "proposition": "The southern route is in Omani and UAE waters and coordinated by Oman and the United States.",
+  "label": "ENTAIL",
+  "evidence": "a southern route in Omani and UAE waters, coordinated by Oman and the United States",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-012",
+  "proposition": "The existing traffic separation scheme is unusable because of mines.",
+  "label": "ENTAIL",
+  "evidence": "The existing traffic separation scheme is unusable because of mines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-013",
+  "proposition": "The approach is phased.",
+  "label": "ENTAIL",
+  "evidence": "The approach is phased",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-014",
+  "proposition": "Vessels contacted through UKMTO are directed to a waiting area off Oman.",
+  "label": "ENTAIL",
+  "evidence": "vessels contacted through UKMTO are directed to a waiting area off Oman",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-015",
+  "proposition": "Vessels are assigned to transit groups with specific departure days.",
+  "label": "ENTAIL",
+  "evidence": "assigned to transit groups with specific departure days",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-016",
+  "proposition": "The organization secured safety guarantees, including mine clearing.",
+  "label": "ENTAIL",
+  "evidence": "secured safety guarantees, including mine clearing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-017",
+  "proposition": "At the peak, about 20,000 seafarers on roughly 3,200 vessels had been stranded.",
+  "label": "ENTAIL",
+  "evidence": "about 20,000 seafarers on roughly 3,200 vessels had been stranded",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-018",
+  "proposition": "Iran halted traffic after the 28 February strikes.",
+  "label": "ENTAIL",
+  "evidence": "since Iran halted traffic after the 28 February strikes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-019",
+  "proposition": "Fourteen seafarers have been killed in shipping attacks since the emergency began.",
+  "label": "ENTAIL",
+  "evidence": "Fourteen seafarers have been killed in shipping attacks since the emergency began",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-020",
+  "proposition": "Transits are expected to climb from the high 20s back to pre-war levels of about 130 per day.",
+  "label": "ENTAIL",
+  "evidence": "climb from the high 20s back to pre-war levels of about 130 per day",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-021",
+  "proposition": "The plan covers ships in the South China Sea.",
+  "label": "CONTRADICT",
+  "evidence": "stranded in the Persian Gulf",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-022",
+  "proposition": "Around 50 to 60 ships are involved.",
+  "label": "CONTRADICT",
+  "evidence": "around 500 to 600 ships",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-023",
+  "proposition": "The announcement was on Friday, 19 June 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Tuesday, 23 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-024",
+  "proposition": "The plan provides one temporary sea lane.",
+  "label": "CONTRADICT",
+  "evidence": "two temporary sea lanes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-025",
+  "proposition": "The northern route is in Omani waters.",
+  "label": "CONTRADICT",
+  "evidence": "a northern route in Iranian waters, coordinated by Iran",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-026",
+  "proposition": "The existing traffic separation scheme remains in use.",
+  "label": "CONTRADICT",
+  "evidence": "is unusable because of mines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-027",
+  "proposition": "At the peak, about 2,000 seafarers had been stranded.",
+  "label": "CONTRADICT",
+  "evidence": "about 20,000 seafarers on roughly 3,200 vessels",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-028",
+  "proposition": "Iran halted traffic after the 28 June strikes.",
+  "label": "CONTRADICT",
+  "evidence": "after the 28 February strikes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-029",
+  "proposition": "Fourteen hundred seafarers have been killed.",
+  "label": "CONTRADICT",
+  "evidence": "Fourteen seafarers have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-030",
+  "proposition": "Transits are expected to stay below 50 per day.",
+  "label": "CONTRADICT",
+  "evidence": "back to pre-war levels of about 130 per day",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-175-031",
+  "proposition": "The first transit group departs on a named date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A departure date is not given."
+ },
+ {
+  "id": "V2-175-032",
+  "proposition": "The waiting area has a named designation.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A waiting-area name is not given."
+ },
+ {
+  "id": "V2-175-033",
+  "proposition": "Mine clearing is due by a named date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A clearance deadline is not given."
+ },
+ {
+  "id": "V2-175-034",
+  "proposition": "Insurers underwrite the transits.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Insurance terms are not described."
+ },
+ {
+  "id": "V2-175-035",
+  "proposition": "The stranded ships' flag states are listed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Flag states are not described."
+ },
+ {
+  "id": "V2-175-036",
+  "proposition": "Dominguez visited the strait.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A visit is not mentioned."
+ },
+ {
+  "id": "V2-175-037",
+  "proposition": "The ceasefire deal was signed on a named date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A signing date is not given."
+ },
+ {
+  "id": "V2-175-038",
+  "proposition": "The plan names a resupply port.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A resupply port is not named."
+ },
+ {
+  "id": "V2-175-039",
+  "proposition": "An evacuation cost is given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A cost is not given."
+ },
+ {
+  "id": "V2-175-040",
+  "proposition": "UKMTO issued a separate advisory.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A UKMTO advisory is not described."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-152-001",
+  "proposition": "The earthquake's magnitude was 7.8.",
+  "label": "ENTAIL",
+  "evidence": "A magnitude 7.8 earthquake",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-002",
+  "proposition": "The epicenter was off Maasim, Sarangani.",
+  "label": "ENTAIL",
+  "evidence": "with its epicenter off Maasim, Sarangani",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-003",
+  "proposition": "The quake was felt in North Maluku and North Sulawesi in Indonesia.",
+  "label": "ENTAIL",
+  "evidence": "North Maluku and North Sulawesi in Indonesia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-004",
+  "proposition": "The quake was felt in Sabah, Malaysia.",
+  "label": "ENTAIL",
+  "evidence": "and Sabah in Malaysia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-005",
+  "proposition": "At least 35 people were killed.",
+  "label": "ENTAIL",
+  "evidence": "at least 35 people are killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-006",
+  "proposition": "Over 200 people were injured.",
+  "label": "ENTAIL",
+  "evidence": "over 200 injured",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-007",
+  "proposition": "12 people were missing.",
+  "label": "ENTAIL",
+  "evidence": "and 12 are missing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-008",
+  "proposition": "The quake struck on Monday, 8 June 2026, at 7:37am local time.",
+  "label": "ENTAIL",
+  "evidence": "on Monday, 8 June 2026, at 7:37am local time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-009",
+  "proposition": "The quake's depth was 33 kilometres.",
+  "label": "ENTAIL",
+  "evidence": "at a depth of 33 kilometres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-010",
+  "proposition": "PHIVOLCS initially recorded it at magnitude 7.0.",
+  "label": "ENTAIL",
+  "evidence": "initially recorded it at magnitude 7.0",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-011",
+  "proposition": "PHIVOLCS upgraded the magnitude after the initial reading.",
+  "label": "ENTAIL",
+  "evidence": "before upgrading it",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-012",
+  "proposition": "The quake was attributed to subduction along the Cotabato Trench.",
+  "label": "ENTAIL",
+  "evidence": "attributed to subduction along the Cotabato Trench",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-013",
+  "proposition": "Tsunami warnings were issued for nine southern provinces.",
+  "label": "ENTAIL",
+  "evidence": "tsunami warnings were issued for nine southern provinces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-014",
+  "proposition": "Tsunami alerts were also sent to Indonesia, Palau, Taiwan, and Papua New Guinea.",
+  "label": "ENTAIL",
+  "evidence": "with alerts also sent to Indonesia, Palau, Taiwan, and Papua New Guinea",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-015",
+  "proposition": "The largest wave was 1.4 metres at Kiamba.",
+  "label": "ENTAIL",
+  "evidence": "the largest at 1.4 metres at Kiamba",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-016",
+  "proposition": "A landslide in Glan, Sarangani, buried houses and killed 13 villagers.",
+  "label": "ENTAIL",
+  "evidence": "A landslide in Glan, Sarangani, buried houses and killed 13 villagers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-017",
+  "proposition": "Other deaths came from collapsing buildings and debris, including a damaged mosque.",
+  "label": "ENTAIL",
+  "evidence": "Other deaths came from collapsing buildings and debris, including a damaged mosque",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-018",
+  "proposition": "General Santos City felt destructive Intensity 7 shaking.",
+  "label": "ENTAIL",
+  "evidence": "General Santos City felt destructive Intensity 7 shaking",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-019",
+  "proposition": "Coastal residents of Samal Island were evacuated.",
+  "label": "ENTAIL",
+  "evidence": "coastal residents of Samal Island were evacuated",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-020",
+  "proposition": "Authorities expect the toll to rise as rescue teams reach isolated barangays.",
+  "label": "ENTAIL",
+  "evidence": "Authorities expect the toll to rise as rescue teams reach isolated barangays",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-021",
+  "proposition": "The earthquake's magnitude was 6.8.",
+  "label": "CONTRADICT",
+  "evidence": "A magnitude 7.8 earthquake",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-022",
+  "proposition": "The quake struck on Tuesday, 9 June 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Monday, 8 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-023",
+  "proposition": "The quake's depth was 330 kilometres.",
+  "label": "CONTRADICT",
+  "evidence": "at a depth of 33 kilometres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-024",
+  "proposition": "PHIVOLCS initially recorded it at magnitude 7.8.",
+  "label": "CONTRADICT",
+  "evidence": "initially recorded it at magnitude 7.0 before upgrading it",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-025",
+  "proposition": "Tsunami warnings were issued for nine northern provinces.",
+  "label": "CONTRADICT",
+  "evidence": "tsunami warnings were issued for nine southern provinces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-026",
+  "proposition": "The largest wave was 0.4 metres.",
+  "label": "CONTRADICT",
+  "evidence": "the largest at 1.4 metres at Kiamba",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-027",
+  "proposition": "The landslide in Glan killed 31 villagers.",
+  "label": "CONTRADICT",
+  "evidence": "buried houses and killed 13 villagers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-028",
+  "proposition": "PHIVOLCS recorded 183 aftershocks by 11am.",
+  "label": "CONTRADICT",
+  "evidence": "PHIVOLCS recorded 138 aftershocks by 11am",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-029",
+  "proposition": "At least 350 people were killed.",
+  "label": "CONTRADICT",
+  "evidence": "at least 35 people are killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-030",
+  "proposition": "Authorities expect the toll to stabilize.",
+  "label": "CONTRADICT",
+  "evidence": "Authorities expect the toll to rise",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-152-031",
+  "proposition": "The strongest aftershock struck near a specific town.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The strongest aftershock's epicenter is not described."
+ },
+ {
+  "id": "V2-152-032",
+  "proposition": "The damaged mosque was in a specific city.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The mosque's location is not named."
+ },
+ {
+  "id": "V2-152-033",
+  "proposition": "A national state of emergency was declared.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A state of emergency is not mentioned."
+ },
+ {
+  "id": "V2-152-034",
+  "proposition": "Foreign rescue teams were dispatched.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Foreign aid is not described."
+ },
+ {
+  "id": "V2-152-035",
+  "proposition": "The epicenter was offshore in a named sea.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The body of water is not named."
+ },
+ {
+  "id": "V2-152-036",
+  "proposition": "The landslide was triggered by the shaking.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The cause of the landslide is not specified."
+ },
+ {
+  "id": "V2-152-037",
+  "proposition": "PHIVOLCS issued a tsunami warning for the Visayas.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Specific provinces beyond the nine are not listed."
+ },
+ {
+  "id": "V2-152-038",
+  "proposition": "The 12 missing were from Glan.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The missing persons' locations are not described."
+ },
+ {
+  "id": "V2-152-039",
+  "proposition": "Schools closed in General Santos City.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "School closures are not mentioned."
+ },
+ {
+  "id": "V2-152-040",
+  "proposition": "The earthquake was the strongest of 2026 in the Philippines.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Comparison with other 2026 earthquakes is not made."
+ }
+]

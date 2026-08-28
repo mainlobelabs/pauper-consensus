@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-146-001",
+  "proposition": "Vickrum Digwa is 23 years old.",
+  "label": "ENTAIL",
+  "evidence": "a 23-year-old Sikh man",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-002",
+  "proposition": "Digwa is a Sikh man.",
+  "label": "ENTAIL",
+  "evidence": "Sikh man",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-003",
+  "proposition": "Digwa is sentenced to life imprisonment.",
+  "label": "ENTAIL",
+  "evidence": "is sentenced to life imprisonment",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-004",
+  "proposition": "The minimum term is 21 years.",
+  "label": "ENTAIL",
+  "evidence": "with a minimum of 21 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-005",
+  "proposition": "The victim, Henry Nowak, was 18 years old.",
+  "label": "ENTAIL",
+  "evidence": "18-year-old University of Southampton student Henry Nowak",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-006",
+  "proposition": "Nowak was a student at the University of Southampton.",
+  "label": "ENTAIL",
+  "evidence": "University of Southampton student Henry Nowak",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-007",
+  "proposition": "Nowak was murdered on 3 December 2025.",
+  "label": "ENTAIL",
+  "evidence": "student Henry Nowak on 3 December 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-008",
+  "proposition": "Digwa's mother was found guilty of assisting an offender.",
+  "label": "ENTAIL",
+  "evidence": "his mother is also found guilty of assisting an offender",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-009",
+  "proposition": "The mother hid the murder weapon.",
+  "label": "ENTAIL",
+  "evidence": "by hiding the murder weapon, a knife",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-010",
+  "proposition": "The sentencing took place at Southampton Crown Court.",
+  "label": "ENTAIL",
+  "evidence": "sentenced at Southampton Crown Court",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-011",
+  "proposition": "The sentencing took place on Monday, 1 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Monday, 1 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-012",
+  "proposition": "Nowak was a first-year finance student from Essex.",
+  "label": "ENTAIL",
+  "evidence": "a first-year finance student from Essex",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-013",
+  "proposition": "Nowak was the first in his family to attend university.",
+  "label": "ENTAIL",
+  "evidence": "the first in his family to attend university",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-014",
+  "proposition": "Nowak was handcuffed at the scene while still alive.",
+  "label": "ENTAIL",
+  "evidence": "was handcuffed at the scene while still alive by misled officers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-015",
+  "proposition": "Digwa claimed that Nowak had racially abused him.",
+  "label": "ENTAIL",
+  "evidence": "after Digwa claimed Nowak had racially abused him",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-016",
+  "proposition": "Nowak was stabbed five times.",
+  "label": "ENTAIL",
+  "evidence": "Nowak was stabbed five times",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-017",
+  "proposition": "The stabbing took place on Belmont Road in Southampton.",
+  "label": "ENTAIL",
+  "evidence": "on Belmont Road in Southampton",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-018",
+  "proposition": "The weapon was a 21cm Sikh kirpan dagger.",
+  "label": "ENTAIL",
+  "evidence": "a 21cm Sikh kirpan dagger",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-019",
+  "proposition": "Digwa's mother is Kiran Kaur, 53.",
+  "label": "ENTAIL",
+  "evidence": "Digwa's mother, 53-year-old Kiran Kaur",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-020",
+  "proposition": "Kiran Kaur is to be sentenced on 17 July.",
+  "label": "ENTAIL",
+  "evidence": "She is to be sentenced on 17 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-021",
+  "proposition": "Digwa was sentenced to 10 years minimum.",
+  "label": "CONTRADICT",
+  "evidence": "with a minimum of 21 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-022",
+  "proposition": "The victim was a law student.",
+  "label": "CONTRADICT",
+  "evidence": "a first-year finance student from Essex",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-023",
+  "proposition": "Nowak was murdered on 3 January 2026.",
+  "label": "CONTRADICT",
+  "evidence": "student Henry Nowak on 3 December 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-024",
+  "proposition": "Nowak was stabbed once.",
+  "label": "CONTRADICT",
+  "evidence": "Nowak was stabbed five times",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-025",
+  "proposition": "The weapon was a gun.",
+  "label": "CONTRADICT",
+  "evidence": "The weapon was a 21cm Sikh kirpan dagger",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-026",
+  "proposition": "Digwa's mother was acquitted.",
+  "label": "CONTRADICT",
+  "evidence": "his mother is also found guilty of assisting an offender",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-027",
+  "proposition": "The sentencing took place in London.",
+  "label": "CONTRADICT",
+  "evidence": "sentenced at Southampton Crown Court",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-028",
+  "proposition": "Digwa was 33 years old.",
+  "label": "CONTRADICT",
+  "evidence": "a 23-year-old Sikh man",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-029",
+  "proposition": "The knife was found in a public park.",
+  "label": "CONTRADICT",
+  "evidence": "took the knife from the scene and hid it at the family home",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-030",
+  "proposition": "Nowak's family praised the police response.",
+  "label": "CONTRADICT",
+  "evidence": "demanded a full, fearless and transparent investigation of the police response",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-146-031",
+  "proposition": "Digwa had a prior criminal record.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not state Digwa's criminal history."
+ },
+ {
+  "id": "V2-146-032",
+  "proposition": "Nowak's family attended the sentencing.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not say who attended the sentencing."
+ },
+ {
+  "id": "V2-146-033",
+  "proposition": "Digwa apologized to the Nowak family.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Any apology is not mentioned."
+ },
+ {
+  "id": "V2-146-034",
+  "proposition": "The judge explained the exact calculation of the sentence.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not describe the sentencing calculation."
+ },
+ {
+  "id": "V2-146-035",
+  "proposition": "Nowak's friends spoke at the sentencing.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Friends' statements are not mentioned."
+ },
+ {
+  "id": "V2-146-036",
+  "proposition": "The kirpan was kept in a specific drawer at the family home.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Where the knife was hidden beyond the family home is not stated."
+ },
+ {
+  "id": "V2-146-037",
+  "proposition": "Digwa's father commented on the verdict.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The father's remarks are not described."
+ },
+ {
+  "id": "V2-146-038",
+  "proposition": "The court ordered compensation to the Nowak family.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No compensation order is mentioned."
+ },
+ {
+  "id": "V2-146-039",
+  "proposition": "A police officer was charged over the handcuffing.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Police accountability beyond the demanded investigation is not stated."
+ },
+ {
+  "id": "V2-146-040",
+  "proposition": "Nowak had been in a romantic relationship.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Nowak's personal life beyond university is not described."
+ }
+]

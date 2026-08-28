@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-160-001",
+  "proposition": "The Knicks defeated the Spurs 94-90 in Game 5.",
+  "label": "ENTAIL",
+  "evidence": "defeat the San Antonio Spurs 94-90 in Game 5",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-002",
+  "proposition": "The Knicks won their first championship since 1973.",
+  "label": "ENTAIL",
+  "evidence": "win their first championship since 1973",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-003",
+  "proposition": "Brunson scored 45 points.",
+  "label": "ENTAIL",
+  "evidence": "Jalen Brunson scored 45 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-004",
+  "proposition": "Brunson scored 13 straight points in the fourth quarter.",
+  "label": "ENTAIL",
+  "evidence": "including 13 straight in the fourth quarter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-005",
+  "proposition": "Brunson was named NBA Finals MVP.",
+  "label": "ENTAIL",
+  "evidence": "was named NBA Finals MVP",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-006",
+  "proposition": "Brunson took the Bill Russell award.",
+  "label": "ENTAIL",
+  "evidence": "taking the Bill Russell award",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-007",
+  "proposition": "The Knicks rallied from double-digit deficits in all four of their series wins.",
+  "label": "ENTAIL",
+  "evidence": "rallied from double-digit deficits in all four of their series wins",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-008",
+  "proposition": "The Knicks trailed by 16 in Game 5.",
+  "label": "ENTAIL",
+  "evidence": "they trailed by 16 after falling behind 13-23 in the first quarter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-009",
+  "proposition": "Game 5 was at the Frost Bank Center in San Antonio.",
+  "label": "ENTAIL",
+  "evidence": "at the Frost Bank Center in San Antonio",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-010",
+  "proposition": "Game 5 was on Saturday, 13 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, 13 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-011",
+  "proposition": "New York took the series 4-1.",
+  "label": "ENTAIL",
+  "evidence": "New York took the series 4-1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-012",
+  "proposition": "The Knicks won Game 1, 105-95.",
+  "label": "ENTAIL",
+  "evidence": "They won Game 1, 105-95",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-013",
+  "proposition": "The Knicks won Game 2, 105-104.",
+  "label": "ENTAIL",
+  "evidence": "and Game 2, 105-104",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-014",
+  "proposition": "The Knicks closed with a 29-point comeback in Game 4, 107-106.",
+  "label": "ENTAIL",
+  "evidence": "a 29-point comeback in Game 4, 107-106",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-015",
+  "proposition": "San Antonio won Game 3, 115-111.",
+  "label": "ENTAIL",
+  "evidence": "San Antonio won Game 3, 115-111",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-016",
+  "proposition": "The Knicks retook the lead in the final stretch.",
+  "label": "ENTAIL",
+  "evidence": "the Knicks retook the lead in the final stretch",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-017",
+  "proposition": "The title ends a 53-year championship drought.",
+  "label": "ENTAIL",
+  "evidence": "ends a 53-year championship drought",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-018",
+  "proposition": "The franchise's previous wins came in 1970 and 1973.",
+  "label": "ENTAIL",
+  "evidence": "previous wins came in 1970 and 1973",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-019",
+  "proposition": "ESPN called it \"your long, long wait\" for Knicks fans.",
+  "label": "ENTAIL",
+  "evidence": "what ESPN called \"your long, long wait\" for Knicks fans",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-020",
+  "proposition": "Knicks fans filled the streets of New York after the final horn.",
+  "label": "ENTAIL",
+  "evidence": "filled the streets of New York after the final horn",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-021",
+  "proposition": "The Spurs won Game 5, 94-90.",
+  "label": "CONTRADICT",
+  "evidence": "defeat the San Antonio Spurs 94-90 in Game 5",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-022",
+  "proposition": "The Knicks won their first championship since 2000.",
+  "label": "CONTRADICT",
+  "evidence": "win their first championship since 1973",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-023",
+  "proposition": "Brunson scored 35 points.",
+  "label": "CONTRADICT",
+  "evidence": "Jalen Brunson scored 45 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-024",
+  "proposition": "Donovan Mitchell was named NBA Finals MVP.",
+  "label": "CONTRADICT",
+  "evidence": "was named NBA Finals MVP",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-025",
+  "proposition": "The Knicks won all four series games without trailing.",
+  "label": "CONTRADICT",
+  "evidence": "rallied from double-digit deficits in all four of their series wins",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-026",
+  "proposition": "Game 5 was played in New York.",
+  "label": "CONTRADICT",
+  "evidence": "at the Frost Bank Center in San Antonio",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-027",
+  "proposition": "New York took the series 4-2.",
+  "label": "CONTRADICT",
+  "evidence": "New York took the series 4-1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-028",
+  "proposition": "San Antonio won Game 1, 105-95.",
+  "label": "CONTRADICT",
+  "evidence": "They won Game 1, 105-95",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-029",
+  "proposition": "The Knicks held a 14-point margin at the end.",
+  "label": "CONTRADICT",
+  "evidence": "held a four-point margin at the end",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-030",
+  "proposition": "The title ends a 43-year championship drought.",
+  "label": "CONTRADICT",
+  "evidence": "ends a 53-year championship drought",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-160-031",
+  "proposition": "The championship parade was held on a specific day.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Parade details are not described."
+ },
+ {
+  "id": "V2-160-032",
+  "proposition": "The Knicks signed a player in free agency.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Contract news is not mentioned."
+ },
+ {
+  "id": "V2-160-033",
+  "proposition": "The Spurs' head coach was a specific person.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Coaches are not named."
+ },
+ {
+  "id": "V2-160-034",
+  "proposition": "Brunson led the league in scoring.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "League scoring stats are not given."
+ },
+ {
+  "id": "V2-160-035",
+  "proposition": "The Finals MVP vote was unanimous.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The voting breakdown is not given."
+ },
+ {
+  "id": "V2-160-036",
+  "proposition": "A parade was planned for Monday.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Parade timing is not described."
+ },
+ {
+  "id": "V2-160-037",
+  "proposition": "The Spurs will make roster changes.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Roster plans are not described."
+ },
+ {
+  "id": "V2-160-038",
+  "proposition": "A record crowd attended Game 5.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not given."
+ },
+ {
+  "id": "V2-160-039",
+  "proposition": "The Knicks dedicated the title to a person.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A dedication is not mentioned."
+ },
+ {
+  "id": "V2-160-040",
+  "proposition": "The championship banner will hang in a specific location.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Banner placement is not described."
+ }
+]

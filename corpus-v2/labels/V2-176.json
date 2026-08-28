@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-176-001",
+  "proposition": "The 80th NBA draft was held.",
+  "label": "ENTAIL",
+  "evidence": "The 80th NBA draft is held",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-002",
+  "proposition": "It was held at the Barclays Center in New York City.",
+  "label": "ENTAIL",
+  "evidence": "at the Barclays Center in New York City",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-003",
+  "proposition": "The Washington Wizards selected AJ Dybantsa with the first overall pick.",
+  "label": "ENTAIL",
+  "evidence": "the Washington Wizards selecting former Brigham Young University freshman AJ Dybantsa with the first overall pick",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-004",
+  "proposition": "Dybantsa was a former BYU freshman.",
+  "label": "ENTAIL",
+  "evidence": "former Brigham Young University freshman AJ Dybantsa",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-005",
+  "proposition": "Dybantsa is 6'9\" tall.",
+  "label": "ENTAIL",
+  "evidence": "a 6'9\", 19-year-old forward",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-006",
+  "proposition": "He is 19 years old.",
+  "label": "ENTAIL",
+  "evidence": "19-year-old forward",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-007",
+  "proposition": "He was born in Boston.",
+  "label": "ENTAIL",
+  "evidence": "born in Boston",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-008",
+  "proposition": "He was called by his full name, Anicet Dybantsa Jr.",
+  "label": "ENTAIL",
+  "evidence": "his full name, Anicet Dybantsa Jr.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-009",
+  "proposition": "The full name was used in tribute to his father.",
+  "label": "ENTAIL",
+  "evidence": "in tribute to his father",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-010",
+  "proposition": "His father is his manager.",
+  "label": "ENTAIL",
+  "evidence": "who is his manager",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-011",
+  "proposition": "At BYU he averaged 25.5 points.",
+  "label": "ENTAIL",
+  "evidence": "He averaged 25.5 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-012",
+  "proposition": "He recorded a 43-point game that broke the freshman record.",
+  "label": "ENTAIL",
+  "evidence": "a 43-point game that broke the freshman record",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-013",
+  "proposition": "He is the first player since Glenn Robinson of Purdue in 1994 to lead Division I scoring and go first overall.",
+  "label": "ENTAIL",
+  "evidence": "the first player to lead Division I scoring and go first overall since Glenn Robinson of Purdue in 1994",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-014",
+  "proposition": "He is the first BYU player selected first overall.",
+  "label": "ENTAIL",
+  "evidence": "the first BYU player selected first overall",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-015",
+  "proposition": "He is part of a record-tying eighth straight freshman to open a draft.",
+  "label": "ENTAIL",
+  "evidence": "a record-tying eighth straight freshman to open a draft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-016",
+  "proposition": "The Wizards have not held the first pick since John Wall in 2010.",
+  "label": "ENTAIL",
+  "evidence": "have not held the first pick since John Wall in 2010",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-017",
+  "proposition": "The Wizards had met only two teams before the draft.",
+  "label": "ENTAIL",
+  "evidence": "had met only two teams before the draft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-018",
+  "proposition": "They are adding Dybantsa to a core that includes Trae Young, Anthony Davis, and Alex Sarr.",
+  "label": "ENTAIL",
+  "evidence": "adding Dybantsa to a core that includes Trae Young, Anthony Davis, and Alex Sarr",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-019",
+  "proposition": "Utah selected Darryn Peterson second.",
+  "label": "ENTAIL",
+  "evidence": "Utah selected Darryn Peterson second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-020",
+  "proposition": "Memphis took Cameron Boozer, Carlos Boozer's son, third.",
+  "label": "ENTAIL",
+  "evidence": "Memphis took Cameron Boozer, Carlos Boozer's son, third",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-021",
+  "proposition": "The 79th NBA draft was held.",
+  "label": "CONTRADICT",
+  "evidence": "The 80th NBA draft is held",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-022",
+  "proposition": "It was held in Los Angeles.",
+  "label": "CONTRADICT",
+  "evidence": "at the Barclays Center in New York City",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-023",
+  "proposition": "The Lakers selected Dybantsa with the first overall pick.",
+  "label": "CONTRADICT",
+  "evidence": "the Washington Wizards selecting",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-024",
+  "proposition": "Dybantsa is 7'2\" tall.",
+  "label": "CONTRADICT",
+  "evidence": "a 6'9\", 19-year-old forward",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-025",
+  "proposition": "He is 21 years old.",
+  "label": "CONTRADICT",
+  "evidence": "19-year-old forward",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-026",
+  "proposition": "His manager is not his father.",
+  "label": "CONTRADICT",
+  "evidence": "who is his manager",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-027",
+  "proposition": "He is the first BYU player selected second overall.",
+  "label": "CONTRADICT",
+  "evidence": "the first BYU player selected first overall",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-028",
+  "proposition": "The Wizards held the first pick in 2015.",
+  "label": "CONTRADICT",
+  "evidence": "have not held the first pick since John Wall in 2010",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-029",
+  "proposition": "Utah selected Darryn Peterson third.",
+  "label": "CONTRADICT",
+  "evidence": "Utah selected Darryn Peterson second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-030",
+  "proposition": "Cameron Boozer is Derek Fisher's son.",
+  "label": "CONTRADICT",
+  "evidence": "Cameron Boozer, Carlos Boozer's son",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-176-031",
+  "proposition": "The draft date was disclosed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A draft date is not given."
+ },
+ {
+  "id": "V2-176-032",
+  "proposition": "Dybantsa's contract terms were announced.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Contract terms are not described."
+ },
+ {
+  "id": "V2-176-033",
+  "proposition": "The 43-point game named an opponent.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An opponent is not named."
+ },
+ {
+  "id": "V2-176-034",
+  "proposition": "The Wizards' loss streak length is given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A loss streak is not given."
+ },
+ {
+  "id": "V2-176-035",
+  "proposition": "Trae Young's acquisition is described.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Acquisition details are not given."
+ },
+ {
+  "id": "V2-176-036",
+  "proposition": "Brunson's Finals MVP stat line is given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "MVP stats are not given."
+ },
+ {
+  "id": "V2-176-037",
+  "proposition": "A draft headliner was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A headliner is not named."
+ },
+ {
+  "id": "V2-176-038",
+  "proposition": "Dybantsa's remaining college eligibility is described.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Eligibility details are not given."
+ },
+ {
+  "id": "V2-176-039",
+  "proposition": "Draft TV audience figures are given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Audience figures are not given."
+ },
+ {
+  "id": "V2-176-040",
+  "proposition": "BYU's season record was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A season record is not given."
+ }
+]
