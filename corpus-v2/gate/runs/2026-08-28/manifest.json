@@ -1,0 +1,52 @@
+{
+  "started": "2026-08-27T23:58:54.042010+00:00",
+  "git": "a9ac38838f75fd7201e5f8fc0b0d264267a0833b",
+  "host": "100.83.162.43",
+  "instances": [
+    "8102",
+    "8103",
+    "8104",
+    "8105",
+    "8106",
+    "8107"
+  ],
+  "model_instance": {
+    "llama-3.2-1b-instruct": "8102",
+    "llama-3.2-3b-instruct": "8103",
+    "gemma-3-1b-it": "8104",
+    "gemma-3-4b-it": "8105",
+    "phi-4-mini-instruct": "8106",
+    "olmoe-0125-instruct": "8107",
+    "qwen35-4b": "8102"
+  },
+  "models": [
+    "llama-3.2-1b-instruct",
+    "llama-3.2-3b-instruct",
+    "gemma-3-1b-it",
+    "gemma-3-4b-it",
+    "phi-4-mini-instruct",
+    "olmoe-0125-instruct",
+    "qwen35-4b"
+  ],
+  "params": {
+    "temperature": 0,
+    "max_tokens": 64,
+    "enable_thinking": false,
+    "retries": 3,
+    "timeout_s": 300
+  },
+  "probe_file": "corpus-v2/gate/probes.jsonl",
+  "probes_total": 100,
+  "canaries": [
+    "GC1",
+    "GC2"
+  ],
+  "finished": "2026-08-27T23:59:13.988441+00:00",
+  "counters": {
+    "done": 84,
+    "correct": 11,
+    "wrong": 46,
+    "unknown": 27,
+    "errors": 0
+  }
+}
