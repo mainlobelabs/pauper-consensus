@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-042-001",
+  "proposition": "A US federal judge has blocked the vaccine policy changes.",
+  "label": "ENTAIL",
+  "evidence": "has blocked the implementation of a series of vaccine policy changes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-002",
+  "proposition": "The changes were introduced by Health and Human Services secretary Robert F. Kennedy Jr.",
+  "label": "ENTAIL",
+  "evidence": "introduced by Health and Human Services secretary Robert F. Kennedy Jr.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-003",
+  "proposition": "The changes included an overhaul of the childhood immunization schedule.",
+  "label": "ENTAIL",
+  "evidence": "including an overhaul of the childhood immunization schedule",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-004",
+  "proposition": "The order was issued on Monday, March 16, 2026.",
+  "label": "ENTAIL",
+  "evidence": "In an order on Monday, March 16, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-005",
+  "proposition": "US District Judge Brian E. Murphy of Massachusetts issued the order.",
+  "label": "ENTAIL",
+  "evidence": "US District Judge Brian E. Murphy of Massachusetts issued",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-006",
+  "proposition": "The order is a preliminary injunction.",
+  "label": "ENTAIL",
+  "evidence": "issued a preliminary injunction",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-007",
+  "proposition": "The judge ruled the measures are likely to violate the procedures required under federal law.",
+  "label": "ENTAIL",
+  "evidence": "likely to violate the procedures required under federal law",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-008",
+  "proposition": "The ruling leaves the previous schedule in effect.",
+  "label": "ENTAIL",
+  "evidence": "leaves the previous schedule in effect",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-009",
+  "proposition": "The previous schedule stays in effect while the case proceeds.",
+  "label": "ENTAIL",
+  "evidence": "while the case proceeds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-010",
+  "proposition": "A January 2026 revision would reduce recommended vaccines for young children from 17 to 11.",
+  "label": "ENTAIL",
+  "evidence": "would reduce the number of recommended vaccines for young children from 17 to 11",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-011",
+  "proposition": "The revision dates from January 2026.",
+  "label": "ENTAIL",
+  "evidence": "a January 2026 revision",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-012",
+  "proposition": "The order halted 13 new appointments to ACIP.",
+  "label": "ENTAIL",
+  "evidence": "halted 13 new appointments to the Advisory Committee on Immunization Practices",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-013",
+  "proposition": "ACIP is the Advisory Committee on Immunization Practices.",
+  "label": "ENTAIL",
+  "evidence": "the Advisory Committee on Immunization Practices, ACIP",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-014",
+  "proposition": "The order stopped all ACIP votes taken since the committee was reconstituted.",
+  "label": "ENTAIL",
+  "evidence": "stopped all ACIP votes taken since the committee was reconstituted",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-015",
+  "proposition": "The legal challenge was brought in July 2025.",
+  "label": "ENTAIL",
+  "evidence": "brought in July 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-016",
+  "proposition": "Six medical organizations brought the challenge.",
+  "label": "ENTAIL",
+  "evidence": "by six medical organizations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-017",
+  "proposition": "The American Academy of Pediatrics is among the challengers.",
+  "label": "ENTAIL",
+  "evidence": "including the American Academy of Pediatrics",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-018",
+  "proposition": "ACIP is the federal body that sets the immunization schedule for children.",
+  "label": "ENTAIL",
+  "evidence": "the federal body that sets the immunization schedule for children",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-019",
+  "proposition": "ACIP's recommendations guide providers across the country.",
+  "label": "ENTAIL",
+  "evidence": "its recommendations guide providers across the country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-020",
+  "proposition": "The groups argued the changes were adopted without the public comment and committee process.",
+  "label": "ENTAIL",
+  "evidence": "adopted without the public comment and committee process that federal law requires",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-021",
+  "proposition": "A US federal judge has approved the vaccine policy changes.",
+  "label": "CONTRADICT",
+  "evidence": "blocked the implementation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-022",
+  "proposition": "The order was issued on Monday, March 9, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Monday, March 16, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-023",
+  "proposition": "The order is a permanent injunction.",
+  "label": "CONTRADICT",
+  "evidence": "a preliminary injunction",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-024",
+  "proposition": "The ruling suspends the previous schedule.",
+  "label": "CONTRADICT",
+  "evidence": "leaves the previous schedule in effect",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-025",
+  "proposition": "The revision would reduce recommended vaccines for young children from 11 to 17.",
+  "label": "CONTRADICT",
+  "evidence": "from 17 to 11",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-026",
+  "proposition": "The order halted 3 new appointments to ACIP.",
+  "label": "CONTRADICT",
+  "evidence": "halted 13 new appointments",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-027",
+  "proposition": "The legal challenge was brought in July 2024.",
+  "label": "CONTRADICT",
+  "evidence": "brought in July 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-028",
+  "proposition": "Two medical organizations brought the challenge.",
+  "label": "CONTRADICT",
+  "evidence": "by six medical organizations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-029",
+  "proposition": "ACIP sets the immunization schedule for adults.",
+  "label": "CONTRADICT",
+  "evidence": "sets the immunization schedule for children",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-030",
+  "proposition": "The groups argued the changes went through the full public comment process.",
+  "label": "CONTRADICT",
+  "evidence": "without the public comment and committee process",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-042-031",
+  "proposition": "The judge issued the order from a courtroom in Boston.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a location for the order."
+ },
+ {
+  "id": "V2-042-032",
+  "proposition": "The government plans to appeal the ruling.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any appeal."
+ },
+ {
+  "id": "V2-042-033",
+  "proposition": "The ruling came from a unanimous three-judge panel.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give any panel details."
+ },
+ {
+  "id": "V2-042-034",
+  "proposition": "The case is docketed under a specific case name.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a case name."
+ },
+ {
+  "id": "V2-042-035",
+  "proposition": "The 13 ACIP appointments were made in February 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a date for the appointments."
+ },
+ {
+  "id": "V2-042-036",
+  "proposition": "RFK Jr. commented on the ruling.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not quote any comment by RFK Jr."
+ },
+ {
+  "id": "V2-042-037",
+  "proposition": "The previous schedule remains unchanged through 2027.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the previous schedule stays in effect but gives no end date."
+ },
+ {
+  "id": "V2-042-038",
+  "proposition": "The other five medical organizations were named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names only the American Academy of Pediatrics."
+ },
+ {
+  "id": "V2-042-039",
+  "proposition": "The court set a hearing date for the case.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any hearing."
+ },
+ {
+  "id": "V2-042-040",
+  "proposition": "The injunction covers all 50 states.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not specify the injunction's geographic scope."
+ }
+]

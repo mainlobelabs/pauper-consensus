@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-029-001",
+  "proposition": "Ian Huntley has died in hospital.",
+  "label": "ENTAIL",
+  "evidence": "has died in hospital, aged 52",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-002",
+  "proposition": "He was 52 at his death.",
+  "label": "ENTAIL",
+  "evidence": "aged 52",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-003",
+  "proposition": "He murdered ten-year-olds Holly Wells and Jessica Chapman in 2002.",
+  "label": "ENTAIL",
+  "evidence": "murdered ten-year-olds Holly Wells and Jessica Chapman in 2002",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-004",
+  "proposition": "Huntley died nine days after being attacked.",
+  "label": "ENTAIL",
+  "evidence": "died nine days after being attacked",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-005",
+  "proposition": "He was attacked by a fellow inmate.",
+  "label": "ENTAIL",
+  "evidence": "attacked by a fellow inmate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-006",
+  "proposition": "The attack was at HM Prison Frankland.",
+  "label": "ENTAIL",
+  "evidence": "at HM Prison Frankland in County Durham, England",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-007",
+  "proposition": "Frankland is in County Durham, England.",
+  "label": "ENTAIL",
+  "evidence": "in County Durham, England",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-008",
+  "proposition": "He suffered severe brain trauma in the assault.",
+  "label": "ENTAIL",
+  "evidence": "He suffered severe brain trauma in the assault",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-009",
+  "proposition": "He was moved to hospital after the assault.",
+  "label": "ENTAIL",
+  "evidence": "was moved to hospital, where he later died",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-010",
+  "proposition": "He was sentenced to life in prison for the Soham murders.",
+  "label": "ENTAIL",
+  "evidence": "sentenced to life in prison for the Soham murders",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-011",
+  "proposition": "The victims were found dead on a railway line.",
+  "label": "ENTAIL",
+  "evidence": "found dead on a railway line",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-012",
+  "proposition": "The victims had been walking to a tuition class.",
+  "label": "ENTAIL",
+  "evidence": "after walking to a tuition class",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-013",
+  "proposition": "Both victims had been in the care of the same family.",
+  "label": "ENTAIL",
+  "evidence": "both victims had been in the care of the same family",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-014",
+  "proposition": "The family later claimed to have known Huntley.",
+  "label": "ENTAIL",
+  "evidence": "later claimed to have known Huntley",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-015",
+  "proposition": "The Soham murders prompted a major review of the UK's prison and parole systems.",
+  "label": "ENTAIL",
+  "evidence": "prompted a major review of the UK's prison and parole systems",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-016",
+  "proposition": "The case led to lasting changes in how child sex offenders are managed.",
+  "label": "ENTAIL",
+  "evidence": "lasting changes in how child sex offenders are managed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-017",
+  "proposition": "Huntley had been held in prison for the better part of two decades.",
+  "label": "ENTAIL",
+  "evidence": "held in prison for the better part of two decades",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-018",
+  "proposition": "Frankland is a category B prison.",
+  "label": "ENTAIL",
+  "evidence": "a category B prison in north-east England",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-019",
+  "proposition": "An internal investigation into the attack has been opened.",
+  "label": "ENTAIL",
+  "evidence": "an internal investigation into the attack has been opened",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-020",
+  "proposition": "The fellow inmate is being held separately.",
+  "label": "ENTAIL",
+  "evidence": "the fellow inmate involved is being held separately pending its outcome",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-021",
+  "proposition": "Huntley died in prison.",
+  "label": "CONTRADICT",
+  "evidence": "has died in hospital",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-022",
+  "proposition": "He was 42 at his death.",
+  "label": "CONTRADICT",
+  "evidence": "aged 52",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-023",
+  "proposition": "The victims were twelve-year-olds.",
+  "label": "CONTRADICT",
+  "evidence": "ten-year-olds Holly Wells and Jessica Chapman",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-024",
+  "proposition": "Huntley died four days after the attack.",
+  "label": "CONTRADICT",
+  "evidence": "nine days after being attacked",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-025",
+  "proposition": "He was attacked by a prison guard.",
+  "label": "CONTRADICT",
+  "evidence": "attacked by a fellow inmate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-026",
+  "proposition": "The attack was at HM Prison Leeds.",
+  "label": "CONTRADICT",
+  "evidence": "HM Prison Frankland",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-027",
+  "proposition": "He suffered severe leg injuries in the assault.",
+  "label": "CONTRADICT",
+  "evidence": "severe brain trauma",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-028",
+  "proposition": "He was sentenced to 25 years in prison.",
+  "label": "CONTRADICT",
+  "evidence": "sentenced to life in prison",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-029",
+  "proposition": "The victims were found in a park.",
+  "label": "CONTRADICT",
+  "evidence": "found dead on a railway line",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-030",
+  "proposition": "Frankland is a category A prison.",
+  "label": "CONTRADICT",
+  "evidence": "a category B prison",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-029-031",
+  "proposition": "The attack took place in the prison exercise yard.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not say where in the prison."
+ },
+ {
+  "id": "V2-029-032",
+  "proposition": "Huntley had applied for parole in 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any parole application."
+ },
+ {
+  "id": "V2-029-033",
+  "proposition": "The fellow inmate was sentenced for the attack.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says he is held pending the investigation."
+ },
+ {
+  "id": "V2-029-034",
+  "proposition": "Huntley's family issued a statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not quote any family statement."
+ },
+ {
+  "id": "V2-029-035",
+  "proposition": "The victims' families issued a statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not quote the victims' families."
+ },
+ {
+  "id": "V2-029-036",
+  "proposition": "Huntley was moved to a private hospital.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name the hospital."
+ },
+ {
+  "id": "V2-029-037",
+  "proposition": "The prison service disclosed the time of the attack.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a time."
+ },
+ {
+  "id": "V2-029-038",
+  "proposition": "Huntley had a prior conviction for murder.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions the Soham convictions only."
+ },
+ {
+  "id": "V2-029-039",
+  "proposition": "The review led to a new parole board.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name the review's outcomes."
+ },
+ {
+  "id": "V2-029-040",
+  "proposition": "Huntley was cremated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any funeral."
+ }
+]

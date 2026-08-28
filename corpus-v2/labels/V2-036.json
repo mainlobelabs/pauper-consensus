@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-036-001",
+  "proposition": "A Russian military court has sentenced 19 people.",
+  "label": "ENTAIL",
+  "evidence": "has sentenced 19 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-002",
+  "proposition": "The convictions relate to the 2024 Crocus City Hall terrorist attack.",
+  "label": "ENTAIL",
+  "evidence": "the 2024 Crocus City Hall terrorist attack",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-003",
+  "proposition": "The attack took place in Krasnogorsk, Moscow Oblast.",
+  "label": "ENTAIL",
+  "evidence": "in Krasnogorsk, Moscow Oblast",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-004",
+  "proposition": "The attack killed 149 people.",
+  "label": "ENTAIL",
+  "evidence": "which killed 149 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-005",
+  "proposition": "The verdicts were handed down on Thursday, March 12, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Thursday, March 12, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-006",
+  "proposition": "The Second Western District Military Court in Moscow handed down the sentences.",
+  "label": "ENTAIL",
+  "evidence": "the Second Western District Military Court in Moscow",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-007",
+  "proposition": "15 defendants received life sentences.",
+  "label": "ENTAIL",
+  "evidence": "handed life sentences to 15 defendants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-008",
+  "proposition": "Four Tajik gunmen carried out the attack.",
+  "label": "ENTAIL",
+  "evidence": "the four Tajik gunmen who carried out the attack",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-009",
+  "proposition": "11 accomplices were among the life-sentence defendants.",
+  "label": "ENTAIL",
+  "evidence": "and 11 accomplices",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-010",
+  "proposition": "Four other defendants were characterized as facilitators.",
+  "label": "ENTAIL",
+  "evidence": "Four other defendants, characterized as facilitators",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-011",
+  "proposition": "The facilitators were sentenced to 19 to 22 years in prison.",
+  "label": "ENTAIL",
+  "evidence": "were sentenced to terms of 19 to 22 years in prison",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-012",
+  "proposition": "The attackers stormed the venue on March 22, 2024.",
+  "label": "ENTAIL",
+  "evidence": "stormed the Crocus City Hall concert venue in Krasnogorsk on March 22, 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-013",
+  "proposition": "The attackers opened fire and set fires during a rock concert.",
+  "label": "ENTAIL",
+  "evidence": "opened fire and set fires during a rock concert",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-014",
+  "proposition": "The attackers escaped after the attack.",
+  "label": "ENTAIL",
+  "evidence": "before escaping",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-015",
+  "proposition": "The Islamic State's Caucasus province claimed responsibility.",
+  "label": "ENTAIL",
+  "evidence": "The Islamic State's Caucasus province claimed responsibility for the attack",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-016",
+  "proposition": "The attack is the deadliest on Russian soil in more than a decade.",
+  "label": "ENTAIL",
+  "evidence": "the deadliest on Russian soil in more than a decade",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-017",
+  "proposition": "The proceedings were held in Moscow rather than in Krasnogorsk.",
+  "label": "ENTAIL",
+  "evidence": "held in Moscow rather than in Krasnogorsk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-018",
+  "proposition": "Survivors, including concertgoers and venue staff, were present in the court.",
+  "label": "ENTAIL",
+  "evidence": "Survivors of the attack, who include concertgoers and venue staff, were present in the court",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-019",
+  "proposition": "The attack remains the deadliest on Russian soil since the Beslan school siege of 2004.",
+  "label": "ENTAIL",
+  "evidence": "the deadliest on Russian soil since the Beslan school siege of 2004",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-020",
+  "proposition": "Defendants were held in a glass enclosure when their sentences were read.",
+  "label": "ENTAIL",
+  "evidence": "defendants held in a glass enclosure",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-021",
+  "proposition": "The court sentenced 12 people.",
+  "label": "CONTRADICT",
+  "evidence": "has sentenced 19 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-022",
+  "proposition": "The attack killed 119 people.",
+  "label": "CONTRADICT",
+  "evidence": "which killed 149 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-023",
+  "proposition": "The verdicts were handed down on Thursday, March 5, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "On Thursday, March 12, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-024",
+  "proposition": "20 defendants received life sentences.",
+  "label": "CONTRADICT",
+  "evidence": "life sentences to 15 defendants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-025",
+  "proposition": "Eight Tajik gunmen carried out the attack.",
+  "label": "CONTRADICT",
+  "evidence": "the four Tajik gunmen who carried out the attack",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-026",
+  "proposition": "The facilitators were acquitted.",
+  "label": "CONTRADICT",
+  "evidence": "were sentenced to terms of 19 to 22 years in prison",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-027",
+  "proposition": "The attackers stormed the venue on March 22, 2025.",
+  "label": "CONTRADICT",
+  "evidence": "on March 22, 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-028",
+  "proposition": "The attack took place during a classical music concert.",
+  "label": "CONTRADICT",
+  "evidence": "during a rock concert",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-029",
+  "proposition": "Al-Qaeda claimed responsibility for the attack.",
+  "label": "CONTRADICT",
+  "evidence": "The Islamic State's Caucasus province claimed responsibility",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-030",
+  "proposition": "The proceedings were held in Krasnogorsk.",
+  "label": "CONTRADICT",
+  "evidence": "held in Moscow rather than in Krasnogorsk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-036-031",
+  "proposition": "The defendants were tried in absentia.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not say whether any defendant was absent."
+ },
+ {
+  "id": "V2-036-032",
+  "proposition": "The court accepted an advance appeal by the defense.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any appeal."
+ },
+ {
+  "id": "V2-036-033",
+  "proposition": "The 149 dead included children.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no breakdown of the victims."
+ },
+ {
+  "id": "V2-036-034",
+  "proposition": "The attackers were armed with automatic rifles.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says they opened fire but names no weapons."
+ },
+ {
+  "id": "V2-036-035",
+  "proposition": "The concert was performed by a specific rock band.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name the performing band."
+ },
+ {
+  "id": "V2-036-036",
+  "proposition": "The sentences were read in Russian.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention the language of the proceedings."
+ },
+ {
+  "id": "V2-036-037",
+  "proposition": "The venue was rebuilt after the attack.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention the venue's current state."
+ },
+ {
+  "id": "V2-036-038",
+  "proposition": "The Islamic State issued a video of the attack.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions the claim but not any video."
+ },
+ {
+  "id": "V2-036-039",
+  "proposition": "The survivors gave testimony during the trial.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says survivors were present but not that they testified."
+ },
+ {
+  "id": "V2-036-040",
+  "proposition": "The trial lasted six months.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the trial's duration."
+ }
+]

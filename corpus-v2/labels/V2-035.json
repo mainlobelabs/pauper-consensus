@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-035-001",
+  "proposition": "Nepal's election commission released the official results.",
+  "label": "ENTAIL",
+  "evidence": "has released the official results of the country's general election",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-002",
+  "proposition": "Balen Shah's party is the Rastriya Swatantra Party.",
+  "label": "ENTAIL",
+  "evidence": "Balen Shah's Rastriya Swatantra Party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-003",
+  "proposition": "The RSP won 182 of the 275 seats.",
+  "label": "ENTAIL",
+  "evidence": "won 182 of the 275 seats",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-004",
+  "proposition": "The seats are in the House of Representatives.",
+  "label": "ENTAIL",
+  "evidence": "in the House of Representatives",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-005",
+  "proposition": "The final results were published on Thursday, March 12, 2026.",
+  "label": "ENTAIL",
+  "evidence": "published on Thursday, March 12, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-006",
+  "proposition": "The RSP has a clear parliamentary majority.",
+  "label": "ENTAIL",
+  "evidence": "give the RSP a clear parliamentary majority",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-007",
+  "proposition": "The RSP is two seats short of a two-thirds supermajority.",
+  "label": "ENTAIL",
+  "evidence": "two seats short of a two-thirds supermajority",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-008",
+  "proposition": "The RSP won 125 seats directly by candidate.",
+  "label": "ENTAIL",
+  "evidence": "125 won directly by candidate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-009",
+  "proposition": "The RSP was allocated 57 seats by proportional representation.",
+  "label": "ENTAIL",
+  "evidence": "57 allocated by proportional representation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-010",
+  "proposition": "The Nepali Congress finished second.",
+  "label": "ENTAIL",
+  "evidence": "The Nepali Congress finished second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-011",
+  "proposition": "The Nepali Congress won 38 seats.",
+  "label": "ENTAIL",
+  "evidence": "finished second with 38 seats",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-012",
+  "proposition": "The CPN-UML won 25 seats.",
+  "label": "ENTAIL",
+  "evidence": "the CPN-UML took 25",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-013",
+  "proposition": "The result ends a period of unstable coalition governments.",
+  "label": "ENTAIL",
+  "evidence": "ends a period of unstable coalition governments",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-014",
+  "proposition": "Shah is the former mayor of Kathmandu.",
+  "label": "ENTAIL",
+  "evidence": "Shah, the former mayor of Kathmandu",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-015",
+  "proposition": "Shah is set to be sworn in as prime minister on March 27, 2026.",
+  "label": "ENTAIL",
+  "evidence": "set to be sworn in as prime minister on March 27, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-016",
+  "proposition": "The election was the country's largest.",
+  "label": "ENTAIL",
+  "evidence": "The election was the country's largest",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-017",
+  "proposition": "Candidates contested seats across the hills and the plains.",
+  "label": "ENTAIL",
+  "evidence": "contesting seats across the hills and the plains",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-018",
+  "proposition": "The counting was completed without significant incidents.",
+  "label": "ENTAIL",
+  "evidence": "the counting was completed without significant incidents",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-019",
+  "proposition": "Shah built his party on a platform of economic reform and anti-corruption.",
+  "label": "ENTAIL",
+  "evidence": "a platform of economic reform and anti-corruption",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-020",
+  "proposition": "Nepal's constitution requires a two-thirds majority to amend its text.",
+  "label": "ENTAIL",
+  "evidence": "Nepal's constitution requires a two-thirds majority to amend its text",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-021",
+  "proposition": "The RSP won 152 of the 275 seats.",
+  "label": "CONTRADICT",
+  "evidence": "won 182 of the 275 seats",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-022",
+  "proposition": "The final results were published on Thursday, March 5, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "published on Thursday, March 12, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-023",
+  "proposition": "The RSP is five seats short of a two-thirds supermajority.",
+  "label": "CONTRADICT",
+  "evidence": "two seats short of a two-thirds supermajority",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-024",
+  "proposition": "The RSP won 57 seats directly by candidate.",
+  "label": "CONTRADICT",
+  "evidence": "125 won directly by candidate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-025",
+  "proposition": "The Nepali Congress won first place with 38 seats.",
+  "label": "CONTRADICT",
+  "evidence": "The Nepali Congress finished second with 38 seats",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-026",
+  "proposition": "The CPN-UML took 35 seats.",
+  "label": "CONTRADICT",
+  "evidence": "the CPN-UML took 25",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-027",
+  "proposition": "Shah is the former mayor of Pokhara.",
+  "label": "CONTRADICT",
+  "evidence": "the former mayor of Kathmandu",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-028",
+  "proposition": "Shah is set to be sworn in on March 20, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "sworn in as prime minister on March 27, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-029",
+  "proposition": "The counting was marred by significant incidents.",
+  "label": "CONTRADICT",
+  "evidence": "completed without significant incidents",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-030",
+  "proposition": "Nepal's constitution requires a simple majority to amend its text.",
+  "label": "CONTRADICT",
+  "evidence": "requires a two-thirds majority to amend its text",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-035-031",
+  "proposition": "Voter turnout was 78 percent.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a turnout figure."
+ },
+ {
+  "id": "V2-035-032",
+  "proposition": "The election was held on March 5, 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives the results date but not the voting date."
+ },
+ {
+  "id": "V2-035-033",
+  "proposition": "Women won a third of the RSP's seats.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give any gender breakdown."
+ },
+ {
+  "id": "V2-035-034",
+  "proposition": "The RSP will form a single-party government.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any coalition talks."
+ },
+ {
+  "id": "V2-035-035",
+  "proposition": "Shah resigned as mayor before the election.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says he is the former mayor but gives no date or circumstances."
+ },
+ {
+  "id": "V2-035-036",
+  "proposition": "The election was supervised by international observers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any observers."
+ },
+ {
+  "id": "V2-035-037",
+  "proposition": "The Nepali Congress called for a recount.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any recount demand."
+ },
+ {
+  "id": "V2-035-038",
+  "proposition": "Shah's party was founded in 2023.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the party's founding date."
+ },
+ {
+  "id": "V2-035-039",
+  "proposition": "The results were announced by the commission chair.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name who announced the results."
+ },
+ {
+  "id": "V2-035-040",
+  "proposition": "Shah will address parliament after the swearing-in.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any post-swearing-in plans."
+ }
+]

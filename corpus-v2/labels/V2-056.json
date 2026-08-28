@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-056-001",
+  "proposition": "At least 26 people have been killed.",
+  "label": "ENTAIL",
+  "evidence": "At least 26 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-002",
+  "proposition": "Seven children were among the dead.",
+  "label": "ENTAIL",
+  "evidence": "including seven children",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-003",
+  "proposition": "A passenger bus carrying about 50 people plunged into the Padma River.",
+  "label": "ENTAIL",
+  "evidence": "a passenger bus carrying about 50 people plunged into the Padma River",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-004",
+  "proposition": "The accident was in central Bangladesh.",
+  "label": "ENTAIL",
+  "evidence": "in central Bangladesh",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-005",
+  "proposition": "The bus went into the water at the Daulatdia ferry terminal.",
+  "label": "ENTAIL",
+  "evidence": "at the Daulatdia ferry terminal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-006",
+  "proposition": "The terminal is in Goalanda, Rajbari district.",
+  "label": "ENTAIL",
+  "evidence": "in Goalanda, Rajbari district",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-007",
+  "proposition": "The accident was on Wednesday, March 25, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Wednesday, March 25, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-008",
+  "proposition": "The bus went in as passengers were boarding a ferry.",
+  "label": "ENTAIL",
+  "evidence": "as passengers were boarding a ferry",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-009",
+  "proposition": "Eleven people survived.",
+  "label": "ENTAIL",
+  "evidence": "Eleven people survived",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-010",
+  "proposition": "Rescue teams worked through the following day to pull bodies from the river.",
+  "label": "ENTAIL",
+  "evidence": "rescue teams worked through the following day to pull bodies from the river",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-011",
+  "proposition": "About 13 people remained missing.",
+  "label": "ENTAIL",
+  "evidence": "about 13 people remained missing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-012",
+  "proposition": "Diver teams worked around the submerged vehicle.",
+  "label": "ENTAIL",
+  "evidence": "diver teams working around the submerged vehicle",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-013",
+  "proposition": "The bus had been travelling from the capital, Dhaka.",
+  "label": "ENTAIL",
+  "evidence": "travelling from the capital, Dhaka",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-014",
+  "proposition": "The cause of the accident was under investigation.",
+  "label": "ENTAIL",
+  "evidence": "the cause of the accident was under investigation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-015",
+  "proposition": "The ferry boarding process is being examined.",
+  "label": "ENTAIL",
+  "evidence": "the ferry boarding process being examined",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-016",
+  "proposition": "The Daulatdia crossing is one of the busiest ferry points on the Padma River.",
+  "label": "ENTAIL",
+  "evidence": "one of the busiest ferry points on the Padma River",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-017",
+  "proposition": "It has been the site of previous accidents.",
+  "label": "ENTAIL",
+  "evidence": "has been the site of previous accidents",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-018",
+  "proposition": "Previous accidents have included bus ferries capsizing.",
+  "label": "ENTAIL",
+  "evidence": "including bus ferries capsizing in earlier years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-019",
+  "proposition": "River transport is a lifeline for the communities of the central districts.",
+  "label": "ENTAIL",
+  "evidence": "a lifeline for the communities of the central districts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-020",
+  "proposition": "The accident is expected to renew calls for stricter load limits on the river ferries.",
+  "label": "ENTAIL",
+  "evidence": "renew calls for stricter load limits on the river ferries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-021",
+  "proposition": "At least 16 people have been killed.",
+  "label": "CONTRADICT",
+  "evidence": "At least 26 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-022",
+  "proposition": "Three children were among the dead.",
+  "label": "CONTRADICT",
+  "evidence": "including seven children",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-023",
+  "proposition": "The bus was carrying about 30 people.",
+  "label": "CONTRADICT",
+  "evidence": "carrying about 50 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-024",
+  "proposition": "The accident was in northern Bangladesh.",
+  "label": "CONTRADICT",
+  "evidence": "in central Bangladesh",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-025",
+  "proposition": "The accident was on Wednesday, March 18, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Wednesday, March 25, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-026",
+  "proposition": "No one survived.",
+  "label": "CONTRADICT",
+  "evidence": "Eleven people survived",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-027",
+  "proposition": "All passengers were accounted for.",
+  "label": "CONTRADICT",
+  "evidence": "about 13 people remained missing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-028",
+  "proposition": "The bus had been travelling from Chittagong.",
+  "label": "CONTRADICT",
+  "evidence": "from the capital, Dhaka",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-029",
+  "proposition": "The cause of the accident has been determined.",
+  "label": "CONTRADICT",
+  "evidence": "was under investigation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-030",
+  "proposition": "The Daulatdia crossing is the quietest ferry point on the Padma River.",
+  "label": "CONTRADICT",
+  "evidence": "one of the busiest ferry points on the Padma River",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-056-031",
+  "proposition": "The bus driver was killed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not identify any individual victims."
+ },
+ {
+  "id": "V2-056-032",
+  "proposition": "The ferry capsized during the incident.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not say what happened to the ferry."
+ },
+ {
+  "id": "V2-056-033",
+  "proposition": "The recovery operation ended on Thursday.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the recovery's end date."
+ },
+ {
+  "id": "V2-056-034",
+  "proposition": "The bus company was named by officials.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name the bus operator."
+ },
+ {
+  "id": "V2-056-035",
+  "proposition": "The river was swollen with monsoon rain.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention weather or river conditions."
+ },
+ {
+  "id": "V2-056-036",
+  "proposition": "The government announced a compensation fund.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any compensation."
+ },
+ {
+  "id": "V2-056-037",
+  "proposition": "The last fatal accident at Daulatdia was in 2019.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says previous accidents but gives no dates."
+ },
+ {
+  "id": "V2-056-038",
+  "proposition": "Load limits on the ferries were set by law in 2020.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give any legal history."
+ },
+ {
+  "id": "V2-056-039",
+  "proposition": "The bus had been inspected that morning.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any inspection."
+ },
+ {
+  "id": "V2-056-040",
+  "proposition": "The survivors were treated at a local hospital.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention a hospital."
+ }
+]

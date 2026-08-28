@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-037-001",
+  "proposition": "El Salvador and the United States have signed Agreement 123.",
+  "label": "ENTAIL",
+  "evidence": "have signed Agreement 123",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-002",
+  "proposition": "The agreement is under the Atomic Energy Act of 1954.",
+  "label": "ENTAIL",
+  "evidence": "under the Atomic Energy Act of 1954",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-003",
+  "proposition": "The agreement opens the way for construction of a nuclear power plant in El Salvador.",
+  "label": "ENTAIL",
+  "evidence": "opening the way for the construction of a nuclear power plant in El Salvador",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-004",
+  "proposition": "It would be the country's first reactor.",
+  "label": "ENTAIL",
+  "evidence": "the country's first reactor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-005",
+  "proposition": "The agreement was signed in March 2026.",
+  "label": "ENTAIL",
+  "evidence": "signed in March 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-006",
+  "proposition": "It follows a memorandum of understanding between the two countries in February 2025.",
+  "label": "ENTAIL",
+  "evidence": "follows a memorandum of understanding between the two countries in February 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-007",
+  "proposition": "US officials described the project's goal as \"nuclear energy in seven years.\"",
+  "label": "ENTAIL",
+  "evidence": "described the project's goal as \"nuclear energy in seven years,\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-008",
+  "proposition": "The timeline points to the early 2030s rather than 2030.",
+  "label": "ENTAIL",
+  "evidence": "points to the early 2030s rather than the 2030 date cited in some reports",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-009",
+  "proposition": "A 123 Agreement is a US bilateral arrangement.",
+  "label": "ENTAIL",
+  "evidence": "A 123 Agreement is a US bilateral arrangement",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-010",
+  "proposition": "It authorizes cooperation on the peaceful use of nuclear energy.",
+  "label": "ENTAIL",
+  "evidence": "authorizes cooperation on the peaceful use of nuclear energy with another country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-011",
+  "proposition": "It is the legal prerequisite for transfer of US nuclear technology and material.",
+  "label": "ENTAIL",
+  "evidence": "the legal prerequisite for the transfer of US nuclear technology and material",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-012",
+  "proposition": "El Salvador currently has no operating nuclear plants.",
+  "label": "ENTAIL",
+  "evidence": "El Salvador currently has no operating nuclear plants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-013",
+  "proposition": "Its electricity grid has long relied heavily on imported oil and gas.",
+  "label": "ENTAIL",
+  "evidence": "has long relied heavily on imported oil and gas",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-014",
+  "proposition": "Geothermal power is the largest renewable source.",
+  "label": "ENTAIL",
+  "evidence": "with geothermal power the largest renewable source",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-015",
+  "proposition": "The new plant is intended to diversify the country's energy supply.",
+  "label": "ENTAIL",
+  "evidence": "intended to diversify the country's energy supply",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-016",
+  "proposition": "It would make El Salvador one of a small number of Central American countries to build a reactor.",
+  "label": "ENTAIL",
+  "evidence": "one of a small number of Central American countries to build a reactor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-017",
+  "proposition": "The government cites energy independence as the central aim.",
+  "label": "ENTAIL",
+  "evidence": "the government citing energy independence as the central aim",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-018",
+  "proposition": "The memorandum of understanding was signed in 2025.",
+  "label": "ENTAIL",
+  "evidence": "in February 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-019",
+  "proposition": "The agreement involves the United States and El Salvador.",
+  "label": "ENTAIL",
+  "evidence": "El Salvador and the United States have signed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-020",
+  "proposition": "The project's goal was described by US officials.",
+  "label": "ENTAIL",
+  "evidence": "US officials have described the project's goal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-021",
+  "proposition": "The agreement opens the way for construction of two nuclear power plants.",
+  "label": "CONTRADICT",
+  "evidence": "the construction of a nuclear power plant in El Salvador",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-022",
+  "proposition": "It would be the country's second reactor.",
+  "label": "CONTRADICT",
+  "evidence": "the country's first reactor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-023",
+  "proposition": "The agreement was signed in March 2025.",
+  "label": "CONTRADICT",
+  "evidence": "signed in March 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-024",
+  "proposition": "The memorandum of understanding was signed in February 2026.",
+  "label": "CONTRADICT",
+  "evidence": "in February 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-025",
+  "proposition": "US officials described the goal as \"nuclear energy in three years.\"",
+  "label": "CONTRADICT",
+  "evidence": "\"nuclear energy in seven years,\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-026",
+  "proposition": "The timeline points to exactly 2030.",
+  "label": "CONTRADICT",
+  "evidence": "points to the early 2030s rather than the 2030 date",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-027",
+  "proposition": "El Salvador currently has two operating nuclear plants.",
+  "label": "CONTRADICT",
+  "evidence": "currently has no operating nuclear plants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-028",
+  "proposition": "Hydropower is the largest renewable source.",
+  "label": "CONTRADICT",
+  "evidence": "geothermal power the largest renewable source",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-029",
+  "proposition": "The government cites job creation as the central aim.",
+  "label": "CONTRADICT",
+  "evidence": "citing energy independence as the central aim",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-030",
+  "proposition": "El Salvador would be the first Central American country to build a reactor.",
+  "label": "CONTRADICT",
+  "evidence": "one of a small number of Central American countries to build a reactor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-037-031",
+  "proposition": "The agreement was signed in San Salvador.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a signing location."
+ },
+ {
+  "id": "V2-037-032",
+  "proposition": "The plant will be built by a specific company.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name any contractor."
+ },
+ {
+  "id": "V2-037-033",
+  "proposition": "The reactor is expected to have a capacity of 1 gigawatt.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no capacity figure."
+ },
+ {
+  "id": "V2-037-034",
+  "proposition": "The project's budget was set at 10 billion dollars.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a budget."
+ },
+ {
+  "id": "V2-037-035",
+  "proposition": "US officials visited El Salvador to sign the agreement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe how the signing took place."
+ },
+ {
+  "id": "V2-037-036",
+  "proposition": "The 1954 act required congressional approval for the agreement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any congressional role."
+ },
+ {
+  "id": "V2-037-037",
+  "proposition": "The reactor site was selected in 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention a site or any site selection."
+ },
+ {
+  "id": "V2-037-038",
+  "proposition": "El Salvador's grid will phase out oil imports within a decade.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no phase-out timeline."
+ },
+ {
+  "id": "V2-037-039",
+  "proposition": "The agreement includes a waste disposal clause.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe the agreement's terms."
+ },
+ {
+  "id": "V2-037-040",
+  "proposition": "Opposition parties criticized the deal in parliament.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any domestic political reaction."
+ }
+]

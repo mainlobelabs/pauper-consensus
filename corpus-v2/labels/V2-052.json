@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-052-001",
+  "proposition": "The Seattle Seahawks signed Jaxon Smith-Njigba.",
+  "label": "ENTAIL",
+  "evidence": "have signed wide receiver Jaxon Smith-Njigba",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-002",
+  "proposition": "Smith-Njigba is a wide receiver.",
+  "label": "ENTAIL",
+  "evidence": "wide receiver Jaxon Smith-Njigba",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-003",
+  "proposition": "The contract is for four years.",
+  "label": "ENTAIL",
+  "evidence": "a four-year contract",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-004",
+  "proposition": "The contract is worth 168 million dollars.",
+  "label": "ENTAIL",
+  "evidence": "worth 168 million dollars",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-005",
+  "proposition": "At least 120 million dollars is guaranteed.",
+  "label": "ENTAIL",
+  "evidence": "with at least 120 million guaranteed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-006",
+  "proposition": "He is the highest-paid wide receiver in NFL history.",
+  "label": "ENTAIL",
+  "evidence": "the highest-paid wide receiver in NFL history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-007",
+  "proposition": "The deal was announced on Monday, March 23, 2026.",
+  "label": "ENTAIL",
+  "evidence": "announced on Monday, March 23, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-008",
+  "proposition": "It surpasses the previous record for a wide receiver.",
+  "label": "ENTAIL",
+  "evidence": "surpasses the previous record for a wide receiver",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-009",
+  "proposition": "The previous record was held by Ja'Marr Chase.",
+  "label": "ENTAIL",
+  "evidence": "held by Ja'Marr Chase",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-010",
+  "proposition": "The guaranteed figure is among the largest in league history.",
+  "label": "ENTAIL",
+  "evidence": "among the largest in the history of the league",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-011",
+  "proposition": "Smith-Njigba won Offensive Player of the Year last season.",
+  "label": "ENTAIL",
+  "evidence": "won Offensive Player of the Year last season",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-012",
+  "proposition": "He led the Seahawks to a Super Bowl championship.",
+  "label": "ENTAIL",
+  "evidence": "led the Seahawks to a Super Bowl championship",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-013",
+  "proposition": "He was a first-round selection in the 2024 draft.",
+  "label": "ENTAIL",
+  "evidence": "A first-round selection in the 2024 draft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-014",
+  "proposition": "He is one of the sport's premier receivers.",
+  "label": "ENTAIL",
+  "evidence": "one of the sport's premier receivers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-015",
+  "proposition": "The contract signals Seattle's confidence in his long-term role.",
+  "label": "ENTAIL",
+  "evidence": "a signal of Seattle's confidence in the receiver's long-term role",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-016",
+  "proposition": "He is the focal point of Seattle's offense.",
+  "label": "ENTAIL",
+  "evidence": "the focal point of its offense",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-017",
+  "proposition": "It places him at the top of the pay scale for his position by a wide margin.",
+  "label": "ENTAIL",
+  "evidence": "at the top of the pay scale for his position by a wide margin",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-018",
+  "proposition": "The extension secures his services through the 2029 season.",
+  "label": "ENTAIL",
+  "evidence": "through the 2029 season",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-019",
+  "proposition": "The deal ended uncertainty over whether he would return to Seattle.",
+  "label": "ENTAIL",
+  "evidence": "ends a period of uncertainty over whether the receiver would return to Seattle",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-020",
+  "proposition": "He is the team's leading playmaker.",
+  "label": "ENTAIL",
+  "evidence": "the team's leading playmaker",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-021",
+  "proposition": "The Seattle Seahawks signed Smith-Njigba to a two-year contract.",
+  "label": "CONTRADICT",
+  "evidence": "a four-year contract",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-022",
+  "proposition": "The contract is worth 98 million dollars.",
+  "label": "CONTRADICT",
+  "evidence": "worth 168 million dollars",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-023",
+  "proposition": "At least 80 million dollars is guaranteed.",
+  "label": "CONTRADICT",
+  "evidence": "at least 120 million guaranteed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-024",
+  "proposition": "He is the second-highest-paid wide receiver in NFL history.",
+  "label": "CONTRADICT",
+  "evidence": "the highest-paid wide receiver in NFL history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-025",
+  "proposition": "The deal was announced on Monday, March 16, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "announced on Monday, March 23, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-026",
+  "proposition": "The previous record for a wide receiver was held by Mike Evans.",
+  "label": "CONTRADICT",
+  "evidence": "held by Ja'Marr Chase",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-027",
+  "proposition": "Smith-Njigba won Defensive Player of the Year last season.",
+  "label": "CONTRADICT",
+  "evidence": "won Offensive Player of the Year last season",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-028",
+  "proposition": "He was a second-round selection in the 2023 draft.",
+  "label": "CONTRADICT",
+  "evidence": "A first-round selection in the 2024 draft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-029",
+  "proposition": "The extension secures his services through the 2027 season.",
+  "label": "CONTRADICT",
+  "evidence": "through the 2029 season",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-030",
+  "proposition": "The contract does not place him at the top of the pay scale for his position.",
+  "label": "CONTRADICT",
+  "evidence": "at the top of the pay scale for his position by a wide margin",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-052-031",
+  "proposition": "Smith-Njigba's agent is named in the announcement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name any agent."
+ },
+ {
+  "id": "V2-052-032",
+  "proposition": "The deal includes a fifth-year option.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe the contract's options."
+ },
+ {
+  "id": "V2-052-033",
+  "proposition": "Smith-Njigba's previous contract expired in March 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give his previous contract's terms."
+ },
+ {
+  "id": "V2-052-034",
+  "proposition": "Chase's record deal was worth 155 million dollars.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names Chase but gives no figure for his deal."
+ },
+ {
+  "id": "V2-052-035",
+  "proposition": "The Seahawks drafted him with the No. 5 overall pick.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says first-round but gives no pick number."
+ },
+ {
+  "id": "V2-052-036",
+  "proposition": "The contract was announced at the team's facility.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give an announcement location."
+ },
+ {
+  "id": "V2-052-037",
+  "proposition": "Smith-Njigba will wear a specific jersey number.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention his number."
+ },
+ {
+  "id": "V2-052-038",
+  "proposition": "The Super Bowl championship was won in February 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says last season but gives no date."
+ },
+ {
+  "id": "V2-052-039",
+  "proposition": "The deal was approved by an NFL owners' vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any owners' approval."
+ },
+ {
+  "id": "V2-052-040",
+  "proposition": "Seattle's payroll will exceed 250 million dollars.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no total payroll figure."
+ }
+]

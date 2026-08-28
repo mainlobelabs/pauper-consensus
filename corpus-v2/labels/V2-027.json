@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-027-001",
+  "proposition": "Guinea's government has dissolved 40 political parties by decree.",
+  "label": "ENTAIL",
+  "evidence": "has dissolved 40 political parties by decree",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-002",
+  "proposition": "The dissolution includes the three main opposition groups.",
+  "label": "ENTAIL",
+  "evidence": "including the three main opposition groups",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-003",
+  "proposition": "The grounds were failure to meet legal requirements.",
+  "label": "ENTAIL",
+  "evidence": "on the grounds that they failed to meet legal requirements",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-004",
+  "proposition": "The government ordered the seizure of the parties' assets.",
+  "label": "ENTAIL",
+  "evidence": "ordered the seizure of their assets",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-005",
+  "proposition": "The decree was issued around March 6.",
+  "label": "ENTAIL",
+  "evidence": "issued around March 6",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-006",
+  "proposition": "The decree was reported on March 8, 2026.",
+  "label": "ENTAIL",
+  "evidence": "reported on March 8, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-007",
+  "proposition": "The decree orders the closure of the parties' headquarters.",
+  "label": "ENTAIL",
+  "evidence": "the closure of the parties' headquarters",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-008",
+  "proposition": "The decree orders the freezing of the parties' assets.",
+  "label": "ENTAIL",
+  "evidence": "the freezing and seizure of their assets",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-009",
+  "proposition": "The Union of Democratic Forces of Guinea was among the dissolved parties.",
+  "label": "ENTAIL",
+  "evidence": "the Union of Democratic Forces of Guinea, the Rally of the Guinean People, and the Union of Republican Forces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-010",
+  "proposition": "The Rally of the Guinean People was among the dissolved parties.",
+  "label": "ENTAIL",
+  "evidence": "the Union of Democratic Forces of Guinea, the Rally of the Guinean People, and the Union of Republican Forces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-011",
+  "proposition": "The Union of Republican Forces was among the dissolved parties.",
+  "label": "ENTAIL",
+  "evidence": "the Union of Democratic Forces of Guinea, the Rally of the Guinean People, and the Union of Republican Forces",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-012",
+  "proposition": "The Rally of the Guinean People is led by former president Alpha Conde.",
+  "label": "ENTAIL",
+  "evidence": "is led by former president Alpha Conde",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-013",
+  "proposition": "The Union of Democratic Forces of Guinea is led by Cellou Dalein Diallo.",
+  "label": "ENTAIL",
+  "evidence": "is led by Cellou Dalein Diallo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-014",
+  "proposition": "Diallo is in exile.",
+  "label": "ENTAIL",
+  "evidence": "who is in exile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-015",
+  "proposition": "Diallo has called for direct resistance to the government.",
+  "label": "ENTAIL",
+  "evidence": "has called for \"direct resistance\" to the government",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-016",
+  "proposition": "The dissolutions come under president Mamady Doumbouya.",
+  "label": "ENTAIL",
+  "evidence": "under president Mamady Doumbouya",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-017",
+  "proposition": "Doumbouya was sworn in as president in January 2026.",
+  "label": "ENTAIL",
+  "evidence": "sworn in as president in January 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-018",
+  "proposition": "Doumbouya led a 2021 military takeover.",
+  "label": "ENTAIL",
+  "evidence": "after leading a 2021 military takeover",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-019",
+  "proposition": "Guinea is one of the world's largest producers of bauxite.",
+  "label": "ENTAIL",
+  "evidence": "one of the world's largest producers of bauxite",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-020",
+  "proposition": "Several former ministers and local officials have been suspended in recent months.",
+  "label": "ENTAIL",
+  "evidence": "several former ministers and local officials have been suspended from their posts in recent months",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-021",
+  "proposition": "Guinea dissolved 20 political parties.",
+  "label": "CONTRADICT",
+  "evidence": "dissolved 40 political parties",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-022",
+  "proposition": "The decree was issued around March 16.",
+  "label": "CONTRADICT",
+  "evidence": "issued around March 6",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-023",
+  "proposition": "The decree allows the parties to keep their headquarters.",
+  "label": "CONTRADICT",
+  "evidence": "the closure of the parties' headquarters",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-024",
+  "proposition": "The Rally of the Guinean People is led by Cellou Dalein Diallo.",
+  "label": "CONTRADICT",
+  "evidence": "led by former president Alpha Conde",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-025",
+  "proposition": "Diallo is still in Conakry.",
+  "label": "CONTRADICT",
+  "evidence": "who is in exile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-026",
+  "proposition": "Doumbouya was sworn in as president in July 2026.",
+  "label": "CONTRADICT",
+  "evidence": "in January 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-027",
+  "proposition": "Doumbouya came to power in a 2024 military takeover.",
+  "label": "CONTRADICT",
+  "evidence": "a 2021 military takeover",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-028",
+  "proposition": "Guinea is one of the world's largest producers of cocoa.",
+  "label": "CONTRADICT",
+  "evidence": "producers of bauxite",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-029",
+  "proposition": "Opposition figures praised the decree.",
+  "label": "CONTRADICT",
+  "evidence": "denounced the decree as a bid to eliminate any organized challenge",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-030",
+  "proposition": "The decree was issued by a civilian prime minister.",
+  "label": "CONTRADICT",
+  "evidence": "under president Mamady Doumbouya",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-027-031",
+  "proposition": "The decree names the 40 parties individually.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names only the three main opposition groups."
+ },
+ {
+  "id": "V2-027-032",
+  "proposition": "Protests erupted in Conakry after the decree.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any protests."
+ },
+ {
+  "id": "V2-027-033",
+  "proposition": "The EU condemned the dissolutions.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any EU response."
+ },
+ {
+  "id": "V2-027-034",
+  "proposition": "The parties had been given 10 years to comply.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any compliance period."
+ },
+ {
+  "id": "V2-027-035",
+  "proposition": "The ruling party was affected by the decree.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the opposition groups were dissolved, not the ruling party."
+ },
+ {
+  "id": "V2-027-036",
+  "proposition": "An appeals court will review the decree.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any court review."
+ },
+ {
+  "id": "V2-027-037",
+  "proposition": "The opposition called a general strike.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions direct resistance, not a strike."
+ },
+ {
+  "id": "V2-027-038",
+  "proposition": "Doumbouya signed the decree in a ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe the signing."
+ },
+ {
+  "id": "V2-027-039",
+  "proposition": "Bauxite exports were affected by the decree.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any economic effect."
+ },
+ {
+  "id": "V2-027-040",
+  "proposition": "Members of the dissolved parties were barred from office.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any membership consequences."
+ }
+]

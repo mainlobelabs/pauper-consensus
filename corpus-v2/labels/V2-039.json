@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-039-001",
+  "proposition": "Kimi Antonelli drives for Mercedes.",
+  "label": "ENTAIL",
+  "evidence": "Mercedes driver Kimi Antonelli",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-002",
+  "proposition": "He has won his first Formula 1 Grand Prix.",
+  "label": "ENTAIL",
+  "evidence": "has won his first Formula 1 Grand Prix",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-003",
+  "proposition": "The win came at the Chinese Grand Prix.",
+  "label": "ENTAIL",
+  "evidence": "at the Chinese Grand Prix",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-004",
+  "proposition": "The race was on Sunday, March 15, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Sunday, March 15, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-005",
+  "proposition": "He took victory from the front row.",
+  "label": "ENTAIL",
+  "evidence": "taking victory from the front row",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-006",
+  "proposition": "The race was at the Shanghai International Circuit.",
+  "label": "ENTAIL",
+  "evidence": "at the Shanghai International Circuit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-007",
+  "proposition": "He is 19 years old.",
+  "label": "ENTAIL",
+  "evidence": "The 19-year-old",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-008",
+  "proposition": "He set his maiden pole position on Saturday.",
+  "label": "ENTAIL",
+  "evidence": "set his maiden pole position on Saturday",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-009",
+  "proposition": "He is the youngest pole-sitter in the sport's history.",
+  "label": "ENTAIL",
+  "evidence": "the youngest pole-sitter in the sport's history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-010",
+  "proposition": "He broke the record held by Sebastian Vettel since 2008.",
+  "label": "ENTAIL",
+  "evidence": "the record held by Sebastian Vettel since 2008",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-011",
+  "proposition": "Vettel's record stood at 19 years, 6 months, and 18 days.",
+  "label": "ENTAIL",
+  "evidence": "19 years, 6 months, and 18 days",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-012",
+  "proposition": "George Russell finished second.",
+  "label": "ENTAIL",
+  "evidence": "his teammate George Russell, who finished second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-013",
+  "proposition": "Russell is Antonelli's teammate.",
+  "label": "ENTAIL",
+  "evidence": "his teammate George Russell",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-014",
+  "proposition": "Lewis Hamilton took third.",
+  "label": "ENTAIL",
+  "evidence": "Lewis Hamilton, who took third",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-015",
+  "proposition": "It was Hamilton's first season with Ferrari.",
+  "label": "ENTAIL",
+  "evidence": "his first season with Ferrari",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-016",
+  "proposition": "Antonelli is the first driver born in the 21st century to win a Formula 1 race.",
+  "label": "ENTAIL",
+  "evidence": "the first driver born in the 21st century to take a Formula 1 victory",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-017",
+  "proposition": "Antonelli is Italian.",
+  "label": "ENTAIL",
+  "evidence": "the Italian",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-018",
+  "proposition": "He entered the sport as the youngest driver in its history.",
+  "label": "ENTAIL",
+  "evidence": "entered the sport as the youngest driver in its history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-019",
+  "proposition": "He was promoted to a full race seat at Mercedes.",
+  "label": "ENTAIL",
+  "evidence": "promoted to a full race seat at Mercedes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-020",
+  "proposition": "The result was the season's first victory for a driver who had been a rookie only two years earlier.",
+  "label": "ENTAIL",
+  "evidence": "the season's first victory for a driver who had been a rookie only two years earlier",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-021",
+  "proposition": "Antonelli drives for Ferrari.",
+  "label": "CONTRADICT",
+  "evidence": "Mercedes driver Kimi Antonelli",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-022",
+  "proposition": "He has won his second Formula 1 Grand Prix.",
+  "label": "CONTRADICT",
+  "evidence": "his first Formula 1 Grand Prix",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-023",
+  "proposition": "The race was on Sunday, March 8, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Sunday, March 15, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-024",
+  "proposition": "He took victory from the back of the grid.",
+  "label": "CONTRADICT",
+  "evidence": "taking victory from the front row",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-025",
+  "proposition": "He is 21 years old.",
+  "label": "CONTRADICT",
+  "evidence": "The 19-year-old",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-026",
+  "proposition": "Vettel's record stood since 2010.",
+  "label": "CONTRADICT",
+  "evidence": "since 2008",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-027",
+  "proposition": "Charles Leclerc finished second.",
+  "label": "CONTRADICT",
+  "evidence": "his teammate George Russell, who finished second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-028",
+  "proposition": "It was Hamilton's second season with Ferrari.",
+  "label": "CONTRADICT",
+  "evidence": "his first season with Ferrari",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-029",
+  "proposition": "Antonelli is the first driver born in the 20th century to win a Formula 1 race.",
+  "label": "CONTRADICT",
+  "evidence": "born in the 21st century to take a Formula 1 victory",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-030",
+  "proposition": "He was promoted to a full race seat at Red Bull.",
+  "label": "CONTRADICT",
+  "evidence": "a full race seat at Mercedes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-039-031",
+  "proposition": "Antonelli won by 3.2 seconds.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the winning margin."
+ },
+ {
+  "id": "V2-039-032",
+  "proposition": "The race was won under dry conditions.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention weather."
+ },
+ {
+  "id": "V2-039-033",
+  "proposition": "Antonelli led every lap of the race.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give lap-by-lap detail."
+ },
+ {
+  "id": "V2-039-034",
+  "proposition": "The race was shortened by a red flag.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any red flag."
+ },
+ {
+  "id": "V2-039-035",
+  "proposition": "Vettel set his record at the 2008 European Grand Prix.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not say where Vettel set the record."
+ },
+ {
+  "id": "V2-039-036",
+  "proposition": "Antonelli scored points in both prior seasons.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no results from his earlier seasons."
+ },
+ {
+  "id": "V2-039-037",
+  "proposition": "The Chinese Grand Prix was the season opener.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article calls it early-season but does not give the round number."
+ },
+ {
+  "id": "V2-039-038",
+  "proposition": "Russell was the race's fastest lap winner.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give any fastest lap."
+ },
+ {
+  "id": "V2-039-039",
+  "proposition": "Hamilton started the race from the pit lane.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give Hamilton's starting position."
+ },
+ {
+  "id": "V2-039-040",
+  "proposition": "Antonelli dedicated the win to his family.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any post-race dedication."
+ }
+]

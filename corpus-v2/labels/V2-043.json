@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-043-001",
+  "proposition": "At least 23 people have been killed.",
+  "label": "ENTAIL",
+  "evidence": "At least 23 people have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-002",
+  "proposition": "108 people have been injured.",
+  "label": "ENTAIL",
+  "evidence": "108 injured",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-003",
+  "proposition": "The bombings were suspected suicide bombings.",
+  "label": "ENTAIL",
+  "evidence": "suspected suicide bombings",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-004",
+  "proposition": "They struck three locations.",
+  "label": "ENTAIL",
+  "evidence": "at three locations in Maiduguri",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-005",
+  "proposition": "The attacks were in Maiduguri.",
+  "label": "ENTAIL",
+  "evidence": "in Maiduguri, the capital of Nigeria's Borno state",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-006",
+  "proposition": "Maiduguri is the capital of Nigeria's Borno state.",
+  "label": "ENTAIL",
+  "evidence": "the capital of Nigeria's Borno state",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-007",
+  "proposition": "The attacks came on Monday, March 16, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Monday, March 16, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-008",
+  "proposition": "One target was the city's Monday Market.",
+  "label": "ENTAIL",
+  "evidence": "the city's Monday Market",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-009",
+  "proposition": "One target was a post office.",
+  "label": "ENTAIL",
+  "evidence": "a post office",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-010",
+  "proposition": "One target was the University of Maiduguri Teaching Hospital.",
+  "label": "ENTAIL",
+  "evidence": "the University of Maiduguri Teaching Hospital",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-011",
+  "proposition": "The explosions began in the evening.",
+  "label": "ENTAIL",
+  "evidence": "The explosions began in the evening",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-012",
+  "proposition": "Ambulances responded to all three sites.",
+  "label": "ENTAIL",
+  "evidence": "ambulances and security forces responded to all three sites",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-013",
+  "proposition": "Security forces responded to all three sites.",
+  "label": "ENTAIL",
+  "evidence": "security forces responded to all three sites",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-014",
+  "proposition": "No group has claimed responsibility.",
+  "label": "ENTAIL",
+  "evidence": "No group has claimed responsibility for the attacks",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-015",
+  "proposition": "The Nigerian military suspects Boko Haram.",
+  "label": "ENTAIL",
+  "evidence": "the Nigerian military suspects Boko Haram",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-016",
+  "proposition": "Boko Haram is an Islamist insurgent group.",
+  "label": "ENTAIL",
+  "evidence": "the Islamist insurgent group",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-017",
+  "proposition": "Boko Haram has waged war in the region for more than a decade.",
+  "label": "ENTAIL",
+  "evidence": "has waged war in the region for more than a decade",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-018",
+  "proposition": "The national disaster agency put the killed at 27 and the injured at 146.",
+  "label": "ENTAIL",
+  "evidence": "putting the number killed at 27 and the injured at 146",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-019",
+  "proposition": "The bombings mark the first major attack on Maiduguri after a year of relative calm.",
+  "label": "ENTAIL",
+  "evidence": "the first major attack on Maiduguri after a year of relative calm",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-020",
+  "proposition": "The state government has appealed for calm.",
+  "label": "ENTAIL",
+  "evidence": "the state government has appealed for calm",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-021",
+  "proposition": "At least 13 people have been killed.",
+  "label": "CONTRADICT",
+  "evidence": "At least 23 people have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-022",
+  "proposition": "58 people have been injured.",
+  "label": "CONTRADICT",
+  "evidence": "108 injured",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-023",
+  "proposition": "The attacks struck five locations.",
+  "label": "CONTRADICT",
+  "evidence": "at three locations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-024",
+  "proposition": "The attacks came on Monday, March 9, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Monday, March 16, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-025",
+  "proposition": "The explosions began in the morning.",
+  "label": "CONTRADICT",
+  "evidence": "began in the evening",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-026",
+  "proposition": "Boko Haram claimed responsibility for the attacks.",
+  "label": "CONTRADICT",
+  "evidence": "No group has claimed responsibility",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-027",
+  "proposition": "The Nigerian military suspects the Islamic State.",
+  "label": "CONTRADICT",
+  "evidence": "suspects Boko Haram",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-028",
+  "proposition": "The national disaster agency put the killed at 47.",
+  "label": "CONTRADICT",
+  "evidence": "the number killed at 27",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-029",
+  "proposition": "The bombings mark the first major attack on Maiduguri in two years.",
+  "label": "CONTRADICT",
+  "evidence": "after a year of relative calm",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-030",
+  "proposition": "The state government has ordered a curfew.",
+  "label": "CONTRADICT",
+  "evidence": "has appealed for calm",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-043-031",
+  "proposition": "The first explosion hit the Monday Market.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the order of the explosions."
+ },
+ {
+  "id": "V2-043-032",
+  "proposition": "The bombs were hidden in vehicles.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says suicide bombings but describes no devices."
+ },
+ {
+  "id": "V2-043-033",
+  "proposition": "Children were among the dead.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no breakdown of the victims."
+ },
+ {
+  "id": "V2-043-034",
+  "proposition": "The Nigerian military issued a statement naming Boko Haram.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not quote any statement."
+ },
+ {
+  "id": "V2-043-035",
+  "proposition": "The attacks were linked to a specific battle.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any link to fighting."
+ },
+ {
+  "id": "V2-043-036",
+  "proposition": "The hospital was evacuated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe any hospital response."
+ },
+ {
+  "id": "V2-043-037",
+  "proposition": "The toll of 27 killed was confirmed by the state government.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article attributes the later toll to the national disaster agency."
+ },
+ {
+  "id": "V2-043-038",
+  "proposition": "Funeral processions took place the next day.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any funerals."
+ },
+ {
+  "id": "V2-043-039",
+  "proposition": "The federal government deployed troops to Maiduguri.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any deployment."
+ },
+ {
+  "id": "V2-043-040",
+  "proposition": "The explosions were heard 10 kilometers away.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says smoke was visible but gives no distances."
+ }
+]

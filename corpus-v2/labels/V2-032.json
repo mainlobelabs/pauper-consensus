@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-032-001",
+  "proposition": "Australia has granted humanitarian visas to five members of Iran's women's national football team.",
+  "label": "ENTAIL",
+  "evidence": "granted humanitarian visas to five members of Iran's women's national football team who sought asylum",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-002",
+  "proposition": "The players sought asylum.",
+  "label": "ENTAIL",
+  "evidence": "who sought asylum",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-003",
+  "proposition": "Captain Zahra Ghanbari is among the five.",
+  "label": "ENTAIL",
+  "evidence": "including captain Zahra Ghanbari",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-004",
+  "proposition": "Mona Hamoudi is among the five.",
+  "label": "ENTAIL",
+  "evidence": "Mona Hamoudi",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-005",
+  "proposition": "Fatemeh Pasandideh is among the five.",
+  "label": "ENTAIL",
+  "evidence": "Fatemeh Pasandideh",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-006",
+  "proposition": "Atefeh Ramezanizadeh is among the five.",
+  "label": "ENTAIL",
+  "evidence": "Atefeh Ramezanizadeh",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-007",
+  "proposition": "Zahra Sarbali is among the five.",
+  "label": "ENTAIL",
+  "evidence": "Zahra Sarbali",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-008",
+  "proposition": "Immigration minister Tony Burke signed off on the visas.",
+  "label": "ENTAIL",
+  "evidence": "Tony Burke signed off on the visas",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-009",
+  "proposition": "The visas were completed in the early hours of Tuesday, March 10, 2026, local time.",
+  "label": "ENTAIL",
+  "evidence": "completed in the early hours of Tuesday, March 10, 2026, local time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-010",
+  "proposition": "The five players were in Australia taking part in the AFC Women's Asian Cup.",
+  "label": "ENTAIL",
+  "evidence": "taking part in the AFC Women's Asian Cup",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-011",
+  "proposition": "The players refused to sing Iran's national anthem.",
+  "label": "ENTAIL",
+  "evidence": "refusing to sing Iran's national anthem",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-012",
+  "proposition": "The protest happened before their March 1 group match.",
+  "label": "ENTAIL",
+  "evidence": "before their March 1 group match",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-013",
+  "proposition": "The group match was against South Korea.",
+  "label": "ENTAIL",
+  "evidence": "group match against South Korea",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-014",
+  "proposition": "The match was in Gold Coast, Queensland.",
+  "label": "ENTAIL",
+  "evidence": "in Gold Coast, Queensland",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-015",
+  "proposition": "A mob surrounded the team bus at Gold Coast Airport.",
+  "label": "ENTAIL",
+  "evidence": "a mob to surround the team bus at Gold Coast Airport",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-016",
+  "proposition": "The incident drew widespread attention to the players' situation.",
+  "label": "ENTAIL",
+  "evidence": "drew widespread attention to the players' situation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-017",
+  "proposition": "Reza Pahlavi publicly pleaded for the players' protection.",
+  "label": "ENTAIL",
+  "evidence": "publicly pleaded for the players' protection",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-018",
+  "proposition": "Reza Pahlavi is the exiled heir to Iran's former throne.",
+  "label": "ENTAIL",
+  "evidence": "The exiled heir to Iran's former throne, Reza Pahlavi",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-019",
+  "proposition": "The visas allow the five to remain in Australia outside the tournament's player-protection framework.",
+  "label": "ENTAIL",
+  "evidence": "remain in Australia outside the tournament's player-protection framework",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-020",
+  "proposition": "The Iranian team's stay in Australia was extended after the visa decisions.",
+  "label": "ENTAIL",
+  "evidence": "stay in Australia was extended after the visa decisions were made",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-021",
+  "proposition": "Australia granted the visas to all 20 members of Iran's women's national football team.",
+  "label": "CONTRADICT",
+  "evidence": "granted humanitarian visas to five members of Iran's women's national football team",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-022",
+  "proposition": "Immigration minister Tony Burke vetoed the visas.",
+  "label": "CONTRADICT",
+  "evidence": "Tony Burke signed off on the visas",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-023",
+  "proposition": "The visas were completed in the early hours of Monday, March 9, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "completed in the early hours of Tuesday, March 10, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-024",
+  "proposition": "The five players had been in Australia for a friendly match.",
+  "label": "CONTRADICT",
+  "evidence": "taking part in the AFC Women's Asian Cup",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-025",
+  "proposition": "The players sang Iran's national anthem before their group match.",
+  "label": "CONTRADICT",
+  "evidence": "refusing to sing Iran's national anthem",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-026",
+  "proposition": "The protest happened before their match against Japan.",
+  "label": "CONTRADICT",
+  "evidence": "group match against South Korea",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-027",
+  "proposition": "The match was in Sydney.",
+  "label": "CONTRADICT",
+  "evidence": "in Gold Coast, Queensland",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-028",
+  "proposition": "A mob surrounded the team's hotel in Brisbane.",
+  "label": "CONTRADICT",
+  "evidence": "a mob to surround the team bus at Gold Coast Airport",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-029",
+  "proposition": "Reza Pahlavi ignored the players' situation.",
+  "label": "CONTRADICT",
+  "evidence": "publicly pleaded for the players' protection",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-030",
+  "proposition": "The visas bind the five to the tournament's player-protection framework.",
+  "label": "CONTRADICT",
+  "evidence": "outside the tournament's player-protection framework",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-032-031",
+  "proposition": "The five players have applied for permanent residency.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article reports the humanitarian visas but not any permanent residency applications."
+ },
+ {
+  "id": "V2-032-032",
+  "proposition": "The Iranian government responded officially to the visa decisions.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any Iranian government response."
+ },
+ {
+  "id": "V2-032-033",
+  "proposition": "The players' families were included in the visas.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any family members."
+ },
+ {
+  "id": "V2-032-034",
+  "proposition": "The players will stay in Australia permanently.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the visas allow the five to remain but gives no duration."
+ },
+ {
+  "id": "V2-032-035",
+  "proposition": "The players gave an interview after receiving the visas.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any interview or statement by the players."
+ },
+ {
+  "id": "V2-032-036",
+  "proposition": "The visa process took three months to complete.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no processing timeline for the visas."
+ },
+ {
+  "id": "V2-032-037",
+  "proposition": "South Korea reacted to the anthem protest.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any reaction by South Korea."
+ },
+ {
+  "id": "V2-032-038",
+  "proposition": "The team bus was damaged when the mob surrounded it.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe any damage to the bus."
+ },
+ {
+  "id": "V2-032-039",
+  "proposition": "An official ceremony marked the visa decisions.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any ceremony."
+ },
+ {
+  "id": "V2-032-040",
+  "proposition": "The other players on the Iranian team also sought asylum.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names only the five who received visas."
+ }
+]
