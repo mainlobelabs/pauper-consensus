@@ -1,0 +1,295 @@
+{
+  "description": "Frozen v1 baseline artifacts for the wave-consensus v2 eval. Calibration maps: 3-class affine on WCT-EM log-posteriors, fit on the v1 calibration split (per arm). Covariate bars: multinomial logistic (L2, pure-numpy GD, seed 0, 3000 iters) fitted on the v1 calibration split. See tools/corpus_v2/freeze_v1_fits.py (committed at prereg-waveconsensus-v2) for the exact procedure and the self-verification against reported v1 numbers.",
+  "generated": "2026-08-28",
+  "v1_inputs": {
+    "corpus": "corpus/ (tag prereg-waveconsensus-v1, frozen 2026-08-26)",
+    "native_votes": {
+      "base": "cutoff-probe/runs/2026-08-26-phase3/native (commit 1273339 run tree)",
+      "finetuned": "cutoff-probe/runs/2026-08-27-phase4/finetuned/native"
+    }
+  },
+  "em_spec": {
+    "estimator": "three-state MAP-EM Dawid-Skene (PASS/FAIL/NOT_STATED)",
+    "observed": [
+      "PASS",
+      "FAIL",
+      "NOT_STATED",
+      "MISSING"
+    ],
+    "latent": [
+      "PASS",
+      "FAIL",
+      "NOT_STATED"
+    ],
+    "kappa_dirichlet": 5.0,
+    "diag_prior": 0.8,
+    "basins": "structured (all-sharp, per-voter-sharp) + 5 concentrated random restarts",
+    "select": "highest data log-likelihood",
+    "max_iter": 200,
+    "convergence_tol": 1e-08,
+    "rng_seed": 20260827
+  },
+  "calibration_spec": {
+    "method": "3-class affine (Platt-like) on log-posteriors; Nelder-Mead MLE",
+    "p0": [
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "maxiter": 2000,
+    "xatol": 1e-06,
+    "fatol": 1e-08,
+    "fit_split": "v1 calibration (10 articles, 400 items)"
+  },
+  "covariate_spec": {
+    "model": "multinomial logistic, 3 classes, L2 lam=1e-3, lr 0.1 halved at iter 500/1000/1500/2000/2500, seed 0, 3000 iters",
+    "features_full": [
+      "log1p(article_len)",
+      "log1p(pool_position-1)",
+      "log1p(claim_len)",
+      "polarity (0 affirmative / 1 negative)",
+      "one-hot trap_type (vocabulary order below)"
+    ],
+    "features_content": [
+      "log1p(article_len)",
+      "log1p(pool_position-1)",
+      "log1p(claim_len)",
+      "polarity"
+    ],
+    "trap_vocab_order": [
+      "disputed_pin",
+      "figure_conflict",
+      "none",
+      "unit_swap"
+    ],
+    "fit_split": "v1 calibration (10 articles, 400 items)",
+    "n_fit_items": 400
+  },
+  "splits_v1": {
+    "calibration": [
+      "T02",
+      "T03",
+      "T14",
+      "T18",
+      "T21",
+      "T23",
+      "T26",
+      "T30",
+      "T34",
+      "T36"
+    ],
+    "test": [
+      "T01",
+      "T04",
+      "T05",
+      "T12",
+      "T13",
+      "T22",
+      "T25",
+      "T28",
+      "T29",
+      "T35"
+    ],
+    "train": [
+      "T08",
+      "T10",
+      "T15",
+      "T16",
+      "T17",
+      "T19",
+      "T20",
+      "T24",
+      "T27",
+      "T32"
+    ]
+  },
+  "arms": {
+    "ft_reason_included": {
+      "a": [
+        0.43650167443462407,
+        0.3785006209763251,
+        0.4058996422139315
+      ],
+      "b": [
+        -0.6276495628205496,
+        0.08439825973708423,
+        0.6686348396925694
+      ],
+      "calib_fit_nll": 0.16046953195410685,
+      "calib_label_mix": {
+        "PASS": 0.5,
+        "FAIL": 0.26,
+        "NOT_STATED": 0.24
+      },
+      "verification_v1_test": {
+        "raw_ll": 0.52684,
+        "calibrated_ll": 0.25834,
+        "delta_cal_vs_cov_full": 0.01506
+      }
+    },
+    "ft_votes_only": {
+      "a": [
+        0.5804792960641976,
+        0.5070857783712823,
+        0.6012503485476849
+      ],
+      "b": [
+        -1.482047158709936,
+        0.4718579983663561,
+        2.9103084010887086
+      ],
+      "calib_fit_nll": 0.1453284075333464,
+      "calib_label_mix": {
+        "PASS": 0.5,
+        "FAIL": 0.26,
+        "NOT_STATED": 0.24
+      },
+      "verification_v1_test": {
+        "raw_ll": 0.49212,
+        "calibrated_ll": 0.2543,
+        "delta_cal_vs_cov_full": 0.01911
+      }
+    },
+    "base_zeroshot": {
+      "a": [
+        3.1968718749754936,
+        0.4512373109603782,
+        0.3940039046777941
+      ],
+      "b": [
+        -0.37246050777915807,
+        -0.1505233141777258,
+        1.0029831693800764
+      ],
+      "calib_fit_nll": 0.17041816341819083,
+      "calib_label_mix": {
+        "PASS": 0.5,
+        "FAIL": 0.26,
+        "NOT_STATED": 0.24
+      },
+      "verification_v1_test": {
+        "raw_ll": 0.58423,
+        "calibrated_ll": 0.27775,
+        "delta_cal_vs_cov_full": -0.00434
+      }
+    }
+  },
+  "covariate_full": {
+    "W": [
+      [
+        -0.029692686287430357,
+        0.061076923731788496,
+        -0.025638738386931398
+      ],
+      [
+        -3.633101899784503,
+        0.38965970182374243,
+        3.2428153679699174
+      ],
+      [
+        0.3782396693834425,
+        -0.12191827932142894,
+        -0.24229993811906025
+      ],
+      [
+        -0.3942412324876555,
+        0.3422199631629148,
+        0.035281113701266076
+      ],
+      [
+        -0.018868178126814995,
+        -0.3914708506223175,
+        0.3759979231656467
+      ],
+      [
+        -0.1670868720406372,
+        -0.23531605991417107,
+        0.38796935121563964
+      ],
+      [
+        0.49961154607312136,
+        -0.3815957077410164,
+        -0.10600367749192095
+      ],
+      [
+        -0.5008497273008786,
+        0.7317161967795281,
+        -0.22132659251308343
+      ],
+      [
+        1.202789045541818,
+        0.3468495376586181,
+        -1.547098750899849
+      ]
+    ],
+    "norm_mu": [
+      7.575147559825671,
+      2.7580159928689354,
+      4.095612269092676,
+      0.18,
+      0.0175,
+      0.01,
+      0.9,
+      0.0725
+    ],
+    "norm_sd": [
+      0.23257810967952228,
+      0.862405786753869,
+      0.27959793639986186,
+      0.3841874552459724,
+      0.13112494141943454,
+      0.09949874471066199,
+      0.3000000010000009,
+      0.2593139998508135
+    ]
+  },
+  "covariate_content": {
+    "W": [
+      [
+        0.0015800541945048957,
+        0.00048543758399098005,
+        0.003680007278930719
+      ],
+      [
+        -3.9171910887964914,
+        0.4331958151864883,
+        3.483368443619159
+      ],
+      [
+        0.37936966202104383,
+        -0.1317359823930227,
+        -0.23361222768506798
+      ],
+      [
+        -0.34646583639738404,
+        0.24640189253712116,
+        0.08332378823678713
+      ],
+      [
+        1.4693257448570647,
+        0.313361076422925,
+        -1.82058415513824
+      ]
+    ],
+    "norm_mu": [
+      7.575147559825671,
+      2.7580159928689354,
+      4.095612269092676,
+      0.18
+    ],
+    "norm_sd": [
+      0.23257810967952228,
+      0.862405786753869,
+      0.27959793639986186,
+      0.3841874552459724
+    ]
+  },
+  "verification_v1_test": {
+    "n_items": 400,
+    "cov_full_ll": 0.27341,
+    "cov_content_ll": 0.35142
+  }
+}

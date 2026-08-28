@@ -1,0 +1,6119 @@
+{
+ "version": 2,
+ "generated": "2026-08-28",
+ "notes": "Corpus v2 manifest: 200 topics = 179 gate-surviving primaries + 21 gate-clean reserves (gate run 2026-08-28 dropped 72 primaries and 9 reserves; gate_summary.json final_corpus_size 179 counts primary survivors for the floor-160 check, clean reserves remain in the corpus). All articles are drafted from verbatim Wikipedia Current events portal strings (portals/*.txt) and fact-checked 2026-08-27 (verification [V] or [V*]); source.role 'anchor' means the portal string was the fact-check anchor. 40 propositions per topic: 20 ENTAIL / 10 CONTRADICT / 10 UNSPECIFIED (corpus-v2/pool). All 200 topics are split_role test (v2 is pure test material; the full-bar covariate fit is frozen from v1, tag prereg-waveconsensus-v1). corpus-v2/pool/metadata.json is derived by the registered mechanical rule in tools/corpus_v2/make_metadata.py (backtest vs v1 curation: trap_type 91.8%, polarity 98.7% agreement); see prereg-v2.yaml metadata: for the full rule text. DISPUTED-toll topics keep their contested figures as proposition material (see disputed_note).",
+ "window": "2026-02-15..2026-08-27 (Aug: 08-01..08-13 and 08-26..27)",
+ "jury": {
+  "selected": "2026-08-28",
+  "solver": null,
+  "rule": "12 members = 4 base models (Phase 4 families) x 3 variants (base weights, reason_included fine-tune, votes_only fine-tune). Fine-tunes: frozen Phase 4 adapters, MLX LoRA rank 8 scale 20 dropout 0, fused weights. See recipe below.",
+  "recipe": {
+   "file": "cutoff-probe/runs/2026-08-27-phase4/phase4_recipe.json",
+   "git_hash": "1273339",
+   "lora": {
+    "rank": 8,
+    "dropout": 0.0,
+    "scale": 20.0,
+    "iters": 200,
+    "learning_rate": 0.0001,
+    "num_layers": 16,
+    "max_seq_length": 2048
+   }
+  },
+  "members": [
+   {
+    "id": "llama-3.2-3b-instruct",
+    "base_model": "meta-llama/Llama-3.2-3B-Instruct",
+    "org": "Meta",
+    "variant": "base",
+    "seed": null,
+    "fused": false
+   },
+   {
+    "id": "llama-3.2-3b-instruct__reason_included",
+    "base_model": "meta-llama/Llama-3.2-3B-Instruct",
+    "org": "Meta",
+    "variant": "reason_included",
+    "seed": 7,
+    "fused": true
+   },
+   {
+    "id": "llama-3.2-3b-instruct__votes_only",
+    "base_model": "meta-llama/Llama-3.2-3B-Instruct",
+    "org": "Meta",
+    "variant": "votes_only",
+    "seed": 7,
+    "fused": true
+   },
+   {
+    "id": "gemma-3-4b-it",
+    "base_model": "google/gemma-3-4b-it",
+    "org": "Google",
+    "variant": "base",
+    "seed": null,
+    "fused": false
+   },
+   {
+    "id": "gemma-3-4b-it__reason_included",
+    "base_model": "google/gemma-3-4b-it",
+    "org": "Google",
+    "variant": "reason_included",
+    "seed": 13,
+    "fused": true
+   },
+   {
+    "id": "gemma-3-4b-it__votes_only",
+    "base_model": "google/gemma-3-4b-it",
+    "org": "Google",
+    "variant": "votes_only",
+    "seed": 13,
+    "fused": true
+   },
+   {
+    "id": "phi-4-mini-instruct",
+    "base_model": "microsoft/Phi-4-mini-instruct",
+    "org": "Microsoft",
+    "variant": "base",
+    "seed": null,
+    "fused": false
+   },
+   {
+    "id": "phi-4-mini-instruct__reason_included",
+    "base_model": "microsoft/Phi-4-mini-instruct",
+    "org": "Microsoft",
+    "variant": "reason_included",
+    "seed": 42,
+    "fused": true
+   },
+   {
+    "id": "phi-4-mini-instruct__votes_only",
+    "base_model": "microsoft/Phi-4-mini-instruct",
+    "org": "Microsoft",
+    "variant": "votes_only",
+    "seed": 42,
+    "fused": true
+   },
+   {
+    "id": "qwen35-4b",
+    "base_model": "Qwen/Qwen3.5-4B",
+    "org": "Qwen",
+    "variant": "base",
+    "seed": null,
+    "fused": false
+   },
+   {
+    "id": "qwen35-4b__reason_included",
+    "base_model": "Qwen/Qwen3.5-4B",
+    "org": "Qwen",
+    "variant": "reason_included",
+    "seed": 99,
+    "fused": true
+   },
+   {
+    "id": "qwen35-4b__votes_only",
+    "base_model": "Qwen/Qwen3.5-4B",
+    "org": "Qwen",
+    "variant": "votes_only",
+    "seed": 99,
+    "fused": true
+   }
+  ],
+  "head": {
+   "core": "64k calls = 200 x 40 x 8 (4 base + 4 reason_included)",
+   "secondary": "32k calls = 200 x 40 x 4 (votes_only, pre-registered secondary arm)"
+  }
+ },
+ "gate": {
+  "run": "corpus-v2/gate/runs/2026-08-28",
+  "date": "2026-08-28",
+  "panel": [
+   "gemma-3-1b-it",
+   "gemma-3-4b-it",
+   "llama-3.2-1b-instruct",
+   "llama-3.2-3b-instruct",
+   "olmoe-0125-instruct",
+   "phi-4-mini-instruct",
+   "qwen35-4b"
+  ],
+  "probes_total": 1405,
+  "canaries": {
+   "GC1": "PASS",
+   "GC2": "PASS",
+   "flagged_models": []
+  },
+  "anchors": 241,
+  "row_overrides": 33,
+  "drop_rule": "topic dropped if >=1 probe answered CORRECT by >=1 non-flagged panel model (self-knowledge contamination)",
+  "primary_dropped": [
+   "V2-001",
+   "V2-002",
+   "V2-006",
+   "V2-007",
+   "V2-014",
+   "V2-015",
+   "V2-018",
+   "V2-044",
+   "V2-046",
+   "V2-047",
+   "V2-048",
+   "V2-050",
+   "V2-051",
+   "V2-055",
+   "V2-057",
+   "V2-062",
+   "V2-067",
+   "V2-070",
+   "V2-072",
+   "V2-077",
+   "V2-081",
+   "V2-083",
+   "V2-087",
+   "V2-088",
+   "V2-094",
+   "V2-095",
+   "V2-104",
+   "V2-109",
+   "V2-112",
+   "V2-113",
+   "V2-116",
+   "V2-117",
+   "V2-118",
+   "V2-125",
+   "V2-128",
+   "V2-129",
+   "V2-138",
+   "V2-140",
+   "V2-141",
+   "V2-144",
+   "V2-155",
+   "V2-159",
+   "V2-163",
+   "V2-166",
+   "V2-168",
+   "V2-179",
+   "V2-180",
+   "V2-182",
+   "V2-184",
+   "V2-185",
+   "V2-188",
+   "V2-190",
+   "V2-193",
+   "V2-197",
+   "V2-199",
+   "V2-204",
+   "V2-208",
+   "V2-211",
+   "V2-212",
+   "V2-214",
+   "V2-215",
+   "V2-222",
+   "V2-223",
+   "V2-226",
+   "V2-228",
+   "V2-231",
+   "V2-235",
+   "V2-236",
+   "V2-238",
+   "V2-241",
+   "V2-243",
+   "V2-247"
+  ],
+  "primary_survivors": 179,
+  "reserve_contaminated": [
+   "R01",
+   "R04",
+   "R05",
+   "R06",
+   "R08",
+   "R10",
+   "R13",
+   "R16",
+   "R26"
+  ],
+  "floor": 160,
+  "post_gate": "179 surviving primaries >= floor 160; 21 gate-clean reserves added to reach the 200-topic target (decision 2026-08-28, recorded in session memory; on-disk set == gate-clean set, verified at freeze)"
+ },
+ "recheck": {
+  "date": "2026-08-28",
+  "n": 800,
+  "raw_agreement": "794/800 (99.25%)",
+  "fresh_correct": "800/800 after in-class proposition replacement (validator enforces 20/10/10)",
+  "note": "self-consistency check of the frozen label set, not inter-annotator agreement"
+ },
+ "articles": [
+  {
+   "id": "R02",
+   "file": "corpus-v2/articles/R02.md",
+   "topic": "Disasters and accidents",
+   "event_date": "02-28",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "The Star",
+     "Kenyans.co.ke",
+     "KBC"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7d2d317bb4d7285faa362e1183d73fc10b0566c87be464e34c4e32f73e770053",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R03",
+   "file": "corpus-v2/articles/R03.md",
+   "topic": "2025–26 Premier League",
+   "event_date": "03-08",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "PremierLeague.com",
+     "Reuters",
+     "BBC",
+     "Sky",
+     "Arsenal.com",
+     "The Athletic"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "6c28bbec664901eb083cffed18315c4005c655d9854c54fb09523ac3f21809fc",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R07",
+   "file": "corpus-v2/articles/R07.md",
+   "topic": "2026 Formula One World Championship",
+   "event_date": "03-29",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "formula1.com",
+     "Sky",
+     "Reuters",
+     "BBC",
+     "Guardian",
+     "NBC",
+     "AP"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "b0c53fd8a70c5e666903c12414a3a3d5ed4e8a980826225d8dc6b80c141f8c37",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R09",
+   "file": "corpus-v2/articles/R09.md",
+   "topic": "2026 attack on Israeli consulate in Istanbul",
+   "event_date": "04-08",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AFP (France24",
+     "Al Monitor",
+     "National Post)",
+     "Reuters",
+     "AP",
+     "Hurriyet Daily News",
+     "Al Jazeera"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "87870c4216a23dc5ed91a573db2b6a146f9aebd5369720d01dc0674939d6e8b2",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R11",
+   "file": "corpus-v2/articles/R11.md",
+   "topic": "14th floor case",
+   "event_date": "04-29",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (x2)",
+     "Bangkok Post",
+     "The Diplomat",
+     "Nation Thailand",
+     "Japan Times/Bloomberg",
+     "DW",
+     "The Thaiger"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "b10b45dd3eab049a7569e94f9ba3c7132843c9833e23440dd9e40d210cdab12f",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R12",
+   "file": "corpus-v2/articles/R12.md",
+   "topic": "2026 NFL draft",
+   "event_date": "04-23",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (x2 incl KNPR)",
+     "NFL.com",
+     "Raiders.com",
+     "USA Today",
+     "CBS Sports",
+     "Las Vegas Review-Journal"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f936ade7a1dcdc30786d126fb2b524262486a1f12c755a3ec1a30d481577cec1",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R14",
+   "file": "corpus-v2/articles/R14.md",
+   "topic": "2026 NBA playoffs",
+   "event_date": "05-30",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "ESPN (x2)",
+     "NBC Sports",
+     "AP",
+     "NBA.com (x2)",
+     "Basketball-Reference"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "5a2de0473ef63c922f153fd5018079caad872e1e382c26025d951ce930ac37fd",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R15",
+   "file": "corpus-v2/articles/R15.md",
+   "topic": "Sports",
+   "event_date": "05-17",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera/AP/Reuters",
+     "BBC",
+     "Himalayan Times",
+     "CNN",
+     "Times of India",
+     "Economic Times",
+     "Hindustan Times",
+     "LaCrux"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4de0e32b9446ff5bef83e1b5b72abd8a29ddbccf5d7be1dad424acc50d835523",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R17",
+   "file": "corpus-v2/articles/R17.md",
+   "topic": "2026 Philippine Senate lockdown",
+   "event_date": "05-14",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (x2)",
+     "Rappler",
+     "Philstar",
+     "CNN",
+     "NBC",
+     "ABC",
+     "CNA"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a21faf21131cab574be0e3463507098f003a79f6b37cb68c55ecb944abedb7fc",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R18",
+   "file": "corpus-v2/articles/R18.md",
+   "topic": "Arts and culture",
+   "event_date": "06-03",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (x2)",
+     "BBC",
+     "Variety",
+     "Hollywood Reporter",
+     "DW",
+     "Euronews",
+     "France 24",
+     "Independent"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "166a6f87faa8c4a2f657520ee69ff8f4da9834f307f42deefc7f9d4b9ecf8cf5",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R19",
+   "file": "corpus-v2/articles/R19.md",
+   "topic": "2026 Makerfield by-election",
+   "event_date": "06-18",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Guardian",
+     "Reuters",
+     "AP (x2)",
+     "BBC (x2)",
+     "Independent",
+     "NPR",
+     "ABC AU"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "087b4e0b50c66526e69c2e9d35dbcc0c7f2bddb95706ccd4d74e83c4ac549a36",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R20",
+   "file": "corpus-v2/articles/R20.md",
+   "topic": "Illegal immigration to India [MISLABELED: Arbour GG]",
+   "event_date": "06-08",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "gg.ca (x3)",
+     "Globe and Mail",
+     "CTV",
+     "CBC",
+     "Canada Gazette"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0cf38a8accc036880f4483cbb45e3b9e7d25fd038c5e6c42badd424978c73587",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R21",
+   "file": "corpus-v2/articles/R21.md",
+   "topic": "2026 FIFA World Cup",
+   "event_date": "06-29",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Reuters",
+     "BBC (x2)",
+     "Sky Sports",
+     "ESPN",
+     "NBC",
+     "DFB"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4a7573174556885b1969410cdb368d0bafbb2d7898d56e0b88b50568b6399660",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R22",
+   "file": "corpus-v2/articles/R22.md",
+   "topic": "Curaçao at the FIFA World Cup",
+   "event_date": "06-20",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "FIFA (x2)",
+     "Guardian",
+     "ESPN (x2)",
+     "Sky Sports (x2)",
+     "The Analyst"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "aea76ff62d083c8666610ffb69c50f6aaa403a5ab9db6a89d9a1e1ba24a5c3d1",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R23",
+   "file": "corpus-v2/articles/R23.md",
+   "topic": "2026 New Caledonian legislative election",
+   "event_date": "07-09",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "gouv.nc",
+     "congres.nc",
+     "RNZ",
+     "The Diplomat",
+     "AOL"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "225900544a59710dd0c7909742cbaae5b7a1ae668386334a37d8be69f4375416",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R24",
+   "file": "corpus-v2/articles/R24.md",
+   "topic": "2026 Wimbledon Championships",
+   "event_date": "07-11",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "WTA",
+     "AP",
+     "BBC",
+     "Guardian",
+     "Wimbledon.com",
+     "Sky Sports"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "637581e3f7450cf99145a92c747101ff4716410645f66cbe32fcd0f295396660",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R25",
+   "file": "corpus-v2/articles/R25.md",
+   "topic": "Doping in Russia, Russia at the Summer Olympics, International sporting sanctions during the Russian invasion of Ukraine",
+   "event_date": "07-07",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NPR",
+     "The Hill",
+     "ESPN",
+     "olympics.com (IOC statement)"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "58c678ea4925f60a368f963aab0c81c30e3d4cb16a80404317af592be2421b54",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R27",
+   "file": "corpus-v2/articles/R27.md",
+   "topic": "2027 Salvadoran presidential election",
+   "event_date": "07-12",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Tico Times",
+     "Wikipedia (2027 Salvadoran presidential election)",
+     "BBC",
+     "WLRN/AP",
+     "democratic-erosion.org"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "015b63d0d48e95259cabde937ad4775e83c667e9d0905c31e9d2c96c92286dea",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R28",
+   "file": "corpus-v2/articles/R28.md",
+   "topic": "Sports",
+   "event_date": "08-26",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (US News",
+     "Yahoo Sports",
+     "Hawaii News Now)",
+     "The Guardian",
+     "USA Today",
+     "ABC17",
+     "The Daily Caller",
+     "The Game Haus",
+     "Wikipedia"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d84ea11b873b42d46d16f8ae382b799d642fb5b91daa37ea27da664d45af0434",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R29",
+   "file": "corpus-v2/articles/R29.md",
+   "topic": "Colombian conflict",
+   "event_date": "08-04",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "EFE (Demócrata",
+     "worldpressa",
+     "últimasnoticias.ve)",
+     "GDELT/Cameo",
+     "JEP (jep.gov.co)",
+     "Wikipedia (Portal 2026 August 4 = portal line)",
+     "WaPo/Newsday",
+     "The City Paper Bogotá"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d13bb69a539b482d989738c7f22d356b6121511effaf3a9900f184cf5c022ae3",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "R30",
+   "file": "corpus-v2/articles/R30.md",
+   "topic": "Haitian conflict",
+   "event_date": "08-06",
+   "selection_month": "reserve",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BINUH (binuh.unmissions.org)",
+     "HaitiDocs (BINUH/OHCHR thematic 2026-08)",
+     "OHCHR press release",
+     "ReliefWeb"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "aca3d1dc211954893bb98213ee55a4714ed3d42aac67a142cef5df2add9f75dd",
+   "selection": "reserve (gate-clean)"
+  },
+  {
+   "id": "V2-003",
+   "file": "corpus-v2/articles/V2-003.md",
+   "topic": "Solar eclipse of February 17, 2026",
+   "event_date": "02-17",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Universe Today",
+     "SciAm",
+     "ESA",
+     "Wikipedia"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "db83c570842cb2ef349d2c896712356b012211256fb675981486c4631be839b8"
+  },
+  {
+   "id": "V2-004",
+   "file": "corpus-v2/articles/V2-004.md",
+   "topic": "Nagorno-Karabakh conflict",
+   "event_date": "02-17",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "Amnesty",
+     "Wikipedia (Trial of former Republic of Artsakh leaders)"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7285adbce4c6ab7c17aa0c053f13aa25b44c823008f1bded2adc8bd617e6274d"
+  },
+  {
+   "id": "V2-005",
+   "file": "corpus-v2/articles/V2-005.md",
+   "topic": "Premiership of Tarique Rahman",
+   "event_date": "02-17",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "The Hindu",
+     "Guardian",
+     "Britannica"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a9ada0f417288a3be1b86935731bb3a63846a66e87bd16aa5c4a10a423999d82"
+  },
+  {
+   "id": "V2-008",
+   "file": "corpus-v2/articles/V2-008.md",
+   "topic": "Politics and elections",
+   "event_date": "02-19",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "TIME",
+     "CBS",
+     "DefenseScoop",
+     "Wikipedia (United States UFO files)"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "59f46b61f32f25f6fd0cb64448d32bb938bfefafb144bb7459534bd38cde7d52"
+  },
+  {
+   "id": "V2-009",
+   "file": "corpus-v2/articles/V2-009.md",
+   "topic": "Arrest of Yoon Suk Yeol",
+   "event_date": "02-19",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "JURIST",
+     "Al Jazeera",
+     "CNA",
+     "Wikipedia"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "856f12f7127eacd16aefb096d908382508f12b4d882a3d03485af057a3558c98"
+  },
+  {
+   "id": "V2-010",
+   "file": "corpus-v2/articles/V2-010.md",
+   "topic": "Connections of Jeffrey Epstein",
+   "event_date": "02-19",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CBS",
+     "AP",
+     "CNN",
+     "Britannica"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "618f1d99bd332197e6abfd30e9a9665cb3e67e09b6e878650bce5e7943901d1b"
+  },
+  {
+   "id": "V2-011",
+   "file": "corpus-v2/articles/V2-011.md",
+   "topic": "Politics and elections",
+   "event_date": "02-20",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (PBI Airport)",
+     "NPR",
+     "NBC/AP"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "335583688a30b6da992e30ba7db45f30c8201bd930d2f4fa5f1140b8caaaf2cd"
+  },
+  {
+   "id": "V2-012",
+   "file": "corpus-v2/articles/V2-012.md",
+   "topic": "Health and environment",
+   "event_date": "02-20",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "RFI"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "185321be00025f8aed0e6ac721a72bd7561539fae0790a6cf16e36130724b8a7"
+  },
+  {
+   "id": "V2-013",
+   "file": "corpus-v2/articles/V2-013.md",
+   "topic": "Arts and culture",
+   "event_date": "02-20",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP/America Magazine",
+     "Vatican News"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d6ab1a51af925cf04c9d96db2e21c81aa56c6c2ed08ff005887523ba4bfd6b4c"
+  },
+  {
+   "id": "V2-016",
+   "file": "corpus-v2/articles/V2-016.md",
+   "topic": "2026 Jalisco operation",
+   "event_date": "02-22",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "LA Times",
+     "TIME",
+     "Al Jazeera",
+     "ABC7",
+     "Wikipedia"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a6521fe137302387e8d5a7172ea67fc05d0a80da433827b722dae56a521f0cfb"
+  },
+  {
+   "id": "V2-017",
+   "file": "corpus-v2/articles/V2-017.md",
+   "topic": "Ice hockey at the 2026 Winter Olympics",
+   "event_date": "02-22",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Guardian",
+     "BBC",
+     "Team USA",
+     "Daily Cal"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "298e1607f991a234df3a0d2f5415eb57c61ba4c84c6c7427bf4aadb4d01288b6"
+  },
+  {
+   "id": "V2-019",
+   "file": "corpus-v2/articles/V2-019.md",
+   "topic": "Science and technology",
+   "event_date": "02-24",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Guardian",
+     "Reuters",
+     "POLITICO",
+     "AP"
+    ]
+   },
+   "domain": "tech",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "48d912ca1ab2663c2ddaf2d437494fc122d83c15837c54f5a6369efbef15066a"
+  },
+  {
+   "id": "V2-020",
+   "file": "corpus-v2/articles/V2-020.md",
+   "topic": "2026 Iran war",
+   "event_date": "02-28",
+   "selection_month": "2026-02",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2026 Minab school attack)",
+     "UNICEF",
+     "Amnesty",
+     "Middle East Eye",
+     "Guardian"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "72ff53ae60a61f5e3aa986f63573c3920697c705867498e19c81cd2d56f64900",
+   "disputed_note": "DISPUTED toll: 85 initial (judiciary) to 156 (Wikipedia/Amnesty, incl. 120 schoolchildren) to 180 (Middle East Eye 2 Mar); UNICEF 5 Mar: 168 girls killed in this school; Amnesty attributes to US strike (school co-located single-gender, adjacent IRGC navy compound); search ended 1 Mar."
+  },
+  {
+   "id": "V2-021",
+   "file": "corpus-v2/articles/V2-021.md",
+   "topic": "2026 Iranian Supreme Leader election",
+   "event_date": "03-01",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "TRT",
+     "Al Jazeera",
+     "Reuters Connect"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a5e2314167ac8101df1e690977831a62b0defef922cfc7e0ecf6ccb6544d5057"
+  },
+  {
+   "id": "V2-022",
+   "file": "corpus-v2/articles/V2-022.md",
+   "topic": "Assassination of Ali Khamenei",
+   "event_date": "03-01",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Anadolu",
+     "Iran International",
+     "Al Jazeera"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "06d9ebfac1a5363425f29d00c437be08a2f0e00394223ee3cb26eab443e8caea"
+  },
+  {
+   "id": "V2-023",
+   "file": "corpus-v2/articles/V2-023.md",
+   "topic": "Hong Kong–mainland China relations, China–United Kingdom relations, Chinese intelligence activity abroad",
+   "event_date": "03-04",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2024 Hong Kong trade office spy case)",
+     "BBC",
+     "Met Police"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "1a88e6dbb45ee5f35333601ecc6798bf1c971f4c6cfe204e7f2b132f4997d9ad"
+  },
+  {
+   "id": "V2-024",
+   "file": "corpus-v2/articles/V2-024.md",
+   "topic": "Sinking of IRIS Dena",
+   "event_date": "03-04",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Sinking of IRIS Dena)",
+     "Reuters",
+     "War on the Rocks",
+     "Al Jazeera",
+     "Just Security"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "aa45cf937d603928c7247c9f9927f4c9e1e0dda0f5d76cc344d14eddb66e7bc6"
+  },
+  {
+   "id": "V2-025",
+   "file": "corpus-v2/articles/V2-025.md",
+   "topic": "Second cabinet of Donald Trump",
+   "event_date": "03-05",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CNBC",
+     "AP",
+     "NPR",
+     "POLITICO"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "77c3518487db7220c18e1bde829d06a8020026e837f5660e5a57a3d8ab2df60c"
+  },
+  {
+   "id": "V2-026",
+   "file": "corpus-v2/articles/V2-026.md",
+   "topic": "Economic impact of the 2026 Iran war",
+   "event_date": "03-05",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "KED Global",
+     "Bloomberg",
+     "FT"
+    ]
+   },
+   "domain": "economy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d2c604ac9ee3b242325e17d22d506e2d3792363eeb77c22f6b81034463cb4815"
+  },
+  {
+   "id": "V2-027",
+   "file": "corpus-v2/articles/V2-027.md",
+   "topic": "2026 Nepalese general election [MISLABELED: Guinea party dissolution]",
+   "event_date": "03-07",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Al Jazeera",
+     "DW"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "22d560e6a8f22c5b3de741142b21ab00f754e7c75a760615b6a5180b5888cf77"
+  },
+  {
+   "id": "V2-028",
+   "file": "corpus-v2/articles/V2-028.md",
+   "topic": "2026 Men's T20 World Cup",
+   "event_date": "03-08",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia",
+     "Cricinfo",
+     "The Athletic",
+     "UNI"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d482d92bc4dfcfe6b3b84a8f2d93098529d11827b4599003a5b98072f13a1113"
+  },
+  {
+   "id": "V2-029",
+   "file": "corpus-v2/articles/V2-029.md",
+   "topic": "Soham murders",
+   "event_date": "03-08",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "The Independent",
+     "BBC",
+     "FOX6"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9756800db590411a8e8ed759468d6d0941729a0484d605a1e874cc5c811efd6c"
+  },
+  {
+   "id": "V2-030",
+   "file": "corpus-v2/articles/V2-030.md",
+   "topic": "Greenland crisis",
+   "event_date": "03-09",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters (9 Mar)",
+     "DVIDS",
+     "grosswald.org",
+     "Wikipedia (Operation Arctic Endurance)"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e31862149fa234aa1a35db3faa2ee882e59660e4eb6646d0da2efc232ea6a09d"
+  },
+  {
+   "id": "V2-031",
+   "file": "corpus-v2/articles/V2-031.md",
+   "topic": "Bam Adebayo's 83-point game",
+   "event_date": "03-10",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Bam Adebayo's 83-point game)",
+     "NBA.com/AP",
+     "ESPN",
+     "TSN"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "b30c01001a121510257726e5f605d549ef73c4177e19e2337339d161ae02ae3a"
+  },
+  {
+   "id": "V2-032",
+   "file": "corpus-v2/articles/V2-032.md",
+   "topic": "Australia–Iran relations, Defection of Iran women's national football team",
+   "event_date": "03-10",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "CNN"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c7fb5c5dd53aa7a55ea87501e0e392aaf09f7b3b6ca4f0b46d6307eafbc4c177"
+  },
+  {
+   "id": "V2-033",
+   "file": "corpus-v2/articles/V2-033.md",
+   "topic": "2026 Strait of Hormuz crisis",
+   "event_date": "03-11",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Axios",
+     "WSJ",
+     "Al Jazeera",
+     "BloombergNEF"
+    ]
+   },
+   "domain": "economy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "cc7d11b2787f4d6f27521676e172b81d075d0e4c539e93281cb14237a24438ae"
+  },
+  {
+   "id": "V2-034",
+   "file": "corpus-v2/articles/V2-034.md",
+   "topic": "2026 Nepalese general election [MISLABELED: Nawrocki veto]",
+   "event_date": "03-12",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "CGTN",
+     "TVP World",
+     "Visegrad Insight"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "aa3d1df6224525951be8f58594155c444cb19b3bd145616b64cfb7e97da4fb3c"
+  },
+  {
+   "id": "V2-035",
+   "file": "corpus-v2/articles/V2-035.md",
+   "topic": "2026 Nepalese general election",
+   "event_date": "03-12",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "BBC",
+     "Anadolu",
+     "Wikipedia"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "1e1b23cbdf85bc5911b81fe5626635cf68bf8efe0551a3fac10d96b58e0df53f"
+  },
+  {
+   "id": "V2-036",
+   "file": "corpus-v2/articles/V2-036.md",
+   "topic": "Crocus City Hall attack",
+   "event_date": "03-12",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Wikipedia",
+     "Jamestown",
+     "Moscow Times"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d49f11e214253b1c198c6eaf255ce6b7986d3e2a9d3e05dd87ebf88295aefe99"
+  },
+  {
+   "id": "V2-037",
+   "file": "corpus-v2/articles/V2-037.md",
+   "topic": "El Salvador–United States relations, Nuclear power in El Salvador",
+   "event_date": "03-13",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Energy for Growth",
+     "world-nuclear.org",
+     "trade.gov"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0911245955c1eeac4248184da44e475731a3ba1cabe05fc592c6cbf5c95abf08"
+  },
+  {
+   "id": "V2-038",
+   "file": "corpus-v2/articles/V2-038.md",
+   "topic": "Spain in the 2026 Iran war, Gaza war protests [MISLABELED: Kolesnikova Charlemagne]",
+   "event_date": "03-14",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Washington Times",
+     "DW",
+     "Alamy"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a10e6334269745e82e802fd3d555bb9434b77e2926a8bced59a51b59a34dd802"
+  },
+  {
+   "id": "V2-039",
+   "file": "corpus-v2/articles/V2-039.md",
+   "topic": "2026 Chinese Grand Prix",
+   "event_date": "03-15",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "F1.com",
+     "Guardian",
+     "ESPN"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "3d4a565f70ae7b862f47e99fc62b7af04d1ee4489b73989fa70cf4c7fef79427"
+  },
+  {
+   "id": "V2-040",
+   "file": "corpus-v2/articles/V2-040.md",
+   "topic": "98th Academy Awards",
+   "event_date": "03-15",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Variety",
+     "CNBC",
+     "ABC News",
+     "ABC7"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "15fd59d9dc8f7d778cc92a3ad714e632525d56a5e547677f2404b32ab5b4f095"
+  },
+  {
+   "id": "V2-041",
+   "file": "corpus-v2/articles/V2-041.md",
+   "topic": "98th Academy Awards",
+   "event_date": "03-15",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Variety",
+     "CNBC",
+     "Hollywood Reporter"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "ec8938879f02931a4e7da93e8e4c08b6cd320347ebc9c57dcb3b18c5061de7b2"
+  },
+  {
+   "id": "V2-042",
+   "file": "corpus-v2/articles/V2-042.md",
+   "topic": "Vaccination policy of the United States",
+   "event_date": "03-16",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CIDRAP",
+     "ABC News",
+     "BioPharma Dive",
+     "AAI"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "93b818ad43ecaf07837cbe2ed4ea4e06976d0ee14d0f0009f2c7c852fe379675"
+  },
+  {
+   "id": "V2-043",
+   "file": "corpus-v2/articles/V2-043.md",
+   "topic": "2026 Maiduguri bombings",
+   "event_date": "03-16",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2026 Maiduguri bombings)",
+     "Reuters",
+     "BBC",
+     "Al Jazeera"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "149600adea5e82b93a6596bda2cb5a22affaff3436f1437b51d9f278bc4af262"
+  },
+  {
+   "id": "V2-045",
+   "file": "corpus-v2/articles/V2-045.md",
+   "topic": "Assassination of Ali Larijani",
+   "event_date": "03-17",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "AP",
+     "Al Jazeera",
+     "NYT",
+     "Wikipedia"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "17d0ed04d0f4a110bb1cb9ce43469a2d9d47cd2d00a2bf0ef21e5129e32b074e"
+  },
+  {
+   "id": "V2-049",
+   "file": "corpus-v2/articles/V2-049.md",
+   "topic": "International Criminal Court arrest warrants for Russian leaders",
+   "event_date": "03-19",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Courthouse News",
+     "ICC",
+     "CICC",
+     "HRW",
+     "EEAS"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0f82fd20ff5f2004792bb6211272a9e8cae100462cf70a1a1acfefd97430e05a"
+  },
+  {
+   "id": "V2-052",
+   "file": "corpus-v2/articles/V2-052.md",
+   "topic": "Sports",
+   "event_date": "03-23",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NFL.com",
+     "ESPN (Schefter)",
+     "Field Gulls",
+     "Fox Sports"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "50a885929596a79c4c45f3bd5c109651089b3c59f48cad471150df8e8201b3a8"
+  },
+  {
+   "id": "V2-053",
+   "file": "corpus-v2/articles/V2-053.md",
+   "topic": "2026 Italian constitutional referendum",
+   "event_date": "03-23",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia",
+     "JURIST",
+     "ConstitutionNet (BBC)"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "33fe78d329571165d6ed280f5ce1ac5d016366cc92e604444fbd40e303e453cf"
+  },
+  {
+   "id": "V2-054",
+   "file": "corpus-v2/articles/V2-054.md",
+   "topic": "Disasters and accidents",
+   "event_date": "03-25",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Africanews",
+     "Punch",
+     "UN"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9868181019abc2978c7b98ba53ffae01f73602c770319ebd42f70e16ef27e228"
+  },
+  {
+   "id": "V2-056",
+   "file": "corpus-v2/articles/V2-056.md",
+   "topic": "Disasters and accidents",
+   "event_date": "03-25",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "Reuters",
+     "AP",
+     "Yeni Safak"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "81293bd83e429dada841172dcd8e5fd42dcffce4234a1c20894698e572ec790b"
+  },
+  {
+   "id": "V2-058",
+   "file": "corpus-v2/articles/V2-058.md",
+   "topic": "2026 Iranian strikes on Saudi Arabia",
+   "event_date": "03-27",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NBC",
+     "CNN",
+     "Air & Space Forces Magazine",
+     "The Aviationist",
+     "France 24"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "56fdaedfdd25299f9c00063be09b1d3106b1bc55306321950f3a3d14a75594b0"
+  },
+  {
+   "id": "V2-059",
+   "file": "corpus-v2/articles/V2-059.md",
+   "topic": "Red Sea crisis",
+   "event_date": "03-28",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Houthis in the 2026 Iran war)",
+     "Times of Israel",
+     "France 24",
+     "Al Jazeera",
+     "Asharq Al-Awsat"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "2ee96cae4eb22b0f04c85d2df8cb277c8897d687604f655f0ca14c9e4bd974cc"
+  },
+  {
+   "id": "V2-060",
+   "file": "corpus-v2/articles/V2-060.md",
+   "topic": "Constitutional crisis in Somalia",
+   "event_date": "03-30",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "ABC/AP",
+     "MSF",
+     "Africanews"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "dd473723caf1d4eda4cfeac0cf22cb3329ace8b306809288a5d7a5cbeef040f8"
+  },
+  {
+   "id": "V2-061",
+   "file": "corpus-v2/articles/V2-061.md",
+   "topic": "Economic impact of the 2026 Iran war",
+   "event_date": "03-30",
+   "selection_month": "2026-03",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "FCA",
+     "BBC",
+     "Reuters",
+     "GOV.UK"
+    ]
+   },
+   "domain": "economy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "aac51449106bb081bd38256340fb9d5a7668eed1a28cd7043e46ba445f19727d"
+  },
+  {
+   "id": "V2-063",
+   "file": "corpus-v2/articles/V2-063.md",
+   "topic": "Politics and elections",
+   "event_date": "04-01",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "San Marino TV",
+     "Libertas.sm",
+     "GiornaleSM",
+     "Tribuna Politica",
+     "Reggenza official site",
+     "Newsasfacts"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9224aa043797c7e29a6ab1fabf53b39c9585032a1cc6aca2260d27ea299d93a8"
+  },
+  {
+   "id": "V2-064",
+   "file": "corpus-v2/articles/V2-064.md",
+   "topic": "Artemis program",
+   "event_date": "04-01",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NASA (3 releases)",
+     "AP",
+     "Space.com",
+     "Scientific American",
+     "Ars Technica"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e3000e1a735b31a1149cd68dc92c51adf421a77a461f6bb73c5562754bcf5a36"
+  },
+  {
+   "id": "V2-065",
+   "file": "corpus-v2/articles/V2-065.md",
+   "topic": "Eastern front of the Russo-Ukrainian war",
+   "event_date": "04-01",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP/PBS",
+     "Kyiv Independent",
+     "Interfax-Ukraine",
+     "Ukrainska Pravda",
+     "Euromaidan Press/ISW",
+     "Militarnyi"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f0433b84c5323c5ffefc20da29db1b188765ce73b5879741404804481b1c3d3c"
+  },
+  {
+   "id": "V2-066",
+   "file": "corpus-v2/articles/V2-066.md",
+   "topic": "2026 Myanmar presidential election",
+   "event_date": "04-03",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Myanmar Pres Office Ministry",
+     "GNLM",
+     "MyanmarITV",
+     "Reuters",
+     "AP",
+     "Xinhua",
+     "Wikipedia"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "de8dd00a5bdf75643815f41167f620677de4fbac4f617b9f6b0a7bfaac8c6be7"
+  },
+  {
+   "id": "V2-068",
+   "file": "corpus-v2/articles/V2-068.md",
+   "topic": "Pakistan in the 2026 Iran war",
+   "event_date": "04-06",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "Al Jazeera",
+     "ABC AU",
+     "Iran Intl",
+     "Express Tribune",
+     "Media Line",
+     "Dawn",
+     "The Print/FT"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d176783e29095315b27a0502ba557d1d6faf9797f0756e165570b6fe9f61ccbc"
+  },
+  {
+   "id": "V2-069",
+   "file": "corpus-v2/articles/V2-069.md",
+   "topic": "2026 Vietnamese presidential election",
+   "event_date": "04-07",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "Bloomberg",
+     "VietnamPlus (NA Press Release No.2 + VNA)",
+     "VOV",
+     "VietNamNet",
+     "Nhan Dan",
+     "Business Times SG"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9eb784bffaf822e67e2eedb5d1db0704db1e0e43666458629b02e1f5a225a7ae"
+  },
+  {
+   "id": "V2-071",
+   "file": "corpus-v2/articles/V2-071.md",
+   "topic": "Destruction of cultural heritage sites during the 2026 Iran war [MISLABELED: Wireless Festival]",
+   "event_date": "04-07",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Reuters",
+     "AP",
+     "Independent",
+     "CNN",
+     "Euronews",
+     "Hollywood Reporter",
+     "The Conversation"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9e10fda10c5019c593dc1fec271ad24401f4f9b3c6d7db66c5b4638659d91145"
+  },
+  {
+   "id": "V2-073",
+   "file": "corpus-v2/articles/V2-073.md",
+   "topic": "2026 Strait of Hormuz crisis",
+   "event_date": "04-07",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "UN News",
+     "AP/PBS",
+     "Al Jazeera",
+     "Arab News"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "32609374276eca48ab75b4fd7a22a488dd1d7525dedaaa59b307a8e474e0bf31"
+  },
+  {
+   "id": "V2-074",
+   "file": "corpus-v2/articles/V2-074.md",
+   "topic": "Gilgo Beach serial killings",
+   "event_date": "04-08",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia",
+     "ABC7 NY",
+     "PBS/AP",
+     "BBC",
+     "ABC News",
+     "NBC"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "05ac9123d1a6f9e5465357db0378599d7cbcea01978774baa929cfadab110a59"
+  },
+  {
+   "id": "V2-075",
+   "file": "corpus-v2/articles/V2-075.md",
+   "topic": "2026 Iran war ceasefire",
+   "event_date": "04-08",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Al Jazeera",
+     "PBS/AP",
+     "Nikkei/Reuters",
+     "El Pais",
+     "UPI"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "bf672c9aca28b1fd896df2754ee6a5946867d7c9cac8e12a6e548e4af0f7f6b4"
+  },
+  {
+   "id": "V2-076",
+   "file": "corpus-v2/articles/V2-076.md",
+   "topic": "Arts and culture",
+   "event_date": "04-09",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "AFP/France24",
+     "RNS",
+     "LA Times",
+     "Independent",
+     "Anadolu",
+     "The National"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d8ab9f1f4b84aa0a3503fa8215ae30d7b20592409bb965f299914490f19bb22b"
+  },
+  {
+   "id": "V2-078",
+   "file": "corpus-v2/articles/V2-078.md",
+   "topic": "Ngogo chimpanzee war",
+   "event_date": "04-09",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Science/doi",
+     "NBC",
+     "CNN",
+     "ASU",
+     "ABC",
+     "CBC",
+     "Mongabay"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "318f2575be2dd180ccfc0831214c0dbabf0141cd547f188c35d9880955696f4e"
+  },
+  {
+   "id": "V2-079",
+   "file": "corpus-v2/articles/V2-079.md",
+   "topic": "2026 Iraqi presidential election",
+   "event_date": "04-11",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "INA",
+     "Wikipedia",
+     "Anadolu",
+     "The National",
+     "Kurdistan24"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4801842c7a3e276e9ffaaa5eb5c650fff6eece27b303746014a1bd575fd01ebd"
+  },
+  {
+   "id": "V2-080",
+   "file": "corpus-v2/articles/V2-080.md",
+   "topic": "2026 Grand National",
+   "event_date": "04-11",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "Racing Post",
+     "BBC",
+     "RacingTV",
+     "Jockey Club",
+     "Guardian",
+     "Sky"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7cdff9a7341376292cb066d06a18685cd0c79c6c539ded871c42b640a104f8c0"
+  },
+  {
+   "id": "V2-082",
+   "file": "corpus-v2/articles/V2-082.md",
+   "topic": "2026 Hungarian parliamentary election",
+   "event_date": "04-12",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "BBC",
+     "Al Jazeera",
+     "DW",
+     "ABC",
+     "BBJ",
+     "Wikipedia"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "8bfbd53e93a287fdf116cd985f1d41a0bf23d60a3c9e947171a10e150cc8b0aa"
+  },
+  {
+   "id": "V2-084",
+   "file": "corpus-v2/articles/V2-084.md",
+   "topic": "Lafarge scandal",
+   "event_date": "04-13",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Guardian",
+     "Al Jazeera",
+     "France24/AFP",
+     "The National",
+     "DW",
+     "Justice Info"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d7efdfceb0e441d8791f4729eaa9fa7a7e34a1a10ed23e2b55af6e2354d2df3f"
+  },
+  {
+   "id": "V2-085",
+   "file": "corpus-v2/articles/V2-085.md",
+   "topic": "Algeria–Holy See relations, Pastoral visits of Pope Leo XIV",
+   "event_date": "04-13",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Vatican News",
+     "AP",
+     "L'Osservatore Romano",
+     "EWTN",
+     "NCR"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "5f177a9525dbfd3ef13710a0b02e914745913e30f9e84e8bc27d9ae74166b6c4"
+  },
+  {
+   "id": "V2-086",
+   "file": "corpus-v2/articles/V2-086.md",
+   "topic": "Arts and culture",
+   "event_date": "04-14",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "rockhall.com",
+     "AP",
+     "NPR",
+     "Rolling Stone",
+     "BBC",
+     "NME",
+     "Hollywood Reporter"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "62e13af8aa5a0fa63c4c1440c5c9f7b7f64770c8e3c2d256d737e4548c44cd72"
+  },
+  {
+   "id": "V2-089",
+   "file": "corpus-v2/articles/V2-089.md",
+   "topic": "Naval blockade of Iran",
+   "event_date": "04-19",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "Navy Times",
+     "Guardian",
+     "NPR",
+     "CNA/Reuters",
+     "CNN",
+     "Seatrade",
+     "Independent",
+     "CENTCOM/X"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f97a1bb417966b29e717d9a5722c79989fbebeb6ef2833799a6e154ed7960d16"
+  },
+  {
+   "id": "V2-090",
+   "file": "corpus-v2/articles/V2-090.md",
+   "topic": "2026 Bulgarian parliamentary election, Bulgarian political crisis",
+   "event_date": "04-20",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "BTA",
+     "DW",
+     "AP",
+     "France24",
+     "Anadolu",
+     "OSW"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "324fe6426a701b4902f110b02eabf690ab3d1418a14f71a8a261010a50daaf33"
+  },
+  {
+   "id": "V2-091",
+   "file": "corpus-v2/articles/V2-091.md",
+   "topic": "Disasters and accidents",
+   "event_date": "04-21",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Japan Times",
+     "AP",
+     "Jiji",
+     "Asahi",
+     "Mainichi/Kyodo",
+     "Nikkei",
+     "Kyodo News"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "5d17895091896539f81232096f27f7ac769a7119affd30a697fc0ca5d055b7d2"
+  },
+  {
+   "id": "V2-092",
+   "file": "corpus-v2/articles/V2-092.md",
+   "topic": "Mali War",
+   "event_date": "04-21",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "TASS",
+     "Moscow Times/AFP",
+     "Straits Times/Reuters",
+     "Africanews",
+     "Independent",
+     "Washington Times"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4e29e253a1b5902a5de947039b049f410cfecee5b140b4b526708fb0d8034b9b"
+  },
+  {
+   "id": "V2-093",
+   "file": "corpus-v2/articles/V2-093.md",
+   "topic": "2025 Indonesian protests [MISLABELED: SPLC indictment]",
+   "event_date": "04-21",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "DOJ/Justice.gov",
+     "AP",
+     "NBC",
+     "NYT",
+     "LA Times",
+     "Guardian",
+     "NPR",
+     "Politico"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "6b8895ce67570a78196e7925f4ce955a5a42287467f119064056fb8a40eeb61f"
+  },
+  {
+   "id": "V2-096",
+   "file": "corpus-v2/articles/V2-096.md",
+   "topic": "Syrian conflict (2024–present)",
+   "event_date": "04-24",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "AP",
+     "BBC",
+     "Guardian",
+     "TRT",
+     "The National/Reuters",
+     "Irish Times"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "bbb05ce5ded07665a0a0687b6e6806328c5c84725f2d16fd013d76f9ab9789fd"
+  },
+  {
+   "id": "V2-097",
+   "file": "corpus-v2/articles/V2-097.md",
+   "topic": "2026 White House Correspondents' Dinner shooting",
+   "event_date": "04-25",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NBC",
+     "CBS",
+     "AP/PBS",
+     "Axios",
+     "NPR",
+     "ABC AU",
+     "CBS17/AP"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f96c40689aec3db184a210976d09507c0905600793efc6a19ae78312a68826c6"
+  },
+  {
+   "id": "V2-098",
+   "file": "corpus-v2/articles/V2-098.md",
+   "topic": "2026 Israeli legislative election",
+   "event_date": "04-26",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Times of Israel",
+     "Al Jazeera/AFP/Reuters",
+     "Haaretz",
+     "Israel Hayom",
+     "JPost",
+     "Jewish Insider"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "6e8a4629601d4046f1c30e977817d0728639a012793a13e32920b251a9b6daa0"
+  },
+  {
+   "id": "V2-099",
+   "file": "corpus-v2/articles/V2-099.md",
+   "topic": "2026 Chevron Championship",
+   "event_date": "04-26",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "LPGA",
+     "Chevron.com",
+     "Golf Digest",
+     "ESPN",
+     "Golfweek",
+     "Houston Chronicle",
+     "NBC Sports"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c87519beaf2f8c94bc7120eb4b892373da9e37527bc2dd95a639a6336d98391d"
+  },
+  {
+   "id": "V2-100",
+   "file": "corpus-v2/articles/V2-100.md",
+   "topic": "2026 London Marathon",
+   "event_date": "04-26",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "World Athletics",
+     "BBC Sport",
+     "AP",
+     "Sky",
+     "London Marathon Events",
+     "Athletics Weekly"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "caf691eada274938fc8196bb1b9bc4d3b31173118bf7d55d7090afb75ec9041e"
+  },
+  {
+   "id": "V2-101",
+   "file": "corpus-v2/articles/V2-101.md",
+   "topic": "Pentagon UFO videos [MISLABELED: Messias rejection]",
+   "event_date": "04-29",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "AP/WaPo",
+     "Folha",
+     "Valor",
+     "Courthouse News",
+     "Rio Times",
+     "G1"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "66910792b8856acec9c18d40c1cc7ed1b796018961d5d8a66f83f48ebfd4b613"
+  },
+  {
+   "id": "V2-102",
+   "file": "corpus-v2/articles/V2-102.md",
+   "topic": "Peace negotiations in the Russo-Ukrainian war",
+   "event_date": "04-29",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Kremlin.ru",
+     "NPR",
+     "Kyiv Independent",
+     "Moscow Times/AFP",
+     "TRT",
+     "Kyiv Post",
+     "Washington Examiner",
+     "British Brief"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c24b3e4b7cad26c244d1e4e8944b7e29c7ff9d1d2014a6d4c56f7353dde6cf2b"
+  },
+  {
+   "id": "V2-103",
+   "file": "corpus-v2/articles/V2-103.md",
+   "topic": "2026 United States federal government shutdowns",
+   "event_date": "04-30",
+   "selection_month": "2026-04",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP/PBS",
+     "CNN",
+     "ABC News",
+     "CBS",
+     "CNBC",
+     "NPR",
+     "The Hill"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7212f93b3afcacb5f468a2eace630bb672f9487be575a061915be72923e65a8f"
+  },
+  {
+   "id": "V2-105",
+   "file": "corpus-v2/articles/V2-105.md",
+   "topic": "2026 Kentucky Derby",
+   "event_date": "05-02",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "KentuckyDerby.com",
+     "ESPN",
+     "CBS",
+     "CBC",
+     "US Racing",
+     "Courier-Journal",
+     "KYTA",
+     "Yahoo/AP"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "ed86ac7d4571bd1d4292f21d4e333945a8aedca67ca3c5751365def5bc158853"
+  },
+  {
+   "id": "V2-106",
+   "file": "corpus-v2/articles/V2-106.md",
+   "topic": "Economic impact of the 2026 Iran war",
+   "event_date": "05-04",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Bloomberg",
+     "Dubai Media Office",
+     "The National",
+     "Skift",
+     "Independent",
+     "Business Times SG",
+     "Gulf Times/AFP",
+     "Peninsula Qatar"
+    ]
+   },
+   "domain": "economy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "975ed8720b381d95eb0a15542c5b51613b45177e8ff691c54a5d7f0ec68a1bcd"
+  },
+  {
+   "id": "V2-107",
+   "file": "corpus-v2/articles/V2-107.md",
+   "topic": "2024 South Korean martial law crisis",
+   "event_date": "05-07",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Yonhap",
+     "AP",
+     "Korea Herald",
+     "Al Jazeera",
+     "Seoul Economic Daily",
+     "Aju Press"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "8afde5ce44dc81b195c08ba4294a771538aec4a900fd89540f1c781dfbe06ddd"
+  },
+  {
+   "id": "V2-108",
+   "file": "corpus-v2/articles/V2-108.md",
+   "topic": "7 May 2026 United States strikes on Iran",
+   "event_date": "05-07",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CENTCOM.mil + DVIDS",
+     "CBS",
+     "NBC",
+     "UPI",
+     "USA Today",
+     "Air & Space Forces Magazine",
+     "Military.com"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "63ea6384fc74018a863925366c505397d7062d7d9fd7657efaaf9af859ae3ea1"
+  },
+  {
+   "id": "V2-110",
+   "file": "corpus-v2/articles/V2-110.md",
+   "topic": "2026 Danish parliamentary election",
+   "event_date": "05-08",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Guardian",
+     "Politico EU (x2)",
+     "The Local",
+     "Telegraph",
+     "Euractiv",
+     "Kongehuset.dk"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "df154fefa225e064b95850de9b54ad249ed06925b80cce8c29e056523fc5a82b"
+  },
+  {
+   "id": "V2-111",
+   "file": "corpus-v2/articles/V2-111.md",
+   "topic": "Frontier Airlines Flight 4345",
+   "event_date": "05-08",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "CBS Colorado",
+     "CNN",
+     "NBC",
+     "ABC7 LA",
+     "Fox News",
+     "View from the Wing",
+     "Today/NBC"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "dae30f10f7b92f16e7bc7d6dcfef2ed3bf9abccdbe691be2d63f6a603bcfb84c"
+  },
+  {
+   "id": "V2-114",
+   "file": "corpus-v2/articles/V2-114.md",
+   "topic": "2026 Bangladesh measles outbreak",
+   "event_date": "05-11",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "WAM/AFP",
+     "Prothom Alo",
+     "Bangladesh News",
+     "UrduPoint",
+     "WHO DON 2026-DON598",
+     "Al Jazeera",
+     "Khaleej News Daily"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c62aefab1456b6774d20c1884a15b5ce50c2b4aefe19be979f711a03d7002c75"
+  },
+  {
+   "id": "V2-115",
+   "file": "corpus-v2/articles/V2-115.md",
+   "topic": "2026 United Kingdom government crisis",
+   "event_date": "05-12",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (PBS/WTOP/Boston Globe)",
+     "Al Jazeera (x2)",
+     "France24",
+     "Nine AU"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "94ff29d2198f79811964ac5b533ba6507af317296bc6f0a1c4ee28031aef77d1"
+  },
+  {
+   "id": "V2-119",
+   "file": "corpus-v2/articles/V2-119.md",
+   "topic": "2026 FIFA World Cup final",
+   "event_date": "05-14",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "FIFA",
+     "BBC",
+     "AP",
+     "Billboard",
+     "USA Today",
+     "Hollywood Reporter",
+     "Variety"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "47fea068c46a0071c10d2067ec7fbe694366ce12185f149ba2727db08f06eddd"
+  },
+  {
+   "id": "V2-120",
+   "file": "corpus-v2/articles/V2-120.md",
+   "topic": "Drought in Somalia",
+   "event_date": "05-15",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "OCHA/FAO/WFP/UNICEF joint press release",
+     "UN News",
+     "FSN Australia IPC analysis (14 May)",
+     "ReliefWeb"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7faaca445eaf5cf57ee3e2fe8ce7a83c03d3877560a5ec5ce8d63cfa3d0b2be6"
+  },
+  {
+   "id": "V2-121",
+   "file": "corpus-v2/articles/V2-121.md",
+   "topic": "2026 Israel–Lebanon peace talks",
+   "event_date": "05-15",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CNBC/Reuters",
+     "France24",
+     "ABC AU",
+     "Al-Monitor",
+     "Fox News",
+     "NBC/AP",
+     "The National"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "af4679de3aaafea81cfb9c26cc0aee6c94fab050610374e67eebd872834cac07"
+  },
+  {
+   "id": "V2-122",
+   "file": "corpus-v2/articles/V2-122.md",
+   "topic": "2026 state visit by Donald Trump to China, China–United States trade war",
+   "event_date": "05-15",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "PRC MFA (full briefing)",
+     "gov.cn",
+     "White House fact sheet",
+     "CNN",
+     "CGTN",
+     "Seoul Economic Daily/Xinhua",
+     "Reuters via BT SG",
+     "BusinessToday"
+    ]
+   },
+   "domain": "diplomacy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c22996c7e6138bd08e00468153eddc72ba2965333838bbff831fb7bd9aca824a"
+  },
+  {
+   "id": "V2-123",
+   "file": "corpus-v2/articles/V2-123.md",
+   "topic": "Eurovision Song Contest 2026",
+   "event_date": "05-16",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Eurovision.com",
+     "AP",
+     "BBC",
+     "ESCXtra",
+     "Rolling Stone",
+     "Independent",
+     "BTA"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c416043f5c115d44316e59297812b36f7e360e9918da0ef13c611895a9ecd067"
+  },
+  {
+   "id": "V2-124",
+   "file": "corpus-v2/articles/V2-124.md",
+   "topic": "Disasters and accidents",
+   "event_date": "05-17",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (2)",
+     "USNI News",
+     "Air & Space Forces Magazine",
+     "TWZ",
+     "Task & Purpose",
+     "The Aviationist",
+     "aviation-safety.net"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0ba530e8711e41de56dff5a9c91d97c955e2cafe89a2af9d512b63884f22535f"
+  },
+  {
+   "id": "V2-126",
+   "file": "corpus-v2/articles/V2-126.md",
+   "topic": "Corruption in Spain",
+   "event_date": "05-19",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "El País (2)",
+     "Politico EU",
+     "Euractiv",
+     "The Times",
+     "ARA (UDEF chronology)",
+     "Brussels Signal",
+     "AP"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d7afb79f44e4622f6889a4afcaa947de3c499384b19535e20389446b92484a5e"
+  },
+  {
+   "id": "V2-127",
+   "file": "corpus-v2/articles/V2-127.md",
+   "topic": "Southampton F.C. spying incident",
+   "event_date": "05-19",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC Sport",
+     "AP",
+     "ESPN (3)",
+     "Sky Sports",
+     "Independent",
+     "EFL arbitration ruling (Watkins",
+     "2026)"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a9505be2a89c63904c6385f9372ce9a1c0881ca895ad39d30d0711c9026e7433"
+  },
+  {
+   "id": "V2-130",
+   "file": "corpus-v2/articles/V2-130.md",
+   "topic": "Controversies of Hassan Sheikh Mohamud",
+   "event_date": "05-19",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Somaliland Current",
+     "Somalia Today (2)",
+     "Somali Guardian",
+     "Gallaydh",
+     "LSE Africa blog",
+     "Hiiraan",
+     "newsasfacts mirror"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "331134d01f55670cd982329387a5c243969f5d884af749943c1f4d126c71bfbe"
+  },
+  {
+   "id": "V2-131",
+   "file": "corpus-v2/articles/V2-131.md",
+   "topic": "2026 UEFA Europa League final",
+   "event_date": "05-20",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "UEFA.com",
+     "BBC",
+     "Guardian",
+     "ESPN",
+     "Sky Sports (2)",
+     "PremierLeague.com",
+     "Al Jazeera/AFP"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "5132dba993df53b6cf10ec6255137af45f7afe4c61b69a84ef58c57823b015e4"
+  },
+  {
+   "id": "V2-132",
+   "file": "corpus-v2/articles/V2-132.md",
+   "topic": "2026 Walter Cup playoffs",
+   "event_date": "05-20",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "PWHL.com (notebook + champions page)",
+     "CBC/AP",
+     "The Athletic/NYT",
+     "Montreal Gazette",
+     "OurSports",
+     "Daily Faceoff",
+     "Wikipedia 2026 Walter Cup Finals"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "72d413b70be60d1db309c5f504adc684a9963cb1d12b64db847d87c60c011092"
+  },
+  {
+   "id": "V2-133",
+   "file": "corpus-v2/articles/V2-133.md",
+   "topic": "Trafficking of Chinese nationals to scam centers abroad [MISLABELED: AF447 verdict]",
+   "event_date": "05-21",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Bloomberg",
+     "France24",
+     "Al Jazeera/AFP",
+     "Aviation Week",
+     "CNBC/Reuters",
+     "ABC AU"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "5b9292a0d4da773e1cb66f7100fb9496cefcf9f68152175ff3b573157448e120"
+  },
+  {
+   "id": "V2-134",
+   "file": "corpus-v2/articles/V2-134.md",
+   "topic": "Garden Grove gas leak",
+   "event_date": "05-21",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (via WPRL/CBC)",
+     "Guardian",
+     "USA Today",
+     "Time",
+     "FOX 11 LA",
+     "KNKX",
+     "GKN official updates site"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d8ef03f4f5a96748a638faf734cf71374d010ee2f25230f4a5887d9c2efc3127"
+  },
+  {
+   "id": "V2-135",
+   "file": "corpus-v2/articles/V2-135.md",
+   "topic": "2026 Slovenian parliamentary election",
+   "event_date": "05-22",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Al Jazeera",
+     "Reuters",
+     "Wikipedia 16th Government",
+     "OSW Warsaw",
+     "MR-East",
+     "New Eastern Europe",
+     "DevDiscourse"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "90c00f337fb607ee33465b1b029a26468f9b32d465b646f0ea8816270b2b2ae7"
+  },
+  {
+   "id": "V2-136",
+   "file": "corpus-v2/articles/V2-136.md",
+   "topic": "2026 Beninese presidential election [MISLABELED: Kraków recall]",
+   "event_date": "05-24",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "krakow.pl (official city commission)",
+     "TVP World",
+     "Wprost",
+     "naTemat",
+     "Polski Radio/PAP",
+     "Politico EU",
+     "Digital Nexus",
+     "Notes From Poland"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f8fc4e8cd61338844f993c71507d2d10747c6a4311a0187131ab11da34eae303"
+  },
+  {
+   "id": "V2-137",
+   "file": "corpus-v2/articles/V2-137.md",
+   "topic": "2026 Indianapolis 500",
+   "event_date": "05-24",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "IMS official",
+     "IndyCar.com",
+     "BBC (2)",
+     "Motorsport.com",
+     "Road & Track",
+     "Autoweek",
+     "Speedsport"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "846e968db12d2a5eca3a4dd06a2349dab83bf70e57b2b421cf7695d6fed55376"
+  },
+  {
+   "id": "V2-139",
+   "file": "corpus-v2/articles/V2-139.md",
+   "topic": "Human rights in Cambodia [MISLABELED: Faye appoints Lo]",
+   "event_date": "05-25",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "AP",
+     "France24",
+     "DW",
+     "Le Monde",
+     "The Hindu/AFP",
+     "Africanews",
+     "BBC"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "619b8a0322de7e50a942f45ea07a548721db5a0a44fa9d2df4d6f3a9acee8ad6"
+  },
+  {
+   "id": "V2-142",
+   "file": "corpus-v2/articles/V2-142.md",
+   "topic": "Terrorism in Australia",
+   "event_date": "05-28",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ABC (x2)",
+     "AP (x2)",
+     "AAP",
+     "News.com.au",
+     "sfgate"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d572ffd3938ba6a7652c2174bd311ae26953a9b7d2d1de5db7857ccb331d58b5"
+  },
+  {
+   "id": "V2-143",
+   "file": "corpus-v2/articles/V2-143.md",
+   "topic": "Constitutional crisis in Somalia, Controversies of Hassan Sheikh Mohamud",
+   "event_date": "05-30",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "New Arab/AFP",
+     "Somali Guardian",
+     "Shabelle",
+     "Raxanreeb",
+     "Hiiraan (x2)",
+     "Kaab TV",
+     "Geeska"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "b926ba79818691a8c0280052cef39a1887a7863a172b31ece12e834377c48236"
+  },
+  {
+   "id": "V2-145",
+   "file": "corpus-v2/articles/V2-145.md",
+   "topic": "Sudanese cholera epidemic",
+   "event_date": "05-31",
+   "selection_month": "2026-05",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Sudan Events",
+     "Taiwan Times",
+     "NewsAsFacts",
+     "Ayin",
+     "Khabar Asia",
+     "allAfrica",
+     "Tasis",
+     "Saudi Times"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "72623f56159de2f264bceb5031f13d4547b0dd80c12df6eefbc557aa767830d9"
+  },
+  {
+   "id": "V2-146",
+   "file": "corpus-v2/articles/V2-146.md",
+   "topic": "Murder of Henry Nowak",
+   "event_date": "06-01",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC (x3)",
+     "Guardian",
+     "Independent (x2)",
+     "Echo",
+     "gov.uk"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "6931aa54ddc17bcc6042e60ff1da8d1ab77de453374cd3e0a2a237a67abe3f69"
+  },
+  {
+   "id": "V2-147",
+   "file": "corpus-v2/articles/V2-147.md",
+   "topic": "Flood control projects scandal in the Philippines",
+   "event_date": "06-01",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "GMA",
+     "Rappler (x2)",
+     "Daily Tribune",
+     "Philstar (x2)",
+     "Inquirer",
+     "PTV"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "de58c6add40c95dbfe4b45b99bfd2ab9f61b6eaa461a8becbbc50fcd8c5b8bad"
+  },
+  {
+   "id": "V2-148",
+   "file": "corpus-v2/articles/V2-148.md",
+   "topic": "Flamingo Revolution",
+   "event_date": "06-02",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Philstar (x2)",
+     "Inquirer (x2)",
+     "GMA",
+     "Rappler",
+     "Manila Bulletin",
+     "Gulf News"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4ea492d8676aa95fbb61da57cd4a87539d96d07d84380d2d405b39c4cb015b9e"
+  },
+  {
+   "id": "V2-149",
+   "file": "corpus-v2/articles/V2-149.md",
+   "topic": "2026 Belmont Stakes",
+   "event_date": "06-06",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NYRA",
+     "DRF",
+     "Times Union",
+     "USA Today",
+     "NY Post",
+     "Guardian",
+     "Spectrum"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f7bb707b9eb4ad075898a270614f0a175a9b0ce91961eaf60fa3ef2da34b83ab"
+  },
+  {
+   "id": "V2-150",
+   "file": "corpus-v2/articles/V2-150.md",
+   "topic": "79th Tony Awards",
+   "event_date": "06-07",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Hollywood Reporter",
+     "NY Theatre Guide",
+     "Playbill",
+     "Broadway.com",
+     "Wikipedia",
+     "Backstage",
+     "Variety",
+     "AwardsWatch"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V*]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "2aefb502c29d1db82183c79480ac32d869c60923c9609cfb63153f77a1f0125c"
+  },
+  {
+   "id": "V2-151",
+   "file": "corpus-v2/articles/V2-151.md",
+   "topic": "2026 Armenian parliamentary election",
+   "event_date": "06-08",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC",
+     "Reuters",
+     "AP",
+     "Al Jazeera",
+     "ArmenPress (x2)",
+     "ArmRadio",
+     "elect.am"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d7e104b16310100edbab1f97a1d245802a2334431bc63ced46cef8fcf3942c49"
+  },
+  {
+   "id": "V2-152",
+   "file": "corpus-v2/articles/V2-152.md",
+   "topic": "2026 Mindanao earthquake",
+   "event_date": "06-08",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP (x3)",
+     "Inquirer (x2)",
+     "PHIVOLCS primer",
+     "MindaNews",
+     "SunStar"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "514b0f893daaa669d09093bc06c5619d3ac28f0f031c3cde56ad27c793c11a48"
+  },
+  {
+   "id": "V2-153",
+   "file": "corpus-v2/articles/V2-153.md",
+   "topic": "Artemis program",
+   "event_date": "06-09",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NASA (x2)",
+     "SpaceNews",
+     "NPR",
+     "Astronomy.com",
+     "Smithsonian",
+     "Space Scout"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a0d7d5cd4e79a18d58e47ebe0be215e298b435732fb2311bd694828d3e8c7610"
+  },
+  {
+   "id": "V2-154",
+   "file": "corpus-v2/articles/V2-154.md",
+   "topic": "List of ongoing armed conflicts",
+   "event_date": "06-09",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Uppsala Univ",
+     "PRIO (x2)",
+     "Phys.org",
+     "NPR",
+     "DW",
+     "NewsNation",
+     "JPR abstract"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "41565e392d97a416a20b704b772b582c64868b49c061a33c6fc23309051d6097"
+  },
+  {
+   "id": "V2-156",
+   "file": "corpus-v2/articles/V2-156.md",
+   "topic": "2026 NBA Finals",
+   "event_date": "06-10",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NBA.com (x2)",
+     "AP (x2)",
+     "ESPN (x2)",
+     "Guardian",
+     "Sporting News"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c8480793a68e6c0cc994386d1fd8dd94cfcd44d3d9bcf3d33e10c7afedf6b71e"
+  },
+  {
+   "id": "V2-157",
+   "file": "corpus-v2/articles/V2-157.md",
+   "topic": "2026 FIFA World Cup",
+   "event_date": "06-11",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "FIFA (x3)",
+     "BBC (x2)",
+     "AP",
+     "Al Jazeera",
+     "ESPN"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "127c1d81cf34ffbfb5fc61458ff59d03f69ea9005d1f62af3608c93b9cbeae2f"
+  },
+  {
+   "id": "V2-158",
+   "file": "corpus-v2/articles/V2-158.md",
+   "topic": "Premiership of Keir Starmer",
+   "event_date": "06-11",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC (x4)",
+     "Guardian (x2)",
+     "Independent",
+     "Time"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0559b1e306ab4a70a6d883cc38c67214af637a1c90b2b79b58f1656b1132c987"
+  },
+  {
+   "id": "V2-160",
+   "file": "corpus-v2/articles/V2-160.md",
+   "topic": "2026 NBA Finals",
+   "event_date": "06-13",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NBA.com",
+     "ESPN/AP",
+     "NBC Sports",
+     "Sporting News",
+     "basketball-reference"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "fcacd501e6a20cbebe2b394c63e2a60b93eacc622553f3e57be1f4e4a8e7e1db"
+  },
+  {
+   "id": "V2-161",
+   "file": "corpus-v2/articles/V2-161.md",
+   "topic": "2026 24 Hours of Le Mans",
+   "event_date": "06-14",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC Sport",
+     "AP",
+     "FIA",
+     "Toyota newsroom",
+     "ESPN",
+     "motorsport.com",
+     "Motor Sport Magazine",
+     "Autoweek"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4aca8938138fbbd1ad01e8d5305053be8e6e6db8fb785fc58d2645b7b70deebf"
+  },
+  {
+   "id": "V2-162",
+   "file": "corpus-v2/articles/V2-162.md",
+   "topic": "Extrajudicial killings and enforced disappearances in Bangladesh",
+   "event_date": "06-14",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Daily Star",
+     "Prothom Alo (x2)",
+     "Business Standard",
+     "bdnews24",
+     "The Hindu/AFP",
+     "Financial Express",
+     "tob.news"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d2c8e93b6102db6fbbd6c4d57a87712f22a6a370195ef44374c46efefcbd1b1a"
+  },
+  {
+   "id": "V2-164",
+   "file": "corpus-v2/articles/V2-164.md",
+   "topic": "Argentina at the FIFA World Cup",
+   "event_date": "06-16",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "BBC Sport",
+     "Sky Sports",
+     "Al Jazeera",
+     "NBC",
+     "ESPN",
+     "Sporting News",
+     "TNT Sports"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c73686d7c3475f4e24fd642120ce5ac6d73769405dad092e44b6dcbabaf0993c"
+  },
+  {
+   "id": "V2-165",
+   "file": "corpus-v2/articles/V2-165.md",
+   "topic": "Economic impact of the 2026 Iran war",
+   "event_date": "06-16",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BOJ minutes (official)",
+     "BBC",
+     "CNBC",
+     "Guardian",
+     "Al Jazeera",
+     "Nikkei Asia",
+     "Independent",
+     "Business Times"
+    ]
+   },
+   "domain": "economy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "88931bb8a5143290674d5922d8fc33016230717e3ada6b35f345cdbae02e517a"
+  },
+  {
+   "id": "V2-167",
+   "file": "corpus-v2/articles/V2-167.md",
+   "topic": "June 2026 President of the Senate of the Philippines election",
+   "event_date": "06-17",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ABS-CBN",
+     "Rappler",
+     "Philstar (x2)",
+     "Inquirer",
+     "BusinessWorld (x2)",
+     "Daily Tribune"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "de32b1e077dbc668a9d8b51ef3fb50886cc4df219a29b11615b34535def91ad9"
+  },
+  {
+   "id": "V2-169",
+   "file": "corpus-v2/articles/V2-169.md",
+   "topic": "MV Hondius hantavirus outbreak [MISLABELED: HPV vaccine study]",
+   "event_date": "06-18",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "The Lancet (paper)",
+     "QMUL news",
+     "Pulse Today",
+     "Independent",
+     "BMJ",
+     "Medical Xpress"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e33c796875af2a6f150f1c328c1affbe12d897acc65daaac62a74146ae3d00a9"
+  },
+  {
+   "id": "V2-170",
+   "file": "corpus-v2/articles/V2-170.md",
+   "topic": "Poland–Ukraine relations",
+   "event_date": "06-19",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "president.pl (official)",
+     "AP (x2)",
+     "BBC",
+     "TVP World",
+     "DW",
+     "France 24",
+     "European Pravda"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a04b1169ef3429bd6a1d79ae7e86f78a046edaa60e183e279e078e6f365e7758"
+  },
+  {
+   "id": "V2-171",
+   "file": "corpus-v2/articles/V2-171.md",
+   "topic": "Operation Urja Suraksha",
+   "event_date": "06-20",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Guardian",
+     "Euronews",
+     "BBC",
+     "SBS",
+     "The National",
+     "NBC",
+     "Türkiye Today",
+     "Tehran Times"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4d8fa1707525a2d51e1919adc49b2027bf154f6b918badcd4fdb8431138c42cd"
+  },
+  {
+   "id": "V2-172",
+   "file": "corpus-v2/articles/V2-172.md",
+   "topic": "Calls for a ceasefire during the Gaza war",
+   "event_date": "06-21",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Ynet",
+     "Jerusalem Post",
+     "Times of Israel",
+     "Hidabroot",
+     "VINnews",
+     "Public TV",
+     "NY Post/JNS"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "91a801a5ce27666f3646426c27f1fe14546014eb6ddfccb3a122f9578933a9ec"
+  },
+  {
+   "id": "V2-173",
+   "file": "corpus-v2/articles/V2-173.md",
+   "topic": "2026 Iran war ceasefire",
+   "event_date": "06-21",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "The National",
+     "Dawn",
+     "AP",
+     "DW",
+     "Tribune/Reuters",
+     "Swiss FDFA (official)",
+     "Business Recorder"
+    ]
+   },
+   "domain": "diplomacy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e7a305331380fa10c0a9f4d9ba382092335cba0ecd102e8f4a15d5e57ea968be"
+  },
+  {
+   "id": "V2-174",
+   "file": "corpus-v2/articles/V2-174.md",
+   "topic": "2024 South Korean martial law crisis",
+   "event_date": "06-22",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Yonhap (x2)",
+     "Hani",
+     "Korea JoongAng Daily",
+     "Chosun",
+     "Korea Herald (x2)"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0f9cda0cc2e6e45e5c1f44cd317c088cd85a1e6d172e498a85a03a8f9e329be1"
+  },
+  {
+   "id": "V2-175",
+   "file": "corpus-v2/articles/V2-175.md",
+   "topic": "2026 Strait of Hormuz campaign",
+   "event_date": "06-23",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "IMO (official press briefing + FAQs + hot topic)",
+     "UN News",
+     "GCaptain (x2)",
+     "World Cargo News",
+     "BBC"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a480357deada702af5086ee1cb88ae71e99f8e08b3750e5ae7b3025916f46ccd"
+  },
+  {
+   "id": "V2-176",
+   "file": "corpus-v2/articles/V2-176.md",
+   "topic": "2026 NBA draft",
+   "event_date": "06-23",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "NBA.com",
+     "AP (x2)",
+     "CBS Sports",
+     "CBS News",
+     "ESPN",
+     "Guardian",
+     "Sportsnet",
+     "NBC"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "647e49eb4e573ed9ed0e7c56c2969a320f96550ae0363089a6fef04442ba6231"
+  },
+  {
+   "id": "V2-177",
+   "file": "corpus-v2/articles/V2-177.md",
+   "topic": "Anti-war protests in Russia [MISLABELED: Lee Man-hee arrest]",
+   "event_date": "06-24",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Yonhap (x2)",
+     "AP",
+     "SBS (x2)",
+     "Kyunghyang",
+     "Korea JoongAng Daily",
+     "Korea Herald"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "1920071b072887b58c8ed4864f72f19f542dd3d0cea5c1feade01273fab783d3"
+  },
+  {
+   "id": "V2-178",
+   "file": "corpus-v2/articles/V2-178.md",
+   "topic": "2026 Utah wildfires",
+   "event_date": "06-24",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "SLT (x2)",
+     "Deseret News",
+     "ABC News",
+     "KSL (x2)",
+     "KUER",
+     "AOL/ABC4"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "300c6255c27b4909f521c9069d629a3693fb70daaf1f6eb27e5defacf6ce4210"
+  },
+  {
+   "id": "V2-181",
+   "file": "corpus-v2/articles/V2-181.md",
+   "topic": "2026 Iranian strikes on Bahrain, 2026 Iranian strikes on Kuwait",
+   "event_date": "06-27",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "BBC (x2)",
+     "Reuters",
+     "Al Jazeera",
+     "ABC AU",
+     "AP",
+     "The Hill",
+     "Anadolu"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "0b47fb0f972ddaf749960c1f4525e139ad3dff605875ed8119a7c7f3925d7516"
+  },
+  {
+   "id": "V2-183",
+   "file": "corpus-v2/articles/V2-183.md",
+   "topic": "Mass media in Uganda [MISLABELED: Vagrancy Act repeal]",
+   "event_date": "06-28",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "gov.uk",
+     "legislationtracker",
+     "Independent",
+     "Big Issue",
+     "Crisis UK",
+     "nation.cymru",
+     "LocalGovernmentLawyer"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "8285757e80ff14bc817d8e25af33a89702df8b4a2ef5bcb901f61c523116a4cf"
+  },
+  {
+   "id": "V2-186",
+   "file": "corpus-v2/articles/V2-186.md",
+   "topic": "Cabinet of Lee Jae Myung",
+   "event_date": "06-30",
+   "selection_month": "2026-06",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Yonhap (x2)",
+     "Korea JoongAng Daily",
+     "Korea Herald",
+     "Asia Business Daily (x2)",
+     "Seoul Economic Daily",
+     "Peninsula"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f52fe9135caf39c3bf5da56dbc78949158f1d353dacb711d64b577cdca7d2122"
+  },
+  {
+   "id": "V2-187",
+   "file": "corpus-v2/articles/V2-187.md",
+   "topic": "2026 Iran war fuel crisis",
+   "event_date": "07-01",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ZAWYA/Reuters",
+     "Investing.com",
+     "energynews.pro",
+     "TradeVAE (x2)",
+     "IndexBox/Reuters",
+     "QC Intel",
+     "fakta.co"
+    ]
+   },
+   "domain": "economy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c71f5c18b90a1eef44371eeec4b2e2dbc0db76c76a30ee7595a31469400e7d42"
+  },
+  {
+   "id": "V2-189",
+   "file": "corpus-v2/articles/V2-189.md",
+   "topic": "2026 Écône consecrations",
+   "event_date": "07-02",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Vatican News",
+     "America Mag",
+     "CNN",
+     "EWTN",
+     "NCR/CNA",
+     "AP/NPR",
+     "ABC AU",
+     "thefriar.org"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9768a650765f30fb47afcab259b9489c097584a49491de65f701eacb16bb29f0"
+  },
+  {
+   "id": "V2-191",
+   "file": "corpus-v2/articles/V2-191.md",
+   "topic": "Argentina at the FIFA World Cup",
+   "event_date": "07-03",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Opta Analyst",
+     "ESPN (x2)",
+     "FIFA",
+     "AP/Sportsnet",
+     "Sportstar",
+     "Sporting News",
+     "Wikipedia",
+     "ESPN IN"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c54ccbae05e3f491aec2634b2651b6e5e3ec05849db0efd4cab9d2368eee973d"
+  },
+  {
+   "id": "V2-192",
+   "file": "corpus-v2/articles/V2-192.md",
+   "topic": "2026 Trump–FIFA red card controversy",
+   "event_date": "07-05",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Sporting News",
+     "AP",
+     "Al Jazeera",
+     "Guardian",
+     "ESPN",
+     "NBC",
+     "Today",
+     "InsideWorldFootball"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "2a42c3545481b413d61bf5b06af7b1b470d434b35ac3724cc1f9b039ee95b65d"
+  },
+  {
+   "id": "V2-194",
+   "file": "corpus-v2/articles/V2-194.md",
+   "topic": "2026 Strait of Hormuz crisis",
+   "event_date": "07-08",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "IMO (press briefing + C137 council update)",
+     "Anadolu",
+     "Al-Monitor (AFR)",
+     "Iran International",
+     "Marine Insight",
+     "UN News"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "694bf2bf7ab4bd71bbec4108b4d7a20d4e14d78701063c2a02ba37c02864c46c"
+  },
+  {
+   "id": "V2-195",
+   "file": "corpus-v2/articles/V2-195.md",
+   "topic": "Aftermath of the September 11 attacks, Economy of New York City",
+   "event_date": "07-09",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ABC News",
+     "Governor.ny.gov",
+     "Commercial Observer",
+     "Construction Dive",
+     "amNY",
+     "NY YIMBY",
+     "Newsweek",
+     "ConstructConnect"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "c1ca71bda47fadd155b2b506e8e710d52406ee867245cafcb8908c5f9b683d3f"
+  },
+  {
+   "id": "V2-196",
+   "file": "corpus-v2/articles/V2-196.md",
+   "topic": "Oyo school kidnappings",
+   "event_date": "07-10",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "THISDAY",
+     "Al Jazeera",
+     "Channels TV",
+     "DW",
+     "Telegraph Nigeria",
+     "Pulse Nigeria"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "5988c6af456458849b5748dacde29f6fe54edf718a79ed4bb9448c150f41d10a"
+  },
+  {
+   "id": "V2-198",
+   "file": "corpus-v2/articles/V2-198.md",
+   "topic": "2026 Colorado wildfires",
+   "event_date": "07-12",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CBS Colorado",
+     "Guardian",
+     "Denver7",
+     "Colorado Sun",
+     "KUNC",
+     "KSUT",
+     "Vertical Mag",
+     "Ouray County Plaindealer"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "a75a9cac9301ca0121328ce6a8e8939baa62becd44add692c7cf41c9ab95f89c"
+  },
+  {
+   "id": "V2-200",
+   "file": "corpus-v2/articles/V2-200.md",
+   "topic": "Papua New Guinea–Taiwan relations",
+   "event_date": "07-15",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ABC Australia",
+     "RNZ",
+     "Taipei Times",
+     "The Diplomat",
+     "Reuters",
+     "RFA",
+     "The National"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "caec0b7a73d6ba18dda3817c770e73110dbd60e72278fd8d083781ab1970ba9b"
+  },
+  {
+   "id": "V2-201",
+   "file": "corpus-v2/articles/V2-201.md",
+   "topic": "Discoveries of exoplanets",
+   "event_date": "07-15",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "IOP (both ApJL papers)",
+     "ESO eso2609",
+     "phys.org",
+     "Edinburgh Research Explorer",
+     "arXiv 2606.23801"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7fe2bbf07b97a7c2d78c7ea4d4a591798947361991ebeafadf50927148d622cc"
+  },
+  {
+   "id": "V2-202",
+   "file": "corpus-v2/articles/V2-202.md",
+   "topic": "Afghanistan and the United Nations",
+   "event_date": "07-15",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "UNAMA (unmissions.org)",
+     "Pajhwok",
+     "ReliefWeb",
+     "Ariana News",
+     "Anadolu",
+     "Afghanistan International"
+    ]
+   },
+   "domain": "diplomacy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "47150a82e2b3c4415e156f39196673654269a2a8e7bcc0acad28cd6837d62c3c"
+  },
+  {
+   "id": "V2-203",
+   "file": "corpus-v2/articles/V2-203.md",
+   "topic": "Unification Church and politics",
+   "event_date": "07-16",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Yonhap (3 wires)",
+     "Korea Herald",
+     "Korea JoongAng Daily",
+     "Straits Times",
+     "Chosun Biz",
+     "Asia Business Daily"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "97e52bd033f92c47bfd44edea5085f70d14326cf8ec3c3a910330ce93892514c"
+  },
+  {
+   "id": "V2-205",
+   "file": "corpus-v2/articles/V2-205.md",
+   "topic": "2026 Labour Party leadership election",
+   "event_date": "07-17",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Al Jazeera",
+     "labour.org.uk",
+     "BBC",
+     "The Independent",
+     "ABC",
+     "PBS"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "4a0a87467811dbcbd69be882aafd56129596dab7588ed30b2df72156041e1aaf"
+  },
+  {
+   "id": "V2-206",
+   "file": "corpus-v2/articles/V2-206.md",
+   "topic": "Gaza war",
+   "event_date": "07-17",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Times of Israel",
+     "Israel National News",
+     "JNS",
+     "Matzav",
+     "Jewish Breaking News",
+     "Yeshiva World",
+     "ch10"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "05f76d8c73227ff8912fb2813be5c04f98fa9849c4e662cdc00cea5d1c831887"
+  },
+  {
+   "id": "V2-207",
+   "file": "corpus-v2/articles/V2-207.md",
+   "topic": "2026 Strait of Hormuz crisis",
+   "event_date": "07-18",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Times of Israel",
+     "Iran International",
+     "Arab News",
+     "Marine Insight",
+     "Anadolu",
+     "Dawn",
+     "MEAWW fact check",
+     "Malay Mail (AFP)"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d57587fe2e077f7e5a294164727b36a504bfd4ceb143418cb8579e1175fd5faa"
+  },
+  {
+   "id": "V2-209",
+   "file": "corpus-v2/articles/V2-209.md",
+   "topic": "Space industry of India",
+   "event_date": "07-18",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ISRO",
+     "SpaceNews (Foust)",
+     "space.com",
+     "Times of India",
+     "Economic Times",
+     "Satellite Today",
+     "Hindustan Times"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "bfed50e4222b6630b31b45b477b3f17965e0899f037cf0ba80d1878daacfb15f"
+  },
+  {
+   "id": "V2-210",
+   "file": "corpus-v2/articles/V2-210.md",
+   "topic": "2026 FIFA World Cup final",
+   "event_date": "07-19",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "FIFA (match report + inside.fifa release)",
+     "AP (2)",
+     "Sky Sports",
+     "BBC",
+     "Guardian",
+     "Al Jazeera",
+     "Olympics.com",
+     "ESPN"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "fb0616d6150c6dccc9b85c278221b9a7880fc3ebd38de3a5cea2668d0a6e0247"
+  },
+  {
+   "id": "V2-213",
+   "file": "corpus-v2/articles/V2-213.md",
+   "topic": "Illegal drug trade in the United States, Mexican drug war",
+   "event_date": "07-20",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "DOJ press release",
+     "AP",
+     "BBC",
+     "CNN",
+     "USA Today",
+     "Guardian",
+     "ABC",
+     "CourtListener (forfeiture order)"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "7e9307c7ce047362793a126d816fbe3315d1a21dfd318359438079efb3292fc9"
+  },
+  {
+   "id": "V2-216",
+   "file": "corpus-v2/articles/V2-216.md",
+   "topic": "2026 Delhi Jantar Mantar protests",
+   "event_date": "07-21",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "The Hindu (21/22 Jul)",
+     "Al Jazeera",
+     "TOI",
+     "Outlook",
+     "NIE",
+     "WION",
+     "The Quint",
+     "IndiaTV"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "6bf54a9589a71908234742cd775f0381f342a06d51e26b95cc64fc2f93d0b3be"
+  },
+  {
+   "id": "V2-217",
+   "file": "corpus-v2/articles/V2-217.md",
+   "topic": "Disasters and accidents",
+   "event_date": "07-21",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Al Jazeera",
+     "Guyana Times",
+     "Guyana Inquirer",
+     "VnExpress",
+     "PM press conference"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "abbf57cd235ab777337ee93db0936f291be33b13310cf2ab25410bdf265e0684"
+  },
+  {
+   "id": "V2-218",
+   "file": "corpus-v2/articles/V2-218.md",
+   "topic": "Stabbing of Salman Rushdie",
+   "event_date": "07-22",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Reuters",
+     "Guardian",
+     "NBC",
+     "CBS"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9640860d6f83ef9b3b9223a3fc4e12fd5d9bd1c64915e7b21d7ecbd6b917bff0"
+  },
+  {
+   "id": "V2-219",
+   "file": "corpus-v2/articles/V2-219.md",
+   "topic": "Catholic Church in China",
+   "event_date": "07-22",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Vatican News",
+     "Vatican Press Office Bollettino",
+     "NCR",
+     "AsiaNews",
+     "Fides",
+     "Wikipedia"
+    ]
+   },
+   "domain": "arts",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e0be2c0f6b6bf4d6ef903e75868484911f5ad288d7b66e450e36bb731cf0f5f0"
+  },
+  {
+   "id": "V2-220",
+   "file": "corpus-v2/articles/V2-220.md",
+   "topic": "Disasters and accidents",
+   "event_date": "07-22",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "CBS",
+     "NBC",
+     "Guardian",
+     "governor.wv.gov",
+     "wvnews"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "315a330bae1d15f2b1b2c5b1d000b59bebb46e5ca56651495de84ea369b59234"
+  },
+  {
+   "id": "V2-221",
+   "file": "corpus-v2/articles/V2-221.md",
+   "topic": "Science and technology",
+   "event_date": "07-23",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "IMU (mathunion.org)",
+     "Simons Foundation",
+     "Scientific American",
+     "Clay Math Institute",
+     "Nature",
+     "IMPA"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "fddf2e4f921ea0299ce0aa2a15b416ba8d1e9bc4d7db6cf45b0022d94534a6fa"
+  },
+  {
+   "id": "V2-224",
+   "file": "corpus-v2/articles/V2-224.md",
+   "topic": "2026 Iran war",
+   "event_date": "07-28",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "CENTCOM",
+     "AP",
+     "CNN",
+     "USA Today",
+     "Axios",
+     "Al Jazeera"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "06b6c1ef1ae13f71ae83b4ea7ebfbdb177c177d217d0836d0c063d5f1350fecf"
+  },
+  {
+   "id": "V2-225",
+   "file": "corpus-v2/articles/V2-225.md",
+   "topic": "2026 Victorian Labor Party leadership election",
+   "event_date": "07-28",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ABC (x2)",
+     "The Age",
+     "SBS",
+     "Nine",
+     "news.com.au"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "59290dd77d433f6ff9fe171c2e6db1a146b21948d0a3e1323de6e3314756c9b1"
+  },
+  {
+   "id": "V2-227",
+   "file": "corpus-v2/articles/V2-227.md",
+   "topic": "2026 Morocco–Spain border incident [MISLABELED: Italy Schengen calls]",
+   "event_date": "07-30",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Reuters",
+     "Politico",
+     "Euronews",
+     "The Local",
+     "ANSA",
+     "The Journal"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "712b2663e57fa609718bf2bc736c2b464b3541c58cb2457c057718ebe2522a20"
+  },
+  {
+   "id": "V2-229",
+   "file": "corpus-v2/articles/V2-229.md",
+   "topic": "2019 Sri Lanka Easter bombings",
+   "event_date": "07-31",
+   "selection_month": "2026-07",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "Al Jazeera",
+     "ABC",
+     "CNA",
+     "Straits Times",
+     "Daily Mirror"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "793232c0c56f4ae3ad8dde8218dd518d8944cf79b8983b5fef169fcb53bfe295"
+  },
+  {
+   "id": "V2-230",
+   "file": "corpus-v2/articles/V2-230.md",
+   "topic": "Ethiopia-TPLF clashes",
+   "event_date": "08-02",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Battle of Shererina)",
+     "Al Jazeera",
+     "BBC",
+     "Mada Masr",
+     "Geeska"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "f2c5a81f4253f0e5045fee006aa8a766f81ab73fe54a887363a83dd2a250b9c3"
+  },
+  {
+   "id": "V2-232",
+   "file": "corpus-v2/articles/V2-232.md",
+   "topic": "2026 Mubadala DC Open [MISLABELED: Eala WTA title]",
+   "event_date": "08-03",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2026 Mubadala DC Open; Alexandra Eala)",
+     "AFP via RFI",
+     "ESPN",
+     "Manila Bulletin",
+     "ABS-CBN"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "25162d1a6750590572668063c2688142c139aecbeca11ad9aac1cc379d8bcd68"
+  },
+  {
+   "id": "V2-233",
+   "file": "corpus-v2/articles/V2-233.md",
+   "topic": "Darfur campaign",
+   "event_date": "08-04",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Sudan Nabaa",
+     "Sudan Tribune",
+     "Wikipedia (Portal:Current_events/2026_August_4)"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "b2d4137bf5a2b9a8fdd29487baa40d17026d60f186dc9bc8a209348174e5176d"
+  },
+  {
+   "id": "V2-234",
+   "file": "corpus-v2/articles/V2-234.md",
+   "topic": "Aftermath of the July Uprising",
+   "event_date": "08-05",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Portal:Current_events/2026_August_5; Sheikh Hasina; Aftermath of the July Uprising; July Uprising)",
+     "Sky News",
+     "The Guardian",
+     "The Economic Times"
+    ]
+   },
+   "domain": "politics",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "ece70776e64697afee3f9246f63c5a73e449ae8384e414ff457e0807ebca9eba"
+  },
+  {
+   "id": "V2-237",
+   "file": "corpus-v2/articles/V2-237.md",
+   "topic": "Proposed acquisition of Warner Bros. Discovery by Paramount Skydance",
+   "event_date": "08-06",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Proposed acquisition of WBD by Paramount Skydance)",
+     "The Guardian",
+     "FT",
+     "Reuters",
+     "Deadline",
+     "Yahoo Finance"
+    ]
+   },
+   "domain": "business",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e3347081795207eac8a50b8268149ba082befa25c692c9824c1dd10ea5137f09"
+  },
+  {
+   "id": "V2-239",
+   "file": "corpus-v2/articles/V2-239.md",
+   "topic": "Investigation of UFO reports by the United States government",
+   "event_date": "08-07",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Scientific American",
+     "UFO Releases (DOW-UAP-D101 IIR)",
+     "ufomatrix.org",
+     "watchthestars.co.uk",
+     "BBC News"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "d7f9c8c3bf862f2fd0b4f08001213dd8b9e7ee3aa7eaa9cfeba2f5161cf584f7"
+  },
+  {
+   "id": "V2-240",
+   "file": "corpus-v2/articles/V2-240.md",
+   "topic": "Pakistan–Saudi Arabia relations, Pakistan–Turkey relations, Saudi Arabia–Turkey relations",
+   "event_date": "08-07",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Mecca Joint Defence Agreement; 2026; Pakistan-Saudi Arabia relations; Pakistan-Turkey relations)",
+     "Reuters",
+     "Al Arabiya",
+     "France 24",
+     "The Guardian"
+    ]
+   },
+   "domain": "diplomacy",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "e5113502f0ce0882c460663b4b24e6bd75861a3fb092826cae1b815bf7b19c1e"
+  },
+  {
+   "id": "V2-242",
+   "file": "corpus-v2/articles/V2-242.md",
+   "topic": "2027 FIFA Women's World Cup",
+   "event_date": "08-09",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "ESPN",
+     "CAF (cafonline.com)",
+     "FIFA.com",
+     "Reuters",
+     "beIN Sports",
+     "GBC Ghana Online",
+     "AllAfrica"
+    ]
+   },
+   "domain": "sports",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9bd5ba3ea6b16e0ccbfe0b9fd586e5220aa57bb2f9eeeef432022bc023c253d7"
+  },
+  {
+   "id": "V2-244",
+   "file": "corpus-v2/articles/V2-244.md",
+   "topic": "Impact of the 2026 Iran war on Iran",
+   "event_date": "08-10",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (Ali Abdollahi",
+     "Hossein Taeb)",
+     "JPost",
+     "IranIntl",
+     "Al Arabiya",
+     "WION",
+     "News18",
+     "PressTV",
+     "Rudaw",
+     "WANA",
+     "FT",
+     "Ynet",
+     "JFeed",
+     "Times of India"
+    ]
+   },
+   "domain": "military",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "b7597e04a16054747165ee5cb52b2321762a6dfc871bceded4e89ab506abe742"
+  },
+  {
+   "id": "V2-245",
+   "file": "corpus-v2/articles/V2-245.md",
+   "topic": "2026 Colombia earthquake",
+   "event_date": "08-11",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2026 Colombia earthquake",
+     "Simple Wikipedia",
+     "\"2026\")",
+     "BBC",
+     "Al Jazeera",
+     "Colombia One",
+     "EFE",
+     "CARE",
+     "MercoPress",
+     "Rio Times",
+     "WFP"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "83006867309edcfc82ac1c05a0a39cca2009fb63f3980b645b939fd9e74a789e"
+  },
+  {
+   "id": "V2-246",
+   "file": "corpus-v2/articles/V2-246.md",
+   "topic": "Presidency of Ahmed al-Sharaa, War crimes in the Syrian civil war, Prosecution of Syrian civil war criminals",
+   "event_date": "08-11",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2026",
+     "Prosecution of Syrian civil war criminals)",
+     "SANA",
+     "WSJ (Jared Malsin)",
+     "BBC",
+     "Al Jazeera",
+     "The National",
+     "The Guardian",
+     "Fox News",
+     "QNA",
+     "Hawar",
+     "Levant24",
+     "Syrian Observer"
+    ]
+   },
+   "domain": "law",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "2785b16f020de696267d78e27eac9c9ce2d3b2c77c64912e9437023df4921d2b"
+  },
+  {
+   "id": "V2-248",
+   "file": "corpus-v2/articles/V2-248.md",
+   "topic": "MoM-BH*-1",
+   "event_date": "08-12",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "MIT News",
+     "Wikipedia (MoM-BH*-1)",
+     "The Guardian",
+     "ScienceDaily",
+     "space.com",
+     "ABC",
+     "CGTN",
+     "Interesting Engineering",
+     "Jagran",
+     "Daily Galaxy"
+    ]
+   },
+   "domain": "science",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "9c4e48fd4e740b56a4dd2e697ab8d5a580095e9853d76330a619b9e24a366250"
+  },
+  {
+   "id": "V2-249",
+   "file": "corpus-v2/articles/V2-249.md",
+   "topic": "2026 European heatwaves",
+   "event_date": "08-13",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "AP",
+     "BBC",
+     "Euronews",
+     "RFI",
+     "The Guardian",
+     "Washington Post",
+     "Balkan Insight",
+     "Foreign Policy Journal",
+     "Jurist"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "cf7da2009a1ef410cde188ed2824f7cfed02c100078fd82f6127161a41e44e29"
+  },
+  {
+   "id": "V2-250",
+   "file": "corpus-v2/articles/V2-250.md",
+   "topic": "2026 Nepal floods",
+   "event_date": "08-26",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Wikipedia (2026 China-Nepal floods)",
+     "AP",
+     "LA Times",
+     "CNN",
+     "NYT",
+     "WSJ",
+     "NPR",
+     "Euronews",
+     "The National",
+     "Dawn",
+     "ABC",
+     "NYP",
+     "Der Spiegel",
+     "BBC (Nepali + English)",
+     "The Weather Network"
+    ]
+   },
+   "domain": "disaster",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "336c6ca8d85b3b5ee8b616e611c7fe8ee30fc54f53107a1678fdfce5697c3580"
+  },
+  {
+   "id": "V2-251",
+   "file": "corpus-v2/articles/V2-251.md",
+   "topic": "Health and environment",
+   "event_date": "08-26",
+   "selection_month": "2026-08",
+   "source_type": "portal-drafted",
+   "source": {
+    "name": "Wikipedia Portal:Current events (2026)",
+    "role": "anchor",
+    "factcheck_sources": [
+     "Medscape",
+     "AACR",
+     "AJMC",
+     "Dana-Farber",
+     "PanCAN",
+     "CNN",
+     "Reuters",
+     "MedCity News",
+     "ONSA",
+     "Nova Pharma News"
+    ]
+   },
+   "domain": "health",
+   "verification": "[V]",
+   "label_counts": {
+    "ENTAIL": 20,
+    "CONTRADICT": 10,
+    "UNSPECIFIED": 10
+   },
+   "split_role": "test",
+   "sha256": "dd23cf9e96fd3fbaa8116d39c11348846f90232fdb9ce382511ea20a1c8e1808"
+  }
+ ],
+ "pool": {
+  "propositions": "corpus-v2/labels/{id}.json (200 files, 8000 propositions; the authoritative pool)",
+  "render_text": "corpus-v2/pool/{id}.md (40 numbered propositions, no labels; human-readable)",
+  "render_question_form": "corpus-v2/pool/question_form/{id}.md (jury input, 'Is it true that ...?')",
+  "per_file": "40 rows in pool position order: 1-20 ENTAIL, 21-30 CONTRADICT, 31-40 UNSPECIFIED"
+ },
+ "metadata": {
+  "file": "corpus-v2/pool/metadata.json",
+  "sha256": "d20218ffac329c37e12435d51558a9752298dfb4d0543d0c428e558092d9842b",
+  "generator": "tools/corpus_v2/make_metadata.py",
+  "generator_sha256": "30b07b3962ac572f59859b520f9970e11bd6847d2587808d56060daebda1a90f",
+  "distribution": {
+   "trap_type": {
+    "none": 7334,
+    "unit_swap": 429,
+    "figure_conflict": 229,
+    "disputed_pin": 8
+   },
+   "polarity": {
+    "affirmative": 7842,
+    "negative": 158
+   },
+   "fact_role": {
+    "direct_fact": 6000,
+    "silence": 2000
+   }
+  },
+  "note": "polarity base rate differs from v1 (v2 negative 2.0% vs v1 curation 18.5%): v2 pools were generated with mostly affirmative variants; registered as a known corpus property (prereg-v2.yaml)."
+ },
+ "frozen": {
+  "date": "2026-08-28",
+  "tag": "prereg-waveconsensus-v2",
+  "split": "all 200 topics test (no v2 calibration split)",
+  "manifest_sha256_placeholder": true
+ }
+}
