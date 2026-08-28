@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-020-001",
+  "proposition": "The airstrike killed at least 180 people.",
+  "label": "ENTAIL",
+  "evidence": "has killed at least 180 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-002",
+  "proposition": "The victims were mostly schoolgirls.",
+  "label": "ENTAIL",
+  "evidence": "mostly schoolgirls",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-003",
+  "proposition": "The strike hit an elementary school.",
+  "label": "ENTAIL",
+  "evidence": "An airstrike on an elementary school",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-004",
+  "proposition": "The school was in Minab, Hormozgan province, Iran.",
+  "label": "ENTAIL",
+  "evidence": "in Minab, Hormozgan province, Iran",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-005",
+  "proposition": "The strike came on the first day of the war.",
+  "label": "ENTAIL",
+  "evidence": "on the first day of the war",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-006",
+  "proposition": "The war was between Iran and the United States and Israel.",
+  "label": "ENTAIL",
+  "evidence": "the war between Iran and the United States and Israel",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-007",
+  "proposition": "The school was Shajareh Tayyebeh Elementary School.",
+  "label": "ENTAIL",
+  "evidence": "destroyed Shajareh Tayyebeh Elementary School",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-008",
+  "proposition": "The school was a single-gender school.",
+  "label": "ENTAIL",
+  "evidence": "a single-gender school",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-009",
+  "proposition": "The strike occurred on Saturday, February 28, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, February 28, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-010",
+  "proposition": "The school stood near the Strait of Hormuz.",
+  "label": "ENTAIL",
+  "evidence": "near the Strait of Hormuz",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-011",
+  "proposition": "Israel launched what it called a preemptive strike.",
+  "label": "ENTAIL",
+  "evidence": "Israel launched what it called a preemptive strike",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-012",
+  "proposition": "The Israeli strike killed several senior Iranian officials.",
+  "label": "ENTAIL",
+  "evidence": "killing several senior Iranian officials",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-013",
+  "proposition": "Supreme leader Ali Khamenei was killed.",
+  "label": "ENTAIL",
+  "evidence": "supreme leader Ali Khamenei",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-014",
+  "proposition": "The U.S. operation was codenamed Operation Epic Fury.",
+  "label": "ENTAIL",
+  "evidence": "codenamed Operation Epic Fury",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-015",
+  "proposition": "Israel's operation was codenamed Operation Roaring Lion.",
+  "label": "ENTAIL",
+  "evidence": "codenamed Operation Roaring Lion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-016",
+  "proposition": "The U.S. operation targeted Iranian missile facilities and naval assets.",
+  "label": "ENTAIL",
+  "evidence": "targeting Iranian missile facilities and naval assets",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-017",
+  "proposition": "Iran's judiciary first reported 85 dead.",
+  "label": "ENTAIL",
+  "evidence": "Iran's judiciary first reported 85 dead",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-018",
+  "proposition": "Later death counts reached 156, including 120 schoolchildren.",
+  "label": "ENTAIL",
+  "evidence": "Later counts reached 156, including 120 schoolchildren",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-019",
+  "proposition": "UNICEF said that 168 girls were killed at the school.",
+  "label": "ENTAIL",
+  "evidence": "UNICEF said on March 3 that 168 girls were killed at the school",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-020",
+  "proposition": "Search and rescue operations at the site ended on March 1.",
+  "label": "ENTAIL",
+  "evidence": "ended on March 1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-021",
+  "proposition": "The airstrike killed at least 80 people.",
+  "label": "CONTRADICT",
+  "evidence": "at least 180 people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-022",
+  "proposition": "The victims were mostly teachers.",
+  "label": "CONTRADICT",
+  "evidence": "mostly schoolgirls",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-023",
+  "proposition": "The strike hit a high school.",
+  "label": "CONTRADICT",
+  "evidence": "an elementary school",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-024",
+  "proposition": "The school was in Bandar Abbas.",
+  "label": "CONTRADICT",
+  "evidence": "in Minab, Hormozgan province",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-025",
+  "proposition": "The strike occurred on the second day of the war.",
+  "label": "CONTRADICT",
+  "evidence": "on the first day of the war",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-026",
+  "proposition": "The U.S. operation was codenamed Operation Midnight Hammer.",
+  "label": "CONTRADICT",
+  "evidence": "codenamed Operation Epic Fury",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-027",
+  "proposition": "Israel's operation was codenamed Operation Iron Dome.",
+  "label": "CONTRADICT",
+  "evidence": "codenamed Operation Roaring Lion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-028",
+  "proposition": "Iran's judiciary first reported 145 dead.",
+  "label": "CONTRADICT",
+  "evidence": "first reported 85 dead",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-029",
+  "proposition": "UNICEF said that 148 boys were killed at the school.",
+  "label": "CONTRADICT",
+  "evidence": "168 girls were killed at the school",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-030",
+  "proposition": "Amnesty International attributed the strike to Israel.",
+  "label": "CONTRADICT",
+  "evidence": "attributed the strike to the United States military",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-020-031",
+  "proposition": "The strike occurred at 9 a.m. local time.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no time of the strike."
+ },
+ {
+  "id": "V2-020-032",
+  "proposition": "The school had 400 students enrolled.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give any enrollment figure."
+ },
+ {
+  "id": "V2-020-033",
+  "proposition": "The school's principal was among the dead.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not name any individual victims."
+ },
+ {
+  "id": "V2-020-034",
+  "proposition": "The United States explained the strike in an official statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not quote any U.S. statement."
+ },
+ {
+  "id": "V2-020-035",
+  "proposition": "Iran said the strike was caused by a Tomahawk missile.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article attributes the strike to the U.S. military but names no weapon."
+ },
+ {
+  "id": "V2-020-036",
+  "proposition": "Families gathered outside the school for identification.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe any family response."
+ },
+ {
+  "id": "V2-020-037",
+  "proposition": "The UN Security Council held an emergency meeting on the strike.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any Security Council meeting."
+ },
+ {
+  "id": "V2-020-038",
+  "proposition": "The adjacent IRGC navy compound was damaged in the strike.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions the compound's location but not any damage to it."
+ },
+ {
+  "id": "V2-020-039",
+  "proposition": "A funeral for the victims was held in Minab on March 1.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions search and rescue ending on March 1 but no funeral."
+ },
+ {
+  "id": "V2-020-040",
+  "proposition": "The death toll later rose above 200.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article's latest figures are 180 overall and 168 girls at the school."
+ }
+]

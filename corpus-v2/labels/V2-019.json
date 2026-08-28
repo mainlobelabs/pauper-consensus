@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-019-001",
+  "proposition": "The UK's Information Commissioner's Office fined Reddit.",
+  "label": "ENTAIL",
+  "evidence": "Information Commissioner's Office (ICO) has fined American social media network Reddit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-002",
+  "proposition": "The fine was 14.5 million pounds.",
+  "label": "ENTAIL",
+  "evidence": "£14.5 million",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-003",
+  "proposition": "The fine was about 19.5 million US dollars.",
+  "label": "ENTAIL",
+  "evidence": "(about US$19.5 million)",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-004",
+  "proposition": "The fine was for using the data of children under the age of 13.",
+  "label": "ENTAIL",
+  "evidence": "for using the data of children under the age of 13",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-005",
+  "proposition": "The use of the data was unlawful.",
+  "label": "ENTAIL",
+  "evidence": "for using the data of children under the age of 13 unlawfully",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-006",
+  "proposition": "Reddit potentially exposed children to inappropriate and harmful content.",
+  "label": "ENTAIL",
+  "evidence": "potentially exposing them to inappropriate and harmful content",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-007",
+  "proposition": "The content included pornography.",
+  "label": "ENTAIL",
+  "evidence": "including pornography",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-008",
+  "proposition": "The fine was announced on February 24, 2026.",
+  "label": "ENTAIL",
+  "evidence": "announced on Tuesday, February 24, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-009",
+  "proposition": "It is the largest fine the ICO has issued for a children's privacy breach.",
+  "label": "ENTAIL",
+  "evidence": "It is the largest the ICO, the UK's independent authority for information and data protection, has issued for a children's privacy breach.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-010",
+  "proposition": "The ICO is the UK's independent authority for information and data protection.",
+  "label": "ENTAIL",
+  "evidence": "the UK's independent authority for information and data protection",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-011",
+  "proposition": "Reddit introduced age assurance measures in July 2025.",
+  "label": "ENTAIL",
+  "evidence": "Reddit introduced age assurance measures in July 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-012",
+  "proposition": "The ICO concluded the rollout left a window during which children under 13 could create accounts.",
+  "label": "ENTAIL",
+  "evidence": "left a window during which children under 13 could create accounts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-013",
+  "proposition": "Reddit said it plans to appeal the decision.",
+  "label": "ENTAIL",
+  "evidence": "Reddit said it plans to appeal the decision",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-014",
+  "proposition": "Reddit's UK user base consists of millions of members.",
+  "label": "ENTAIL",
+  "evidence": "UK user base consists of millions of members",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-015",
+  "proposition": "Many subreddits are moderated by volunteers.",
+  "label": "ENTAIL",
+  "evidence": "many of which are moderated by volunteers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-016",
+  "proposition": "The ICO said the fine was proportionate to the number of children affected.",
+  "label": "ENTAIL",
+  "evidence": "proportionate to the number of children affected",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-017",
+  "proposition": "The ICO said the fine was proportionate to the length of the breach.",
+  "label": "ENTAIL",
+  "evidence": "and the length of the breach",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-018",
+  "proposition": "The fine is issued under the UK's data protection rules.",
+  "label": "ENTAIL",
+  "evidence": "issued under the UK's data protection rules",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-019",
+  "proposition": "UK data protection rules apply to companies processing the personal data of people in the UK.",
+  "label": "ENTAIL",
+  "evidence": "which apply to companies processing the personal data of people in the UK",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-020",
+  "proposition": "The fine lands amid wider scrutiny of age verification across the UK and Europe.",
+  "label": "ENTAIL",
+  "evidence": "wider scrutiny of how social platforms verify the ages of young users across the UK and Europe",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-021",
+  "proposition": "The fine was 4.5 million pounds.",
+  "label": "CONTRADICT",
+  "evidence": "£14.5 million",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-022",
+  "proposition": "The fine was about 4.9 million US dollars.",
+  "label": "CONTRADICT",
+  "evidence": "(about US$19.5 million)",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-023",
+  "proposition": "The fine concerned the data of children under 16.",
+  "label": "CONTRADICT",
+  "evidence": "children under the age of 13",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-024",
+  "proposition": "The fine was announced on February 25, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "announced on Tuesday, February 24, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-025",
+  "proposition": "It is the smallest fine the ICO has issued for a children's privacy breach.",
+  "label": "CONTRADICT",
+  "evidence": "the largest the ICO",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-026",
+  "proposition": "Reddit introduced age assurance measures in January 2026.",
+  "label": "CONTRADICT",
+  "evidence": "in July 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-027",
+  "proposition": "Reddit said it would accept the decision.",
+  "label": "CONTRADICT",
+  "evidence": "Reddit said it plans to appeal the decision",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-028",
+  "proposition": "The ICO said the fine was disproportionate to the breach.",
+  "label": "CONTRADICT",
+  "evidence": "the fine was proportionate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-029",
+  "proposition": "UK data protection rules apply only to UK-headquartered companies.",
+  "label": "CONTRADICT",
+  "evidence": "apply to companies processing the personal data of people in the UK",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-030",
+  "proposition": "The fine concerned the data of users over 18.",
+  "label": "CONTRADICT",
+  "evidence": "data of children under the age of 13",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-019-031",
+  "proposition": "Reddit announced its appeal on the same day as the fine.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says it plans to appeal but gives no date for the filing."
+ },
+ {
+  "id": "V2-019-032",
+  "proposition": "The fine was payable within 28 days.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any payment deadline."
+ },
+ {
+  "id": "V2-019-033",
+  "proposition": "The ICO's investigation into Reddit began in 2023.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the investigation's start date."
+ },
+ {
+  "id": "V2-019-034",
+  "proposition": "Reddit will delete accounts created by children under 13.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any account deletions."
+ },
+ {
+  "id": "V2-019-035",
+  "proposition": "The ICO consulted Ofcom on the case.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any consultation."
+ },
+ {
+  "id": "V2-019-036",
+  "proposition": "Other UK social platforms were fined for the same breach.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article concerns Reddit only."
+ },
+ {
+  "id": "V2-019-037",
+  "proposition": "Reddit's chief executive commented on the decision.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article quotes no executive comment."
+ },
+ {
+  "id": "V2-019-038",
+  "proposition": "The age assurance rollout was completed in October 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the rollout's completion date."
+ },
+ {
+  "id": "V2-019-039",
+  "proposition": "The ICO imposed a compliance deadline on Reddit.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any deadline."
+ },
+ {
+  "id": "V2-019-040",
+  "proposition": "The fine was paid in full within a week.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any payment."
+ }
+]

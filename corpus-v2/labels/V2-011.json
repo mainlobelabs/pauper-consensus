@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-011-001",
+  "proposition": "The Florida Legislature passed a measure to formally rename the airport.",
+  "label": "ENTAIL",
+  "evidence": "The Florida Legislature has passed a measure to formally rename",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-002",
+  "proposition": "The measure renamed Palm Beach International Airport.",
+  "label": "ENTAIL",
+  "evidence": "to formally rename Palm Beach International Airport",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-003",
+  "proposition": "The new name is the President Donald J. Trump International Airport.",
+  "label": "ENTAIL",
+  "evidence": "\"President Donald J. Trump International Airport.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-004",
+  "proposition": "The airport is in Palm Beach County.",
+  "label": "ENTAIL",
+  "evidence": "Palm Beach International Airport in Palm Beach County",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-005",
+  "proposition": "The bill passed on February 19, 2026.",
+  "label": "ENTAIL",
+  "evidence": "The bill passed on February 19, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-006",
+  "proposition": "The bill passed along party lines.",
+  "label": "ENTAIL",
+  "evidence": "along party lines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-007",
+  "proposition": "Governor Ron DeSantis signed the measure.",
+  "label": "ENTAIL",
+  "evidence": "Governor Ron DeSantis signed the measure in March",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-008",
+  "proposition": "DeSantis signed the measure in March.",
+  "label": "ENTAIL",
+  "evidence": "signed the measure in March",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-009",
+  "proposition": "The new name took effect on July 9, 2026.",
+  "label": "ENTAIL",
+  "evidence": "the new name took effect on July 9, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-010",
+  "proposition": "The airport will be the first in the United States named for a sitting president.",
+  "label": "ENTAIL",
+  "evidence": "the first in the United States to be named for a sitting president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-011",
+  "proposition": "Post offices bear the names of presidents.",
+  "label": "ENTAIL",
+  "evidence": "including post offices and federal buildings, bearing the names of presidents",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-012",
+  "proposition": "Federal buildings bear the names of presidents.",
+  "label": "ENTAIL",
+  "evidence": "including post offices and federal buildings, bearing the names of presidents",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-013",
+  "proposition": "The airport is assigned the IATA code DJT.",
+  "label": "ENTAIL",
+  "evidence": "assigns the airport the IATA code DJT",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-014",
+  "proposition": "The new code replaces the long-standing PBI code.",
+  "label": "ENTAIL",
+  "evidence": "replacing its long-standing PBI code",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-015",
+  "proposition": "The name must be used on a perpetual and unrestricted basis.",
+  "label": "ENTAIL",
+  "evidence": "requires the name to be used on a \"perpetual and unrestricted\" basis",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-016",
+  "proposition": "The name comes at no cost to the government.",
+  "label": "ENTAIL",
+  "evidence": "at no cost to the government",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-017",
+  "proposition": "Supporters say the name recognizes the president's long-standing ties to South Florida.",
+  "label": "ENTAIL",
+  "evidence": "Supporters say the name recognizes the president's long-standing ties to South Florida",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-018",
+  "proposition": "The president has kept a private residence in South Florida for years.",
+  "label": "ENTAIL",
+  "evidence": "where he has kept a private residence for years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-019",
+  "proposition": "The airport is one of the busiest general aviation facilities in the country.",
+  "label": "ENTAIL",
+  "evidence": "is one of the busiest general aviation facilities in the country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-020",
+  "proposition": "The airport serves as a hub for business jet traffic.",
+  "label": "ENTAIL",
+  "evidence": "serving as a hub for business jet traffic",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-021",
+  "proposition": "The bill passed in January 2026.",
+  "label": "CONTRADICT",
+  "evidence": "The bill passed on February 19, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-022",
+  "proposition": "Governor Ron DeSantis vetoed the measure.",
+  "label": "CONTRADICT",
+  "evidence": "Governor Ron DeSantis signed the measure in March",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-023",
+  "proposition": "The new name took effect on July 9, 2027.",
+  "label": "CONTRADICT",
+  "evidence": "the new name took effect on July 9, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-024",
+  "proposition": "The airport will be the second in the United States named for a sitting president.",
+  "label": "CONTRADICT",
+  "evidence": "the first in the United States to be named for a sitting president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-025",
+  "proposition": "The airport will keep its PBI code.",
+  "label": "CONTRADICT",
+  "evidence": "replacing its long-standing PBI code",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-026",
+  "proposition": "The renaming will cost the government one million dollars.",
+  "label": "CONTRADICT",
+  "evidence": "at no cost to the government",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-027",
+  "proposition": "The bill passed by a bipartisan supermajority.",
+  "label": "CONTRADICT",
+  "evidence": "along party lines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-028",
+  "proposition": "The president has no private residence in South Florida.",
+  "label": "CONTRADICT",
+  "evidence": "where he has kept a private residence for years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-029",
+  "proposition": "The airport is the country's busiest commercial hub.",
+  "label": "CONTRADICT",
+  "evidence": "one of the busiest general aviation facilities in the country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-030",
+  "proposition": "The measure was passed by the Palm Beach County commission.",
+  "label": "CONTRADICT",
+  "evidence": "The Florida Legislature has passed a measure",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-011-031",
+  "proposition": "Voters approved the renaming in a referendum.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any referendum."
+ },
+ {
+  "id": "V2-011-032",
+  "proposition": "The airport authority voted unanimously on the measure.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe any airport authority vote."
+ },
+ {
+  "id": "V2-011-033",
+  "proposition": "The new signage was installed by March 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the signage will appear but gives no date."
+ },
+ {
+  "id": "V2-011-034",
+  "proposition": "Opponents collected 10,000 signatures against the measure.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any opposition campaign."
+ },
+ {
+  "id": "V2-011-035",
+  "proposition": "The DJT code was assigned by the Federal Aviation Administration.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the measure assigns the code but names no authority."
+ },
+ {
+  "id": "V2-011-036",
+  "proposition": "The renaming drew international media coverage.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any media coverage."
+ },
+ {
+  "id": "V2-011-037",
+  "proposition": "President Trump attended a renaming ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any ceremony."
+ },
+ {
+  "id": "V2-011-038",
+  "proposition": "The airport's revenue increased after the renaming.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any financial effect."
+ },
+ {
+  "id": "V2-011-039",
+  "proposition": "The PBI code is still in use on some signage.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the code is being replaced but gives no transition details."
+ },
+ {
+  "id": "V2-011-040",
+  "proposition": "DeSantis signed the bill at the Florida state capitol.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the location of the signing."
+ }
+]

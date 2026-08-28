@@ -1,0 +1,282 @@
+[
+ {
+  "id": "R02-001",
+  "proposition": "An Airbus Helicopters H125 crashed in Kenya.",
+  "label": "ENTAIL",
+  "evidence": "An Airbus Helicopters H125 has crashed in Nandi County",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-002",
+  "proposition": "The crash occurred in Nandi County.",
+  "label": "ENTAIL",
+  "evidence": "in Nandi County, western Kenya",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-003",
+  "proposition": "Nandi County is in western Kenya.",
+  "label": "ENTAIL",
+  "evidence": "Nandi County, western Kenya",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-004",
+  "proposition": "All six people on board died.",
+  "label": "ENTAIL",
+  "evidence": "killing all six people on board",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-005",
+  "proposition": "Member of Parliament Johana Ng'eno was among the dead.",
+  "label": "ENTAIL",
+  "evidence": "including Member of Parliament Johana Ng'eno",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-006",
+  "proposition": "The aircraft was registered 5Y-DSB.",
+  "label": "ENTAIL",
+  "evidence": "registered 5Y-DSB",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-007",
+  "proposition": "The helicopter crashed and burst into flames at Chepkiep.",
+  "label": "ENTAIL",
+  "evidence": "crashed and burst into flames at Chepkiep",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-008",
+  "proposition": "Chepkiep is in Mosop Sub-County.",
+  "label": "ENTAIL",
+  "evidence": "in Mosop Sub-County",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-009",
+  "proposition": "The crash occurred on Saturday, February 28, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, February 28, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-010",
+  "proposition": "The crash occurred at about 16:45.",
+  "label": "ENTAIL",
+  "evidence": "at about 16:45",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-011",
+  "proposition": "The helicopter made an emergency landing in thick fog and drizzle.",
+  "label": "ENTAIL",
+  "evidence": "after making an emergency landing in thick fog and drizzle",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-012",
+  "proposition": "Witnesses reported seeing the helicopter descend steeply before impact.",
+  "label": "ENTAIL",
+  "evidence": "Witnesses reported seeing the helicopter descend steeply before impact",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-013",
+  "proposition": "The crash site lies in the highland area of the Mau region.",
+  "label": "ENTAIL",
+  "evidence": "lies in the highland area of the Mau region",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-014",
+  "proposition": "Police attributed the crash to bad weather.",
+  "label": "ENTAIL",
+  "evidence": "Police attributed the crash to bad weather",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-015",
+  "proposition": "A Kenya Forestry Service ranger was among the dead.",
+  "label": "ENTAIL",
+  "evidence": "a Kenya Forestry Service ranger",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-016",
+  "proposition": "A photographer was among the dead.",
+  "label": "ENTAIL",
+  "evidence": "a photographer, and a teacher",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-017",
+  "proposition": "A teacher was among the dead.",
+  "label": "ENTAIL",
+  "evidence": "a photographer, and a teacher",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-018",
+  "proposition": "Ng'eno represented the Emurua Dikirr constituency.",
+  "label": "ENTAIL",
+  "evidence": "who represented the Emurua Dikirr constituency",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-019",
+  "proposition": "The H125 is a light helicopter.",
+  "label": "ENTAIL",
+  "evidence": "The H125 is a light helicopter",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-020",
+  "proposition": "Ng'eno had served in parliament since 2017.",
+  "label": "ENTAIL",
+  "evidence": "Ng'eno had served in parliament since 2017",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-021",
+  "proposition": "The aircraft was a Bell 206.",
+  "label": "CONTRADICT",
+  "evidence": "An Airbus Helicopters H125",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-022",
+  "proposition": "The crash killed four people on board.",
+  "label": "CONTRADICT",
+  "evidence": "killing all six people on board",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-023",
+  "proposition": "The crash occurred at Eldoret airport.",
+  "label": "CONTRADICT",
+  "evidence": "at Chepkiep, in Mosop Sub-County",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-024",
+  "proposition": "The crash occurred on Friday, February 27, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Saturday, February 28, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-025",
+  "proposition": "The crash occurred at about 06:45.",
+  "label": "CONTRADICT",
+  "evidence": "at about 16:45",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-026",
+  "proposition": "Police attributed the crash to mechanical failure.",
+  "label": "CONTRADICT",
+  "evidence": "Police attributed the crash to bad weather",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-027",
+  "proposition": "The crash occurred in Turkana County.",
+  "label": "CONTRADICT",
+  "evidence": "in Nandi County, western Kenya",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-028",
+  "proposition": "Ng'eno represented the Kisumu North constituency.",
+  "label": "CONTRADICT",
+  "evidence": "the Emurua Dikirr constituency",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-029",
+  "proposition": "The H125 is a heavy-lift helicopter.",
+  "label": "CONTRADICT",
+  "evidence": "is a light helicopter",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-030",
+  "proposition": "Ng'eno had served in parliament since 2021.",
+  "label": "CONTRADICT",
+  "evidence": "since 2017",
+  "silence_reason": null
+ },
+ {
+  "id": "R02-031",
+  "proposition": "A pilot was among the dead.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names four of the six dead but does not identify the rest."
+ },
+ {
+  "id": "R02-032",
+  "proposition": "The helicopter was on a commercial tour flight.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article describes the H125's typical uses but not this flight's purpose."
+ },
+ {
+  "id": "R02-033",
+  "proposition": "The recovery operation took three days.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the recovery's duration."
+ },
+ {
+  "id": "R02-034",
+  "proposition": "Ng'eno's funeral was held on March 3.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions official mourning but no funeral date."
+ },
+ {
+  "id": "R02-035",
+  "proposition": "The Kenya Forestry Service issued a statement on the crash.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not quote any agency statement."
+ },
+ {
+  "id": "R02-036",
+  "proposition": "The crash prompted a review of helicopter weather rules.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any regulatory review."
+ },
+ {
+  "id": "R02-037",
+  "proposition": "All the dead were identified within 24 hours.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention identification timelines."
+ },
+ {
+  "id": "R02-038",
+  "proposition": "The helicopter was leased from a French operator.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention the operator or the lease."
+ },
+ {
+  "id": "R02-039",
+  "proposition": "The fog in the area had been forecast before the flight.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any forecast."
+ },
+ {
+  "id": "R02-040",
+  "proposition": "Ng'eno was re-elected in 2022.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives only her service start of 2017."
+ }
+]

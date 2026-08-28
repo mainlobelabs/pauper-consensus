@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-003-001",
+  "proposition": "An annular solar eclipse was visible from Antarctica on February 17, 2026.",
+  "label": "ENTAIL",
+  "evidence": "An annular solar eclipse lasting up to 2 minutes and 20 seconds was visible from Antarctica on Tuesday, February 17, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-002",
+  "proposition": "The annular phase of the eclipse lasted up to 2 minutes and 20 seconds.",
+  "label": "ENTAIL",
+  "evidence": "An annular solar eclipse lasting up to 2 minutes and 20 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-003",
+  "proposition": "The eclipse was the first annular eclipse seen from Antarctica since 2014.",
+  "label": "ENTAIL",
+  "evidence": "the first annular eclipse seen from the continent since 2014",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-004",
+  "proposition": "The eclipse was visible from the Southern Ocean.",
+  "label": "ENTAIL",
+  "evidence": "with additional visibility from the Southern and South Indian Oceans",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-005",
+  "proposition": "The eclipse was visible from the South Indian Ocean.",
+  "label": "ENTAIL",
+  "evidence": "with additional visibility from the Southern and South Indian Oceans",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-006",
+  "proposition": "Parts of Africa had partial views of the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "partial views in parts of Africa, Argentina, and Chile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-007",
+  "proposition": "Parts of Argentina had partial views of the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "partial views in parts of Africa, Argentina, and Chile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-008",
+  "proposition": "Parts of Chile had partial views of the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "partial views in parts of Africa, Argentina, and Chile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-009",
+  "proposition": "The eclipse reached a magnitude of 0.963.",
+  "label": "ENTAIL",
+  "evidence": "The eclipse reached a magnitude of 0.963",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-010",
+  "proposition": "Maximum annularity occurred at 12:11 UT.",
+  "label": "ENTAIL",
+  "evidence": "Maximum annularity occurred at 12:11 UT",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-011",
+  "proposition": "The total annular phase lasted 2 minutes and 20 seconds.",
+  "label": "ENTAIL",
+  "evidence": "Maximum annularity occurred at 12:11 UT and lasted 2 minutes and 20 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-012",
+  "proposition": "The annular path crossed Antarctica only.",
+  "label": "ENTAIL",
+  "evidence": "The annular path crossed Antarctica only",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-013",
+  "proposition": "The best partial views of the eclipse were from southern Africa.",
+  "label": "ENTAIL",
+  "evidence": "with the best views from southern Africa",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-014",
+  "proposition": "The southern tips of Argentina had good partial views of the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "with the best views from southern Africa and the southern tips of Argentina and Chile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-015",
+  "proposition": "The southern tips of Chile had good partial views of the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "with the best views from southern Africa and the southern tips of Argentina and Chile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-016",
+  "proposition": "The moon was near the far end of its orbit during the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "The ring-of-fire effect occurs when the moon is near the far end of its orbit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-017",
+  "proposition": "The annular eclipse of October 14, 2023 was visible from the southern Pacific.",
+  "label": "ENTAIL",
+  "evidence": "The eclipse follows the annular eclipse of October 14, 2023, which was visible from the southern Pacific",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-018",
+  "proposition": "The annular eclipse of October 14, 2023 was visible from parts of Australia.",
+  "label": "ENTAIL",
+  "evidence": "which was visible from the southern Pacific and parts of Australia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-019",
+  "proposition": "Observers at Antarctic research stations were in position to watch the eclipse.",
+  "label": "ENTAIL",
+  "evidence": "Observers at the continent's research stations and in coastal Southern Hemisphere locations were among those positioned to watch the event",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-020",
+  "proposition": "Eclipse-tracking services flagged the event in advance as a viewing opportunity.",
+  "label": "ENTAIL",
+  "evidence": "which eclipse-tracking services had flagged in advance as a notable viewing opportunity for the region",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-021",
+  "proposition": "The eclipse was a total solar eclipse visible from Antarctica.",
+  "label": "CONTRADICT",
+  "evidence": "An annular solar eclipse",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-022",
+  "proposition": "The annular phase lasted up to 5 minutes.",
+  "label": "CONTRADICT",
+  "evidence": "lasted 2 minutes and 20 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-023",
+  "proposition": "The eclipse was the first annular eclipse seen from Antarctica since 1991.",
+  "label": "CONTRADICT",
+  "evidence": "the first annular eclipse seen from the continent since 2014",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-024",
+  "proposition": "The eclipse reached a magnitude of 1.04.",
+  "label": "CONTRADICT",
+  "evidence": "The eclipse reached a magnitude of 0.963",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-025",
+  "proposition": "Maximum annularity occurred at 04:11 UT.",
+  "label": "CONTRADICT",
+  "evidence": "Maximum annularity occurred at 12:11 UT",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-026",
+  "proposition": "The annular path crossed Antarctica and parts of South America.",
+  "label": "CONTRADICT",
+  "evidence": "The annular path crossed Antarctica only",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-027",
+  "proposition": "The eclipse was not visible from the Southern Ocean.",
+  "label": "CONTRADICT",
+  "evidence": "with additional visibility from the Southern and South Indian Oceans",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-028",
+  "proposition": "No partial views of the eclipse were possible from Argentina or Chile.",
+  "label": "CONTRADICT",
+  "evidence": "partial views in parts of Africa, Argentina, and Chile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-029",
+  "proposition": "The previous annular eclipse visible from the southern Pacific occurred in 2012.",
+  "label": "CONTRADICT",
+  "evidence": "The eclipse follows the annular eclipse of October 14, 2023",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-030",
+  "proposition": "The ring-of-fire effect occurs when the moon is at the near end of its orbit.",
+  "label": "CONTRADICT",
+  "evidence": "when the moon is near the far end of its orbit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-003-031",
+  "proposition": "Three Antarctic research stations had unobstructed views of the eclipse.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article mentions research stations were positioned to watch but gives no count or station names."
+ },
+ {
+  "id": "V2-003-032",
+  "proposition": "The eclipse was visible from New Zealand.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article lists Antarctica, the Southern and South Indian Oceans, and partial views in Africa, Argentina, and Chile only."
+ },
+ {
+  "id": "V2-003-033",
+  "proposition": "The 2023 annular eclipse lasted longer than the 2026 eclipse.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives the 2026 duration only and says nothing about the 2023 eclipse's duration."
+ },
+ {
+  "id": "V2-003-034",
+  "proposition": "A total of 12 minutes and 40 seconds of annularity was possible somewhere on Earth.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article states the maximum annular phase lasted 2 minutes and 20 seconds but not cumulative annularity."
+ },
+ {
+  "id": "V2-003-035",
+  "proposition": "The eclipse was visible from the southern tip of South Africa.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says southern Africa had the best partial views but names no specific locations."
+ },
+ {
+  "id": "V2-003-036",
+  "proposition": "The moon was at perigee during the eclipse.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the moon was near the far end of its orbit (apogee) but does not state a precise distance."
+ },
+ {
+  "id": "V2-003-037",
+  "proposition": "The eclipse was visible from the Falkland Islands.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no partial-visibility details for regions outside Africa, Argentina, and Chile."
+ },
+ {
+  "id": "V2-003-038",
+  "proposition": "Observers in Argentina used solar filters rated for annular eclipses.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says nothing about observer equipment."
+ },
+ {
+  "id": "V2-003-039",
+  "proposition": "The 2026 eclipse was the longest annular eclipse of the decade.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no comparison of durations across the decade."
+ },
+ {
+  "id": "V2-003-040",
+  "proposition": "Cloud cover prevented observations from one Antarctic research station.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no observation outcomes at any specific station."
+ }
+]

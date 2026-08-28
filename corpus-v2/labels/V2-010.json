@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-010-001",
+  "proposition": "British police arrested Prince Andrew.",
+  "label": "ENTAIL",
+  "evidence": "British police have arrested Prince Andrew",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-002",
+  "proposition": "Prince Andrew's full name is Andrew Mountbatten-Windsor.",
+  "label": "ENTAIL",
+  "evidence": "Prince Andrew, Andrew Mountbatten-Windsor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-003",
+  "proposition": "He was arrested on suspicion of misconduct in public office.",
+  "label": "ENTAIL",
+  "evidence": "on suspicion of misconduct in public office",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-004",
+  "proposition": "The arrest related to his links to Jeffrey Epstein.",
+  "label": "ENTAIL",
+  "evidence": "related to his links to convicted American sex offender Jeffrey Epstein",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-005",
+  "proposition": "Epstein was a convicted American sex offender.",
+  "label": "ENTAIL",
+  "evidence": "convicted American sex offender Jeffrey Epstein",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-006",
+  "proposition": "Thames Valley Police made the arrest.",
+  "label": "ENTAIL",
+  "evidence": "Thames Valley Police made the arrest",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-007",
+  "proposition": "The arrest took place at the prince's home in Norfolk.",
+  "label": "ENTAIL",
+  "evidence": "at the prince's home in Norfolk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-008",
+  "proposition": "The arrest took place on February 19, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Thursday, February 19, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-009",
+  "proposition": "The Home Office was notified 30 minutes in advance.",
+  "label": "ENTAIL",
+  "evidence": "The Home Office was notified of the arrest 30 minutes in advance",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-010",
+  "proposition": "Andrew was held for several hours.",
+  "label": "ENTAIL",
+  "evidence": "Prince Andrew was held for several hours",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-011",
+  "proposition": "Andrew was released from police custody without being charged at the time of the arrest.",
+  "label": "ENTAIL",
+  "evidence": "released from police custody without being charged at the time of the arrest",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-012",
+  "proposition": "The Epstein files were released on January 30.",
+  "label": "ENTAIL",
+  "evidence": "the release of the Epstein files on January 30",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-013",
+  "proposition": "Epstein died in a New York jail cell in 2019.",
+  "label": "ENTAIL",
+  "evidence": "Epstein, who died in a New York jail cell in 2019",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-014",
+  "proposition": "Epstein maintained a network of wealthy and powerful acquaintances across three decades.",
+  "label": "ENTAIL",
+  "evidence": "had maintained a network of wealthy and powerful acquaintances across three decades",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-015",
+  "proposition": "Prince Andrew is the second son of Queen Elizabeth II.",
+  "label": "ENTAIL",
+  "evidence": "the second son of Queen Elizabeth II",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-016",
+  "proposition": "Andrew has faced questions about his friendship with Epstein for years.",
+  "label": "ENTAIL",
+  "evidence": "has faced questions about his friendship with Epstein for years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-017",
+  "proposition": "Andrew stepped back from royal duties after the relationship became public.",
+  "label": "ENTAIL",
+  "evidence": "he stepped back from royal duties after the relationship became public",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-018",
+  "proposition": "A separate investigation is under way into former British minister Peter Mandelson.",
+  "label": "ENTAIL",
+  "evidence": "A separate investigation is under way into the conduct of former British minister Peter Mandelson",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-019",
+  "proposition": "Mandelson is a former British minister.",
+  "label": "ENTAIL",
+  "evidence": "former British minister Peter Mandelson",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-020",
+  "proposition": "Mandelson is also linked to Epstein.",
+  "label": "ENTAIL",
+  "evidence": "who is also linked to Epstein",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-021",
+  "proposition": "Andrew was arrested on suspicion of fraud.",
+  "label": "CONTRADICT",
+  "evidence": "on suspicion of misconduct in public office",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-022",
+  "proposition": "Scotland Yard made the arrest.",
+  "label": "CONTRADICT",
+  "evidence": "Thames Valley Police made the arrest",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-023",
+  "proposition": "The arrest took place at Windsor Castle.",
+  "label": "CONTRADICT",
+  "evidence": "at the prince's home in Norfolk",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-024",
+  "proposition": "The arrest took place on February 20, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Thursday, February 19, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-025",
+  "proposition": "The Home Office was notified two hours in advance.",
+  "label": "CONTRADICT",
+  "evidence": "notified of the arrest 30 minutes in advance",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-026",
+  "proposition": "Andrew was charged at the time of the arrest.",
+  "label": "CONTRADICT",
+  "evidence": "released from police custody without being charged at the time of the arrest",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-027",
+  "proposition": "The Epstein files were released on March 30.",
+  "label": "CONTRADICT",
+  "evidence": "the release of the Epstein files on January 30",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-028",
+  "proposition": "Epstein died in a London hospital in 2020.",
+  "label": "CONTRADICT",
+  "evidence": "died in a New York jail cell in 2019",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-029",
+  "proposition": "Prince Andrew is the elder son of Queen Elizabeth II.",
+  "label": "CONTRADICT",
+  "evidence": "the second son of Queen Elizabeth II",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-030",
+  "proposition": "Andrew continued full royal duties after the relationship became public.",
+  "label": "CONTRADICT",
+  "evidence": "he stepped back from royal duties after the relationship became public",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-010-031",
+  "proposition": "Andrew's home was searched during the arrest.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article reports the arrest but not any search of the home."
+ },
+ {
+  "id": "V2-010-032",
+  "proposition": "Andrew issued a statement after his release.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any statement by Andrew."
+ },
+ {
+  "id": "V2-010-033",
+  "proposition": "The arrest was made at 9 a.m.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article gives no time of the arrest."
+ },
+ {
+  "id": "V2-010-034",
+  "proposition": "Andrew's wife Sarah attended him at the police station.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention anyone attending Andrew."
+ },
+ {
+  "id": "V2-010-035",
+  "proposition": "A Home Office minister commented publicly on the arrest.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says the Home Office was notified but quotes no one."
+ },
+ {
+  "id": "V2-010-036",
+  "proposition": "Epstein's estate was sold after his death.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention Epstein's estate."
+ },
+ {
+  "id": "V2-010-037",
+  "proposition": "A third person named in the Epstein files was arrested.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names only Andrew and the investigated Mandelson."
+ },
+ {
+  "id": "V2-010-038",
+  "proposition": "Andrew was bailed by a magistrates' court.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says he was released without charge but does not mention bail."
+ },
+ {
+  "id": "V2-010-039",
+  "proposition": "The investigation into Andrew was opened in 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give a date for the opening of the investigation."
+ },
+ {
+  "id": "V2-010-040",
+  "proposition": "Mandelson was charged in his case.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article says Mandelson is under investigation, not charged."
+ }
+]

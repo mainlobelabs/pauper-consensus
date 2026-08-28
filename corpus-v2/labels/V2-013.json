@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-013-001",
+  "proposition": "The Sagrada Familia has reached its designed height of 172.5 metres.",
+  "label": "ENTAIL",
+  "evidence": "has reached its designed height of 172.5 metres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-002",
+  "proposition": "172.5 metres is 566 feet.",
+  "label": "ENTAIL",
+  "evidence": "172.5 metres (566 feet)",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-003",
+  "proposition": "The basilica is in Barcelona, Spain.",
+  "label": "ENTAIL",
+  "evidence": "in Barcelona, Spain",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-004",
+  "proposition": "A crane placed the upper arm of the cross.",
+  "label": "ENTAIL",
+  "evidence": "after a crane placed the upper arm of the cross",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-005",
+  "proposition": "The cross is on the Tower of Jesus Christ.",
+  "label": "ENTAIL",
+  "evidence": "on the Tower of Jesus Christ",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-006",
+  "proposition": "The Tower of Jesus Christ is the church's tallest element.",
+  "label": "ENTAIL",
+  "evidence": "the church's tallest element",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-007",
+  "proposition": "The milestone was announced on February 20, 2026.",
+  "label": "ENTAIL",
+  "evidence": "announced on Friday, February 20, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-008",
+  "proposition": "Construction began in 1882.",
+  "label": "ENTAIL",
+  "evidence": "caps construction that began in 1882",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-009",
+  "proposition": "Construction began more than 140 years ago.",
+  "label": "ENTAIL",
+  "evidence": "more than 140 years ago",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-010",
+  "proposition": "The design is by architect Antoni Gaudi.",
+  "label": "ENTAIL",
+  "evidence": "on the design of architect Antoni Gaudí",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-011",
+  "proposition": "Gaudi died in 1926.",
+  "label": "ENTAIL",
+  "evidence": "who died in 1926",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-012",
+  "proposition": "Gaudi died with the work only partially complete.",
+  "label": "ENTAIL",
+  "evidence": "with the work only partially complete",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-013",
+  "proposition": "Completion of the main building is expected later in 2026.",
+  "label": "ENTAIL",
+  "evidence": "The completion of the main building is expected later in 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-014",
+  "proposition": "Interior work is expected to continue through 2027 and 2028.",
+  "label": "ENTAIL",
+  "evidence": "is expected to continue through 2027 and 2028",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-015",
+  "proposition": "The interior work includes work on the nave and the apse.",
+  "label": "ENTAIL",
+  "evidence": "Interior work, including on the nave and the apse",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-016",
+  "proposition": "The tower is planned to be crowned with a statue of the Virgin Mary.",
+  "label": "ENTAIL",
+  "evidence": "planned to be crowned with a statue of the Virgin Mary",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-017",
+  "proposition": "The basilica is a UNESCO World Heritage site.",
+  "label": "ENTAIL",
+  "evidence": "a UNESCO World Heritage site",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-018",
+  "proposition": "The basilica has been under continuous construction since Gaudi took over the project in 1883.",
+  "label": "ENTAIL",
+  "evidence": "under continuous construction since Gaudí took over the project in 1883",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-019",
+  "proposition": "The long build has in part been financed by ticket sales.",
+  "label": "ENTAIL",
+  "evidence": "financed by ticket sales",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-020",
+  "proposition": "The basilica receives millions of visitors each year.",
+  "label": "ENTAIL",
+  "evidence": "the millions of visitors it receives each year",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-021",
+  "proposition": "The basilica reached its designed height of 162.5 metres.",
+  "label": "CONTRADICT",
+  "evidence": "its designed height of 172.5 metres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-022",
+  "proposition": "The upper arm of the cross was placed by hand without a crane.",
+  "label": "CONTRADICT",
+  "evidence": "after a crane placed the upper arm of the cross",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-023",
+  "proposition": "The milestone was announced on February 21, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "announced on Friday, February 20, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-024",
+  "proposition": "Construction began in 1892.",
+  "label": "CONTRADICT",
+  "evidence": "that began in 1882",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-025",
+  "proposition": "Gaudi died in 1936.",
+  "label": "CONTRADICT",
+  "evidence": "who died in 1926",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-026",
+  "proposition": "Completion of the main building is expected in 2030.",
+  "label": "CONTRADICT",
+  "evidence": "is expected later in 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-027",
+  "proposition": "The interior work is expected to be finished by the end of 2026.",
+  "label": "CONTRADICT",
+  "evidence": "is expected to continue through 2027 and 2028",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-028",
+  "proposition": "The tower will be crowned with a statue of Jesus Christ.",
+  "label": "CONTRADICT",
+  "evidence": "a statue of the Virgin Mary",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-029",
+  "proposition": "The basilica lost its UNESCO World Heritage status.",
+  "label": "CONTRADICT",
+  "evidence": "a UNESCO World Heritage site",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-030",
+  "proposition": "Gaudi took over the project in 1873.",
+  "label": "CONTRADICT",
+  "evidence": "since Gaudí took over the project in 1883",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-013-031",
+  "proposition": "The crane was a 300-tonne mobile unit.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not describe the crane."
+ },
+ {
+  "id": "V2-013-032",
+  "proposition": "The cross weighs four tonnes.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not give the cross's weight."
+ },
+ {
+  "id": "V2-013-033",
+  "proposition": "A ceremony marked the milestone.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any ceremony."
+ },
+ {
+  "id": "V2-013-034",
+  "proposition": "The milestone was broadcast live on television.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any broadcast."
+ },
+ {
+  "id": "V2-013-035",
+  "proposition": "Gaudi's remains were exhumed for the occasion.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any exhumation."
+ },
+ {
+  "id": "V2-013-036",
+  "proposition": "The 2026 completion date was set by the construction company.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article attributes the expectation to reports, not a company."
+ },
+ {
+  "id": "V2-013-037",
+  "proposition": "Ticket prices were raised after the milestone.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any price change."
+ },
+ {
+  "id": "V2-013-038",
+  "proposition": "The nave interior work includes a mosaic floor.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article names the nave and apse but describes no specific work."
+ },
+ {
+  "id": "V2-013-039",
+  "proposition": "A new access tower for visitors is planned.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any new structures."
+ },
+ {
+  "id": "V2-013-040",
+  "proposition": "The Spanish king attended the milestone.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Article does not mention any attendance."
+ }
+]
