@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-100-001",
+  "proposition": "Sabastian Sawe and Yomif Kejelcha became the first people to run a marathon in under two hours.",
+  "label": "ENTAIL",
+  "evidence": "the first people to run a marathon in under two hours",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-002",
+  "proposition": "Sawe set a new world record of 1:59:30.",
+  "label": "ENTAIL",
+  "evidence": "a new world record of 1:59:30",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-003",
+  "proposition": "It was at the TCS London Marathon.",
+  "label": "ENTAIL",
+  "evidence": "at the TCS London Marathon",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-004",
+  "proposition": "The race was on Sunday, April 26, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Sunday, April 26, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-005",
+  "proposition": "It was a dry and sunny Platinum Label road race.",
+  "label": "ENTAIL",
+  "evidence": "the dry and sunny Platinum Label road race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-006",
+  "proposition": "Sawe is 31 and from Kenya.",
+  "label": "ENTAIL",
+  "evidence": "Sawe, 31, of Kenya",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-007",
+  "proposition": "He is the defending champion.",
+  "label": "ENTAIL",
+  "evidence": "the defending champion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-008",
+  "proposition": "It is the first competitive, official sub-two-hour marathon in history.",
+  "label": "ENTAIL",
+  "evidence": "the first competitive, official sub-two-hour marathon in history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-009",
+  "proposition": "His time passes Eliud Kipchoge's 1:59:40.2 from a 2019 Vienna exhibition.",
+  "label": "ENTAIL",
+  "evidence": "Kipchoge's 1:59:40.2 set in a 2019 Vienna exhibition",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-010",
+  "proposition": "Kipchoge's run was not an official race.",
+  "label": "ENTAIL",
+  "evidence": "which was not an official race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-011",
+  "proposition": "Sawe's time is 65 seconds inside the previous world record.",
+  "label": "ENTAIL",
+  "evidence": "65 seconds inside the previous world record",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-012",
+  "proposition": "The previous world record was 2:00:35 set by Kelvin Kiptum at the 2023 Chicago Marathon.",
+  "label": "ENTAIL",
+  "evidence": "2:00:35 set by Kelvin Kiptum at the 2023 Chicago Marathon",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-013",
+  "proposition": "Sawe split the halves in 60:29 and 59:01, a negative split.",
+  "label": "ENTAIL",
+  "evidence": "60:29 and 59:01, a negative split",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-014",
+  "proposition": "He broke clear of Kejelcha in the final mile.",
+  "label": "ENTAIL",
+  "evidence": "broke clear of Kejelcha in the final mile",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-015",
+  "proposition": "Kejelcha is 28, from Ethiopia, and a marathon debutant.",
+  "label": "ENTAIL",
+  "evidence": "Kejelcha, 28, of Ethiopia, a marathon debutant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-016",
+  "proposition": "He is a twice 10,000m world silver medalist and indoor mile world record holder.",
+  "label": "ENTAIL",
+  "evidence": "a twice 10,000m world silver medalist and indoor mile world record holder",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-017",
+  "proposition": "Kejelcha finished in 1:59:41, the second-fastest time ever.",
+  "label": "ENTAIL",
+  "evidence": "finished in 1:59:41, the second-fastest time ever",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-018",
+  "proposition": "It is the fastest marathon debut in history.",
+  "label": "ENTAIL",
+  "evidence": "the fastest marathon debut in history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-019",
+  "proposition": "Tigst Assefa retained her women's title in 2:15:41.",
+  "label": "ENTAIL",
+  "evidence": "retained her title in 2:15:41",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-020",
+  "proposition": "It was the first time three women finished under 2:16.",
+  "label": "ENTAIL",
+  "evidence": "the first time three women finished under 2:16",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-021",
+  "proposition": "Only one person ran a sub-two-hour marathon.",
+  "label": "CONTRADICT",
+  "evidence": "Sawe and Yomif Kejelcha have become the first people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-022",
+  "proposition": "Sawe's record was 2:00:10.",
+  "label": "CONTRADICT",
+  "evidence": "1:59:30",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-023",
+  "proposition": "It was at the Berlin Marathon.",
+  "label": "CONTRADICT",
+  "evidence": "at the TCS London Marathon",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-024",
+  "proposition": "The race was on April 20, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "On Sunday, April 26, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-025",
+  "proposition": "Kipchoge's 1:59:40.2 was an official race.",
+  "label": "CONTRADICT",
+  "evidence": "which was not an official race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-026",
+  "proposition": "Sawe's time is 10 seconds inside the previous record.",
+  "label": "CONTRADICT",
+  "evidence": "65 seconds inside the previous world record",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-027",
+  "proposition": "Sawe split the halves evenly.",
+  "label": "CONTRADICT",
+  "evidence": "a negative split",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-028",
+  "proposition": "Kejelcha was a five-time marathon veteran.",
+  "label": "CONTRADICT",
+  "evidence": "a marathon debutant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-029",
+  "proposition": "Kejelcha finished in 2:01:00.",
+  "label": "CONTRADICT",
+  "evidence": "finished in 1:59:41",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-030",
+  "proposition": "Two women finished under 2:16.",
+  "label": "CONTRADICT",
+  "evidence": "three women finished under 2:16",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-100-031",
+  "proposition": "Sawe named his pacing strategy.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His strategy is not described."
+ },
+ {
+  "id": "V2-100-032",
+  "proposition": "The marathon's field size was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Field size is not given."
+ },
+ {
+  "id": "V2-100-033",
+  "proposition": "Sawe's prize money was announced.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Prize money is not given."
+ },
+ {
+  "id": "V2-100-034",
+  "proposition": "Kiplimo's time set a personal best.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A personal best is not mentioned."
+ },
+ {
+  "id": "V2-100-035",
+  "proposition": "Assefa dedicated her win to someone.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A dedication is not mentioned."
+ },
+ {
+  "id": "V2-100-036",
+  "proposition": "The race had a specific number of aid stations.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Logistics are not described."
+ },
+ {
+  "id": "V2-100-037",
+  "proposition": "Sawe's agent commented.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His agent is not mentioned."
+ },
+ {
+  "id": "V2-100-038",
+  "proposition": "The record was ratified by World Athletics on a specific date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A ratification date is not given."
+ },
+ {
+  "id": "V2-100-039",
+  "proposition": "Sawe trained at a specific altitude.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His training is not described."
+ },
+ {
+  "id": "V2-100-040",
+  "proposition": "World Athletics announced a celebration ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A ceremony is not mentioned."
+ }
+]

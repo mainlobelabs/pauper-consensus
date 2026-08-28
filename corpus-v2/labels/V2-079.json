@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-079-001",
+  "proposition": "The Council of Representatives elected Nizar Amidi as president.",
+  "label": "ENTAIL",
+  "evidence": "has elected PUK candidate Nizar Amidi as president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-002",
+  "proposition": "Amidi is the PUK candidate.",
+  "label": "ENTAIL",
+  "evidence": "PUK candidate Nizar Amidi",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-003",
+  "proposition": "He was elected in the second round of voting.",
+  "label": "ENTAIL",
+  "evidence": "in the second round of voting",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-004",
+  "proposition": "He defeated Muthanna Amin of the Kurdistan Islamic Union.",
+  "label": "ENTAIL",
+  "evidence": "defeating Muthanna Amin of the Kurdistan Islamic Union",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-005",
+  "proposition": "The second-round vote was 227-15.",
+  "label": "ENTAIL",
+  "evidence": "in a 227-15 vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-006",
+  "proposition": "The vote was on Saturday, April 11, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Saturday, April 11, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-007",
+  "proposition": "The chamber cast seven invalid ballots.",
+  "label": "ENTAIL",
+  "evidence": "cast seven invalid ballots",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-008",
+  "proposition": "Amidi received 208 votes in the first round.",
+  "label": "ENTAIL",
+  "evidence": "Amidi received 208 votes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-009",
+  "proposition": "That was short of the two-thirds threshold.",
+  "label": "ENTAIL",
+  "evidence": "short of the two-thirds threshold",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-010",
+  "proposition": "The threshold was 220 of 329.",
+  "label": "ENTAIL",
+  "evidence": "of 220 of 329",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-011",
+  "proposition": "Incumbent president Abdul Latif Rashid was eligible to run again.",
+  "label": "ENTAIL",
+  "evidence": "Abdul Latif Rashid was eligible to run again",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-012",
+  "proposition": "Rashid did not run.",
+  "label": "ENTAIL",
+  "evidence": "was eligible to run again but did not",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-013",
+  "proposition": "The vote ended months of deadlock.",
+  "label": "ENTAIL",
+  "evidence": "ended months of deadlock",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-014",
+  "proposition": "The deadlock followed the October 2025 parliamentary election.",
+  "label": "ENTAIL",
+  "evidence": "following the October 2025 parliamentary election",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-015",
+  "proposition": "The session was postponed twice.",
+  "label": "ENTAIL",
+  "evidence": "the session was postponed twice",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-016",
+  "proposition": "The KDP, the State of Law coalition, and Azem boycotted the chamber.",
+  "label": "ENTAIL",
+  "evidence": "the KDP, the State of Law coalition, and Azem boycotted the chamber",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-017",
+  "proposition": "Amidi has 15 days to name a prime minister nominee.",
+  "label": "ENTAIL",
+  "evidence": "has 15 days to name a prime minister nominee",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-018",
+  "proposition": "The Coordination Framework is the dominant Shia bloc.",
+  "label": "ENTAIL",
+  "evidence": "the Coordination Framework, the dominant Shia bloc",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-019",
+  "proposition": "The framework is weighing a nomination of Nouri al-Maliki.",
+  "label": "ENTAIL",
+  "evidence": "weighing a nomination of Nouri al-Maliki",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-020",
+  "proposition": "Al-Maliki is the country's former prime minister.",
+  "label": "ENTAIL",
+  "evidence": "the country's former prime minister",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-021",
+  "proposition": "Amidi was elected in the first round.",
+  "label": "CONTRADICT",
+  "evidence": "in the second round of voting",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-022",
+  "proposition": "The second-round vote was 227-45.",
+  "label": "CONTRADICT",
+  "evidence": "in a 227-15 vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-023",
+  "proposition": "The vote was on April 11, 2025.",
+  "label": "CONTRADICT",
+  "evidence": "On Saturday, April 11, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-024",
+  "proposition": "Amidi received 250 votes in the first round.",
+  "label": "CONTRADICT",
+  "evidence": "Amidi received 208 votes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-025",
+  "proposition": "The threshold was a simple majority of 165.",
+  "label": "CONTRADICT",
+  "evidence": "the two-thirds threshold of 220 of 329",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-026",
+  "proposition": "Rashid ran again for president.",
+  "label": "CONTRADICT",
+  "evidence": "was eligible to run again but did not",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-027",
+  "proposition": "The session was postponed five times.",
+  "label": "CONTRADICT",
+  "evidence": "the session was postponed twice",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-028",
+  "proposition": "The KDP took part in the second-round vote.",
+  "label": "CONTRADICT",
+  "evidence": "the KDP, the State of Law coalition, and Azem boycotted the chamber",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-029",
+  "proposition": "Amidi has 30 days to name a nominee.",
+  "label": "CONTRADICT",
+  "evidence": "has 15 days to name a prime minister nominee",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-030",
+  "proposition": "The Coordination Framework is the dominant Sunni bloc.",
+  "label": "CONTRADICT",
+  "evidence": "the dominant Shia bloc",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-079-031",
+  "proposition": "Amidi gave a speech after the vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His reaction is not described."
+ },
+ {
+  "id": "V2-079-032",
+  "proposition": "The second-round vote was by voice vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The voting method is not described."
+ },
+ {
+  "id": "V2-079-033",
+  "proposition": "The KDP returned to the chamber after the vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Post-vote behavior of the boycotting blocs is not mentioned."
+ },
+ {
+  "id": "V2-079-034",
+  "proposition": "A third round was anticipated if the second failed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The contingency of a further round is not described."
+ },
+ {
+  "id": "V2-079-035",
+  "proposition": "Al-Maliki's camp announced its support for Amidi.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Al-Maliki's reaction is not mentioned."
+ },
+ {
+  "id": "V2-079-036",
+  "proposition": "The presidency is a ceremonial role.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The office's powers are not described."
+ },
+ {
+  "id": "V2-079-037",
+  "proposition": "The prime minister nominee must win 220 votes.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The threshold for the PM vote is not stated."
+ },
+ {
+  "id": "V2-079-038",
+  "proposition": "Observers praised the vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Observer reactions are not quoted."
+ },
+ {
+  "id": "V2-079-039",
+  "proposition": "The election was broadcast on national television.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not given."
+ },
+ {
+  "id": "V2-079-040",
+  "proposition": "The deadlock was caused by a budget dispute.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The causes of the deadlock are not detailed."
+ }
+]

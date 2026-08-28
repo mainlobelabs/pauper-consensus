@@ -1,0 +1,282 @@
+[
+ {
+  "id": "R09-001",
+  "proposition": "Turkish police arrested 198 suspects.",
+  "label": "ENTAIL",
+  "evidence": "arrested 198 suspects",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-002",
+  "proposition": "They were arrested across 34 provinces.",
+  "label": "ENTAIL",
+  "evidence": "across 34 provinces",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-003",
+  "proposition": "The operations targeted the Islamic State.",
+  "label": "ENTAIL",
+  "evidence": "operations targeting the Islamic State",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-004",
+  "proposition": "They followed a fatal shootout outside the Israeli consulate in Istanbul on April 7.",
+  "label": "ENTAIL",
+  "evidence": "a fatal shootout outside the Israeli consulate in Istanbul on April 7",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-005",
+  "proposition": "Justice minister Akın Gürlek announced the operation on Wednesday, April 8, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Wednesday, April 8, 2026, justice minister Akın Gürlek announced",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-006",
+  "proposition": "He announced it on X.",
+  "label": "ENTAIL",
+  "evidence": "announced the nationwide operation on X",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-007",
+  "proposition": "The operation was directed against the terrorist organisation Daesh.",
+  "label": "ENTAIL",
+  "evidence": "\"the terrorist organisation Daesh.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-008",
+  "proposition": "Twelve suspects have been placed in pre-trial detention.",
+  "label": "ENTAIL",
+  "evidence": "Twelve suspects have been placed in pre-trial detention",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-009",
+  "proposition": "They include the two wounded gunmen.",
+  "label": "ENTAIL",
+  "evidence": "including the two wounded gunmen",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-010",
+  "proposition": "On Tuesday, April 7, three gunmen opened fire outside the high-rise on Buyukdere Caddesi.",
+  "label": "ENTAIL",
+  "evidence": "three gunmen, driving a car rented in Izmit",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-011",
+  "proposition": "They were driving a car rented in Izmit about 86 to 100 km away.",
+  "label": "ENTAIL",
+  "evidence": "a car rented in Izmit about 86 to 100 km away",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-012",
+  "proposition": "The high-rise is in the Levent business district on the European side of Besiktas.",
+  "label": "ENTAIL",
+  "evidence": "in the Levent business district on the European side of Besiktas",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-013",
+  "proposition": "The high-rise houses the Israeli consulate.",
+  "label": "ENTAIL",
+  "evidence": "which houses the Israeli consulate",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-014",
+  "proposition": "The gunfight lasted at least 10 minutes.",
+  "label": "ENTAIL",
+  "evidence": "lasting at least 10 minutes",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-015",
+  "proposition": "One attacker was killed and two were wounded and captured.",
+  "label": "ENTAIL",
+  "evidence": "one attacker killed and two wounded and captured",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-016",
+  "proposition": "Two police officers were lightly wounded.",
+  "label": "ENTAIL",
+  "evidence": "two police officers were lightly wounded",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-017",
+  "proposition": "No Israeli diplomats were present, as Israel withdrew its diplomats after the October 7, 2023 Hamas attacks.",
+  "label": "ENTAIL",
+  "evidence": "withdrew its diplomats after the October 7, 2023 Hamas attacks",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-018",
+  "proposition": "President Erdogan called it a treacherous attack.",
+  "label": "ENTAIL",
+  "evidence": "treacherous attack",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-019",
+  "proposition": "The interior ministry said the killed gunman had connections with a terrorist group, referring to Daesh.",
+  "label": "ENTAIL",
+  "evidence": "\"had connections with a terrorist group,\" referring to Daesh",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-020",
+  "proposition": "The attack is the deadliest incident targeting Israeli interests in Turkey in recent years.",
+  "label": "ENTAIL",
+  "evidence": "the deadliest incident targeting Israeli interests in Turkey in recent years",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-021",
+  "proposition": "Turkish police arrested 50 suspects.",
+  "label": "CONTRADICT",
+  "evidence": "arrested 198 suspects",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-022",
+  "proposition": "The arrests covered 12 provinces.",
+  "label": "CONTRADICT",
+  "evidence": "across 34 provinces",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-023",
+  "proposition": "The shootout was on April 1, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on April 7",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-024",
+  "proposition": "The operation was announced by the foreign minister.",
+  "label": "CONTRADICT",
+  "evidence": "justice minister Akın Gürlek announced",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-025",
+  "proposition": "The twelve suspects were released.",
+  "label": "CONTRADICT",
+  "evidence": "placed in pre-trial detention",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-026",
+  "proposition": "The gunmen drove a car rented in Istanbul.",
+  "label": "CONTRADICT",
+  "evidence": "rented in Izmit about 86 to 100 km away",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-027",
+  "proposition": "The high-rise is on the Asian side.",
+  "label": "CONTRADICT",
+  "evidence": "on the European side of Besiktas",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-028",
+  "proposition": "The gunfight lasted one minute.",
+  "label": "CONTRADICT",
+  "evidence": "at least 10 minutes",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-029",
+  "proposition": "Three attackers were killed.",
+  "label": "CONTRADICT",
+  "evidence": "one attacker killed and two wounded and captured",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-030",
+  "proposition": "Israeli diplomats were present.",
+  "label": "CONTRADICT",
+  "evidence": "No Israeli diplomats were present",
+  "silence_reason": null
+ },
+ {
+  "id": "R09-031",
+  "proposition": "The killed gunman's name was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The gunmen are not named."
+ },
+ {
+  "id": "R09-032",
+  "proposition": "The 198 suspects were all male.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The suspects' demographics are not described."
+ },
+ {
+  "id": "R09-033",
+  "proposition": "The consulate issued a statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "R09-034",
+  "proposition": "The attack was broadcast live.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not given."
+ },
+ {
+  "id": "R09-035",
+  "proposition": "A specific police force led the operation.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The lead force is not named."
+ },
+ {
+  "id": "R09-036",
+  "proposition": "The car was found abandoned.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The car's fate is not described."
+ },
+ {
+  "id": "R09-037",
+  "proposition": "The attackers' route was traced.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Their route is not described."
+ },
+ {
+  "id": "R09-038",
+  "proposition": "Israel's foreign ministry condemned the attack by name.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Israel's statement is not quoted."
+ },
+ {
+  "id": "R09-039",
+  "proposition": "A specific number of bullets were counted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A bullet count is not given."
+ },
+ {
+  "id": "R09-040",
+  "proposition": "The two wounded gunmen recovered.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Their recovery is not described."
+ }
+]

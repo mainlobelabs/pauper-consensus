@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-097-001",
+  "proposition": "Gunshots were fired during the White House Correspondents' Dinner.",
+  "label": "ENTAIL",
+  "evidence": "Gunshots were fired during the White House Correspondents' Dinner",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-002",
+  "proposition": "The dinner was at the Washington Hilton.",
+  "label": "ENTAIL",
+  "evidence": "at the Washington Hilton",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-003",
+  "proposition": "Trump, first lady Melania Trump, and Vance were evacuated unharmed.",
+  "label": "ENTAIL",
+  "evidence": "were evacuated unharmed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-004",
+  "proposition": "A 31-year-old man was detained as the suspect.",
+  "label": "ENTAIL",
+  "evidence": "a 31-year-old man was detained as the suspect",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-005",
+  "proposition": "The incident occurred in the ballroom on Saturday, April 25, 2026.",
+  "label": "ENTAIL",
+  "evidence": "in the ballroom on Saturday, April 25, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-006",
+  "proposition": "It was at about 8:34 to 8:36 p.m.",
+  "label": "ENTAIL",
+  "evidence": "at about 8:34 to 8:36 p.m.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-007",
+  "proposition": "It was the first such dinner for Trump as president.",
+  "label": "ENTAIL",
+  "evidence": "the first such dinner for Trump as president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-008",
+  "proposition": "The suspect is Cole Tomas Allen, 31, of Torrance, California.",
+  "label": "ENTAIL",
+  "evidence": "Cole Tomas Allen, 31, of Torrance, California",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-009",
+  "proposition": "He is a teacher and engineer.",
+  "label": "ENTAIL",
+  "evidence": "a teacher and engineer",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-010",
+  "proposition": "He was armed with a shotgun, a handgun, and multiple knives.",
+  "label": "ENTAIL",
+  "evidence": "a shotgun, a handgun, and multiple knives",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-011",
+  "proposition": "He exchanged gunfire before being tackled and handcuffed.",
+  "label": "ENTAIL",
+  "evidence": "exchanged gunfire before being tackled and handcuffed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-012",
+  "proposition": "He was not shot and has been hospitalized.",
+  "label": "ENTAIL",
+  "evidence": "He was not shot and has been hospitalized",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-013",
+  "proposition": "One Secret Service officer was hit in the vest at very close range but was released.",
+  "label": "ENTAIL",
+  "evidence": "hit in the vest at very close range, but was released",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-014",
+  "proposition": "Vance was offstage in about four seconds, and Trump in about 20 seconds.",
+  "label": "ENTAIL",
+  "evidence": "in about four seconds, and Trump in about 20 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-015",
+  "proposition": "Defense secretary Hegseth and secretary of state Rubio were present.",
+  "label": "ENTAIL",
+  "evidence": "Hegseth, secretary of state Rubio, and other senior officials",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-016",
+  "proposition": "Allen is believed to have acted alone.",
+  "label": "ENTAIL",
+  "evidence": "believed to have acted alone",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-017",
+  "proposition": "He was a hotel guest who traveled by train from Los Angeles to Chicago and then to Washington.",
+  "label": "ENTAIL",
+  "evidence": "traveled by train from Los Angeles to Chicago and then to Washington",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-018",
+  "proposition": "He faces three initial charges, including an attempt to assassinate the president.",
+  "label": "ENTAIL",
+  "evidence": "three initial charges, including an attempt to assassinate the president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-019",
+  "proposition": "The attempt to assassinate the president carries up to life in prison.",
+  "label": "ENTAIL",
+  "evidence": "carries up to life in prison",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-020",
+  "proposition": "The dinner was canceled and is to be rescheduled within 30 days.",
+  "label": "ENTAIL",
+  "evidence": "canceled and is to be rescheduled within 30 days",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-021",
+  "proposition": "The incident occurred on April 20, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Saturday, April 25, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-022",
+  "proposition": "Trump was injured.",
+  "label": "CONTRADICT",
+  "evidence": "were evacuated unharmed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-023",
+  "proposition": "The suspect is 45 years old.",
+  "label": "CONTRADICT",
+  "evidence": "Cole Tomas Allen, 31",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-024",
+  "proposition": "He was armed with a rifle only.",
+  "label": "CONTRADICT",
+  "evidence": "a shotgun, a handgun, and multiple knives",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-025",
+  "proposition": "He was shot multiple times.",
+  "label": "CONTRADICT",
+  "evidence": "He was not shot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-026",
+  "proposition": "Vance was offstage in about two minutes.",
+  "label": "CONTRADICT",
+  "evidence": "in about four seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-027",
+  "proposition": "Allen arrived by air from New York.",
+  "label": "CONTRADICT",
+  "evidence": "traveled by train from Los Angeles to Chicago and then to Washington",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-028",
+  "proposition": "The charges include five counts.",
+  "label": "CONTRADICT",
+  "evidence": "three initial charges",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-029",
+  "proposition": "The dinner will be rescheduled within 60 days.",
+  "label": "CONTRADICT",
+  "evidence": "rescheduled within 30 days",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-030",
+  "proposition": "The suspect is believed to have had an accomplice.",
+  "label": "CONTRADICT",
+  "evidence": "believed to have acted alone",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-097-031",
+  "proposition": "The suspect was indicted on a specific date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only initial charges are listed."
+ },
+ {
+  "id": "V2-097-032",
+  "proposition": "The manifesto named specific officials.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The manifesto's content beyond anti-Trump is not detailed."
+ },
+ {
+  "id": "V2-097-033",
+  "proposition": "The officer was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The officer is not named."
+ },
+ {
+  "id": "V2-097-034",
+  "proposition": "The hotel upgraded security before the dinner.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Hotel security changes are not mentioned."
+ },
+ {
+  "id": "V2-097-035",
+  "proposition": "The ballroom's exit plan was used.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Evacuation details are not described."
+ },
+ {
+  "id": "V2-097-036",
+  "proposition": "Allen had prior criminal records.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His record is not described."
+ },
+ {
+  "id": "V2-097-037",
+  "proposition": "The Secret Service issued a timeline.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A timeline is not given."
+ },
+ {
+  "id": "V2-097-038",
+  "proposition": "The dinner's theme was announced.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The dinner's program is not described."
+ },
+ {
+  "id": "V2-097-039",
+  "proposition": "The suspect's motive was confirmed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His motive is not confirmed."
+ },
+ {
+  "id": "V2-097-040",
+  "proposition": "A second suspect was sought.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No second suspect is mentioned."
+ }
+]

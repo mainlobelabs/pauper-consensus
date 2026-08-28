@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-086-001",
+  "proposition": "Billy Idol, Iron Maiden, New Order, Oasis, Phil Collins, Sade, Luther Vandross, and Wu-Tang Clan are the 2026 inductees.",
+  "label": "ENTAIL",
+  "evidence": "Billy Idol, Iron Maiden, New Order, Oasis, Phil Collins, Sade, Luther Vandross, and Wu-Tang Clan have been announced as the 2026 inductees",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-002",
+  "proposition": "They are inductees in the performers category.",
+  "label": "ENTAIL",
+  "evidence": "in the performers category",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-003",
+  "proposition": "The announcement was on Monday night, April 13, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Monday night, April 13, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-004",
+  "proposition": "It was made in a live American Idol Rock Hall episode.",
+  "label": "ENTAIL",
+  "evidence": "in a live \"American Idol\" Rock Hall episode",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-005",
+  "proposition": "The episode aired on ABC and Disney+.",
+  "label": "ENTAIL",
+  "evidence": "on ABC and Disney+",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-006",
+  "proposition": "Ryan Seacrest and Lionel Richie hosted.",
+  "label": "ENTAIL",
+  "evidence": "hosted by Ryan Seacrest and Lionel Richie",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-007",
+  "proposition": "Six of the eight inductees are British acts.",
+  "label": "ENTAIL",
+  "evidence": "Six of the eight inductees are British acts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-008",
+  "proposition": "That is a record for a single class.",
+  "label": "ENTAIL",
+  "evidence": "a record for a single class",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-009",
+  "proposition": "Phil Collins is already in the Hall as a member of Genesis.",
+  "label": "ENTAIL",
+  "evidence": "already in the Hall as a member of Genesis",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-010",
+  "proposition": "Genesis was inducted in 2010.",
+  "label": "ENTAIL",
+  "evidence": "inducted in 2010",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-011",
+  "proposition": "This is Collins's first nomination as a solo artist.",
+  "label": "ENTAIL",
+  "evidence": "his first nomination as a solo artist",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-012",
+  "proposition": "New Order is being honored as a joint act with Joy Division.",
+  "label": "ENTAIL",
+  "evidence": "as a joint act with Joy Division",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-013",
+  "proposition": "Luther Vandross has died.",
+  "label": "ENTAIL",
+  "evidence": "Luther Vandross, who has died",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-014",
+  "proposition": "Wu-Tang Clan is a first-time nominee.",
+  "label": "ENTAIL",
+  "evidence": "and Wu-Tang Clan are first-time nominees",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-015",
+  "proposition": "The inductees were chosen by a vote of more than 1,200 artists, historians, and music professionals.",
+  "label": "ENTAIL",
+  "evidence": "by a vote of more than 1,200 artists, historians, and music professionals",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-016",
+  "proposition": "The induction ceremony is set for November 14, 2026.",
+  "label": "ENTAIL",
+  "evidence": "set for November 14, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-017",
+  "proposition": "Queen Latifah, Gram Parsons, Celia Cruz, Fela Kuti, and MC Lyte are Early Influences honorees.",
+  "label": "ENTAIL",
+  "evidence": "Queen Latifah, Gram Parsons, Celia Cruz, Fela Kuti, and MC Lyte in the Early Influences category",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-018",
+  "proposition": "Linda Creed, Arif Mardin, Jimmy Miller, and Rick Rubin are Musical Influence honorees.",
+  "label": "ENTAIL",
+  "evidence": "Linda Creed, Arif Mardin, Jimmy Miller, and Rick Rubin in the Musical Influence category",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-019",
+  "proposition": "Those are the first Latin and African pop recognitions.",
+  "label": "ENTAIL",
+  "evidence": "the first Latin and African pop recognitions",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-020",
+  "proposition": "The 2026 class spans five decades of the genre's history.",
+  "label": "ENTAIL",
+  "evidence": "spans five decades of the genre's history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-021",
+  "proposition": "There are 10 inductees in the performers category.",
+  "label": "CONTRADICT",
+  "evidence": "Six of the eight inductees are British acts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-022",
+  "proposition": "The announcement was on April 14, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Monday night, April 13, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-023",
+  "proposition": "The episode aired on NBC.",
+  "label": "CONTRADICT",
+  "evidence": "on ABC and Disney+",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-024",
+  "proposition": "Four of the eight inductees are British acts.",
+  "label": "CONTRADICT",
+  "evidence": "Six of the eight inductees are British acts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-025",
+  "proposition": "Phil Collins was inducted solo in 2010.",
+  "label": "CONTRADICT",
+  "evidence": "as a member of Genesis, inducted in 2010",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-026",
+  "proposition": "New Order is being honored alone, without Joy Division.",
+  "label": "CONTRADICT",
+  "evidence": "as a joint act with Joy Division",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-027",
+  "proposition": "Luther Vandross is alive.",
+  "label": "CONTRADICT",
+  "evidence": "Luther Vandross, who has died",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-028",
+  "proposition": "The inductees were chosen by 200 voters.",
+  "label": "CONTRADICT",
+  "evidence": "more than 1,200 artists, historians, and music professionals",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-029",
+  "proposition": "The ceremony is set for June 14, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "set for November 14, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-030",
+  "proposition": "The Musical Influence category has previously honored Latin pop artists.",
+  "label": "CONTRADICT",
+  "evidence": "the first Latin and African pop recognitions",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-086-031",
+  "proposition": "The inductees will all attend the ceremony.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not mentioned."
+ },
+ {
+  "id": "V2-086-032",
+  "proposition": "The class includes a specific number of women.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No breakdown by gender is given."
+ },
+ {
+  "id": "V2-086-033",
+  "proposition": "A documentary about the class was made.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Media plans are not mentioned."
+ },
+ {
+  "id": "V2-086-034",
+  "proposition": "The vote had a specific deadline.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The voting timeline is not given."
+ },
+ {
+  "id": "V2-086-035",
+  "proposition": "The Hall's museum was updated for the class.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Museum changes are not mentioned."
+ },
+ {
+  "id": "V2-086-036",
+  "proposition": "Oasis members will perform together at the induction.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Performance plans are not mentioned."
+ },
+ {
+  "id": "V2-086-037",
+  "proposition": "Iron Maiden's lineup for the induction is specified.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The performing lineup is not described."
+ },
+ {
+  "id": "V2-086-038",
+  "proposition": "The class was nominated by a specific committee.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The nomination process is not detailed."
+ },
+ {
+  "id": "V2-086-039",
+  "proposition": "The ceremony will be held in Cleveland.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The venue city is not stated."
+ },
+ {
+  "id": "V2-086-040",
+  "proposition": "Sade recorded a new song for the induction.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "New recordings are not mentioned."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-064-001",
+  "proposition": "NASA launched Artemis II from the Kennedy Space Center in Florida.",
+  "label": "ENTAIL",
+  "evidence": "launched Artemis II from the Kennedy Space Center in Florida",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-002",
+  "proposition": "The launch carried four astronauts.",
+  "label": "ENTAIL",
+  "evidence": "sending four astronauts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-003",
+  "proposition": "It is the first crewed lunar flyby mission since Apollo 17 in 1972.",
+  "label": "ENTAIL",
+  "evidence": "the first crewed lunar flyby mission since Apollo 17 in 1972",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-004",
+  "proposition": "The rocket was a Space Launch System.",
+  "label": "ENTAIL",
+  "evidence": "The Space Launch System rocket lifted off",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-005",
+  "proposition": "The launch occurred from Pad 39B.",
+  "label": "ENTAIL",
+  "evidence": "lifted off from Pad 39B",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-006",
+  "proposition": "The launch occurred at 6:35 p.m. EDT on Wednesday, April 1, 2026.",
+  "label": "ENTAIL",
+  "evidence": "at 6:35 p.m. EDT on Wednesday, April 1, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-007",
+  "proposition": "The spacecraft is Orion.",
+  "label": "ENTAIL",
+  "evidence": "The crew of the Orion spacecraft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-008",
+  "proposition": "The astronauts named the spacecraft Integrity.",
+  "label": "ENTAIL",
+  "evidence": "which the astronauts named Integrity",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-009",
+  "proposition": "Reid Wiseman is the mission commander.",
+  "label": "ENTAIL",
+  "evidence": "includes Reid Wiseman as commander",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-010",
+  "proposition": "Victor Glover is the pilot.",
+  "label": "ENTAIL",
+  "evidence": "Victor Glover as pilot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-011",
+  "proposition": "Christina Koch is a mission specialist.",
+  "label": "ENTAIL",
+  "evidence": "Christina Koch as mission specialist",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-012",
+  "proposition": "Jeremy Hansen is a Canadian astronaut and a rookie on the mission.",
+  "label": "ENTAIL",
+  "evidence": "Canadian astronaut Jeremy Hansen, a rookie on the mission",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-013",
+  "proposition": "Hansen is the first Canadian to travel beyond low Earth orbit.",
+  "label": "ENTAIL",
+  "evidence": "the first Canadian to travel beyond low Earth orbit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-014",
+  "proposition": "The mission lasts 9 days 1 hour 32 minutes.",
+  "label": "ENTAIL",
+  "evidence": "lasting 9 days 1 hour 32 minutes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-015",
+  "proposition": "The mission follows a free-return trajectory.",
+  "label": "ENTAIL",
+  "evidence": "follows a free-return trajectory",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-016",
+  "proposition": "The lunar flyby lasts about 7 hours and occurs on Monday, April 6.",
+  "label": "ENTAIL",
+  "evidence": "a lunar flyby of about 7 hours on Monday, April 6",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-017",
+  "proposition": "The spacecraft reaches roughly 252,756 to 252,799 miles from Earth.",
+  "label": "ENTAIL",
+  "evidence": "reaching roughly 252,756 to 252,799 miles from Earth",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-018",
+  "proposition": "Splashdown in the Pacific off San Diego is scheduled for April 10.",
+  "label": "ENTAIL",
+  "evidence": "Splashdown in the Pacific off San Diego is scheduled for April 10",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-019",
+  "proposition": "About 400,000 spectators watched the launch along the Space Coast.",
+  "label": "ENTAIL",
+  "evidence": "About 400,000 spectators watched the launch along the Space Coast",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-020",
+  "proposition": "The crew named a Moon crater Carroll in honor of Wiseman's late wife.",
+  "label": "ENTAIL",
+  "evidence": "named a crater on the Moon Carroll in honor of Wiseman's late wife",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-021",
+  "proposition": "The launch took place at 9:15 a.m. EDT.",
+  "label": "CONTRADICT",
+  "evidence": "at 6:35 p.m. EDT",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-022",
+  "proposition": "The mission is the first crewed lunar flyby since Apollo 11.",
+  "label": "CONTRADICT",
+  "evidence": "the first crewed lunar flyby mission since Apollo 17 in 1972",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-023",
+  "proposition": "Hansen is a veteran with three prior spaceflights.",
+  "label": "CONTRADICT",
+  "evidence": "a rookie on the mission",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-024",
+  "proposition": "The mission lasts about three days.",
+  "label": "CONTRADICT",
+  "evidence": "lasting 9 days 1 hour 32 minutes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-025",
+  "proposition": "The spacecraft uses a direct landing trajectory on the Moon.",
+  "label": "CONTRADICT",
+  "evidence": "follows a free-return trajectory",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-026",
+  "proposition": "The far side of the Moon has been seen by humans before.",
+  "label": "CONTRADICT",
+  "evidence": "the far side of the Moon, a region never seen by humans",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-027",
+  "proposition": "Splashdown is scheduled off Hawaii.",
+  "label": "CONTRADICT",
+  "evidence": "Splashdown in the Pacific off San Diego",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-028",
+  "proposition": "About 40,000 spectators watched the launch.",
+  "label": "CONTRADICT",
+  "evidence": "About 400,000 spectators watched the launch",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-029",
+  "proposition": "The crater was named after Hansen's daughter.",
+  "label": "CONTRADICT",
+  "evidence": "named a crater on the Moon Carroll in honor of Wiseman's late wife",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-030",
+  "proposition": "Wiseman is the mission's pilot.",
+  "label": "CONTRADICT",
+  "evidence": "includes Reid Wiseman as commander, Victor Glover as pilot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-064-031",
+  "proposition": "The launch was delayed from an earlier date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No prior schedule or delay is mentioned."
+ },
+ {
+  "id": "V2-064-032",
+  "proposition": "The mission carries a science payload for Earth observation.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Payload details are not described."
+ },
+ {
+  "id": "V2-064-033",
+  "proposition": "NASA streamed the launch on television.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not given."
+ },
+ {
+  "id": "V2-064-034",
+  "proposition": "The crew conducted a spacewalk during the mission.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "EVA plans are not mentioned."
+ },
+ {
+  "id": "V2-064-035",
+  "proposition": "The Orion spacecraft was built by a specific contractor.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The manufacturer is not named."
+ },
+ {
+  "id": "V2-064-036",
+  "proposition": "A crewed lunar landing is scheduled for 2027 after this mission.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No future mission dates are stated."
+ },
+ {
+  "id": "V2-064-037",
+  "proposition": "Hansen trained for the mission at the Johnson Space Center.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Training details are not described."
+ },
+ {
+  "id": "V2-064-038",
+  "proposition": "The SLS boosters will be recovered and reused.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Booster recovery is not discussed beyond the 250th-anniversary markings."
+ },
+ {
+  "id": "V2-064-039",
+  "proposition": "The White House attended the launch.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Official attendance is not mentioned."
+ },
+ {
+  "id": "V2-064-040",
+  "proposition": "The crew announced the crater name during the flight.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "When the naming occurred is not stated."
+ }
+]

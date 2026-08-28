@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-103-001",
+  "proposition": "The US House unanimously approved a bill to fund the Department of Homeland Security.",
+  "label": "ENTAIL",
+  "evidence": "unanimously approved, by voice vote, a bill passed by the Senate to fund the Department of Homeland Security",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-002",
+  "proposition": "The vote was by voice vote.",
+  "label": "ENTAIL",
+  "evidence": "by voice vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-003",
+  "proposition": "The bill also funds the Secret Service, the Coast Guard, FEMA, TSA, and CISA.",
+  "label": "ENTAIL",
+  "evidence": "the Secret Service, the Coast Guard, FEMA, TSA, and CISA",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-004",
+  "proposition": "It aims to end the 76-day government shutdown of the department.",
+  "label": "ENTAIL",
+  "evidence": "to end the 76-day government shutdown of the department",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-005",
+  "proposition": "The House voted on Thursday, April 30, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Thursday, April 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-006",
+  "proposition": "The vote took under an hour after notice, with no recorded vote.",
+  "label": "ENTAIL",
+  "evidence": "in under an hour after notice, with no recorded vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-007",
+  "proposition": "It funds the agencies through the end of fiscal year 2026, on September 30.",
+  "label": "ENTAIL",
+  "evidence": "through the end of fiscal year 2026, on September 30",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-008",
+  "proposition": "The bill excludes ICE and parts of CBP.",
+  "label": "ENTAIL",
+  "evidence": "excludes ICE and parts of CBP",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-009",
+  "proposition": "They are to be funded via a USD 70 billion reconciliation bill.",
+  "label": "ENTAIL",
+  "evidence": "a USD 70 billion reconciliation bill",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-010",
+  "proposition": "That covers the rest of Trump's term, to January 2029.",
+  "label": "ENTAIL",
+  "evidence": "for the rest of Trump's term, to January 2029",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-011",
+  "proposition": "The House GOP adopted a budget resolution on a party-line vote on Wednesday.",
+  "label": "ENTAIL",
+  "evidence": "adopted a budget resolution on a party-line vote on Wednesday",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-012",
+  "proposition": "The ICE/CBP bill is expected in May.",
+  "label": "ENTAIL",
+  "evidence": "expected in May",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-013",
+  "proposition": "Trump signed the measure Thursday afternoon.",
+  "label": "ENTAIL",
+  "evidence": "signed the measure Thursday afternoon",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-014",
+  "proposition": "It ended the 76-day DHS shutdown, the longest agency shutdown in US history.",
+  "label": "ENTAIL",
+  "evidence": "the longest agency shutdown in US history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-015",
+  "proposition": "The prior record was a 43-day governmentwide closure last year.",
+  "label": "ENTAIL",
+  "evidence": "a 43-day governmentwide closure last year",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-016",
+  "proposition": "The department had been unfunded since February 14, 2026.",
+  "label": "ENTAIL",
+  "evidence": "unfunded since February 14, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-017",
+  "proposition": "The shutdown began over Trump's deadly Minneapolis immigration crackdown.",
+  "label": "ENTAIL",
+  "evidence": "Trump's deadly Minneapolis immigration crackdown",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-018",
+  "proposition": "The Senate had passed the bill unanimously in a late-March overnight vote.",
+  "label": "ENTAIL",
+  "evidence": "passed the bill unanimously in a late-March overnight vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-019",
+  "proposition": "DHS secretary Markwayne Mullin replaced Noom mid-shutdown.",
+  "label": "ENTAIL",
+  "evidence": "who replaced Noom mid-shutdown",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-020",
+  "proposition": "Emergency payroll funds would run out by early May.",
+  "label": "ENTAIL",
+  "evidence": "would run out by early May",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-021",
+  "proposition": "The House voted 218-212.",
+  "label": "CONTRADICT",
+  "evidence": "unanimously approved, by voice vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-022",
+  "proposition": "The vote was on April 20, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "On Thursday, April 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-023",
+  "proposition": "The bill funds ICE through 2029.",
+  "label": "CONTRADICT",
+  "evidence": "excludes ICE and parts of CBP",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-024",
+  "proposition": "The reconciliation bill is USD 30 billion.",
+  "label": "CONTRADICT",
+  "evidence": "a USD 70 billion reconciliation bill",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-025",
+  "proposition": "The shutdown lasted 40 days.",
+  "label": "CONTRADICT",
+  "evidence": "the 76-day government shutdown",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-026",
+  "proposition": "The prior record was a 10-day closure.",
+  "label": "CONTRADICT",
+  "evidence": "a 43-day governmentwide closure last year",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-027",
+  "proposition": "The department had been unfunded since January 1, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "since February 14, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-028",
+  "proposition": "The Senate passed the bill on a party-line vote.",
+  "label": "CONTRADICT",
+  "evidence": "passed the bill unanimously",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-029",
+  "proposition": "Speaker Johnson supported the bill immediately.",
+  "label": "CONTRADICT",
+  "evidence": "held it in the House for more than five weeks",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-030",
+  "proposition": "Emergency payroll funds would run out by December.",
+  "label": "CONTRADICT",
+  "evidence": "run out by early May",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-103-031",
+  "proposition": "The bill included a specific spending cap.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Spending caps are not described."
+ },
+ {
+  "id": "V2-103-032",
+  "proposition": "The reconciliation bill was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Its name is not given."
+ },
+ {
+  "id": "V2-103-033",
+  "proposition": "Trump signed the bill at a specific time.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only Thursday afternoon is given."
+ },
+ {
+  "id": "V2-103-034",
+  "proposition": "The bill included a border camera mandate.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Specific riders are not described."
+ },
+ {
+  "id": "V2-103-035",
+  "proposition": "Mullin issued a statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-103-036",
+  "proposition": "The shutdown caused a specific number of furloughs.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Furlough numbers are not given."
+ },
+ {
+  "id": "V2-103-037",
+  "proposition": "The Senate bill had a specific vote count.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "It was unanimous; a count is not given."
+ },
+ {
+  "id": "V2-103-038",
+  "proposition": "The hold began on a specific date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The hold's start is not given."
+ },
+ {
+  "id": "V2-103-039",
+  "proposition": "Airport security lines returned to normal.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Lines had grown; no resolution is described."
+ },
+ {
+  "id": "V2-103-040",
+  "proposition": "The reconciliation bill passed in May.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "It is only expected in May."
+ }
+]

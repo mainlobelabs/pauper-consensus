@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-078-001",
+  "proposition": "The study was published in the journal Science.",
+  "label": "ENTAIL",
+  "evidence": "published in the journal Science",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-002",
+  "proposition": "It was published on Thursday, April 9, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Thursday, April 9, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-003",
+  "proposition": "The study finds that 28 chimpanzees have been killed.",
+  "label": "ENTAIL",
+  "evidence": "28 chimpanzees, including 19 infants, have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-004",
+  "proposition": "Nineteen of the killed chimpanzees were infants.",
+  "label": "ENTAIL",
+  "evidence": "including 19 infants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-005",
+  "proposition": "The killings occurred during an ongoing chimpanzee war.",
+  "label": "ENTAIL",
+  "evidence": "during an ongoing chimpanzee war",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-006",
+  "proposition": "The war is in Kibale National Park, Uganda.",
+  "label": "ENTAIL",
+  "evidence": "in Kibale National Park, Uganda",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-007",
+  "proposition": "The paper is titled Lethal conflict after group fission in wild chimpanzees.",
+  "label": "ENTAIL",
+  "evidence": "Lethal conflict after group fission in wild chimpanzees",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-008",
+  "proposition": "The paper was led by researchers at the University of Texas at Austin and Arizona State University.",
+  "label": "ENTAIL",
+  "evidence": "led by researchers at the University of Texas at Austin and Arizona State University",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-009",
+  "proposition": "The paper appears in Science volume 392, pages 216-220.",
+  "label": "ENTAIL",
+  "evidence": "Science volume 392, pages 216-220",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-010",
+  "proposition": "The Ngogo community has roughly 200 members.",
+  "label": "ENTAIL",
+  "evidence": "The roughly 200-member Ngogo community",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-011",
+  "proposition": "The community polarized in 2015.",
+  "label": "ENTAIL",
+  "evidence": "polarized in 2015",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-012",
+  "proposition": "It had split into Western and Central groups by 2018.",
+  "label": "ENTAIL",
+  "evidence": "split into Western and Central groups by 2018",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-013",
+  "proposition": "The Western group made 24 attacks between 2018 and 2024.",
+  "label": "ENTAIL",
+  "evidence": "Between 2018 and 2024, the Western group made 24 attacks",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-014",
+  "proposition": "The attacks killed at least seven adult males.",
+  "label": "ENTAIL",
+  "evidence": "killing at least seven adult males",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-015",
+  "proposition": "The attacks killed 17 infants.",
+  "label": "ENTAIL",
+  "evidence": "and 17 infants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-016",
+  "proposition": "The paper describes the toll as a minimum.",
+  "label": "ENTAIL",
+  "evidence": "describes the toll as a minimum",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-017",
+  "proposition": "Lethal conflicts of this kind occur about once per 500 years.",
+  "label": "ENTAIL",
+  "evidence": "occurring about once per 500 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-018",
+  "proposition": "Such a conflict had been observed only once before the Kibale war began.",
+  "label": "ENTAIL",
+  "evidence": "observed only once before the Kibale war began",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-019",
+  "proposition": "The park has a long monitoring program, one of the most extensive in the world.",
+  "label": "ENTAIL",
+  "evidence": "one of the most extensive in the world",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-020",
+  "proposition": "The total number of deaths is still rising.",
+  "label": "ENTAIL",
+  "evidence": "the total number of deaths is still rising",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-021",
+  "proposition": "The study found that 14 chimpanzees had been killed.",
+  "label": "CONTRADICT",
+  "evidence": "28 chimpanzees, including 19 infants, have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-022",
+  "proposition": "The study was published in Nature.",
+  "label": "CONTRADICT",
+  "evidence": "published in the journal Science",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-023",
+  "proposition": "The war is in Gombe National Park, Tanzania.",
+  "label": "CONTRADICT",
+  "evidence": "in Kibale National Park, Uganda",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-024",
+  "proposition": "The Ngogo community has roughly 80 members.",
+  "label": "CONTRADICT",
+  "evidence": "The roughly 200-member Ngogo community",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-025",
+  "proposition": "The community split in 2010.",
+  "label": "CONTRADICT",
+  "evidence": "polarized in 2015",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-026",
+  "proposition": "The Western group made 24 attacks in 2015-2017.",
+  "label": "CONTRADICT",
+  "evidence": "Between 2018 and 2024, the Western group made 24 attacks",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-027",
+  "proposition": "The attacks killed at least seven infants.",
+  "label": "CONTRADICT",
+  "evidence": "killing at least seven adult males and 17 infants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-028",
+  "proposition": "The paper describes the toll as an exact figure.",
+  "label": "CONTRADICT",
+  "evidence": "describes the toll as a minimum",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-029",
+  "proposition": "Such conflicts occur about once per 50 years.",
+  "label": "CONTRADICT",
+  "evidence": "occurring about once per 500 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-030",
+  "proposition": "The conflict has ended.",
+  "label": "CONTRADICT",
+  "evidence": "Because the conflict is ongoing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-078-031",
+  "proposition": "The paper names the lead author as Sandel.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The author list beyond the institutions is not given in the article."
+ },
+ {
+  "id": "V2-078-032",
+  "proposition": "The war began with a specific trigger event.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The trigger is not described."
+ },
+ {
+  "id": "V2-078-033",
+  "proposition": "The Central group suffered no deaths.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The breakdown of deaths by group is not given."
+ },
+ {
+  "id": "V2-078-034",
+  "proposition": "The park's authorities intervened in the war.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Human intervention is not mentioned."
+ },
+ {
+  "id": "V2-078-035",
+  "proposition": "The monitoring program uses radio collars.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The monitoring methods are not described."
+ },
+ {
+  "id": "V2-078-036",
+  "proposition": "The 28 figure includes all age classes.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The age breakdown beyond the 19 infants is not given."
+ },
+ {
+  "id": "V2-078-037",
+  "proposition": "The paper was funded by a specific grant.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Funding is not mentioned."
+ },
+ {
+  "id": "V2-078-038",
+  "proposition": "The war affected the park's tourist visits.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Tourism effects are not mentioned."
+ },
+ {
+  "id": "V2-078-039",
+  "proposition": "A documentary about the war is planned.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Media plans are not mentioned."
+ },
+ {
+  "id": "V2-078-040",
+  "proposition": "The researchers captured the attacks on camera.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The observation method is not detailed."
+ }
+]

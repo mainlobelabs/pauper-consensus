@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-091-001",
+  "proposition": "Three Japanese soldiers were killed.",
+  "label": "ENTAIL",
+  "evidence": "Three Japanese soldiers have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-002",
+  "proposition": "A fourth soldier was injured.",
+  "label": "ENTAIL",
+  "evidence": "and another injured",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-003",
+  "proposition": "A shell exploded inside a Type 10 main battle tank.",
+  "label": "ENTAIL",
+  "evidence": "a shell exploded inside a Type 10 main battle tank",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-004",
+  "proposition": "The explosion happened during a live fire exercise.",
+  "label": "ENTAIL",
+  "evidence": "during a live fire exercise at the Hijudai Training Area",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-005",
+  "proposition": "The exercise was at the Hijudai Training Area in Kusu, Oita Prefecture.",
+  "label": "ENTAIL",
+  "evidence": "at the Hijudai Training Area in Kusu, Oita Prefecture, Japan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-006",
+  "proposition": "The incident was on Tuesday, April 21, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Tuesday, April 21, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-007",
+  "proposition": "It was at about 8:40 a.m. JST.",
+  "label": "ENTAIL",
+  "evidence": "at about 8:40 a.m. JST",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-008",
+  "proposition": "The shell detonated prematurely inside the gun turret.",
+  "label": "ENTAIL",
+  "evidence": "detonated prematurely inside the gun turret",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-009",
+  "proposition": "It happened before firing, during an anti-tank live-fire drill.",
+  "label": "ENTAIL",
+  "evidence": "before firing during an anti-tank live-fire drill",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-010",
+  "proposition": "The Type 10 is Japan's latest domestic main battle tank.",
+  "label": "ENTAIL",
+  "evidence": "Japan's latest domestic main battle tank",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-011",
+  "proposition": "The commander killed was Sergeant First Class Kentaro Hamabe, 45.",
+  "label": "ENTAIL",
+  "evidence": "Sergeant First Class Kentaro Hamabe, 45",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-012",
+  "proposition": "The gunner killed was Sergeant Shingo Takayama, 31.",
+  "label": "ENTAIL",
+  "evidence": "Sergeant Shingo Takayama, 31",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-013",
+  "proposition": "The safety officer killed was Sergeant Kozo Kanai, 30.",
+  "label": "ENTAIL",
+  "evidence": "Sergeant Kozo Kanai, 30",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-014",
+  "proposition": "All three belonged to the Western Army Tank Unit at Camp Kusu.",
+  "label": "ENTAIL",
+  "evidence": "all of the Western Army Tank Unit at Camp Kusu",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-015",
+  "proposition": "The driver, a woman in her 20s, was seriously injured.",
+  "label": "ENTAIL",
+  "evidence": "The driver, a woman in her 20s, was seriously injured",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-016",
+  "proposition": "The Ground Self-Defense Force suspended all Type 10 live-fire drills.",
+  "label": "ENTAIL",
+  "evidence": "has suspended all Type 10 live-fire drills",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-017",
+  "proposition": "It also suspended Type 90 drills using the same ammunition.",
+  "label": "ENTAIL",
+  "evidence": "and Type 90 drills using the same ammunition",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-018",
+  "proposition": "The cause is not yet known and is described as rare.",
+  "label": "ENTAIL",
+  "evidence": "which is not yet known and is described as \"rare.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-019",
+  "proposition": "The Hijudai range is the largest GSDF range in western Japan.",
+  "label": "ENTAIL",
+  "evidence": "the largest GSDF range in western Japan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-020",
+  "proposition": "In August 2025, two GSDF members died at the same range from a lightning strike.",
+  "label": "ENTAIL",
+  "evidence": "two GSDF members died at the same range from a lightning strike",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-021",
+  "proposition": "Two soldiers were killed.",
+  "label": "CONTRADICT",
+  "evidence": "Three Japanese soldiers have been killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-022",
+  "proposition": "The shell exploded outside the tank.",
+  "label": "CONTRADICT",
+  "evidence": "inside a Type 10 main battle tank",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-023",
+  "proposition": "The incident was on April 20, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "On Tuesday, April 21, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-024",
+  "proposition": "The shell detonated after firing.",
+  "label": "CONTRADICT",
+  "evidence": "detonated prematurely inside the gun turret before firing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-025",
+  "proposition": "The tank was a Type 90.",
+  "label": "CONTRADICT",
+  "evidence": "The tank involved is the Type 10",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-026",
+  "proposition": "The commander was 35 years old.",
+  "label": "CONTRADICT",
+  "evidence": "Kentaro Hamabe, 45",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-027",
+  "proposition": "The driver was a man in his 40s.",
+  "label": "CONTRADICT",
+  "evidence": "The driver, a woman in her 20s",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-028",
+  "proposition": "The GSDF suspended all live-fire drills of every tank type.",
+  "label": "CONTRADICT",
+  "evidence": "has suspended all Type 10 live-fire drills and Type 90 drills using the same ammunition",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-029",
+  "proposition": "The range is the smallest GSDF range in western Japan.",
+  "label": "CONTRADICT",
+  "evidence": "the largest GSDF range in western Japan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-030",
+  "proposition": "In August 2025, three GSDF members died at the range.",
+  "label": "CONTRADICT",
+  "evidence": "two GSDF members died at the same range from a lightning strike",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-091-031",
+  "proposition": "The shell's serial number was recovered.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The ammunition details are not described."
+ },
+ {
+  "id": "V2-091-032",
+  "proposition": "The investigation committee has a set deadline.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No timeline is given."
+ },
+ {
+  "id": "V2-091-033",
+  "proposition": "The driver's condition later improved.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her condition is not updated."
+ },
+ {
+  "id": "V2-091-034",
+  "proposition": "The GSDF commander issued a statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No statement is quoted."
+ },
+ {
+  "id": "V2-091-035",
+  "proposition": "The drill was observed by US Marines.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Observers are not mentioned."
+ },
+ {
+  "id": "V2-091-036",
+  "proposition": "The tank was recovered intact.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The tank's condition is not described."
+ },
+ {
+  "id": "V2-091-037",
+  "proposition": "A memorial was held for the dead soldiers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Memorial details are not mentioned."
+ },
+ {
+  "id": "V2-091-038",
+  "proposition": "The accident was broadcast on Japanese TV.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not given."
+ },
+ {
+  "id": "V2-091-039",
+  "proposition": "The soldiers' families were notified at a specific time.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Notification details are not given."
+ },
+ {
+  "id": "V2-091-040",
+  "proposition": "The range will reopen on a specific date.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Reopening is not mentioned."
+ }
+]

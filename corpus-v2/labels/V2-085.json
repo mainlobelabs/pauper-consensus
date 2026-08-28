@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-085-001",
+  "proposition": "Pope Leo XIV arrived in Algiers.",
+  "label": "ENTAIL",
+  "evidence": "has arrived in Algiers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-002",
+  "proposition": "It is the first papal visit to Algeria.",
+  "label": "ENTAIL",
+  "evidence": "the first papal visit to Algeria",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-003",
+  "proposition": "The arrival was on Monday, April 13, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Monday, April 13, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-004",
+  "proposition": "He is the first Augustinian pope.",
+  "label": "ENTAIL",
+  "evidence": "the first Augustinian in the history of the papacy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-005",
+  "proposition": "He landed at about 10:30 a.m.",
+  "label": "ENTAIL",
+  "evidence": "landed in Algiers at about 10:30 a.m.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-006",
+  "proposition": "He is to visit Souk Ahras.",
+  "label": "ENTAIL",
+  "evidence": "he is to visit Souk Ahras",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-007",
+  "proposition": "Souk Ahras is the traditional birthplace of St. Augustine of Hippo.",
+  "label": "ENTAIL",
+  "evidence": "the traditional birthplace of St. Augustine of Hippo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-008",
+  "proposition": "St. Augustine is the namesake of the Augustinian Order.",
+  "label": "ENTAIL",
+  "evidence": "the namesake of the Augustinian Order",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-009",
+  "proposition": "On the first day, he visited the Maqam Echahid Martyrs' Monument.",
+  "label": "ENTAIL",
+  "evidence": "he visited the Maqam Echahid Martyrs' Monument",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-010",
+  "proposition": "At the monument, he said the future belongs to men and women of peace.",
+  "label": "ENTAIL",
+  "evidence": "the future belongs to men and women of peace",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-011",
+  "proposition": "He went to the Presidential Palace.",
+  "label": "ENTAIL",
+  "evidence": "went to the Presidential Palace",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-012",
+  "proposition": "He delivered an address at the Djamaa El Djazair mosque.",
+  "label": "ENTAIL",
+  "evidence": "delivered an address at the Djamaa El Djazair mosque",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-013",
+  "proposition": "He visited the Great Mosque of Algiers.",
+  "label": "ENTAIL",
+  "evidence": "visited the Great Mosque of Algiers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-014",
+  "proposition": "The Great Mosque is the third largest in the world.",
+  "label": "ENTAIL",
+  "evidence": "the third largest in the world",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-015",
+  "proposition": "He had a moment of silent reflection with rector Al Qasimi.",
+  "label": "ENTAIL",
+  "evidence": "with its rector Al Qasimi for a moment of silent reflection",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-016",
+  "proposition": "He visited the center of the Augustinian Missionary Sisters in Bab El Oued.",
+  "label": "ENTAIL",
+  "evidence": "the center of the Augustinian Missionary Sisters in Bab El Oued",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-017",
+  "proposition": "Several of the sisters were killed during Algeria's civil war of 1994-96.",
+  "label": "ENTAIL",
+  "evidence": "several of the sisters were killed during Algeria's civil war of 1994-96",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-018",
+  "proposition": "He celebrated Mass at the Basilica of Our Lady of Africa.",
+  "label": "ENTAIL",
+  "evidence": "celebrated Mass at the Basilica of Our Lady of Africa",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-019",
+  "proposition": "On the second day, he is to make a pilgrimage to the ruins of ancient Hippo.",
+  "label": "ENTAIL",
+  "evidence": "make a pilgrimage to the ruins of ancient Hippo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-020",
+  "proposition": "The trip is the first stop of an 11-day tour of four countries.",
+  "label": "ENTAIL",
+  "evidence": "the first stop of an 11-day tour of four countries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-021",
+  "proposition": "The arrival was on April 14, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "On Monday, April 13, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-022",
+  "proposition": "It is the second papal visit to Algeria.",
+  "label": "CONTRADICT",
+  "evidence": "the first papal visit to Algeria",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-023",
+  "proposition": "The pope is a member of the Jesuit order.",
+  "label": "CONTRADICT",
+  "evidence": "the first Augustinian in the history of the papacy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-024",
+  "proposition": "He landed at about 3 p.m.",
+  "label": "CONTRADICT",
+  "evidence": "landed in Algiers at about 10:30 a.m.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-025",
+  "proposition": "The Great Mosque is the largest in the world.",
+  "label": "CONTRADICT",
+  "evidence": "the third largest in the world",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-026",
+  "proposition": "The sisters were killed during World War II.",
+  "label": "CONTRADICT",
+  "evidence": "during Algeria's civil war of 1994-96",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-027",
+  "proposition": "On the second day, he is to visit a university in Algiers.",
+  "label": "CONTRADICT",
+  "evidence": "make a pilgrimage to the ruins of ancient Hippo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-028",
+  "proposition": "The tour covers two countries.",
+  "label": "CONTRADICT",
+  "evidence": "an 11-day tour of four countries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-029",
+  "proposition": "The tour runs from April 13 to 30.",
+  "label": "CONTRADICT",
+  "evidence": "runs from April 13 to 23",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-030",
+  "proposition": "The Mass at the Basilica of St. Augustine in Annaba already happened.",
+  "label": "CONTRADICT",
+  "evidence": "he is to make a pilgrimage to the ruins of ancient Hippo and celebrate Mass at the Basilica of St. Augustine in Annaba",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-085-031",
+  "proposition": "The pope met the Algerian president at the Presidential Palace.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The meeting details are not described."
+ },
+ {
+  "id": "V2-085-032",
+  "proposition": "The Mass at the Basilica of Our Lady of Africa drew 5,000 worshippers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not given."
+ },
+ {
+  "id": "V2-085-033",
+  "proposition": "The pilgrimage includes a specific relic of Augustine.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The pilgrimage's content is not detailed."
+ },
+ {
+  "id": "V2-085-034",
+  "proposition": "The pope's plane made an unscheduled stop.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Travel details are not given."
+ },
+ {
+  "id": "V2-085-035",
+  "proposition": "The address mentioned the 1962 independence.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The address content is not quoted."
+ },
+ {
+  "id": "V2-085-036",
+  "proposition": "The Augustinian sisters center reopened for the visit.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The center's status is not mentioned."
+ },
+ {
+  "id": "V2-085-037",
+  "proposition": "A joint declaration was signed with a Muslim body.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Any declaration is not mentioned."
+ },
+ {
+  "id": "V2-085-038",
+  "proposition": "The second-day Mass was broadcast in Latin.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast or language details are not given."
+ },
+ {
+  "id": "V2-085-039",
+  "proposition": "The tour includes a visit to a refugee camp.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The program beyond the listed sites is not described."
+ },
+ {
+  "id": "V2-085-040",
+  "proposition": "Security was tightened across Algiers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Security arrangements are not described."
+ }
+]

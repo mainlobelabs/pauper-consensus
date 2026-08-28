@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-080-001",
+  "proposition": "I Am Maximus won the Grand National at Aintree.",
+  "label": "ENTAIL",
+  "evidence": "wins the Grand National at Aintree",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-002",
+  "proposition": "The race was on Saturday, April 11, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, April 11, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-003",
+  "proposition": "Paul Townend rode I Am Maximus.",
+  "label": "ENTAIL",
+  "evidence": "ridden by Irish jockey Paul Townend",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-004",
+  "proposition": "Townend is an Irish jockey.",
+  "label": "ENTAIL",
+  "evidence": "Irish jockey Paul Townend",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-005",
+  "proposition": "The horse is the second since Red Rum to win the race twice.",
+  "label": "ENTAIL",
+  "evidence": "the second horse since Red Rum to win the race twice",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-006",
+  "proposition": "The horse is 10 years old.",
+  "label": "ENTAIL",
+  "evidence": "The 10-year-old",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-007",
+  "proposition": "Willie Mullins trained the horse.",
+  "label": "ENTAIL",
+  "evidence": "trained by Willie Mullins",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-008",
+  "proposition": "JP McManus owns the horse.",
+  "label": "ENTAIL",
+  "evidence": "owned by JP McManus",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-009",
+  "proposition": "The horse started at 9-2 favorite.",
+  "label": "ENTAIL",
+  "evidence": "started at 9-2 favorite",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-010",
+  "proposition": "It carried a top weight of 11st 12lb.",
+  "label": "ENTAIL",
+  "evidence": "carrying a top weight of 11st 12lb",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-011",
+  "proposition": "That weight is a record for this century.",
+  "label": "ENTAIL",
+  "evidence": "a record for this century",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-012",
+  "proposition": "Iroko started at 18-1 and was beaten.",
+  "label": "ENTAIL",
+  "evidence": "He beat Iroko, who started at 18-1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-013",
+  "proposition": "Jordans started at 28-1 and was beaten.",
+  "label": "ENTAIL",
+  "evidence": "Jordans, who started at 28-1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-014",
+  "proposition": "It is the horse's second winning of the Grand National.",
+  "label": "ENTAIL",
+  "evidence": "his second winning of the Grand National",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-015",
+  "proposition": "The horse is the first since Red Rum to regain the crown.",
+  "label": "ENTAIL",
+  "evidence": "the first horse since Red Rum, who won in 1973, 1974, and 1977, to regain the crown",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-016",
+  "proposition": "It is the ninth horse to win the race twice.",
+  "label": "ENTAIL",
+  "evidence": "the ninth horse in the history of the race to win it twice",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-017",
+  "proposition": "It is the first to win twice since Tiger Roll in 2018 and 2019.",
+  "label": "ENTAIL",
+  "evidence": "the first since Tiger Roll in 2018 and 2019",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-018",
+  "proposition": "Mullins wins the race for the third consecutive year.",
+  "label": "ENTAIL",
+  "evidence": "his third consecutive winning of the race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-019",
+  "proposition": "It is Mullins's fourth overall winning of the race.",
+  "label": "ENTAIL",
+  "evidence": "his fourth overall",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-020",
+  "proposition": "McManus wins the race a record fourth time as owner.",
+  "label": "ENTAIL",
+  "evidence": "a record fourth win of the race as owner",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-021",
+  "proposition": "I Am Maximus won the Cheltenham Gold Cup instead.",
+  "label": "CONTRADICT",
+  "evidence": "wins the Grand National at Aintree",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-022",
+  "proposition": "The race was run in 2025.",
+  "label": "CONTRADICT",
+  "evidence": "on Saturday, April 11, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-023",
+  "proposition": "The horse is the first since Red Rum to win the race twice.",
+  "label": "CONTRADICT",
+  "evidence": "the second horse since Red Rum to win the race twice",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-024",
+  "proposition": "The horse is 12 years old.",
+  "label": "CONTRADICT",
+  "evidence": "The 10-year-old",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-025",
+  "proposition": "The horse started at 5-1.",
+  "label": "CONTRADICT",
+  "evidence": "started at 9-2 favorite",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-026",
+  "proposition": "It carried 11st 8lb.",
+  "label": "CONTRADICT",
+  "evidence": "carrying a top weight of 11st 12lb",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-027",
+  "proposition": "Iroko won the race.",
+  "label": "CONTRADICT",
+  "evidence": "He beat Iroko",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-028",
+  "proposition": "It is the horse's first winning of the Grand National.",
+  "label": "CONTRADICT",
+  "evidence": "his second winning of the Grand National",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-029",
+  "proposition": "Mullins wins the race for the second time overall.",
+  "label": "CONTRADICT",
+  "evidence": "his fourth overall",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-030",
+  "proposition": "McManus wins the race for the first time as owner.",
+  "label": "CONTRADICT",
+  "evidence": "a record fourth win of the race as owner",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-080-031",
+  "proposition": "The win margin was one length.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The margin is not stated."
+ },
+ {
+  "id": "V2-080-032",
+  "proposition": "The horse fell at one fence during the race.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The race's running is not described."
+ },
+ {
+  "id": "V2-080-033",
+  "proposition": "Townend has won the race before.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Townend's prior record is not mentioned."
+ },
+ {
+  "id": "V2-080-034",
+  "proposition": "The horse's sire is named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Pedigree details are not given."
+ },
+ {
+  "id": "V2-080-035",
+  "proposition": "The race drew a crowd of 50,000.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not given."
+ },
+ {
+  "id": "V2-080-036",
+  "proposition": "Mullins retired the horse after the win.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Future plans are not stated."
+ },
+ {
+  "id": "V2-080-037",
+  "proposition": "The winner's bonus was paid to McManus.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Prize money is not mentioned."
+ },
+ {
+  "id": "V2-080-038",
+  "proposition": "The race was televised by a specific broadcaster.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not given."
+ },
+ {
+  "id": "V2-080-039",
+  "proposition": "The 11st 12lb weight was set by the handicapper.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The weight-setting process is not described."
+ },
+ {
+  "id": "V2-080-040",
+  "proposition": "I Am Maximus had a fall in training.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Training history is not mentioned."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-092-001",
+  "proposition": "The Russian defence ministry said the Africa Corps freed a Russian and a Ukrainian citizen.",
+  "label": "ENTAIL",
+  "evidence": "freed a Russian and a Ukrainian citizen during an operation in Mali",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-002",
+  "proposition": "The operation was in Mali.",
+  "label": "ENTAIL",
+  "evidence": "during an operation in Mali",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-003",
+  "proposition": "The men were abducted in Niger in July 2024.",
+  "label": "ENTAIL",
+  "evidence": "abducted in Niger in July 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-004",
+  "proposition": "They were taken by Jama'at Nusrat al-Islam wal-Muslimin.",
+  "label": "ENTAIL",
+  "evidence": "by Jama'at Nusrat al-Islam wal-Muslimin",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-005",
+  "proposition": "The ministry announced this on Tuesday, April 21, 2026.",
+  "label": "ENTAIL",
+  "evidence": "On Tuesday, April 21, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-006",
+  "proposition": "The ministry described the action as a special operation.",
+  "label": "ENTAIL",
+  "evidence": "described the action as a \"special operation.\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-007",
+  "proposition": "The Russian freed is Oleg Gret, born in 1962.",
+  "label": "ENTAIL",
+  "evidence": "Oleg Gret, a Russian born in 1962",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-008",
+  "proposition": "The Ukrainian freed is Yuri Yurov, born in 1970.",
+  "label": "ENTAIL",
+  "evidence": "Yuri Yurov, a Ukrainian born in 1970",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-009",
+  "proposition": "Both were employees of a Russian geological exploration company.",
+  "label": "ENTAIL",
+  "evidence": "employees of a Russian geological exploration company",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-010",
+  "proposition": "They were captured at Mbanga in Niger's Tillaberi region.",
+  "label": "ENTAIL",
+  "evidence": "at Mbanga in Niger's Tillaberi region",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-011",
+  "proposition": "The area is near the Burkina Faso and Mali borders where gold mines operate.",
+  "label": "ENTAIL",
+  "evidence": "near the Burkina Faso and Mali borders where gold mines operate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-012",
+  "proposition": "JNIM is an al-Qaeda affiliate.",
+  "label": "ENTAIL",
+  "evidence": "JNIM, an al-Qaeda affiliate",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-013",
+  "proposition": "JNIM released a video of them in August 2024.",
+  "label": "ENTAIL",
+  "evidence": "released a video of them in August 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-014",
+  "proposition": "They had been held in Mali for about two years.",
+  "label": "ENTAIL",
+  "evidence": "held in Mali for about two years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-015",
+  "proposition": "Their initial examination showed multiple illnesses and severe physical exhaustion.",
+  "label": "ENTAIL",
+  "evidence": "multiple illnesses and severe physical exhaustion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-016",
+  "proposition": "They are to fly to Moscow by Russian military transport for treatment.",
+  "label": "ENTAIL",
+  "evidence": "fly to Moscow by Russian military transport for treatment",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-017",
+  "proposition": "The Africa Corps is the successor to the Wagner Group.",
+  "label": "ENTAIL",
+  "evidence": "the successor to the Wagner Group",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-018",
+  "proposition": "It is active in Mali, Equatorial Guinea, and the Central African Republic.",
+  "label": "ENTAIL",
+  "evidence": "active in Mali, Equatorial Guinea, and the Central African Republic",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-019",
+  "proposition": "The operation is part of the growing Russian military presence in West and Central Africa.",
+  "label": "ENTAIL",
+  "evidence": "part of the growing Russian military presence in West and Central Africa",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-020",
+  "proposition": "Moscow did not confirm whether other hostages remain in the group's custody.",
+  "label": "ENTAIL",
+  "evidence": "did not confirm whether other hostages remain in the group's custody",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-021",
+  "proposition": "The operation was in Niger.",
+  "label": "CONTRADICT",
+  "evidence": "an operation in Mali",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-022",
+  "proposition": "The men were abducted in 2025.",
+  "label": "CONTRADICT",
+  "evidence": "abducted in Niger in July 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-023",
+  "proposition": "The freed men are both Russian.",
+  "label": "CONTRADICT",
+  "evidence": "a Russian and a Ukrainian citizen",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-024",
+  "proposition": "Gret was born in 1970.",
+  "label": "CONTRADICT",
+  "evidence": "a Russian born in 1962",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-025",
+  "proposition": "They were captured in Niger's Tahoua region.",
+  "label": "CONTRADICT",
+  "evidence": "at Mbanga in Niger's Tillaberi region",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-026",
+  "proposition": "JNIM released a video of them in 2025.",
+  "label": "CONTRADICT",
+  "evidence": "released a video of them in August 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-027",
+  "proposition": "They had been held for about six months.",
+  "label": "CONTRADICT",
+  "evidence": "held in Mali for about two years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-028",
+  "proposition": "The examination showed they were in good health.",
+  "label": "CONTRADICT",
+  "evidence": "multiple illnesses and severe physical exhaustion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-029",
+  "proposition": "The Africa Corps is the successor to the Blackwater Group.",
+  "label": "CONTRADICT",
+  "evidence": "the successor to the Wagner Group",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-030",
+  "proposition": "Moscow confirmed that all hostages were freed.",
+  "label": "CONTRADICT",
+  "evidence": "did not confirm whether other hostages remain in the group's custody",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-092-031",
+  "proposition": "The rescue involved a firefight.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The operation's details are not disclosed."
+ },
+ {
+  "id": "V2-092-032",
+  "proposition": "The men spoke to reporters after the rescue.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Any interviews are not mentioned."
+ },
+ {
+  "id": "V2-092-033",
+  "proposition": "A specific hospital in Moscow will treat them.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The hospital is not named."
+ },
+ {
+  "id": "V2-092-034",
+  "proposition": "The geological company was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The company is not named."
+ },
+ {
+  "id": "V2-092-035",
+  "proposition": "The number of Africa Corps fighters used is given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Force details are not disclosed."
+ },
+ {
+  "id": "V2-092-036",
+  "proposition": "The men's families were present at the airport.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Family details are not mentioned."
+ },
+ {
+  "id": "V2-092-037",
+  "proposition": "A ransom was paid.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A ransom is not mentioned."
+ },
+ {
+  "id": "V2-092-038",
+  "proposition": "The Nigerien government commented on the operation.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Niger's reaction is not described."
+ },
+ {
+  "id": "V2-092-039",
+  "proposition": "The video showed the men's location.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Video details are not given."
+ },
+ {
+  "id": "V2-092-040",
+  "proposition": "The operation was announced at a press conference.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The announcement format is not described."
+ }
+]

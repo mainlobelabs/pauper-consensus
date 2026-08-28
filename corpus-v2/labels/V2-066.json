@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-066-001",
+  "proposition": "Min Aung Hlaing was elected president by the presidential electoral college.",
+  "label": "ENTAIL",
+  "evidence": "has been elected president by the presidential electoral college",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-002",
+  "proposition": "He is Senior General and Myanmar's military ruler.",
+  "label": "ENTAIL",
+  "evidence": "Myanmar's military ruler, Senior General Min Aung Hlaing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-003",
+  "proposition": "He received 429 votes.",
+  "label": "ENTAIL",
+  "evidence": "receiving 429 votes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-004",
+  "proposition": "The vote took place on Friday, April 3, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Friday, April 3, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-005",
+  "proposition": "The vote was a secret ballot.",
+  "label": "ENTAIL",
+  "evidence": "a secret ballot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-006",
+  "proposition": "The vote was held at the first regular session of the 3rd Pyidaungsu Hluttaw.",
+  "label": "ENTAIL",
+  "evidence": "at the first regular session of the 3rd Pyidaungsu Hluttaw",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-007",
+  "proposition": "The session was in Nay Pyi Taw.",
+  "label": "ENTAIL",
+  "evidence": "in Nay Pyi Taw",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-008",
+  "proposition": "All 584 of the 586 eligible members voted.",
+  "label": "ENTAIL",
+  "evidence": "was held by all 584 of the 586 eligible members",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-009",
+  "proposition": "294 votes were required to win.",
+  "label": "ENTAIL",
+  "evidence": "294 votes were required",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-010",
+  "proposition": "Nyo Saw received 126 votes.",
+  "label": "ENTAIL",
+  "evidence": "who received 126 votes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-011",
+  "proposition": "Nyo Saw will become first vice president.",
+  "label": "ENTAIL",
+  "evidence": "will become first vice president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-012",
+  "proposition": "Nyo Saw is a retired general who serves as junta prime minister.",
+  "label": "ENTAIL",
+  "evidence": "a retired general who serves as junta prime minister",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-013",
+  "proposition": "Nan Ni Ni Aye received 29 votes.",
+  "label": "ENTAIL",
+  "evidence": "who received 29 votes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-014",
+  "proposition": "Nan Ni Ni Aye becomes second vice president.",
+  "label": "ENTAIL",
+  "evidence": "becomes second vice president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-015",
+  "proposition": "She is the first woman to hold the office.",
+  "label": "ENTAIL",
+  "evidence": "the first woman to hold the office",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-016",
+  "proposition": "She is of the Union Solidarity and Development Party in Kayin State.",
+  "label": "ENTAIL",
+  "evidence": "of the Union Solidarity and Development Party in Kayin State",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-017",
+  "proposition": "Min Aung Hlaing has led the junta since the 2021 coup.",
+  "label": "ENTAIL",
+  "evidence": "who has led the junta since the 2021 coup",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-018",
+  "proposition": "He becomes the 11th president of Myanmar.",
+  "label": "ENTAIL",
+  "evidence": "becomes the 11th president of Myanmar",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-019",
+  "proposition": "His term is five years.",
+  "label": "ENTAIL",
+  "evidence": "with a five-year term",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-020",
+  "proposition": "The new Union Government is to be inaugurated on April 10.",
+  "label": "ENTAIL",
+  "evidence": "the new Union Government is to be inaugurated on April 10",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-021",
+  "proposition": "Min Aung Hlaing received 312 votes.",
+  "label": "CONTRADICT",
+  "evidence": "receiving 429 votes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-022",
+  "proposition": "The vote was held on April 10, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Friday, April 3, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-023",
+  "proposition": "The ballot was public.",
+  "label": "CONTRADICT",
+  "evidence": "a secret ballot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-024",
+  "proposition": "Only 400 of the eligible members voted.",
+  "label": "CONTRADICT",
+  "evidence": "was held by all 584 of the 586 eligible members",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-025",
+  "proposition": "Nyo Saw will become president.",
+  "label": "CONTRADICT",
+  "evidence": "will become first vice president",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-026",
+  "proposition": "Nan Ni Ni Aye is the second woman to hold the vice presidency.",
+  "label": "CONTRADICT",
+  "evidence": "the first woman to hold the office",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-027",
+  "proposition": "Min Aung Hlaing becomes the 12th president of Myanmar.",
+  "label": "CONTRADICT",
+  "evidence": "becomes the 11th president of Myanmar",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-028",
+  "proposition": "His term is four years.",
+  "label": "CONTRADICT",
+  "evidence": "with a five-year term",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-029",
+  "proposition": "The NLD was allowed to contest the 2025-26 general election.",
+  "label": "CONTRADICT",
+  "evidence": "the National League for Democracy was barred",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-030",
+  "proposition": "Congratulations came from the United Nations secretary-general.",
+  "label": "CONTRADICT",
+  "evidence": "from Russian president Vladimir Putin, Chinese president Xi Jinping, and Belarusian president Alexander Lukashenko",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-066-031",
+  "proposition": "Aung Hlaing gave a victory speech after the vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not describe any speech."
+ },
+ {
+  "id": "V2-066-032",
+  "proposition": "The election was observed by an international body.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Observers are not mentioned."
+ },
+ {
+  "id": "V2-066-033",
+  "proposition": "The NLD boycotted the vote.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The NLD's role in this vote is not described beyond being barred from the general election."
+ },
+ {
+  "id": "V2-066-034",
+  "proposition": "The junta set a deadline for the full government transition.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No transition timeline beyond the inauguration date is given."
+ },
+ {
+  "id": "V2-066-035",
+  "proposition": "Protests were held in Yangon on election day.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Street activity is not mentioned."
+ },
+ {
+  "id": "V2-066-036",
+  "proposition": "The military quota in the legislature was changed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The quota structure beyond 25 percent is not discussed."
+ },
+ {
+  "id": "V2-066-037",
+  "proposition": "Aung Hlaing nominated his own cabinet.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Cabinet nominations are not described."
+ },
+ {
+  "id": "V2-066-038",
+  "proposition": "The election commission announced the winning margin.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only the vote counts are given."
+ },
+ {
+  "id": "V2-066-039",
+  "proposition": "The new government will hold its first session in May.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No first-session date is given."
+ },
+ {
+  "id": "V2-066-040",
+  "proposition": "The vice presidents took oaths on election day.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Oath details for the vice presidents are not stated."
+ }
+]
