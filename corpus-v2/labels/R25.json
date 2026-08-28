@@ -1,0 +1,282 @@
+[
+ {
+  "id": "R25-001",
+  "proposition": "The IOC lifted its ban on Russian athletes.",
+  "label": "ENTAIL",
+  "evidence": "has lifted its ban on Russian athletes",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-002",
+  "proposition": "Russian athletes may take part in the upcoming Summer Olympics in Los Angeles.",
+  "label": "ENTAIL",
+  "evidence": "allowing them to take part in the upcoming Summer Olympics in Los Angeles",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-003",
+  "proposition": "The IOC executive board acted on 7 July.",
+  "label": "ENTAIL",
+  "evidence": "The IOC executive board on 7 July",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-004",
+  "proposition": "The suspension was provisionally lifted.",
+  "label": "ENTAIL",
+  "evidence": "provisionally lifted the suspension",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-005",
+  "proposition": "The suspension of the Russian Olympic Committee was in force since October 2023.",
+  "label": "ENTAIL",
+  "evidence": "in force since October 2023",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-006",
+  "proposition": "The decision eased the entry requirements for Russian athletes and teams.",
+  "label": "ENTAIL",
+  "evidence": "eased the entry requirements for Russian athletes and teams",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-007",
+  "proposition": "Russian athletes must undergo multiple doping controls.",
+  "label": "ENTAIL",
+  "evidence": "must undergo multiple doping controls",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-008",
+  "proposition": "They must be part of a recognized testing program.",
+  "label": "ENTAIL",
+  "evidence": "be part of a recognized testing program",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-009",
+  "proposition": "The IOC will continue to not organize IOC events in Russia.",
+  "label": "ENTAIL",
+  "evidence": "not organize IOC events in Russia",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-010",
+  "proposition": "The IOC will not invite Russian government or state officials.",
+  "label": "ENTAIL",
+  "evidence": "not invite Russian government or state officials",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-011",
+  "proposition": "It is still undecided whether Russian teams may fly the Russian flag.",
+  "label": "ENTAIL",
+  "evidence": "still undecided whether Russian teams may fly the Russian flag",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-012",
+  "proposition": "It is still undecided whether they may play the Russian anthem.",
+  "label": "ENTAIL",
+  "evidence": "play the Russian anthem",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-013",
+  "proposition": "Russian athletes competed under the neutral ROC designation at Tokyo 2021 and Beijing 2022.",
+  "label": "ENTAIL",
+  "evidence": "under the neutral \"ROC\" designation at Tokyo 2021 and Beijing 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-014",
+  "proposition": "They competed as individual neutral athletes at Paris 2024 and Milan-Cortina 2026.",
+  "label": "ENTAIL",
+  "evidence": "as individual neutral athletes at Paris 2024 and Milan-Cortina 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-015",
+  "proposition": "Los Angeles 2028 will be the first US Summer Games since 1996.",
+  "label": "ENTAIL",
+  "evidence": "the first US Summer Games since 1996",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-016",
+  "proposition": "It will be the third time the city hosts.",
+  "label": "ENTAIL",
+  "evidence": "the third time the city hosts",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-017",
+  "proposition": "The next Games overall are the 2026 Youth Summer Games in Dakar.",
+  "label": "ENTAIL",
+  "evidence": "the 2026 Youth Summer Games in Dakar",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-018",
+  "proposition": "The Youth Games are in October.",
+  "label": "ENTAIL",
+  "evidence": "in October",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-019",
+  "proposition": "The decision allows Russian participation at the 2028 Summer Olympics.",
+  "label": "ENTAIL",
+  "evidence": "allows Russian participation at the 2028 Summer Olympics",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-020",
+  "proposition": "The suspension covered the Russian Olympic Committee.",
+  "label": "ENTAIL",
+  "evidence": "the suspension of the Russian Olympic Committee",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-021",
+  "proposition": "The IOC fully lifted the suspension.",
+  "label": "CONTRADICT",
+  "evidence": "provisionally lifted",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-022",
+  "proposition": "The suspension was in force since March 2024.",
+  "label": "CONTRADICT",
+  "evidence": "in force since October 2023",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-023",
+  "proposition": "Russian athletes need no doping controls.",
+  "label": "CONTRADICT",
+  "evidence": "must undergo multiple doping controls",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-024",
+  "proposition": "The IOC will organize IOC events in Russia.",
+  "label": "CONTRADICT",
+  "evidence": "not organize IOC events in Russia",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-025",
+  "proposition": "The IOC will invite Russian government officials.",
+  "label": "CONTRADICT",
+  "evidence": "not invite Russian government or state officials",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-026",
+  "proposition": "Russian teams will definitely fly the Russian flag.",
+  "label": "CONTRADICT",
+  "evidence": "still undecided",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-027",
+  "proposition": "Russian athletes competed as a full national team at Paris 2024.",
+  "label": "CONTRADICT",
+  "evidence": "as individual neutral athletes at Paris 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-028",
+  "proposition": "Los Angeles 2028 will be the first US Summer Games since 1984.",
+  "label": "CONTRADICT",
+  "evidence": "since 1996",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-029",
+  "proposition": "It will be the second time the city hosts.",
+  "label": "CONTRADICT",
+  "evidence": "the third time the city hosts",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-030",
+  "proposition": "The 2026 Youth Summer Games are in Doha.",
+  "label": "CONTRADICT",
+  "evidence": "in Dakar",
+  "silence_reason": null
+ },
+ {
+  "id": "R25-031",
+  "proposition": "A count of expected Russian athletes was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "R25-032",
+  "proposition": "A statement from the Russian Olympic Committee was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "R25-033",
+  "proposition": "A date for the flag decision was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "R25-034",
+  "proposition": "A count of required doping controls was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "R25-035",
+  "proposition": "A statement from the IOC was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "R25-036",
+  "proposition": "A count of IOC events not held in Russia was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "R25-037",
+  "proposition": "A date for the Youth Summer Games was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "R25-038",
+  "proposition": "A scope for the recognized testing program was described.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A scope is not described."
+ },
+ {
+  "id": "R25-039",
+  "proposition": "A statement from the US Olympic Committee was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "R25-040",
+  "proposition": "A count of eligible Russian teams was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ }
+]

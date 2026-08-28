@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-251-001",
+  "proposition": "The FDA approved daraxonrasib.",
+  "label": "ENTAIL",
+  "evidence": "has approved the drug daraxonrasib",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-002",
+  "proposition": "Daraxonrasib is a treatment for metastatic pancreatic cancer.",
+  "label": "ENTAIL",
+  "evidence": "as a treatment for metastatic pancreatic cancer",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-003",
+  "proposition": "It is the first RAS inhibitor approved for the disease.",
+  "label": "ENTAIL",
+  "evidence": "the first RAS inhibitor approved for the disease",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-004",
+  "proposition": "Daraxonrasib is sold as Rasonque.",
+  "label": "ENTAIL",
+  "evidence": "sold as Rasonque",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-005",
+  "proposition": "The drug was developed by Revolution Medicines.",
+  "label": "ENTAIL",
+  "evidence": "developed by Revolution Medicines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-006",
+  "proposition": "Daraxonrasib is an oral inhibitor.",
+  "label": "ENTAIL",
+  "evidence": "is an oral multi-selective inhibitor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-007",
+  "proposition": "It targets the RAS GTPase family.",
+  "label": "ENTAIL",
+  "evidence": "of the RAS GTPase family",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-008",
+  "proposition": "The approval covers adults with metastatic pancreatic adenocarcinoma.",
+  "label": "ENTAIL",
+  "evidence": "adults with metastatic pancreatic adenocarcinoma",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-009",
+  "proposition": "The approval covers patients who have received at least one prior systemic therapy.",
+  "label": "ENTAIL",
+  "evidence": "received at least one prior systemic therapy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-010",
+  "proposition": "The approval covers patients who are not candidates for multi-agent therapy.",
+  "label": "ENTAIL",
+  "evidence": "not candidates for multi-agent systemic therapy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-011",
+  "proposition": "The approval was based primarily on the RASolute 302 trial.",
+  "label": "ENTAIL",
+  "evidence": "the pivotal randomized phase 3 RASolute 302 trial",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-012",
+  "proposition": "RASolute 302 was a randomized phase 3 trial.",
+  "label": "ENTAIL",
+  "evidence": "randomized phase 3 RASolute 302",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-013",
+  "proposition": "The trial showed a survival benefit over chemotherapy.",
+  "label": "ENTAIL",
+  "evidence": "a survival benefit over chemotherapy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-014",
+  "proposition": "The drug nearly doubled survival rates in patients with advanced disease.",
+  "label": "ENTAIL",
+  "evidence": "nearly double survival rates in patients with advanced disease",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-015",
+  "proposition": "The FDA granted accelerated approval.",
+  "label": "ENTAIL",
+  "evidence": "the FDA granted accelerated approval",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-016",
+  "proposition": "RAS mutations drive about 90 percent of pancreatic cancers.",
+  "label": "ENTAIL",
+  "evidence": "drive about 90 percent of pancreatic cancers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-017",
+  "proposition": "RAS proteins have long been considered undruggable.",
+  "label": "ENTAIL",
+  "evidence": "have long been considered undruggable",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-018",
+  "proposition": "The approval marks the first targeted therapy for previously treated metastatic disease.",
+  "label": "ENTAIL",
+  "evidence": "the first targeted therapy for previously treated metastatic disease",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-019",
+  "proposition": "The Pancreatic Cancer Action Network commented on the approval.",
+  "label": "ENTAIL",
+  "evidence": "the Pancreatic Cancer Action Network called it the first FDA approval of a broadly effective RAS-targeted therapy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-020",
+  "proposition": "Oncologists said the key question is sequencing with existing chemotherapy.",
+  "label": "ENTAIL",
+  "evidence": "how the drug will be sequenced with existing chemotherapy regimens",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-021",
+  "proposition": "The FDA rejected daraxonrasib.",
+  "label": "CONTRADICT",
+  "evidence": "has approved the drug daraxonrasib",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-022",
+  "proposition": "It is the second RAS inhibitor approved for the disease.",
+  "label": "CONTRADICT",
+  "evidence": "the first RAS inhibitor approved for the disease",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-023",
+  "proposition": "Daraxonrasib is given by injection.",
+  "label": "CONTRADICT",
+  "evidence": "is an oral multi-selective inhibitor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-024",
+  "proposition": "The drug was developed by Amgen.",
+  "label": "CONTRADICT",
+  "evidence": "developed by Revolution Medicines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-025",
+  "proposition": "The approval covers all pancreatic cancer patients.",
+  "label": "CONTRADICT",
+  "evidence": "adults with metastatic pancreatic adenocarcinoma who have received at least one prior systemic therapy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-026",
+  "proposition": "RASolute 302 was a phase 1 trial.",
+  "label": "CONTRADICT",
+  "evidence": "phase 3 RASolute 302",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-027",
+  "proposition": "The trial showed no survival benefit.",
+  "label": "CONTRADICT",
+  "evidence": "a survival benefit over chemotherapy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-028",
+  "proposition": "The FDA granted regular approval.",
+  "label": "CONTRADICT",
+  "evidence": "granted accelerated approval",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-029",
+  "proposition": "RAS mutations drive about 50 percent of pancreatic cancers.",
+  "label": "CONTRADICT",
+  "evidence": "drive about 90 percent of pancreatic cancers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-030",
+  "proposition": "Patients and advocacy groups criticized the decision.",
+  "label": "CONTRADICT",
+  "evidence": "Patients and advocacy groups welcomed the decision",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-251-031",
+  "proposition": "The drug's recommended dose is 100 mg.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No dose is given in the article."
+ },
+ {
+  "id": "V2-251-032",
+  "proposition": "The drug costs $20,000 a month.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No price is given in the article."
+ },
+ {
+  "id": "V2-251-033",
+  "proposition": "Common side effects include nausea.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No side effects are listed in the article."
+ },
+ {
+  "id": "V2-251-034",
+  "proposition": "The trial enrolled 1,000 patients.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No enrollment figure is given in the article."
+ },
+ {
+  "id": "V2-251-035",
+  "proposition": "The FDA approval vote was 11-2.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No committee vote is given in the article."
+ },
+ {
+  "id": "V2-251-036",
+  "proposition": "Revolution Medicines has 500 employees.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No company size is given in the article."
+ },
+ {
+  "id": "V2-251-037",
+  "proposition": "The drug is available from 1 September.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No availability date is given in the article."
+ },
+ {
+  "id": "V2-251-038",
+  "proposition": "The median survival was 14 months.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No specific survival figure is given, only that it nearly doubled."
+ },
+ {
+  "id": "V2-251-039",
+  "proposition": "The approval was based on an EU review as well.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No EU review is mentioned in the article."
+ },
+ {
+  "id": "V2-251-040",
+  "proposition": "Oncologists recommended the drug for first-line use.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article only discusses sequencing in routine practice."
+ }
+]

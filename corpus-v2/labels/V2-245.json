@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-245-001",
+  "proposition": "A magnitude-7.4 earthquake struck Colombia.",
+  "label": "ENTAIL",
+  "evidence": "a magnitude-7.4 earthquake in Colombia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-002",
+  "proposition": "More than 240 people were killed.",
+  "label": "ENTAIL",
+  "evidence": "more than 240 killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-003",
+  "proposition": "570 people were injured.",
+  "label": "ENTAIL",
+  "evidence": "570 injured",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-004",
+  "proposition": "At least 3,000 people are still missing.",
+  "label": "ENTAIL",
+  "evidence": "at least 3,000 still missing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-005",
+  "proposition": "President Abelardo de la Espriella declared a national state of emergency.",
+  "label": "ENTAIL",
+  "evidence": "president Abelardo de la Espriella has declared a national state of emergency",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-006",
+  "proposition": "The quake struck at 7:34 local time.",
+  "label": "ENTAIL",
+  "evidence": "struck at 7:34 local time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-007",
+  "proposition": "The quake struck on Saturday, 10 August.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, 10 August",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-008",
+  "proposition": "The epicentre was near San Jose del Palmar.",
+  "label": "ENTAIL",
+  "evidence": "near San Jose del Palmar",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-009",
+  "proposition": "The epicentre was in Choco department.",
+  "label": "ENTAIL",
+  "evidence": "in Choco department",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-010",
+  "proposition": "The quake was at a depth of roughly 110 kilometres.",
+  "label": "ENTAIL",
+  "evidence": "at a depth of roughly 110 kilometres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-011",
+  "proposition": "It was the strongest earthquake recorded in Colombia this century.",
+  "label": "ENTAIL",
+  "evidence": "the strongest earthquake recorded in Colombia this century",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-012",
+  "proposition": "The quake was felt across all 32 departments of Colombia.",
+  "label": "ENTAIL",
+  "evidence": "felt across all 32 departments of the country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-013",
+  "proposition": "The quake was felt in Ecuador, Panama, and Venezuela.",
+  "label": "ENTAIL",
+  "evidence": "as well as in Ecuador, Panama, and Venezuela",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-014",
+  "proposition": "The worst damage was reported in Cali, Pereira, Quibdo, and Manizales.",
+  "label": "ENTAIL",
+  "evidence": "The worst damage was reported in Cali, Pereira, Quibdo, and Manizales",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-015",
+  "proposition": "Buildings collapsed in the affected cities.",
+  "label": "ENTAIL",
+  "evidence": "where buildings collapsed and roads were cut off",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-016",
+  "proposition": "De la Espriella set up a unified command post.",
+  "label": "ENTAIL",
+  "evidence": "set up a unified command post",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-017",
+  "proposition": "More than 1,000 troops were deployed to Cali.",
+  "label": "ENTAIL",
+  "evidence": "deployed more than 1,000 troops to Cali",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-018",
+  "proposition": "Curfews were imposed in Cali and Pereira.",
+  "label": "ENTAIL",
+  "evidence": "imposed curfews in Cali and Pereira",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-019",
+  "proposition": "Damage is estimated at $9.6 billion.",
+  "label": "ENTAIL",
+  "evidence": "Damage is estimated at $9.6 billion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-020",
+  "proposition": "Search-and-rescue operations continue with thousands of rescuers.",
+  "label": "ENTAIL",
+  "evidence": "search-and-rescue operations continue, with thousands of rescuers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-021",
+  "proposition": "A magnitude-6.4 earthquake struck Colombia.",
+  "label": "CONTRADICT",
+  "evidence": "a magnitude-7.4 earthquake in Colombia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-022",
+  "proposition": "More than 24 people were killed.",
+  "label": "CONTRADICT",
+  "evidence": "more than 240 killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-023",
+  "proposition": "Only 200 people are missing.",
+  "label": "CONTRADICT",
+  "evidence": "at least 3,000 still missing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-024",
+  "proposition": "The president declared a local state of emergency.",
+  "label": "CONTRADICT",
+  "evidence": "declared a national state of emergency",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-025",
+  "proposition": "The quake struck at 3:34 local time.",
+  "label": "CONTRADICT",
+  "evidence": "struck at 7:34 local time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-026",
+  "proposition": "The epicentre was near Bogota.",
+  "label": "CONTRADICT",
+  "evidence": "near San Jose del Palmar",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-027",
+  "proposition": "The quake was at a depth of roughly 10 kilometres.",
+  "label": "CONTRADICT",
+  "evidence": "at a depth of roughly 110 kilometres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-028",
+  "proposition": "It was the weakest earthquake recorded in Colombia this century.",
+  "label": "CONTRADICT",
+  "evidence": "the strongest earthquake recorded in Colombia this century",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-029",
+  "proposition": "Troops were deployed to Manizales.",
+  "label": "CONTRADICT",
+  "evidence": "deployed more than 1,000 troops to Cali",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-030",
+  "proposition": "Damage is estimated at $960 million.",
+  "label": "CONTRADICT",
+  "evidence": "estimated at $9.6 billion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-245-031",
+  "proposition": "The US government offered a specific aid package.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article mentions international assistance but no specific offers."
+ },
+ {
+  "id": "V2-245-032",
+  "proposition": "A tsunami warning was issued.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No tsunami warning is mentioned in the article."
+ },
+ {
+  "id": "V2-245-033",
+  "proposition": "The number of damaged buildings in Cali was 500.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No building counts are given in the article."
+ },
+ {
+  "id": "V2-245-034",
+  "proposition": "The quake triggered a landslide in Quibdo.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No specific geological events are described in the article."
+ },
+ {
+  "id": "V2-245-035",
+  "proposition": "The state of emergency lasts 30 days.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No duration of the state of emergency is given."
+ },
+ {
+  "id": "V2-245-036",
+  "proposition": "Schools will remain closed for a week.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No school closure is mentioned in the article."
+ },
+ {
+  "id": "V2-245-037",
+  "proposition": "The death toll includes 50 children.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No breakdown of the dead by age is given."
+ },
+ {
+  "id": "V2-245-038",
+  "proposition": "Hospitals in Manizales were evacuated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No evacuation detail is given in the article."
+ },
+ {
+  "id": "V2-245-039",
+  "proposition": "The government requested a UN assessment mission.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No UN mission is mentioned in the article."
+ },
+ {
+  "id": "V2-245-040",
+  "proposition": "The earthquake's epicentre was 20 km from the coast.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No distance from the coast is given in the article."
+ }
+]

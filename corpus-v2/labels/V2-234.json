@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-234-001",
+  "proposition": "Sheikh Hasina announced that she plans to return to Bangladesh.",
+  "label": "ENTAIL",
+  "evidence": "has announced that she plans to return to the country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-002",
+  "proposition": "Hasina is in exile in New Delhi, India.",
+  "label": "ENTAIL",
+  "evidence": "exile in New Delhi, India",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-003",
+  "proposition": "Hasina faces a death sentence.",
+  "label": "ENTAIL",
+  "evidence": "despite facing a death sentence",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-004",
+  "proposition": "The death sentence relates to her role in a violent crackdown on protesters.",
+  "label": "ENTAIL",
+  "evidence": "her role during the violent crackdown on protesters",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-005",
+  "proposition": "The crackdown led to her resignation two years ago.",
+  "label": "ENTAIL",
+  "evidence": "that led to her resignation two years ago",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-006",
+  "proposition": "Hasina is the leader of the Awami League.",
+  "label": "ENTAIL",
+  "evidence": "leader of the Awami League",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-007",
+  "proposition": "Hasina resigned and fled Bangladesh on 5 August 2024.",
+  "label": "ENTAIL",
+  "evidence": "resigned and fled Bangladesh on 5 August 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-008",
+  "proposition": "The July Uprising was a student-led Gen Z movement.",
+  "label": "ENTAIL",
+  "evidence": "a student-led Gen Z movement",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-009",
+  "proposition": "The movement was over public-sector quota reform.",
+  "label": "ENTAIL",
+  "evidence": "over the public-sector quota reform",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-010",
+  "proposition": "She landed at Hindon Air Base near Delhi.",
+  "label": "ENTAIL",
+  "evidence": "landed at Hindon Air Base near Delhi",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-011",
+  "proposition": "The uprising killed thousands.",
+  "label": "ENTAIL",
+  "evidence": "The uprising killed thousands",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-012",
+  "proposition": "The uprising ended more than 15 years of Awami League rule.",
+  "label": "ENTAIL",
+  "evidence": "ended more than 15 years of Awami League rule",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-013",
+  "proposition": "A court tried Hasina and sentenced her to death.",
+  "label": "ENTAIL",
+  "evidence": "A court tried Hasina and sentenced her to death",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-014",
+  "proposition": "The sentence was over the 2024 student protests and the violence that accompanied them.",
+  "label": "ENTAIL",
+  "evidence": "over the 2024 student protests and the violence that accompanied them",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-015",
+  "proposition": "The Guardian reported the verdict in August 2025.",
+  "label": "ENTAIL",
+  "evidence": "the Guardian reported in August 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-016",
+  "proposition": "Hasina has rejected the sentence as politically motivated.",
+  "label": "ENTAIL",
+  "evidence": "rejected the sentence as politically motivated",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-017",
+  "proposition": "Her lawyers have pursued appeals.",
+  "label": "ENTAIL",
+  "evidence": "her lawyers have pursued appeals",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-018",
+  "proposition": "The announcement is the first time she has publicly outlined a plan to come home.",
+  "label": "ENTAIL",
+  "evidence": "the first time she has publicly outlined a plan to come home",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-019",
+  "proposition": "Analysts said a return could trigger fresh demonstrations.",
+  "label": "ENTAIL",
+  "evidence": "could trigger fresh demonstrations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-020",
+  "proposition": "It remains unclear whether a homecoming would involve a pardon, a surrender, or both.",
+  "label": "ENTAIL",
+  "evidence": "whether a homecoming would involve a pardon, a surrender, or both",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-021",
+  "proposition": "Hasina announced she will remain in exile permanently.",
+  "label": "CONTRADICT",
+  "evidence": "has announced that she plans to return to the country",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-022",
+  "proposition": "Hasina is in exile in Dubai.",
+  "label": "CONTRADICT",
+  "evidence": "exile in New Delhi, India",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-023",
+  "proposition": "Hasina faces a 10-year prison sentence.",
+  "label": "CONTRADICT",
+  "evidence": "despite facing a death sentence",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-024",
+  "proposition": "Hasina resigned in 2022.",
+  "label": "CONTRADICT",
+  "evidence": "resigned and fled Bangladesh on 5 August 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-025",
+  "proposition": "The July Uprising was a trade-union-led movement.",
+  "label": "CONTRADICT",
+  "evidence": "a student-led Gen Z movement",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-026",
+  "proposition": "She landed in Kathmandu.",
+  "label": "CONTRADICT",
+  "evidence": "landed at Hindon Air Base near Delhi",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-027",
+  "proposition": "The uprising killed 300 people.",
+  "label": "CONTRADICT",
+  "evidence": "The uprising killed thousands",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-028",
+  "proposition": "A court acquitted Hasina.",
+  "label": "CONTRADICT",
+  "evidence": "tried Hasina and sentenced her to death",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-029",
+  "proposition": "Hasina welcomed the sentence as fair.",
+  "label": "CONTRADICT",
+  "evidence": "rejected the sentence as politically motivated",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-030",
+  "proposition": "The government has already responded to the announcement.",
+  "label": "CONTRADICT",
+  "evidence": "The government has not yet responded to the announcement",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-234-031",
+  "proposition": "The court handed down the death sentence on 31 August 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only August 2025 is stated in the article."
+ },
+ {
+  "id": "V2-234-032",
+  "proposition": "Hasina's return is scheduled for December 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No return date is given in the article."
+ },
+ {
+  "id": "V2-234-033",
+  "proposition": "The July Uprising began on 16 July 2024.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No start date is given in the article."
+ },
+ {
+  "id": "V2-234-034",
+  "proposition": "The crackdown killed 1,400 people.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only thousands is stated as the death toll."
+ },
+ {
+  "id": "V2-234-035",
+  "proposition": "Hasina will be pardoned before her return.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A pardon or surrender is said to remain unclear in the article."
+ },
+ {
+  "id": "V2-234-036",
+  "proposition": "The announcement was made at a press conference.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No venue or format of the announcement is given."
+ },
+ {
+  "id": "V2-234-037",
+  "proposition": "Hasina's family will accompany her back.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No mention of family in the article."
+ },
+ {
+  "id": "V2-234-038",
+  "proposition": "Bangladeshi opposition parties condemned the announcement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No opposition reaction is mentioned in the article."
+ },
+ {
+  "id": "V2-234-039",
+  "proposition": "The announcement was broadcast on live television.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No television mention in the article."
+ },
+ {
+  "id": "V2-234-040",
+  "proposition": "Hasina's lawyers filed the appeal in March 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No appeal date is given in the article."
+ }
+]

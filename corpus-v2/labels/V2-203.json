@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-203-001",
+  "proposition": "South Korea's Supreme Court has upheld Kweon Seong-dong's two-year prison sentence.",
+  "label": "ENTAIL",
+  "evidence": "upheld People Power Party lawmaker Kweon Seong-dong's two-year prison sentence",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-002",
+  "proposition": "Kweon is a People Power Party lawmaker.",
+  "label": "ENTAIL",
+  "evidence": "People Power Party lawmaker Kweon Seong-dong",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-003",
+  "proposition": "The sentence was for accepting 100 million won in illegal political funds.",
+  "label": "ENTAIL",
+  "evidence": "for accepting 100 million won (US$67,400) in illegal political funds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-004",
+  "proposition": "The funds came from the Unification Church.",
+  "label": "ENTAIL",
+  "evidence": "from the Unification Church",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-005",
+  "proposition": "The 100 million won equals US$67,400.",
+  "label": "ENTAIL",
+  "evidence": "100 million won (US$67,400)",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-006",
+  "proposition": "The ruling removes him from the National Assembly.",
+  "label": "ENTAIL",
+  "evidence": "removing him from the National Assembly",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-007",
+  "proposition": "The court's second division upheld the first and appellate court rulings.",
+  "label": "ENTAIL",
+  "evidence": "The court's second division upheld the first and appellate court rulings",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-008",
+  "proposition": "The sentence includes a 100 million won forfeit.",
+  "label": "ENTAIL",
+  "evidence": "a two-year term plus a 100 million won forfeit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-009",
+  "proposition": "He violated the Political Funds Act.",
+  "label": "ENTAIL",
+  "evidence": "for violating the Political Funds Act",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-010",
+  "proposition": "The finalised forfeit strips him of his seat under the National Assembly Act.",
+  "label": "ENTAIL",
+  "evidence": "The finalised forfeit strips him of his seat under the National Assembly Act",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-011",
+  "proposition": "Kweon is a five-term lawmaker.",
+  "label": "ENTAIL",
+  "evidence": "a five-term lawmaker",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-012",
+  "proposition": "He is a former PPP floor leader.",
+  "label": "ENTAIL",
+  "evidence": "former PPP floor leader",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-013",
+  "proposition": "He accepted the 100 million won on 5 January 2022.",
+  "label": "ENTAIL",
+  "evidence": "accepted the 100 million won on 5 January 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-014",
+  "proposition": "The money came from Yun Young-ho, then head of the Unification Church world headquarters.",
+  "label": "ENTAIL",
+  "evidence": "from Yun Young-ho, then head of the Unification Church world headquarters",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-015",
+  "proposition": "There was a request that the Yoon administration support the denomination ahead of the 20th presidential election.",
+  "label": "ENTAIL",
+  "evidence": "support the denomination ahead of the 20th presidential election",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-016",
+  "proposition": "The special counsel team was led by Min Joong-ki.",
+  "label": "ENTAIL",
+  "evidence": "led by Min Joong-ki",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-017",
+  "proposition": "Special counsel sought four years.",
+  "label": "ENTAIL",
+  "evidence": "sought four years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-018",
+  "proposition": "Key evidence included Yun's diary entry.",
+  "label": "ENTAIL",
+  "evidence": "Key evidence included Yun's diary entry",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-019",
+  "proposition": "Kweon has been in custody since September 2025.",
+  "label": "ENTAIL",
+  "evidence": "in custody since September 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-020",
+  "proposition": "The appellate court said Kweon betrayed the expectations of the public.",
+  "label": "ENTAIL",
+  "evidence": "betrayed the expectations of the public",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-021",
+  "proposition": "The Supreme Court overturned the conviction.",
+  "label": "CONTRADICT",
+  "evidence": "upheld People Power Party lawmaker Kweon Seong-dong's two-year prison sentence",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-022",
+  "proposition": "The sentence was for five years.",
+  "label": "CONTRADICT",
+  "evidence": "two-year prison sentence",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-023",
+  "proposition": "The amount accepted was 50 million won.",
+  "label": "CONTRADICT",
+  "evidence": "100 million won",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-024",
+  "proposition": "The amount accepted was 200 million won.",
+  "label": "CONTRADICT",
+  "evidence": "100 million won (US$67,400)",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-025",
+  "proposition": "The funds came from a corporate chaebol.",
+  "label": "CONTRADICT",
+  "evidence": "from the Unification Church",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-026",
+  "proposition": "Kweon retains his seat in the National Assembly.",
+  "label": "CONTRADICT",
+  "evidence": "removing him from the National Assembly",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-027",
+  "proposition": "He accepted the money on 5 January 2021.",
+  "label": "CONTRADICT",
+  "evidence": "on 5 January 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-028",
+  "proposition": "Special counsel sought two years.",
+  "label": "CONTRADICT",
+  "evidence": "sought four years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-029",
+  "proposition": "Kweon has been in custody since September 2024.",
+  "label": "CONTRADICT",
+  "evidence": "in custody since September 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-030",
+  "proposition": "The request concerned the 19th presidential election.",
+  "label": "CONTRADICT",
+  "evidence": "the 20th presidential election",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-203-031",
+  "proposition": "Kweon's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-203-032",
+  "proposition": "The constituency he represented was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A constituency is not given."
+ },
+ {
+  "id": "V2-203-033",
+  "proposition": "Whether Kweon will seek further review was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A plan is not stated."
+ },
+ {
+  "id": "V2-203-034",
+  "proposition": "Yun Young-ho's current status was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A status is not given."
+ },
+ {
+  "id": "V2-203-035",
+  "proposition": "The number of other lawmakers indicted was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-203-036",
+  "proposition": "Kweon's statement after the ruling was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-203-037",
+  "proposition": "The PPP's reaction was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A reaction is not stated."
+ },
+ {
+  "id": "V2-203-038",
+  "proposition": "A replacement for Kweon was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A replacement is not named."
+ },
+ {
+  "id": "V2-203-039",
+  "proposition": "The Unification Church's reaction was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A reaction is not stated."
+ },
+ {
+  "id": "V2-203-040",
+  "proposition": "The hearing date was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ }
+]

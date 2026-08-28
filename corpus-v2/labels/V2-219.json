@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-219-001",
+  "proposition": "Pope Leo XIV consecrated Father Joseph Chang Yanfeng as bishop of Chifeng.",
+  "label": "ENTAIL",
+  "evidence": "has consecrated Father Joseph Chang Yanfeng as the bishop of Chifeng",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-002",
+  "proposition": "Chifeng is in the Inner Mongolia Autonomous Region.",
+  "label": "ENTAIL",
+  "evidence": "in the Inner Mongolia Autonomous Region",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-003",
+  "proposition": "The consecration was under the 2018 provisional framework.",
+  "label": "ENTAIL",
+  "evidence": "under the 2018 provisional framework",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-004",
+  "proposition": "The framework cedes authority over its bishops to the Chinese government.",
+  "label": "ENTAIL",
+  "evidence": "cedes authority over its bishops to the Chinese government",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-005",
+  "proposition": "Chang was born on 4 April 1984.",
+  "label": "ENTAIL",
+  "evidence": "born on 4 April 1984",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-006",
+  "proposition": "He was born in Beizhen, Liaoning.",
+  "label": "ENTAIL",
+  "evidence": "in Beizhen, Liaoning",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-007",
+  "proposition": "He has been a priest for the Chifeng diocese since 2010.",
+  "label": "ENTAIL",
+  "evidence": "a priest for the Chifeng diocese since 2010",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-008",
+  "proposition": "He served as diocesan administrator from 2021.",
+  "label": "ENTAIL",
+  "evidence": "served as diocesan administrator from 2021",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-009",
+  "proposition": "The pope appointed him on 15 June 2026.",
+  "label": "ENTAIL",
+  "evidence": "appointed him on 15 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-010",
+  "proposition": "The pope approved his candidacy under the provisional agreement.",
+  "label": "ENTAIL",
+  "evidence": "having approved his candidacy under the provisional agreement",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-011",
+  "proposition": "The ordination was presided over by Bishop Paul Meng Qinglu of Hohhot.",
+  "label": "ENTAIL",
+  "evidence": "presided over by Bishop Paul Meng Qinglu of Hohhot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-012",
+  "proposition": "Anthony Yao Shun of Ulanqab was a co-consecrator.",
+  "label": "ENTAIL",
+  "evidence": "co-consecrators Anthony Yao Shun of Ulanqab",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-013",
+  "proposition": "Joseph Pei Junmin of Liaoning was a co-consecrator.",
+  "label": "ENTAIL",
+  "evidence": "Joseph Pei Junmin of Liaoning",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-014",
+  "proposition": "The agreement was signed on 22 September 2018.",
+  "label": "ENTAIL",
+  "evidence": "signed on 22 September 2018",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-015",
+  "proposition": "The agreement has been extended to 2028.",
+  "label": "ENTAIL",
+  "evidence": "extended to 2028",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-016",
+  "proposition": "Under the agreement, the pope approves candidates presented by Beijing.",
+  "label": "ENTAIL",
+  "evidence": "The pope approves candidates presented by Beijing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-017",
+  "proposition": "The pope agrees not to make appointments without prior Chinese approval.",
+  "label": "ENTAIL",
+  "evidence": "agrees not to make appointments without prior Chinese approval",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-018",
+  "proposition": "This is the 15th Chinese bishop ordained under the provisional agreement.",
+  "label": "ENTAIL",
+  "evidence": "the 15th Chinese bishop ordained under the provisional agreement",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-019",
+  "proposition": "This is the first appointment in 2026.",
+  "label": "ENTAIL",
+  "evidence": "the first appointment in 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-020",
+  "proposition": "The diocese had been vacant for about 20 years.",
+  "label": "ENTAIL",
+  "evidence": "had been vacant for about 20 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-021",
+  "proposition": "The pope consecrated a layman as bishop of Chifeng.",
+  "label": "CONTRADICT",
+  "evidence": "consecrated Father Joseph Chang Yanfeng",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-022",
+  "proposition": "The framework dates from 2019.",
+  "label": "CONTRADICT",
+  "evidence": "the 2018 provisional framework",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-023",
+  "proposition": "Chang was born on 4 April 1986.",
+  "label": "CONTRADICT",
+  "evidence": "born on 4 April 1984",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-024",
+  "proposition": "He was born in Beijing.",
+  "label": "CONTRADICT",
+  "evidence": "in Beizhen, Liaoning",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-025",
+  "proposition": "He has been a priest since 2015.",
+  "label": "CONTRADICT",
+  "evidence": "since 2010",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-026",
+  "proposition": "The pope appointed him on 15 June 2025.",
+  "label": "CONTRADICT",
+  "evidence": "appointed him on 15 June 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-027",
+  "proposition": "The agreement has been extended to 2026.",
+  "label": "CONTRADICT",
+  "evidence": "extended to 2028",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-028",
+  "proposition": "This is the 5th Chinese bishop ordained under the agreement.",
+  "label": "CONTRADICT",
+  "evidence": "the 15th Chinese bishop",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-029",
+  "proposition": "This is the third appointment in 2026.",
+  "label": "CONTRADICT",
+  "evidence": "the first appointment in 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-030",
+  "proposition": "The diocese had been vacant for about five years.",
+  "label": "CONTRADICT",
+  "evidence": "vacant for about 20 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-219-031",
+  "proposition": "A statement from the Vatican was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-219-032",
+  "proposition": "A statement from the Chinese government was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-219-033",
+  "proposition": "A statement from Bishop Chang was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-219-034",
+  "proposition": "A date for the ordination was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "V2-219-035",
+  "proposition": "A count of the ordination attendees was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-219-036",
+  "proposition": "A location for the ordination was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A location is not given."
+ },
+ {
+  "id": "V2-219-037",
+  "proposition": "A statement from the co-consecrators was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-219-038",
+  "proposition": "A duration for the consecration rite was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A duration is not given."
+ },
+ {
+  "id": "V2-219-039",
+  "proposition": "A statement from the diocese was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-219-040",
+  "proposition": "The next appointment under the agreement was announced.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An appointment is not announced."
+ }
+]

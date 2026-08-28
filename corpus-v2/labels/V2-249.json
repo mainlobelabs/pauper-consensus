@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-249-001",
+  "proposition": "Romania has begun shutting down the second reactor at Cernavoda.",
+  "label": "ENTAIL",
+  "evidence": "has begun shutting down the second reactor at the Cernavoda Nuclear Power Plant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-002",
+  "proposition": "Cernavoda is Romania's only nuclear power plant.",
+  "label": "ENTAIL",
+  "evidence": "the country's only nuclear power plant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-003",
+  "proposition": "Drought drove the Danube below the level needed for cooling.",
+  "label": "ENTAIL",
+  "evidence": "drought drove the Danube below the level needed for cooling",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-004",
+  "proposition": "Both reactors are now offline.",
+  "label": "ENTAIL",
+  "evidence": "leaving both reactors offline",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-005",
+  "proposition": "A severe drought is gripping Europe.",
+  "label": "ENTAIL",
+  "evidence": "A severe drought gripping Europe",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-006",
+  "proposition": "The Danube has been pushed to a record low.",
+  "label": "ENTAIL",
+  "evidence": "pushed the Danube to a record low",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-007",
+  "proposition": "The Danube is the plant's cooling water source.",
+  "label": "ENTAIL",
+  "evidence": "The river is the plant's cooling water source",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-008",
+  "proposition": "Reactor 1 had already been shut down earlier this month.",
+  "label": "ENTAIL",
+  "evidence": "reactor 1 had already been shut down earlier this month",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-009",
+  "proposition": "The second reactor is operated by Nuclearelectrica.",
+  "label": "ENTAIL",
+  "evidence": "operated by Nuclearelectrica",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-010",
+  "proposition": "The controlled shutdown began on a Wednesday.",
+  "label": "ENTAIL",
+  "evidence": "began on Wednesday",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-011",
+  "proposition": "Cernavoda normally produces around one-fifth of Romania's electricity.",
+  "label": "ENTAIL",
+  "evidence": "around one-fifth of Romania's electricity",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-012",
+  "proposition": "The government said alternative generation and imports will cover demand.",
+  "label": "ENTAIL",
+  "evidence": "alternative generation and imports will cover electricity demand",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-013",
+  "proposition": "The country has been forced to import more power.",
+  "label": "ENTAIL",
+  "evidence": "forced to import more power",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-014",
+  "proposition": "The shutdown is part of the 2026 European heat wave and drought.",
+  "label": "ENTAIL",
+  "evidence": "the broader 2026 European heat wave and drought",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-015",
+  "proposition": "The heat wave has deepened fears of an energy crisis across the continent.",
+  "label": "ENTAIL",
+  "evidence": "deepened fears of an energy crisis across the continent",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-016",
+  "proposition": "Hungary has dammed sections of the Danube.",
+  "label": "ENTAIL",
+  "evidence": "has dammed sections of the Danube",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-017",
+  "proposition": "The reactor will restart once water levels recover.",
+  "label": "ENTAIL",
+  "evidence": "the reactor will restart once water levels recover",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-018",
+  "proposition": "The government urged the public to conserve electricity.",
+  "label": "ENTAIL",
+  "evidence": "urged the public to conserve electricity",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-019",
+  "proposition": "The episode has raised questions about the resilience of European nuclear plants.",
+  "label": "ENTAIL",
+  "evidence": "questions about the resilience of European nuclear plants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-020",
+  "proposition": "The resilience questions concern prolonged dry spells.",
+  "label": "ENTAIL",
+  "evidence": "to prolonged dry spells",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-021",
+  "proposition": "Romania shut down both reactors for a fuel shortage.",
+  "label": "CONTRADICT",
+  "evidence": "drought drove the Danube below the level needed for cooling",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-022",
+  "proposition": "Cernavoda is one of Romania's five nuclear plants.",
+  "label": "CONTRADICT",
+  "evidence": "the country's only nuclear power plant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-023",
+  "proposition": "The Danube has risen to a record high.",
+  "label": "CONTRADICT",
+  "evidence": "pushed the Danube to a record low",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-024",
+  "proposition": "Reactor 1 is still operating.",
+  "label": "CONTRADICT",
+  "evidence": "reactor 1 had already been shut down earlier this month",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-025",
+  "proposition": "The second reactor is operated by EDF.",
+  "label": "CONTRADICT",
+  "evidence": "operated by Nuclearelectrica",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-026",
+  "proposition": "Cernavoda normally produces around one-half of Romania's electricity.",
+  "label": "CONTRADICT",
+  "evidence": "around one-fifth of Romania's electricity",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-027",
+  "proposition": "Hungary has opened its Danube dams to release water.",
+  "label": "CONTRADICT",
+  "evidence": "has dammed sections of the Danube",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-028",
+  "proposition": "The reactor will never restart.",
+  "label": "CONTRADICT",
+  "evidence": "the reactor will restart once water levels recover",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-029",
+  "proposition": "The shutdown is part of the 2025 European flood season.",
+  "label": "CONTRADICT",
+  "evidence": "the broader 2026 European heat wave and drought",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-030",
+  "proposition": "The government urged the public to use more electricity.",
+  "label": "CONTRADICT",
+  "evidence": "urged the public to conserve electricity",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-249-031",
+  "proposition": "The shutdown will take 60 days.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No duration of the shutdown is given in the article."
+ },
+ {
+  "id": "V2-249-032",
+  "proposition": "The Danube's level fell 2 metres.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No level figure is given in the article."
+ },
+ {
+  "id": "V2-249-033",
+  "proposition": "Nuclearelectrica employs 5,000 people.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No employee count is given in the article."
+ },
+ {
+  "id": "V2-249-034",
+  "proposition": "The government announced a compensation plan for farmers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No compensation plan is mentioned in the article."
+ },
+ {
+  "id": "V2-249-035",
+  "proposition": "The reactor 1 shutdown happened on 3 August.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only earlier this month is stated in the article."
+ },
+ {
+  "id": "V2-249-036",
+  "proposition": "Romania imports 30 percent of its electricity.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No import percentage is given in the article."
+ },
+ {
+  "id": "V2-249-037",
+  "proposition": "The heat wave was caused by a named anticyclone.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No named weather system is given in the article."
+ },
+ {
+  "id": "V2-249-038",
+  "proposition": "Hungary's dams store 100 million cubic metres of water.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No volume figure is given in the article."
+ },
+ {
+  "id": "V2-249-039",
+  "proposition": "Public protests against the shutdown took place.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No protests are mentioned in the article."
+ },
+ {
+  "id": "V2-249-040",
+  "proposition": "The IAEA was notified of the shutdown.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No IAEA mention in the article."
+ }
+]

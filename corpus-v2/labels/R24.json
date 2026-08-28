@@ -1,0 +1,282 @@
+[
+ {
+  "id": "R24-001",
+  "proposition": "Linda Nosková won her first major title.",
+  "label": "ENTAIL",
+  "evidence": "has won her first major title",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-002",
+  "proposition": "She defeated her compatriot Karolína Muchová in the final.",
+  "label": "ENTAIL",
+  "evidence": "defeating her compatriot Karolína Muchová in the final",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-003",
+  "proposition": "The final score was 6-2, 5-7, 6-3.",
+  "label": "ENTAIL",
+  "evidence": "in the final 6-2, 5-7, 6-3",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-004",
+  "proposition": "The final was at the 2026 Wimbledon Championships.",
+  "label": "ENTAIL",
+  "evidence": "at the 2026 Wimbledon Championships",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-005",
+  "proposition": "Nosková is 21 years old and was the ninth seed.",
+  "label": "ENTAIL",
+  "evidence": "The 21-year-old, seeded ninth",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-006",
+  "proposition": "Muchová was the 10th seed.",
+  "label": "ENTAIL",
+  "evidence": "the 10th seed",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-007",
+  "proposition": "Nosková overcame a 2-5 deficit in the second set.",
+  "label": "ENTAIL",
+  "evidence": "overcame a 2-5 deficit in the second set",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-008",
+  "proposition": "Muchová saved three championship points on her serve.",
+  "label": "ENTAIL",
+  "evidence": "saved three championship points on her serve",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-009",
+  "proposition": "Muchová broke to win five straight games and take the set.",
+  "label": "ENTAIL",
+  "evidence": "broke to win five straight games",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-010",
+  "proposition": "Nosková took an early break in the decider.",
+  "label": "ENTAIL",
+  "evidence": "took an early break in the decider",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-011",
+  "proposition": "She converted the sixth championship point on her serve.",
+  "label": "ENTAIL",
+  "evidence": "converting the sixth championship point on her serve",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-012",
+  "proposition": "She dropped to the grass after winning.",
+  "label": "ENTAIL",
+  "evidence": "dropped to the grass",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-013",
+  "proposition": "Muchová had been broken only twice in her prior three matches before the final.",
+  "label": "ENTAIL",
+  "evidence": "broken only twice in her prior three matches before the final",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-014",
+  "proposition": "Nosková is the youngest women's Wimbledon champion since 21-year-old Petra Kvitová in 2011.",
+  "label": "ENTAIL",
+  "evidence": "the youngest women's Wimbledon champion since 21-year-old Petra Kvitová in 2011",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-015",
+  "proposition": "She is the third Czech woman to win the title in four years.",
+  "label": "ENTAIL",
+  "evidence": "the third Czech woman to win the title in four years",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-016",
+  "proposition": "Before her, the Czech winners were Markéta Vondroušová in 2023 and Barbora Krejčíková in 2024.",
+  "label": "ENTAIL",
+  "evidence": "after Markéta Vondroušová in 2023 and Barbora Krejčíková in 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-017",
+  "proposition": "She became the third player to win the SW19 Open.",
+  "label": "ENTAIL",
+  "evidence": "the third player to win the SW19 Open",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-018",
+  "proposition": "She had saved match point earlier the same fortnight.",
+  "label": "ENTAIL",
+  "evidence": "after saving match point earlier the same fortnight",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-019",
+  "proposition": "Nosková dedicated the title to her mother Ivana.",
+  "label": "ENTAIL",
+  "evidence": "dedicated the title to her mother Ivana",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-020",
+  "proposition": "Ivana died of cancer on the eve of Wimbledon 2024.",
+  "label": "ENTAIL",
+  "evidence": "who died of cancer on the eve of Wimbledon 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-021",
+  "proposition": "She defeated Muchová 2-6, 7-5, 3-6 in the final.",
+  "label": "CONTRADICT",
+  "evidence": "6-2, 5-7, 6-3",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-022",
+  "proposition": "Nosková was the eleventh seed.",
+  "label": "CONTRADICT",
+  "evidence": "seeded ninth",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-023",
+  "proposition": "Muchová was the eighth seed.",
+  "label": "CONTRADICT",
+  "evidence": "the 10th seed",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-024",
+  "proposition": "Nosková overcame a 1-5 deficit in the second set.",
+  "label": "CONTRADICT",
+  "evidence": "a 2-5 deficit",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-025",
+  "proposition": "Muchová saved five championship points.",
+  "label": "CONTRADICT",
+  "evidence": "saved three championship points",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-026",
+  "proposition": "Nosková converted the third championship point.",
+  "label": "CONTRADICT",
+  "evidence": "the sixth championship point",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-027",
+  "proposition": "She is the youngest women's champion since 19-year-old Kvitová.",
+  "label": "CONTRADICT",
+  "evidence": "21-year-old Petra Kvitová in 2011",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-028",
+  "proposition": "She is the fifth Czech woman to win the title.",
+  "label": "CONTRADICT",
+  "evidence": "the third Czech woman",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-029",
+  "proposition": "It was her first career final.",
+  "label": "CONTRADICT",
+  "evidence": "her eighth career final",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-030",
+  "proposition": "Muchová, 29, reached her first Grand Slam final.",
+  "label": "CONTRADICT",
+  "evidence": "her second Grand Slam final",
+  "silence_reason": null
+ },
+ {
+  "id": "R24-031",
+  "proposition": "An attendance for the final was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An attendance is not given."
+ },
+ {
+  "id": "R24-032",
+  "proposition": "A duration for the match was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A duration is not given."
+ },
+ {
+  "id": "R24-033",
+  "proposition": "A statement from Nosková was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "R24-034",
+  "proposition": "A statement from Muchová was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "R24-035",
+  "proposition": "A count of aces in the match was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "R24-036",
+  "proposition": "A count of double faults was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "R24-037",
+  "proposition": "A name for the tournament ball sponsor was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A name is not given."
+ },
+ {
+  "id": "R24-038",
+  "proposition": "Nosková's ranking after the title was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A ranking is not given."
+ },
+ {
+  "id": "R24-039",
+  "proposition": "A date for the next Wimbledon was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "R24-040",
+  "proposition": "A count of Muchová's breaks in the match was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ }
+]

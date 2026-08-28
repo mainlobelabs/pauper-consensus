@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-201-001",
+  "proposition": "Astronomers have directly imaged the exoplanet Beta Pictoris d.",
+  "label": "ENTAIL",
+  "evidence": "have directly imaged the exoplanet Beta Pictoris d",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-002",
+  "proposition": "The star is located 63 light-years away.",
+  "label": "ENTAIL",
+  "evidence": "located 63 light-years away",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-003",
+  "proposition": "NASA's James Webb Space Telescope was used.",
+  "label": "ENTAIL",
+  "evidence": "using NASA's James Webb Space Telescope",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-004",
+  "proposition": "ESO's Very Large Telescope was used.",
+  "label": "ENTAIL",
+  "evidence": "the European Southern Observatory's Very Large Telescope",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-005",
+  "proposition": "The discovery was published in The Astrophysical Journal Letters on 15 July.",
+  "label": "ENTAIL",
+  "evidence": "published in The Astrophysical Journal Letters on 15 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-006",
+  "proposition": "Two independent, simultaneous discoveries were reported.",
+  "label": "ENTAIL",
+  "evidence": "Two independent, simultaneous discoveries reported the third planet",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-007",
+  "proposition": "One team was led by Sutlieff, BONSE, and Birkby.",
+  "label": "ENTAIL",
+  "evidence": "led by Sutlieff, BONSE, and Birkby",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-008",
+  "proposition": "That team first detected the planet on 3 December 2025 with the VLT's ERIS instrument.",
+  "label": "ENTAIL",
+  "evidence": "first detected the planet on 3 December 2025 with the VLT's ERIS instrument",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-009",
+  "proposition": "The confirmation used an 11-year archival baseline.",
+  "label": "ENTAIL",
+  "evidence": "an 11-year archival baseline",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-010",
+  "proposition": "The baseline included JWST/NIRCam and VLT/SPHERE observations.",
+  "label": "ENTAIL",
+  "evidence": "included JWST/NIRCam and VLT/SPHERE observations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-011",
+  "proposition": "A second team from the University of California made a serendipitous detection.",
+  "label": "ENTAIL",
+  "evidence": "A second team from the University of California made a serendipitous detection",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-012",
+  "proposition": "The serendipitous detection was in JWST/NIRSpec integral field unit data from 28 November 2025.",
+  "label": "ENTAIL",
+  "evidence": "JWST/NIRSpec integral field unit data from 28 November 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-013",
+  "proposition": "The second team confirmed the planet with MIRI follow-ups.",
+  "label": "ENTAIL",
+  "evidence": "confirmed it with MIRI follow-ups",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-014",
+  "proposition": "The planet has a mass of about 2.4 times Jupiter.",
+  "label": "ENTAIL",
+  "evidence": "a mass of about 2.4 times Jupiter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-015",
+  "proposition": "The planet has a temperature of about 600 kelvin.",
+  "label": "ENTAIL",
+  "evidence": "a temperature of about 600 kelvin",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-016",
+  "proposition": "The planet orbits at about 26 astronomical units.",
+  "label": "ENTAIL",
+  "evidence": "orbits at about 26 astronomical units",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-017",
+  "proposition": "The planet is roughly 100 times fainter than Beta Pictoris b.",
+  "label": "ENTAIL",
+  "evidence": "roughly 100 times fainter than Beta Pictoris b",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-018",
+  "proposition": "It is only the second exoplanet with a likely mid-T spectral type.",
+  "label": "ENTAIL",
+  "evidence": "only the second exoplanet with a likely mid-T spectral type",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-019",
+  "proposition": "Beta Pictoris is now the second directly imaged system with three or more confirmed planets.",
+  "label": "ENTAIL",
+  "evidence": "the second directly imaged system with three or more confirmed planets",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-020",
+  "proposition": "The planet hid near the larger planet Beta Pictoris b.",
+  "label": "ENTAIL",
+  "evidence": "while the planet hid near the larger planet Beta Pictoris b",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-021",
+  "proposition": "The star is located 63 parsecs away.",
+  "label": "CONTRADICT",
+  "evidence": "located 63 light-years away",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-022",
+  "proposition": "The discovery was published on 16 July.",
+  "label": "CONTRADICT",
+  "evidence": "on 15 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-023",
+  "proposition": "A single team made the discovery.",
+  "label": "CONTRADICT",
+  "evidence": "Two independent, simultaneous discoveries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-024",
+  "proposition": "The planet was first detected on 28 November 2025.",
+  "label": "CONTRADICT",
+  "evidence": "first detected the planet on 3 December 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-025",
+  "proposition": "The planet has a mass of about 4.2 times Jupiter.",
+  "label": "CONTRADICT",
+  "evidence": "about 2.4 times Jupiter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-026",
+  "proposition": "The planet has a temperature of about 900 kelvin.",
+  "label": "CONTRADICT",
+  "evidence": "about 600 kelvin",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-027",
+  "proposition": "The planet orbits at about 62 astronomical units.",
+  "label": "CONTRADICT",
+  "evidence": "about 26 astronomical units",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-028",
+  "proposition": "The planet is roughly 10 times fainter than Beta Pictoris b.",
+  "label": "CONTRADICT",
+  "evidence": "roughly 100 times fainter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-029",
+  "proposition": "Beta Pictoris is the first directly imaged system with three or more planets.",
+  "label": "CONTRADICT",
+  "evidence": "the second directly imaged system",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-030",
+  "proposition": "The imaging used the ground-based VLT alone.",
+  "label": "CONTRADICT",
+  "evidence": "using NASA's James Webb Space Telescope and the European Southern Observatory's Very Large Telescope",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-201-031",
+  "proposition": "The planet's radius was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A radius is not given."
+ },
+ {
+  "id": "V2-201-032",
+  "proposition": "The full author list was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Authors are not listed fully."
+ },
+ {
+  "id": "V2-201-033",
+  "proposition": "The orbit's eccentricity was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An eccentricity is not given."
+ },
+ {
+  "id": "V2-201-034",
+  "proposition": "The planet's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-201-035",
+  "proposition": "Other systems with three or more directly imaged planets were named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Other systems are not named."
+ },
+ {
+  "id": "V2-201-036",
+  "proposition": "The detection sensitivity of ERIS was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A sensitivity is not given."
+ },
+ {
+  "id": "V2-201-037",
+  "proposition": "A next observation date was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "V2-201-038",
+  "proposition": "The publication's referees were named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Referees are not named."
+ },
+ {
+  "id": "V2-201-039",
+  "proposition": "The planet's albedo was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An albedo is not given."
+ },
+ {
+  "id": "V2-201-040",
+  "proposition": "The planet's atmosphere composition was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A composition is not given."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-221-001",
+  "proposition": "The International Mathematical Union awarded the 2026 Fields Medals.",
+  "label": "ENTAIL",
+  "evidence": "has awarded the 2026 Fields Medals",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-002",
+  "proposition": "Yu Deng, John Pardon, Jacob Tsimerman, and Hong Wang received the medals.",
+  "label": "ENTAIL",
+  "evidence": "to Yu Deng, John Pardon, Jacob Tsimerman, and Hong Wang",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-003",
+  "proposition": "The medals were announced at the International Congress of Mathematicians in Philadelphia.",
+  "label": "ENTAIL",
+  "evidence": "at the International Congress of Mathematicians in Philadelphia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-004",
+  "proposition": "The opening ceremony of ICM 2026 was at the Pennsylvania Convention Center.",
+  "label": "ENTAIL",
+  "evidence": "At the opening ceremony of ICM 2026 at the Pennsylvania Convention Center",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-005",
+  "proposition": "Yu Deng is of the University of Chicago.",
+  "label": "ENTAIL",
+  "evidence": "Yu Deng of the University of Chicago",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-006",
+  "proposition": "Deng was honoured for the rigorous derivation of the Boltzmann equation from rarefied gas dynamics.",
+  "label": "ENTAIL",
+  "evidence": "the rigorous derivation of the Boltzmann equation from rarefied gas dynamics",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-007",
+  "proposition": "John Pardon is of Stony Brook and the Simons Center.",
+  "label": "ENTAIL",
+  "evidence": "John Pardon of Stony Brook and the Simons Center",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-008",
+  "proposition": "Pardon was recognised for symplectic geometry, including virtual fundamental cycles, and knot theory.",
+  "label": "ENTAIL",
+  "evidence": "symplectic geometry, including virtual fundamental cycles, and knot theory",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-009",
+  "proposition": "Jacob Tsimerman is of the University of Toronto.",
+  "label": "ENTAIL",
+  "evidence": "Jacob Tsimerman of the University of Toronto",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-010",
+  "proposition": "Tsimerman was honoured for work on o-minimality in arithmetic and complex algebraic geometry.",
+  "label": "ENTAIL",
+  "evidence": "work on o-minimality in arithmetic and complex algebraic geometry",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-011",
+  "proposition": "His work includes the Griffiths conjecture.",
+  "label": "ENTAIL",
+  "evidence": "including the Griffiths conjecture",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-012",
+  "proposition": "Hong Wang is of NYU and IHES.",
+  "label": "ENTAIL",
+  "evidence": "Hong Wang of NYU and IHES",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-013",
+  "proposition": "Wang was recognised for algebraic geometry.",
+  "label": "ENTAIL",
+  "evidence": "was recognised for algebraic geometry",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-014",
+  "proposition": "Wang becomes the third woman to receive the prize.",
+  "label": "ENTAIL",
+  "evidence": "Wang becomes the third woman to receive the prize",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-015",
+  "proposition": "Before her, the prize went to Maryam Mirzakhani in 2014 and Maryna Viazovska in 2022.",
+  "label": "ENTAIL",
+  "evidence": "after Maryam Mirzakhani in 2014 and Maryna Viazovska in 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-016",
+  "proposition": "Deng and Wang were 2026 Clay Research Awardees.",
+  "label": "ENTAIL",
+  "evidence": "Deng and Wang were 2026 Clay Research Awardees",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-017",
+  "proposition": "Pardon served as a Clay Research Fellow from 2015 to 2020.",
+  "label": "ENTAIL",
+  "evidence": "Pardon served as a Clay Research Fellow from 2015 to 2020",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-018",
+  "proposition": "Deng and Wang are the second and third Chinese nationals to receive the medal.",
+  "label": "ENTAIL",
+  "evidence": "the second and third Chinese nationals to receive the medal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-019",
+  "proposition": "The first Chinese national to receive the medal was Shing-Tung Yau in 1982.",
+  "label": "ENTAIL",
+  "evidence": "after Shing-Tung Yau in 1982",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-020",
+  "proposition": "The congress runs from 23 to 30 July in Philadelphia.",
+  "label": "ENTAIL",
+  "evidence": "The congress runs from 23 to 30 July in Philadelphia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-021",
+  "proposition": "The medals were awarded by the American Mathematical Society.",
+  "label": "CONTRADICT",
+  "evidence": "The International Mathematical Union",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-022",
+  "proposition": "Three mathematicians received the 2026 medals.",
+  "label": "CONTRADICT",
+  "evidence": "to Yu Deng, John Pardon, Jacob Tsimerman, and Hong Wang",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-023",
+  "proposition": "The ceremony was held in Boston.",
+  "label": "CONTRADICT",
+  "evidence": "in Philadelphia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-024",
+  "proposition": "Deng was honoured for work on knot theory.",
+  "label": "CONTRADICT",
+  "evidence": "the rigorous derivation of the Boltzmann equation from rarefied gas dynamics",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-025",
+  "proposition": "Wang is the fifth woman to receive the prize.",
+  "label": "CONTRADICT",
+  "evidence": "the third woman to receive the prize",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-026",
+  "proposition": "Before her, only Mirzakhani had won the prize.",
+  "label": "CONTRADICT",
+  "evidence": "after Maryam Mirzakhani in 2014 and Maryna Viazovska in 2022",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-027",
+  "proposition": "Pardon was a Clay Research Fellow from 2010 to 2015.",
+  "label": "CONTRADICT",
+  "evidence": "from 2015 to 2020",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-028",
+  "proposition": "Yau received the medal in 1992.",
+  "label": "CONTRADICT",
+  "evidence": "in 1982",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-029",
+  "proposition": "The congress runs from 1 to 8 July.",
+  "label": "CONTRADICT",
+  "evidence": "from 23 to 30 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-030",
+  "proposition": "Tsimerman was honoured for work in probability.",
+  "label": "CONTRADICT",
+  "evidence": "work on o-minimality in arithmetic and complex algebraic geometry",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-221-031",
+  "proposition": "A statement from the IMU was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-221-032",
+  "proposition": "Deng's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-221-033",
+  "proposition": "Pardon's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-221-034",
+  "proposition": "Tsimerman's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-221-035",
+  "proposition": "Wang's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-221-036",
+  "proposition": "A count of medal nominations was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-221-037",
+  "proposition": "A statement from the medallists was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-221-038",
+  "proposition": "A duration for the awards ceremony was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A duration is not given."
+ },
+ {
+  "id": "V2-221-039",
+  "proposition": "A statement from the Simons Foundation was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-221-040",
+  "proposition": "A location for Wang's current research was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A location is not given."
+ }
+]

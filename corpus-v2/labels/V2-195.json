@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-195-001",
+  "proposition": "The proposed 2 World Trade Center broke ground in Lower Manhattan.",
+  "label": "ENTAIL",
+  "evidence": "has broken ground in Lower Manhattan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-002",
+  "proposition": "The groundbreaking came 25 years after the original building was destroyed.",
+  "label": "ENTAIL",
+  "evidence": "25 years after the original building was destroyed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-003",
+  "proposition": "The original building was destroyed during the September 11 attacks.",
+  "label": "ENTAIL",
+  "evidence": "destroyed during the September 11 attacks",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-004",
+  "proposition": "The tower is 55 stories tall.",
+  "label": "ENTAIL",
+  "evidence": "The 55-story, 1,226-foot tiered glass and steel tower",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-005",
+  "proposition": "The tower is at 200 Greenwich Street.",
+  "label": "ENTAIL",
+  "evidence": "at 200 Greenwich Street",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-006",
+  "proposition": "It is the final commercial tower on the World Trade Center footprint.",
+  "label": "ENTAIL",
+  "evidence": "the final commercial tower on the World Trade Center footprint",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-007",
+  "proposition": "It completes the 16-acre campus's commercial buildout.",
+  "label": "ENTAIL",
+  "evidence": "completing the 16-acre campus's commercial buildout",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-008",
+  "proposition": "The tower will house the global headquarters of American Express.",
+  "label": "ENTAIL",
+  "evidence": "It will house the global headquarters of American Express",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-009",
+  "proposition": "American Express is the sole owner and occupant.",
+  "label": "ENTAIL",
+  "evidence": "the sole owner and occupant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-010",
+  "proposition": "The anchor deal was announced on 25 February.",
+  "label": "ENTAIL",
+  "evidence": "whose anchor deal was announced on 25 February",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-011",
+  "proposition": "Developer Silverstein Properties CEO is Lisa Silverstein.",
+  "label": "ENTAIL",
+  "evidence": "Developer Silverstein Properties CEO Lisa Silverstein",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-012",
+  "proposition": "The architect is Foster + Partners.",
+  "label": "ENTAIL",
+  "evidence": "The architect is Foster + Partners",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-013",
+  "proposition": "The contractor is Turner.",
+  "label": "ENTAIL",
+  "evidence": "the contractor Turner",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-014",
+  "proposition": "Completion is targeted for 2031.",
+  "label": "ENTAIL",
+  "evidence": "completion is targeted for 2031",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-015",
+  "proposition": "Steel top-out is in 2029.",
+  "label": "ENTAIL",
+  "evidence": "with steel top-out in 2029",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-016",
+  "proposition": "The structure had sat dormant at street level since 2011.",
+  "label": "ENTAIL",
+  "evidence": "had sat dormant at street level since 2011",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-017",
+  "proposition": "The ceremonial kickoff followed construction that had already resumed.",
+  "label": "ENTAIL",
+  "evidence": "the ceremonial kickoff followed construction that had already resumed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-018",
+  "proposition": "Mayor Zohran Mamdani said the project would create 3,200 construction jobs.",
+  "label": "ENTAIL",
+  "evidence": "would create 3,200 construction jobs",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-019",
+  "proposition": "Mamdani said the project would add about $11.4 billion to the city economy.",
+  "label": "ENTAIL",
+  "evidence": "add about $11.4 billion to the city economy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-020",
+  "proposition": "Governor Kathy Hochul estimated $5.9 billion for the state economy.",
+  "label": "ENTAIL",
+  "evidence": "estimated $5.9 billion for the state economy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-021",
+  "proposition": "The tower is 45 stories tall.",
+  "label": "CONTRADICT",
+  "evidence": "The 55-story, 1,226-foot tiered glass and steel tower",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-022",
+  "proposition": "The groundbreaking came 15 years after the original was destroyed.",
+  "label": "CONTRADICT",
+  "evidence": "25 years after the original building was destroyed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-023",
+  "proposition": "American Express is one of several owners of the tower.",
+  "label": "CONTRADICT",
+  "evidence": "the sole owner and occupant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-024",
+  "proposition": "The architect is Kohn Pedersen Fox.",
+  "label": "CONTRADICT",
+  "evidence": "The architect is Foster + Partners",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-025",
+  "proposition": "Completion is targeted for 2027.",
+  "label": "CONTRADICT",
+  "evidence": "completion is targeted for 2031",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-026",
+  "proposition": "The structure had sat dormant since 2001.",
+  "label": "CONTRADICT",
+  "evidence": "had sat dormant at street level since 2011",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-027",
+  "proposition": "Mamdani said the project would create 2,400 construction jobs.",
+  "label": "CONTRADICT",
+  "evidence": "would create 3,200 construction jobs",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-028",
+  "proposition": "The tower is at 100 Greenwich Street.",
+  "label": "CONTRADICT",
+  "evidence": "at 200 Greenwich Street",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-029",
+  "proposition": "The anchor deal was announced on 25 March.",
+  "label": "CONTRADICT",
+  "evidence": "announced on 25 February",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-030",
+  "proposition": "PANYNJ chairman Kevin O'Toole criticized the project at the ceremony.",
+  "label": "CONTRADICT",
+  "evidence": "fulfilling a promise made 25 years ago to rebuild, to restore and to remember",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-195-031",
+  "proposition": "The tower's floor area was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A floor area is not given."
+ },
+ {
+  "id": "V2-195-032",
+  "proposition": "The project's construction cost was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A cost is not given."
+ },
+ {
+  "id": "V2-195-033",
+  "proposition": "The number of attendees at the ceremony was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An attendee count is not given."
+ },
+ {
+  "id": "V2-195-034",
+  "proposition": "Silverstein's full remarks were quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A full quote is not given."
+ },
+ {
+  "id": "V2-195-035",
+  "proposition": "The project's budget was disclosed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A budget is not disclosed."
+ },
+ {
+  "id": "V2-195-036",
+  "proposition": "Mamdani's other remarks at the event were quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Other remarks are not quoted."
+ },
+ {
+  "id": "V2-195-037",
+  "proposition": "The exact date of steel top-out was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A year only is given."
+ },
+ {
+  "id": "V2-195-038",
+  "proposition": "A status for the other WTC towers was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A status is not given."
+ },
+ {
+  "id": "V2-195-039",
+  "proposition": "The financing structure was described.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Financing is not described."
+ },
+ {
+  "id": "V2-195-040",
+  "proposition": "An expected occupancy date for American Express was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An occupancy date is not given."
+ }
+]

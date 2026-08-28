@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-205-001",
+  "proposition": "Andy Burnham has been elected as the new leader of the British Labour Party.",
+  "label": "ENTAIL",
+  "evidence": "has been elected as the new leader of the British Labour Party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-002",
+  "proposition": "He will formally succeed Keir Starmer as prime minister on Monday, 20 July.",
+  "label": "ENTAIL",
+  "evidence": "formally succeed Keir Starmer as prime minister on Monday, 20 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-003",
+  "proposition": "Starmer tenders his resignation to King Charles III.",
+  "label": "ENTAIL",
+  "evidence": "after Starmer tenders his resignation to King Charles III",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-004",
+  "proposition": "The king invites Burnham to form a government.",
+  "label": "ENTAIL",
+  "evidence": "the king invites Burnham to form a government",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-005",
+  "proposition": "Burnham is the MP for Makerfield.",
+  "label": "ENTAIL",
+  "evidence": "MP for Makerfield",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-006",
+  "proposition": "He was the former Greater Manchester mayor.",
+  "label": "ENTAIL",
+  "evidence": "former Greater Manchester mayor",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-007",
+  "proposition": "He was declared elected at Labour's special conference in London.",
+  "label": "ENTAIL",
+  "evidence": "declared elected at Labour's special conference in London",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-008",
+  "proposition": "The result was announced by NEC chair Shabana Mahmood.",
+  "label": "ENTAIL",
+  "evidence": "announced by NEC chair Shabana Mahmood",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-009",
+  "proposition": "He received nominations from 379 of the party's 403 MPs.",
+  "label": "ENTAIL",
+  "evidence": "from 379 of the party's 403 MPs",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-010",
+  "proposition": "He received nominations from 23 affiliate organisations.",
+  "label": "ENTAIL",
+  "evidence": "from 23 affiliate organisations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-011",
+  "proposition": "All 11 affiliated trade unions nominated him.",
+  "label": "ENTAIL",
+  "evidence": "including all 11 affiliated trade unions",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-012",
+  "proposition": "The only other nominee was MP Catherine West.",
+  "label": "ENTAIL",
+  "evidence": "The only other nominee, MP Catherine West",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-013",
+  "proposition": "Catherine West received a single vote.",
+  "label": "ENTAIL",
+  "evidence": "received a single vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-014",
+  "proposition": "The ballot ran from 9 July to 15 July.",
+  "label": "ENTAIL",
+  "evidence": "The ballot ran from 9 July to 15 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-015",
+  "proposition": "The contest followed Starmer's resignation as Labour leader on 22 June.",
+  "label": "ENTAIL",
+  "evidence": "Starmer's resignation as Labour leader on 22 June",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-016",
+  "proposition": "Starmer resigned after the party's dismal May local results.",
+  "label": "ENTAIL",
+  "evidence": "the party's dismal May local results",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-017",
+  "proposition": "Burnham won the Makerfield by-election.",
+  "label": "ENTAIL",
+  "evidence": "Burnham's win in the Makerfield by-election",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-018",
+  "proposition": "Burnham pledged to put the cost of living front and centre.",
+  "label": "ENTAIL",
+  "evidence": "put the cost of living \"front and centre,\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-019",
+  "proposition": "Burnham said he would fight Reform UK.",
+  "label": "ENTAIL",
+  "evidence": "fight Reform UK",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-020",
+  "proposition": "Burnham had run for the leadership twice before and lost both times.",
+  "label": "ENTAIL",
+  "evidence": "had run for the leadership twice before and lost both times",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-021",
+  "proposition": "Burnham will succeed Starmer on Monday, 27 July.",
+  "label": "CONTRADICT",
+  "evidence": "on Monday, 20 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-022",
+  "proposition": "Starmer tenders his resignation to Queen Elizabeth II.",
+  "label": "CONTRADICT",
+  "evidence": "to King Charles III",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-023",
+  "proposition": "Burnham is the MP for Leeds East.",
+  "label": "CONTRADICT",
+  "evidence": "MP for Makerfield",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-024",
+  "proposition": "He was declared elected in Manchester.",
+  "label": "CONTRADICT",
+  "evidence": "at Labour's special conference in London",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-025",
+  "proposition": "He received nominations from 279 of the party's 403 MPs.",
+  "label": "CONTRADICT",
+  "evidence": "from 379 of the party's 403 MPs",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-026",
+  "proposition": "Starmer resigned as leader on 28 June.",
+  "label": "CONTRADICT",
+  "evidence": "on 22 June",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-027",
+  "proposition": "Catherine West received 38 votes.",
+  "label": "CONTRADICT",
+  "evidence": "received a single vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-028",
+  "proposition": "The ballot ran from 10 July to 16 July.",
+  "label": "CONTRADICT",
+  "evidence": "from 9 July to 15 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-029",
+  "proposition": "Labour has led Reform UK in polls for about 18 months.",
+  "label": "CONTRADICT",
+  "evidence": "Labour has trailed in polls for about 18 months",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-030",
+  "proposition": "Burnham had won the leadership once before.",
+  "label": "CONTRADICT",
+  "evidence": "twice before and lost both times",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-205-031",
+  "proposition": "The turnout of the leadership ballot was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A turnout is not given."
+ },
+ {
+  "id": "V2-205-032",
+  "proposition": "Burnham's full victory speech was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A full speech is not quoted."
+ },
+ {
+  "id": "V2-205-033",
+  "proposition": "Starmer's resignation letter was published.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A letter is not published."
+ },
+ {
+  "id": "V2-205-034",
+  "proposition": "The names of prospective cabinet members were given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Names are not given."
+ },
+ {
+  "id": "V2-205-035",
+  "proposition": "The number of trade unions that did not nominate him was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-205-036",
+  "proposition": "West's concession speech was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A speech is not quoted."
+ },
+ {
+  "id": "V2-205-037",
+  "proposition": "Burnham's age was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-205-038",
+  "proposition": "The time of the declaration was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A time is not given."
+ },
+ {
+  "id": "V2-205-039",
+  "proposition": "Starmer's plans after resigning were stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Plans are not stated."
+ },
+ {
+  "id": "V2-205-040",
+  "proposition": "The vote count of the 22 June conference was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-207-001",
+  "proposition": "The IRGC reported that two oil tankers exploded after hitting mines.",
+  "label": "ENTAIL",
+  "evidence": "two oil tankers have exploded after hitting mines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-002",
+  "proposition": "The explosions were reported south in the Strait of Hormuz.",
+  "label": "ENTAIL",
+  "evidence": "south in the Strait of Hormuz",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-003",
+  "proposition": "CENTCOM disputed the IRGC claims as false.",
+  "label": "ENTAIL",
+  "evidence": "has disputed the claims as false",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-004",
+  "proposition": "The IRGC said the tankers were trying to pass through a minefield.",
+  "label": "ENTAIL",
+  "evidence": "trying to pass through the minefield south of the Strait of Hormuz",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-005",
+  "proposition": "The IRGC blamed deceptive American intelligence agencies.",
+  "label": "ENTAIL",
+  "evidence": "by deceptive American intelligence agencies",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-006",
+  "proposition": "The vessels were not identified.",
+  "label": "ENTAIL",
+  "evidence": "The vessels were not identified",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-007",
+  "proposition": "No casualties were disclosed.",
+  "label": "ENTAIL",
+  "evidence": "no casualties were disclosed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-008",
+  "proposition": "There has been no independent confirmation.",
+  "label": "ENTAIL",
+  "evidence": "there has been no independent confirmation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-009",
+  "proposition": "CENTCOM posted that like most IRGC claims, the claim is false.",
+  "label": "ENTAIL",
+  "evidence": "Like most IRGC claims, THIS IS FALSE",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-010",
+  "proposition": "The IRGC claimed it had stopped four violating ships.",
+  "label": "ENTAIL",
+  "evidence": "\"stopped\" four violating ships",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-011",
+  "proposition": "The stopping was a combined missile and drone operation.",
+  "label": "ENTAIL",
+  "evidence": "in a combined missile and drone operation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-012",
+  "proposition": "The IRGC declared the strait completely closed for a week.",
+  "label": "ENTAIL",
+  "evidence": "declared the strait \"completely closed\" for a week",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-013",
+  "proposition": "The IRGC urged tankers to use only the northern channel close to the Iranian coast.",
+  "label": "ENTAIL",
+  "evidence": "urging tankers to use only the northern channel close to the Iranian coast",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-014",
+  "proposition": "The US reimposed a navy blockade of Iranian ports.",
+  "label": "ENTAIL",
+  "evidence": "reimposing a navy blockade of Iranian ports",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-015",
+  "proposition": "The US carried out a seventh consecutive night of airstrikes.",
+  "label": "ENTAIL",
+  "evidence": "a seventh consecutive night of airstrikes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-016",
+  "proposition": "The airstrikes hit ports, bridges, and an airport.",
+  "label": "ENTAIL",
+  "evidence": "on ports, bridges, and an airport",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-017",
+  "proposition": "UKMTO reported a tanker struck by a projectile off Oman's coast.",
+  "label": "ENTAIL",
+  "evidence": "a tanker struck by a projectile off Oman's coast",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-018",
+  "proposition": "UKMTO made the report on Friday.",
+  "label": "ENTAIL",
+  "evidence": "on Friday",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-019",
+  "proposition": "The IRGC said the tankers exploded and caught fire.",
+  "label": "ENTAIL",
+  "evidence": "exploded and caught fire",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-020",
+  "proposition": "CENTCOM described the Strait of Hormuz as an international waterway.",
+  "label": "ENTAIL",
+  "evidence": "hitting mines in the international waterway",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-021",
+  "proposition": "One oil tanker was hit by a mine.",
+  "label": "CONTRADICT",
+  "evidence": "two oil tankers have exploded after hitting mines",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-022",
+  "proposition": "CENTCOM confirmed the IRGC claims.",
+  "label": "CONTRADICT",
+  "evidence": "has disputed the claims as false",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-023",
+  "proposition": "The tankers were identified by name.",
+  "label": "CONTRADICT",
+  "evidence": "The vessels were not identified",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-024",
+  "proposition": "Casualties were confirmed.",
+  "label": "CONTRADICT",
+  "evidence": "no casualties were disclosed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-025",
+  "proposition": "The IRGC declared the strait completely open for a week.",
+  "label": "CONTRADICT",
+  "evidence": "declared the strait \"completely closed\" for a week",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-026",
+  "proposition": "The IRGC urged tankers to use the southern channel.",
+  "label": "CONTRADICT",
+  "evidence": "only the northern channel",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-027",
+  "proposition": "The US lifted the navy blockade of Iranian ports.",
+  "label": "CONTRADICT",
+  "evidence": "reimposing a navy blockade of Iranian ports",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-028",
+  "proposition": "The airstrikes were on the third consecutive night.",
+  "label": "CONTRADICT",
+  "evidence": "a seventh consecutive night of airstrikes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-029",
+  "proposition": "UK Maritime Trade Operations reported the tanker was struck off Iran's coast.",
+  "label": "CONTRADICT",
+  "evidence": "off Oman's coast",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-030",
+  "proposition": "The IRGC claimed it had stopped ten violating ships.",
+  "label": "CONTRADICT",
+  "evidence": "four violating ships",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-207-031",
+  "proposition": "The names of the two tankers were revealed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Names are not revealed."
+ },
+ {
+  "id": "V2-207-032",
+  "proposition": "The nationalities of the tankers were stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Nationalities are not stated."
+ },
+ {
+  "id": "V2-207-033",
+  "proposition": "The location of the minefield was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A location is not given."
+ },
+ {
+  "id": "V2-207-034",
+  "proposition": "The date of the explosions was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "V2-207-035",
+  "proposition": "The extent of the damage was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An extent is not given."
+ },
+ {
+  "id": "V2-207-036",
+  "proposition": "A statement from the flag states was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-207-037",
+  "proposition": "The number of ships in the blockade was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-207-038",
+  "proposition": "A specific target of the airstrikes was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A name is not given."
+ },
+ {
+  "id": "V2-207-039",
+  "proposition": "The UK's response was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A response is not stated."
+ },
+ {
+  "id": "V2-207-040",
+  "proposition": "The insurance status of the tankers was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A status is not stated."
+ }
+]

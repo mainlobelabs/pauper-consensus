@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-210-001",
+  "proposition": "Spain won the 2026 FIFA World Cup.",
+  "label": "ENTAIL",
+  "evidence": "Spain have won their second FIFA World Cup title",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-002",
+  "proposition": "It is Spain's second World Cup title.",
+  "label": "ENTAIL",
+  "evidence": "won their second FIFA World Cup title",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-003",
+  "proposition": "Spain defeated the defending champions Argentina 1-0.",
+  "label": "ENTAIL",
+  "evidence": "defeating the defending champions Argentina 1-0",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-004",
+  "proposition": "The final went to extra time.",
+  "label": "ENTAIL",
+  "evidence": "after extra time in the final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-005",
+  "proposition": "The final was at MetLife Stadium in East Rutherford, New Jersey.",
+  "label": "ENTAIL",
+  "evidence": "at MetLife Stadium in East Rutherford, New Jersey",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-006",
+  "proposition": "Ferran Torres scored the only goal in the 106th minute.",
+  "label": "ENTAIL",
+  "evidence": "Ferran Torres scored the only goal in the 106th minute",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-007",
+  "proposition": "The goal followed a Pedro Porro cross and a Nico Williams header.",
+  "label": "ENTAIL",
+  "evidence": "after a Pedro Porro cross and a Nico Williams header",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-008",
+  "proposition": "It was Torres's only goal of the tournament.",
+  "label": "ENTAIL",
+  "evidence": "It was his only goal of the tournament",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-009",
+  "proposition": "Enzo Fernandez was sent off on a second yellow card.",
+  "label": "ENTAIL",
+  "evidence": "Enzo Fernandez was sent off on a second yellow card",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-010",
+  "proposition": "The sending off came in first-half stoppage time.",
+  "label": "ENTAIL",
+  "evidence": "in first-half stoppage time",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-011",
+  "proposition": "Spain captain Rodri was awarded the Golden Ball as player of the tournament.",
+  "label": "ENTAIL",
+  "evidence": "Rodri was awarded the Golden Ball as player of the tournament",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-012",
+  "proposition": "Unai Simon took the Golden Glove.",
+  "label": "ENTAIL",
+  "evidence": "Unai Simon took the Golden Glove",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-013",
+  "proposition": "Pau Cubarsi won the young player award.",
+  "label": "ENTAIL",
+  "evidence": "Pau Cubarsi won the young player award",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-014",
+  "proposition": "Spain scored 14 goals on the way to the final.",
+  "label": "ENTAIL",
+  "evidence": "scored 14 goals on the way to the final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-015",
+  "proposition": "Spain opened the tournament with a 0-0 draw against Cape Verde.",
+  "label": "ENTAIL",
+  "evidence": "opened the tournament with a 0-0 draw against Cape Verde",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-016",
+  "proposition": "Spain had wins over Austria, Portugal, Belgium, and France.",
+  "label": "ENTAIL",
+  "evidence": "wins over Austria, Portugal, Belgium, and France",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-017",
+  "proposition": "France's Kylian Mbappe won the Golden Boot.",
+  "label": "ENTAIL",
+  "evidence": "The Golden Boot went to France's Kylian Mbappe",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-018",
+  "proposition": "Mbappe became the first player to win the award at multiple World Cups.",
+  "label": "ENTAIL",
+  "evidence": "the first player to win the award at multiple World Cups",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-019",
+  "proposition": "Lionel Messi, 39, was denied both a third title and the Golden Boot.",
+  "label": "ENTAIL",
+  "evidence": "Lionel Messi, 39, was denied both a third title and the Golden Boot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-020",
+  "proposition": "Luis de la Fuente, 65, became the oldest coach ever to win the World Cup.",
+  "label": "ENTAIL",
+  "evidence": "Luis de la Fuente, 65, became the oldest coach ever to win the World Cup",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-021",
+  "proposition": "Spain beat Argentina 2-0 in the final.",
+  "label": "CONTRADICT",
+  "evidence": "Argentina 1-0",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-022",
+  "proposition": "The final was decided within 90 minutes.",
+  "label": "CONTRADICT",
+  "evidence": "after extra time in the final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-023",
+  "proposition": "Torres scored in the 96th minute.",
+  "label": "CONTRADICT",
+  "evidence": "in the 106th minute",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-024",
+  "proposition": "Torres scored three goals at the tournament.",
+  "label": "CONTRADICT",
+  "evidence": "It was his only goal of the tournament",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-025",
+  "proposition": "Rodri won the Golden Boot.",
+  "label": "CONTRADICT",
+  "evidence": "was awarded the Golden Ball",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-026",
+  "proposition": "Spain scored 24 goals on the way to the final.",
+  "label": "CONTRADICT",
+  "evidence": "scored 14 goals on the way to the final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-027",
+  "proposition": "Spain opened the tournament with a win over Cape Verde.",
+  "label": "CONTRADICT",
+  "evidence": "a 0-0 draw against Cape Verde",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-028",
+  "proposition": "Lionel Messi won the Golden Boot.",
+  "label": "CONTRADICT",
+  "evidence": "was denied both a third title and the Golden Boot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-029",
+  "proposition": "De la Fuente was 55 years old.",
+  "label": "CONTRADICT",
+  "evidence": "Luis de la Fuente, 65",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-030",
+  "proposition": "The final was played in Miami.",
+  "label": "CONTRADICT",
+  "evidence": "at MetLife Stadium in East Rutherford, New Jersey",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-210-031",
+  "proposition": "The attendance of the final was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An attendance is not given."
+ },
+ {
+  "id": "V2-210-032",
+  "proposition": "The referee of the final was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A referee is not named."
+ },
+ {
+  "id": "V2-210-033",
+  "proposition": "Messi's tournament goal count was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A goal count is not given."
+ },
+ {
+  "id": "V2-210-034",
+  "proposition": "The name of the final's match ball was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A name is not given."
+ },
+ {
+  "id": "V2-210-035",
+  "proposition": "Argentina's next coach was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A name is not given."
+ },
+ {
+  "id": "V2-210-036",
+  "proposition": "The trophy ceremony was described.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A description is not given."
+ },
+ {
+  "id": "V2-210-037",
+  "proposition": "A reaction from Argentina's coach was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A reaction is not given."
+ },
+ {
+  "id": "V2-210-038",
+  "proposition": "A reaction from Spain's coach was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A reaction is not quoted."
+ },
+ {
+  "id": "V2-210-039",
+  "proposition": "The total tournament attendance was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An attendance is not given."
+ },
+ {
+  "id": "V2-210-040",
+  "proposition": "An official FIFA statement was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ }
+]

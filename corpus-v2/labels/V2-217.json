@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-217-001",
+  "proposition": "The death toll from the MV Barima sinking has risen to 53.",
+  "label": "ENTAIL",
+  "evidence": "has risen to 53",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-002",
+  "proposition": "The captain of the ferry was Kevin \"KP\" Price.",
+  "label": "ENTAIL",
+  "evidence": "The captain, Kevin \"KP\" Price",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-003",
+  "proposition": "The sinking happened two days before the briefing.",
+  "label": "ENTAIL",
+  "evidence": "two days ago",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-004",
+  "proposition": "77 others were rescued.",
+  "label": "ENTAIL",
+  "evidence": "77 others were rescued",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-005",
+  "proposition": "Over 55 people remain missing.",
+  "label": "ENTAIL",
+  "evidence": "over 55 remain missing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-006",
+  "proposition": "President Mark Phillips held a briefing on 21 July.",
+  "label": "ENTAIL",
+  "evidence": "at a briefing on 21 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-007",
+  "proposition": "Phillips said 53 bodies had been recovered.",
+  "label": "ENTAIL",
+  "evidence": "said 53 bodies had been recovered",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-008",
+  "proposition": "The ferry sank on Saturday night.",
+  "label": "ENTAIL",
+  "evidence": "The ferry sank on Saturday night",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-009",
+  "proposition": "It had departed Georgetown for Port Kaituma in Region 1.",
+  "label": "ENTAIL",
+  "evidence": "departing Georgetown for Port Kaituma in Region 1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-010",
+  "proposition": "A distress signal was received at 23:01.",
+  "label": "ENTAIL",
+  "evidence": "A distress signal was received at 23:01",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-011",
+  "proposition": "The vessel was about nine nautical miles off the Essequibo coast.",
+  "label": "ENTAIL",
+  "evidence": "about nine nautical miles off the Essequibo coast",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-012",
+  "proposition": "The waters were 13 to 15 metres deep.",
+  "label": "ENTAIL",
+  "evidence": "waters 13 to 15 metres deep",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-013",
+  "proposition": "One hundred and seventy-nine people were aboard.",
+  "label": "ENTAIL",
+  "evidence": "One hundred and seventy-nine people were aboard",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-014",
+  "proposition": "The manifest listed only 133.",
+  "label": "ENTAIL",
+  "evidence": "the manifest listed only 133",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-015",
+  "proposition": "The sinking is the latest Caribbean maritime disaster since MV Christena in 1970.",
+  "label": "ENTAIL",
+  "evidence": "since MV Christena in 1970",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-016",
+  "proposition": "MV Christena killed 233.",
+  "label": "ENTAIL",
+  "evidence": "which killed 233",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-017",
+  "proposition": "US maritime authorities said the ferry was not overloaded.",
+  "label": "ENTAIL",
+  "evidence": "the ferry was not overloaded",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-018",
+  "proposition": "The ferry had a capacity of 390 passengers.",
+  "label": "ENTAIL",
+  "evidence": "a capacity of 390 passengers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-019",
+  "proposition": "The rescue operation involved 16 to 19 vessels and three aircraft.",
+  "label": "ENTAIL",
+  "evidence": "16 to 19 vessels and three aircraft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-020",
+  "proposition": "The operation included a French Army unit in Guiana and a Brazilian Navy ship.",
+  "label": "ENTAIL",
+  "evidence": "a French Army unit in Guiana and a Brazilian Navy ship",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-021",
+  "proposition": "The death toll rose to 35.",
+  "label": "CONTRADICT",
+  "evidence": "has risen to 53",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-022",
+  "proposition": "177 people were rescued.",
+  "label": "CONTRADICT",
+  "evidence": "77 others were rescued",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-023",
+  "proposition": "The sinking happened a week before the briefing.",
+  "label": "CONTRADICT",
+  "evidence": "two days ago",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-024",
+  "proposition": "The ferry sank on Sunday night.",
+  "label": "CONTRADICT",
+  "evidence": "sank on Saturday night",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-025",
+  "proposition": "A distress signal was received at 21:01.",
+  "label": "CONTRADICT",
+  "evidence": "at 23:01",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-026",
+  "proposition": "The manifest listed all 179 people.",
+  "label": "CONTRADICT",
+  "evidence": "the manifest listed only 133",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-027",
+  "proposition": "US authorities said the ferry was overloaded.",
+  "label": "CONTRADICT",
+  "evidence": "was not overloaded",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-028",
+  "proposition": "The ferry had a capacity of 290 passengers.",
+  "label": "CONTRADICT",
+  "evidence": "capacity of 390 passengers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-029",
+  "proposition": "The rescue operation involved a single aircraft.",
+  "label": "CONTRADICT",
+  "evidence": "three aircraft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-030",
+  "proposition": "No one was charged with murder.",
+  "label": "CONTRADICT",
+  "evidence": "were later charged with murder",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-217-031",
+  "proposition": "The cause of the sinking was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A cause is not given."
+ },
+ {
+  "id": "V2-217-032",
+  "proposition": "The names of the missing were released.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Names are not released."
+ },
+ {
+  "id": "V2-217-033",
+  "proposition": "The number of children aboard was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-217-034",
+  "proposition": "The ferry's operating company was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A company is not named."
+ },
+ {
+  "id": "V2-217-035",
+  "proposition": "The condition of the rescued was described.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A condition is not described."
+ },
+ {
+  "id": "V2-217-036",
+  "proposition": "The scope of the Commission of Inquiry was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A scope is not stated."
+ },
+ {
+  "id": "V2-217-037",
+  "proposition": "A statement from the captain was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-217-038",
+  "proposition": "The location where the bodies were recovered was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A location is not stated."
+ },
+ {
+  "id": "V2-217-039",
+  "proposition": "The age of the ferry was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "An age is not given."
+ },
+ {
+  "id": "V2-217-040",
+  "proposition": "The number of cannabis-positive crew was stated.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not stated."
+ }
+]

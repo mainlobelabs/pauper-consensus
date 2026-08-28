@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-227-001",
+  "proposition": "Senior Italian politicians call for Spain to be kicked out of the Schengen Zone.",
+  "label": "ENTAIL",
+  "evidence": "call for Spain to be kicked out of the Schengen Zone",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-002",
+  "proposition": "The call includes suspending the Schengen Agreement entirely.",
+  "label": "ENTAIL",
+  "evidence": "or the suspension of the Schengen Agreement entirely",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-003",
+  "proposition": "Prime minister Giorgia Meloni is among the politicians.",
+  "label": "ENTAIL",
+  "evidence": "prime minister Giorgia Meloni",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-004",
+  "proposition": "Deputy prime minister Matteo Salvini is among the politicians.",
+  "label": "ENTAIL",
+  "evidence": "deputy prime minister Matteo Salvini",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-005",
+  "proposition": "Foreign minister Antonio Tajani is among the politicians.",
+  "label": "ENTAIL",
+  "evidence": "foreign minister Antonio Tajani",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-006",
+  "proposition": "They cited the alleged threat of undocumented immigrants spreading throughout the EU.",
+  "label": "ENTAIL",
+  "evidence": "the alleged threat of undocumented immigrants spreading throughout the EU",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-007",
+  "proposition": "An estimated 49,000 to 60,000 migrants came from Morocco into Ceuta.",
+  "label": "ENTAIL",
+  "evidence": "an estimated 49,000 to 60,000 migrants came from Morocco into the Spanish enclave of Ceuta",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-008",
+  "proposition": "The crossing took place on Thursday 30 and Friday 31 July.",
+  "label": "ENTAIL",
+  "evidence": "on Thursday 30 and Friday 31 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-009",
+  "proposition": "Many swam past border patrols.",
+  "label": "ENTAIL",
+  "evidence": "many swimming past border patrols",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-010",
+  "proposition": "The surge was linked to a Spanish Supreme Court ruling earlier in July.",
+  "label": "ENTAIL",
+  "evidence": "linked to a Spanish Supreme Court ruling earlier in July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-011",
+  "proposition": "The ruling prevented the immediate return of sea-arrived migrants.",
+  "label": "ENTAIL",
+  "evidence": "that prevented the immediate return of sea-arrived migrants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-012",
+  "proposition": "Meloni said Europe was ready to act, including through exceptional measures.",
+  "label": "ENTAIL",
+  "evidence": "ready to act, including through exceptional measures",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-013",
+  "proposition": "She cited suspending the Schengen agreement with Spain.",
+  "label": "ENTAIL",
+  "evidence": "suspending the Schengen agreement with Spain",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-014",
+  "proposition": "Tajani called for closing the Schengen area with Spain.",
+  "label": "ENTAIL",
+  "evidence": "Tajani called for closing the Schengen area with Spain",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-015",
+  "proposition": "He attacked Madrid's policy of legalizing 500,000 or more irregular immigrants.",
+  "label": "ENTAIL",
+  "evidence": "legalizing 500,000 or more irregular immigrants",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-016",
+  "proposition": "Salvini called for the entire Schengen zone to be suspended altogether.",
+  "label": "ENTAIL",
+  "evidence": "the entire Schengen zone to be suspended altogether",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-017",
+  "proposition": "Italy announced a temporary one-month suspension of Schengen free movement with Spain.",
+  "label": "ENTAIL",
+  "evidence": "a temporary one-month suspension of Schengen free movement with Spain",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-018",
+  "proposition": "The suspension introduces targeted and selective checks on non-EU travellers arriving from Spain by air or sea.",
+  "label": "ENTAIL",
+  "evidence": "\"targeted and selective\" checks on non-EU travellers arriving from Spain by air or sea",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-019",
+  "proposition": "Spanish foreign minister Jose Manuel Albares called Tajani's remarks unbecoming.",
+  "label": "ENTAIL",
+  "evidence": "called Tajani's remarks \"unbecoming\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-020",
+  "proposition": "Albares summoned the Italian ambassador.",
+  "label": "ENTAIL",
+  "evidence": "summoned the Italian ambassador",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-021",
+  "proposition": "The estimated migrant count was 9,000 to 10,000.",
+  "label": "CONTRADICT",
+  "evidence": "49,000 to 60,000",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-022",
+  "proposition": "The migrants came from Algeria.",
+  "label": "CONTRADICT",
+  "evidence": "from Morocco",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-023",
+  "proposition": "The crossing took place on Monday and Tuesday.",
+  "label": "CONTRADICT",
+  "evidence": "on Thursday 30 and Friday 31 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-024",
+  "proposition": "The ruling allowed the immediate return of sea-arrived migrants.",
+  "label": "CONTRADICT",
+  "evidence": "prevented the immediate return",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-025",
+  "proposition": "Meloni said Europe was not ready to act.",
+  "label": "CONTRADICT",
+  "evidence": "ready to act",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-026",
+  "proposition": "Tajani attacked Madrid's policy of legalizing 50,000 or more irregular immigrants.",
+  "label": "CONTRADICT",
+  "evidence": "500,000 or more",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-027",
+  "proposition": "Italy announced a one-year suspension.",
+  "label": "CONTRADICT",
+  "evidence": "one-month suspension",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-028",
+  "proposition": "The checks apply only to land travellers.",
+  "label": "CONTRADICT",
+  "evidence": "by air or sea",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-029",
+  "proposition": "Albares praised Tajani's remarks.",
+  "label": "CONTRADICT",
+  "evidence": "called Tajani's remarks \"unbecoming\"",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-030",
+  "proposition": "Albares recalled the Spanish ambassador.",
+  "label": "CONTRADICT",
+  "evidence": "summoned the Italian ambassador",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-227-031",
+  "proposition": "A count of migrants still in Ceuta was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-227-032",
+  "proposition": "A statement from the EU Commission was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-227-033",
+  "proposition": "A count of border patrol crossings was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-227-034",
+  "proposition": "An exact date for the court ruling was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "V2-227-035",
+  "proposition": "A count of the planned checks was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-227-036",
+  "proposition": "A statement from the Italian interior minister was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ },
+ {
+  "id": "V2-227-037",
+  "proposition": "A count of Italian border checks per day was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-227-038",
+  "proposition": "A further response from the Spanish government was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A response is not quoted."
+ },
+ {
+  "id": "V2-227-039",
+  "proposition": "A date for the end of the suspension was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "V2-227-040",
+  "proposition": "A count of non-EU travellers affected daily was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ }
+]

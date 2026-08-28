@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-198-001",
+  "proposition": "Nicholas Dale, a 56-year-old Canadian pilot, was killed.",
+  "label": "ENTAIL",
+  "evidence": "Nicholas Dale, a 56-year-old Canadian pilot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-002",
+  "proposition": "Dale was from Sooke, British Columbia.",
+  "label": "ENTAIL",
+  "evidence": "from Sooke, British Columbia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-003",
+  "proposition": "His helicopter crashed into Silver Jack Reservoir.",
+  "label": "ENTAIL",
+  "evidence": "crashed into Silver Jack Reservoir",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-004",
+  "proposition": "The helicopter was a Kaman K-1200.",
+  "label": "ENTAIL",
+  "evidence": "his Kaman K-1200 helicopter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-005",
+  "proposition": "The crash happened while fighting the Gold Mountain Fire in Colorado.",
+  "label": "ENTAIL",
+  "evidence": "while fighting the Gold Mountain Fire in Colorado",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-006",
+  "proposition": "The crash was reported around 5:17pm on Sunday, 12 July.",
+  "label": "ENTAIL",
+  "evidence": "reported around 5:17pm on Sunday, 12 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-007",
+  "proposition": "The helicopter was a 2019 Kaman Aerospace K-Max.",
+  "label": "ENTAIL",
+  "evidence": "a 2019 Kaman Aerospace K-Max",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-008",
+  "proposition": "The K-Max was owned by Georgia-based Helicopter Express LLC.",
+  "label": "ENTAIL",
+  "evidence": "owned by Georgia-based Helicopter Express LLC",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-009",
+  "proposition": "The aircraft was flying under US Forest Service contract.",
+  "label": "ENTAIL",
+  "evidence": "flying under US Forest Service contract",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-010",
+  "proposition": "The helicopter went in inverted into the reservoir about 12 miles northeast of Ridgway.",
+  "label": "ENTAIL",
+  "evidence": "went in inverted into the reservoir about 12 miles northeast of Ridgway",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-011",
+  "proposition": "Dale was the sole occupant.",
+  "label": "ENTAIL",
+  "evidence": "Dale was the sole occupant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-012",
+  "proposition": "His body was recovered by a Montrose County dive team.",
+  "label": "ENTAIL",
+  "evidence": "recovered from the submerged helicopter by a Montrose County dive team",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-013",
+  "proposition": "The Gold Mountain Fire began on 27 June.",
+  "label": "ENTAIL",
+  "evidence": "began on 27 June",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-014",
+  "proposition": "The fire has burned about 36,259 acres.",
+  "label": "ENTAIL",
+  "evidence": "has burned about 36,259 acres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-015",
+  "proposition": "The aircraft had been in Colorado since 6 July.",
+  "label": "ENTAIL",
+  "evidence": "had been in Colorado since 6 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-016",
+  "proposition": "The fire was 11 percent contained when the pilot's identity was released.",
+  "label": "ENTAIL",
+  "evidence": "The fire was 11 percent contained at the time the pilot's identity was released",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-017",
+  "proposition": "Silver Jack Reservoir sits at an elevation of about 8,925 feet.",
+  "label": "ENTAIL",
+  "evidence": "sits at an elevation of about 8,925 feet",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-018",
+  "proposition": "The K-Max is a single-engine turbine helicopter commonly used for firefighting bucket work.",
+  "label": "ENTAIL",
+  "evidence": "the K-Max is a single-engine turbine helicopter commonly used for firefighting bucket work",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-019",
+  "proposition": "The NTSB plans to review the aircraft's cockpit video.",
+  "label": "ENTAIL",
+  "evidence": "The NTSB plans to review the aircraft's cockpit video",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-020",
+  "proposition": "A preliminary FAA report said the helicopter crashed under unknown circumstances, becoming inverted.",
+  "label": "ENTAIL",
+  "evidence": "crashed under unknown circumstances, becoming inverted",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-021",
+  "proposition": "Dale was 36 years old.",
+  "label": "CONTRADICT",
+  "evidence": "a 56-year-old Canadian pilot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-022",
+  "proposition": "Dale was from Vancouver, Canada.",
+  "label": "CONTRADICT",
+  "evidence": "from Sooke, British Columbia",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-023",
+  "proposition": "The crash was reported around 11:17am on 12 July.",
+  "label": "CONTRADICT",
+  "evidence": "reported around 5:17pm on Sunday, 12 July",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-024",
+  "proposition": "The helicopter was a 2009 Kaman K-Max.",
+  "label": "CONTRADICT",
+  "evidence": "a 2019 Kaman Aerospace K-Max",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-025",
+  "proposition": "Two people were on board the helicopter.",
+  "label": "CONTRADICT",
+  "evidence": "Dale was the sole occupant",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-026",
+  "proposition": "The fire had burned about 26,259 acres.",
+  "label": "CONTRADICT",
+  "evidence": "has burned about 36,259 acres",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-027",
+  "proposition": "The fire was 51 percent contained when the identity was released.",
+  "label": "CONTRADICT",
+  "evidence": "The fire was 11 percent contained at the time the pilot's identity was released",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-028",
+  "proposition": "The K-Max is a piston-engine helicopter.",
+  "label": "CONTRADICT",
+  "evidence": "single-engine turbine helicopter",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-029",
+  "proposition": "Dale's body was recovered by a US Forest Service crew.",
+  "label": "CONTRADICT",
+  "evidence": "by a Montrose County dive team",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-030",
+  "proposition": "The FAA said the crash was caused by mechanical failure.",
+  "label": "CONTRADICT",
+  "evidence": "crashed under unknown circumstances, becoming inverted",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-198-031",
+  "proposition": "A cause for the crash was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A cause is not given."
+ },
+ {
+  "id": "V2-198-032",
+  "proposition": "A member of the dive team was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A diver is not named."
+ },
+ {
+  "id": "V2-198-033",
+  "proposition": "Dale's career history was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A career is not given."
+ },
+ {
+  "id": "V2-198-034",
+  "proposition": "A count of other firefighting aircraft on the fire was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A count is not given."
+ },
+ {
+  "id": "V2-198-035",
+  "proposition": "A preliminary NTSB finding was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A finding is not given."
+ },
+ {
+  "id": "V2-198-036",
+  "proposition": "A family member of Dale was named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A family member is not named."
+ },
+ {
+  "id": "V2-198-037",
+  "proposition": "A cause for the fire was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A cause is not given."
+ },
+ {
+  "id": "V2-198-038",
+  "proposition": "Weather conditions at the crash were given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Weather is not given."
+ },
+ {
+  "id": "V2-198-039",
+  "proposition": "A memorial date was given.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A date is not given."
+ },
+ {
+  "id": "V2-198-040",
+  "proposition": "A statement from Helicopter Express was quoted.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A statement is not quoted."
+ }
+]
