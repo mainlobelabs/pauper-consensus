@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-122-001",
+  "proposition": "Wang Yi made the statement on Friday, May 15, 2026.",
+  "label": "ENTAIL",
+  "evidence": "said on Friday, May 15, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-002",
+  "proposition": "China and the US agreed to continue implementing previous trade agreements.",
+  "label": "ENTAIL",
+  "evidence": "have agreed to continue implementing previous trade agreements",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-003",
+  "proposition": "The two sides agreed to establish trade and investment councils.",
+  "label": "ENTAIL",
+  "evidence": "to establish trade and investment councils",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-004",
+  "proposition": "The announcement followed talks between Xi and Trump in Beijing.",
+  "label": "ENTAIL",
+  "evidence": "talks between Chinese leader Xi Jinping and US president Donald Trump in Beijing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-005",
+  "proposition": "Trump's state visit ran from May 13 to 15.",
+  "label": "ENTAIL",
+  "evidence": "Trump's state visit from May 13 to 15",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-006",
+  "proposition": "The visit was the first by a US president to China since 2017.",
+  "label": "ENTAIL",
+  "evidence": "the first by a US president to China since 2017",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-007",
+  "proposition": "The summit included about nine hours of discussions.",
+  "label": "ENTAIL",
+  "evidence": "included about nine hours of discussions",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-008",
+  "proposition": "The two sides will address mutual market-access concerns for agricultural products.",
+  "label": "ENTAIL",
+  "evidence": "address mutual market-access concerns for agricultural products",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-009",
+  "proposition": "The two sides will expand two-way trade under reciprocal tariff reductions.",
+  "label": "ENTAIL",
+  "evidence": "expand two-way trade under reciprocal tariff reductions",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-010",
+  "proposition": "China committed to buying at least $17 billion a year of US farm products.",
+  "label": "ENTAIL",
+  "evidence": "buying at least $17 billion a year of US farm products",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-011",
+  "proposition": "China committed to an initial 200 Boeing aircraft.",
+  "label": "ENTAIL",
+  "evidence": "an initial 200 Boeing aircraft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-012",
+  "proposition": "Treasury secretary Bessent made the tariff statement.",
+  "label": "ENTAIL",
+  "evidence": "Treasury secretary Bessent",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-013",
+  "proposition": "The board of trade would cut tariffs on roughly $30 billion of non-critical goods.",
+  "label": "ENTAIL",
+  "evidence": "cut tariffs on roughly $30 billion of non-critical goods",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-014",
+  "proposition": "The White House issued a fact sheet on the outcome.",
+  "label": "ENTAIL",
+  "evidence": "The White House fact sheet",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-015",
+  "proposition": "The fact sheet described a chartered US-China board of trade for non-sensitive goods.",
+  "label": "ENTAIL",
+  "evidence": "a chartered US-China board of trade for non-sensitive goods",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-016",
+  "proposition": "The fact sheet described a board of investment for government-to-government investment.",
+  "label": "ENTAIL",
+  "evidence": "a board of investment for government-to-government investment",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-017",
+  "proposition": "The White House called for a constructive relationship of strategic stability.",
+  "label": "ENTAIL",
+  "evidence": "a constructive relationship of strategic stability",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-018",
+  "proposition": "Trump said he did not discuss extending the tariff truce at the summit.",
+  "label": "ENTAIL",
+  "evidence": "he did not discuss extending the tariff truce at the summit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-019",
+  "proposition": "The tariff truce expires later in 2026.",
+  "label": "ENTAIL",
+  "evidence": "which expires later in 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-020",
+  "proposition": "Trump invited Xi to a US state dinner in September.",
+  "label": "ENTAIL",
+  "evidence": "invited Xi to a US state dinner in September",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-021",
+  "proposition": "The Xi-Trump talks were held in Washington.",
+  "label": "CONTRADICT",
+  "evidence": "in Beijing",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-022",
+  "proposition": "The state visit was the first by a US president to China since 2014.",
+  "label": "CONTRADICT",
+  "evidence": "the first by a US president to China since 2017",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-023",
+  "proposition": "The discussions lasted about five hours.",
+  "label": "CONTRADICT",
+  "evidence": "about nine hours of discussions",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-024",
+  "proposition": "China committed to $7 billion a year of US farm products.",
+  "label": "CONTRADICT",
+  "evidence": "at least $17 billion a year of US farm products",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-025",
+  "proposition": "The Boeing commitment is an initial 2,000 aircraft.",
+  "label": "CONTRADICT",
+  "evidence": "an initial 200 Boeing aircraft",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-026",
+  "proposition": "The board of trade would cut tariffs on roughly $3 billion of goods.",
+  "label": "CONTRADICT",
+  "evidence": "roughly $30 billion of non-critical goods",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-027",
+  "proposition": "The tariff truce expires later in 2025.",
+  "label": "CONTRADICT",
+  "evidence": "expires later in 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-028",
+  "proposition": "Trump said he discussed extending the tariff truce at the summit.",
+  "label": "CONTRADICT",
+  "evidence": "did not discuss extending the tariff truce at the summit",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-029",
+  "proposition": "The state dinner invitation was for June.",
+  "label": "CONTRADICT",
+  "evidence": "in September",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-030",
+  "proposition": "The board of investment covers private-sector investment.",
+  "label": "CONTRADICT",
+  "evidence": "board of investment for government-to-government investment",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-122-031",
+  "proposition": "The farm purchases include soybeans.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Specific products are not listed."
+ },
+ {
+  "id": "V2-122-032",
+  "proposition": "The Boeing aircraft are 737 models.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The aircraft model is not specified."
+ },
+ {
+  "id": "V2-122-033",
+  "proposition": "The tariff cuts take effect immediately.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The effective date is not stated."
+ },
+ {
+  "id": "V2-122-034",
+  "proposition": "The board of trade will meet quarterly.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A meeting schedule is not stated."
+ },
+ {
+  "id": "V2-122-035",
+  "proposition": "Xi accepted the state dinner invitation.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Xi's response is not reported."
+ },
+ {
+  "id": "V2-122-036",
+  "proposition": "The fact sheet was released at 9 a.m. Eastern time.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The release time is not given."
+ },
+ {
+  "id": "V2-122-037",
+  "proposition": "The deal includes rare-earth commitments.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Not mentioned."
+ },
+ {
+  "id": "V2-122-038",
+  "proposition": "The $17 billion figure is a five-year total.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The period is annual; no multi-year total is given."
+ },
+ {
+  "id": "V2-122-039",
+  "proposition": "The summit included a joint press conference.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The format beyond discussion hours is not described."
+ },
+ {
+  "id": "V2-122-040",
+  "proposition": "The board of trade is headquartered in New York.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The board's location is not stated."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-137-001",
+  "proposition": "Felix Rosenqvist of Meyer Shank won the race.",
+  "label": "ENTAIL",
+  "evidence": "Meyer Shank's Felix Rosenqvist",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-002",
+  "proposition": "Rosenqvist defeated David Malukas of Penske.",
+  "label": "ENTAIL",
+  "evidence": "defeated Penske's David Malukas",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-003",
+  "proposition": "The race was the 110th Indianapolis 500.",
+  "label": "ENTAIL",
+  "evidence": "the 110th Indianapolis 500",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-004",
+  "proposition": "The race took place on Sunday, May 24, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Sunday, May 24, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-005",
+  "proposition": "The win is Meyer Shank's second victory in the event.",
+  "label": "ENTAIL",
+  "evidence": "giving Meyer Shank its second victory in the event",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-006",
+  "proposition": "The margin of victory was 0.0233 seconds.",
+  "label": "ENTAIL",
+  "evidence": "The margin of victory was 0.0233 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-007",
+  "proposition": "The finish was a one-lap, 2.5-mile shootout.",
+  "label": "ENTAIL",
+  "evidence": "a one-lap, 2.5-mile shootout",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-008",
+  "proposition": "It was the closest finish in Indianapolis 500 history.",
+  "label": "ENTAIL",
+  "evidence": "the closest finish in Indianapolis 500 history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-009",
+  "proposition": "The previous best margin was 0.043 seconds in 1992.",
+  "label": "ENTAIL",
+  "evidence": "previous best 0.043 seconds in 1992",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-010",
+  "proposition": "Rosenqvist is 34 years old and from Sweden.",
+  "label": "ENTAIL",
+  "evidence": "Rosenqvist, 34, of Sweden",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-011",
+  "proposition": "Rosenqvist drove the No. 60 SiriusXM car.",
+  "label": "ENTAIL",
+  "evidence": "drove the No. 60 SiriusXM car",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-012",
+  "proposition": "Two-time race-winner Mick Schumacher hit the wall at Turn 2.",
+  "label": "ENTAIL",
+  "evidence": "two-time race-winner Mick Schumacher hit the wall at Turn 2",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-013",
+  "proposition": "Schumacher's spin unseated Malukas by about a second before the finish line.",
+  "label": "ENTAIL",
+  "evidence": "unseating Malukas by about a second before the finish line",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-014",
+  "proposition": "It was Rosenqvist's 600th career start.",
+  "label": "ENTAIL",
+  "evidence": "Rosenqvist's 600th career start",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-015",
+  "proposition": "It was his first Indianapolis 500 win.",
+  "label": "ENTAIL",
+  "evidence": "his first Indianapolis 500 win",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-016",
+  "proposition": "His only other IndyCar victory was at Road America in 2020.",
+  "label": "ENTAIL",
+  "evidence": "his only other IndyCar victory was at Road America in 2020",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-017",
+  "proposition": "The race featured a record 70 lead changes.",
+  "label": "ENTAIL",
+  "evidence": "a record 70 lead changes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-018",
+  "proposition": "Malukas drove the No. 12 Verizon Team Penske car.",
+  "label": "ENTAIL",
+  "evidence": "driving the No. 12 Verizon Team Penske car",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-019",
+  "proposition": "Malukas had led before the final restart.",
+  "label": "ENTAIL",
+  "evidence": "had led before the final restart",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-020",
+  "proposition": "The field ran 300 laps over about three hours.",
+  "label": "ENTAIL",
+  "evidence": "the field ran 300 laps over about three hours",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-021",
+  "proposition": "Rosenqvist is 44 years old.",
+  "label": "CONTRADICT",
+  "evidence": "Rosenqvist, 34,",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-022",
+  "proposition": "The margin of victory was 0.233 seconds.",
+  "label": "CONTRADICT",
+  "evidence": "0.0233 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-023",
+  "proposition": "The previous best margin was 0.43 seconds.",
+  "label": "CONTRADICT",
+  "evidence": "previous best 0.043 seconds",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-024",
+  "proposition": "Mick Schumacher hit the wall at Turn 4.",
+  "label": "CONTRADICT",
+  "evidence": "at Turn 2",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-025",
+  "proposition": "It was Rosenqvist's 500th career start.",
+  "label": "CONTRADICT",
+  "evidence": "600th career start",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-026",
+  "proposition": "It was his second Indianapolis 500 win.",
+  "label": "CONTRADICT",
+  "evidence": "his first Indianapolis 500 win",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-027",
+  "proposition": "His only other IndyCar victory was at Road America in 2021.",
+  "label": "CONTRADICT",
+  "evidence": "at Road America in 2020",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-028",
+  "proposition": "The race featured a record 700 lead changes.",
+  "label": "CONTRADICT",
+  "evidence": "70 lead changes",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-029",
+  "proposition": "Malukas drove the No. 2 car.",
+  "label": "CONTRADICT",
+  "evidence": "No. 12",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-030",
+  "proposition": "The field ran 200 laps.",
+  "label": "CONTRADICT",
+  "evidence": "300 laps",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-137-031",
+  "proposition": "Rosenqvist's newborn is a daughter.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The child's sex is not stated."
+ },
+ {
+  "id": "V2-137-032",
+  "proposition": "The race started at noon.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The start time is not given."
+ },
+ {
+  "id": "V2-137-033",
+  "proposition": "The average speed was 185 mph.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Speed is not stated."
+ },
+ {
+  "id": "V2-137-034",
+  "proposition": "Mick Schumacher was uninjured.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Schumacher's condition is not described."
+ },
+ {
+  "id": "V2-137-035",
+  "proposition": "Marcus Armstrong finished third.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Armstrong's finish is not stated."
+ },
+ {
+  "id": "V2-137-036",
+  "proposition": "The 70 lead changes were the most since 2012.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The comparison period is not given."
+ },
+ {
+  "id": "V2-137-037",
+  "proposition": "The winner's share was $6 million.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Purse details are not stated."
+ },
+ {
+  "id": "V2-137-038",
+  "proposition": "Rosenqvist signed with Meyer Shank in 2025.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Contract timing is not stated."
+ },
+ {
+  "id": "V2-137-039",
+  "proposition": "The race set an average green-flag speed record.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Not stated."
+ },
+ {
+  "id": "V2-137-040",
+  "proposition": "Malukas will start from pole in 2027.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The future grid is not discussed."
+ }
+]

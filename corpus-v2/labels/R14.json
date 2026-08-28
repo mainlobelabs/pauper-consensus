@@ -1,0 +1,282 @@
+[
+ {
+  "id": "R14-001",
+  "proposition": "The San Antonio Spurs defeated the defending champion Oklahoma City Thunder.",
+  "label": "ENTAIL",
+  "evidence": "The San Antonio Spurs defeated the defending champion Oklahoma City Thunder",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-002",
+  "proposition": "The Spurs won 111-103.",
+  "label": "ENTAIL",
+  "evidence": "111-103",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-003",
+  "proposition": "The win came in Game 7.",
+  "label": "ENTAIL",
+  "evidence": "in Game 7",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-004",
+  "proposition": "Game 7 was played on Saturday, May 30, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, May 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-005",
+  "proposition": "San Antonio won the Western Conference series 4-3.",
+  "label": "ENTAIL",
+  "evidence": "to win the Western Conference series 4-3",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-006",
+  "proposition": "The Spurs reach the NBA Finals for the first time since 2014.",
+  "label": "ENTAIL",
+  "evidence": "reach the NBA Finals for the first time since 2014",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-007",
+  "proposition": "San Antonio will face the New York Knicks in the Finals.",
+  "label": "ENTAIL",
+  "evidence": "where they will face the New York Knicks",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-008",
+  "proposition": "The game was at Paycom Center in Oklahoma City.",
+  "label": "ENTAIL",
+  "evidence": "at Paycom Center in Oklahoma City",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-009",
+  "proposition": "The Thunder had been 4-1 in home Game 7s since relocating.",
+  "label": "ENTAIL",
+  "evidence": "the Thunder had been 4-1 in home Game 7s since relocating",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-010",
+  "proposition": "Victor Wembanyama scored 22 points in Game 7.",
+  "label": "ENTAIL",
+  "evidence": "Victor Wembanyama scored 22 points",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-011",
+  "proposition": "Wembanyama was named Western Conference Finals MVP.",
+  "label": "ENTAIL",
+  "evidence": "was named Western Conference Finals MVP",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-012",
+  "proposition": "He averaged 27.3 points in the series.",
+  "label": "ENTAIL",
+  "evidence": "averaging 27.3 points in the series",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-013",
+  "proposition": "He finished with at least 20 points in every game of the three-round run.",
+  "label": "ENTAIL",
+  "evidence": "finishing with at least 20 in every game of the three-round run",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-014",
+  "proposition": "Julian Champagnie went 18 of 20 from deep for 20 points.",
+  "label": "ENTAIL",
+  "evidence": "Julian Champagnie went 18 of 20 from deep for 20 points",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-015",
+  "proposition": "De'Aaron Fox scored 15 points.",
+  "label": "ENTAIL",
+  "evidence": "De'Aaron Fox 15",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-016",
+  "proposition": "San Antonio became the third road team to win a Game 7 in this postseason.",
+  "label": "ENTAIL",
+  "evidence": "the third road team to win a Game 7 in this postseason",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-017",
+  "proposition": "The Cavaliers and 76ers won Game 7s on the road earlier in the postseason.",
+  "label": "ENTAIL",
+  "evidence": "after the Cavaliers and 76ers",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-018",
+  "proposition": "It was the first Western Conference Game 7 since 2018.",
+  "label": "ENTAIL",
+  "evidence": "the first Western Conference Game 7 since 2018",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-019",
+  "proposition": "The Knicks swept the Cleveland Cavaliers 4-0.",
+  "label": "ENTAIL",
+  "evidence": "swept the Cleveland Cavaliers 4-0",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-020",
+  "proposition": "Game 1 of the Finals is on Wednesday, June 3, in San Antonio.",
+  "label": "ENTAIL",
+  "evidence": "will play Game 1 of the Finals on Wednesday, June 3, in San Antonio",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-021",
+  "proposition": "The Spurs beat the Thunder 101-113.",
+  "label": "CONTRADICT",
+  "evidence": "111-103",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-022",
+  "proposition": "Game 7 was played on Friday, May 29, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Saturday, May 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-023",
+  "proposition": "San Antonio won the series 4-2.",
+  "label": "CONTRADICT",
+  "evidence": "4-3",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-024",
+  "proposition": "The Spurs reach the NBA Finals for the first time since 2019.",
+  "label": "CONTRADICT",
+  "evidence": "since 2014",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-025",
+  "proposition": "San Antonio will face the Boston Celtics in the Finals.",
+  "label": "CONTRADICT",
+  "evidence": "the New York Knicks",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-026",
+  "proposition": "The game was at Frost Bank Center in San Antonio.",
+  "label": "CONTRADICT",
+  "evidence": "at Paycom Center in Oklahoma City",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-027",
+  "proposition": "Victor Wembanyama scored 32 points in Game 7.",
+  "label": "CONTRADICT",
+  "evidence": "scored 22 points",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-028",
+  "proposition": "Wembanyama averaged 37.3 points in the series.",
+  "label": "CONTRADICT",
+  "evidence": "averaging 27.3 points",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-029",
+  "proposition": "Julian Champagnie went 8 of 20 from deep.",
+  "label": "CONTRADICT",
+  "evidence": "18 of 20 from deep",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-030",
+  "proposition": "Game 1 of the Finals is on Monday, June 1.",
+  "label": "CONTRADICT",
+  "evidence": "on Wednesday, June 3",
+  "silence_reason": null
+ },
+ {
+  "id": "R14-031",
+  "proposition": "Wembanyama had 14 rebounds in Game 7.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His rebound total is not stated."
+ },
+ {
+  "id": "R14-032",
+  "proposition": "The Spurs led by 15 at halftime.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The halftime score is not given."
+ },
+ {
+  "id": "R14-033",
+  "proposition": "Champagnie was acquired in a February trade.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The trade history is not stated."
+ },
+ {
+  "id": "R14-034",
+  "proposition": "De'Aaron Fox played 40 minutes.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Playing time is not stated."
+ },
+ {
+  "id": "R14-035",
+  "proposition": "The Paycom Center drew 19,000 fans.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not stated."
+ },
+ {
+  "id": "R14-036",
+  "proposition": "The Finals will be a best-of-seven series.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The Finals format is not stated in the article."
+ },
+ {
+  "id": "R14-037",
+  "proposition": "The Knicks will announce their Game 1 starting lineup.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The Knicks lineup is not discussed."
+ },
+ {
+  "id": "R14-038",
+  "proposition": "Game 2 of the Finals will be played in New York.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The Game 2 location is not stated."
+ },
+ {
+  "id": "R14-039",
+  "proposition": "Shai Gilgeous-Alexander averaged 30 points in this series.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His series average is not stated."
+ },
+ {
+  "id": "R14-040",
+  "proposition": "The Spurs open as 3.5-point favorites in Game 1.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Betting odds are not stated."
+ }
+]

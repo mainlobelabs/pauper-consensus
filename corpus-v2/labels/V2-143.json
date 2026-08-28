@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-143-001",
+  "proposition": "At least six people were killed in the clashes.",
+  "label": "ENTAIL",
+  "evidence": "At least six people were killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-002",
+  "proposition": "The clashes involved forces loyal to disputed Somali president Hassan Sheikh Mohamud.",
+  "label": "ENTAIL",
+  "evidence": "forces loyal to disputed Somali president Hassan Sheikh Mohamud",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-003",
+  "proposition": "The clashes involved ousted South West State president Abdiaziz Laftagareen.",
+  "label": "ENTAIL",
+  "evidence": "and ousted South West State president Abdiaziz Laftagareen",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-004",
+  "proposition": "The attackers entered the regional capital Baidoa.",
+  "label": "ENTAIL",
+  "evidence": "after they entered the regional capital Baidoa",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-005",
+  "proposition": "The entry happened on Saturday, May 30, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, May 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-006",
+  "proposition": "Laftagareen's fighters launched a coordinated assault on the city.",
+  "label": "ENTAIL",
+  "evidence": "Laftagareen's fighters launched a coordinated assault on the city",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-007",
+  "proposition": "The attackers seized the livestock-market area on the eastern outskirts.",
+  "label": "ENTAIL",
+  "evidence": "including the livestock-market area on the eastern outskirts",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-008",
+  "proposition": "Fighting in that area lasted nearly an hour.",
+  "label": "ENTAIL",
+  "evidence": "where fighting lasted nearly an hour",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-009",
+  "proposition": "Federal forces repelled the incursion.",
+  "label": "ENTAIL",
+  "evidence": "before federal forces repelled the incursion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-010",
+  "proposition": "The Somali National Army pushed the loyalists to the rural periphery.",
+  "label": "ENTAIL",
+  "evidence": "The Somali National Army pushed the loyalists to the rural periphery",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-011",
+  "proposition": "The army seized a military vehicle carrying a twin-barrel anti-aircraft gun.",
+  "label": "ENTAIL",
+  "evidence": "seized a military vehicle carrying a twin-barrel anti-aircraft gun",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-012",
+  "proposition": "The army described the attackers as al-Shabaab-linked.",
+  "label": "ENTAIL",
+  "evidence": "describing the attackers as al-Shabaab-linked",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-013",
+  "proposition": "The army was still verifying the casualty count.",
+  "label": "ENTAIL",
+  "evidence": "The army was still verifying the casualty count",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-014",
+  "proposition": "Bay police commander Sadiq Dodishe made the accusation.",
+  "label": "ENTAIL",
+  "evidence": "Bay police commander Sadiq Dodishe",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-015",
+  "proposition": "Dodishe accused Laftagareen of using young men as cannon fodder while his family lives abroad.",
+  "label": "ENTAIL",
+  "evidence": "accused Laftagareen of using young men as cannon fodder while his family lives abroad",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-016",
+  "proposition": "Calm had been restored after the fighting.",
+  "label": "ENTAIL",
+  "evidence": "Calm had been restored",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-017",
+  "proposition": "Newly elected state representatives were sworn in despite the fighting.",
+  "label": "ENTAIL",
+  "evidence": "newly elected state representatives were sworn in despite the fighting",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-018",
+  "proposition": "Laftagareen had been removed on March 30, 2026.",
+  "label": "ENTAIL",
+  "evidence": "had been removed on March 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-019",
+  "proposition": "He was removed by a federal government-backed security operation.",
+  "label": "ENTAIL",
+  "evidence": "by a federal government-backed security operation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-020",
+  "proposition": "The removal followed his rejection of constitutional changes adopted by Mohamud.",
+  "label": "ENTAIL",
+  "evidence": "after he rejected constitutional changes adopted by Mohamud",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-021",
+  "proposition": "At least 16 people were killed in the clashes.",
+  "label": "CONTRADICT",
+  "evidence": "At least six people were killed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-022",
+  "proposition": "The clashes were between two state armies.",
+  "label": "CONTRADICT",
+  "evidence": "forces loyal to disputed Somali president Hassan Sheikh Mohamud and ousted South West State president Abdiaziz Laftagareen",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-023",
+  "proposition": "The attackers entered Baidoa on Sunday, May 31, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Saturday, May 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-024",
+  "proposition": "The fighters launched a surprise night raid.",
+  "label": "CONTRADICT",
+  "evidence": "a coordinated assault on the city",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-025",
+  "proposition": "Fighting in the livestock-market area lasted six hours.",
+  "label": "CONTRADICT",
+  "evidence": "lasted nearly an hour",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-026",
+  "proposition": "The army seized a fighter jet.",
+  "label": "CONTRADICT",
+  "evidence": "a military vehicle carrying a twin-barrel anti-aircraft gun",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-027",
+  "proposition": "The army described the attackers as foreign mercenaries.",
+  "label": "CONTRADICT",
+  "evidence": "al-Shabaab-linked",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-028",
+  "proposition": "Laftagareen had been removed on April 30, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "removed on March 30, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-029",
+  "proposition": "Earlier skirmishes in May had killed twelve army officers.",
+  "label": "CONTRADICT",
+  "evidence": "two army officers",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-030",
+  "proposition": "The federal government held off the attackers with naval support.",
+  "label": "CONTRADICT",
+  "evidence": "federal forces repelled the incursion",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-143-031",
+  "proposition": "The six dead included three civilians.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The breakdown of the dead is not stated."
+ },
+ {
+  "id": "V2-143-032",
+  "proposition": "Laftagareen was injured in the assault.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His condition is not stated."
+ },
+ {
+  "id": "V2-143-033",
+  "proposition": "The assault began at dawn.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The attack time is not given."
+ },
+ {
+  "id": "V2-143-034",
+  "proposition": "Baidoa has a population of 400,000.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The city population is not stated."
+ },
+ {
+  "id": "V2-143-035",
+  "proposition": "The two army officers killed in May were named.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The officers are not named."
+ },
+ {
+  "id": "V2-143-036",
+  "proposition": "Laftagareen is now based in Mogadishu.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His current location is not stated."
+ },
+ {
+  "id": "V2-143-037",
+  "proposition": "The federal government declared a state of emergency.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A state of emergency is not mentioned."
+ },
+ {
+  "id": "V2-143-038",
+  "proposition": "The 60th Division deployed 5,000 troops to Baidoa.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Troop numbers are not stated."
+ },
+ {
+  "id": "V2-143-039",
+  "proposition": "The livestock-market area was destroyed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The damage is not described."
+ },
+ {
+  "id": "V2-143-040",
+  "proposition": "The state representatives were sworn in on Sunday.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The swearing-in date is not given."
+ }
+]

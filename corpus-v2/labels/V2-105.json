@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-105-001",
+  "proposition": "Golden Tempo won the 152nd Kentucky Derby.",
+  "label": "ENTAIL",
+  "evidence": "won the 152nd Kentucky Derby",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-002",
+  "proposition": "The winning horse was ridden by Jose Ortiz.",
+  "label": "ENTAIL",
+  "evidence": "ridden by Jose Ortiz",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-003",
+  "proposition": "The race took place at Churchill Downs in Louisville.",
+  "label": "ENTAIL",
+  "evidence": "at Churchill Downs in Louisville",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-004",
+  "proposition": "The race was run on Saturday, May 2, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, May 2, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-005",
+  "proposition": "The winning time was 2:02.27.",
+  "label": "ENTAIL",
+  "evidence": "in 2:02.27",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-006",
+  "proposition": "Golden Tempo is a bay colt.",
+  "label": "ENTAIL",
+  "evidence": "a bay colt",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-007",
+  "proposition": "The horse was trained by Cherie DeVaux.",
+  "label": "ENTAIL",
+  "evidence": "trained by Cherie DeVaux",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-008",
+  "proposition": "DeVaux is the first female trainer to win the Kentucky Derby.",
+  "label": "ENTAIL",
+  "evidence": "the first female trainer to win the Kentucky Derby",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-009",
+  "proposition": "DeVaux is only the second woman ever to win a Triple Crown race.",
+  "label": "ENTAIL",
+  "evidence": "only the second woman ever to win a Triple Crown race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-010",
+  "proposition": "Jena Antonucci won the 2023 Belmont with Arcangelo.",
+  "label": "ENTAIL",
+  "evidence": "Jena Antonucci won the 2023 Belmont with Arcangelo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-011",
+  "proposition": "Golden Tempo beat the morning-line favorite Renegade.",
+  "label": "ENTAIL",
+  "evidence": "to beat the morning-line favorite Renegade",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-012",
+  "proposition": "The victory margin was a neck.",
+  "label": "ENTAIL",
+  "evidence": "by a neck",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-013",
+  "proposition": "DeVaux entered as a 23-1 longshot.",
+  "label": "ENTAIL",
+  "evidence": "as a 23-1 longshot",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-014",
+  "proposition": "The field contained 18 horses.",
+  "label": "ENTAIL",
+  "evidence": "in an 18-horse field",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-015",
+  "proposition": "Renegade finished second.",
+  "label": "ENTAIL",
+  "evidence": "finished second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-016",
+  "proposition": "Ocelli, a 70-1 longshot, finished third.",
+  "label": "ENTAIL",
+  "evidence": "the 70-1 longshot Ocelli was third",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-017",
+  "proposition": "Irad Ortiz Jr., Jose Ortiz's brother, rode the second-place horse.",
+  "label": "ENTAIL",
+  "evidence": "ridden by Ortiz's brother Irad Ortiz Jr.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-018",
+  "proposition": "DeVaux is 44 years old.",
+  "label": "ENTAIL",
+  "evidence": "DeVaux, 44,",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-019",
+  "proposition": "DeVaux is considering a Preakness Stakes start on May 16.",
+  "label": "ENTAIL",
+  "evidence": "considering a start in the Preakness Stakes on May 16",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-020",
+  "proposition": "The race carried a $5 million purse.",
+  "label": "ENTAIL",
+  "evidence": "carried a $5 million purse",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-021",
+  "proposition": "Golden Tempo won by a length.",
+  "label": "CONTRADICT",
+  "evidence": "by a neck",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-022",
+  "proposition": "DeVaux is the first male trainer to win the Kentucky Derby.",
+  "label": "CONTRADICT",
+  "evidence": "the first female trainer to win the Kentucky Derby",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-023",
+  "proposition": "The race was held at Keeneland.",
+  "label": "CONTRADICT",
+  "evidence": "at Churchill Downs in Louisville",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-024",
+  "proposition": "The winner was the morning-line favorite.",
+  "label": "CONTRADICT",
+  "evidence": "to beat the morning-line favorite Renegade",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-025",
+  "proposition": "Renegade finished first.",
+  "label": "CONTRADICT",
+  "evidence": "finished second",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-026",
+  "proposition": "The field contained 20 horses.",
+  "label": "CONTRADICT",
+  "evidence": "in an 18-horse field",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-027",
+  "proposition": "DeVaux had won the Kentucky Derby before.",
+  "label": "CONTRADICT",
+  "evidence": "had never before saddled a Derby winner",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-028",
+  "proposition": "The race distance was 1.5 miles.",
+  "label": "CONTRADICT",
+  "evidence": "the 1.25-mile race",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-029",
+  "proposition": "Jena Antonucci won the 2024 Belmont.",
+  "label": "CONTRADICT",
+  "evidence": "won the 2023 Belmont with Arcangelo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-030",
+  "proposition": "The winner's share was $3.5 million.",
+  "label": "CONTRADICT",
+  "evidence": "$3.1 million winner's share",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-105-031",
+  "proposition": "Golden Tempo's sire is named in the race report.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not name the colt's sire or dam."
+ },
+ {
+  "id": "V2-105-032",
+  "proposition": "DeVaux's trainer license was suspended in 2020.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No information about DeVaux's licensing history is given."
+ },
+ {
+  "id": "V2-105-033",
+  "proposition": "The Derby was broadcast on ESPN.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast details are not stated."
+ },
+ {
+  "id": "V2-105-034",
+  "proposition": "The post time was 1:30 p.m.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not give a post time."
+ },
+ {
+  "id": "V2-105-035",
+  "proposition": "Ortiz received a winning purse bonus.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Jockey purse details are not mentioned."
+ },
+ {
+  "id": "V2-105-036",
+  "proposition": "The track was fast that day.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Track conditions are not described."
+ },
+ {
+  "id": "V2-105-037",
+  "proposition": "Golden Tempo will be retired after the Preakness.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Post-Preakness plans are not stated."
+ },
+ {
+  "id": "V2-105-038",
+  "proposition": "The Preakness takes place at Pimlico.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not name the Preakness venue."
+ },
+ {
+  "id": "V2-105-039",
+  "proposition": "DeVaux's stable contains 20 horses.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Stable size is not stated."
+ },
+ {
+  "id": "V2-105-040",
+  "proposition": "A photo finish decided the race.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The article does not mention a photo finish."
+ }
+]

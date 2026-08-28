@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-110-001",
+  "proposition": "Mette Frederiksen's bid to form a new government failed.",
+  "label": "ENTAIL",
+  "evidence": "to form a new government has failed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-002",
+  "proposition": "King Frederik X made the decision on Friday, May 8, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Friday, May 8, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-003",
+  "proposition": "The king asked Troels Lund Poulsen to lead negotiations.",
+  "label": "ENTAIL",
+  "evidence": "King Frederik X asked Troels Lund Poulsen",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-004",
+  "proposition": "Poulsen leads the Venstre party.",
+  "label": "ENTAIL",
+  "evidence": "the leader of the Venstre party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-005",
+  "proposition": "The new government will not include the Social Democrats or the Moderates.",
+  "label": "ENTAIL",
+  "evidence": "does not involve the participation of the Social Democrats or the Moderates",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-006",
+  "proposition": "Lars Løkke Rasmussen withdrew his support for the bid.",
+  "label": "ENTAIL",
+  "evidence": "Lars Løkke Rasmussen of the Moderates withdrew his support",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-007",
+  "proposition": "Løkke Rasmussen sits in the Moderates.",
+  "label": "ENTAIL",
+  "evidence": "Lars Løkke Rasmussen of the Moderates",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-008",
+  "proposition": "He did not want a government reliant on the Red-Green Alliance.",
+  "label": "ENTAIL",
+  "evidence": "did not want a government reliant on the backing of the Red-Green Alliance",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-009",
+  "proposition": "The March 24 election left the Social Democrats with a plurality.",
+  "label": "ENTAIL",
+  "evidence": "left the Social Democrats, who have governed since 2019, with a plurality",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-010",
+  "proposition": "The Social Democrats have governed since 2019.",
+  "label": "ENTAIL",
+  "evidence": "who have governed since 2019",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-011",
+  "proposition": "Twelve parties split the vote in the election.",
+  "label": "ENTAIL",
+  "evidence": "as 12 parties split the vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-012",
+  "proposition": "A King's Round was held at Amalienborg.",
+  "label": "ENTAIL",
+  "evidence": "A King's Round at Amalienborg",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-013",
+  "proposition": "The King's Round brought together the parties holding 87 seats.",
+  "label": "ENTAIL",
+  "evidence": "the parties holding 87 seats",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-014",
+  "proposition": "The parties recommended Poulsen.",
+  "label": "ENTAIL",
+  "evidence": "which recommended Poulsen",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-015",
+  "proposition": "Poulsen also serves as deputy prime minister.",
+  "label": "ENTAIL",
+  "evidence": "who also serves as deputy prime minister",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-016",
+  "proposition": "Frederiksen said a center-right government could well be formed.",
+  "label": "ENTAIL",
+  "evidence": "a center-right government could well be formed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-017",
+  "proposition": "The formation process came amid Greenland and US tensions.",
+  "label": "ENTAIL",
+  "evidence": "Greenland and US tensions in the Nordic region",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-018",
+  "proposition": "The process is on track to be the longest government-formation process in Danish history.",
+  "label": "ENTAIL",
+  "evidence": "the longest government-formation process in Danish history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-019",
+  "proposition": "Frederiksen is the prime minister of Denmark.",
+  "label": "ENTAIL",
+  "evidence": "Danish prime minister Mette Frederiksen",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-020",
+  "proposition": "The announcement was issued by the Royal Household.",
+  "label": "ENTAIL",
+  "evidence": "the Royal Household said",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-021",
+  "proposition": "The king asked a Social Democrat to form the government.",
+  "label": "CONTRADICT",
+  "evidence": "asked Troels Lund Poulsen, the leader of the Venstre party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-022",
+  "proposition": "The new government will include the Social Democrats.",
+  "label": "CONTRADICT",
+  "evidence": "does not involve the participation of the Social Democrats or the Moderates",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-023",
+  "proposition": "The March 24 election produced an outright majority.",
+  "label": "CONTRADICT",
+  "evidence": "a plurality but far short of a Folketing majority",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-024",
+  "proposition": "Eight parties split the vote.",
+  "label": "CONTRADICT",
+  "evidence": "as 12 parties split the vote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-025",
+  "proposition": "The King's Round brought together parties holding 107 seats.",
+  "label": "CONTRADICT",
+  "evidence": "the parties holding 87 seats",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-026",
+  "proposition": "Poulsen is not deputy prime minister.",
+  "label": "CONTRADICT",
+  "evidence": "who also serves as deputy prime minister",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-027",
+  "proposition": "Løkke Rasmussen backed the formation bid.",
+  "label": "CONTRADICT",
+  "evidence": "withdrew his support",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-028",
+  "proposition": "The process is on track to be the shortest in Danish history.",
+  "label": "CONTRADICT",
+  "evidence": "the longest government-formation process in Danish history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-029",
+  "proposition": "Frederiksen said a center-right government could not be formed.",
+  "label": "CONTRADICT",
+  "evidence": "a center-right government could well be formed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-030",
+  "proposition": "The king's decision was announced on May 10, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Friday, May 8, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-110-031",
+  "proposition": "The Social Democrats will have a supporting role in the new government.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The Social Democrats' role in the new government is not stated."
+ },
+ {
+  "id": "V2-110-032",
+  "proposition": "Løkke Rasmussen announced his own political plans.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No statement of his personal political plans is given."
+ },
+ {
+  "id": "V2-110-033",
+  "proposition": "The King's Round took place in Copenhagen.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Amalienborg is named but the city is not stated."
+ },
+ {
+  "id": "V2-110-034",
+  "proposition": "The Greenland tensions concern a US military base.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The nature of the Greenland-US tensions is not described."
+ },
+ {
+  "id": "V2-110-035",
+  "proposition": "Poulsen set a deadline for forming his government.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No deadline is given."
+ },
+ {
+  "id": "V2-110-036",
+  "proposition": "The Red-Green Alliance holds five seats.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Party seat counts are not stated."
+ },
+ {
+  "id": "V2-110-037",
+  "proposition": "Frederiksen will step down as party leader.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her leadership plans are not stated."
+ },
+ {
+  "id": "V2-110-038",
+  "proposition": "The Folketing has 179 seats.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The total seat count is not stated."
+ },
+ {
+  "id": "V2-110-039",
+  "proposition": "The Moderates will join Poulsen's government.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The Moderates' role is not stated."
+ },
+ {
+  "id": "V2-110-040",
+  "proposition": "The royal announcement was made at 3 p.m.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No time of the announcement is given."
+ }
+]

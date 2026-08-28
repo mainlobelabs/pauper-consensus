@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-123-001",
+  "proposition": "Bulgaria won the 70th Eurovision Song Contest.",
+  "label": "ENTAIL",
+  "evidence": "won the 70th Eurovision Song Contest",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-002",
+  "proposition": "The contest took place on Saturday, May 16, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Saturday, May 16, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-003",
+  "proposition": "The winning song is 'Bangaranga' by 27-year-old singer Dara.",
+  "label": "ENTAIL",
+  "evidence": "with the song \"Bangaranga\" by 27-year-old singer Dara",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-004",
+  "proposition": "The grand final took place at the Wiener Stadthalle in Vienna.",
+  "label": "ENTAIL",
+  "evidence": "at the Wiener Stadthalle in Vienna",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-005",
+  "proposition": "Bulgaria scored 516 points.",
+  "label": "ENTAIL",
+  "evidence": "with 516 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-006",
+  "proposition": "The act topped both the jury and the televote.",
+  "label": "ENTAIL",
+  "evidence": "topped both the jury and the televote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-007",
+  "proposition": "It is the first act to top both votes since 2017.",
+  "label": "ENTAIL",
+  "evidence": "the first to do so since 2017",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-008",
+  "proposition": "The 173-point margin over second place is the biggest in contest history.",
+  "label": "ENTAIL",
+  "evidence": "the biggest in the contest's history",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-009",
+  "proposition": "It is Bulgaria's first ever Eurovision win.",
+  "label": "ENTAIL",
+  "evidence": "It is Bulgaria's first ever Eurovision win",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-010",
+  "proposition": "Bulgaria's first participation was in 2005.",
+  "label": "ENTAIL",
+  "evidence": "its first participation in 2005",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-011",
+  "proposition": "Austria hosted after winning in 2025 with JJ.",
+  "label": "ENTAIL",
+  "evidence": "Austria hosted after winning in 2025 with JJ",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-012",
+  "proposition": "The show was presented by Victoria Swarovski and Michael Ostrowski.",
+  "label": "ENTAIL",
+  "evidence": "presented by Victoria Swarovski and Michael Ostrowski",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-013",
+  "proposition": "Israel's Noam Bittan performed 'Michelle' and finished second.",
+  "label": "ENTAIL",
+  "evidence": "Israel's Noam Bittan, performing \"Michelle",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-014",
+  "proposition": "Noam Bittan finished second with 343 points.",
+  "label": "ENTAIL",
+  "evidence": "finished second with 343 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-015",
+  "proposition": "The United Kingdom finished last with a null score.",
+  "label": "ENTAIL",
+  "evidence": "The United Kingdom finished last with a null score",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-016",
+  "proposition": "25 countries competed in the final judged by 35 juries.",
+  "label": "ENTAIL",
+  "evidence": "25 countries competed in the final judged by 35 juries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-017",
+  "proposition": "Israel's inclusion was controversial and some countries opted out of the vote.",
+  "label": "ENTAIL",
+  "evidence": "some countries opted out of the vote over it",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-018",
+  "proposition": "The song was written by Anne Judith Stokke Wik, Darina Yotova, Dimitris Kontopoulos, and Monoir.",
+  "label": "ENTAIL",
+  "evidence": "written by Anne Judith Stokke Wik, Darina Yotova, Dimitris Kontopoulos, and Monoir",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-019",
+  "proposition": "The 2027 contest will move to Bulgaria.",
+  "label": "ENTAIL",
+  "evidence": "The 2027 contest will move to Bulgaria",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-020",
+  "proposition": "BNT is returning after sitting out 2023 to 2025.",
+  "label": "ENTAIL",
+  "evidence": "broadcaster BNT returning after sitting out 2023 to 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-021",
+  "proposition": "Bulgaria had won Eurovision before 2026.",
+  "label": "CONTRADICT",
+  "evidence": "It is Bulgaria's first ever Eurovision win",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-022",
+  "proposition": "The grand final took place at the Malmö Arena.",
+  "label": "CONTRADICT",
+  "evidence": "at the Wiener Stadthalle in Vienna",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-023",
+  "proposition": "Bulgaria scored 416 points.",
+  "label": "CONTRADICT",
+  "evidence": "with 516 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-024",
+  "proposition": "The act topped the televote but lost the jury vote.",
+  "label": "CONTRADICT",
+  "evidence": "topped both the jury and the televote",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-025",
+  "proposition": "The winning margin was 103 points.",
+  "label": "CONTRADICT",
+  "evidence": "173-point margin",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-026",
+  "proposition": "Bulgaria first participated in 1998.",
+  "label": "CONTRADICT",
+  "evidence": "its first participation in 2005",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-027",
+  "proposition": "15 countries competed in the final.",
+  "label": "CONTRADICT",
+  "evidence": "25 countries competed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-028",
+  "proposition": "The United Kingdom finished third.",
+  "label": "CONTRADICT",
+  "evidence": "finished last with a null score",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-029",
+  "proposition": "Noam Bittan finished first with 516 points.",
+  "label": "CONTRADICT",
+  "evidence": "finished second with 343 points",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-030",
+  "proposition": "The 2027 contest will be held in Austria.",
+  "label": "CONTRADICT",
+  "evidence": "The 2027 contest will move to Bulgaria",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-123-031",
+  "proposition": "Dara's full name was announced by the broadcaster.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Only the name Dara is given."
+ },
+ {
+  "id": "V2-123-032",
+  "proposition": "The song 'Bangaranga' was released in February 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The release date is not stated."
+ },
+ {
+  "id": "V2-123-033",
+  "proposition": "The winning performance included backing dancers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Staging details are not described."
+ },
+ {
+  "id": "V2-123-034",
+  "proposition": "The 100-point margin in 2024 was the previous record.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Other years' margins are not given."
+ },
+ {
+  "id": "V2-123-035",
+  "proposition": "Bulgaria's jury score was 100 points.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The jury/televote split is not broken out."
+ },
+ {
+  "id": "V2-123-036",
+  "proposition": "BNT's 2027 budget was approved in April.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Not mentioned."
+ },
+ {
+  "id": "V2-123-037",
+  "proposition": "Victoria Swarovski presented an earlier contest.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Prior presentation history is not stated."
+ },
+ {
+  "id": "V2-123-038",
+  "proposition": "The 2026 final was broadcast in 192 countries.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Broadcast reach is not stated."
+ },
+ {
+  "id": "V2-123-039",
+  "proposition": "The 2025 contest had 24 entries.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The 2025 field size is not stated."
+ },
+ {
+  "id": "V2-123-040",
+  "proposition": "'Bangaranga' reached 10 million video views.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Streaming figures are absent."
+ }
+]

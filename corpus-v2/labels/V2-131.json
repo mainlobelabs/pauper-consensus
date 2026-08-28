@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-131-001",
+  "proposition": "Aston Villa defeated SC Freiburg 3-0.",
+  "label": "ENTAIL",
+  "evidence": "Aston Villa defeated SC Freiburg 3-0",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-002",
+  "proposition": "The final was played at Beşiktaş Stadium in Istanbul.",
+  "label": "ENTAIL",
+  "evidence": "at Beşiktaş Stadium in Istanbul",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-003",
+  "proposition": "The match took place on Wednesday, May 20, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Wednesday, May 20, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-004",
+  "proposition": "It is Villa's first UEFA Europa League title.",
+  "label": "ENTAIL",
+  "evidence": "their first UEFA Europa League title",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-005",
+  "proposition": "It is Villa's second European title after the 1982 European Cup final.",
+  "label": "ENTAIL",
+  "evidence": "second European title after the 1982 European Cup final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-006",
+  "proposition": "The kickoff was at 8 p.m. local time.",
+  "label": "ENTAIL",
+  "evidence": "At the 8 p.m. local kickoff",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-007",
+  "proposition": "Youri Tielemans opened the scoring in the 41st minute with a volley off a Morgan Rogers cross.",
+  "label": "ENTAIL",
+  "evidence": "Youri Tielemans opened the scoring in the 41st minute with a volley off a Morgan Rogers cross",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-008",
+  "proposition": "Emiliano Buendía added a curler at the end of the first half.",
+  "label": "ENTAIL",
+  "evidence": "Emiliano Buendía added a curler at the end of the first half",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-009",
+  "proposition": "Morgan Rogers tapped in in the 58th minute.",
+  "label": "ENTAIL",
+  "evidence": "Rogers tapped in in the 58th minute",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-010",
+  "proposition": "Captain John McGinn lifted the trophy.",
+  "label": "ENTAIL",
+  "evidence": "Captain John McGinn lifted the trophy",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-011",
+  "proposition": "It is Villa's first major European trophy in 44 years.",
+  "label": "ENTAIL",
+  "evidence": "first major European trophy in 44 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-012",
+  "proposition": "The win ends the club's 30-year trophy drought.",
+  "label": "ENTAIL",
+  "evidence": "ends the club's 30-year trophy drought",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-013",
+  "proposition": "Prince William watched the final.",
+  "label": "ENTAIL",
+  "evidence": "Prince William watched the final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-014",
+  "proposition": "Nine players from the 1982 European Cup-winning team attended.",
+  "label": "ENTAIL",
+  "evidence": "nine players from the 1982 European Cup-winning team attended",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-015",
+  "proposition": "Onana hit the post.",
+  "label": "ENTAIL",
+  "evidence": "Onana hit the post",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-016",
+  "proposition": "Ollie Watkins was on the bench.",
+  "label": "ENTAIL",
+  "evidence": "Ollie Watkins was on the bench",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-017",
+  "proposition": "Unai Emery won his fifth European competition as a manager across four clubs.",
+  "label": "ENTAIL",
+  "evidence": "won his fifth European competition as a manager across four clubs",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-018",
+  "proposition": "Buendía was named player of the match.",
+  "label": "ENTAIL",
+  "evidence": "was named player of the match",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-019",
+  "proposition": "Freiburg was making its first European final.",
+  "label": "ENTAIL",
+  "evidence": "Freiburg, making its first European final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-020",
+  "proposition": "Villa celebrated with an open-top bus parade in Birmingham.",
+  "label": "ENTAIL",
+  "evidence": "celebrated with an open-top bus parade in Birmingham",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-021",
+  "proposition": "Aston Villa won the final 4-0.",
+  "label": "CONTRADICT",
+  "evidence": "defeated SC Freiburg 3-0",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-022",
+  "proposition": "The final was played in Munich.",
+  "label": "CONTRADICT",
+  "evidence": "in Istanbul",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-023",
+  "proposition": "It was Villa's second UEFA Europa League title.",
+  "label": "CONTRADICT",
+  "evidence": "their first UEFA Europa League title",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-024",
+  "proposition": "Tielemans opened the scoring in the 11th minute.",
+  "label": "CONTRADICT",
+  "evidence": "in the 41st minute",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-025",
+  "proposition": "Buendía scored in the second half.",
+  "label": "CONTRADICT",
+  "evidence": "at the end of the first half",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-026",
+  "proposition": "John McGinn scored the final goal.",
+  "label": "CONTRADICT",
+  "evidence": "Rogers tapped in in the 58th minute",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-027",
+  "proposition": "It is Villa's first major European trophy in 64 years.",
+  "label": "CONTRADICT",
+  "evidence": "first major European trophy in 44 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-028",
+  "proposition": "Prince Harry watched the final.",
+  "label": "CONTRADICT",
+  "evidence": "Prince William watched the final",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-029",
+  "proposition": "Emery won his third European competition as a manager.",
+  "label": "CONTRADICT",
+  "evidence": "his fifth European competition",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-030",
+  "proposition": "Freiburg advances to the Champions League.",
+  "label": "CONTRADICT",
+  "evidence": "drops into Conference League qualifying",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-131-031",
+  "proposition": "The final attendance was 42,000.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Attendance is not stated."
+ },
+ {
+  "id": "V2-131-032",
+  "proposition": "The final was broadcast by Sky Sports.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The broadcaster is not named."
+ },
+ {
+  "id": "V2-131-033",
+  "proposition": "Tielemans's volley was Villa's first goal of the tournament.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The tournament scoring record is not given."
+ },
+ {
+  "id": "V2-131-034",
+  "proposition": "Watkins scored 12 goals in the competition.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Watkins's tournament statistics are not given."
+ },
+ {
+  "id": "V2-131-035",
+  "proposition": "Emery's four clubs include Barcelona.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The four clubs are not named."
+ },
+ {
+  "id": "V2-131-036",
+  "proposition": "The trophy weighs five kilograms.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Not stated."
+ },
+ {
+  "id": "V2-131-037",
+  "proposition": "The bus parade took place on Sunday.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The parade date is not given."
+ },
+ {
+  "id": "V2-131-038",
+  "proposition": "Freiburg's Conference League qualifying begins July 10.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The qualifying date is not given."
+ },
+ {
+  "id": "V2-131-039",
+  "proposition": "The captain of the 1982 team attended.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Which 1982 players attended is not named."
+ },
+ {
+  "id": "V2-131-040",
+  "proposition": "Villa's shirt sponsor paid a winning bonus.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Not mentioned."
+ }
+]

@@ -1,0 +1,282 @@
+[
+ {
+  "id": "R17-001",
+  "proposition": "Philippine senators made the announcement on Thursday, May 14, 2026.",
+  "label": "ENTAIL",
+  "evidence": "Philippine senators announced on Thursday, May 14, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-002",
+  "proposition": "The announcement concerned senator Ronald dela Rosa, 64.",
+  "label": "ENTAIL",
+  "evidence": "senator Ronald dela Rosa, 64",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-003",
+  "proposition": "Dela Rosa has an arrest warrant from the International Criminal Court.",
+  "label": "ENTAIL",
+  "evidence": "an arrest warrant from the International Criminal Court",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-004",
+  "proposition": "The warrant is for alleged crimes against humanity related to the drug war.",
+  "label": "ENTAIL",
+  "evidence": "for alleged crimes against humanity related to the drug war",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-005",
+  "proposition": "Dela Rosa left the Senate building at 2:30 a.m.",
+  "label": "ENTAIL",
+  "evidence": "left the Senate building at 2:30 a.m.",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-006",
+  "proposition": "Gunshots had been heard the previous evening.",
+  "label": "ENTAIL",
+  "evidence": "hours after gunshots were heard the previous evening",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-007",
+  "proposition": "He left with senator Robin Padilla.",
+  "label": "ENTAIL",
+  "evidence": "He left with senator Robin Padilla",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-008",
+  "proposition": "Dela Rosa is a former national police chief.",
+  "label": "ENTAIL",
+  "evidence": "a former national police chief",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-009",
+  "proposition": "He had been under Senate protective custody since May 11.",
+  "label": "ENTAIL",
+  "evidence": "under Senate protective custody since May 11",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-010",
+  "proposition": "Allied senators took him in when NBI agents tried to serve the ICC warrant.",
+  "label": "ENTAIL",
+  "evidence": "being taken in by allied senators when NBI agents tried to serve the ICC warrant",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-011",
+  "proposition": "The warrant is dated November 2025.",
+  "label": "ENTAIL",
+  "evidence": "The warrant, dated November 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-012",
+  "proposition": "The warrant covers the murder of no fewer than 32 persons.",
+  "label": "ENTAIL",
+  "evidence": "covers the murder of no fewer than 32 persons",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-013",
+  "proposition": "The covered killings occurred between July 2016 and April 2018.",
+  "label": "ENTAIL",
+  "evidence": "between July 2016 and April 2018",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-014",
+  "proposition": "Senate president Alan Peter Cayetano said dela Rosa chose to leave.",
+  "label": "ENTAIL",
+  "evidence": "Cayetano said dela Rosa chose to leave",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-015",
+  "proposition": "No ICC warrant was ever presented to the Senate.",
+  "label": "ENTAIL",
+  "evidence": "no ICC warrant was ever presented to the Senate",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-016",
+  "proposition": "The sergeant-at-arms fired a warning shot at an NBI agent in the adjacent GSIS building.",
+  "label": "ENTAIL",
+  "evidence": "the sergeant-at-arms fired a warning shot at an NBI agent in the adjacent GSIS building",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-017",
+  "proposition": "Police are investigating whether the shooting was staged as a diversion.",
+  "label": "ENTAIL",
+  "evidence": "was staged as a diversion",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-018",
+  "proposition": "President Marcos Jr. made a late-night television statement.",
+  "label": "ENTAIL",
+  "evidence": "President Marcos Jr. made a late-night television statement",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-019",
+  "proposition": "Ex-president Duterte was arrested in March 2025 and awaits trial at The Hague.",
+  "label": "ENTAIL",
+  "evidence": "Ex-president Duterte was arrested in March 2025 and awaits trial at The Hague",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-020",
+  "proposition": "There was no record of dela Rosa leaving the country.",
+  "label": "ENTAIL",
+  "evidence": "there was no record of dela Rosa leaving the country",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-021",
+  "proposition": "The senators made the announcement on Friday, May 15, 2026.",
+  "label": "CONTRADICT",
+  "evidence": "on Thursday, May 14, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-022",
+  "proposition": "Dela Rosa is 74 years old.",
+  "label": "CONTRADICT",
+  "evidence": "Ronald dela Rosa, 64",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-023",
+  "proposition": "Dela Rosa left the Senate building at 2:30 p.m.",
+  "label": "CONTRADICT",
+  "evidence": "at 2:30 a.m.",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-024",
+  "proposition": "He left with senator Panfilo Lacson.",
+  "label": "CONTRADICT",
+  "evidence": "He left with senator Robin Padilla",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-025",
+  "proposition": "He had been under Senate protective custody since May 1.",
+  "label": "CONTRADICT",
+  "evidence": "since May 11",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-026",
+  "proposition": "The warrant is dated May 2026.",
+  "label": "CONTRADICT",
+  "evidence": "dated November 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-027",
+  "proposition": "The warrant covers the murder of no fewer than 320 persons.",
+  "label": "CONTRADICT",
+  "evidence": "no fewer than 32 persons",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-028",
+  "proposition": "Cayetano said dela Rosa was removed by police.",
+  "label": "CONTRADICT",
+  "evidence": "Cayetano said dela Rosa chose to leave",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-029",
+  "proposition": "The ICC warrant was presented to the Senate.",
+  "label": "CONTRADICT",
+  "evidence": "no ICC warrant was ever presented to the Senate",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-030",
+  "proposition": "Ex-president Duterte was arrested in March 2026.",
+  "label": "CONTRADICT",
+  "evidence": "arrested in March 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "R17-031",
+  "proposition": "Dela Rosa departed the country on a military plane.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The departure details are not stated."
+ },
+ {
+  "id": "R17-032",
+  "proposition": "The gunshots were heard at 9 p.m.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The shooting time is not stated."
+ },
+ {
+  "id": "R17-033",
+  "proposition": "Two NBI agents were injured in the shooting.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Injuries are not described."
+ },
+ {
+  "id": "R17-034",
+  "proposition": "Dela Rosa's family issued a statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A family statement is not mentioned."
+ },
+ {
+  "id": "R17-035",
+  "proposition": "The Senate invoked its privilege clause after the shooting.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A privilege invocation is not mentioned."
+ },
+ {
+  "id": "R17-036",
+  "proposition": "Robin Padilla filed a bill on dela Rosa's behalf.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Padilla's subsequent actions are not stated."
+ },
+ {
+  "id": "R17-037",
+  "proposition": "The ICC warrant lists 40 named victims.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Named victims are not listed."
+ },
+ {
+  "id": "R17-038",
+  "proposition": "Marcos Jr. called for calm in his statement.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The statement's contents are not described."
+ },
+ {
+  "id": "R17-039",
+  "proposition": "Duterte's trial at The Hague will begin in 2027.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The trial date is not set."
+ },
+ {
+  "id": "R17-040",
+  "proposition": "Dela Rosa's Senate seat will be filled by a special election.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The seat's future is not stated."
+ }
+]

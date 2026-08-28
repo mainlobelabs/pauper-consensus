@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-139-001",
+  "proposition": "Senegalese president Bassirou Diomaye Faye made the appointment.",
+  "label": "ENTAIL",
+  "evidence": "president Bassirou Diomaye Faye",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-002",
+  "proposition": "Faye appointed economist Ahmadou Al Aminou Lo as prime minister.",
+  "label": "ENTAIL",
+  "evidence": "appointed economist Ahmadou Al Aminou Lo as prime minister",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-003",
+  "proposition": "The appointment was on Monday, May 25, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Monday, May 25, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-004",
+  "proposition": "Lo replaces Ousmane Sonko, whom Faye dismissed on May 22.",
+  "label": "ENTAIL",
+  "evidence": "replacing Ousmane Sonko, whom Faye dismissed on May 22",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-005",
+  "proposition": "The decree was read on national television.",
+  "label": "ENTAIL",
+  "evidence": "The decree, read on national television",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-006",
+  "proposition": "The decree ended the duties of Sonko and all ministers and dissolved the government.",
+  "label": "ENTAIL",
+  "evidence": "ended the duties of Sonko and all ministers and dissolved the government",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-007",
+  "proposition": "Lo formerly headed the West African central bank's Senegal branch.",
+  "label": "ENTAIL",
+  "evidence": "who formerly headed the West African central bank's Senegal branch",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-008",
+  "proposition": "Lo must form a new government for parliament to approve within three months.",
+  "label": "ENTAIL",
+  "evidence": "must form a new government for parliament to approve within three months",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-009",
+  "proposition": "The president cannot dissolve parliament until November.",
+  "label": "ENTAIL",
+  "evidence": "the president cannot dissolve parliament until November",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-010",
+  "proposition": "Faye and Sonko were former allies in the PASTEF party.",
+  "label": "ENTAIL",
+  "evidence": "Faye and Sonko were former allies in the PASTEF party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-011",
+  "proposition": "Months of open disagreements preceded the sacking.",
+  "label": "ENTAIL",
+  "evidence": "preceded the sacking",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-012",
+  "proposition": "The disagreements included IMF loan negotiations and the country's debt crisis.",
+  "label": "ENTAIL",
+  "evidence": "over IMF loan negotiations and the country's debt crisis",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-013",
+  "proposition": "Faye criticized Sonko's excessive personalisation of the party.",
+  "label": "ENTAIL",
+  "evidence": "Faye criticized Sonko's excessive personalisation of the party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-014",
+  "proposition": "Sonko accused Faye of a failure of leadership.",
+  "label": "ENTAIL",
+  "evidence": "Sonko accused him of a failure of leadership",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-015",
+  "proposition": "The opposition likened the dismissal to a coup.",
+  "label": "ENTAIL",
+  "evidence": "The opposition likened the dismissal to a coup",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-016",
+  "proposition": "Sonko was barred from the 2024 presidential run over a defamation conviction.",
+  "label": "ENTAIL",
+  "evidence": "who was barred from the 2024 presidential run over a defamation conviction",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-017",
+  "proposition": "Sonko was made prime minister in April 2024 after Faye ran in his stead.",
+  "label": "ENTAIL",
+  "evidence": "was made prime minister in April 2024 after Faye ran in his stead",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-018",
+  "proposition": "Sonko had warned in March that his party could go into opposition.",
+  "label": "ENTAIL",
+  "evidence": "had warned in March that his party could go into opposition if Faye strayed from the campaign agenda",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-019",
+  "proposition": "On Tuesday, May 26, parliament voted on Sonko's reinstatement as deputy speaker.",
+  "label": "ENTAIL",
+  "evidence": "On Tuesday, May 26, parliament voted on Sonko's reinstatement as deputy speaker",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-020",
+  "proposition": "The same parliamentary session covered a new speaker.",
+  "label": "ENTAIL",
+  "evidence": "and a new speaker",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-021",
+  "proposition": "Faye appointed the new prime minister on Wednesday, May 27.",
+  "label": "CONTRADICT",
+  "evidence": "on Monday, May 25, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-022",
+  "proposition": "Sonko was dismissed on May 29.",
+  "label": "CONTRADICT",
+  "evidence": "dismissed on May 22",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-023",
+  "proposition": "Lo formerly headed the country's commercial bank.",
+  "label": "CONTRADICT",
+  "evidence": "the West African central bank's Senegal branch",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-024",
+  "proposition": "The new government must be approved within one month.",
+  "label": "CONTRADICT",
+  "evidence": "within three months",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-025",
+  "proposition": "The president can dissolve parliament at any time.",
+  "label": "CONTRADICT",
+  "evidence": "cannot dissolve parliament until November",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-026",
+  "proposition": "Faye and Sonko were former rivals in the opposition.",
+  "label": "CONTRADICT",
+  "evidence": "former allies in the PASTEF party",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-027",
+  "proposition": "Sonko was barred from the 2024 run over a tax conviction.",
+  "label": "CONTRADICT",
+  "evidence": "over a defamation conviction",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-028",
+  "proposition": "Sonko was made prime minister in April 2025.",
+  "label": "CONTRADICT",
+  "evidence": "in April 2024",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-029",
+  "proposition": "The opposition welcomed the dismissal as a correction.",
+  "label": "CONTRADICT",
+  "evidence": "likened the dismissal to a coup",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-030",
+  "proposition": "Parliament voted on Sonko's reinstatement on Thursday, May 28.",
+  "label": "CONTRADICT",
+  "evidence": "On Tuesday, May 26",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-139-031",
+  "proposition": "Lo's new cabinet has 14 ministers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The cabinet size is not stated."
+ },
+ {
+  "id": "V2-139-032",
+  "proposition": "The decree was signed at the presidential palace.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The signing location is not stated."
+ },
+ {
+  "id": "V2-139-033",
+  "proposition": "Sonko's defamation conviction was for a 2023 speech.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The conviction details are not given."
+ },
+ {
+  "id": "V2-139-034",
+  "proposition": "Faye ran in the 2024 presidential election in February 2024.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The election date is not given."
+ },
+ {
+  "id": "V2-139-035",
+  "proposition": "The Senegalese parliament has 171 members.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The parliament size is not stated."
+ },
+ {
+  "id": "V2-139-036",
+  "proposition": "The IMF loan under negotiation is $400 million.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The loan amount is not stated."
+ },
+ {
+  "id": "V2-139-037",
+  "proposition": "The reinstatement vote passed.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The vote result is not stated."
+ },
+ {
+  "id": "V2-139-038",
+  "proposition": "The new speaker was elected without opposition.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The speaker vote details are not stated."
+ },
+ {
+  "id": "V2-139-039",
+  "proposition": "Lo has ten years of economics experience.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "His tenure is not stated."
+ },
+ {
+  "id": "V2-139-040",
+  "proposition": "The government dissolution took effect at midnight.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The effective time is not stated."
+ }
+]

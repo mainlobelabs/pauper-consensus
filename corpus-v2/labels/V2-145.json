@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-145-001",
+  "proposition": "Sudan held the emergency meeting.",
+  "label": "ENTAIL",
+  "evidence": "Sudan held an emergency meeting",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-002",
+  "proposition": "The meeting was led by Health Minister Haitham Mohamed Ibrahim.",
+  "label": "ENTAIL",
+  "evidence": "led by Health Minister Haitham Mohamed Ibrahim",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-003",
+  "proposition": "The meeting took place on Sunday, May 31, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Sunday, May 31, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-004",
+  "proposition": "The Federal Ministry of Health reported 308 cholera cases.",
+  "label": "ENTAIL",
+  "evidence": "reported 308 cholera cases",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-005",
+  "proposition": "The ministry reported 77 deaths in West Kordofan.",
+  "label": "ENTAIL",
+  "evidence": "and 77 deaths in West Kordofan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-006",
+  "proposition": "The coordination meeting was held in Khartoum.",
+  "label": "ENTAIL",
+  "evidence": "The coordination meeting in Khartoum",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-007",
+  "proposition": "The meeting reviewed the cholera situation and preparedness for a potential Ebola outbreak.",
+  "label": "ENTAIL",
+  "evidence": "reviewed the cholera situation and preparedness for a potential Ebola outbreak",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-008",
+  "proposition": "Ebola has emerged in several African countries.",
+  "label": "ENTAIL",
+  "evidence": "which has emerged in several African countries",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-009",
+  "proposition": "The minister said 99 people had recovered.",
+  "label": "ENTAIL",
+  "evidence": "99 people had recovered",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-010",
+  "proposition": "32 people were under treatment in stable condition.",
+  "label": "ENTAIL",
+  "evidence": "32 were under treatment in stable condition",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-011",
+  "proposition": "The outbreak is concentrated in the El Nuhud locality.",
+  "label": "ENTAIL",
+  "evidence": "concentrated in the El Nuhud locality",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-012",
+  "proposition": "215 cases were recorded in El Nuhud.",
+  "label": "ENTAIL",
+  "evidence": "where 215 cases were recorded",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-013",
+  "proposition": "The outbreak also affects the gold-mining town of Fuga.",
+  "label": "ENTAIL",
+  "evidence": "the gold-mining town of Fuga",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-014",
+  "proposition": "Fuga is experiencing its third consecutive May outbreak.",
+  "label": "ENTAIL",
+  "evidence": "the third consecutive May outbreak",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-015",
+  "proposition": "The Fuga outbreak has been linked to water scarcity and an influx of displaced people.",
+  "label": "ENTAIL",
+  "evidence": "linked to water scarcity and an influx of displaced people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-016",
+  "proposition": "The ministry ordered needs assessments and the transport of medical supplies.",
+  "label": "ENTAIL",
+  "evidence": "ordered needs assessments and the transport of medical supplies",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-017",
+  "proposition": "Vaccination and chlorination are under way.",
+  "label": "ENTAIL",
+  "evidence": "vaccination and chlorination under way",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-018",
+  "proposition": "Local records suggest 80 to 150 deaths since mid-May.",
+  "label": "ENTAIL",
+  "evidence": "Local records suggest 80 to 150 deaths since mid-May",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-019",
+  "proposition": "The UN confirmed more than 300 suspected cases and 77 deaths for May and June.",
+  "label": "ENTAIL",
+  "evidence": "the UN confirmed more than 300 suspected cases and 77 deaths for May and June",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-020",
+  "proposition": "Sudan is in its fourth year of civil war.",
+  "label": "ENTAIL",
+  "evidence": "its fourth year of civil war",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-021",
+  "proposition": "The meeting was led by the defence minister.",
+  "label": "CONTRADICT",
+  "evidence": "led by Health Minister Haitham Mohamed Ibrahim",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-022",
+  "proposition": "The ministry reported 38 cholera cases.",
+  "label": "CONTRADICT",
+  "evidence": "308 cholera cases",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-023",
+  "proposition": "There were 17 deaths in West Kordofan.",
+  "label": "CONTRADICT",
+  "evidence": "77 deaths in West Kordofan",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-024",
+  "proposition": "The coordination meeting was held in Port Sudan.",
+  "label": "CONTRADICT",
+  "evidence": "in Khartoum",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-025",
+  "proposition": "The minister said 199 people had recovered.",
+  "label": "CONTRADICT",
+  "evidence": "99 people had recovered",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-026",
+  "proposition": "320 people were under treatment.",
+  "label": "CONTRADICT",
+  "evidence": "32 were under treatment",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-027",
+  "proposition": "The outbreak is concentrated in the El Fasher locality.",
+  "label": "CONTRADICT",
+  "evidence": "in the El Nuhud locality",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-028",
+  "proposition": "Fuga is experiencing its first May outbreak.",
+  "label": "CONTRADICT",
+  "evidence": "the third consecutive May outbreak",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-029",
+  "proposition": "Local records suggest 5 to 10 deaths since mid-May.",
+  "label": "CONTRADICT",
+  "evidence": "80 to 150 deaths since mid-May",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-030",
+  "proposition": "Sudan is in its second year of civil war.",
+  "label": "CONTRADICT",
+  "evidence": "its fourth year of civil war",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-145-031",
+  "proposition": "The meeting lasted three hours.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The duration is not stated."
+ },
+ {
+  "id": "V2-145-032",
+  "proposition": "The UN team arrived in Khartoum on May 30.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The UN arrival date is not stated."
+ },
+ {
+  "id": "V2-145-033",
+  "proposition": "The vaccination campaign targets 50,000 people.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The coverage target is not stated."
+ },
+ {
+  "id": "V2-145-034",
+  "proposition": "The cholera outbreak began in April.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The start date is not given."
+ },
+ {
+  "id": "V2-145-035",
+  "proposition": "The water scarcity is caused by dam maintenance.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The cause of the scarcity is not stated."
+ },
+ {
+  "id": "V2-145-036",
+  "proposition": "The displaced people are from Darfur.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Their origin is not stated."
+ },
+ {
+  "id": "V2-145-037",
+  "proposition": "The ministry set up three field hospitals.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Field hospitals are not mentioned."
+ },
+ {
+  "id": "V2-145-038",
+  "proposition": "The chlorine supply comes from Egypt.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The supply source is not stated."
+ },
+ {
+  "id": "V2-145-039",
+  "proposition": "The minister announced a curfew in Fuga.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A curfew is not mentioned."
+ },
+ {
+  "id": "V2-145-040",
+  "proposition": "The WHO declared a state of international emergency.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "A WHO declaration is not mentioned."
+ }
+]

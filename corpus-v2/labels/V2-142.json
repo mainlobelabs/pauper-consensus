@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-142-001",
+  "proposition": "The Melbourne Magistrates' Court brought the charges.",
+  "label": "ENTAIL",
+  "evidence": "The Melbourne Magistrates' Court",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-002",
+  "proposition": "The charges were brought on Thursday, May 28, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Thursday, May 28, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-003",
+  "proposition": "The court charged 34-year-old Rayann El Houli.",
+  "label": "ENTAIL",
+  "evidence": "charged 34-year-old Rayann El Houli",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-004",
+  "proposition": "El Houli recently returned from Syria.",
+  "label": "ENTAIL",
+  "evidence": "who recently returned from Syria",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-005",
+  "proposition": "She faced a charge of being a member of a terrorist organisation.",
+  "label": "ENTAIL",
+  "evidence": "for being a member of a terrorist organisation",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-006",
+  "proposition": "She joined the Islamic State in the early 2010s.",
+  "label": "ENTAIL",
+  "evidence": "after joining the Islamic State in the early 2010s",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-007",
+  "proposition": "She is a Melbourne mother of four.",
+  "label": "ENTAIL",
+  "evidence": "The Melbourne mother of four",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-008",
+  "proposition": "She also faced a charge of entering and remaining in a declared area.",
+  "label": "ENTAIL",
+  "evidence": "a charge of entering and remaining in a declared area",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-009",
+  "proposition": "Each charge carries a maximum of 10 years.",
+  "label": "ENTAIL",
+  "evidence": "each carrying a maximum of 10 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-010",
+  "proposition": "Police allege she travelled to Raqqa, Syria, between 2013 and 2014.",
+  "label": "ENTAIL",
+  "evidence": "travelled to Raqqa, Syria, between 2013 and 2014",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-011",
+  "proposition": "She was detained by Kurdish forces in March 2019.",
+  "label": "ENTAIL",
+  "evidence": "was detained by Kurdish forces in March 2019",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-012",
+  "proposition": "She was held with her family in the al-Hawl camp in north-east Syria.",
+  "label": "ENTAIL",
+  "evidence": "was held with her family in the al-Hawl camp in north-east Syria",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-013",
+  "proposition": "She returned to Australia via Lebanon in September 2025.",
+  "label": "ENTAIL",
+  "evidence": "returning to Australia via Lebanon in September 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-014",
+  "proposition": "She was arrested at her Melbourne home about eight months later.",
+  "label": "ENTAIL",
+  "evidence": "arrested at her Melbourne home about eight months later",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-015",
+  "proposition": "She had been interviewed by police in April.",
+  "label": "ENTAIL",
+  "evidence": "after being interviewed by police in April",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-016",
+  "proposition": "The charges were brought under Operation Kurrajong.",
+  "label": "ENTAIL",
+  "evidence": "The charges were brought under Operation Kurrajong",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-017",
+  "proposition": "Operation Kurrajong is the joint AFP-ASIO effort on returned residents.",
+  "label": "ENTAIL",
+  "evidence": "the joint AFP-ASIO effort on returned residents",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-018",
+  "proposition": "El Houli appeared in court in a black niqab and was remanded in custody.",
+  "label": "ENTAIL",
+  "evidence": "appeared in court in a black niqab and was remanded in custody",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-019",
+  "proposition": "A bail application is set for Monday, June 1.",
+  "label": "ENTAIL",
+  "evidence": "a bail application set for Monday, June 1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-020",
+  "proposition": "The prosecution presented an 18-page evidence summary and short videos.",
+  "label": "ENTAIL",
+  "evidence": "The prosecution presented an 18-page evidence summary and short videos",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-021",
+  "proposition": "El Houli is 44 years old.",
+  "label": "CONTRADICT",
+  "evidence": "34-year-old Rayann El Houli",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-022",
+  "proposition": "She joined the Islamic State in the late 2010s.",
+  "label": "CONTRADICT",
+  "evidence": "in the early 2010s",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-023",
+  "proposition": "She is a mother of two.",
+  "label": "CONTRADICT",
+  "evidence": "mother of four",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-024",
+  "proposition": "Each charge carries a maximum of 15 years.",
+  "label": "CONTRADICT",
+  "evidence": "a maximum of 10 years",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-025",
+  "proposition": "She travelled to Raqqa between 2015 and 2016.",
+  "label": "CONTRADICT",
+  "evidence": "between 2013 and 2014",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-026",
+  "proposition": "She was detained by Kurdish forces in March 2020.",
+  "label": "CONTRADICT",
+  "evidence": "in March 2019",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-027",
+  "proposition": "She was held in the al-Roj camp.",
+  "label": "CONTRADICT",
+  "evidence": "in the al-Hawl camp",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-028",
+  "proposition": "She returned to Australia in March 2025.",
+  "label": "CONTRADICT",
+  "evidence": "in September 2025",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-029",
+  "proposition": "The bail application is set for Wednesday, June 10.",
+  "label": "CONTRADICT",
+  "evidence": "for Monday, June 1",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-030",
+  "proposition": "Since 2019, fifteen people have been charged over Islamic State links.",
+  "label": "CONTRADICT",
+  "evidence": "ten people",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-142-031",
+  "proposition": "El Houli was born in Syria.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her birthplace is not stated."
+ },
+ {
+  "id": "V2-142-032",
+  "proposition": "Her four children are all Australian citizens.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The children's citizenship is not stated."
+ },
+ {
+  "id": "V2-142-033",
+  "proposition": "She worked as a teacher in Raqqa.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her occupation in Syria is not stated."
+ },
+ {
+  "id": "V2-142-034",
+  "proposition": "The 18-page summary includes three witness statements.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The summary's contents are not detailed."
+ },
+ {
+  "id": "V2-142-035",
+  "proposition": "Her lawyer filed the bail application.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her representation is not stated."
+ },
+ {
+  "id": "V2-142-036",
+  "proposition": "The exact date of her arrest is in May 2026.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The exact arrest date is not stated."
+ },
+ {
+  "id": "V2-142-037",
+  "proposition": "The al-Hawl camp held 20,000 people.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The camp population is not stated."
+ },
+ {
+  "id": "V2-142-038",
+  "proposition": "The other woman charged at Sydney Airport faces the same offences.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Her charges are not described."
+ },
+ {
+  "id": "V2-142-039",
+  "proposition": "El Houli's next court appearance is set for August.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The next hearing is not set."
+ },
+ {
+  "id": "V2-142-040",
+  "proposition": "Operation Kurrajong began in 2024.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The operation's start date is not stated."
+ }
+]

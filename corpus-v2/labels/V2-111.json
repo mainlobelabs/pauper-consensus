@@ -1,0 +1,282 @@
+[
+ {
+  "id": "V2-111-001",
+  "proposition": "The aircraft involved was a Frontier Airlines Airbus A321neo.",
+  "label": "ENTAIL",
+  "evidence": "A Frontier Airlines Airbus A321neo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-002",
+  "proposition": "The strike killed one person.",
+  "label": "ENTAIL",
+  "evidence": "struck and killed a person",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-003",
+  "proposition": "The accident happened while taking off from Denver International Airport.",
+  "label": "ENTAIL",
+  "evidence": "while taking off from Denver International Airport",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-004",
+  "proposition": "The accident occurred on Friday, May 8, 2026.",
+  "label": "ENTAIL",
+  "evidence": "on Friday, May 8, 2026",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-005",
+  "proposition": "The strike happened at about 11:19 p.m. MDT.",
+  "label": "ENTAIL",
+  "evidence": "at about 11:19 p.m. MDT",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-006",
+  "proposition": "The strike ignited an engine fire.",
+  "label": "ENTAIL",
+  "evidence": "igniting an engine fire",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-007",
+  "proposition": "The takeoff was aborted.",
+  "label": "ENTAIL",
+  "evidence": "forcing an aborted takeoff",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-008",
+  "proposition": "Twelve of the 231 people aboard were injured.",
+  "label": "ENTAIL",
+  "evidence": "injured 12 of the 231 people aboard",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-009",
+  "proposition": "The flight number was 4345.",
+  "label": "ENTAIL",
+  "evidence": "Flight 4345",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-010",
+  "proposition": "The flight was bound for Los Angeles.",
+  "label": "ENTAIL",
+  "evidence": "bound for Los Angeles",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-011",
+  "proposition": "The flight was scheduled to depart at 10:39 p.m.",
+  "label": "ENTAIL",
+  "evidence": "scheduled to depart at 10:39 p.m.",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-012",
+  "proposition": "The aircraft was on runway 17L.",
+  "label": "ENTAIL",
+  "evidence": "was on runway 17L",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-013",
+  "proposition": "The victim was a trespasser whose identity was unconfirmed.",
+  "label": "ENTAIL",
+  "evidence": "a trespasser whose identity was unconfirmed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-014",
+  "proposition": "The victim had scaled the perimeter fence about two minutes earlier.",
+  "label": "ENTAIL",
+  "evidence": "had scaled the perimeter fence about two minutes earlier",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-015",
+  "proposition": "The victim was pronounced dead at the scene.",
+  "label": "ENTAIL",
+  "evidence": "was pronounced dead at the scene",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-016",
+  "proposition": "The pilots rejected the takeoff and stopped on the runway.",
+  "label": "ENTAIL",
+  "evidence": "The pilots rejected the takeoff and stopped on the runway",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-017",
+  "proposition": "Passengers were evacuated by slide and bus to the terminal.",
+  "label": "ENTAIL",
+  "evidence": "evacuated by slide and bus to the terminal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-018",
+  "proposition": "Five people were taken to the hospital.",
+  "label": "ENTAIL",
+  "evidence": "five were taken to the hospital",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-019",
+  "proposition": "The NTSB and FAA opened investigations.",
+  "label": "ENTAIL",
+  "evidence": "the NTSB and FAA opened investigations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-020",
+  "proposition": "The runway was closed for the night and reopened around 11 a.m. Saturday.",
+  "label": "ENTAIL",
+  "evidence": "closed for the night, reopened around 11 a.m. Saturday",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-021",
+  "proposition": "The aircraft was an Airbus A320.",
+  "label": "CONTRADICT",
+  "evidence": "A Frontier Airlines Airbus A321neo",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-022",
+  "proposition": "The accident killed three people.",
+  "label": "CONTRADICT",
+  "evidence": "struck and killed a person",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-023",
+  "proposition": "The accident happened while landing.",
+  "label": "CONTRADICT",
+  "evidence": "while taking off from Denver International Airport",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-024",
+  "proposition": "Thirty-two people were injured.",
+  "label": "CONTRADICT",
+  "evidence": "injured 12 of the 231 people aboard",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-025",
+  "proposition": "The flight was bound for San Francisco.",
+  "label": "CONTRADICT",
+  "evidence": "bound for Los Angeles",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-026",
+  "proposition": "The victim was an airport employee.",
+  "label": "CONTRADICT",
+  "evidence": "a trespasser whose identity was unconfirmed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-027",
+  "proposition": "The runway remained closed until Monday.",
+  "label": "CONTRADICT",
+  "evidence": "reopened around 11 a.m. Saturday",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-028",
+  "proposition": "Only the FAA opened an investigation.",
+  "label": "CONTRADICT",
+  "evidence": "the NTSB and FAA opened investigations",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-029",
+  "proposition": "The victim's identity was confirmed within hours.",
+  "label": "CONTRADICT",
+  "evidence": "whose identity was unconfirmed",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-030",
+  "proposition": "All passengers were evacuated by bus only.",
+  "label": "CONTRADICT",
+  "evidence": "evacuated by slide and bus to the terminal",
+  "silence_reason": null
+ },
+ {
+  "id": "V2-111-031",
+  "proposition": "The victim was a woman.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The victim's sex is not stated."
+ },
+ {
+  "id": "V2-111-032",
+  "proposition": "The engine that struck the person was engine number two.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The specific engine is not identified."
+ },
+ {
+  "id": "V2-111-033",
+  "proposition": "The FAA grounded the A321neo fleet.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No fleet-wide action is mentioned."
+ },
+ {
+  "id": "V2-111-034",
+  "proposition": "The flight was overbooked.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No booking details are given."
+ },
+ {
+  "id": "V2-111-035",
+  "proposition": "The accident was captured on video.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "No video evidence is mentioned."
+ },
+ {
+  "id": "V2-111-036",
+  "proposition": "Frontier offered compensation to passengers.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Compensation is not discussed."
+ },
+ {
+  "id": "V2-111-037",
+  "proposition": "The captain's name was released.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The crew is not named."
+ },
+ {
+  "id": "V2-111-038",
+  "proposition": "The Denver Fire Department dispatched twenty engines.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "The number of fire units is not stated."
+ },
+ {
+  "id": "V2-111-039",
+  "proposition": "A special notice to airmen was issued.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Notices to airmen are not mentioned."
+ },
+ {
+  "id": "V2-111-040",
+  "proposition": "The trespasser ran onto the runway in the dark.",
+  "label": "UNSPECIFIED",
+  "evidence": null,
+  "silence_reason": "Lighting conditions are not described."
+ }
+]
