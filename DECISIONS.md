@@ -135,3 +135,105 @@
 - Decided by: assistant, recorded for human review
 - Rationale: the fact-check found several verified quantities living only in session verification outputs; they are recorded here so every number in the paper traces to a committed artifact or to this log. (1) Cycle-1 diagnostic label-flip probe (2026-08-15 adversarial validation, cluster B1): flipping every test label and refitting left all fitted calibration maps, the WCT-C score and the covariate baseline bitwise unchanged on the cycle-1 recalibration path; independently repeated in the cycle-2 verification (entry above). (2) Cycle-2 overall deny precision, measured in the 2026-08-17 verification pass over the cache: P(y=0|deny) = 0.667 on panelA (214/321) and 0.769 on panelB (166/216); calibration-split prevalences 0.8029 (panelA) and 0.8135 (panelB). (3) Headline figures of the 2026-08-15 exploratory path battery (toolkit deliberately unfrozen, per prereg_v2's planned-exploratory clause; not reproducible from the repo alone): artifact-corrected right-answer-wrong-derivation 1/826 correct answers; wrong-answer-right-path 33/40 = 82.5%; ground-truth proof DAGs decoded semantically for 900/900 qdep>=1 propositions (1,200 decidable incl. 258 rule-free qdep-0); path-weighted aggregation never beat vote counting (privileged upper bound -0.030 [-0.039,-0.020] vs WCT-U on the local panel; deployable variant statistically indistinguishable everywhere); EM sensitivity inverted the labelled vote-accuracy ordering on the cycle-1 local panel and anti-correlated with path precision (Spearman -1.0 both panels, n=3 agents, descriptive).
 - Alternatives: leave the numbers citable only to session transcripts (rejected: the paper's provenance rule would be false); freeze the battery toolkit into the repo retroactively (rejected: prereg_v2 explicitly declined to register it, and retroactive freezing would blur the registered/exploratory boundary the paper is about).
+## 2026-08-28T08:32:16Z - Granted 1 additional plan-relay round (exceptional)
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: B6 (funnel monotonicity) was a real defect in the plan, found by round-2 review and fixed in PLAN.md revision 3; GPT has not seen revision 3. Granting one round to verify the fix rather than self-certify it: the task array drives 7 workers, so a wrong acceptance criterion would propagate into every prompt.
+- Alternatives: revise the plan; human-approve the residual concerns
+
+## 2026-08-28T08:33:49Z - OQ4 RESOLVED: slice 2 registers the M=3 -> M=5 dose-response regardless of what slice 1's re-analysis shows. It does not park for a go/no-go on the single-source contrast.
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Deciding whether to register based on how promising slice 1's POST-HOC numbers look would condition the registration on the data, which is the analyst degree of freedom this paper documents and the reason cycle 2 exists. A flat M=3 -> M=5 curve is also the most informative result available here: direct evidence against the error-decorrelation premise the cross-model consensus literature rests on, which is worth more than another confirmation. Slice 1's numbers still set delta and the power calculation (B2, B3); they do not gate whether the experiment is registered.
+- Alternatives: Park at slice 1's exit for a human go/no-go, per the project's existing failed-gate policy (DECISIONS.md 2026-07-27, OQ2). Rejected as the wrong analogy: that policy governs a FAILED GATE inside a running experiment, whereas this is whether to register at all. Parking would have been defensible as a resource decision about spending inference, but not as a scientific one.
+
+## 2026-08-28T08:34:06Z - Gate 1f2b1545 resolved: Slice 2 registers the M=3 -> M=5 dose-response regardless of what slice 1's re-analysis shows. It does not park for a go/no-go on the single-source contrast.
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Deciding whether to register based on how promising slice 1's POST-HOC numbers look would condition the registration on the data, which is the analyst degree of freedom this paper documents and the reason cycle 2 exists. A flat M=3 -> M=5 curve is also the most informative result available here: direct evidence against the error-decorrelation premise the cross-model consensus literature rests on, worth more than another confirmation. Slice 1's numbers still set delta and the power calculation (B2, B3); they do not gate whether the experiment is registered. Alternative considered and rejected: park at slice 1's exit per the project's failed-gate policy (DECISIONS.md 2026-07-27, OQ2) — that policy governs a failed gate inside a running experiment, not whether to register at all.
+
+## 2026-08-28T08:34:42Z - Plan exit: human_approved_after_review (no GPT approval forged)
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Plan verdict is APPROVED (round 3, B6 closed, zero open blockers). The only remaining exit issue is the model's question for the user, which the user answered: slice 2 registers the M=3 -> M=5 dose-response regardless of slice 1's result, rather than parking for a go/no-go. Recorded in DECISIONS.md and in resolved gate 1f2b1545. No blocker is being accepted or waived. | review proof: plan_round | accepted: (none) | recorded-but-unaccepted: (none)
+- Alternatives: revise the plan; grant one more round
+
+
+## 2026-08-28T10:46:39Z - AMENDMENT to slice 1's no-inference constraint: the aligner self-identification probe MAY be computed for the cycle-2 corpus, by local in-process CPU NLI only. Scope is exactly cluster.aligner_probe over the 150 v2 items. No API call, no OpenRouter, no :1234 endpoint, no network egress, no quota. Everything else in the constraint stands.
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: A6 requires the restored alignment audit for every panel of both cycles. The probe's NLI pairs are cached only for panels whose driver ran it, and exp/e1_v2.py never did -- that omission IS defect D3. So A6 and the as-written no-inference constraint are unsatisfiable together, which is why the GPT spec verdict routed it to the human gate rather than resolving it. Computing the probe restores the cycle-2 mapper diagnostic the paper's 'go' currently lacks; the cost is local CPU only. The probe is a function of the ITEM alone, so one pass over the v2 corpus serves both panels.
+- Alternatives: Narrow A6 to panels whose probe pairs are cached and disclose the gap. Rejected by the human: it would leave cycle 2's mapper permanently unaudited, and the audit is the specific thing D3 is about. Recorded as considered.
+
+## 2026-08-28T11:22:57Z - V3 SLICE 1 OUTCOME: D1/D2/D3 corrected; the panel does not clearly beat its best single source on 1 of 4 panel-cycles, and the one-vote-per-source result is a POLARITY result, not a capping result.
+
+<!-- artifacts-fingerprint: 0bfe68c914d9276c -->
+
+POST-HOC throughout. Nothing here restates a registered cycle-1 or cycle-2 verdict; every frozen quantity checked was reproduced EXACTLY, at the committed artifacts' own serialized precision, before any new number was read. Coverage: c1_local 82/82 across 2 strata (all_items, negation_theories), c1_openrouter 82/82 across 2 strata (all_items, negation_theories), c2_panelA 72/72 across 2 strata (all_items, all_items_S2), c2_panelB 72/72 across 2 strata (all_items, all_items_S2). SCOPE DISCLOSURE: cycle-1's `noneg_theories` stratum is excluded because its test split is single-class, so the frozen summary itself records an error there rather than results; there is nothing to reproduce. The v2 tag is untouched: the corrected instrument lives in wct3/ and exp3/.
+
+**D1 - the registered single-source arm, built at last.** `single_best_calibration_selected` (prereg.yaml:166, plan.md:488, simulated at m0/simulate.py:75) was never implemented by any analysis driver. Source chosen on CALIBRATION log-loss alone; the panel-minus-source contrast under each cycle's own registered calibration map:
+
+| panel | map | selected source | panel (WCT-EM) over that source | decision |
+|---|---|---|---|---|
+| c1_local | temperature | qwen | +0.0448 [+0.0117, +0.0787] | **go** |
+| c1_openrouter | temperature | nemotron | +0.0887 [+0.0455, +0.1421] | **go** |
+| c2_panelA | platt | glm | +0.0762 [+0.0465, +0.1068] | **go** |
+| c2_panelB | platt | gptoss | +0.0329 [-0.0109, +0.0703] | **inconclusive** |
+
+On 1 of 4 panel-cycles (c2_panelB) the multi-model panel is NOT shown to beat one model under the frozen decision rule. The registered primary compares against an item-covariate baseline, so it establishes that proposition-level vote scores carry signal; it does not establish that CROSS-MODEL agreement is the mechanism. This is what cycle 3 registers.
+
+**D2 - the M6 ablation, corrected, refutes the claim it was cited for.** The frozen `uncapped` arm scores n_claims, which equals n_emitting identically because align_anchored collapses per (agent,pid) before exp/e1.py:76-78 counts. Varying capping and polarity separately (test AUROC):
+
+Raw (unmapped) test AUROC — the quantity the signal question asks. A fitted calibration map can take a negative slope on a signal-free arm and flip mapped AUROC about 0.5, so the mapped values are recorded in the artifacts under each cycle's own registered map and are not used here.
+
+| panel | capped+signed | capped+unsigned | uncapped+signed | uncapped+unsigned |
+|---|---|---|---|---|
+| c1_local | 0.9001 | 0.5069 | 0.9664 | 0.4484 |
+| c1_openrouter | 0.9911 | 0.5239 | 0.9875 | 0.4825 |
+| c2_panelA | 0.9353 | 0.6063 | 0.9456 | 0.5884 |
+| c2_panelB | 0.9323 | 0.5686 | 0.9530 | 0.5705 |
+
+Removing the cap costs nothing (signed: uncapped matches or beats capped, within 0.01, on 4 of 4 panels). Removing the SIGN destroys everything (no unsigned arm exceeds 0.6063 on any panel). paper.md 6.1 and contribution 4 — 'agreement carries information exactly when each source gets one vote; count text instead of sources and there is nothing there' — is therefore not supported by this instrument. The effect is polarity, not capping. This needs a paper correction (slice 2, B10), not a footnote.
+
+**D3 - the discarded audit, restored.** exp/e1_v2.py:189 binds the alignment audit and never uses it. Restored for all four panel-cycles:
+
+| panel | claims | instances | observations | same-agent conflicts | aligner probe |
+|---|---|---|---|---|---|
+| c1_local | 24621 | 4137 | 1197 | 853 | computed |
+| c1_openrouter | 15599 | 2640 | 1121 | 195 | computed |
+| c2_panelA | 29350 | 3824 | 1560 | 559 | computed |
+| c2_panelB | 17914 | 2834 | 1241 | 225 | computed |
+
+The funnel is NOT monotone: alignment scores each claim against up to top_k=8 targets, so one claim can pass against several. observations <= instances is the invariant.
+
+The probe is computed on all four panel-cycles: self-identification 0.9721-0.9724, and 0 probe across 6766 was scored with the wrong polarity. The cycle-2 corpus is therefore NOT measurably worse mapped than cycle 1's, so the depth-5 enrichment did not degrade the instrument.
+
+## 2026-08-28T11:54:34Z - Granted 1 additional spec review round(s)
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: All five findings from the previous verdict are fixed and verified present on disk (per-map source selection, full strata coverage 82/72 checks, named arm rows, fatal uv assertion, corrected DECISIONS coverage claim). The verdict on disk is bound to an earlier diff and QUESTIONS.md says so; the cap was reached before the current diff could be reviewed. Granting one round to verify the fixes rather than commit on an unreviewed diff.
+
+## 2026-08-28T11:54:42Z - Gate 1dd102c7 resolved: Grant one additional spec review round to verify the fixes against the current diff.
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The verdict on disk is bound to an earlier diff (QUESTIONS.md states this, and commit-ready blocks on staleness rather than on the findings). All five findings are fixed and verified present on disk: per-map source selection, full strata coverage at 82/72 checks per panel, named arm rows, a fatal uv assertion, and a corrected DECISIONS.md coverage claim. Committing on an unreviewed diff was the alternative and was declined.
+
+## 2026-08-28T14:05:43Z - Granted 1 additional spec review round(s)
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 4's four findings are fixed and verified: validate.py now opens the committed summaries itself (>=40 fields per panel, proven to catch a planted mismatch), the cache manifest brackets the test suite as well as the analysis, probe_backfill enforces cache-only embeddings plus an unroutable endpoint and offline transformers, and panel identity is checked against the registered agent list rather than assumed. Round 4 found no incorrect values, only unenforced verification, so this round is to confirm the gate is now independent.
+
+## 2026-08-28T14:24:06Z - Granted 1 additional spec review round(s)
+
+- Run: `20260828-181147-a3e9edbc`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 5's two findings are fixed: cycle-2 reproduction now covers the registered S1_deny_filter block (imported from exp/e1_v2.py, not reimplemented), the exact-ML sensitivity primaries and the co-primary bootstrap difference, taking cycle-2 frozen checks from 72 to 136; and the independent validator's dead 'cc is c' agent guard is live again, with its own coverage extended to co-primary, within-item AUROC, permutation-null, S1 arms and S1 primaries under per-cycle floors. Findings have gone 5 -> 4 -> 2 with no incorrect value in the last two rounds; this round is to confirm convergence before commit.
+
