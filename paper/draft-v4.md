@@ -15,11 +15,11 @@
        Models for News-Claim Verification, Head-to-Head with a Single 27B Model"
     3. "The Calibrated Jury at Eleven Dollars: Pre-Registered News-Claim Verification
        by 3–4B LLMs on Consumer Hardware"
-  - Open items before submission:
-     * Pass 1 preprint: Zenodo DOI 10.5281/zenodo.22159293 now in ref [25]; record is
-       reserved (DOI 404s until published) - publish the Zenodo record before submission.
-     * Pass 2 record: Zenodo 22159835 reserved (DOI 404s until published); now in title
-       block. Publish the record before submission so the link resolves.
+   - Open items before submission:
+      * Single Zenodo record for both passes: 10.5281/zenodo.22159835 (title block and
+        ref [25]); record is reserved (DOI 404s until published) - publish before
+        submission. The former Pass 1 preprint DOI (zenodo.22159293) is no longer
+        referenced in the paper.
     * 2080 Ti row in §6 is an estimate, not a measurement (kept labeled as such).
     * Affiliation set: Main Lobe Labs (both authors, single affiliation marker).
     * Figures 1-3 (charted, paper/figures/) are PDF-only: injected by tools/paper_pdf.py at build time, not in this .md.
@@ -82,7 +82,7 @@ Section 2 compresses Pass 1. Section 3 describes the Pass 2 instrument. Section 
 
 ## 2. Pass 1: The flip was in the instrument
 
-Pass 1 is reported in full in [25] ("The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model Proposition Aggregation", draft v3). We compress it here because it fixes the design rules that Pass 2 follows.
+Pass 1 is reported in this section; the standalone preprint ("The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model Proposition Aggregation", draft v3) is folded into the same Zenodo record and is cited as [25]. Pass 1 fixes the design rules that Pass 2 follows.
 
 ### 2.1 Setup and the Cycle 1 flip
 
@@ -399,7 +399,7 @@ Agreement across language models is a measurement instrument, and like any instr
 - **RNG streams:** EM point estimate 20260827 (5 restarts); bootstrap 20260828 (2,000 article-block resamples, 0 restarts); null 20260829 (10,000 permutations); gate bootstrap 20260827 (2,000 resamples).
 - **Hardware:** jury on marzuki-helium (Mac Studio M3 Ultra) via llama.cpp/omlx, ports 8102–8107, 13.2 h; 27B phase on marzuki-hydrogen (vLLM, RTX PRO 5000 Blackwell 48 GB), 12,028 s total (defendant 520 s, self-review 10,651 s, judge 857 s). Spend caps persisted across re-runs (27B: 10,000; per juror: 8,000).
 - **Corpora:** v1 (30 articles, 1,200 propositions) at tag `prereg-waveconsensus-v1`; v2 (200 articles, 8,000 propositions) with contamination-gate run in `corpus-v2/gate/runs/2026-08-28/`.
-- **Pass 1:** Mannings & Marzuki [25]; protocol tag and artifacts per that paper. Preprint: https://doi.org/10.5281/zenodo.22159293 (Zenodo record reserved; publish the record before submission so the link resolves).
+- **Pass 1:** §2 of this paper (standalone preprint draft v3 folded into the same record; [25]); protocol tag and frozen artifacts in the repository (tag `prereg-waveconsensus-v1`).
 
 ---
 
@@ -453,7 +453,7 @@ Agreement across language models is a measurement instrument, and like any instr
 
 [24] Chowdhury, M., Beg, N. J., et al. (2026). Courtroom-style multi-agent debate with progressive RAG and role-switching for controversial claim verification. arXiv:2603.28488.
 
-[25] Mannings, J., & Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Zenodo. https://doi.org/10.5281/zenodo.22159293
+[25] Mannings, J., & Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Standalone draft v3, folded into this paper (§2). Zenodo (single record for both passes). https://doi.org/10.5281/zenodo.22159835
 
 [26] Niimi, Y. (2025). A simple ensemble strategy for LLM inference: Towards more stable text classification. arXiv:2504.18884.
 

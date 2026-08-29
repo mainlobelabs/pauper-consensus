@@ -126,7 +126,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <p>Section 2 compresses Pass 1. Section 3 describes the Pass 2 instrument. Section 4 reports the capability results (v1 INCONCLUSIVE, v2 GO, the failed P9). Section 5 reports the system gate. Section 6 is the cost and hardware analysis. Sections 7–10 discuss, limit, conclude, and document reproducibility.</p>
 <hr />
 <h2>2. Pass 1: The flip was in the instrument</h2>
-<p>Pass 1 is reported in full in [25] ("The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model Proposition Aggregation", draft v3). We compress it here because it fixes the design rules that Pass 2 follows.</p>
+<p>Pass 1 is reported in this section; the standalone preprint ("The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model Proposition Aggregation", draft v3) is folded into the same Zenodo record and is cited as [25]. Pass 1 fixes the design rules that Pass 2 follows.</p>
 <h3>2.1 Setup and the Cycle 1 flip</h3>
 <p>The question of Pass 1: does inter-model agreement on individual <em>propositions inside reasoning traces</em> predict proposition truth, as it does for final answers? The instrument: 150 ProofWriter OWA items (a synthetic, decidable closed world; ground truth by construction), split 50/100 calibration/test; two three-model panels sharing no model family (one local, one OpenRouter); a fixed extractor plus embedding+NLI alignment converting traces into canonical propositions; one observation per agent per proposition (one vote per source); arms WCT-U (uniform), WCT-EM (three-state Dawid–Skene), WCT-C (calibration labels), a covariate logistic-regression baseline, and ablations. The registered primary: held-out delta log-loss of WCT-EM versus the baseline, GO at δ = 0.02 nats.</p>
 <p>Cycle 1 ran the identical frozen protocol on both panels. The primary metric flipped:</p>
@@ -648,7 +648,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <li><strong>RNG streams:</strong> EM point estimate 20260827 (5 restarts); bootstrap 20260828 (2,000 article-block resamples, 0 restarts); null 20260829 (10,000 permutations); gate bootstrap 20260827 (2,000 resamples).</li>
 <li><strong>Hardware:</strong> jury on marzuki-helium (Mac Studio M3 Ultra) via llama.cpp/omlx, ports 8102–8107, 13.2 h; 27B phase on marzuki-hydrogen (vLLM, RTX PRO 5000 Blackwell 48 GB), 12,028 s total (defendant 520 s, self-review 10,651 s, judge 857 s). Spend caps persisted across re-runs (27B: 10,000; per juror: 8,000).</li>
 <li><strong>Corpora:</strong> v1 (30 articles, 1,200 propositions) at tag <code>prereg-waveconsensus-v1</code>; v2 (200 articles, 8,000 propositions) with contamination-gate run in <code>corpus-v2/gate/runs/2026-08-28/</code>.</li>
-<li><strong>Pass 1:</strong> Mannings &amp; Marzuki [25]; protocol tag and artifacts per that paper. Preprint: https://doi.org/10.5281/zenodo.22159293 (Zenodo record reserved; publish the record before submission so the link resolves).</li>
+<li><strong>Pass 1:</strong> §2 of this paper (standalone preprint draft v3 folded into the same record; [25]); protocol tag and frozen artifacts in the repository (tag <code>prereg-waveconsensus-v1</code>).</li>
 </ul>
 <hr />
 <h2>References</h2>
@@ -676,7 +676,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <p>[22] Chan, C.-M., et al. (2023). ChatEval: Towards better LLM-based evaluators through multi-agent debate. arXiv:2308.07201.</p>
 <p>[23] He, H., Li, Y., et al. (2025). Debating truth: Debate-driven claim verification with multiple large language model agents. arXiv:2507.19090.</p>
 <p>[24] Chowdhury, M., Beg, N. J., et al. (2026). Courtroom-style multi-agent debate with progressive RAG and role-switching for controversial claim verification. arXiv:2603.28488.</p>
-<p>[25] Mannings, J., &amp; Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Zenodo. https://doi.org/10.5281/zenodo.22159293</p>
+<p>[25] Mannings, J., &amp; Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Standalone draft v3, folded into this paper (§2). Zenodo (single record for both passes). https://doi.org/10.5281/zenodo.22159835</p>
 <p>[26] Niimi, Y. (2025). A simple ensemble strategy for LLM inference: Towards more stable text classification. arXiv:2504.18884.</p>
 <p>[27] Sahnan, D., Corney, D., Larraz, I., et al. (2026). Can LLMs automate fact-checking article writing? <em>TACL 2026</em>. arXiv:2503.17684.</p>
 <p>[28] Pan, G., Chodnekar, V., Roy, A., &amp; Wang, H. (2025). A cost-benefit analysis of on-premise large language model deployment: Breaking even with commercial LLM services. arXiv:2509.18101.</p>
