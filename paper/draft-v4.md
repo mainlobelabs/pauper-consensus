@@ -1,4 +1,10 @@
 <!-- DRAFT NOTES (not part of the paper)
+  - v5.1 per Andryo 2026-08-29 (approved review fix list): unregistered v2-refit
+    content-bar sensitivity row (§4.2/§4.3), mis-specified null named instrument
+    defect three (§4.2, §8, abstract, §9), vacuous-tolerance sentence (§5.2),
+    cost reframing to lead with 0.781 (§5.4, §1), abstract precision (estimated
+    5x; n_eff scoped to 4-voter flagship arm), memory claim scoped (§6), figures
+    regenerated with matplotlib (tools/figs_pyplot.py; charted axis bug).
   - Final per Andryo 2026-08-29 ("treat it as final"): draft labels stripped, DOI in
     title block. Two-pass, DOI-ready framing. Venue plan: arXiv cs.CL primary,
     JASIST first journal choice, PeerJ CS fallback (notes/lit-review.md §4).
@@ -34,14 +40,14 @@
 
 ¹ Main Lobe Labs
 
-Final · 2026-08-29 · DOI: https://doi.org/10.5281/zenodo.22159835
+v5.1 · 2026-08-29 · DOI: https://doi.org/10.5281/zenodo.22159835
 Code and artifacts: https://github.com/marzukia/pauper-consensus (git tags `prereg-waveconsensus-v1`, `prereg-waveconsensus-v2`; tag names keep the original working name, the repository was renamed after the registrations were cut)
 
 ---
 
 ## Abstract
 
-We study when agreement across large language models is a trustworthy instrument for verification, and what it costs. We report two pre-registered passes of one measurement program. In Pass 1 ("the flip"), the same frozen proposition-aggregation protocol returned opposite primary verdicts on two three-model panels over synthetic reasoning traces (−0.159 vs +0.122 nats, both 95% CIs excluding zero); a post-hoc diagnosis identified two instrument defects (a calibration map without an intercept, and a corpus that could barely contain falsehoods) and a git-tagged second cycle confirmed the central repair (+0.220 and +0.272 nats) while falsifying two companion predictions. Pass 2 carries the instrument-integrity lesson into open news. A jury of twelve 3–4B local language-model configurations (four families × three arms) votes PASS / FAIL / NOT_STATED on 8,000 labeled claims constructed from 200 real news articles (96,000 votes in 13.2 hours on one Mac Studio); the votes are aggregated by a Dawid–Skene EM calibration fitted once on a smaller prior corpus and applied frozen. We call this jury protocol Pauper Consensus. The pre-registered headline gate passes: +0.20289 nats of log-loss over a frozen model-free baseline (95% article-block bootstrap CI [0.18737, 0.21740]), all four pre-registered test cells green, and the observed delta exceeds all 10,000 realizations of the post-hoc delta-form contrast (the registered sum-statistic one-sided p-value is 1.0, reported as stored; §4.2); the prior, smaller jury was INCONCLUSIVE as registered, and the registered prediction that the model-free bar's value would transfer across corpora fails. In the pre-registered system-level gate test against a single 27B model, both routes co-fail the only two unsupported claims (0/2 catch; false-claim rates 0.3396% vs 0.3419%, bootstrap CI [0.0, 5e-05]), so the jury route passes on the registered "comparable within 10 percentage points and strictly cheaper" branch at 0.956× the 27B's per-claim cost. Effective voting is 2.09 per claim (Kish n_eff), and the binding resource is memory (48 GB for the 27B, about 29 GB for the jury), not arithmetic: the jury runs on second-hand consumer silicon at roughly 5× lower operating cost per 10,000 votes and 7.6× lower capital cost. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost, not the model.
+We study when agreement across large language models is a trustworthy instrument for verification, and what it costs. We report two pre-registered passes of one measurement program. In Pass 1 ("the flip"), the same frozen proposition-aggregation protocol returned opposite primary verdicts on two three-model panels over synthetic reasoning traces (−0.159 vs +0.122 nats, both 95% CIs excluding zero); a post-hoc diagnosis identified two instrument defects (a calibration map without an intercept, and a corpus that could barely contain falsehoods) and a git-tagged second cycle confirmed the central repair (+0.220 and +0.272 nats) while falsifying two companion predictions. Pass 2 carries the instrument-integrity lesson into open news. A jury of twelve 3–4B local language-model configurations (four families × three arms) votes PASS / FAIL / NOT_STATED on 8,000 labeled claims constructed from 200 real news articles (96,000 votes in 13.2 hours on one Mac Studio); the votes are aggregated by a Dawid–Skene EM calibration fitted once on a smaller prior corpus and applied frozen. We call this jury protocol Pauper Consensus. The pre-registered headline gate passes: +0.20289 nats of log-loss over a frozen model-free baseline (95% article-block bootstrap CI [0.18737, 0.21740]), all four pre-registered test cells green. The registered null was a mis-specified sum statistic (instrument defect three; §4.2, §8), its stored one-sided p-value is 1.0 by construction, and the post-hoc delta-form contrast puts the observed delta above all 10,000 realizations; the prior, smaller jury was INCONCLUSIVE as registered, and the registered prediction that the model-free bar's value would transfer across corpora fails. In the pre-registered system-level gate test against a single 27B model, both routes co-fail the only two unsupported claims (0/2 catch; false-claim rates 0.3396% vs 0.3419%, bootstrap CI [0.0, 5e-05]), so the jury route passes on the registered "comparable within 10 percentage points and strictly cheaper" branch at 0.956× the 27B's per-claim cost. The flagship 4-voter arm carries 2.09 effective votes per claim (Kish n_eff), and the binding resource is memory (48 GB for the 27B, about 29 GB for the jury), not arithmetic: the jury runs on second-hand consumer silicon at an estimated ~5× lower operating cost per 10,000 votes (2080 Ti tier; the measured owned-hardware figure is 2.6×; §6) and 7.6× lower capital cost. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost, not the model.
 
 **Keywords:** fact verification; LLM juries; Dawid–Skene estimation; weak supervision; pre-registration; calibration transfer; inference cost; consumer hardware; news fact-checking
 
@@ -60,14 +66,14 @@ We report two pre-registered passes of one program.
 - **P8 (capability):** does the frozen, transferred calibration beat a frozen model-free content bar on the larger corpus, clearing a pre-registered GO gate (point Δ ≥ +0.02 nats and 95% article-block bootstrap CI excluding zero)?
 - **System gate (boundary):** on a defendant-generated stream of claims, does the juror-gated route beat the single-27B self-review route at no higher cost: branch (a) strictly lower false-claim rate with the CI entirely below zero, or branch (b) comparable within 10 percentage points at strictly lower total compute cost?
 
-Both are answered exactly as the gates are written. The capability gate **passes**: the frozen calibration clears the bar by **+0.20289 nats** (95% CI [0.18737, 0.21740]) in the headline cell, with all four pre-registered test cells green and the observed delta above all 10,000 realizations of the post-hoc delta-form contrast (the registered sum-statistic one-sided p-value is 1.0, reported as stored; §4.2). The system gate **passes via branch (b)**, and only via branch (b): both routes co-fail the only two unsupported claims in the stream (12–0 jury agreement on each, and PASS from the 27B), their false-claim rates are statistically indistinguishable (0.3396% vs 0.3419%; bootstrap CI [0.0, 5e-05]), and the jury route is strictly cheaper (0.956× the 27B's per-claim token-proxy cost; 0.781× length-adjusted).
+Both are answered exactly as the gates are written. The capability gate **passes**: the frozen calibration clears the bar by **+0.20289 nats** (95% CI [0.18737, 0.21740]) in the headline cell, with all four pre-registered test cells green and the observed delta above all 10,000 realizations of the post-hoc delta-form contrast (the registered sum-statistic null is mis-specified by construction, instrument defect three; §4.2). The system gate **passes via branch (b)**, and only via branch (b): both routes co-fail the only two unsupported claims in the stream (12–0 jury agreement on each, and PASS from the 27B), their false-claim rates are statistically indistinguishable (0.3396% vs 0.3419%; bootstrap CI [0.0, 5e-05]), and the jury route is strictly cheaper (0.781× length-adjusted; 0.956× on the unadjusted v1 token proxy).
 
 Our contributions:
 
 1. **A two-pass, pre-registered measurement of when LLM agreement is a trustworthy instrument.** Pass 1 shows the same frozen protocol returning opposite verdicts on two panels because the instrument, not the hypothesis, was broken; Pass 2 shows the repaired instrument giving a pre-registered, replication-ready result on open news.
 2. **Frozen cross-corpus transfer of Dawid–Skene calibration** as a first-class, falsifiable claim: the EM weights and the per-arm affine maps are fitted once on the v1 corpus and applied frozen on v2, and they clear a pre-registered bar (+0.20289 nats, all four test cells green). The companion registered prediction (P9) that the *model-free* bar's value would transfer **fails**, which we report at equal prominence.
 3. **A pre-registered system-level boundary between a small-model jury and a single 27B model**, quantified head-to-head on the same 8,000 claims (93.962% agreement with the 12-config majority; the 27B stricter on 4.3% of majority-PASS cells) and on a defendant claim stream with a mechanical pass criterion.
-4. **Measured per-vote cost on owned hardware**, including the hardware barrier itself: the binding constraint is memory, not arithmetic (48 GB GDDR7 for the 27B versus about 29 GB for the full jury), so the jury runs on second-hand consumer silicon at 7.6× lower capital and about 5× lower operating cost per 10,000 votes.
+4. **Measured per-vote cost on owned hardware**, including the hardware barrier itself: the binding constraint is memory, not arithmetic (48 GB GDDR7 for the 27B versus about 29 GB for the full jury), so the jury runs on second-hand consumer silicon at 7.6× lower capital and ~5× lower (estimated, Turing tier; §6) operating cost per 10,000 votes.
 5. **An effective-voter diagnostic (Kish n_eff = 2.085 for the flagship arm)** that confronts the "nine judges, two effective votes" result [9] directly instead of sidestepping it.
 
 Section 2 compresses Pass 1. Section 3 describes the Pass 2 instrument. Section 4 reports the capability results (v1 INCONCLUSIVE, v2 GO, the failed P9). Section 5 reports the system gate. Section 6 is the cost and hardware analysis. Sections 7–10 discuss, limit, conclude, and document reproducibility.
@@ -213,18 +219,21 @@ On the full 8,000-claim v2 corpus, with every fit frozen from v1:
 | full | reason_included | 0.15716 | 0.3325 | +0.17534 | (excl. 0) | GO |
 | full | votes_only | 0.17865 | 0.3325 | +0.15385 | (excl. 0) | GO |
 | full | base_zeroshot (ref) | 0.17434 | 0.3325 | +0.15816 | (not computed; ref arm) | ref |
+| content-only, **v2-refit (unregistered)** | reason_included | 0.15716 | 0.33963 | +0.18247 | (not computed) | sensitivity |
 
 **P8: TRUE.** All four pre-registered test cells are green. (The registration calls the full bar a continuity check with no separate GO, while its decision-matrix line applies the same GO rule to every cell; the artifact computes go = true for both full-bar cells, and we report that label.) The headline delta is an order of magnitude beyond the gate and beyond the v1 scale: the v1 smoke test of the identical tool on frozen v1 data (content-only bar) gave +0.093 reason_included / +0.097 votes_only; the frozen calibration, applied to a corpus 6.7× larger and 6 months wider, more than doubles the headline margin. Raw (uncalibrated) EM log-loss is 0.30796 / 0.38314 / 0.34636 for the three arms, still below both bars, but the registered claim is about the calibrated instrument, per rule R2.
 
 Co-primary within-article AUROC (P(PASS) vs truth = PASS): EM calibrated 0.9951 / 0.9948 / 0.991 (ri / vo / base) versus 0.999 (content bar) and 0.9988 (full bar); ranking is near-saturated for both sides on this corpus, which is why the pre-registered primary is the calibrated log-loss, not AUROC. The fitted EM prior for the headline arm is PASS 0.5247 / FAIL 0.219 / NOT_STATED 0.2563.
 
-**Null test.** The registered null (RNG stream 20260829) permutes truth labels within each article (10,000 permutations, fixed predictors, headline cell), and the registration specifies only "one-sided p-value", leaving the tail unfixed. The frozen tool's registered statistic is the *sum* of the bar's log-loss at the true labels and the EM calibrated log-loss at the permuted labels; its 95% percentile range is [4.06886, 4.19923] nats, and the stored registered one-sided p-value (upper tail, P(null ≥ observed delta)) is **1.0**, because the observed delta is a *difference*, not that sum. The like-for-like delta-form contrast (bar at the true labels minus EM at the permuted labels) is the exact transform 2 × 0.36005 − statistic and spans **[−3.4791, −3.3488] nats**; the observed +0.20289 lies **above all 10,000 realizations** (0/10,000 ≥ observed). We fix the tail to the EM-better direction post hoc and report this count as a descriptive supplement, not the registered test. Either way, the headline GO does not depend on this p-value: it rests on the point estimate and the bootstrap CI.
+**Null test (instrument defect three).** The registered null (RNG stream 20260829) permutes truth labels within each article (10,000 permutations, fixed predictors, headline cell), and the registration specifies only "one-sided p-value", leaving the tail unfixed. The frozen tool's registered statistic is the *sum* of the bar's log-loss at the true labels and the EM calibrated log-loss at the permuted labels; its 95% percentile range is [4.06886, 4.19923] nats, and the stored registered one-sided p-value (upper tail, P(null ≥ observed delta)) is **1.0**, because the observed delta is a *difference*, not that sum. A statistic that sums two log-losses is never compared against a difference of log-losses, so this p-value is 1.0 by construction, not as evidence; we record the mis-specification as instrument defect three, alongside Pass 1's missing-intercept map and polarity-poor corpus. The like-for-like delta-form contrast (bar at the true labels minus EM at the permuted labels) is the exact transform 2 × 0.36005 − statistic and spans **[−3.4791, −3.3488] nats**; the observed +0.20289 lies **above all 10,000 realizations** (0/10,000 ≥ observed). We fix the tail to the EM-better direction post hoc and report this count as a descriptive supplement, not the registered test. Either way, the headline GO does not depend on this p-value: it rests on the point estimate and the bootstrap CI.
 
 ### 4.3 The registered prediction that failed (P9)
 
 P9 registered that the full-bar delta on v2 would land within ±0.05 nats of its v1 estimate (v1: +0.01506 ri / +0.01911 vo, exact from the frozen file). It did not: v2 full-bar deltas are +0.17534 ri and +0.15385 vo, offsets of +0.16028 and +0.13474 nats. **P9: FALSE.**
 
 The mechanism is the registered polarity shift, not an estimator surprise. The full bar's excess over the content bar is the trap-shortcut value: 0.36005 − 0.3325 = **0.0276 nats on v2**, versus **0.078 nats on v1**. When the negative-polarity base rate falls from 18.5% to 2.0%, the frozen bar's operating point shifts and the model-free shortcut degrades, so the EM-vs-full-bar gap widens even though the EM fits are frozen. The symmetric result, reported at equal prominence: the **learned** EM calibration transfers across corpora (P8 GO), while the **model-free** bar's value does not (P9 FALSE). A practitioner should fit the aggregator on the domain's own data; a model-free bar that reads near-deterministic corpus features is not portable.
+
+One unregistered sensitivity isolates the bar's share of the headline. Refit the content-only bar on the v2 corpus itself (fit == eval, identical optimizer settings) and it scores 0.33963, 0.02042 nats *better* than the frozen v1 bar's 0.36005: a bar fitted at an 18.5% negative-polarity base rate misprices polarity on a 2.0% corpus. Against the refit bar, the headline delta is +0.18247 rather than +0.20289, so about 0.020 nats (roughly 10% of the headline margin) is the frozen comparator weakening under the polarity shift, not the jury improving (row added to the §4.2 table; `runs/2026-08-29-v51/v2_refit_sensitivity.json`). The verdict does not move: +0.18247 is still an order of magnitude beyond the +0.02 gate.
 
 ### 4.4 Effective voters
 
@@ -252,7 +261,7 @@ Gating applies only to claims with a non-zero unique pool tie (591 of 600; 9 tie
 | 27B self-review-gated | 585/591 (6 verdicts missing) | 2/585 = **0.3419%** | **0/2** |
 | Δ (jury − self-review), 2,000 article-block bootstrap, seed 20260827 | | CI **[0.0, 5e-05]** | |
 
-Branch (a) is **false**; branch (b) is **true**: the two false-claim rates are statistically indistinguishable (Δ ≈ 0.002 percentage points, against a 10-point tolerance), and the jury route is strictly cheaper. **Verdict: PASS (branch b).**
+Branch (a) is **false**; branch (b) is **true**: the two false-claim rates are statistically indistinguishable (Δ ≈ 0.002 percentage points, against a 10-point tolerance), and the jury route is strictly cheaper. At observed rates of ~0.34%, that 10-point tolerance is not a quality test: it would still pass a jury ~30× worse (~10.3%), so with two false claims in the stream the gate's information content is the cost comparison. **Verdict: PASS (branch b).**
 
 The catch of 0/2 is the honest core of the system result, and it deserves the full record. The two unsupported claims both passed **12–0 across all twelve jury configurations and were also PASS for the 27B**: a genuine co-failure at the boundary of the instrument. Verbatim from the defendant/judge record (`judge.jsonl`):
 
@@ -292,7 +301,7 @@ Per 8,000 claims, token-proxy pricing (4B $0.20/$0.60 per 1M in/out; 27B $1.00/$
 | Jury, full 12-config (for reference) | 96,236 | 66,701,051 | $15.2688 (2.8714× SR) |
 | 27B self-review | 8,000 | 4,639,575 (measured) | **$5.3175** |
 
-Ratio (ri panel / self-review): **0.9561**. Because v2 articles are shorter than v1's (mean 1,419 vs 1,927 characters), the v1-measured per-vote token proxy overstates jury cost; length-adjusted (566.2 tok/vote) the ratio falls to **0.781**. Both keep branch (b). The defendant and judge calls (800, shared by both routes) are excluded from the comparison, as registered.
+Length-adjusted ratio (ri panel / self-review, jury at 566.2 tok/vote against v2's mean article length of 1,419 characters vs v1's 1,927): **0.781**: this is the figure we read, since the proxy was fit on longer v1 articles. The unadjusted token-proxy ratio is **0.956**, the conservative bound if the v1 per-vote proxy held exactly; it carries no error bar of its own. Both keep branch (b): strictly cheaper. The defendant and judge calls (800, shared by both routes) are excluded from the comparison, as registered.
 
 ---
 
@@ -308,7 +317,7 @@ The cost question that matters for deployment is not "what does one call cost" b
 
 \* The 2080 Ti throughput is an **estimate**, not a measurement; the Mac Studio figure is the measured anchor (13.2 h for 96,000 votes ≈ A$11 per 96k votes; ≈ A$5.5 per 96k estimated on the Turing tier). The 27B throughput was measured with the engine serving **one of three shared vLLM slots**; solo throughput is higher, so the 27B row is conservative and the ~5× operating-cost advantage is an **upper bound**.
 
-The asymmetry is structural. The 27B in FP8 needs **48 GB of GDDR7**, a memory configuration that, at the time of writing, exists only in current-generation workstation GPUs. The full 12-voter jury needs about **29 GB peak**, and fits on two 2018 second-hand consumer cards that are still widely owned. **Memory, not arithmetic, is the barrier.** Consequences at the Turing tier: **7.6× lower capital** (A$1,200 vs A$9,100) and **~5× lower operating cost per 10,000 votes** (A$0.58 vs A$2.90, an upper bound; the 27B throughput row is measured on a shared vLLM slot, footnote above), on consumer, widely-owned, second-hand silicon.
+The asymmetry is structural. The 27B in FP8 at 256k context needs **48 GB of GDDR7**, a memory configuration that, at the time of writing, exists only in current-generation workstation GPUs at this quantization and context (an INT4 27B fits in far less; §8). The full 12-voter jury needs about **29 GB peak**, and fits on two 2018 second-hand consumer cards that are still widely owned. **Memory, not arithmetic, is the barrier.** Consequences at the Turing tier: **7.6× lower capital** (A$1,200 vs A$9,100) and **~5× lower operating cost per 10,000 votes** (A$0.58 vs A$2.90, an upper bound; the 27B throughput row is measured on a shared vLLM slot, footnote above), on consumer, widely-owned, second-hand silicon.
 
 For the reader who wants the one-sentence version: a single 27B model is a better verifier than our jury, but it is a *48 GB GDDR7* better verifier; the jury route buys a pre-registered, quantified boundary at a price the 27B's hardware class cannot match.
 
@@ -336,7 +345,7 @@ We report the negatives at the same prominence as the positives:
 
 The methodological predecessor is Dawid–Skene [3] and its weak-supervision descendants [4,5,6]; we do not claim a new estimator. The 2026 cluster moves the field past naive conditional independence: Ising-model label aggregation shows class-dependent dependence can make Dawid–Skene strictly suboptimal [7]; CARE shows confounders (verbosity, style) must be separated from latent quality [8]; the Bayesian win-rate calibration line [11] models annotator reliability before aggregating; higher-order-information aggregation beats majority voting with provable guarantees [10]. Our result is complementary and deliberately minimal: the *simplest* member of this lineage, fitted once and applied frozen, already clears a pre-registered bar on a real corpus: evidence that in the heterogeneous-small-families regime, simple calibration is a defensible practitioner choice on consumer hardware.
 
-The skeptic's anchors are [9] and [14]. Nine Judges [9] predicts small effective sample sizes for correlated LLM panels; we agree (2.085) and add that the *pricing* of that information (the calibration) is what carries the pre-registered margin. The co-failure ceiling [14] bounds ensemble accuracy by 1 − β and notes β is not identifiable from pairwise correlations; our 27B head-to-head is a direct measurement of that boundary in the news-verification domain: 93.962% agreement with the raw majority, a shared co-failure set on the only two unsupported claims, and a 4.3% stricter-voter rate on majority-PASS cells. Closest on "small ensemble vs one large model" are the Avengers recipe [13], the simple LLM-ensemble strategy [26], and the council/consultation line [31]; closest on domain plus open models is the HerO/AVeriTeC pipeline [15,16] and the end-to-end fact-check writing line [27], systems optimized for task performance without pre-registration, calibrated aggregation, or cost accounting. The label scheme descends from FEVER [18]; the atomic-claim instrument from QA-based factual consistency [17], FActScore [19], and MiniCheck [20]; the debate-and-deliberation line [21–24] adds multi-round interaction costs that our one-vote-per-configuration design avoids; the weak-supervision benchmarking line [6] and the annotation-protocol line [12] are the methodological neighbors of our registration discipline. Cost-side anchors: org-level on-premise economics [28], prompt-compute tradeoffs [29], energy accounting [30], and the price of prompting generally.
+The skeptic's anchors are [9] and [14]. Nine Judges [9] predicts small effective sample sizes for correlated LLM panels; we agree (2.085) and add that the *pricing* of that information (the calibration) is what carries the pre-registered margin. The co-failure ceiling [14] bounds ensemble accuracy by 1 − β and notes β is not identifiable from pairwise correlations; our 27B head-to-head is a direct measurement of that boundary in the news-verification domain: 93.962% agreement with the raw majority, a shared co-failure set on the only two unsupported claims, and a 4.3% stricter-voter rate on majority-PASS cells. Closest on "small ensemble vs one large model" are the Avengers recipe [13], the simple LLM-ensemble strategy [26], and the multi-agent consultation line [31]; closest on domain plus open models is the HerO/AVeriTeC pipeline [15,16] and the end-to-end fact-check writing line [27], systems optimized for task performance without pre-registration, calibrated aggregation, or cost accounting. The label scheme descends from FEVER [18]; the atomic-claim instrument from QA-based factual consistency [17], FActScore [19], and MiniCheck [20]; the debate-and-deliberation line [21–24] adds multi-round interaction costs that our one-vote-per-configuration design avoids; the weak-supervision benchmarking line [6] and the annotation-protocol line [12] are the methodological neighbors of our registration discipline. Cost-side anchors: org-level on-premise economics [28], prompt-compute tradeoffs [29], energy accounting [30], and the price of prompting generally.
 
 ### 7.4 The novelty claim
 
@@ -371,12 +380,13 @@ Three, each bounded by the limitations in §8.
 - **The defendant is the 27B.** Both routes consume the same defendant claims; defendant errors propagate identically into both gates (as registered).
 - **The implementer is also the 27B.** The coding agent that built the corpus tools, the harness, and the prompt contracts runs on the same model that serves as self-review control, defendant, and judge. The registered gates and labels were human-set and frozen before inference (rule R1), which is the control for this conflict; residual risk concentrates in the drafted prompt contracts, whose frozen text is in the registration for inspection.
 - **Pass 1's world is synthetic.** The mechanism results (intercept, one-vote-per-source, rank robustness) are what we expect to transfer; Pass 1 effect sizes are not claimed for open news. Its co-primary was reading-sensitive, the registered second NLI stack was never run, and the two cycles share half a corpus plus one panel.
+- **The registered null was mis-specified (instrument defect three).** The Pass 2 permutation statistic is a *sum* of two log-losses while the observed value is their *difference*; its stored one-sided p-value is 1.0 by construction, and the paper reports the post-hoc delta-form contrast as a descriptive supplement instead. With Pass 1's missing-intercept calibration map and polarity-poor corpus, this is the third instrument defect the program surfaced; the headline GO does not depend on the registered p-value (§4.2).
 
 ---
 
 ## 9. Conclusion
 
-Agreement across language models is a measurement instrument, and like any instrument it can be broken in ways the analyst does not see until a second panel disagrees. Pass 1 found the break (a missing intercept, a corpus that could not hold falsehoods) and repaired it under a git tag; Pass 2 carried the repaired instrument into open news and let frozen, pre-registered gates decide what the result means. The frozen calibration clears the bar (+0.20289 nats, CI [0.18737, 0.21740], all four test cells green; the registered null is reported as stored; §4.2); the model-free shortcut does not transfer (P9 FALSE); the system route co-fails the 27B on exactly two fine-grained errors and passes on the registered cheaper-and-indistinguishable branch at 0.956× the per-claim cost. The jury carries 2.09 effective votes per claim, and the hardware barrier between the two routes is a 48 GB GDDR7 memory, not an arithmetic gap. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost. This paper measures that instrument twice, with the gates left open.
+Agreement across language models is a measurement instrument, and like any instrument it can be broken in ways the analyst does not see until a second panel disagrees. Pass 1 found the break (a missing intercept, a corpus that could not hold falsehoods) and repaired it under a git tag; Pass 2 carried the repaired instrument into open news and let frozen, pre-registered gates decide what the result means. The frozen calibration clears the bar (+0.20289 nats, CI [0.18737, 0.21740], all four test cells green; the registered sum-statistic null is mis-specified by construction, instrument defect three, §4.2); the model-free shortcut does not transfer (P9 FALSE); the system route co-fails the 27B on exactly two fine-grained errors and passes on the registered cheaper-and-indistinguishable branch (0.781× length-adjusted; 0.956× on the unadjusted proxy). The flagship 4-voter arm carries 2.09 effective votes per claim, and the hardware barrier between the two routes is a 48 GB GDDR7 memory, not an arithmetic gap. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost. This paper measures that instrument twice, with the gates left open.
 
 ---
 
@@ -395,37 +405,37 @@ Agreement across language models is a measurement instrument, and like any instr
 
 ## References
 
-[1] Liu et al. (2026). LLMs-as-jury: agreement at the answer level. arXiv:2607.10139. https://arxiv.org/abs/2607.10139
+[1] Liu, N. (2026). LLMs as a jury: Cross-model consensus can outperform process reward models for LLM reasoning. arXiv:2607.10139. https://arxiv.org/abs/2607.10139
 
 [2] Platt, J. (1999). Probabilistic outputs for support vector machines. (Intercept-bearing calibration maps.)
 
-[3] Dawid, A. P., & Skene, A. M. (1979). Maximum likelihood estimation of observer error-rates using the EM algorithm. *Journal of the Royal Statistical Society Series C*, 74(366), 89–93. https://doi.org/10.1080/01621459.1979.10482046
+[3] Dawid, A. P., & Skene, A. M. (1979). Maximum likelihood estimation of observer error-rates using the EM algorithm. *Applied Statistics*, 28(1), 20–28. https://doi.org/10.2307/2346806
 
 [4] Raykar, V. C., et al. (2010). Learning from crowds. *Journal of Machine Learning Research*, 11, 1225–1247. https://jmlr.org/papers/v11/raykar10a.html
 
 [5] Ratner, A., et al. (2017). Snorkel: Rapid training data creation with weak supervision. arXiv:1711.10160.
 
-[6] Zhang, H., Yu, M., Li, X., et al. (2021). WRENCH: A comprehensive benchmark for weak supervision. arXiv:2109.11377.
+[6] Zhang, J., Yu, Y., Li, Y., et al. (2021). WRENCH: A comprehensive benchmark for weak supervision. arXiv:2109.11377.
 
-[7] Balasubramanian, V., Podkopaev, V., & Kasiviswanathan, S. (2026). Dependence-aware label aggregation for LLM-as-a-judge via Ising models. arXiv:2601.22336.
+[7] Balasubramanian, K., Podkopaev, A., & Kasiviswanathan, S. (2026). Dependence-aware label aggregation for LLM-as-a-judge via Ising models. arXiv:2601.22336.
 
 [8] Zhao, et al. (2026). CARE: Confounder-aware aggregation for reliable LLM evaluation. arXiv:2603.00039.
 
-[9] Kohli, P. (2026). Nine judges, two effective votes: Correlated errors undermine LLM evaluation panels. arXiv:2605.29800.
+[9] Kohli, G. (2026). Nine judges, two effective votes: Correlated errors undermine LLM evaluation panels. arXiv:2605.29800.
 
-[10] Ai, M., Pan, B., Simchi-Levi, D., Tambe, M., & Xu, Y. (2025). Beyond majority voting: LLM aggregation by leveraging higher-order information. arXiv:2510.01499.
+[10] Ai, R., Pan, Y., Simchi-Levi, D., Tambe, M., & Xu, H. (2025). Beyond majority voting: LLM aggregation by leveraging higher-order information. arXiv:2510.01499.
 
-[11] (2024). Bayesian calibration of win rate estimation with LLM evaluators. *EMNLP 2024*. arXiv:2411.04424. https://aclanthology.org/2024.emnlp-main.273/
+[11] Gao, Y., Xu, G., et al. (2024). Bayesian calibration of win rate estimation with LLM evaluators. *EMNLP 2024*. arXiv:2411.04424. https://aclanthology.org/2024.emnlp-main.273/
 
-[12] Camuffo, et al. (2026). Variance-aware LLM annotation for strategy research. arXiv:2601.02370.
+[12] Camuffo, A., Gambardella, A., et al. (2025). Variance-aware LLM annotation for strategy research: Sources, diagnostics, and a protocol for reliable measurement. arXiv:2601.02370.
 
 [13] Zhang, et al. (2025). The Avengers: A simple recipe for uniting smaller language models to challenge proprietary giants. arXiv:2505.19797.
 
-[14] (2026). When does combining language models help? A co-failure ceiling on routing, voting, and mixture-of-agents across 67 frontier models. arXiv:2606.27288.
+[14] Chen, J. (2026). When does combining language models help? A co-failure ceiling on routing, voting, and mixture-of-agents across 67 frontier models. arXiv:2606.27288.
 
 [15] Yoon, et al. (2024). HerO at AVeriTeC: The herd of open large language models for verifying real-world claims. arXiv:2410.12377.
 
-[16] Team HUMANE (2025). HerO 2 at AVeriTeC. arXiv:2507.11004.
+[16] Yoon, Y., Jung, J., Yoon, S., & Park, K. (2025). Team HUMANE at AVeriTeC 2025: HerO 2 for efficient fact verification. arXiv:2507.11004.
 
 [17] Kryscinski, W., et al. (2020). Evaluating the factual consistency of abstractive text summarization. *EMNLP 2020*. https://aclanthology.org/2020.emnlp-main.750/
 
@@ -433,29 +443,29 @@ Agreement across language models is a measurement instrument, and like any instr
 
 [19] Min, S., Krishna, K., et al. (2023). FActScore: Fine-grained atomic evaluation of factual precision in long form text generation. arXiv:2305.14251.
 
-[20] Tang, L., Laban, P., & Durrett, T. (2024). MiniCheck: Efficient fact-checking of LLMs against Wikipedia and knowledge graphs. arXiv:2404.10774.
+[20] Tang, L., Laban, P., & Durrett, G. (2024). MiniCheck: Efficient fact-checking of LLMs on grounding documents. arXiv:2404.10774.
 
 [21] Du, Y., Li, S., et al. (2023). Improving factuality and reasoning in language models through multiagent debate. arXiv:2305.14325.
 
 [22] Chan, C.-M., et al. (2023). ChatEval: Towards better LLM-based evaluators through multi-agent debate. arXiv:2308.07201.
 
-[23] (2025). Debating truth. arXiv:2507.19090.
+[23] He, H., Li, Y., et al. (2025). Debating truth: Debate-driven claim verification with multiple large language model agents. arXiv:2507.19090.
 
-[24] Chowdhury, et al. (2026). Courtroom-style multi-agent deliberation. arXiv:2603.28488.
+[24] Chowdhury, M., Beg, N. J., et al. (2026). Courtroom-style multi-agent debate with progressive RAG and role-switching for controversial claim verification. arXiv:2603.28488.
 
 [25] Mannings, J., & Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Zenodo. https://doi.org/10.5281/zenodo.22159293
 
-[26] Niimi, Y. (2025). A simple ensemble strategy for LLM inference. arXiv:2504.18884.
+[26] Niimi, Y. (2025). A simple ensemble strategy for LLM inference: Towards more stable text classification. arXiv:2504.18884.
 
-[27] Sahnan, M., Corney, C., Larraz, et al. (2026). End-to-end automated fact-check article writing. *TAACL 2026*. arXiv:2503.17684.
+[27] Sahnan, D., Corney, D., Larraz, I., et al. (2026). Can LLMs automate fact-checking article writing? *TACL 2026*. arXiv:2503.17684.
 
-[28] (2025). On-premise LLM deployment: cost-benefit analysis. arXiv:2509.18101.
+[28] Pan, G., Chodnekar, V., Roy, A., & Wang, H. (2025). A cost-benefit analysis of on-premise large language model deployment: Breaking even with commercial LLM services. arXiv:2509.18101.
 
-[29] (2024). The price of prompting. arXiv:2407.16893.
+[29] Husom, E. J., Goknil, A., Shar, L. K., & Sen, S. (2024). The price of prompting: Profiling energy use in large language models inference. arXiv:2407.16893.
 
-[30] (2025). Energy considerations of LLM inference. arXiv:2504.17674.
+[30] Fernandez, J., Na, C., Tiwari, V., Bisk, Y., Luccioni, S., & Strubell, E. (2025). Energy considerations of large language model inference and efficiency optimizations. arXiv:2504.17674.
 
-[31] Liu, et al. (2025). LLM Council. arXiv:2505.08532.
+[31] Liu, Y., Liu, Y., Zhang, X., Chen, X., & Yan, R. (2025). The truth becomes clearer through debate! Multi-agent systems with large language models unmask fake news. arXiv:2505.08532.
 
 ---
 

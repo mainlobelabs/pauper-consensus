@@ -1,0 +1,21 @@
+{
+  "description": "Unregistered v5.1 sensitivity: v2-refit model-free bars (fit == eval). Headline deltas vs v2-refit bars quantify how much of the v1->v2 delta growth is comparator weakening under the polarity-shift regime. NOT a pre-registered quantity.",
+  "n_items": 8000,
+  "v2_truth_mix": {
+    "PASS": 0.5,
+    "FAIL": 0.25,
+    "NOT_STATED": 0.25
+  },
+  "refit_content_bar_ll": 0.33963,
+  "refit_full_bar_ll": 0.30093,
+  "frozen_content_bar_ll_v2": 0.36005,
+  "frozen_full_bar_ll_v2": 0.3325,
+  "em_cal_logloss_v2": {
+    "ft_reason_included": 0.15716,
+    "ft_votes_only": 0.17865
+  },
+  "headline_delta_frozen_bar": 0.20289,
+  "headline_delta_refit_bar": 0.18247,
+  "votes_only_delta_refit_bar": 0.16098,
+  "fullbar_delta_refit_bar": 0.14377
+}

@@ -27,7 +27,7 @@ CSS = """
     color: #777;
   }
   @top-left {
-    content: "The Flip Was in the Instrument, Final, 2026-08-29";
+    content: "The Flip Was in the Instrument, v5.1, 2026-08-29";
     font-family: "Liberation Serif", serif;
     font-size: 8pt;
     color: #999;
@@ -117,7 +117,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 # Each entry is (unique anchor in the md source, figure html to insert after it).
 FIGURES = [
     (
-        "| full | base_zeroshot (ref) | 0.17434 | 0.3325 | +0.15816 | (not computed; ref arm) | ref |",
+        "| content-only, **v2-refit (unregistered)** | reason_included | 0.15716 | 0.33963 | +0.18247 | (not computed) | sensitivity |",
         """<div class="figure">
 <img src="figures/fig1-cells.png" alt="Calibrated delta over the frozen bar, all six pre-registered cells">
 <div class="figcap">Figure 1. Calibrated delta over the frozen model-free bar, all six pre-registered cells (v2, 8,000 claims, all fits frozen from v1). Dashed line: the pre-registered GO threshold (+0.02 nats). All four test cells are green; the base_zeroshot cells are the reference arm. Numbers: eval_v2.json.</div>
