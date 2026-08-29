@@ -97,6 +97,9 @@ blockquote {
   page-break-inside: avoid;
 }
 blockquote p { margin: 0 0 0.5em; }
+.figure { margin: 0.9em 0 1.2em; page-break-inside: avoid; }
+.figure img { display: block; margin: 0 auto 0.45em; max-width: 100%; }
+.figcap { text-align: center; font-size: 9pt; color: #444; line-height: 1.45; margin: 0 0.8em; }
 code {
   font-family: "Liberation Mono", monospace;
   font-size: 8.8pt;

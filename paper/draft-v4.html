@@ -84,6 +84,9 @@ blockquote {
   page-break-inside: avoid;
 }
 blockquote p { margin: 0 0 0.5em; }
+.figure { margin: 0.9em 0 1.2em; page-break-inside: avoid; }
+.figure img { display: block; margin: 0 auto 0.45em; max-width: 100%; }
+.figcap { text-align: center; font-size: 9pt; color: #444; line-height: 1.45; margin: 0 0.8em; }
 code {
   font-family: "Liberation Mono", monospace;
   font-size: 8.8pt;
@@ -392,6 +395,11 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 </tr>
 </tbody>
 </table>
+<div class="figure">
+<img src="figures/fig1-cells.png" alt="Calibrated delta over the frozen bar, all six pre-registered cells">
+<div class="figcap">Figure 1. Calibrated delta over the frozen model-free bar, all six pre-registered cells (v2, 8,000 claims, all fits frozen from v1). Dashed line: the pre-registered GO threshold (+0.02 nats). All four test cells are green; the base_zeroshot cells are the reference arm. Numbers: eval_v2.json.</div>
+</div>
+
 <p><strong>P8: TRUE.</strong> All four pre-registered test cells are green. (The registration calls the full bar a continuity check with no separate GO, while its decision-matrix line applies the same GO rule to every cell; the artifact computes go = true for both full-bar cells, and we report that label.) The headline delta is an order of magnitude beyond the gate and beyond the v1 scale: the v1 smoke test of the identical tool on frozen v1 data (content-only bar) gave +0.093 reason_included / +0.097 votes_only; the frozen calibration, applied to a corpus 6.7× larger and 6 months wider, more than doubles the headline margin. Raw (uncalibrated) EM log-loss is 0.30796 / 0.38314 / 0.34636 for the three arms, still below both bars, but the registered claim is about the calibrated instrument, per rule R2.</p>
 <p>Co-primary within-article AUROC (P(PASS) vs truth = PASS): EM calibrated 0.9951 / 0.9948 / 0.991 (ri / vo / base) versus 0.999 (content bar) and 0.9988 (full bar); ranking is near-saturated for both sides on this corpus, which is why the pre-registered primary is the calibrated log-loss, not AUROC. The fitted EM prior for the headline arm is PASS 0.5247 / FAIL 0.219 / NOT_STATED 0.2563.</p>
 <p><strong>Null test.</strong> The registered null (RNG stream 20260829) permutes truth labels within each article (10,000 permutations, fixed predictors, headline cell), and the registration specifies only "one-sided p-value", leaving the tail unfixed. The frozen tool's registered statistic is the <em>sum</em> of the bar's log-loss at the true labels and the EM calibrated log-loss at the permuted labels; its 95% percentile range is [4.06886, 4.19923] nats, and the stored registered one-sided p-value (upper tail, P(null ≥ observed delta)) is <strong>1.0</strong>, because the observed delta is a <em>difference</em>, not that sum. The like-for-like delta-form contrast (bar at the true labels minus EM at the permuted labels) is the exact transform 2 × 0.36005 − statistic and spans <strong>[−3.4791, −3.3488] nats</strong>; the observed +0.20289 lies <strong>above all 10,000 realizations</strong> (0/10,000 ≥ observed). We fix the tail to the EM-better direction post hoc and report this count as a descriptive supplement, not the registered test. Either way, the headline GO does not depend on this p-value: it rests on the point estimate and the bootstrap CI.</p>
@@ -439,6 +447,11 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 </tbody>
 </table>
 <p>Branch (a) is <strong>false</strong>; branch (b) is <strong>true</strong>: the two false-claim rates are statistically indistinguishable (Δ ≈ 0.002 percentage points, against a 10-point tolerance), and the jury route is strictly cheaper. <strong>Verdict: PASS (branch b).</strong></p>
+<div class="figure">
+<img src="figures/fig3-fcr.png" alt="False-claim rate by verification route">
+<div class="figcap">Figure 2. False-claim rate by verification route on the 591 gateable claims. Both routes co-fail the same two unsupported claims (0/2 catch); the bootstrap CI of the difference, [0.0, 5e-05], spans zero, so the gate passes via the registered branch (b), cost, not catch. Numbers: gate_analysis.json.</div>
+</div>
+
 <p>The catch of 0/2 is the honest core of the system result, and it deserves the full record. The two unsupported claims both passed <strong>12–0 across all twelve jury configurations and were also PASS for the 27B</strong>: a genuine co-failure at the boundary of the instrument. Verbatim from the defendant/judge record (<code>judge.jsonl</code>):</p>
 <ol>
 <li><strong>V2-158, claim 3</strong> (pool tie 13):<blockquote>
@@ -519,6 +532,11 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 </tbody>
 </table>
 <p>Ratio (ri panel / self-review): <strong>0.9561</strong>. Because v2 articles are shorter than v1's (mean 1,419 vs 1,927 characters), the v1-measured per-vote token proxy overstates jury cost; length-adjusted (566.2 tok/vote) the ratio falls to <strong>0.781</strong>. Both keep branch (b). The defendant and judge calls (800, shared by both routes) are excluded from the comparison, as registered.</p>
+<div class="figure">
+<img src="figures/fig2-cost.png" alt="Verification route cost relative to the 27B self-review route">
+<div class="figcap">Figure 3. Verification-route cost per 8,000 claims (USD, token-proxy pricing), relative to the 27B self-review route (1.00x). The full 12-config panel is the reference run, not the gate arm; the gate arm is the reason_included panel at 0.96x (0.781x length-adjusted). Numbers: gate_analysis.json.</div>
+</div>
+
 <hr />
 <h2>6. The barrier was memory</h2>
 <p>The cost question that matters for deployment is not "what does one call cost" but "what hardware must I own, and what does a year of verification run." We cost the two routes at AUD street prices for owned hardware (COST-BARRIER.md; electricity at A$0.30/kWh):</p>
