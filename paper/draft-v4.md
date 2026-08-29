@@ -13,7 +13,7 @@
       reserved (DOI 404s until published) - publish the Zenodo record before submission.
     * 2080 Ti row in §6 is an estimate, not a measurement (kept labeled as such).
     * Affiliation set: Main Lobe Labs (both authors, single affiliation marker).
-    * Figures 1-3 added (charted, paper/figures/): six-cell deltas, FCR by route, route cost.
+    * Figures 1-3 (charted, paper/figures/) are PDF-only: injected by tools/paper_pdf.py at build time, not in this .md.
   - All numbers below were copied verbatim from:
     * runs/2026-08-28-v2-jury/eval_v2.json
     * runs/2026-08-29-v2-27b/gate_analysis.json
@@ -211,11 +211,6 @@ On the full 8,000-claim v2 corpus, with every fit frozen from v1:
 | full | votes_only | 0.17865 | 0.3325 | +0.15385 | (excl. 0) | GO |
 | full | base_zeroshot (ref) | 0.17434 | 0.3325 | +0.15816 | (not computed; ref arm) | ref |
 
-<div class="figure">
-<img src="figures/fig1-cells.png" alt="Calibrated delta over the frozen bar, all six pre-registered cells">
-<div class="figcap">Figure 1. Calibrated delta over the frozen model-free bar, all six pre-registered cells (v2, 8,000 claims, all fits frozen from v1). Dashed line: the pre-registered GO threshold (+0.02 nats). All four test cells are green; the base_zeroshot cells are the reference arm. Numbers: eval_v2.json.</div>
-</div>
-
 **P8: TRUE.** All four pre-registered test cells are green. (The registration calls the full bar a continuity check with no separate GO, while its decision-matrix line applies the same GO rule to every cell; the artifact computes go = true for both full-bar cells, and we report that label.) The headline delta is an order of magnitude beyond the gate and beyond the v1 scale: the v1 smoke test of the identical tool on frozen v1 data (content-only bar) gave +0.093 reason_included / +0.097 votes_only; the frozen calibration, applied to a corpus 6.7× larger and 6 months wider, more than doubles the headline margin. Raw (uncalibrated) EM log-loss is 0.30796 / 0.38314 / 0.34636 for the three arms, still below both bars, but the registered claim is about the calibrated instrument, per rule R2.
 
 Co-primary within-article AUROC (P(PASS) vs truth = PASS): EM calibrated 0.9951 / 0.9948 / 0.991 (ri / vo / base) versus 0.999 (content bar) and 0.9988 (full bar); ranking is near-saturated for both sides on this corpus, which is why the pre-registered primary is the calibrated log-loss, not AUROC. The fitted EM prior for the headline arm is PASS 0.5247 / FAIL 0.219 / NOT_STATED 0.2563.
@@ -256,11 +251,6 @@ Gating applies only to claims with a non-zero unique pool tie (591 of 600; 9 tie
 
 Branch (a) is **false**; branch (b) is **true**: the two false-claim rates are statistically indistinguishable (Δ ≈ 0.002 percentage points, against a 10-point tolerance), and the jury route is strictly cheaper. **Verdict: PASS (branch b).**
 
-<div class="figure">
-<img src="figures/fig3-fcr.png" alt="False-claim rate by verification route">
-<div class="figcap">Figure 2. False-claim rate by verification route on the 591 gateable claims. Both routes co-fail the same two unsupported claims (0/2 catch); the bootstrap CI of the difference, [0.0, 5e-05], spans zero, so the gate passes via the registered branch (b), cost, not catch. Numbers: gate_analysis.json.</div>
-</div>
-
 The catch of 0/2 is the honest core of the system result, and it deserves the full record. The two unsupported claims both passed **12–0 across all twelve jury configurations and were also PASS for the 27B**: a genuine co-failure at the boundary of the instrument. Verbatim from the defendant/judge record (`judge.jsonl`):
 
 1. **V2-158, claim 3** (pool tie 13):
@@ -300,11 +290,6 @@ Per 8,000 claims, token-proxy pricing (4B $0.20/$0.60 per 1M in/out; 27B $1.00/$
 | 27B self-review | 8,000 | 4,639,575 (measured) | **$5.3175** |
 
 Ratio (ri panel / self-review): **0.9561**. Because v2 articles are shorter than v1's (mean 1,419 vs 1,927 characters), the v1-measured per-vote token proxy overstates jury cost; length-adjusted (566.2 tok/vote) the ratio falls to **0.781**. Both keep branch (b). The defendant and judge calls (800, shared by both routes) are excluded from the comparison, as registered.
-
-<div class="figure">
-<img src="figures/fig2-cost.png" alt="Verification route cost relative to the 27B self-review route">
-<div class="figcap">Figure 3. Verification-route cost per 8,000 claims (USD, token-proxy pricing), relative to the 27B self-review route (1.00x). The full 12-config panel is the reference run, not the gate arm; the gate arm is the reason_included panel at 0.96x (0.781x length-adjusted). Numbers: gate_analysis.json.</div>
-</div>
 
 ---
 

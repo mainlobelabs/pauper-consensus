@@ -113,10 +113,43 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 """
 
 
+# Figures are PDF-only: injected at build time, never in draft-v4.md.
+# Each entry is (unique anchor in the md source, figure html to insert after it).
+FIGURES = [
+    (
+        "| full | base_zeroshot (ref) | 0.17434 | 0.3325 | +0.15816 | (not computed; ref arm) | ref |",
+        """<div class="figure">
+<img src="figures/fig1-cells.png" alt="Calibrated delta over the frozen bar, all six pre-registered cells">
+<div class="figcap">Figure 1. Calibrated delta over the frozen model-free bar, all six pre-registered cells (v2, 8,000 claims, all fits frozen from v1). Dashed line: the pre-registered GO threshold (+0.02 nats). All four test cells are green; the base_zeroshot cells are the reference arm. Numbers: eval_v2.json.</div>
+</div>""",
+    ),
+    (
+        "**Verdict: PASS (branch b).**",
+        """<div class="figure">
+<img src="figures/fig3-fcr.png" alt="False-claim rate by verification route">
+<div class="figcap">Figure 2. False-claim rate by verification route on the 591 gateable claims. Both routes co-fail the same two unsupported claims (0/2 catch); the bootstrap CI of the difference, [0.0, 5e-05], spans zero, so the gate passes via the registered branch (b), cost, not catch. Numbers: gate_analysis.json.</div>
+</div>""",
+    ),
+    (
+        "excluded from the comparison, as registered.",
+        """<div class="figure">
+<img src="figures/fig2-cost.png" alt="Verification route cost relative to the 27B self-review route">
+<div class="figcap">Figure 3. Verification-route cost per 8,000 claims (USD, token-proxy pricing), relative to the 27B self-review route (1.00x). The full 12-config panel is the reference run, not the gate arm; the gate arm is the reason_included panel at 0.96x (0.781x length-adjusted). Numbers: gate_analysis.json.</div>
+</div>""",
+    ),
+]
+
+
 def main() -> None:
     text = SRC.read_text(encoding="utf-8")
     # Drop the DRAFT NOTES comment block (and any other html comments).
     text = re.sub(r"<!--.*?-->", "", text, flags=re.S).strip()
+
+    # Inject the PDF-only figures after their unique anchors.
+    for anchor, fig in FIGURES:
+        if anchor not in text:
+            raise SystemExit(f"figure anchor not found: {anchor[:60]!r}")
+        text = text.replace(anchor, f"{anchor}\n\n{fig}", 1)
 
     # Split off the title block: everything before the first "## " heading.
     idx = text.index("\n## ")
