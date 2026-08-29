@@ -1,5 +1,6 @@
 <!-- DRAFT NOTES (not part of the paper)
-  - Draft v4, 2026-08-29. Two-pass, DOI-ready framing. Venue plan: arXiv cs.CL primary,
+  - Final per Andryo 2026-08-29 ("treat it as final"): draft labels stripped, DOI in
+    title block. Two-pass, DOI-ready framing. Venue plan: arXiv cs.CL primary,
     JASIST first journal choice, PeerJ CS fallback (notes/lit-review.md §4).
   - Title candidates (Andryo to choose):
     1. "The Flip Was in the Instrument: Two Pre-Registered Passes from Cross-Model
@@ -9,8 +10,10 @@
     3. "The Calibrated Jury at Eleven Dollars: Pre-Registered News-Claim Verification
        by 3–4B LLMs on Consumer Hardware"
   - Open items before submission:
-    * Pass 1 preprint: Zenodo DOI 10.5281/zenodo.22159293 now in ref [25]; record is
-      reserved (DOI 404s until published) - publish the Zenodo record before submission.
+     * Pass 1 preprint: Zenodo DOI 10.5281/zenodo.22159293 now in ref [25]; record is
+       reserved (DOI 404s until published) - publish the Zenodo record before submission.
+     * Pass 2 record: Zenodo 22159835 reserved (DOI 404s until published); now in title
+       block. Publish the record before submission so the link resolves.
     * 2080 Ti row in §6 is an estimate, not a measurement (kept labeled as such).
     * Affiliation set: Main Lobe Labs (both authors, single affiliation marker).
     * Figures 1-3 (charted, paper/figures/) are PDF-only: injected by tools/paper_pdf.py at build time, not in this .md.
@@ -31,7 +34,7 @@
 
 ¹ Main Lobe Labs
 
-Draft v4 · 2026-08-29 · Pre-submission draft · DOI: [Zenodo registration pending]
+Final · 2026-08-29 · DOI: https://doi.org/10.5281/zenodo.22159835
 Code and artifacts: https://github.com/marzukia/pauper-consensus (git tags `prereg-waveconsensus-v1`, `prereg-waveconsensus-v2`; tag names keep the original working name, the repository was renamed after the registrations were cut)
 
 ---
@@ -341,7 +344,11 @@ To our knowledge, this is the first pre-registered, cross-corpus-validated evalu
 
 ### 7.5 AI pair coding and authorship
 
-This project was executed as an AI pair-coding collaboration. A general-purpose coding agent, running on the same machine fleet that hosts the experiment, was the primary implementation partner across both passes. It wrote the corpus builders and the contamination gate, the Dawid–Skene EM fit and calibration code, the jury launch harness and six-way llama.cpp serving, the pre-registered evaluation, null, and bootstrap tools, the 27B phase runner, and the cost accounting. It also drafted the prompt contracts used by the jury voters, the defendant, and the judge; the authors edited and probed those drafts, and the frozen versions are the ones recorded in `prereg-v2.yaml`, with the iteration history in the git log. What the agent did not do: it did not set the labels, choose the gates or GO rules, or interpret any result; every frozen quantity was fixed by the authors before the registration was tagged. The agent drafted the manuscript too, including this section. The audit trail for the whole loop is the repository itself.
+This project was executed as an AI pair-coding collaboration. A general-purpose coding agent, running on the same machine fleet that hosts the experiment, was the primary implementation partner across both passes. It wrote the corpus builders and the contamination gate, the Dawid–Skene EM fit and calibration code, the jury launch harness and six-way llama.cpp serving, the pre-registered evaluation, null, and bootstrap tools, the 27B phase runner, and the cost accounting. It also drafted the prompt contracts used by the jury voters, the defendant, and the judge; the authors edited and probed those drafts, and the frozen versions are the ones recorded in `prereg-v2.yaml`, with the iteration history in the git log.
+
+The agent and the reference system are the same model: the general-purpose coding agent runs on qwen3.8-27b, the model that later serves as the self-review control, the defendant, and the judge in §5. The defendant was therefore evaluated under prompt contracts its own base model had drafted. We state this plainly because it is the strongest test of the paper's central claim: the conflict is controlled not by the model's neutrality but by the instrument. Every label distribution, gate, and GO rule was fixed by the authors and frozen at the tag before any verdict existed; the agent could not alter what it would later be judged by. A reader who trusts the frozen registration has the same grounds to trust it here; a reader who does not should distrust the whole method, not this detail of it.
+
+What the agent did not do: it did not set the labels, choose the gates or GO rules, or interpret any result; every frozen quantity was fixed by the authors before the registration was tagged. The agent drafted the manuscript too, including this section. The audit trail for the whole loop is the repository itself.
 
 ### 7.6 Implications
 
@@ -362,6 +369,7 @@ Three, each bounded by the limitations in §8.
 - **Cost is a token-USD proxy**, anchored on v1's measured 693.1 tok/vote and published per-token prices; the 27B tokens are measured, the jury tokens are proxied (v2 articles are shorter than v1's, and the length-adjusted ratio is reported). The 2080 Ti row is an estimate.
 - **One 27B, one quantization, one serving config.** The head-to-head is against qwen3.8-27b FP8 at temperature 0; other frontier models may sit at different points on the boundary.
 - **The defendant is the 27B.** Both routes consume the same defendant claims; defendant errors propagate identically into both gates (as registered).
+- **The implementer is also the 27B.** The coding agent that built the corpus tools, the harness, and the prompt contracts runs on the same model that serves as self-review control, defendant, and judge. The registered gates and labels were human-set and frozen before inference (rule R1), which is the control for this conflict; residual risk concentrates in the drafted prompt contracts, whose frozen text is in the registration for inspection.
 - **Pass 1's world is synthetic.** The mechanism results (intercept, one-vote-per-source, rank robustness) are what we expect to transfer; Pass 1 effect sizes are not claimed for open news. Its co-primary was reading-sensitive, the registered second NLI stack was never run, and the two cycles share half a corpus plus one panel.
 
 ---

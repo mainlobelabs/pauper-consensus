@@ -27,7 +27,7 @@ CSS = """
     color: #777;
   }
   @top-left {
-    content: "The Flip Was in the Instrument, Draft v4, 2026-08-29";
+    content: "The Flip Was in the Instrument, Final, 2026-08-29";
     font-family: "Liberation Serif", serif;
     font-size: 8pt;
     color: #999;
