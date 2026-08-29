@@ -41,7 +41,7 @@
 ¹ Main Lobe Labs
 
 v5.1 · 2026-08-29 · DOI: https://doi.org/10.5281/zenodo.22159835
-Code and artifacts: https://github.com/marzukia/pauper-consensus (git tags `prereg-waveconsensus-v1`, `prereg-waveconsensus-v2`; tag names keep the original working name, the repository was renamed after the registrations were cut)
+Code and artifacts: https://github.com/mainlobelabs/pauper-consensus (git tags `prereg-waveconsensus-v1`, `prereg-waveconsensus-v2`; tag names keep the original working name, the repository was renamed after the registrations were cut)
 
 ---
 
@@ -392,7 +392,7 @@ Agreement across language models is a measurement instrument, and like any instr
 
 ## 10. Reproducibility and artifacts
 
-- **Repository:** https://github.com/marzukia/pauper-consensus. The method is named Pauper Consensus; the repository was renamed from wave-consensus after both registrations were cut, so the frozen tag names below keep the original working name (the old URL redirects). Git tags: `prereg-waveconsensus-v1` (corpus v1, adapters commit 1273339), `prereg-waveconsensus-v2` (prereg-v2.yaml + sha256 manifest over frozen inputs, tools frozen at tag).
+- **Repository:** https://github.com/mainlobelabs/pauper-consensus (transferred from the marzukia account 2026-08-29; the old URL redirects). The method is named Pauper Consensus; the repository was renamed from wave-consensus after both registrations were cut, so the frozen tag names below keep the original working name. Git tags: `prereg-waveconsensus-v1` (corpus v1, adapters commit 1273339), `prereg-waveconsensus-v2` (prereg-v2.yaml + sha256 manifest over frozen inputs, tools frozen at tag).
 - **Registration:** `prereg-v2.yaml` at `prereg-waveconsensus-v2`; "implementations are the registration."
 - **Frozen v1 inputs:** `corpus-v2/frozen/v1_baselines.json` (sha256 `2d011f2d1339b7b4d238a0aaae485a133a5bec525f6480d3639440a70fed39a8`): per-arm calibration maps, covariate bars, EM/calibration/covariate specs, v1 splits, and the reproduced v1 test reference used for the tool's smoke test (content-only deltas +0.093 ri / +0.097 vo; full-bar +0.0151 ri / +0.0191 vo).
 - **Runs:** `runs/2026-08-28-v2-jury/` (jury launch log with JURY LAUNCH COMPLETE 2026-08-29 00:37:54, per-model vote rows, `eval_v2.json` with all capability numbers); `runs/2026-08-29-v2-27b/` (self-review 8,000 calls, defendant 200 + judge 600, `judge.jsonl` with verbatim claims and adjudication reasons, `gate_analysis.json` with all system-gate and cost numbers).
