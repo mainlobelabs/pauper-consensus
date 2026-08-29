@@ -1,0 +1,24 @@
+{
+  "started": "2026-08-29T04:55:07Z",
+  "invocations": [
+    {
+      "at": "2026-08-29T04:55:07Z",
+      "phase": "all"
+    }
+  ],
+  "finished": "2026-08-29T04:55:07Z",
+  "host": "100.95.144.25",
+  "git": "320141f667e12b1ea4e27aa35be80af7de30a4f1",
+  "model": "qwen3.8-27b",
+  "port": 8000,
+  "params": {
+    "temperature": 0,
+    "max_tokens": 512,
+    "thinking": "off (chat_template_kwargs enable_thinking False)",
+    "retries": 3,
+    "timeout_s": 300,
+    "concurrency": 1
+  },
+  "template_source": "prereg-v2.yaml defendant/judge_prompt/jury_contract blocks (verbatim)",
+  "invocation_phase": "all"
+}

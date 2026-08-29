@@ -25,10 +25,14 @@ and applied frozen**. Pre-registered result: **+0.20 nats log-loss vs the frozen
 baseline (95% CI [0.187, 0.217]), all four test cells green** (v1's smaller jury:
 +0.09). Cost is **measured, not estimated: ~A$11 per 96k votes on owned hardware**
 (~A$5.5 estimated on 2× used 2018 2080 Ti). A head-to-head against a single
-**Qwen 27B FP8** (RTX PRO 5000 Blackwell, 48 GB) is in progress: at 50%, 94.1% exact
-label agreement, jury-FAIL precision vs 27B 96.9%, 27B adds ~3% extra catches on
-jury-PASS cells. Protocol: frozen YAML + sha256 manifest + git tag, mechanical
-decision gates, per-item spend caps.
+**Qwen 27B FP8** (RTX PRO 5000 Blackwell, 48 GB) is complete (8000/8000, 50
+missing): 94.0% exact label agreement with the 12-config majority; the 27B is
+the stricter voter (4.3% of majority-PASS cells land FAIL/NS). System-level gate
+test: the jury route PASSES the pre-registered criterion (branch b) — equal
+false-claim rate (0.34% vs 0.34%, neither gate catches either of the two
+fine-grained factual errors, a 12-0 + 27B co-failure) at strictly lower cost
+($5.08 vs $5.32 per 8000 claims, v1 token proxy). Protocol: frozen YAML +
+sha256 manifest + git tag, mechanical decision gates, per-item spend caps.
 
 ---
 
@@ -156,9 +160,10 @@ math models; low-ρ heterogeneous ensembles beat high-ρ Mixture-of-Agents.
 **Difference from us:** frontier models on math/code/GPQA. **This ceiling is the
 exact prior our 27B head-to-head measures:** how close does a small-model jury
 get to a single large model on a *verifiable* task, and at what cost? Our
-94.1% agreement / 96.9% FAIL precision / +3% PASS-cell numbers are an empirical
-β-style quantification the theory paper predicts but does not deliver for the
-news-verification domain.
+final 100%-corpus head-to-head (94.0% agreement; 27B stricter on 4.3% of
+majority-PASS cells; both systems co-fail the same two fine-grained factual
+errors) is an empirical β-style quantification the theory paper predicts but
+does not deliver for the news-verification domain.
 
 ### D. News fact verification pipelines
 
@@ -250,9 +255,10 @@ What is new, to our knowledge, is the **conjunction**:
    the 27B) — org-level cost papers exist, workload-level per-vote cost for an
    LLM jury does not.
 4. **A quantified boundary against a single large model** — head-to-head on the
-   same claims (94.1% agreement, 96.9% FAIL precision, +3% PASS-cell), which is
-   the empirical answer the co-failure-ceiling theory predicts but never measures
-   for this domain.
+   same claims (94.0% agreement on the full corpus; the 27B stricter on 4.3% of
+   majority-PASS cells; identical co-failure on the only two unsupported
+   claims), which is the empirical answer the co-failure-ceiling theory predicts
+   but never measures for this domain.
 5. **Prompt condition as a voter design axis** — the same family votes under three
    prompt conditions, so prompt style is a first-class source of voter diversity
    that EM can weight, which no surveyed paper exploits.
@@ -366,10 +372,10 @@ Alternative (shorter, cost-forward):
 > 0.20 nats (95% CI [0.187, 0.217]) over the frozen baseline with all
 > pre-registered test cells passing, at a measured cost of roughly A$11 on owned
 > consumer hardware. In a direct head-to-head, a single 27B model agrees with
-> the jury on 94.1% of claims, the jury's FAIL verdicts retain 96.9% precision
-> against the 27B, and the 27B adds only ~3% extra catches on jury-PASS cells —
-> quantifying where a calibrated small-model jury can stand in for a single
-> large model on verifiable claims.
+> the jury on 94.0% of claims, and the 27B is the stricter voter (4.3% of
+> jury-PASS cells land FAIL/NS); the two systems co-fail the only two
+> unsupported claims — quantifying where a calibrated small-model jury can
+> stand in for a single large model on verifiable claims.
 
 ---
 
@@ -387,8 +393,10 @@ Alternative (shorter, cost-forward):
    Information Extraction" (NAACL 2022, https://aclanthology.org/2022.naacl-main.342/).
    Resolve before writing related work, or lean on Snorkel + WRENCH + Dawid-Skene
    for the weak-supervision lineage (which already covers it).
-3. **27B head-to-head is 50% complete.** All head-to-head numbers in §1 and §5
-   are provisional; update the review and the abstract at 100%.
+3. **[RESOLVED 2026-08-29] 27B head-to-head complete.** 8000/8000 (50 missing,
+   0.6%), 10651 s. Final agreement with the 12-config majority: 93.96%. All
+   head-to-head numbers in §1 and §5 updated to final values; gate analysis in
+   runs/2026-08-29-v2-27b/gate_analysis.json (PASS branch b).
 4. **2080 Ti cost figure is an estimate** (kept labeled as such); the
    owned-Mac figure is the measured anchor.
 5. **Add the n_eff / effective-voter diagnostic to the paper** (pre-registered

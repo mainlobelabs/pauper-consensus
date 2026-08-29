@@ -1,0 +1,201 @@
+{
+  "sanity_em_refit": {
+    "e0": 0.3062,
+    "e0_ref": 0.3062,
+    "em_data_ll": -15787.75587,
+    "em_data_ll_ref": -15787.75587
+  },
+  "system_bar": {
+    "note": "prereg self_review.uses[0]: three-state accuracy and gate-binary (PASS) accuracy on v2 pool labels",
+    "n_pool_items": 8000,
+    "selfreview_27b": {
+      "n_missing": 50,
+      "three_state_acc_nonmissing": 0.95887,
+      "gate_binary_acc_nonmissing": 0.99119
+    },
+    "jury_ri_em": {
+      "gate_binary_acc": 0.9825,
+      "three_state_argmax_acc": 0.93912
+    },
+    "detection_context": {
+      "jury_ri_fail_recall": 0.9805,
+      "selfreview_27b_fail_recall": 0.99398
+    }
+  },
+  "defendant": {
+    "n_defendant_calls": 200,
+    "n_judge_calls": 600,
+    "n_supported": 598,
+    "n_unsupported": 2,
+    "n_judge_unparse": 0,
+    "n_gateable_unique_pool_tie": 591,
+    "n_tie0": 9,
+    "n_false_gateable": 2,
+    "raw_false_claim_rate": 0.00333
+  },
+  "gates": {
+    "jury_gated": {
+      "gate": "WCT-EM ri consensus P(PASS) >= 0.5 on tied pool prop",
+      "survivors": 589,
+      "of": 591,
+      "false_claim_rate": 0.003395585738539898,
+      "false_claim_catch": 0.0
+    },
+    "self_review_gated": {
+      "gate": "27B self-review three-state == PASS on tied pool prop",
+      "survivors": 585,
+      "of": 591,
+      "n_sr_verdict_missing": 6,
+      "false_claim_rate": 0.003418803418803419,
+      "false_claim_catch": 0.0
+    }
+  },
+  "bootstrap": {
+    "resamples": 2000,
+    "unit": "article-block",
+    "seed": 20260827,
+    "ci_jury_minus_selfreview_false_claim_rate": [
+      0.0,
+      5e-05
+    ],
+    "note": "claims with a missing SR verdict excluded from the paired draw (v1 had none)"
+  },
+  "pass_criterion": {
+    "branch_a_jury_beats_selfreview_ci_below_zero": false,
+    "branch_b_within_10pts_and_strictly_cheaper": true,
+    "within_10pts": true,
+    "verdict": "PASS (branch b)"
+  },
+  "cost": {
+    "price_per_1M_usd": {
+      "4b": [
+        0.2,
+        0.6
+      ],
+      "27b": [
+        1.0,
+        3.0
+      ]
+    },
+    "jury_ri_panel": {
+      "calls": 32044,
+      "tokens_proxy": {
+        "input": 20604212,
+        "output": 1605444,
+        "total": 22209656
+      },
+      "token_proxy_note": "v1 measured 693.1 tok/vote, identical 4 families + contract template; in/out split 92.77/7.23 from v1 measured totals",
+      "usd": 5.0841
+    },
+    "jury_full_12config": {
+      "calls": 96236,
+      "tokens_proxy": {
+        "total": 66701051
+      },
+      "usd": 15.2688
+    },
+    "self_review_27b": {
+      "calls": 8000,
+      "tokens_measured": {
+        "input": 4300609,
+        "output": 338966,
+        "total": 4639575
+      },
+      "usd": 5.3175
+    },
+    "defendant_plus_judge_27b_shared": {
+      "calls": 800,
+      "tokens_measured": {
+        "input": 769445,
+        "output": 59378
+      },
+      "note": "shared by both routes; excluded from the comparison (v1)"
+    },
+    "ratio_ri_panel_over_sr": 0.9561,
+    "ratio_full12_over_sr": 2.8714,
+    "length_sensitivity": {
+      "v1_article_mean_chars": 1927,
+      "v2_article_mean_chars": 1419,
+      "tok_per_vote_v1_measured": 693.1,
+      "tok_per_vote_length_adjusted": 566.2,
+      "ratio_ri_panel_over_sr_v1_measured": 0.9561,
+      "ratio_ri_panel_over_sr_length_adjusted": 0.781,
+      "note": "v2 articles are shorter, so the v1-measured proxy overstates jury cost; both ratios < 1.0 keep branch (b)"
+    }
+  },
+  "cross_tab_final": {
+    "n_cells": 8000,
+    "truth_dist": {
+      "PASS": 4000,
+      "FAIL": 2000,
+      "NOT_STATED": 2000
+    },
+    "selfreview_dist_nonmissing": {
+      "PASS": 4030,
+      "FAIL": 2229,
+      "NOT_STATED": 1691
+    },
+    "plurality12_dist": {
+      "PASS": 4211,
+      "FAIL": 1968,
+      "NOT_STATED": 1821
+    },
+    "selfreview_vs_truth": {
+      "PASS": {
+        "PASS": 3966,
+        "FAIL": 6,
+        "NOT_STATED": 0
+      },
+      "FAIL": {
+        "PASS": 12,
+        "FAIL": 1973,
+        "NOT_STATED": 7
+      },
+      "NOT_STATED": {
+        "PASS": 52,
+        "FAIL": 250,
+        "NOT_STATED": 1684
+      }
+    },
+    "selfreview_vs_plurality12": {
+      "PASS": {
+        "PASS": 4000,
+        "FAIL": 108,
+        "NOT_STATED": 72
+      },
+      "FAIL": {
+        "PASS": 18,
+        "FAIL": 1896,
+        "NOT_STATED": 45
+      },
+      "NOT_STATED": {
+        "PASS": 12,
+        "FAIL": 225,
+        "NOT_STATED": 1574
+      }
+    },
+    "plurality_ties_fail_first": 110,
+    "agreement_with_truth_nonmissing": 0.95887,
+    "agreement_with_plurality12_nonmissing": 0.93962,
+    "selfreview_vs_em_gate_binary": {
+      "PASS": {
+        "PASS": 3977,
+        "notPASS": 23
+      },
+      "FAIL": {
+        "PASS": 39,
+        "notPASS": 1961
+      },
+      "NOT_STATED": {
+        "PASS": 78,
+        "notPASS": 1922
+      }
+    },
+    "note": "plurality = raw 12-config majority; ties broken FAIL > NOT_STATED > PASS; EM gate = calibrated P(PASS) >= 0.5; 'vs_truth' rows are ground truth, 'vs_plurality12' rows are the raw jury consensus (matches the 50% checkpoint table)"
+  },
+  "e0_n_eff": {
+    "e0_ri": 0.3062,
+    "n_eff_kish_4voters": 2.085
+  },
+  "elapsed_s": 1.4
+}
