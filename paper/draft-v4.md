@@ -9,10 +9,11 @@
     3. "The Calibrated Jury at Eleven Dollars: Pre-Registered News-Claim Verification
        by 3–4B LLMs on Consumer Hardware"
   - Open items before submission:
-    * Pass 1 preprint link (Mannings & Marzuki, "The Flip Was in the Instrument",
-      draft v3) not yet on arXiv. Placeholder [PREPRINT-PENDING] in references.
+    * Pass 1 preprint: Zenodo DOI 10.5281/zenodo.22159293 now in ref [25]; record is
+      reserved (DOI 404s until published) - publish the Zenodo record before submission.
     * 2080 Ti row in §6 is an estimate, not a measurement (kept labeled as such).
-    * Affiliations are placeholders.
+    * Affiliation set: Main Lobe Labs (both authors, single affiliation marker).
+    * Figure set undecided (charted previews generated 2026-08-29, see thread).
   - All numbers below were copied verbatim from:
     * runs/2026-08-28-v2-jury/eval_v2.json
     * runs/2026-08-29-v2-27b/gate_analysis.json
@@ -26,9 +27,9 @@
 
 # The Flip Was in the Instrument: Two Pre-Registered Passes from Cross-Model Proposition Aggregation to a Cost-Quantified Jury of Small Language Models
 
-**Jeremiah Mannings**¹, **Andryo Marzuki**²
+**Jeremiah Mannings**¹, **Andryo Marzuki**¹
 
-¹ [Affiliation placeholder] ² [Affiliation placeholder]
+¹ Main Lobe Labs
 
 Draft v4 · 2026-08-29 · Pre-submission draft · DOI: [Zenodo registration pending]
 Code and artifacts: https://github.com/marzukia/pauper-consensus (git tags `prereg-waveconsensus-v1`, `prereg-waveconsensus-v2`; tag names keep the original working name, the repository was renamed after the registrations were cut)
@@ -380,7 +381,7 @@ Agreement across language models is a measurement instrument, and like any instr
 - **RNG streams:** EM point estimate 20260827 (5 restarts); bootstrap 20260828 (2,000 article-block resamples, 0 restarts); null 20260829 (10,000 permutations); gate bootstrap 20260827 (2,000 resamples).
 - **Hardware:** jury on marzuki-helium (Mac Studio M3 Ultra) via llama.cpp/omlx, ports 8102–8107, 13.2 h; 27B phase on marzuki-hydrogen (vLLM, RTX PRO 5000 Blackwell 48 GB), 12,028 s total (defendant 520 s, self-review 10,651 s, judge 857 s). Spend caps persisted across re-runs (27B: 10,000; per juror: 8,000).
 - **Corpora:** v1 (30 articles, 1,200 propositions) at tag `prereg-waveconsensus-v1`; v2 (200 articles, 8,000 propositions) with contamination-gate run in `corpus-v2/gate/runs/2026-08-28/`.
-- **Pass 1:** Mannings & Marzuki [25], draft v3; protocol tag and artifacts per that paper. Preprint link: [PREPRINT-PENDING].
+- **Pass 1:** Mannings & Marzuki [25]; protocol tag and artifacts per that paper. Preprint: https://doi.org/10.5281/zenodo.22159293 (Zenodo record reserved; publish the record before submission so the link resolves).
 
 ---
 
@@ -434,7 +435,7 @@ Agreement across language models is a measurement instrument, and like any instr
 
 [24] Chowdhury, et al. (2026). Courtroom-style multi-agent deliberation. arXiv:2603.28488.
 
-[25] Mannings, J., & Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Draft v3, 2026-08-17. [PREPRINT-PENDING]
+[25] Mannings, J., & Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Zenodo. https://doi.org/10.5281/zenodo.22159293
 
 [26] Niimi, Y. (2025). A simple ensemble strategy for LLM inference. arXiv:2504.18884.
 
