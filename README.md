@@ -1,4 +1,4 @@
-# wave-consensus
+# Pauper Consensus
 
 A pre-registered research experiment. We test a sharpened form of cross-model
 proposition-level consensus: instead of running generic models and aligning their
@@ -10,7 +10,7 @@ It is an independent replication-and-refinement of Mannings & Marzuki,
 *The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model
 Proposition Aggregation* (2026). The source paper's instrument failed at the
 free-text-to-proposition boundary (its NLI alignment layer scored 0 of 607
-negative-polarity propositions). wave-consensus removes that boundary by making
+negative-polarity propositions). Pauper Consensus removes that boundary by making
 propositions structured, and re-runs the frozen gate.
 
 ## Install
