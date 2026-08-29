@@ -1,0 +1,182 @@
+{
+  "n_items": 8000,
+  "n_articles": 200,
+  "spec": {
+    "rng_em": 20260827,
+    "rng_boot": 20260828,
+    "rng_null": 20260829,
+    "boot": 2000,
+    "null": 10000,
+    "go_threshold": 0.02,
+    "em_spec": {
+      "estimator": "three-state MAP-EM Dawid-Skene (PASS/FAIL/NOT_STATED)",
+      "observed": [
+        "PASS",
+        "FAIL",
+        "NOT_STATED",
+        "MISSING"
+      ],
+      "latent": [
+        "PASS",
+        "FAIL",
+        "NOT_STATED"
+      ],
+      "kappa_dirichlet": 5.0,
+      "diag_prior": 0.8,
+      "basins": "structured (all-sharp, per-voter-sharp) + 5 concentrated random restarts",
+      "select": "highest data log-likelihood",
+      "max_iter": 200,
+      "convergence_tol": 1e-08,
+      "rng_seed": 20260827
+    },
+    "calibration_spec": {
+      "method": "3-class affine (Platt-like) on log-posteriors; Nelder-Mead MLE",
+      "p0": [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "maxiter": 2000,
+      "xatol": 1e-06,
+      "fatol": 1e-08,
+      "fit_split": "v1 calibration (10 articles, 400 items)"
+    },
+    "frozen_file": "corpus-v2/frozen/v1_baselines.json"
+  },
+  "arms": {
+    "ft_reason_included": {
+      "em_data_ll": -15787.75587,
+      "em_prior": {
+        "PASS": 0.5247,
+        "FAIL": 0.219,
+        "NOT_STATED": 0.2563
+      },
+      "em_logloss_raw": 0.30796,
+      "em_logloss_calibrated": 0.15716,
+      "missing_rate_per_model": {
+        "llama-3.2-3b-instruct__reason_included": 0.00075,
+        "gemma-3-4b-it__reason_included": 0.00375,
+        "phi-4-mini-instruct__reason_included": 0.00038,
+        "qwen35-4b__reason_included": 0.00063
+      },
+      "e0": 0.3062,
+      "auc_em_cal": 0.9951
+    },
+    "ft_votes_only": {
+      "em_data_ll": -15151.5063,
+      "em_prior": {
+        "PASS": 0.555,
+        "FAIL": 0.2434,
+        "NOT_STATED": 0.2016
+      },
+      "em_logloss_raw": 0.38314,
+      "em_logloss_calibrated": 0.17865,
+      "missing_rate_per_model": {
+        "llama-3.2-3b-instruct__votes_only": 0.00013,
+        "gemma-3-4b-it__votes_only": 0.0,
+        "phi-4-mini-instruct__votes_only": 0.0,
+        "qwen35-4b__votes_only": 0.00013
+      },
+      "e0": 0.2976,
+      "auc_em_cal": 0.9948
+    },
+    "base_zeroshot": {
+      "em_data_ll": -17586.87952,
+      "em_prior": {
+        "PASS": 0.5352,
+        "FAIL": 0.2509,
+        "NOT_STATED": 0.2139
+      },
+      "em_logloss_raw": 0.34636,
+      "em_logloss_calibrated": 0.17434,
+      "missing_rate_per_model": {
+        "llama-3.2-3b-instruct": 0.01425,
+        "gemma-3-4b-it": 0.007,
+        "phi-4-mini-instruct": 0.00162,
+        "qwen35-4b": 0.00088
+      },
+      "e0": 0.3293,
+      "auc_em_cal": 0.991
+    }
+  },
+  "cells": {
+    "content_ft_reason_included": {
+      "bar_logloss": 0.36005,
+      "em_cal_logloss": 0.15716,
+      "delta": 0.20289,
+      "auc_em_cal": 0.9951,
+      "auc_bar": 0.999,
+      "go": true
+    },
+    "content_ft_votes_only": {
+      "bar_logloss": 0.36005,
+      "em_cal_logloss": 0.17865,
+      "delta": 0.1814,
+      "auc_em_cal": 0.9948,
+      "auc_bar": 0.999,
+      "go": true
+    },
+    "content_base_zeroshot": {
+      "bar_logloss": 0.36005,
+      "em_cal_logloss": 0.17434,
+      "delta": 0.18571,
+      "auc_em_cal": 0.991,
+      "auc_bar": 0.999,
+      "go": null
+    },
+    "full_ft_reason_included": {
+      "bar_logloss": 0.3325,
+      "em_cal_logloss": 0.15716,
+      "delta": 0.17534,
+      "auc_em_cal": 0.9951,
+      "auc_bar": 0.9988,
+      "go": true
+    },
+    "full_ft_votes_only": {
+      "bar_logloss": 0.3325,
+      "em_cal_logloss": 0.17865,
+      "delta": 0.15385,
+      "auc_em_cal": 0.9948,
+      "auc_bar": 0.9988,
+      "go": true
+    },
+    "full_base_zeroshot": {
+      "bar_logloss": 0.3325,
+      "em_cal_logloss": 0.17434,
+      "delta": 0.15816,
+      "auc_em_cal": 0.991,
+      "auc_bar": 0.9988,
+      "go": null
+    }
+  },
+  "headline": {
+    "cell": "content_ft_reason_included",
+    "delta": 0.20289,
+    "boot_ci95": [
+      0.18737,
+      0.2174
+    ],
+    "null_perm_ci95": [
+      4.06886,
+      4.19923
+    ],
+    "null_p_value": 1.0,
+    "P8": true
+  },
+  "P9": {
+    "ft_reason_included": {
+      "v2_full_delta": 0.17534,
+      "v1_full_delta": 0.01506,
+      "within_0p05": false
+    },
+    "ft_votes_only": {
+      "v2_full_delta": 0.15385,
+      "v1_full_delta": 0.01911,
+      "within_0p05": false
+    }
+  },
+  "elapsed_s": 174.5
+}

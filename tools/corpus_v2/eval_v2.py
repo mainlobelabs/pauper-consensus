@@ -118,7 +118,7 @@ def build_items(c: dict, trap_order: list[str]) -> dict:
     for tid in c["ids"]:
         art_len = len(c["articles"][tid])  # raw file text, as in v1
         for r in c["labels"][tid]:
-            i = int(r["id"].split("-")[1])
+            i = int(r["id"].rsplit("-", 1)[1])  # last segment = pool index (IDs: R02-001, V2-031-001)
             m = next(x for x in c["meta"][tid] if x["id"] == r["id"])
             f = [
                 math.log1p(art_len),

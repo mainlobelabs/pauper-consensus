@@ -1,0 +1,51 @@
+{
+  "started": "2026-08-28T11:24:44Z",
+  "invocations": [
+    {
+      "at": "2026-08-28T11:24:44Z",
+      "models": [
+        "phi-4-mini-instruct"
+      ],
+      "rows": 8000
+    },
+    {
+      "at": "2026-08-28T19:54:21Z",
+      "models": [
+        "phi-4-mini-instruct__votes_only"
+      ],
+      "rows": 8000
+    },
+    {
+      "at": "2026-08-29T00:32:01Z",
+      "models": [
+        "phi-4-mini-instruct"
+      ],
+      "rows": 13
+    },
+    {
+      "at": "2026-08-29T00:37:36Z",
+      "models": [
+        "phi-4-mini-instruct__votes_only"
+      ],
+      "rows": 0
+    }
+  ],
+  "finished": "2026-08-29T00:37:36Z",
+  "host": "100.83.162.43",
+  "git": "04a0f912bd085f3c4e493314ce3738214f617319",
+  "mapping": {
+    "phi-4-mini-instruct__votes_only": 8104
+  },
+  "models_run_this_invocation": [
+    "phi-4-mini-instruct__votes_only"
+  ],
+  "params": {
+    "temperature": 0,
+    "max_tokens": 512,
+    "thinking": "off where toggle exposed (qwen35-4b)",
+    "retries": 3,
+    "timeout_s": 300
+  },
+  "template_source": "prereg-v2.yaml jury_contract block (verbatim)",
+  "rows_written_this_invocation": 0
+}

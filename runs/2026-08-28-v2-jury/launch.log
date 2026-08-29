@@ -1,0 +1,76 @@
+[2026-08-28 11:24:44] ==== PHASE 1: core 8 models (base + reason_included) ====
+[2026-08-28 11:24:44]   port 8102 -> qwen35-4b
+[2026-08-28 11:24:44]   port 8103 -> qwen35-4b__reason_included
+[2026-08-28 11:24:44]   port 8104 -> phi-4-mini-instruct
+[2026-08-28 11:24:44]   port 8105 -> phi-4-mini-instruct__reason_included
+[2026-08-28 11:24:44]   port 8106 -> gemma-3-4b-it,llama-3.2-3b-instruct
+[2026-08-28 11:24:44]   port 8107 -> gemma-3-4b-it__reason_included,llama-3.2-3b-instruct__reason_included
+[16:21:43] port 8104 finished exit=0
+[16:56:03] port 8102 finished exit=0
+[16:59:11] port 8105 finished exit=0
+[17:26:25] port 8103 finished exit=0
+[19:28:59] port 8106 finished exit=0
+[19:54:21] port 8107 finished exit=0
+[2026-08-28 19:54:21] ==== PHASE 1 complete ====
+[2026-08-28 19:54:21] ==== PHASE 2: votes_only 4 models ====
+[2026-08-28 19:54:21]   port 8102 -> qwen35-4b__votes_only
+[2026-08-28 19:54:21]   port 8104 -> phi-4-mini-instruct__votes_only
+[2026-08-28 19:54:21]   port 8105 -> llama-3.2-3b-instruct__votes_only
+[2026-08-28 19:54:21]   port 8106 -> gemma-3-4b-it__votes_only
+[21:42:57] port 8105 finished exit=0
+[22:07:37] port 8104 finished exit=0
+[22:10:02] port 8102 finished exit=0
+[22:14:53] port 8106 finished exit=0
+[2026-08-28 22:14:53] ==== PHASE 2 complete ====
+[2026-08-28 22:14:53] ==== FINAL: row counts per model ====
+[22:14:53] qwen35-4b.jsonl: 8000 rows
+[22:14:53] qwen35-4b__votes_only.jsonl: 8000 rows
+[22:14:53] qwen35-4b__reason_included.jsonl: 8000 rows
+[22:14:53] phi-4-mini-instruct.jsonl: 8000 rows
+[22:14:53] phi-4-mini-instruct__votes_only.jsonl: 8000 rows
+[22:14:53] llama-3.2-3b-instruct__votes_only.jsonl: 8000 rows
+[22:14:53] phi-4-mini-instruct__reason_included.jsonl: 8000 rows
+[22:14:53] gemma-3-4b-it.jsonl: 8000 rows
+[22:14:53] gemma-3-4b-it__votes_only.jsonl: 8000 rows
+[22:14:53] llama-3.2-3b-instruct.jsonl: 8000 rows
+[22:14:53] gemma-3-4b-it__reason_included.jsonl: 8000 rows
+[22:14:53] llama-3.2-3b-instruct__reason_included.jsonl: 8000 rows
+[2026-08-28 22:14:53] ==== JURY LAUNCH COMPLETE ====
+[2026-08-29 00:32:01] ==== PHASE 1: core 8 models (base + reason_included) ====
+[2026-08-29 00:32:01]   port 8102 -> qwen35-4b
+[2026-08-29 00:32:01]   port 8103 -> qwen35-4b__reason_included
+[2026-08-29 00:32:01]   port 8104 -> phi-4-mini-instruct
+[2026-08-29 00:32:01]   port 8105 -> phi-4-mini-instruct__reason_included
+[2026-08-29 00:32:01]   port 8106 -> gemma-3-4b-it,llama-3.2-3b-instruct
+[2026-08-29 00:32:01]   port 8107 -> gemma-3-4b-it__reason_included,llama-3.2-3b-instruct__reason_included
+[00:32:07] port 8105 finished exit=0
+[00:32:19] port 8102 finished exit=0
+[00:32:21] port 8104 finished exit=0
+[00:33:45] port 8103 finished exit=0
+[00:33:56] port 8107 finished exit=0
+[00:37:36] port 8106 finished exit=0
+[2026-08-29 00:37:36] ==== PHASE 1 complete ====
+[2026-08-29 00:37:36] ==== PHASE 2: votes_only 4 models ====
+[2026-08-29 00:37:36]   port 8102 -> qwen35-4b__votes_only
+[2026-08-29 00:37:36]   port 8104 -> phi-4-mini-instruct__votes_only
+[2026-08-29 00:37:36]   port 8105 -> llama-3.2-3b-instruct__votes_only
+[2026-08-29 00:37:36]   port 8106 -> gemma-3-4b-it__votes_only
+[00:37:36] port 8104 finished exit=0
+[00:37:36] port 8106 finished exit=0
+[00:37:46] port 8102 finished exit=0
+[00:37:53] port 8105 finished exit=0
+[2026-08-29 00:37:53] ==== PHASE 2 complete ====
+[2026-08-29 00:37:53] ==== FINAL: row counts per model ====
+[00:37:53] qwen35-4b.jsonl: 8007 rows
+[00:37:53] qwen35-4b__votes_only.jsonl: 8001 rows
+[00:37:53] qwen35-4b__reason_included.jsonl: 8005 rows
+[00:37:53] phi-4-mini-instruct.jsonl: 8013 rows
+[00:37:53] phi-4-mini-instruct__votes_only.jsonl: 8000 rows
+[00:37:53] llama-3.2-3b-instruct__votes_only.jsonl: 8001 rows
+[00:37:53] phi-4-mini-instruct__reason_included.jsonl: 8003 rows
+[00:37:53] gemma-3-4b-it.jsonl: 8056 rows
+[00:37:53] gemma-3-4b-it__votes_only.jsonl: 8000 rows
+[00:37:53] llama-3.2-3b-instruct.jsonl: 8114 rows
+[00:37:54] gemma-3-4b-it__reason_included.jsonl: 8030 rows
+[00:37:54] llama-3.2-3b-instruct__reason_included.jsonl: 8006 rows
+[2026-08-29 00:37:54] ==== JURY LAUNCH COMPLETE ====
