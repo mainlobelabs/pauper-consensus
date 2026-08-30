@@ -35,7 +35,7 @@ Exit codes are the pass signal: `0` everything met, `2` only B4 outstanding,
 3. Re-run `./run_slice4.sh`. If it exits 0, `./run_slice4.sh --tag` creates
    `prereg-v3-2026-08-30`, annotated with the registration and evidence
    fingerprints.
-4. **Push** — 6 local commits, and pushing is human-only:  `git push origin e1-results-and-paper`
+4. **Push** — 9 local commits (this session's 7 plus 2 earlier), and pushing is human-only:  `git push origin e1-results-and-paper`
 
 ## Commits this session
 
