@@ -1,97 +1,99 @@
-# Request: Slice 2 — paper corrections from slice 1's findings
+# Request: Slice 3 — five-family availability, measured before anything is registered
 
-Workstream `20260828-181135-0d060fc4`, slice 2 of 4. Master: `MASTER_v3.md`.
-Evidence: `out/v3/reanalysis_*.json` (committed in e63f946) and the `V3 SLICE 1 OUTCOME`
-entry in `DECISIONS.md`.
+Workstream `20260828-181135-0d060fc4`, slice 3 of 4. Master: `MASTER_v3.md` §"Slice 3".
+Prior slices: `e63f946` (corrected instrument), `87bfb7f` (paper corrections).
 
 ## Thoughts / context
 
 > Do all three
 
-Rescoped from B10 and moved ahead of the registration by human decision, 2026-08-29: slice
-1's D2 result REFUTES `paper.md` §6.1 rather than qualifying it, the correction costs
-nothing (committed artifacts, zero inference), and a draft carrying two named authors
-should not sit on a claim its own instrument contradicts while an expensive registration is
-prepared.
+Slice 4 registers a dose-response across panel sizes. The five-family target has now failed
+TWICE on availability: cycle 1 found three families locally, not five (`GOTCHAS.md`,
+2026-08-07: `deepseek-v4-flash` failed to load, and two ornith variants are ONE family, not
+two); cycle 2 had to rebuild panel A mid-programme when two of its three models left the
+catalogue. `paper.md` §8 records the target as never met. Registering M=5 without measuring
+first risks freezing a design that cannot be run — which is the specific error this
+programme exists to document.
 
-The three passages at issue, verbatim:
+Reframing that matters: the two cycle-2 panels already span SIX distinct families —
+qwen, poolside (laguna), zhipu (GLM), nvidia (nemotron), openai (gpt-oss), google (gemma).
+So the question is not "can five families be found" but "do the six already-pinned ones
+still answer today, and does the answer leave five". One failure still leaves five; two
+failures do not.
 
-- L32 (contribution 4): "A replication, across both cycles and all panels, of the
-  one-vote-per-source result: claim-instance counting reaches AUROC 0.502-0.606 while
-  unique-source support reaches 0.891-1.000."
-- L164 (§6.1): "**One vote per source, or nothing.** Claim-instance counting: AUROC
-  0.502-0.554 (cycle 1), 0.569-0.606 (cycle 2 ...). Unique-source support: 0.891-1.000 ...
-  Whatever agreement measures, it is who asserts a proposition, not how much text asserts it."
-- L200 (§9): "the one finding that needed no second cycle, because it never wavered:
-  agreement carries information exactly when each source gets one vote. Count text instead
-  of sources, and there is nothing there."
-
-None of these measured what they claim. `align_anchored` collapses to one observation per
-(agent, pid) BEFORE `exp/e1.py:76-78` counts, so the frozen `uncapped` arm scores
-`n_claims`, which equals `n_emitting` identically: capped and UNSIGNED. The comparison
-varies polarity, not capping. Measured separately (raw AUROC, `out/v3/`):
-
-| panel | capped+signed | capped+unsigned | uncapped+signed | uncapped+unsigned |
-|---|---|---|---|---|
-| c1_local | 0.9001 | 0.5069 | 0.9664 | 0.4484 |
-| c1_openrouter | 0.9911 | 0.5239 | 0.9875 | 0.4825 |
-| c2_panelA | 0.9353 | 0.6063 | 0.9456 | 0.5884 |
-| c2_panelB | 0.9323 | 0.5686 | 0.9530 | 0.5705 |
-
-Uncapped matches or beats capped on 4 of 4 panels. The effect is polarity.
-
-Two further corrections follow from slice 1: the registered arm
-`single_best_calibration_selected` was never implemented in either cycle, so nothing in the
-paper distinguishes cross-model agreement from one good model; and the panel's margin over
-the source its own calibration split selects is +0.045 to +0.089, inconclusive on c2_panelB.
+Known hazards, from `prereg_v2.yaml` and `GOTCHAS.md`:
+- The `:1234` LM Studio catalogue LISTS `qwen3.8-27b` but 400s on completion. qwen serves
+  on `:8083` under the stale launch alias `ornith35`. A model-list call would report it
+  available when it is not, which is why E1 requires a real generation.
+- Two variants of one family are not two independent sources.
+- GLM-5.2 via Hoonify is PAID ($1.40/$4.40 per 1M). One trivial call per endpoint.
 
 ## Constraints
 
-- **No registered verdict is restated or altered.** Cycles 1 and 2 stand as published. Every
-  number added here is POST-HOC and labelled so, sourced to `out/v3/`.
-- **No inference.** Corrections read committed artifacts only.
-- **The v2 tag stays byte-clean**: no edit or addition under `exp/`, `wct/`, `m0/`.
-- Every figure quoted must be machine-checked against `out/v3/`, not transcribed by hand.
-- `paper.md` is the only prose file whose CONTENT this slice corrects. Also edited,
-  and declared here rather than silently: `MASTER_v3.md` (restructured into slices
-  2/3/4 under the human decision of 2026-08-29, before this run started),
-  `REQUEST.md` and `PLAN.md` (this slice's own scoping), and `DECISIONS.md`
-  (decision entries plus one slice-outcome entry).
+- **Real generation per candidate, not a catalogue lookup.** A listed model that fails to
+  complete is the exact cycle-1 failure.
+- **One trivial probe per endpoint.** No experimental item, no corpus content; the existing
+  `exp/smoke_v2.py` throwaway theory is the shape to reuse.
+- **One auxiliary, non-generation request per run is authorised**: `GET /api/v1/models`,
+  to read paid rates live so a stale hard-coded rate cannot misstate spend. It is not
+  billable and is declared in the artifact under `probe.auxiliary_requests`. Added here
+  because the plan introduced it and this document, which governs scope, had not.
+- **Third-party egress** is pre-approved for this project (`DECISIONS.md` 2026-07-27,
+  OQ2 original) and is limited here to the smoke probes.
+- **AMENDED 2026-08-30 (human instruction).** The paid OpenRouter tier is authorised
+  and its harness binding is to be used (`harness.toml [providers.deepseek_paid]`,
+  `kind = openrouter_paid`, on `OPENROUTER_API_KEY` — the account holding purchased
+  credit). The scope therefore extends beyond the pinned six to their PAID-TIER TWINS,
+  because `:free` is a tier suffix rather than part of the model: `openai/gpt-oss-20b`
+  exists while `openai/gpt-oss-20b:free` returns 404 ("unavailable for free"), and the
+  gemma and laguna `:free` tiers rate-limit. Twins are probed and reported SEPARATELY
+  with `tier: paid`; they never count toward the pinned total.
+- **No experimental generation, no cycle-3 corpus, no registration.** That is slice 4.
+- The v2 tag stays byte-clean: no edit or addition under `exp/`, `wct/`, `m0/`.
+- `out/v3/` and `out/e1*_summary*.json` remain byte-identical to `e63f946`.
+- Findings are recorded whatever they are. If five families are not available, that is the
+  result; the workstream does not stall and does not quietly register a design it cannot run.
 
 ## Non-goals
 
-- Cycle-3 registration, corpus, panels, delta (slice 4); availability measurement (slice 3).
-- Re-running any analysis; `out/v3/` is the evidence and is already committed.
-- Rewriting sections the findings do not touch. §§6.2-6.4, 7, and the cycle-1/cycle-2
-  narrative stand except where they cite a corrected figure.
-- Any claim about cycle 3's outcome.
+- Choosing cycle-3's panels, corpus, delta or predictions (slice 4).
+- Any change to `paper.md`. Slice 2's corrections stand.
+- Re-analysis of any kind; `out/v3/` is settled evidence.
+- Hunting for NEW providers beyond the pinned six plus any already reachable locally. The
+  question is whether the registrable set exists, not whether it can be maximised.
 
 ## Acceptance criteria
 
-- C1: §6.1 and contribution 4 restated as the polarity result the corrected instrument
-  measures, identifying the frozen `uncapped` arm as capped-and-unsigned with the mechanism
-  (`align_anchored` collapses per (agent,pid) before `exp/e1.py:76-78` counts), and
-  reporting the capping x polarity 2x2 in full at raw AUROC.
-- C2: §8 discloses that `single_best_calibration_selected` (`prereg.yaml:166`,
-  `plan.md:488`) was registered and never implemented in either cycle.
-- C3: Slice 1's single-source contrast reported at the prominence the registered failures
-  get, including that c2_panelB is inconclusive under the frozen decision rule.
-- C4: Every new number labelled POST-HOC and sourced to `out/v3/`.
-- C5: The D3 disclosure recorded: cycle 2's mapper could not be audited from cache because
-  its own driver discarded the audit; the probe was computed under a recorded amendment and
-  scores 0.9721 against cycle 1's 0.9724.
-- C6: A correction notice at the head of the paper naming what changed from draft v3 and
-  why, leaving the earlier draft's claims visible rather than silently replaced.
-- C7: A script checks every figure quoted in the revised sections against `out/v3/` and
-  exits non-zero on any mismatch; it runs in the slice gate.
-- C8: The v2 tag remains byte-clean, asserted in the gate.
+- E1: Every candidate endpoint smoke-tested by an attempted GENERATION that must return
+  usable content, not a model-list or health call. Failures are recorded with their error.
+- E2: Resolved serving identity recorded per model — the id requested, the id echoed, and
+  for local models the loaded weights — so a substitution is detectable rather than assumed
+  absent.
+- E3: Distinct FAMILIES counted, not model ids, with the family attribution stated per model
+  and two variants of one family counted once.
+- E4: A written verdict on whether M=5 is registrable today, and which M=3 subsets the
+  available set supports, with family disjointness stated.
+- E5: If fewer than five families answer, the finding is reported plainly and slice 4 is
+  told what IS available. No stall, no silent downgrade.
+- E6: Cost bounded and reported: one probe per endpoint, with the paid endpoint's spend
+  stated. No experimental generation.
+- E7: One command runs the whole slice and exits non-zero on any failed assertion; the v2
+  tag and the pinned evidence are asserted unchanged.
+- E8: `DECISIONS.md` entry recording the measured availability and its consequence for
+  slice 4, derived from the emitted artifact rather than written from expectation.
 
 ## Open questions
 
-- OQ1: RESOLVED (human, 2026-08-29). §9 closes on the SINGLE-SOURCE finding, not the
-  corrected polarity result. Rationale: it is the more consequential correction, because it
-  bears on whether the paper's central premise was ever tested at all, and ending there
-  makes the conclusion carry the paper's biggest open question rather than bury it.
-- OQ2: RESOLVED (human, 2026-08-29). The correction notice is a dated block at the head of
-  `paper.md`, not a separate file: unmissable, and it matches the project's own precedent of
-  superseding records that leave the original visible (`DECISIONS.md`, 2026-08-15).
+- OQ1: RESOLVED (human, 2026-08-30). M=5 is registrable ONLY WITH MARGIN — that is, only if
+  MORE than five families answer, so one disappearance still leaves five. If exactly five
+  answer, slice 4 registers M=3/M=4 as its primary with the fifth family as a DECLARED
+  STRETCH ARM. Rationale: this programme has twice had models vanish mid-flight, and cycle 2
+  had to rebuild a panel for exactly that reason. Registering M=5 on exactly five means one
+  disappearance forces an unregistered substitution or an abandoned arm, which is what
+  `prereg_v2.yaml`'s "exact pinned id or the panel is DROPPED" rule exists to prevent. A
+  stretch arm degrades the design instead of breaking it, and the dose-response is still
+  tested. Slice 3 must therefore report the family count AND the margin, not just whether
+  five exist.
+- OQ2: Probe the six already pinned. Additional local families may be probed at zero cost
+  and reported as MARGIN CANDIDATES, clearly separated from the pinned set, since OQ1 makes
+  margin the deciding quantity. They are not adopted here; slice 4 adjudicates.

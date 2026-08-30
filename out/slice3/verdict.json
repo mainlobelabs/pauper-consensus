@@ -1,0 +1,106 @@
+{
+  "failed_note": "did not answer on ONE attempt at the artifact's timestamp. Not 'unavailable': one probe cannot distinguish a dead model from a flaky minute, and a re-probe is a deliberate second invocation.",
+  "failed_pinned": [
+    {
+      "agent": "laguna",
+      "error": "HTTP 429: {\"code\": 429, \"message\": \"Provider returned error\"}",
+      "family": "poolside"
+    },
+    {
+      "agent": "gptoss",
+      "error": "HTTP 404: {\"code\": 404, \"message\": \"This model is unavailable for free. The paid",
+      "family": "openai"
+    },
+    {
+      "agent": "gemma",
+      "error": "HTTP 429: {\"code\": 429, \"message\": \"Provider returned error\"}",
+      "family": "google"
+    }
+  ],
+  "families_identity_verified": [
+    "google",
+    "nvidia",
+    "openai",
+    "poolside",
+    "qwen",
+    "zhipu"
+  ],
+  "families_pinned_ok": [
+    "nvidia",
+    "qwen",
+    "zhipu"
+  ],
+  "families_reachable": [
+    "google",
+    "nvidia",
+    "openai",
+    "poolside",
+    "qwen",
+    "zhipu"
+  ],
+  "identity_note": "6 of 6 reachable families answered under the id expected for them. Expected identity DEFAULTS to the id requested; prereg_v2.yaml pins an explicit alias override for one endpoint only (qwen on :8083, which legitimately answers as `ornith35`). A local candidate whose /props weights cannot be read counts as unverified, because that registration pins weights rather than an alias. Cycle 3 should pin an expected echo per panel member so its exact-id rule has an explicit target rather than a default.",
+  "m3_subsets": [
+    "google+nvidia+openai",
+    "google+nvidia+poolside",
+    "google+nvidia+qwen",
+    "google+nvidia+zhipu",
+    "google+openai+poolside",
+    "google+openai+qwen",
+    "google+openai+zhipu",
+    "google+poolside+qwen",
+    "google+poolside+zhipu",
+    "google+qwen+zhipu",
+    "nvidia+openai+poolside",
+    "nvidia+openai+qwen",
+    "nvidia+openai+zhipu",
+    "nvidia+poolside+qwen",
+    "nvidia+poolside+zhipu",
+    "nvidia+qwen+zhipu",
+    "openai+poolside+qwen",
+    "openai+poolside+zhipu",
+    "openai+qwen+zhipu",
+    "poolside+qwen+zhipu"
+  ],
+  "margin": 1,
+  "margin_basis": "families_reachable",
+  "n_families_identity_verified": 6,
+  "n_families_pinned_ok": 3,
+  "n_families_reachable": 6,
+  "n_m3_subsets": 20,
+  "panel_reproducibility": {
+    "panelA": {
+      "broken": [
+        "laguna"
+      ],
+      "members": [
+        "qwen",
+        "laguna",
+        "glm"
+      ],
+      "reproducible": false
+    },
+    "panelB": {
+      "broken": [
+        "gptoss",
+        "gemma"
+      ],
+      "members": [
+        "nemotron",
+        "gptoss",
+        "gemma"
+      ],
+      "reproducible": false
+    }
+  },
+  "rationale": "6 families are reachable, 1 more than the five required, so one disappearance mid-run still leaves five.",
+  "reachable_note": "families in `reachable_only_via_non_pinned_id` answered under an id the registration does not pin (a paid-tier twin of a withdrawn :free id). Cycle 3 may pin that id directly; cycle 2's panels may NOT, because prereg_v2's rule is 'exact pinned id or the panel is DROPPED'.",
+  "reachable_only_via_non_pinned_id": [
+    "google",
+    "openai",
+    "poolside"
+  ],
+  "registrable": "M=5 registrable",
+  "required": 5,
+  "substituted": [],
+  "substituted_note": "answered under an unexpected id; the REGISTERED model is unavailable under prereg_v2's resolution rule. Not counted toward the pinned total."
+}

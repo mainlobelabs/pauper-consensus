@@ -1,177 +1,184 @@
-# Plan: Slice 2 — paper corrections from slice 1's findings
+# Plan: Slice 3 — five-family availability, measured
 
-Run `20260829-151714-c1159b09`, workstream `20260828-181135-0d060fc4` slice 2 of 4.
+Run `20260830-134531-f0f0d997`, workstream `20260828-181135-0d060fc4` slice 3 of 4.
+Request: `REQUEST.md`. Master: `MASTER_v3.md` §"Slice 3".
 
-**Revision history** (non-normative; the live specification is `## Approach` and the
-`## Tasks` fence, and nothing here overrides them). Rounds 1-3 closed B1/B3/B4/B5; B2
-reopened twice on the same substance -- proving a figure was quoted does not prove it is
-right -- and was resolved by removing the weak class rather than strengthening it. Spec
-rounds then closed a factual overclaim in the correction itself, a contradiction about
-source counting, three vacuous-pass bugs in the gate, and a premature claim that cycle 3
-was already registered. This block is deliberately descriptive: earlier versions restated
-rules and contradicted the spec once those rules changed.
+**Revision 2** (round-1 plan-QA closure; non-normative note — the live spec is `## Approach`
+and the `## Tasks` fence). B1 removed the retries that contradicted one-probe-per-endpoint.
+B2 made the runner a single command with a cheap default and a `--probe` mode. B3 gave
+identity mismatch a defined status that cannot inflate the margin. B4 encoded the
+single-model-slot constraint with an overlap test. B5 added negative integration tests for
+every gate assertion. B6 made the paid spend calculated, not merely counted. A1 added
+artifact provenance and freshness. A2 added error sanitisation.
 
 ## Approach
 
-Three claims in `paper.md` rest on a measurement that did not measure them, and one
-registered arm that would have tested the paper's central premise was never run. This slice
-corrects the prose and adds a machine check so the corrected figures cannot drift from the
-artifacts they come from. No analysis is re-run; no registered verdict moves.
+Slice 4 needs to know what can actually be registered. The five-family target has failed
+twice on availability, so this slice measures rather than assumes, and records the MARGIN,
+because the human decision of 2026-08-30 makes margin the deciding quantity: M=5 is
+registrable only if MORE than five families answer.
 
-**What actually has to change, and what must not.** The frozen `uncapped` arm scores
-`n_claims`, which `align_anchored` has already collapsed to one observation per (agent,
-pid), so it equals `n_emitting`: capped and unsigned. Every sentence built on it describes
-a polarity contrast. But §§6.2-6.4, 7, and the whole cycle-1/cycle-2 narrative are
-untouched by this: the permutation nulls, the rank-robustness result and the intercept
-diagnosis do not depend on the uncapped arm. Rewriting them would be scope creep, and worse,
-would blur which claims the correction actually reaches.
+**A real generation, never a catalogue lookup.** `prereg_v2.yaml` records the exact trap:
+the `:1234` catalogue lists `qwen3.8-27b` and 400s on completion. Any check that asks "is
+this model listed" reports it available when it is not. Each candidate therefore gets one
+attempted generation that must return usable content, reusing the frozen
+`exp/smoke_v2.py`'s throwaway theory — imported, not copied, so the probe shape stays the
+one the v2 freeze evidence used.
 
-**The conclusion moves to the single-source finding** (human decision, OQ1). §9 currently
-ends on the refuted sentence. It will end instead on this, stated precisely (B1): no
-REGISTERED result in either cycle distinguishes cross-model agreement from one good model,
-because the arm that would have — `single_best_calibration_selected` — was registered and
-never implemented. The post-hoc contrasts this slice adds do bear on it and must be stated
-in the same breath rather than elided: the panel beats its calibration-selected best single
-source by +0.045 to +0.089 on three panel-cycles and inconclusively (+0.0329
-[-0.0109,+0.0703]) on the fourth. So the honest close is that the margin is real but small,
-unregistered, and absent on one panel — which is what cycle 3 exists to settle, not a claim
-that nothing was found. An earlier draft of this plan said "no reported result", which
-would have contradicted the very numbers the slice adds.
+**Identity decides the status, and the status decides the count** (B3). A model that answers
+under a different id is a substitution, which `prereg_v2`'s resolution rule forbids. The
+artifact therefore carries a three-valued status, not ok/fail: `ok` (answered AND the echoed
+id matches the registration's expected value), `substituted` (answered under an unexpected
+id), `fail` (no usable content). Only `ok` counts toward the pinned-family margin —
+`substituted` must never inflate it, since the whole question is whether the REGISTERED
+models are available. Substituted entries are reported separately as possible families for a
+NEW registration, which slice 4 adjudicates. qwen's known case — served on `:8083` under the
+stale alias `ornith35`, where that alias IS the registered expected echo — is the worked
+example of an `ok` whose requested and echoed ids differ legitimately.
 
-**A correction notice at the head of the paper** (human decision, OQ2), dated, naming each
-changed claim and why, so a reader of draft v3 can see what moved. The project's precedent
-is a superseding record that leaves the original visible, not a silent rewrite.
+**Families, not model ids.** `GOTCHAS.md` records the cycle-1 error directly: two ornith
+variants were nearly counted as two independent sources. Each candidate carries an explicit
+family attribution, and the count is over distinct families.
 
-**Evidence is pinned to a commit, not to HEAD** (B3). `out/v3/` and the frozen
-`out/e1*_summary*.json` are compared against **e63f946**, the commit that introduced them,
-not against HEAD: a HEAD comparison would pass if an artifact had already been altered and
-committed before the gate ran. The working tree is checked separately, so both a committed
-alteration and an uncommitted one fail.
+**Probing is separated from gating.** The probe spends money (Hoonify is paid) and touches
+external services, so it runs ONCE behind an explicit flag and writes an artifact; the gate
+validates that artifact and re-probes only when asked. A gate that re-probed on every run
+would spend on every re-run and make the slice's cost unbounded.
 
-**What was wrong was the label, not the arithmetic.** Draft v3's quoted AUROC ranges are
-correct readings of the frozen `uncapped` arm — its 0.502-0.554 is that arm's 0.50174 and
-0.55439 across the cycle-1 strata. The paper did not miscompute anything; it described a
-capped, unsigned coverage count as "claim-instance counting" and drew a conclusion about
-per-source capping from it. The correction should say exactly that, because "the figures
-were wrong" would be false and would invite a reader to distrust the rest of the numbers.
-It also means every retained figure is artifact-assertable, which is what lets the checker
-drop its weak quoted-figure class (B2).
-
-**Figures are checked, not transcribed.** `exp3/check_paper.py` parses the numbers quoted in
-the revised sections out of `paper.md` and asserts each against `out/v3/`. Hand-copying four
-panels x four 2x2 cells plus four contrasts is exactly where a transcription error would
-survive review, and the M6 numbers already moved once during slice 1 when a calibration map
-was read for the wrong cycle.
+**The verdict follows the recorded rule, not the operator's read of the number.** OQ1 fixes
+it in advance: >5 families answering means M=5 is registrable; exactly 5 means M=3/M=4
+primary with the fifth as a declared stretch arm; <5 means neither and slice 4 is told what
+exists. The verdict script applies that rule mechanically so the number cannot be
+interpreted generously after the fact.
 
 ## Risks
 
-- **Overclaiming the correction.** The corrected result says capping costs nothing on THIS
-  instrument and corpus, not that per-source capping is unnecessary in general; the
-  one-vote-per-agent cap remains the design and M6 remains untested as a design question.
-  The prose must say the narrower thing.
-- **Understating it.** Equally, this is a refutation of a stated contribution, not a
-  footnote. The notice names it as such.
-- **Touching a registered verdict.** Mitigated structurally: the checker asserts the cycle-1
-  and cycle-2 headline figures in the paper still match the FROZEN summaries, so an edit
-  that altered a registered number fails the gate.
-- **Drift between prose and artifacts.** The checker is the mitigation; it runs in the gate.
-- **Scope creep into sections the findings do not reach.** The acceptance criteria enumerate
-  the sections; the gate asserts the untouched ones are byte-identical to HEAD.
+- **Spending on every gate run.** Mitigated by the probe/gate split above; the gate asserts
+  the artifact exists and is well-formed, and never calls an endpoint.
+- **A transient failure recorded as unavailability.** A single probe cannot distinguish a
+  dead model from a flaky minute. This is ACCEPTED rather than mitigated by retrying: the
+  request permits one attempt per endpoint, and retrying would change the measured protocol
+  and multiply paid calls. The artifact instead records the single attempt with its
+  sanitised error and latency, so a human can judge whether a re-probe is warranted and run
+  one deliberately. A `fail` in the artifact therefore means "did not answer on one
+  attempt at this timestamp", and the verdict wording must not overstate it as "unavailable".
+- **Reporting a listed-but-broken model as available.** The whole reason E1 requires a
+  generation; a test asserts the checker rejects a catalogue-only success.
+- **Leaking experimental content.** The probe is a throwaway theory, not a corpus item; the
+  gate asserts no corpus text appears in the artifact.
+- **Cost surprise.** One attempt per endpoint, no retries, the paid endpoint identified, and
+  the spend CALCULATED (B6) from recorded input/output token counts and the rates pinned in
+  `prereg_v2.yaml` ($1.40/$4.40 per 1M), emitted as USD with a conservative upper bound where
+  usage is not reported. The gate asserts the paid call count never exceeds one per candidate.
+- **A stale artifact passing as today's measurement** (A1). The artifact carries a schema
+  version, UTC timestamp, source commit and a digest of `prereg_v2.yaml`; the gate rejects an
+  artifact whose registration digest differs from the current file, and reports its age so an
+  old-but-well-formed file cannot silently serve as evidence of availability measured now.
+- **Credentials in a tracked artifact** (A2). Provider error text is normalised before
+  persistence: status and message retained, authorization headers, query credentials and
+  provider request metadata redacted. A test plants a fake bearer token in an error and
+  asserts it does not reach the artifact.
 
 ## Rollback
 
-`git revert` the slice commit. The diff comprises: `paper.md` (nine marked passages);
-five new files (`exp3/check_paper.py`, `exp3/slice2_decide.py`, `run_slice2.sh`,
-`tests/test_check_paper.py`, `tests/fixtures/paper_revised_sections.md`); the
-checker's report at `out/slice2/paper_check.json`, which the DECISIONS entry is
-derived from and which is deliberately OUTSIDE the pinned `out/v3/` evidence set;
-and edits to
-`DECISIONS.md` (decision entries plus one slice-outcome entry), `REQUEST.md` and `PLAN.md`
-(this slice's own scoping), and `MASTER_v3.md` (the human-approved restructuring into
-slices 2/3/4, made before this run started and declared in `REQUEST.md`). No artifact,
-cache, summary or tag is touched, and `git diff prereg-v2-2026-08-16 HEAD -- exp/ wct/ m0/`
-is empty before and after.
+`git revert` the slice commit. The diff comprises five new code files
+(`exp3/availability.py`, `exp3/slice3_verdict.py`, `exp3/slice3_decide.py`,
+`run_slice3.sh`, plus the atomic-write helper added to the existing decide modules), two
+new test files (`tests/test_availability.py`, `tests/test_slice3_verdict.py`), two new
+artifacts (`out/slice3/availability.json`, `out/slice3/verdict.json`), and edits to
+`REQUEST.md`, `PLAN.md` and `DECISIONS.md`. No paper text, no artifact under `out/v3/`, no
+generation-cache entry and no tag is touched; `git diff prereg-v2-2026-08-16 HEAD -- exp/
+wct/ m0/` is empty before and after, and `out/v3/` stays identical to `e63f946`.
 
 ## Tasks
 
 ```json
 [
   {
-    "id": "P1-checker",
-    "title": "exp3/check_paper.py: assert every quoted figure against out/v3 and the frozen summaries",
+    "id": "A1-probe",
+    "title": "exp3/availability.py: one real generation per candidate, identity and family recorded",
     "depends_on": [],
     "files": [
-      "exp3/check_paper.py",
-      "tests/test_check_paper.py",
-      "tests/fixtures/paper_revised_sections.md"
+      "exp3/availability.py",
+      "tests/test_availability.py"
     ],
     "acceptance": [
-      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and will fail at `import httpx`. There is NO PyPI egress: never pip install, never create a venv. Run tests as PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q <file>",
-      "COMPLETENESS RULE over TWO exhaustive classes; the weak 'quoted' class is GONE (B2). Every numeric literal in the revised passages and the correction notice is either: (a) ARTIFACT-ASSERTED -- equal to a value read from out/v3/ or the frozen out/e1*_summary*.json. This covers figures RETAINED from draft v3 as well as new ones, because draft v3's numbers were correct readings of the frozen uncapped arm (its quoted 0.502-0.554 is that arm's 0.50174 and 0.55439 across the cycle-1 strata); what was wrong was the LABEL, not the arithmetic. A figure presented as a quotation is additionally verified to appear verbatim in `git show e63f946:paper.md`, so the paper provably quotes its own earlier text -- but that check is on top of the artifact assertion, never instead of it. Or (b) STRUCTURAL -- matched by a DECLARED pattern: an ISO date, a source reference <path>.<py|yaml|md>:<line>[-<line>], a section number, or a draft version identifier, which P2 is required to add. A literal matching neither class fails the check",
-      "asserts the capping x polarity 2x2 cells against out/v3/reanalysis_*.json m6_2x2.cells[*].raw_auroc",
-      "asserts each single-source contrast against panel_vs_single_best_calibration_selected under that panel's registered map, including the decision string",
-      "asserts the cycle-1 and cycle-2 headline figures still quoted in the paper against the FROZEN out/e1*_summary*.json, so a correction cannot silently move a registered number",
-      "asserts the aligner probe figures against the artifacts",
-      "exits non-zero naming any figure that does not match or is unclassified; tests prove it catches a planted wrong digit, an unclassified new figure, a literal that only superficially resembles a structural reference, AND a 'quoted' figure that does not appear in e63f946:paper.md, AND a retained draft-v3 figure that matches no artifact value",
-      "UNIT TESTS USE A FIXTURE (B6): P1 runs before P2 writes the real passages, so its tests parse an in-repo fixture containing the planned revised text. The real-paper run is deferred to P2's and P3's checks, and the module takes the paper path as an argument so both work",
-      "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked"
+      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and fails at `import httpx`. No PyPI egress: never pip install, never create a venv.",
+      "probes the six pinned candidates read FROM prereg_v2.yaml, AND (under --include-paid, per the 2026-08-30 human instruction) their paid-tier twins, resolved through the harness binding harness.toml [providers.deepseek_paid] kind=openrouter_paid. Twins are recorded with tier=paid and pinned_free_id; they are counted in families_reachable but never in the pinned total. Paid rates cover Hoonify (from prereg_v2.yaml) AND the four OpenRouter twins (read live from the catalogue, with a pinned fallback), and spend prefers the provider's reported usage.cost",
+      "each probe is an attempted GENERATION returning usable content; a model-list or health response is NOT success, and a test asserts a catalogue-only result is rejected",
+      "EXACTLY ONE attempt per endpoint, no automatic retry (B1): a retry would change the measured protocol and multiply paid calls. A re-probe is a deliberate second invocation whose artifact supersedes the first",
+      "LOCAL probes run strictly sequentially with no thread pool and no overlapping requests (B4, GOTCHAS single-model-slot): a mocked transport records call windows and a test FAILS if two local calls overlap",
+      "THREE-VALUED status (B3): `ok` = answered and the echoed id matches the registration's expected value; `substituted` = answered under an unexpected id; `fail` = no usable content. The schema is documented in the module docstring",
+      "records per candidate: family, backend, id requested, id echoed, expected echo from the registration, resolved weights where local, status, sanitised error, latency, and token usage",
+      "SANITISES error text before persistence (A2): status and message retained; authorization headers, query credentials and provider request metadata redacted. A test plants a fake bearer token in an error and asserts it never reaches the artifact",
+      "CALCULATES paid spend (B6) from recorded input/output tokens and the rates pinned in prereg_v2.yaml, emitting USD plus a conservative upper bound where usage is unreported",
+      "artifact carries PROVENANCE (A1): schema version, UTC timestamp, source commit, and a sha256 digest of prereg_v2.yaml",
+      "reuses exp.smoke_v2's throwaway probe item by import; no corpus or experimental content is sent",
+      "writes out/slice3/availability.json; requires --confirm to run, because it spends and touches external services",
+      "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked",
+      "declares its ONE auxiliary request: a single GET /api/v1/models per run to read live paid rates. It is not a generation probe and is not billable, and the artifact records it under probe.auxiliary_requests"
     ],
     "targeted_checks": [
       "cd \"$PWD\" && git diff --quiet prereg-v2-2026-08-16 HEAD -- exp/ wct/ m0/ && test -z \"$(git status --porcelain --untracked-files=all -- exp/ wct/ m0/)\"",
-      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_check_paper.py"
+      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_availability.py"
     ],
     "risk": "STANDARD",
     "max_attempts": 3
   },
   {
-    "id": "P2-corrections",
-    "title": "paper.md: correction notice, 6.1, contribution 4, 8 disclosure, 9 conclusion",
+    "id": "A2-verdict",
+    "title": "exp3/slice3_verdict.py: apply the recorded margin rule mechanically",
     "depends_on": [
-      "P1-checker"
+      "A1-probe"
     ],
     "files": [
-      "paper.md"
+      "exp3/slice3_verdict.py",
+      "tests/test_slice3_verdict.py"
     ],
     "acceptance": [
-      "a dated correction notice at the head naming each changed claim and why, leaving draft v3's original wording visible",
-      "6.1 restated as the polarity result: the frozen `uncapped` arm identified as capped-and-unsigned, the mechanism given (align_anchored collapses per (agent,pid) before exp/e1.py:76-78 counts), and the full 2x2 reported at raw AUROC with all four panels",
-      "contribution 4 restated to match 6.1, no longer claiming a one-vote-per-source replication",
-      "8 discloses that single_best_calibration_selected (prereg.yaml:166, plan.md:488) was registered and never implemented in either cycle",
-      "the single-source contrast reported at the prominence the registered failures get, including c2_panelB inconclusive under the frozen decision rule",
-      "every new number labelled POST-HOC and sourced to out/v3/",
-      "the D3 disclosure recorded: cycle 2's mapper was unauditable from cache because its own driver discarded the audit; probe computed under a recorded amendment, 0.9721 vs cycle 1's 0.9724",
-      "no registered cycle-1 or cycle-2 verdict is restated or altered",
-      "sections 6.2, 6.3, 6.4, 7 and the cycle-1/cycle-2 narrative are unchanged except where they cite a corrected figure",
-      "9 closes on the single-source finding per the recorded human decision, stated as: no REGISTERED result in either cycle distinguishes cross-model agreement from one good model, because single_best_calibration_selected was never implemented. It must state IN THE SAME PASSAGE the post-hoc margins this slice adds (+0.045 to +0.089 on three panel-cycles, +0.0329 [-0.0109,+0.0703] inconclusive on c2_panelB), so the close is 'real but small, unregistered, and absent on one panel' and NOT 'nothing was found' (B1)"
-    ],
-    "targeted_checks": [
-      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m exp3.check_paper",
-      "cd \"$PWD\" && git diff --quiet prereg-v2-2026-08-16 HEAD -- exp/ wct/ m0/"
-    ],
-    "risk": "STANDARD",
-    "max_attempts": 3
-  },
-  {
-    "id": "P3-gate",
-    "title": "run_slice2.sh: one command, fail-closed",
-    "depends_on": [
-      "P2-corrections"
-    ],
-    "files": [
-      "run_slice2.sh",
-      "exp3/slice2_decide.py"
-    ],
-    "acceptance": [
-      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and will fail at `import httpx`. There is NO PyPI egress: never pip install, never create a venv. Run tests as PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q <file>",
-      "asserts Python 3.12 and the uv pin, then the tag-clean check (committed, working-tree and untracked over exp/ wct/ m0/), then the full pytest suite, then exp3.check_paper against the real paper.md, exiting non-zero on the first failure",
-      "ARTIFACT IMMUTABILITY PINNED TO A COMMIT (B3): asserts out/v3/*.json and out/e1*_summary*.json are byte-identical to their content at e63f946 via `git show e63f946:<path>`, NOT against HEAD, so an alteration committed before the gate ran still fails; the working tree is checked separately so an uncommitted edit fails too",
-      "UNTOUCHED-PROSE GUARD (B4), by MARKER AND HASH rather than by heading extraction. The plan originally named an explicit heading list (6.2, 6.3, 6.4, 7, 3, 4, 5); that mechanism proved unsound in practice and is replaced by a stronger one, recorded here rather than left as a silent divergence. Heading-scoped checking skipped any section CONTAINING a correction, so 6.2 -- which shares `## 6` with the corrected 6.1 -- went unverified while the gate reported 24 sections checked (proven by tampering with it and watching the gate pass). The implemented guard instead: (a) pins the nine marked regions at BOTH ends to sanctioned anchors, so a marker cannot be added, moved, or extended to exempt further text; (b) pins the sha256 of ALL unmarked content, which no partial deletion, truncation, reordering or short-fragment skip survives; and (c) walks the fragments in order as a locating diagnostic, asserting it verified every non-trivial fragment rather than reporting success having verified none. This covers the whole paper outside the corrections, not an enumerated subset of it, and each property is verified by planting the failure it is meant to catch.",
-      "appends the slice-outcome entry to DECISIONS.md (B5), derived from the checker's output rather than written by hand, and fails if it is absent afterwards; the OQ1/OQ2 decisions are already recorded and are NOT re-entered",
-      "the 41 existing tests still pass unchanged",
+      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and fails at `import httpx`. No PyPI egress: never pip install, never create a venv.",
+      "counts DISTINCT FAMILIES among candidates whose status is `ok` ONLY (B3): `substituted` never counts toward the pinned margin, and a test proves it does not",
+      "reports `substituted` candidates separately as possible families for a NEW registration, for slice 4 to adjudicate",
+      "a test proves two variants of one family count once (the cycle-1 ornith error)",
+      "applies the recorded rule from DECISIONS.md 2026-08-30 mechanically: >5 families => M=5 registrable; exactly 5 => M=3/M=4 primary with the fifth as a declared stretch arm; <5 => neither, and the available set is reported",
+      "reports the MARGIN explicitly (families ok, minus five), the deciding quantity under that rule",
+      "enumerates the family-disjoint M=3 subsets the ok set supports",
+      "tests cover all three branches with synthetic inputs INCLUDING the exactly-five boundary and a five-ok-plus-one-substituted case that must NOT be read as six",
       "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked"
     ],
     "targeted_checks": [
-      "cd \"$PWD\" && bash run_slice2.sh"
+      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_slice3_verdict.py"
+    ],
+    "risk": "STANDARD",
+    "max_attempts": 3
+  },
+  {
+    "id": "A3-gate",
+    "title": "run_slice3.sh: one command, fail-closed, and it never spends",
+    "depends_on": [
+      "A2-verdict"
+    ],
+    "files": [
+      "run_slice3.sh",
+      "exp3/slice3_decide.py",
+      "tests/test_slice3_gate.py"
+    ],
+    "acceptance": [
+      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and fails at `import httpx`. No PyPI egress: never pip install, never create a venv.",
+      "ONE COMMAND, TWO MODES (B2): `run_slice3.sh --probe` performs the probes once, emits the artifact, computes the verdict and runs every assertion below; without the flag the same script validates the existing artifact and never calls an endpoint",
+      "asserts Python 3.12 and the uv pin; the tag-clean check across committed, working-tree and untracked state over exp/ wct/ m0/; and that out/v3/ plus out/e1*_summary*.json are byte-identical to their content at e63f946 via `git show`",
+      "asserts out/slice3/availability.json exists, is schema-valid, covers all six pinned candidates, and carries an identity record and a status for each",
+      "asserts artifact FRESHNESS (A1): its prereg_v2.yaml digest matches the current file, and its age is reported",
+      "asserts the paid call count never exceeds one per candidate, and echoes the calculated spend",
+      "asserts no corpus or experimental item text, and no credential-shaped string, appears in the artifact",
+      "NEGATIVE INTEGRATION TESTS (B5), each proving the gate FAILS: missing artifact; malformed artifact; incomplete candidate coverage; a catalogue-only success; a missing identity record; a mismatched registration digest; a changed frozen file including an UNTRACKED addition under exp/ wct/ m0/; a paid call count above the cap",
+      "appends a DECISIONS.md entry derived from the artifact and the verdict, fingerprinted so --check detects a STALE entry rather than merely a missing one, and superseding a stale entry atomically rather than wedging the gate",
+      "the gate's EXIT CODE is the pass signal, not its printed output; the targeted check asserts rc=0",
+      "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked"
+    ],
+    "targeted_checks": [
+      "cd \"$PWD\" && bash run_slice3.sh; test $? -eq 0",
+      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_slice3_gate.py"
     ],
     "risk": "STANDARD",
     "max_attempts": 3
@@ -181,11 +188,11 @@ is empty before and after.
 
 ## Open questions
 
-- OQ1, OQ2 (REQUEST): both RESOLVED at the human gate 2026-08-29 and recorded in
-  `DECISIONS.md`. §9 closes on the single-source finding; the correction notice is a dated
-  block at the head of `paper.md`.
-- OQ3 (new, non-blocking): the corrected §6.1 shows uncapped SIGNED counting slightly
-  BEATING capped on three of four panels (e.g. c1_local 0.9664 vs 0.9001). That is a
-  suggestive result about the cap costing information, not just being unnecessary, but it is
-  post-hoc, unregistered, and on four panels. The plan states it as an observation and
-  explicitly does not claim it. Flagging in case you want it registered in cycle 3 instead.
+- OQ1, OQ2 (REQUEST): both RESOLVED at the human gate 2026-08-30 and recorded in
+  `DECISIONS.md`. M=5 requires margin; additional local families may be probed at zero cost
+  and reported separately as margin candidates, adopted by nobody until slice 4.
+- OQ3 (new, non-blocking): if a pinned model answers under an UNEXPECTED id, that is a
+  substitution and the candidate is unavailable under `prereg_v2`'s resolution rule — but it
+  may still be a usable family for a NEW registration, since cycle 3 pins its own panels.
+  The plan records such a case as `substituted` rather than collapsing it to `ok` or `fail`,
+  and leaves the adjudication to slice 4.

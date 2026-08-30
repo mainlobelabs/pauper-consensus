@@ -359,3 +359,101 @@ Corrections derived from `out/v3/` at `e63f946` and machine-checked by `exp3/che
 - Decided by: jerry.mannings@gmail.com
 - Rationale: Round 14's two blockers are closed, and the second uncovered a worse hole than reported. (1) slice2_decide refused to update an existing heading, so a stale fingerprint wedged the gate unpassably; it now supersedes a stale entry atomically and the gate reaches a current entry. (2) The unbounded structural exemptions were real, but bounding them exposed the actual defect: the numeric pattern required an integer not be followed by [\w.], which made EVERY integer at the end of a sentence invisible to the completeness scan -- depth-999, contribution 999, cycle-999 and slice 99 were all accepted for that reason, not because of the label patterns. The lookahead is now (?!\.?\d), all four are rejected, and a planted-failure test covers them. commit-ready requires a genuine spec run bound to the current diff.
 
+## 2026-08-30T03:47:37Z - M=5 is registrable only WITH MARGIN (more than five families answering). If exactly five answer, slice 4 registers M=3/M=4 as primary with the fifth family as a declared stretch arm. Slice 3 reports the family count AND the margin.
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The programme has twice lost models mid-flight: cycle 1 found three local families not five, and cycle 2 rebuilt panel A when two of three models left the catalogue. Registering M=5 on exactly five families means one disappearance forces an unregistered substitution or an abandoned arm -- precisely what prereg_v2's 'exact pinned id or the panel is DROPPED' rule prevents. A declared stretch arm degrades the design rather than breaking it, and the M=3 -> M=5 dose-response is still tested.
+- Alternatives: Register M=5 on exactly five, accepting zero margin: rejected, it repeats the failure mode the project documents. Defer the decision until after measurement: rejected, deciding the rule before seeing the number is the point of registering anything.
+
+## 2026-08-30T03:53:06Z - Granted 1 additional plan-relay round (exceptional)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Plan rounds capped at 2; the last call returned a cached verdict predating its own prompt (13:52:25 vs 13:52:39) with the round count unchanged, so B1's fix is unreviewed. B1 was correctly held open -- the retry language survived in the Risks section after being removed from the Approach and acceptance criteria. It is now removed, and the residual risk is stated as ACCEPTED rather than mitigated: one probe cannot distinguish a dead model from a flaky minute, so a 'fail' means 'did not answer on one attempt at this timestamp' and the verdict must not overstate it as unavailable.
+- Alternatives: revise the plan; human-approve the residual concerns
+
+## 2026-08-30T03:53:14Z - Gate 6ada5db8 resolved: Grant one plan round so B1's fix is reviewed against the current plan.
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The cap was reached after round 2; the next call returned a cached verdict predating its own prompt with the round count unchanged, so the fix has not been seen. B1 was a genuine internal contradiction: the retry language survived in the Risks section after removal elsewhere.
+
+## 2026-08-30T07:53:09Z - The paid OpenRouter tier is authorised for slice 3, and the probe scope extends to paid-tier twins of the pinned :free ids. Twins are reported separately with tier=paid and never count toward the pinned total.
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Human instruction 2026-08-30: 'You have access to a paid open router endpoint, use that, use the bindings in the harness.' The binding is harness.toml [providers.deepseek_paid], kind = openrouter_paid, on OPENROUTER_API_KEY -- the account holding purchased credit. This was decisive: ':free' is a TIER SUFFIX, not part of the model id. openai/gpt-oss-20b:free returns 404 'This model is unavailable for free' while openai/gpt-oss-20b answers; gemma and laguna :free tiers rate-limit. Without the paid tier the honest verdict was three or four families and no viable dose-response; with it, six families are reachable and M=5 is registrable with margin.
+- Alternatives: Probe only the pinned six: rejected by the instruction, and it would have reported families as unavailable when only their free tier was withdrawn. Silently substituting paid ids for pinned ones: rejected -- it would conflate 'cycle 2 is reproducible' with 'the family is reachable', which is why the verdict now carries both counts.
+
+## 2026-08-30T07:59:15Z - Gate 36398fe0 resolved: Grant one spec round to verify the six fixes against the current diff.
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The verdict on disk predates its own prompt (17:56:19 vs 17:58:43) with the round count unchanged, so it describes pre-fix code. Fixed and verified: sanitisation now runs before truncation (the metadata block and user_id are stripped), paid rates are fetched live with the hard-coded values as a labelled fallback, the artifact records source_tree_dirty because the probe code was uncommitted, the fingerprint covers every rendered field, the gate rejects duplicate candidate records and requires a per-call spend breakdown, and it surfaces that substitution is undetectable for 9 of 10 candidates.
+
+## 2026-08-30T07:59:15Z - Granted 1 additional spec review round(s)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Spec cap reached; the last call returned a cached verdict predating its own prompt. Six of the seven findings are fixed and each verified: sanitise-before-truncate (metadata and user_id now stripped), live rate fetch with labelled fallback, source_tree_dirty provenance, widened fingerprint, duplicate-record and per-call spend checks, and an explicit note that substitution is undetectable for 9/10 candidates. The seventh (paid twins using nodes.Client('openrouter')) is answered in the artifact's binding record: the paid tier is the same endpoint and key, and the ':free' suffix is what selects the free tier.
+
+## 2026-08-30T10:13:54Z - Granted 1 additional spec review round(s)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 4's five findings are closed. All three decide modules now write DECISIONS.md atomically (temp + os.replace) -- a direct write_text interrupted mid-way would truncate the project's durable record. Candidates carry identity_verified and the verdict reports identity-verified families separately from reachable ones, so 'ok' no longer implies the registered model answered. Spend prefers the provider's reported usage.cost over a rate reconstruction, with live catalogue rates. The auxiliary /api/v1/models request is declared in the artifact. The rollback inventory lists all five code files, two test files and two artifacts. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-30T11:30:25Z - Granted 1 additional spec review round(s)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 5's four findings are closed and each verified. Per-panel reproducibility is DERIVED from the artifact (panelA reproducible, panelB broken by gptoss) rather than the hard-coded and false 'neither panel is reproducible'. Expected identity now defaults to the requested id with the registration's expected_resolved as an alias override, so all six families are identity-verified instead of one; an answer echoing no model id is classified substituted because identity is unverifiable. Identity is recorded on every return path including transport failures. The paid binding is resolved from harness.toml [providers.deepseek_paid] and the binding used is recorded per call. tests/test_slice3_gate.py exists with eleven negative tests, guarded against the gate->pytest->gate recursion that previously ran to timeout.
+
+## 2026-08-30T11:38:15Z - Granted 1 additional spec review round(s)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 6's five findings are closed, each verified. The sanitiser now redacts nine credential shapes including Authorization: Basic and X-Api-Key, which previously survived because the header pattern stopped at the first whitespace; a regression in the widened pattern (the JSON token": "value" form) was caught by its own test and restored. merge_reprobe carries superseded PAID usage forward so a re-probe no longer erases a call the account was billed for. The gate binds each record's panel, family, backend, model, tier and identity.requested against the registration rather than accepting any known agent name. The fingerprint covers the agent-to-family mapping, panel reproducibility and is_upper_bound. A missing or disabled harness binding now warns instead of silently falling back.
+
+## 2026-08-30T11:46:11Z - Granted 1 additional spec review round(s)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 7's five findings are closed and verified. sanitise() is now an ALLOWLIST -- it parses the error and keeps only code/message/type -- because regex-stripping the metadata object stopped at the first nested brace and left billing_email and account in the artifact; a string-valued error keeps its message rather than being replaced by a placeholder. A local /props failure now marks the candidate unverified instead of trusting its alias, since prereg_v2 pins qwen by GGUF path and parameter count. The gate requires the paid twins the verdict counts, binds each record's registered shape, and its imports are hoisted above first use. The plan's tasks describe the paid-twin scope and the single declared catalogue request.
+
+## 2026-08-30T11:51:08Z - V3 SLICE 3 OUTCOME: only 3 of 6 PINNED ids still answer, but 6 families are reachable; M=5 registrable.
+
+<!-- slice3-fingerprint: 177d990e82345a0c -->
+
+Measured 2026-08-30T11:50:37Z at commit `UNCOMMITTED (parent 87bfb7f)`, one attempt per endpoint, no automatic retry. Registration digest `8e4950f2a98a`. Paid spend: USD 0.000979 across 5 call(s).
+
+| agent | family | backend | status | detail |
+|---|---|---|---|---|
+| qwen | qwen | local | **ok** |  |
+| laguna | poolside | openrouter | **fail** | HTTP 429: {"code": 429, "message": "Provider returned error" |
+| glm | zhipu | hoonify | **ok** |  |
+| nemotron | nvidia | openrouter | **ok** |  |
+| gptoss | openai | openrouter | **fail** | HTTP 404: {"code": 404, "message": "This model is unavailabl |
+| gemma | google | openrouter | **fail** | HTTP 429: {"code": 429, "message": "Provider returned error" |
+| laguna_paid | poolside | openrouter | **ok** |  |
+| nemotron_paid | nvidia | openrouter | **ok** |  |
+| gptoss_paid | openai | openrouter | **ok** |  |
+| gemma_paid | google | openrouter | **ok** |  |
+
+**Which registered panels still run.** panelA: NOT reproducible, broken by laguna; panelB: NOT reproducible, broken by gptoss, gemma. prereg_v2's rule is 'exact pinned id or the panel is DROPPED', so a paid-tier twin does not restore a panel whose registered id has gone.
+
+**Two counts, deliberately not merged.** Only 3 of six REGISTERED ids answered (nvidia, qwen, zhipu), so not every cycle-2 panel is reproducible as registered. But 6 distinct FAMILIES are reachable, google, openai, poolside only via a paid-tier twin of a withdrawn or rate-limited `:free` id. Cycle 3 pins its own panels and may pin those ids directly.
+
+**Verdict, by the rule recorded 2026-08-30 BEFORE the measurement.** Margin +1 against the five required, on the reachable count. 6 families are reachable, 1 more than the five required, so one disappearance mid-run still leaves five.
+
+**Cost consequence for slice 4.** Cycle 2 ran four of six models on free tiers; 3 of those families now require a paid tier. At 450 calls per panel that is a budget line for the registration, not a mid-run discovery.
+
+**Consequence for slice 4.** The M=3 -> M=5 dose-response IS runnable: 6 families reachable with margin +1. Family-disjoint M=3 subsets available: 20. Slice 4 must pin the reachable ids (paid where the `:free` tier has been withdrawn or is rate limited), price the paid tiers, and record which registered panels survive (see above).
+
+## 2026-08-30T11:51:22Z - Granted 1 additional spec review round(s)
+
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 8's five findings (no blockers) are closed and verified. REQUEST.md now authorises the single non-generation GET /api/v1/models, where scope belongs. A paid twin that falls back off the harness openrouter_paid binding now FAILS the gate rather than passing with a warning. The gate's paid-call accounting allows for superseded attempts, so a legitimate re-probe no longer makes the honest cumulative spend contradict the check. The artifact records source_commit as UNCOMMITTED (parent 87bfb7f) instead of quoting a commit that does not contain the probe code. The verdict's identity note no longer contradicts itself now that expected identity defaults to the requested id with one registered alias override.
+

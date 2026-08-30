@@ -8,6 +8,19 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
+
+def _atomic_write(path: Path, text: str) -> None:
+    """Write via a temp file and os.replace.
+
+    DECISIONS.md is the project's durable record. A direct write_text that is
+    interrupted leaves it truncated, destroying entries this session cannot
+    reconstruct. os.replace is atomic within a filesystem.
+    """
+    import os
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text)
+    os.replace(tmp, path)
+
 from exp3.check_paper import EVIDENCE_COMMIT, MARKED, PANELS
 
 MARK = "V3 SLICE 2 OUTCOME"
@@ -127,7 +140,7 @@ def main() -> int:
         kept = [b for b in blocks if MARK not in b.split("\n")[0]]
         existing = "".join(kept).rstrip() + "\n"
         print(f"superseding a stale {MARK} entry")
-    path.write_text(existing.rstrip() + "\n\n" + build(root) + "\n")
+    _atomic_write(path, existing.rstrip() + "\n\n" + build(root) + "\n")
     if not path.read_text().startswith(existing.rstrip()):
         raise RuntimeError("DECISIONS.md was rewritten, not appended to")
     print(f"appended {MARK}")

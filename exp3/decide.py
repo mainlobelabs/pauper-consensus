@@ -10,6 +10,19 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+
+def _atomic_write(path: Path, text: str) -> None:
+    """Write via a temp file and os.replace.
+
+    DECISIONS.md is the project's durable record. A direct write_text that is
+    interrupted leaves it truncated, destroying entries this session cannot
+    reconstruct. os.replace is atomic within a filesystem.
+    """
+    import os
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(text)
+    os.replace(tmp, path)
+
 from exp3.reanalyse import PANELS
 from wct3.observe import TOP_K
 
@@ -194,7 +207,7 @@ def main() -> int:
         entry = (head.replace(MARK, f"{MARK} (SUPERSEDING)")
                  + f"\n\n**Supersedes the earlier {MARK} entry.** {args.supersede}\n"
                  + rest)
-        path.write_text(existing + ("\n" if existing and not existing.endswith("\n") else "")
+        _atomic_write(path, existing + ("\n" if existing and not existing.endswith("\n") else "")
                         + "\n" + entry + "\n")
         if not path.read_text().startswith(existing):
             raise RuntimeError(f"{path} was rewritten, not appended to")
@@ -204,8 +217,8 @@ def main() -> int:
         print(f"entry already present in {path}; not duplicating")
         return 0
     entry = build(Path(args.out_dir))
-    path.write_text(existing + ("\n" if existing and not existing.endswith("\n") else "")
-                    + "\n" + entry + "\n")
+    _atomic_write(path, existing + ("\n" if existing and not existing.endswith("\n") else "")
+                  + "\n" + entry + "\n")
     # append-only: the prior content must remain a strict prefix
     if not path.read_text().startswith(existing):
         raise RuntimeError(f"{path} was rewritten, not appended to; prior content is "
