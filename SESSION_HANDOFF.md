@@ -9,7 +9,7 @@ and they are a chain rather than three separate jobs:
 
 | id | state | why |
 |----|-------|-----|
-| B4 | **unmet** | no observed echo for 5 remote members + the fallback; needs `OPENROUTER_API_KEY`. Local qwen's `n_params` is also not endpoint-verifiable. |
+| B4 | **unmet** | no observed echo for the 5 OpenRouter members + the declared fallback; needs `OPENROUTER_API_KEY`. The local qwen member now verifies FULLY (both `model_path` and `n_params`). |
 | B9 | **unmet** | the tag cannot be created while B4 is unmet — the gate refuses |
 | B11 | **regenerates** | the DECISIONS entry is rendered from the registration; it goes stale whenever the registration changes and is rewritten by the next gate run |
 
@@ -35,7 +35,7 @@ Exit codes are the pass signal: `0` everything met, `2` only B4 outstanding,
 3. Re-run `./run_slice4.sh`. If it exits 0, `./run_slice4.sh --tag` creates
    `prereg-v3-2026-08-30`, annotated with the registration and evidence
    fingerprints.
-4. **Push** — 7 local commits, and pushing is human-only:  `git push origin e1-results-and-paper`
+4. **Push** — 6 local commits, and pushing is human-only:  `git push origin e1-results-and-paper`
 
 ## Commits this session
 
@@ -43,6 +43,8 @@ Exit codes are the pass signal: `0` everything met, `2` only B4 outstanding,
     db17a28  Slice 4: cycle-3 registration on 9,805 items, delta=0.0448
     cea4035  Slice 4 spec round 1: close 7 of 8 blockers
     ad64dcf  Slice 4 spec round 2: close 7 more blockers
+    911ef0b  Slice 4 spec round 3: contingency pricing, full-progression adjudication
+    653e276  Slice 4 spec round 4: n_params pin closed from the GGUF; caps clamped
 
 ## The two findings that matter most
 
@@ -94,12 +96,14 @@ is reported as declared sensitivity.
 - **B9 unmet.** No tag exists, so cycle 3 may not generate.
 - **B11 is fingerprint-bound.** It reports STALE whenever the registration is rebuilt;
   running the gate rewrites it. That is by design, not a defect.
-- **Spec conformance is not yet clean.** Four review rounds have run; each found real
-  defects and each was addressed. Expect the next round to find more — treat a
+- **Spec conformance is not yet clean.** Five review rounds have run; each found real
+  defects and each was addressed. The last verdict still lists B4/B9 (the credential
+  chain) plus items fixed after it was issued. Expect the next round to find more — treat a
   `conforms: true` verdict, not my summary, as the completion signal.
-- **n_params is not endpoint-verifiable.** prereg_v2 pins qwen by model_path AND
-  n_params, but llama-server `/props` exposes only model_path (+ model_ftype).
-  Recorded as a gap, not counted as a passed check; it blocks tag-readiness.
+- **n_params: CLOSED.** `/props` does not expose it, but the loaded weights file does:
+  the GGUF header of the `model_path` that `/props` reports carries
+  `general.size_label = 27B`, matching the registered pin. Both halves of qwen's
+  identity now verify, and a mismatch fails the check.
 - **The registration is not tagged**, so cycle 3 may not generate. The driver
   refuses any non-dry run without the tag resolving to the tested tree.
 - **`paper.md` is untouched.** The fp16 disclosure is durable in DECISIONS.md and
