@@ -445,6 +445,11 @@ panel_membership_rule:
   consequence: items where any member produced no parseable claim are dropped from that panel's analysis,
     and the retained item count is reported per M
 primary_adjudication:
+  map: platt
+  map_rationale: cycle 2's registered map, carried forward so cycle 3's primary is comparable with the
+    +0.220/+0.272 results on the shared 150-item stratum. The temperature map is reported as registered
+    sensitivity, never as a second chance.
+  arm: WCT-EM
   delta: the registered delta above, NOT wct3.arms.FROZEN_DELTA
   arms_frozen_delta: 0.02
   why: wct3.arms carries cycle 2's frozen delta of 0.02 and must keep it or slice 1's frozen reproduction
@@ -546,6 +551,7 @@ cost:
           usd: 7.29
   contingencies:
     sixth_family_promotion:
+      agent: laguna
       when: a primary member fails its echo check or becomes unreachable
       tier: paid
       calls: 9805
@@ -554,6 +560,7 @@ cost:
       usd: 2.88
       note: a promoted member runs a FULL pass, so this is additive, not a swap
     qwen_openrouter_fallback:
+      agent: qwen_fallback
       when: the local qwen endpoint is unreachable or its weights do not match
       tier: paid
       calls: 9805
@@ -581,9 +588,14 @@ cost:
       and the estimate is reported separately rather than quietly replacing the authorisation.
   hard_cap:
     per_panel_cumulative_calls:
-      M=3: 35298
-      M=4: 47064
-      M=5: 58830
+      M=3: 58830
+      M=4: 70596
+      M=5: 82362
+    per_panel_calls_includes:
+    - base panel
+    - retry allowance
+    - sixth_family_promotion
+    - qwen_openrouter_fallback
     per_panel_cumulative_usd:
       M=3: 78.17
       M=4: 81.54

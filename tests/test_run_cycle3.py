@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+
 from pathlib import Path
 
 import pytest
@@ -219,6 +220,15 @@ def fake_gen(monkeypatch):
     FakeClient.calls = []
     FakeClient.fail_first_n = 0
     monkeypatch.setattr("wct.nodes.Client", FakeClient)
+    # panel rank 1 is the local endpoint, and generation now re-checks its loaded
+    # weights at run time; return the registered path so these tests stay about
+    # scheduling and caps rather than about the endpoint being up.
+    monkeypatch.setattr(
+        "exp3.smoke_v3.local_props",
+        lambda *a, **k: {"model_path": "/home/jmannings/.lmstudio/models/unsloth/"
+                                       "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf",
+                         "model_ftype": "Q4_K_M", "n_params": None,
+                         "n_params_endpoint_verifiable": False})
     return FakeClient
 
 
@@ -273,10 +283,37 @@ def test_cap_breach_stops_generation(reg, fake_gen, tmp_path):
 
 # ------------------------------------------------------------------ promotion
 
+AUTH = {"decided_by": "jerry.mannings@gmail.com", "decisions_md_ref": "2026-08-31 entry"}
+
+
+def test_promotion_without_a_recorded_human_adjudication_is_refused(reg):
+    """The registration names the human owner as adjudicator; the machine must not
+    substitute a panel member on its own authority."""
+    members = R.panel_members(reg, 5)
+    with pytest.raises(R.RegistrationError, match="recorded human"):
+        R.promote(reg, members, members[2]["agent"], authorisation=None)
+
+
+def test_an_incomplete_promotion_record_is_refused(reg, tmp_path):
+    p = tmp_path / "promotions.json"
+    p.write_text(json.dumps({"nemotron": {"decided_by": "someone"}}))   # no DECISIONS ref
+    with pytest.raises(R.RegistrationError, match="incomplete"):
+        R.promotion_authorised("nemotron", p)
+
+
+def test_a_complete_promotion_record_is_accepted(reg, tmp_path):
+    p = tmp_path / "promotions.json"
+    p.write_text(json.dumps({"nemotron": AUTH}))
+    assert R.promotion_authorised("nemotron", p)["decided_by"] == AUTH["decided_by"]
+    assert R.promotion_authorised("gemma", p) is None
+
+
 def test_margin_is_promoted_into_the_vacated_rank(reg):
     members = R.panel_members(reg, 5)
     failed = members[2]["agent"]
-    promoted, event = R.promote(reg, members, failed)
+    promoted, event = R.promote(reg, members, failed, authorisation=AUTH)
+    assert event["adjudicated_by"] == AUTH["decided_by"]
+    assert event["decisions_md_ref"] == AUTH["decisions_md_ref"]
     assert event["promoted"] == R.margin_member(reg)["agent"]
     assert event["vacated"] == failed
     assert [m["rank"] for m in promoted] == [m["rank"] for m in members]
@@ -286,13 +323,13 @@ def test_margin_is_promoted_into_the_vacated_rank(reg):
 
 def test_promoting_an_agent_not_in_the_panel_is_refused(reg):
     with pytest.raises(R.RegistrationError, match="not in this panel"):
-        R.promote(reg, R.panel_members(reg, 3), "nobody")
+        R.promote(reg, R.panel_members(reg, 3), "nobody", authorisation=AUTH)
 
 
 def test_no_reserve_left_is_refused(reg):
     members = R.panel_members(reg, 5) + [R.margin_member(reg)]
     with pytest.raises(R.RegistrationError, match="no reserve left"):
-        R.promote(reg, members, members[0]["agent"])
+        R.promote(reg, members, members[0]["agent"], authorisation=AUTH)
 
 
 def test_qwen_declares_a_fallback(reg):
@@ -490,3 +527,79 @@ def test_latin_square_comes_from_the_frozen_helper(reg):
     roles = ["forward", "backward", "skeptic"]
     a = nodes.latin_square(["x", "y", "z"], roles, 0)
     assert len(set(a.values())) == 3, "each agent gets a distinct role at a given index"
+
+
+# ------------------------------------------------------------------ runtime identity
+
+def test_local_weights_are_checked_at_run_time_not_just_at_smoke(monkeypatch):
+    """The single-slot local server can be restarted with different weights between
+    smoke and generation, so the pin must be re-checked before generating."""
+    member = {"agent": "qwen", "backend": "local", "base": "http://127.0.0.1:8083/v1",
+              "identity_evidence": "model_path /models/Qwen3.8-27B-Q4_K_M.gguf"}
+    monkeypatch.setattr("exp3.smoke_v3.local_props",
+                        lambda *a, **k: {"model_path": "/models/something-else.gguf"})
+    with pytest.raises(R.RegistrationError, match="are not the registered"):
+        R.assert_local_identity(member)
+
+
+def test_unreadable_local_props_refuses_to_generate(monkeypatch):
+    member = {"agent": "qwen", "backend": "local", "base": "http://127.0.0.1:8083/v1",
+              "identity_evidence": "model_path /models/Qwen3.8-27B-Q4_K_M.gguf"}
+    monkeypatch.setattr("exp3.smoke_v3.local_props", lambda *a, **k: {})
+    with pytest.raises(R.RegistrationError, match="could not be read"):
+        R.assert_local_identity(member)
+
+
+def test_matching_local_weights_pass(monkeypatch):
+    member = {"agent": "qwen", "backend": "local", "base": "http://127.0.0.1:8083/v1",
+              "identity_evidence": "model_path /models/Qwen3.8-27B-Q4_K_M.gguf"}
+    monkeypatch.setattr("exp3.smoke_v3.local_props",
+                        lambda *a, **k: {"model_path": "/models/Qwen3.8-27B-Q4_K_M.gguf"})
+    assert R.assert_local_identity(member)["model_path"].endswith("Q4_K_M.gguf")
+
+
+def test_remote_members_skip_the_local_check():
+    assert R.assert_local_identity({"agent": "glm", "backend": "openrouter"}) is None
+
+
+def test_the_primary_map_comes_from_the_registration_not_the_code(reg):
+    assert reg["primary_adjudication"]["map"] == "platt"
+    import inspect
+    src = inspect.getsource(R.run)
+    assert 'reg.get("primary_adjudication", {}).get("map")' in src
+    assert 'mapname = "platt"' not in src, "the map must not be hard-coded in the driver"
+
+
+def test_weight_mismatch_triggers_the_declared_fallback_rather_than_aborting(reg):
+    """The registered trigger is 'unreachable OR weights mismatch'. Raising inside
+    generation would abort the run and make that trigger unreachable."""
+    import inspect
+    src = inspect.getsource(R.run)
+    assert "assert_local_identity(m)" in src, "identity must be checked BEFORE generating"
+    assert "fallback_for(reg, m[\"agent\"])" in src, "a mismatch must consult the fallback"
+    assert "weights mismatch" in src
+    gen = inspect.getsource(R.generate_member)
+    assert "assert_local_identity" not in gen, \
+        "checking inside generation aborts instead of triggering the fallback"
+
+
+def test_dose_response_requires_growth_at_every_step_for_support():
+    """A dip at M=4 that recovers at M=5 contradicts 'grows through M=3 -> M=4 -> M=5'."""
+    dip = {3: _margins({3: 0.02}, seed=1)[3],
+           4: _margins({4: 0.00}, seed=2)[4],
+           5: _margins({5: 0.12}, seed=3)[5]}
+    d = R.dose_response(dip, floor=0.0071, n_boot=300)
+    assert d["ci"]["lo"] > d["detectable_floor"], "endpoint contrast does clear the floor"
+    assert d["monotone_increasing"] is False
+    assert d["verdict"] == "inconclusive", "a non-monotone rise must not read as support"
+    assert any(not s["non_decreasing"] for s in d["steps"])
+
+
+def test_smooth_growth_through_every_step_supports():
+    grow = {3: _margins({3: 0.02}, seed=1)[3],
+            4: _margins({4: 0.06}, seed=2)[4],
+            5: _margins({5: 0.12}, seed=3)[5]}
+    d = R.dose_response(grow, floor=0.0071, n_boot=300)
+    assert d["monotone_increasing"] is True
+    assert d["verdict"] == "supports"
+    assert all(s["non_decreasing"] for s in d["steps"])

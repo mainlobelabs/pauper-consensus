@@ -248,11 +248,16 @@ def cost_block(n_items: int) -> dict:
 
     margin = [c for c in PANEL if c["rank"] == 6][0]
     contingencies["sixth_family_promotion"] = {
+        # `agent` is the key the runtime charges under. Pricing stored only under the
+        # contingency LABEL priced every contingency call at $0, because generate_member
+        # charges by agent name.
+        "agent": margin["agent"],
         "when": "a primary member fails its echo check or becomes unreachable",
         **_member_cost(margin["model"], margin["tier"], n_items, rates, tok_in, tok_out),
         "note": "a promoted member runs a FULL pass, so this is additive, not a swap",
     }
     contingencies["qwen_openrouter_fallback"] = {
+        "agent": "qwen_fallback",
         "when": "the local qwen endpoint is unreachable or its weights do not match",
         **_member_cost(QWEN_FALLBACK["model"], QWEN_FALLBACK["tier"], n_items, rates,
                        tok_in, tok_out),
@@ -298,9 +303,15 @@ def cost_block(n_items: int) -> dict:
                      "replacing the authorisation."),
         },
         "hard_cap": {
+            # Contingency passes are FULL passes, so a call cap covering only the base
+            # panel would abort a registered contingency partway through -- the same
+            # defect the dollar cap had.
             "per_panel_cumulative_calls": {
-                f"M={M}": math.ceil(panels[f"M={M}"]["calls"] * (1 + retry))
+                f"M={M}": math.ceil((panels[f"M={M}"]["calls"]
+                                     + n_items * len(contingencies)) * (1 + retry))
                 for M in (3, 4, 5)},
+            "per_panel_calls_includes": ["base panel", "retry allowance",
+                                         *contingencies.keys()],
             # A per-panel USD cap covering only the base panel is not a cap on what the
             # RUN can spend: both registered contingencies (a promoted sixth family, and
             # the qwen fallback moving a free local member onto a metered tier) are full
@@ -560,6 +571,12 @@ def build(expected_echoes: dict | None = None) -> dict:
                             "count is reported per M"),
         },
         "primary_adjudication": {
+            "map": "platt",
+            "map_rationale": ("cycle 2's registered map, carried forward so cycle 3's "
+                              "primary is comparable with the +0.220/+0.272 results on the "
+                              "shared 150-item stratum. The temperature map is reported as "
+                              "registered sensitivity, never as a second chance."),
+            "arm": "WCT-EM",
             "delta": "the registered delta above, NOT wct3.arms.FROZEN_DELTA",
             "arms_frozen_delta": 0.02,
             "why": ("wct3.arms carries cycle 2's frozen delta of 0.02 and must keep it or "

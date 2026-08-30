@@ -153,7 +153,9 @@ class Caps:
                     rates[agent] = {"in": rec["rate_in"], "out": rec["rate_out"]}
         for name, c in (cost.get("contingencies") or {}).items():
             if "rate_in" in c:
-                rates[name] = {"in": c["rate_in"], "out": c["rate_out"]}
+                # key by the AGENT the runtime charges under; keying by the contingency
+                # label priced every contingency call at $0
+                rates[c.get("agent", name)] = {"in": c["rate_in"], "out": c["rate_out"]}
         return cls(limits=cap["per_panel_cumulative_calls"],
                    usd_limits=cap.get("per_panel_cumulative_usd", {}),
                    run_total_usd=float(cap.get("run_total_usd", 0.0)),
@@ -275,7 +277,32 @@ def margin_member(reg: dict) -> dict:
     return [x for x in reg["panels"]["members"] if x["rank"] == r][0]
 
 
-def promote(reg: dict, members: list[dict], failed_agent: str) -> tuple[list[dict], dict]:
+PROMOTIONS_PATH = Path("out/cycle3/promotions_authorised.json")
+
+
+def promotion_authorised(agent: str, path: Path = PROMOTIONS_PATH) -> dict | None:
+    """The recorded human adjudication for promoting into `agent`'s rank.
+
+    The registration names the human owner as adjudicator and requires the decision be
+    recorded in DECISIONS.md before the run resumes. Auto-promoting would substitute a
+    panel member on the machine's own authority -- exactly the unregistered substitution
+    the exact-pinned-id rule exists to prevent -- while the artifact claimed a
+    preregistered promotion had been adjudicated.
+    """
+    if not path.exists():
+        return None
+    rec = json.loads(path.read_text()).get(agent)
+    if not rec:
+        return None
+    if not rec.get("decided_by") or not rec.get("decisions_md_ref"):
+        raise RegistrationError(
+            f"promotion record for {agent!r} is incomplete: it must name decided_by and "
+            f"the DECISIONS.md entry recording the adjudication")
+    return rec
+
+
+def promote(reg: dict, members: list[dict], failed_agent: str,
+            authorisation: dict | None = None) -> tuple[list[dict], dict]:
     """Registered promotion: the declared margin fills a vacated rank.
 
     Data already collected under the vacated member is RETAINED and reported separately,
@@ -288,17 +315,57 @@ def promote(reg: dict, members: list[dict], failed_agent: str) -> tuple[list[dic
     marg = margin_member(reg)
     if marg["agent"] in {m["agent"] for m in members}:
         raise RegistrationError("the declared margin is already in the panel; no reserve left")
+    if authorisation is None:
+        raise RegistrationError(
+            f"promotion into {failed_agent!r}'s rank requires a recorded human "
+            f"adjudication (registration: adjudicator = the human owner, recorded in "
+            f"DECISIONS.md before the run resumes). Record it in "
+            f"{PROMOTIONS_PATH} as "
+            f'{{"{failed_agent}": {{"decided_by": "...", "decisions_md_ref": "..."}}}} '
+            f"and re-run. Generations already collected are preserved.")
     promoted = [m for m in members if m["agent"] != failed_agent] + [
         dict(marg, rank=vacated[0]["rank"], promoted_from=marg["rank"])]
     event = {"event": "promotion", "vacated": failed_agent,
              "promoted": marg["agent"], "into_rank": vacated[0]["rank"],
-             "prior_data": "retained and reported separately, not merged"}
+             "prior_data": "retained and reported separately, not merged",
+             "adjudicated_by": authorisation.get("decided_by"),
+             "decisions_md_ref": authorisation.get("decisions_md_ref")}
     return sorted(promoted, key=lambda m: m["rank"]), event
 
 
 def fallback_for(reg: dict, agent: str) -> dict | None:
     fb = reg["panels"].get("declared_fallback") or {}
     return fb if fb.get("for") == agent else None
+
+
+def assert_local_identity(member: dict) -> dict | None:
+    """A local member's loaded weights must match the registered pin, at RUN time.
+
+    Smoke-time verification is not enough: the local server has one model slot and can be
+    restarted with different weights between smoke and generation. It answers under a
+    stale launch alias, so an echoed id cannot tell the registered quantised weights from
+    another model behind the same name.
+    """
+    if member.get("backend") != "local":
+        return None
+    import re
+
+    from exp3.smoke_v3 import local_props
+
+    props = local_props(member.get("base") or "", timeout=30.0)
+    if not props.get("model_path"):
+        raise RegistrationError(
+            f"{member['agent']}: /props could not be read, so the loaded weights cannot be "
+            f"checked against the registration. Refusing to generate against an "
+            f"unverifiable local endpoint.")
+    ev = member.get("identity_evidence") or ""
+    m = re.search(r"model_path\s+(\S+\.gguf)", ev)
+    want = m.group(1) if m else None
+    if want and props["model_path"] != want:
+        raise RegistrationError(
+            f"{member['agent']}: loaded weights {props['model_path']!r} are not the "
+            f"registered {want!r}. The alias echo alone cannot detect this.")
+    return props
 
 
 # ---------------------------------------------------------------- generation (B12)
@@ -504,15 +571,26 @@ def dose_response(by_m: dict, floor: float, mapname: str = "platt",
     points = {m: float(np.mean(list(per_item[m].values()))) for m in sizes}
     monotone = all(points[x] <= points[y] for x, y in zip(sizes, sizes[1:]))
 
+    # The registered prediction is that the margin grows THROUGH M=3 -> M=4 -> M=5, so
+    # the endpoint contrast alone is not the prediction: a panel that falls at M=4 and
+    # recovers at M=5 contradicts "grows with the number of sources" while producing a
+    # perfectly good endpoint increment. Monotonicity is therefore NECESSARY for support
+    # (it cannot manufacture support on its own, and exclusivity is preserved because
+    # `refutes` still depends only on the interval).
+    steps = [{"from": x, "to": y,
+              "increment": round(points[y] - points[x], 6),
+              "non_decreasing": points[y] >= points[x]}
+             for x, y in zip(sizes, sizes[1:])]
+
     lo, hi = ci.get("lo"), ci.get("hi")
     if lo is None or hi is None:
         verdict = "inconclusive"
-    elif lo > floor:
-        verdict = "supports"               # increment significantly ABOVE the floor
     elif hi < floor:
         verdict = "refutes"                # increment significantly BELOW the floor
+    elif lo > floor and monotone:
+        verdict = "supports"               # above the floor AND growing at every step
     else:
-        verdict = "inconclusive"           # CI spans the floor
+        verdict = "inconclusive"           # spans the floor, or grew but not monotonically
     return {
         "estimand": f"margin(M={hi_m}) - margin(M={lo_m}), paired on items",
         "margin_by_M": points,
@@ -522,14 +600,19 @@ def dose_response(by_m: dict, floor: float, mapname: str = "platt",
         "detectable_floor": floor,
         "verdict": verdict,
         "n_shared_items": len(shared),
+        "steps": steps,
         "adjudication": {
-            "supports": "CI lower bound > detectable floor",
+            "supports": "CI lower bound > detectable floor AND non-decreasing at every step",
             "refutes": "CI upper bound < detectable floor",
-            "inconclusive": "CI spans the detectable floor",
+            "inconclusive": ("CI spans the floor, OR the endpoint increment clears the "
+                             "floor but the margin does not grow at every step"),
             "mutually_exclusive": True,
-            "note": ("monotonicity is REPORTED but is not part of the verdict: it is not a "
-                     "test and adding it as a conjunct would make the three outcomes "
-                     "non-exhaustive"),
+            "exhaustive": True,
+            "note": ("the registered prediction is growth THROUGH M=3 -> M=4 -> M=5, so a "
+                     "dip at M=4 that recovers at M=5 is NOT support even when the "
+                     "endpoint contrast clears the floor. Monotonicity is necessary but "
+                     "not sufficient; `refutes` depends only on the interval, so the two "
+                     "positive verdicts cannot both fire"),
         },
     }
 
@@ -589,9 +672,33 @@ def run(dry_run: bool = True, registration: Path = PREREG,
     ids = sorted(i.item_id for i in items)
     calib_ids = set(rng.permutation(ids)[: int(len(ids) * split["calibration_fraction"])].tolist())
 
-    # ---- ONE generation pass over the union, model-major, before any analysis
+    # ---- identity preflight BEFORE generating, so the registered weight-mismatch
+    # trigger can actually fire. Raising inside generation would abort the run instead
+    # of promoting the declared fallback, making that trigger unreachable.
     events: list[dict] = []
     members = list(union)
+    presubs: dict[str, str] = {}
+    for i, m in enumerate(list(members)):
+        if m.get("backend") != "local":
+            continue
+        try:
+            assert_local_identity(m)
+        except RegistrationError as e:
+            fb = fallback_for(reg, m["agent"])
+            if not fb:
+                raise
+            repl = {**m, "agent": f"{m['agent']}_fallback", "model": fb["model"],
+                    "tier": fb["tier"], "backend": "openrouter", "base": None,
+                    "expected_resolved": fb["model"]}
+            repl.pop("identity_evidence", None)
+            members[i] = repl
+            presubs[m["agent"]] = repl["agent"]
+            events.append({"event": "fallback", "for": m["agent"], "to": fb["model"],
+                           "trigger": "local endpoint unreachable or weights mismatch",
+                           "detail": str(e)[:300], "caveat": fb["caveat"],
+                           "executed": True})
+
+    # ---- ONE generation pass over the union, model-major, before any analysis
     cell, gen_reports = generate_panel(reg, members, items, caps, panel_label, sched)
 
     # ---- registered contingencies, EXECUTED before analysis so the panel is fixed.
@@ -613,7 +720,8 @@ def run(dry_run: bool = True, registration: Path = PREREG,
                            "caveat": fb["caveat"], "executed": True})
             members = [repl if m["agent"] == agent else m for m in members]
         else:
-            members, ev = promote(reg, members, agent)
+            members, ev = promote(reg, members, agent,
+                                  authorisation=promotion_authorised(agent))
             repl = next(m for m in members if m["agent"] == ev["promoted"])
             events.append({**ev, "executed": True})
 
@@ -626,10 +734,16 @@ def run(dry_run: bool = True, registration: Path = PREREG,
             cell.setdefault(iid, {})[repl["agent"]] = g
         substitutions[agent] = repl["agent"]
 
+    substitutions.update(presubs)
     sched.begin_analysis()
 
     # ---- every nested subset from the SAME cell
-    mapname = "platt"
+    mapname = reg.get("primary_adjudication", {}).get("map")
+    if not mapname:
+        raise RegistrationError(
+            "the registration does not name a primary calibration map; refusing to pick "
+            "one, because choosing the map after seeing results is exactly what "
+            "pre-registration exists to prevent")
     by_m, per_m_margin = {}, {}
     for m in sizes:
         want = {substitutions.get(x["agent"], x["agent"])

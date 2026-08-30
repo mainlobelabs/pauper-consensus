@@ -502,7 +502,7 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 
 ## V3 SLICE 4 OUTCOME: cycle 3 registered at delta=0.0448 nats on 9805 items, M=3/M=4/M=5 nested, fp32/cuda instrument.
 
-- registration-fingerprint: `b57559d08b192a0f`
+- registration-fingerprint: `5d05f9718b8547a8`
 - Registration: `prereg_v3.yaml` (tag `prereg-v3-2026-08-30`)
 
 **Corpus.** 9805 items, SHA-256 `63ca8131b43b5c81...`, 91,052 decidable propositions of which 45,526 are positive-polarity negatives. cycle 2's 150 items are a verified COMPLETE SUBSET, so the registered +0.220/+0.272 results remain comparable on that stratum. The shared item set means cycle 3's dose-response is evidence about panel SIZE on this corpus, not independent evidence about the corpus. Projected SCORED positive-polarity negatives at M=5: 13,400 — a projection, is_gate=False.
@@ -516,3 +516,9 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 **Instrument.** fp32 on cuda. cycles 1-2 ran fp16, not fp32: the checkpoint config declares dtype=float16 and transformers honours it on CPU as well as GPU. This is registered as an INSTRUMENT CHANGE. Measured over 800 pairs: fp16 across devices 0.0044 max with 1 argmax flip(s); fp32 across devices 7.8e-06 with 0. A non-dry run aborts if the registered fp32/gpu instrument is unavailable; there is no fp16 fallback path.
 
 **Cost.** Authorised volume 58,830 calls, cap $121.0 (source: REQUEST.md OQ4, human 2026-08-30); rate-derived worst case $90.29 including the 20% retry allowance and both registered contingencies (sixth_family_promotion, qwen_openrouter_fallback). both counters are persisted to out/cycle3/caps.json and survive re-runs; a re-run RESUMES them rather than resetting, charges before the call so a crash cannot re-run free, and aborts on breach of either the call cap or the dollar cap
+## 2026-08-30T16:06:00Z - Granted 2 additional spec review round(s)
+
+- Run: `20260830-221830-30689369`
+- Decided by: user
+- Rationale: Human instruction 2026-08-31: 'keep iterating to get this done you have full control'. Rounds 1-2 findings are addressed in cea4035 and ad64dcf; the relay reports the verdict STALE against the current diff, so the fixes are unreviewed. Two rounds to review the current code.
+

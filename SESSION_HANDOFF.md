@@ -1,127 +1,107 @@
-# Session handoff — waveconv, 2026-08-28 to 2026-08-30
+# Session handoff — 2026-08-31
 
-Written so this session can be compacted without losing state. Everything here is
-either committed or reproducible from committed artifacts.
+State after the GPU/instrument work and slice 4 (cycle-3 registration).
 
-## Where the work stands
+## Where things stand
 
-| slice | title | status | commit |
-| --- | --- | --- | --- |
-| 1 | Corrected instrument and zero-cost re-analysis | done | `e63f946` |
-| 2 | Paper corrections from slice 1's findings | done | `87bfb7f` |
-| 3 | Five-family availability, measured | done | `32fead0`, `1bf61ba` |
-| 4 | Cycle-3 registration | **in progress** — `REQUEST.md` written, decisions recorded, no `PLAN.md` yet | — |
+**Slice 4 is NOT conformant yet.** Three acceptance criteria are outstanding,
+and they are a chain rather than three separate jobs:
 
-Workstream `20260828-181135-0d060fc4`; slice-4 run `20260830-221830-30689369`.
-Branch `e1-results-and-paper`. **Four commits are local and UNPUSHED** — the harness
-push-guard blocks the agent, so a human must run:
+| id | state | why |
+|----|-------|-----|
+| B4 | **unmet** | no observed echo for 5 remote members + the fallback; needs `OPENROUTER_API_KEY`. Local qwen's `n_params` is also not endpoint-verifiable. |
+| B9 | **unmet** | the tag cannot be created while B4 is unmet — the gate refuses |
+| B11 | **regenerates** | the DECISIONS entry is rendered from the registration; it goes stale whenever the registration changes and is rewritten by the next gate run |
 
-    cd ~/dev/waveconv && git push origin e1-results-and-paper
+Everything else is built, gated and committed, and the cross-model spec review
+has been through four rounds. Do not read "gate passed" as "slice done": the
+gate exits **2** precisely to say "every assertion met EXCEPT B4".
 
-`origin` has two push URLs (AWS CodeCommit + the private mirror
-`github.com/jwmannings/waveconv1.git`), so one push goes to both.
+    ./run_slice4.sh            -> exit 2  (every assertion met EXCEPT B4)
+    ./run_slice4.sh --smoke    -> needs OPENROUTER_API_KEY; closes B4
+    ./run_slice4.sh --tag      -> refuses while B4 is unmet
 
-## What was found (the science)
+Exit codes are the pass signal: `0` everything met, `2` only B4 outstanding,
+`1` a real assertion failed.
 
-Three defects in the frozen instrument, all corrected in `wct3/` + `exp3/` without
-touching `exp/`, `wct/`, `m0/` (tag `prereg-v2-2026-08-16` is byte-clean at HEAD):
+## What you need to do
 
-- **D1 — a registered arm was never implemented.** `single_best_calibration_selected`
-  (`prereg.yaml:166`, `plan.md:488`) was registered and never run in either cycle. Built
-  and measured: the panel beats the source its own calibration split selects by only
-  **+0.0448 to +0.0887 nats** on three of four panel-cycles, and **inconclusively** on
-  c2_panelB (+0.0329 [-0.0109, +0.0703]). So no REGISTERED result in either cycle
-  distinguishes cross-model agreement from one good model.
-- **D2 — the M6 ablation measured the wrong thing.** `align_anchored` collapses to one
-  observation per (agent, proposition) before `exp/e1.py:76-78` counts, so `n_claims`
-  equals `n_emitting` identically: the "claim-instance" arm is capped and UNSIGNED.
-  Separating capping from polarity (raw AUROC): uncapped signed beats capped on three of
-  four panels and is 0.0036 lower on the fourth, while no unsigned arm exceeds 0.6063.
-  **The effect is polarity, not capping.** Draft v3's arithmetic was right; its label was
-  wrong.
-- **D3 — cycle 2 discarded its own audit.** `exp/e1_v2.py:189` binds the alignment audit
-  and never uses it. Restored for all four panel-cycles; the cycle-2 mapper scores 0.9721
-  against cycle 1's 0.9724, so the depth-5 enrichment did not degrade it.
+1. **Export `OPENROUTER_API_KEY`** (it is not in my environment, any dotenv, or
+   any profile I could read — it was exported in your interactive shell when
+   slice 3 ran).
+2. `./run_slice4.sh --smoke` — probes the six panel endpoints + the qwen
+   fallback, ONE call each at 64 max_tokens (cents). This writes the observed
+   echoes that B4 requires.
+3. Re-run `./run_slice4.sh`. If it exits 0, `./run_slice4.sh --tag` creates
+   `prereg-v3-2026-08-30`, annotated with the registration and evidence
+   fingerprints.
+4. **Push** — 7 local commits, and pushing is human-only:  `git push origin e1-results-and-paper`
 
-`paper.md` was corrected in nine marked passages (slice 2), including a dated correction
-notice, a retitled §6.1, and a §9 that closes on the single-source finding.
+## Commits this session
 
-## Availability, measured (slice 3)
+    76d2c49  GPU NLI in fp32, and the fp16 instrument finding that forced it
+    db17a28  Slice 4: cycle-3 registration on 9,805 items, delta=0.0448
+    cea4035  Slice 4 spec round 1: close 7 of 8 blockers
+    ad64dcf  Slice 4 spec round 2: close 7 more blockers
 
-Six families reachable, margin **+1** → **M=5 registrable**. Total probe spend $0.0014.
+## The two findings that matter most
 
-| family | working id | tier |
-| --- | --- | --- |
-| google | `google/gemma-4-26b-a4b-it` | paid |
-| nvidia | `nvidia/nemotron-3-super-120b-a12b` | paid (`:free` 429s) |
-| openai | `openai/gpt-oss-20b` | paid (`:free` withdrawn, 404) |
-| poolside | `poolside/laguna-xs-2.1` | paid (`:free` 429s) |
-| qwen | `qwen3.8-27b` local `:8083` | pinned; fallback `qwen/qwen3.8-27b` |
-| zhipu | `zai-org/GLM-5.2` | paid (Hoonify) |
+**The NLI instrument was never fp32.** The checkpoint config declares
+`dtype=float16` and transformers honours it on CPU too, so cycles 1-2 were
+measured in fp16 — which is DEVICE DEPENDENT (4.4e-03 CPU-vs-GPU, with argmax
+flips). fp32 is device independent (7.8e-06, none) and on CPU is also 2.7x
+faster, so the frozen path took the slowest, least accurate and least
+reproducible option. Cycle 3 registers fp32/GPU; the driver fails closed rather
+than falling back. Throughput 43 -> 2,500 pairs/sec, so a full pass is ~1.4 h
+instead of ~80 h. Cycles 1-2's published results are UNAFFECTED: re-aligning
+panel A under fp32 reproduced all 1,565 observations exactly.
 
-- **Neither cycle-2 panel is reproducible as registered.** Panel A broken by `laguna`,
-  panel B by `gptoss` and `gemma`. `prereg_v2`'s rule is exact-pinned-id-or-drop.
-- `:free` is a TIER SUFFIX, not part of the model id. That mistake made an early reading
-  say "gpt-oss is gone"; the paid id answers fine.
-- Only the local endpoint had a registered expected echo, so identity was unverifiable for
-  the rest. Fixed: expected identity now defaults to the requested id.
+Do NOT mix precisions in one analysis. The smallest observed alignment margin
+is 0.0021, exactly 1x the fp16->fp32 perturbation. Cycle 3 uses a separate
+`WCT_CACHE` root; the gate pins the frozen cache at 1826 entries.
 
-## Decisions recorded (all in `DECISIONS.md`)
+**delta = 0.0448, from the CONCLUSIVE cycles only.** c2_panelB's margin is
++0.0329 with a CI spanning zero, so it is excluded rather than allowed to lower
+the floor. The cycle-2 artifacts carry both the base instrument and the
+registered S1_deny_self_contradiction variant; the base is primary and the node
+is now PINNED in code. REQUEST.md decides it — "three of four panel-cycles, and
+inconclusively on the fourth" is true only under the base reading. The variant
+is reported as declared sensitivity.
 
-1. M=5 registrable only WITH MARGIN; exactly five ⇒ M=3/M=4 with a declared stretch arm.
-2. Paid OpenRouter tier authorised; twins reported separately, never counted as pinned.
-3. Cycle 3 pins ALL SIX families; nested M=3 ⊂ M=4 ⊂ M=5; sixth family is the margin.
-4. qwen pinned LOCAL with `qwen/qwen3.8-27b` as a declared fallback.
-5. **Corpus: all 2,353 local items** (1,405 depth-3 + 948 depth-5). Supersedes the earlier
-   "reuse cycle 2's 150" decision.
+## Registration summary
 
-## The power calculation that drove the corpus decision
+| | |
+|---|---|
+| corpus | 9,805 items, sha `63ca8131…e504a1`, cycle 2's 150 a complete subset |
+| delta | 0.0448 nats (min conclusive margin, argmin c1_local) |
+| power | primary needs 101-248 items; dose floor 0.0071 nats at n=9,805 |
+| panels | 6 families, M=3 ⊂ M=4 ⊂ M=5, rank 6 (laguna) declared margin |
+| instrument | fp32 / cuda, fail-closed, separate cache root |
+| cost | 58,830 calls authorised, worst case $90.29 under a $121 cap |
 
-From slice 1's measured margins (SD per item 0.16–0.25), for 80% power:
+## Environment
 
-| to detect | items |
-| --- | --- |
-| the margin at 0.045 nats | 245 |
-| a 0.03-nat M=3→M=5 increment | 1,103 |
-| a 0.02-nat increment | 2,481 |
+- `.venv` — frozen, torch 2.13.0+cpu. Reproduces cycles 1-2. **Do not change.**
+- `.venv-cuda` — torch 2.13.0 + CUDA 13, both GPUs. New cycles only.
+- llama-server is back up on :8083 at tensor-split **70,30** — the best of your
+  sweep (1389 MiB free, 80.06 t/s). Note the sweep never reached its 2000 MiB
+  target; the answer lies beyond the swept range (72,28 / 75,25).
+- LM Studio on :1234 serves the nomic embedder AND qwen3.8-27b.
 
-2,353 items powers roughly a 0.02-nat increment. Cycle 2's 150 could not power the
-dose-response at all.
+## Known gaps, stated plainly
 
-## The binding constraint: CPU NLI
-
-**Measured on this box: 30 NLI pairs/sec** (DeBERTa-v3-base, 32 threads).
-
-| corpus | NLI pairs | CPU time |
-| --- | --- | --- |
-| 2,353 × 6 (registered) | 12.4M | **~114 h / 4.8 days** |
-| 10,000 × 6 | 52.5M | ~20 days |
-
-Generation: 14,118 calls, ~$29. **Two GPUs are present** (RTX 3090 24GB, RTX 3080 Ti
-12GB) but this venv's torch is `2.13.0+cpu`, so they are unusable. The protocol's
-"No GPU" constraint is STALE, like the RAM table `GOTCHAS.md` already flags. A CUDA torch
-in a SEPARATE venv would cut the run to ~a day, but would change the numerical environment
-that the frozen-reproduction checks depend on — decide deliberately.
-
-## What slice 4 still needs
-
-- `PLAN.md` for slice 4 (not yet written), then plan-QA, build, gate, spec, commit.
-- `prereg_v3.yaml`: primary = panel vs calibration-selected best single source; nested
-  subsets; δ derived from the margins above and frozen; power stated honestly.
-- An expected echo pinned per panel member (only qwen has one today).
-- Paid tiers priced for 14,118 calls with a hard per-panel cap.
-- The analysis driver committed and git-tagged BEFORE any cycle-3 generation exists.
-- Registration precedes generation. "Getting the CPU pumping" cannot start before the tag.
-
-## Working practices this session established
-
-- **Verify a gate by its EXIT CODE**, never by grepping its output. Reporting a pass from a
-  grep was wrong once here.
-- **Verify a review actually ran**: compare the verdict's mtime against the prompt's and
-  check `state.json`'s round count. Cached verdicts were reported as fresh several times.
-- **Every check needs a planted failure** before it is trusted. Seven vacuous-pass bugs were
-  found this way, including three where the fix reintroduced the fault.
-- **Never `t.replace(old, new)` without `assert t.count(old) == 1`.** An empty slice from a
-  reversed `t.index()` pair inserted a paragraph between every character and produced a
-  9.3MB `PLAN.md`.
-- Gate tests that invoke the gate must be guarded against recursion (`SLICE3_GATE_RUNNING`).
+- **B4 unmet.** Five remote endpoints and the fallback have no observed echo.
+- **B9 unmet.** No tag exists, so cycle 3 may not generate.
+- **B11 is fingerprint-bound.** It reports STALE whenever the registration is rebuilt;
+  running the gate rewrites it. That is by design, not a defect.
+- **Spec conformance is not yet clean.** Four review rounds have run; each found real
+  defects and each was addressed. Expect the next round to find more — treat a
+  `conforms: true` verdict, not my summary, as the completion signal.
+- **n_params is not endpoint-verifiable.** prereg_v2 pins qwen by model_path AND
+  n_params, but llama-server `/props` exposes only model_path (+ model_ftype).
+  Recorded as a gap, not counted as a passed check; it blocks tag-readiness.
+- **The registration is not tagged**, so cycle 3 may not generate. The driver
+  refuses any non-dry run without the tag resolving to the tested tree.
+- **`paper.md` is untouched.** The fp16 disclosure is durable in DECISIONS.md and
+  GOTCHAS.md; publishing it needs a separately authorised paper slice, since
+  "any change to paper.md" is an explicit non-goal of this slice.
