@@ -126,21 +126,72 @@ complete before slice 2 can register anything.
 - A9: One command runs the whole slice and exits non-zero on any failed assertion.
 - A10: `DECISIONS.md` entry recording D1-D3, what moved, and what did not.
 
-## Slice 2: Cycle-3 registration
+## Slice 2: Paper corrections from slice 1's findings
 
-Freeze the experiment slice 1's numbers make answerable, and tag it before any generation
-exists — the discipline cycle 1 lacked and cycle 2 established.
+RESCOPED 2026-08-29 (human decision). Originally B10 inside the registration slice.
+Split out and moved first because slice 1's D2 result REFUTES paper.md 6.1 rather than
+qualifying it, the correction costs nothing (it reads committed artifacts, no inference),
+and a draft carrying two named authors should not sit on a claim its own instrument
+contradicts while a registration that needs new generation is prepared.
 
-- B1: `prereg_v3.yaml` carrying every field `EXPERIMENT.md` §3.1(4) requires, with the
+- C1: 6.1 and contribution 4 restated as the polarity result the corrected instrument
+  measures. The frozen `uncapped` arm is identified as capped-and-unsigned, with the
+  reason (align_anchored collapses per (agent,pid) before exp/e1.py:76-78 counts), and
+  the capping x polarity 2x2 reported in full at raw AUROC.
+- C2: The unrun registered arm disclosed in 8: `single_best_calibration_selected`
+  (prereg.yaml:166, plan.md:488) was never implemented in either cycle, so no REGISTERED
+  result distinguishes cross-model agreement from one good model. The post-hoc contrasts
+  this slice adds do bear on it and must be stated alongside, never elided: saying "no
+  reported result" would contradict the very numbers the slice reports.
+- C3: Slice 1's single-source contrast reported at the prominence the registered failures
+  get, including that c2_panelB is inconclusive under the frozen decision rule.
+- C4: Every new number labelled POST-HOC and sourced to `out/v3/`; no registered cycle-1
+  or cycle-2 verdict restated or altered.
+- C5: The D3 disclosure recorded: cycle 2's mapper could not be audited from cache because
+  its own driver discarded the audit, and the probe was computed under a recorded
+  amendment (0.9721 vs cycle 1's 0.9724).
+- C6: A correction notice at the head of the paper naming what changed from draft v3 and
+  why, so a reader of the earlier draft can see it. The project's precedent is a
+  superseding record that leaves the original visible.
+- C7: Every figure quoted in the revised sections is checked against `out/v3/` artifacts by
+  a script, not by hand, and that check runs in the slice gate.
+- C8: The v2 tag remains byte-clean, asserted in the slice gate across committed,
+  working-tree and untracked state.
+
+## Slice 3: Five-family availability, measured before anything is registered
+
+RESCOPED 2026-08-29 (human decision). Originally folded into the registration's B4. Made a
+separate gate because the five-family target has now failed TWICE on availability: cycle 1
+found three families locally, not five (GOTCHAS 2026-08-07), and cycle 2 had to rebuild
+panel A mid-programme when two of its three models left the catalogue. Registering M=5
+without measuring first risks freezing a design that cannot be run.
+
+- E1: Every candidate endpoint smoke-tested for real: local `:1234`, OpenRouter, Hoonify.
+  Generation attempted, not merely a model-list call, because a listed model that fails to
+  load is the exact cycle-1 failure.
+- E2: Resolved serving identity recorded per model (served alias AND loaded weights), since
+  cycle 2 had to pin these to detect substitution.
+- E3: Distinct FAMILIES counted, not model ids: two variants of one family are not two
+  independent sources (GOTCHAS, ornith-35b vs ornith-35b-mtp-apex).
+- E4: A written verdict on whether M=5 is registrable, with the M=3 subsets it supports.
+- E5: If five families are not available, the finding is reported and slice 4 registers
+  what IS available; the workstream does not stall and does not quietly register a
+  design it cannot run.
+- E6: Costs nothing beyond smoke-test tokens; no experimental generation.
+
+## Slice 4: Cycle-3 registration
+
+- B1: `prereg_v3.yaml` carrying every field `EXPERIMENT.md` 3.1(4) requires, with the
   registered primary stated as panel vs calibration-selected best single source.
-- B2: Delta set from slice 1's measured single-source margins and the M=3 spread, with the
-  derivation recorded. Never moved after results are visible.
+- B2: Delta set from slice 1's measured margins (+0.033 to +0.089 over the best single
+  source across four panel-cycles) and the M=3 spread, with the derivation recorded.
+  Never moved after results are visible.
 - B3: Power calculation against slice 1's observed per-item variance, reporting the item
-  count each of M=3 and M=5 needs, and stating plainly if the design is underpowered at
-  feasible n rather than proceeding as if it were not.
-- B4: Panels pinned: five families for M=5 and the M=3 subsets drawn from them, every
-  endpoint smoke-tested and its resolved serving identity recorded, with any other server
-  echo defined in advance as substitution.
+  count each of M=3 and M=5 needs. If the design is underpowered at feasible n, that is
+  stated plainly and registered as such rather than proceeded past.
+- B4: Panels pinned from slice 3's MEASURED availability, every endpoint smoke-tested and
+  its resolved serving identity recorded, with any other server echo defined in advance
+  as substitution.
 - B5: Corpus pinned by SHA-256, capable of containing falsehoods, with the projected count
   of scored positive-polarity negatives stated as a projection and explicitly not a gate.
 - B6: Falsifiable predictions with their adjudication rules, including the dose-response
@@ -151,9 +202,6 @@ exists — the discipline cycle 1 lacked and cycle 2 established.
 - B8: Hard cumulative per-panel call caps, persisted across re-runs.
 - B9: Git tag created before any cycle-3 generation call exists, with the empty-diff
   property asserted at tag time.
-- B10: `paper.md` corrections for D1-D3: §6.1 and contribution 4 restated as the polarity
-  result they measure, the unrun registered arm disclosed in §8, and slice 1's post-hoc
-  single-source numbers reported at the prominence the failed predictions get.
 
 ## Open questions
 
@@ -161,15 +209,16 @@ exists — the discipline cycle 1 lacked and cycle 2 established.
   reproduce the frozen capped observation set exactly, but its extra output has no consumer
   in the frozen code. Confirm the new path is a parallel function rather than a widened
   return on the frozen one, since the latter would touch a tagged file.
-- OQ2: B10 revises a paper whose cycle-2 results are published-as-frozen. Does the D2
-  correction go in as a correction notice with the original text retained, or as a rewrite
-  of §6.1? The project's own precedent (DECISIONS.md 2026-08-15) is a superseding entry
-  that keeps the original visible.
+- OQ2: RESOLVED (human, 2026-08-29). A dated correction notice at the head of `paper.md`,
+  with draft v3's wording quoted verbatim where a passage turns on its exact claim (§6.1,
+  §3.4) and characterised elsewhere; the pre-correction text remains at `e63f946`. B10 was
+  split out of the registration slice and became slice 2.
 - OQ3: M=5 requires five families that were never simultaneously available; cycle 1 found
   three locally and cycle 2 rebuilt panel A after two models left the catalogue. If five
   cannot be pinned at B4, does cycle 3 register at M=3 and M=4, or park for a human
   decision?
-- OQ4: Slice 1's corrected numbers may show the panel does not beat its best single source
-  on any existing panel. That would make cycle 3 a test of a hypothesis already in trouble.
-  Confirm cycle 3 registers anyway (the dose-response is still the informative test), or
-  parks for a go/no-go at slice 1's exit.
+- OQ4: RESOLVED (human, 2026-08-28) and ANSWERED by slice 1. The panel does beat its
+  calibration-selected best single source on three of four panel-cycles (+0.0448 to
+  +0.0887) and inconclusively on c2_panelB, so the hypothesis is neither dead nor
+  established. The dose-response is registered regardless, per the recorded decision;
+  slice 4 sets delta and power from these margins.

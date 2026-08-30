@@ -6,9 +6,39 @@ Jeremiah Mannings, Andryo Marzuki
 
 ---
 
+<!-- slice2:begin -->
+## Correction notice, 2026-08-29
+
+Draft v3 (17 August 2026) stated, in the abstract, contribution 4, §3.4, §6.1 and §9, that
+proposition-level agreement carries information *because each source gets one vote*, and
+that counting claim instances instead destroys the signal. **That conclusion does not
+follow from the measurement it cites, and those passages are corrected below.**
+
+The arithmetic was never wrong. Draft v3's quoted AUROC ranges are correct readings of the
+frozen `uncapped` arm. What was wrong is what that arm *is*: `cluster.align_anchored`
+collapses to one observation per (agent, proposition) before `exp/e1.py:76-78` counts them,
+so the "claim-instance" count is identically the number of agents that mentioned the
+proposition — capped, and unsigned. The comparison that draft v3 read as *capped vs
+uncapped* was in fact *signed vs unsigned*. Measured separately, removing the per-source cap
+costs nothing; removing the sign destroys everything.
+
+A second correction: the arm that would distinguish cross-model agreement from one good
+model, `single_best_calibration_selected`, is registered in `prereg.yaml:166` and
+`plan.md:488` and was never implemented in either cycle. It is reported here for the first
+time, POST-HOC.
+
+No registered verdict from cycle 1 or cycle 2 is restated or altered. Every figure added
+here is POST-HOC and read from `out/v3/`, committed at `e63f946`. Draft v3's original
+wording is quoted verbatim where a passage turns on its exact claim (§6.1); §3.4 retains draft v3's figures under corrected framing; elsewhere — the abstract and contribution 4 — it is characterised rather than quoted, and the pre-correction text remains available at `e63f946`.
+
+<!-- slice2:end -->
+---
+
 ## Abstract
 
-Methods that pool several language models treat agreement as evidence, almost always at the level of the final answer. We tested the proposition-level version of that premise under pre-registration, twice. In the first cycle, an identical frozen protocol run on two independently selected three-model panels returned opposite verdicts on the registered primary, held-out Δ log-loss against a covariate baseline: **−0.159 nats [−0.249, −0.070], a decisive stop, on one panel and +0.122 [+0.037, +0.197], a decisive go, on the other**, with both intervals excluding zero. A paper reporting either panel alone would have been confident and wrong about the method. Post-hoc diagnosis located the disagreement not in the panels but in the instrument, twice over. First, the registered calibration map, a single fitted temperature, has no intercept, while the baseline it was measured against is a logistic regression fitted with one; giving both sides the same two parameters moved the failing panel from stop to go and turned all twelve panel × stratum × arm combinations positive, while every rank-based measurement was invariant by construction. Second, the corpus could barely contain a falsehood: 48% of propositions came from theories in which nothing can be false, only positive-polarity falsehoods ever survived alignment (0 of 607 negative-polarity propositions were scored), and the test splits held 14–16 negatives. Rather than reporting a post-hoc rescue, we froze a second registration (negation-family corpus with depth-5 enrichment, an intercept-bearing calibration map, three falsifiable predictions) and git-tagged it before any of its generation ran. The central prediction was **confirmed on two panel–corpus configurations sharing no model family with each other, one panel entirely new and one continuing from cycle 1, both on the enriched corpus: +0.220 [+0.160, +0.280] and +0.272 [+0.180, +0.353], both go, at 81 and 65 test negatives**. The other two registered predictions failed: consensus quality does not degrade monotonically with proof depth, and a deny-vote filter that helped one panel hurt the other. One finding is invariant across both cycles, both panels, and every stratum: counting distinct agents rather than claim instances is the difference between AUROC ≈ 0.5–0.6 and AUROC 0.89–1.00. Agreement measures who asserts a proposition, not how much text asserts it.
+Methods that pool several language models treat agreement as evidence, almost always at the level of the final answer. We tested the proposition-level version of that premise under pre-registration, twice. In the first cycle, an identical frozen protocol run on two independently selected three-model panels returned opposite verdicts on the registered primary, held-out Δ log-loss against a covariate baseline: **−0.159 nats [−0.249, −0.070], a decisive stop, on one panel and +0.122 [+0.037, +0.197], a decisive go, on the other**, with both intervals excluding zero. A paper reporting either panel alone would have been confident and wrong about the method. Post-hoc diagnosis located the disagreement not in the panels but in the instrument, twice over. First, the registered calibration map, a single fitted temperature, has no intercept, while the baseline it was measured against is a logistic regression fitted with one; giving both sides the same two parameters moved the failing panel from stop to go and turned all twelve panel × stratum × arm combinations positive, while every rank-based measurement was invariant by construction. Second, the corpus could barely contain a falsehood: 48% of propositions came from theories in which nothing can be false, only positive-polarity falsehoods ever survived alignment (0 of 607 negative-polarity propositions were scored), and the test splits held 14–16 negatives. Rather than reporting a post-hoc rescue, we froze a second registration (negation-family corpus with depth-5 enrichment, an intercept-bearing calibration map, three falsifiable predictions) and git-tagged it before any of its generation ran. The central prediction was **confirmed on two panel–corpus configurations sharing no model family with each other, one panel entirely new and one continuing from cycle 1, both on the enriched corpus: +0.220 [+0.160, +0.280] and +0.272 [+0.180, +0.353], both go, at 81 and 65 test negatives**. The other two registered predictions failed: consensus quality does not degrade monotonically with proof depth, and a deny-vote filter that helped one panel hurt the other. <!-- slice2:begin -->
+One finding holds on all four panel-cycles, though not the one draft v3 reported (see the correction notice): what separates AUROC 0.4484–0.6063 from AUROC 0.9001–0.9911 is whether a vote's POLARITY is used, not whether sources are capped. Uncapped signed counting beats capped on three of four panel-cycles and is 0.0036 lower on the fourth; no unsigned arm exceeds 0.6063 on any of them. What carries the signal is the SIGN of what sources assert: the working arms are signed counts over sources, and dropping the sign — while still counting sources — is what collapses them to chance.
+<!-- slice2:end -->
 
 ---
 
@@ -29,7 +59,9 @@ The second cycle is what distinguishes this paper from a cautionary tale. Post-h
 1. A two-cycle pre-registered design in which the second cycle tests the first cycle's post-hoc diagnosis as frozen, falsifiable predictions, including the confirmation of the central prediction on both cycle-2 configurations (one panel entirely new, one continuing; +0.220 and +0.272 nats, both go).
 2. Identification and prospective repair of two instrument defects that jointly produced a verdict flip in cycle 1: a missing intercept in the registered calibration map (worth the entire flip; an intercept alone at the frozen slope captures 98.8% of the correction), and a corpus in which only 14–16 test negatives were scorable, including the measurement that *zero* of 607 negative-polarity propositions were ever scored by the alignment layer.
 3. Two registered failures with verified mechanisms: consensus quality does not decline monotonically with proof depth (the violating bin is statistically indistinguishable from flat, which is itself the lesson about tolerance choice), and a self-contradiction filter on deny votes helps or harms depending on panel trace style (dropped-deny precision 0.373 vs 0.523).
-4. A replication, across both cycles and all panels, of the one-vote-per-source result: claim-instance counting reaches AUROC 0.502–0.606 while unique-source support reaches 0.891–1.000.
+<!-- slice2:begin -->
+4. A correction, across both cycles and all panels, of what draft v3 called the one-vote-per-source result. The frozen `uncapped` arm is capped and unsigned (`align_anchored` collapses per (agent, proposition) before `exp/e1.py:76-78` counts), so the reported contrast varied polarity, not capping. Separating the two POST-HOC: removing the cap costs nothing, removing the sign destroys everything (§6.1).
+<!-- slice2:end -->
 5. A worked example of registration hygiene failing and being repaired: cycle 1's protocol was never tagged before inference (its own requirement), and the file-timestamp forensics of what can and cannot be established are part of the record; cycle 2's tag precedes every generation call.
 
 ---
@@ -75,7 +107,9 @@ A second, subtler restriction was found later (post-hoc): the alignment layer ne
 
 ### 3.4 Cycle-1 secondary results
 
-The registered E0 directional prediction (cross-family panels carry lower residual error correlation than same-family) failed in sign on panel A (ρ 0.080 vs −0.022) and was uncomputable on panel B, where two of three models answer every item correctly; the panels are at answer-level ceiling, and the test had negligible power. The claim-instance ablation destroyed the signal on every stratum of both panels (AUROC 0.502–0.554 against 0.891–1.000 for unique-source arms). Registration hygiene: cycle 1's own protocol required a git tag before any inference ran, and no tag existed; the retrospective record (tag `prereg-retrospective-2026-08-15`) documents what the file timestamps can and cannot establish: notably, that the frozen δ values predate the first results, but that panel B's *primary* designation cannot be shown to predate panel A's results.
+The registered E0 directional prediction (cross-family panels carry lower residual error correlation than same-family) failed in sign on panel A (ρ 0.080 vs −0.022) and was uncomputable on panel B, where two of three models answer every item correctly; the panels are at answer-level ceiling, and the test had negligible power. <!-- slice2:begin -->
+The arm draft v3 called a claim-instance ablation destroyed the signal on every stratum of both panels (AUROC 0.502–0.554 against 0.891–1.000 for the signed arms). Those figures stand; their interpretation does not. That arm is capped and unsigned, so what it shows is the cost of discarding polarity (correction notice, §6.1).
+<!-- slice2:end --> Registration hygiene: cycle 1's own protocol required a git tag before any inference ran, and no tag existed; the retrospective record (tag `prereg-retrospective-2026-08-15`) documents what the file timestamps can and cannot establish: notably, that the frozen δ values predate the first results, but that panel B's *primary* designation cannot be shown to predate panel A's results.
 
 ---
 
@@ -161,7 +195,40 @@ S2, the extractor exemption, was absorbed by the pipeline (post-hoc diagnosis of
 
 Four results hold across both cycles, all panels, and all strata where they are defined.
 
-**6.1 One vote per source, or nothing.** Claim-instance counting: AUROC 0.502–0.554 (cycle 1), 0.569–0.606 (cycle 2, primary instrument). Unique-source support: 0.891–1.000 (cycle 1), 0.931–0.939 (cycle 2, primary instrument). Whatever agreement measures, it is who asserts a proposition, not how much text asserts it.
+<!-- slice2:begin -->
+**6.1 Polarity, not capping** *(CORRECTED; draft v3 titled this "One vote per source,
+or nothing")*. Draft v3 reported: "Claim-instance counting: AUROC 0.502–0.554 (cycle 1),
+0.569–0.606 (cycle 2, primary instrument). Unique-source support: 0.891–1.000 (cycle 1),
+0.931–0.939 (cycle 2, primary instrument)." Those numbers are correct readings of the frozen
+arms. But the arm labelled claim-instance counting scores `n_claims`, which equals
+`n_emitting` identically, because `cluster.align_anchored` keeps only the highest-scoring
+observation per (agent, proposition) before `exp/e1.py:76-78` counts what survives. It is a
+capped, unsigned count of how many agents mentioned the proposition. The contrast therefore
+varied polarity while holding capping fixed.
+
+Varying them separately, at the panel level (POST-HOC, raw test AUROC on the unmapped
+score over each panel's all-items stratum, from `out/v3/`; these are four aggregate
+panel results and we make no per-stratum claim from them; a
+fitted calibration map can take a negative slope on a signal-free arm and flip mapped AUROC
+about 0.5, so the mapped variants are recorded in the artifacts and not used here):
+
+| panel | capped + signed | capped + unsigned | uncapped + signed | uncapped + unsigned |
+|---|---|---|---|---|
+| c1_local | 0.9001 | 0.5069 | 0.9664 | 0.4484 |
+| c1_openrouter | 0.9911 | 0.5239 | 0.9875 | 0.4825 |
+| c2_panelA | 0.9353 | 0.6063 | 0.9456 | 0.5884 |
+| c2_panelB | 0.9323 | 0.5686 | 0.9530 | 0.5705 |
+
+Removing the per-source cap costs nothing measurable: uncapped signed beats capped on
+three of four panel-cycles (by 0.0662, 0.0103 and 0.0207) and is 0.0036 lower on the fourth,
+c1_openrouter, where capped reaches 0.9911 against uncapped's 0.9875. We do not read that
+0.0036 as the cap helping; we read the four together as the cap making no difference either
+way. Removing the sign destroys everything: no unsigned arm exceeds 0.6063 anywhere. What agreement measures is the SIGN of what sources assert. Both working arms are
+counts over sources; the capped and uncapped unsigned arms count sources too, and
+collapse to chance. Counting is not the operative step, polarity is. The one-vote-per-agent cap remains this
+instrument's design, and whether it is *necessary* is untested — the corrected result says
+only that this measurement never tested it.
+<!-- slice2:end -->
 
 **6.2 The signal is real everywhere it can be measured.** The within-item permutation null (does support predict truth beyond item difficulty?) rejects at p = 0.001 in every stratum of every panel in both cycles.
 
@@ -185,19 +252,54 @@ Three exploratory results from the cycle-1 cache informed cycle 2's design and a
 
 ## 8 Limitations
 
-- **Synthetic closed world.** ProofWriter's decidable, closed-vocabulary microworld is what makes proposition-level ground truth and proof DAGs available at all; nothing here establishes transfer to open-ended claims. The mechanism results (intercept, one-vote-per-source, rank robustness) are the most likely to travel; the effect sizes are not.
+- **Synthetic closed world.** ProofWriter's decidable, closed-vocabulary microworld is what makes proposition-level ground truth and proof DAGs available at all; nothing here establishes transfer to open-ended claims. <!-- slice2:begin -->The mechanism results (intercept, polarity-carries-the-signal, rank robustness) are the most likely to travel; the effect sizes are not. Draft v3 listed one-vote-per-source here; that is withdrawn — the corrected §6.1 shows the per-source cap makes no measurable difference on this instrument, and whether it is necessary remains untested.<!-- slice2:end -->
 - **Three-model panels.** M = 3 was forced by endpoint availability in cycle 1 and retained for comparability; the five-family target of the original protocol was never met. EM reliability estimates at M = 3 are consensus-dominated (§7).
 - **Answer parseability.** Under the frozen token budget, 53/150 GLM-5.2, 26/150 laguna and 20/150 qwen generations spent the entire budget reasoning and emitted no final content block. Traces remain non-empty (reasoning is retained) and no registered quantity conditions on answer parseability, but answer-level descriptives inherit missingness (parse rates 81–100% per agent, not depth-concentrated).
 - **One adjudication is reading-sensitive** (panel B's co-primary, §5.2), and one projection missed its own uncertainty band (panel B's negative count). Both disclosed.
 - **The two cycles share half a corpus and one panel.** Panel B and the 78 reused items appear in both cycles; cycle 2's panel A and its 72 depth-5 items are the genuinely fresh half. The P1 confirmation rests on both halves agreeing.
 - **One registered robustness check was never run.** Cycle 1 registered a second embedding/NLI stack on a fixed 20% subsample; it was not run in either cycle, so the shared-measurement-stack confound (one extractor, one embedding model, one NLI model across all panels and both cycles) is disclosed but unquantified.
+<!-- slice2:begin -->
+- **A registered arm was never implemented, in either cycle** (POST-HOC, added
+  2026-08-29). `single_best_calibration_selected` is registered in `prereg.yaml:166` and is
+  baseline #1 in `plan.md:488`; `prereg_v2.yaml` dropped it from its arm list without
+  comment. Neither cycle ran it. The registered primary compares against a covariate
+  baseline built from item features, so it establishes that proposition-level vote scores
+  carry signal — it does not establish that CROSS-MODEL agreement is what carries it.
+  Measured now over the frozen caches, with the source chosen on the calibration split alone
+  and under each cycle's own registered calibration map:
+
+  | panel | map | selected source | panel (WCT-EM) over that source | decision |
+  |---|---|---|---|---|
+  | c1_local | temperature | qwen | +0.0448 [+0.0117, +0.0787] | **go** |
+  | c1_openrouter | temperature | nemotron | +0.0887 [+0.0455, +0.1421] | **go** |
+  | c2_panelA | platt | glm | +0.0762 [+0.0465, +0.1068] | **go** |
+  | c2_panelB | platt | gptoss | +0.0329 [-0.0109, +0.0703] | **inconclusive** |
+
+  The panel does beat its best single source on 3 of 4 panel-cycles, by
+  +0.0448 to +0.0887 nats — a fraction of the +0.220 and +0.272 the registered primary
+  reports against the covariate baseline — and the margin is inconclusive on
+  c2_panelB. This is the gap a third cycle would need to close; no such registration exists yet.
+
+- **Cycle 2's mapper could not be audited from its own cache** (POST-HOC, added 2026-08-29).
+  `exp/e1_v2.py:189` binds the alignment audit and discards it, so no measurement-quality
+  evidence exists for the run that produced cycle 2's go. Recomputing the aligner probe
+  required an amendment to re-analysis constraints (local CPU only, recorded in
+  `DECISIONS.md`); it scores 0.9721 against cycle 1's 0.9724, so the depth-5 enrichment
+  did not degrade the mapper. That this could not be checked without recomputation is itself
+  the cost of discarding the audit.
+
+<!-- slice2:end -->
 - **Cycle 1's registration was never tagged before inference**, its own requirement. The retrospective forensics (what file timestamps can and cannot establish) are in the record, and cycle 2 was run so that no such forensics are needed.
 
 ## 9 Conclusion
 
 We asked whether cross-model proposition agreement predicts proposition truth, and the first honest answer was: our instrument could not say. The same frozen test returned opposite verdicts on two panels, and the disagreement was traced, post hoc (§4), to the instrument: a calibration map denied the intercept its baseline had, on a corpus whose test splits held 14–16 falsehoods for a method to be wrong about. The second honest answer, from a second registration frozen before its data existed, is yes: +0.220 and +0.272 nats over a covariate baseline, both intervals well clear of the registered threshold, on two panel–corpus configurations sharing no model family, with the rank-based signal invariant everywhere and p = 0.001 against the within-item null throughout.
 
-The registered failures bound the claim. Depth degrades consensus but not monotonically, and not past the unanimity threshold we predicted; an instrument fix that helped one panel's trace style hurt the other's. And the one finding that needed no second cycle, because it never wavered: agreement carries information exactly when each source gets one vote. Count text instead of sources, and there is nothing there.
+The registered failures bound the claim. Depth degrades consensus but not monotonically, and not past the unanimity threshold we predicted; an instrument fix that helped one panel's trace style hurt the other's.
+
+<!-- slice2:begin -->
+And the finding we reported as needing no second cycle turned out to need a correction instead. Draft v3 closed on agreement carrying information exactly when each source gets one vote; the arm that claim rested on is capped and unsigned, so it measured polarity, not capping (§6.1). What remains after the correction is sharper and less comfortable. No REGISTERED result in either cycle distinguishes cross-model agreement from one good model, because the arm that would have — `single_best_calibration_selected`, registered in `prereg.yaml:166` — was never implemented. Measured post-hoc, the panel does beat the single source its own calibration split selects, by +0.0448 to +0.0887 nats on 3 of 4 panel-cycles, and inconclusively on c2_panelB, where it is +0.0329 [-0.0109, +0.0703] and the interval spans zero. That margin is real, small, unregistered, and absent on one panel. It is a fraction of what we report against the covariate baseline, and it is the whole of what pooling buys over choosing well. That contrast is what a third cycle should register as its primary, across panel sizes: a margin this size either grows with the number of independent sources — which is what error decorrelation predicts — or the premise this literature rests on does not hold at the proposition level. We state that as the open question, not as a design already frozen; no cycle-3 registration exists at the time of writing, and the panel sizes it can test depend on model availability, which twice already has not matched what a protocol assumed.
+<!-- slice2:end -->
 
 ---
 
@@ -225,6 +327,10 @@ Study design, decisions, and all approvals: the human authors. Implementation, a
 | `out/generation_index*.json`, `out/attempts_v2_*.json` | per-call indexes; cumulative spend ledgers |
 | `out/dataset_manifest.json` | cycle-1 item census |
 | `out/cache/` | immutable content-hashed generation artifacts (embedding/NLI caches are regenerable and untracked) |
+<!-- slice2:begin -->
+| `out/v3/reanalysis_*.json` | POST-HOC re-analysis of all four panel-cycles under the corrected instrument (2026-08-29 correction notice): the capping x polarity 2x2, the single-source contrasts, the restored alignment audits, and the frozen-value reproduction checks |
+| `wct3/`, `exp3/` | the corrected instrument and its drivers; the frozen `wct/`, `exp/`, `m0/` are unchanged under tag `prereg-v2-2026-08-16` |
+<!-- slice2:end -->
 | `wct/`, `exp/`, `m0/` | instrument, experiment drivers, pre-inference invariant checks |
 | `DECISIONS.md`, `GOTCHAS.md` | the decision log (including the two correction entries and the v2 outcome entry); measured environment constraints |
 

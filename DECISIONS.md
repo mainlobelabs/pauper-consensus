@@ -237,3 +237,125 @@ The probe is computed on all four panel-cycles: self-identification 0.9721-0.972
 - Decided by: jerry.mannings@gmail.com
 - Rationale: Round 5's two findings are fixed: cycle-2 reproduction now covers the registered S1_deny_filter block (imported from exp/e1_v2.py, not reimplemented), the exact-ML sensitivity primaries and the co-primary bootstrap difference, taking cycle-2 frozen checks from 72 to 136; and the independent validator's dead 'cc is c' agent guard is live again, with its own coverage extended to co-primary, within-item AUROC, permutation-null, S1 arms and S1 primaries under per-cycle floors. Findings have gone 5 -> 4 -> 2 with no incorrect value in the last two rounds; this round is to confirm convergence before commit.
 
+## 2026-08-29T05:42:53Z - Slice 2: paper.md 9 closes on the single-source finding (not the corrected polarity result), and the correction notice is a dated block at the head of paper.md (not a separate CORRECTIONS.md).
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The single-source finding is the more consequential correction: it bears on whether the paper's central premise -- that CROSS-MODEL agreement is the mechanism -- was ever tested, since the registered arm that would distinguish it from one good model was never implemented. Closing there makes the conclusion carry the open question instead of burying it. The in-paper notice is unmissable and follows the project's precedent of superseding records that leave the original visible.
+- Alternatives: Close on the polarity result (keeps 9's existing shape, but ends on the smaller correction). Separate CORRECTIONS.md (keeps the paper's voice clean, at the risk of a reader missing it).
+
+## 2026-08-29T05:53:29Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Rounds 3-6 never executed: the cap was reached after round 2, so those plan-verdict calls raised a gate and returned the CACHED verdict. Only two plan_rounds are on record, both hash-bound to plans predating revision 3. GPT has therefore never reviewed revisions 3-6, which include the three-class fix, the removal of the weak quoted-figure class, and the non-normative changelog. human-approve is refused without a hash-bound review of the current plan, and the automatic legacy_rebind does not fire because prior rounds exist. Granting one round to obtain a genuine review of the plan as it now stands, so the recorded human decision rests on real evidence rather than a cached finding.
+
+## 2026-08-29T05:54:07Z - Gate 11a0569c resolved: Obtain one hash-bound GPT review of the current PLAN.md, then human-approve recording B2 as satisfied in substance.
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Rounds 3-6 never executed: after the cap was reached each plan-verdict call raised a gate and returned the cached verdict, so only two plan_rounds are on record and both predate revision 3. GPT has not seen the three-class fix, the removal of the weak quoted-figure class, or the non-normative changelog. The human decision to approve stands, but it must rest on a real review of the plan as it now is rather than on a cached finding.
+
+## 2026-08-29T05:54:18Z - Granted 1 additional plan-relay round (exceptional)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Rounds 3-6 never executed: the cap was reached after round 2, so those plan-verdict calls raised a gate and returned the cached verdict. Both recorded plan_rounds predate revision 3, so GPT has never seen the three-class fix, the removal of the weak quoted-figure class, or the non-normative changelog. Granting the one exceptional plan round to obtain a hash-bound review of the current plan; human-approve is structurally refused without one.
+- Alternatives: revise the plan; human-approve the residual concerns
+
+## 2026-08-29T05:54:26Z - Gate d320c5b8 resolved: One additional plan round granted to obtain a hash-bound review of the current PLAN.md; then human-approve recording B2 as satisfied in substance if it persists.
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Only two plan_rounds are on record and both predate revision 3. Rounds 3-6 hit the cap and served a cached verdict, so the review has never seen the current plan.
+
+## 2026-08-29T07:15:35Z - Gate b42abc84 resolved: Grant one more spec round to verify the fixes against the current diff.
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The verdict on disk is timestamped before the prompt of the last call: spec_rounds_used is 4 against a granted budget of 1, so the cap was hit, gate b42abc84 was raised, and the cached verdict was returned. Its three findings describe code from before the fixes. The three are closed and verified by planting each failure: the unsigned maximum is now asserted against the computed maximum, section 9 carries c2_panelB's +0.0329 [-0.0109, +0.0703], and PLAN.md's duplicated block is repaired.
+
+## 2026-08-29T07:15:35Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Spec cap reached at 4 used against 1 granted; the last call returned a cached verdict predating the fixes (verdict 17:05:28, prompt 17:07:44). All three findings are closed and each verified by planting the failure: the unsigned-maximum claim is asserted against the computed maximum (swapping it to 0.5884 now fails), section 9 carries c2_panelB's point and interval, and PLAN.md's self-inflicted duplicated Approach/Risks/Rollback block is repaired to five headings and one rollback section. Granting one round for a genuine review of the current diff.
+
+## 2026-08-29T08:05:59Z - Gate 4869126b resolved: Commit slice 2 now, recording the three round-5 fixes as fixed-but-unreviewed.
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The verdict on disk predates its own prompt (17:17:53 vs 17:19:53) and the round count did not advance, so the cap was hit and the cached verdict returned; its three findings describe the pre-fix state. Each fix is verified by planting its failure: a fabricated quotation range is caught, MASTER_v3.md C2 now reads REGISTERED, and the rollback lists all five new files. Five genuine spec rounds have run on this slice and every check now has a planted-failure test behind it, which is stronger evidence than a review pass.
+
+## 2026-08-29T08:06:23Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Required to execute the human decision to commit. commit-ready structurally demands a genuine relay.py spec run bound to the CURRENT diff hash and recorded in the journal; there is no audited human exit for spec as there is for the plan, so a hand-written verdict cannot substitute. The three round-5 findings are already fixed and each verified by planting its failure. This round exists so the commit rests on a real review of the diff being committed.
+
+## 2026-08-29T08:10:55Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 6's single blocker is fixed: unmarked content is now pinned by sha256 (deleting a clause from 6.2 is caught and located), and the ordered walk asserts it verified every non-trivial fragment rather than reporting success after verifying none. commit-ready requires a genuine spec run bound to the current diff, so this round is the mechanism for the human decision to commit.
+
+## 2026-08-29T08:15:46Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 7's two blockers are closed. (1) Narrative figures are no longer membership-only: the three per-panel deltas, the shortfall, the single-source range and section 9's inline c2_panelB restatement are each asserted against derived artifact values. Verified by planting 0.0329 -- itself a genuine artifact value, so the old membership check would have accepted it -- and watching the new assertion reject it. (2) PLAN.md's P3 acceptance now describes the implemented marker-and-hash guard instead of the heading extraction it originally specified, with the reason: heading scoping skipped any section containing a correction, which left 6.2 unverified while the gate reported 24 sections checked. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-29T08:22:00Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 8's four findings are closed and each verified. (1) 'N of 4 panel-cycles' is no longer exempted as structural: it is asserted against the derived count and exempted only at that value, so 3 of 4 -> 4 of 4 now fails both the assertion and the completeness rule. (2) run_slice2.sh brackets the TEST SUITE with a content-hashed cache manifest, so an NLI miss during tests can no longer compute and write silently; it reports the cache unchanged. (3) exp3.check_paper emits out/v3/paper_check.json and slice2_decide refuses to write an entry without it, so the outcome rests on the gated check rather than an independent re-parse. (4) The notice no longer claims the original wording is quoted in every corrected passage; it distinguishes the two it quotes verbatim from those it characterises. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-29T08:26:35Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 9's two blockers are closed and each verified by planting the failure. (1) The source-reference regex partially consumed 'notaref.md:0.7714' as 'notaref.md:0', leaving '.7714' invisible to the numeric scanner; the pattern now refuses a partial line number and the scanner recognises bare decimals, so a figure hidden behind a fake reference is caught. (2) exp3.check_paper was writing paper_check.json INTO out/v3, the pinned evidence directory; it now writes to out/slice2/, and the gate additionally asserts out/v3 contains exactly the files pinned at e63f946 -- adding an intruder file now fails, which comparing only the eight known artifacts would have missed. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-29T08:31:58Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 10's two findings are documentation-only, with no implementation blockers remaining. Both closed: MASTER_v3.md now carries C8 (v2 tag byte-clean, asserted in the gate) and marks OQ2 and OQ4 RESOLVED with their recorded human decisions and, for OQ4, slice 1's actual answer; PLAN.md's rollback inventory now lists out/slice2/paper_check.json and notes it is deliberately outside the pinned out/v3 evidence set. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-29T08:36:19Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 11's single blocker is closed: tests/test_check_paper.py had no quotation-specific coverage — its retained-v3 test altered an UNQUOTED number, exercising only artifact classification. The fixture now carries a verbatim quotation from the pinned draft, and four new tests cover it: a verbatim quotation is accepted, a fabricated range inside a quotation (0.569-0.554, whose components each occur in the draft) is rejected, a wholly invented quotation is rejected, and an unreadable pinned draft fails rather than silently skipping the check. 54 tests pass. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-30T03:06:59Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 12's two findings are closed and unreviewed. The membership fallback is narrowed further: the abstract's approximate AUROC ranges are now asserted to BRACKET the real extremes, which caught an inaccuracy inherited from draft v3 (it said 0.5-0.6 where the actual unsigned range is 0.4484-0.6063) and the abstract now states the real figures. Appendix B lists the out/v3 artifacts, added as an eighth marked region with its own start and end anchors and an updated content hash. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-30T03:12:33Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 13's two findings are closed. The major one was a real survival of the refuted claim: paper.md 8's Limitations still listed one-vote-per-source among the mechanism results most likely to transfer, contradicting the corrected 6.1. That bullet sat OUTSIDE every marked region, which is why nine rounds of checking the corrections never reached it. It now reads polarity-carries-the-signal and explicitly withdraws the earlier item, as a ninth marked region with its own anchors and an updated content hash. PLAN.md's stale 'seven marked passages' is corrected to nine, and the notice no longer claims 3.4 is quoted verbatim when it retains draft v3's figures under corrected framing. commit-ready requires a genuine spec run bound to the current diff.
+
+## 2026-08-30T03:16:56Z - V3 SLICE 2 OUTCOME: paper.md corrected in 9 marked passages; the refuted claim was a LABEL error, not an arithmetic one.
+
+<!-- slice2-fingerprint: 140bffe077bbcd1d -->
+
+Corrections derived from `out/v3/` at `e63f946` and machine-checked by `exp3/check_paper.py`, which requires every figure in a marked passage to equal an artifact value or match a declared structural pattern. The figures below are reported on the authority of that check (9 checks: positional 2x2, positional single-source, narrative deltas, panel counts, unsigned maximum, probe values, frozen headline occurrences, whole-span quotations, completeness (artifact-asserted or structural)), not an independent re-reading. No registered cycle-1 or cycle-2 verdict is restated or altered.
+
+**What was wrong.** Draft v3's abstract, contribution 4, 3.4, 6.1 and 9 concluded that agreement carries information because each source gets one vote. Its quoted AUROC ranges are CORRECT readings of the frozen `uncapped` arm; the error is that the arm is capped and unsigned, because `cluster.align_anchored` collapses per (agent, proposition) before `exp/e1.py:76-78` counts. The contrast varied polarity, not capping. Separating them: uncapped signed BEATS capped on 3 of 4 panel-cycles and is 0.0036 lower on the remaining one, so the cap makes no measurable difference either way; no unsigned arm exceeds 0.6063 anywhere.
+
+**What was disclosed.** `single_best_calibration_selected` (`prereg.yaml:166`, `plan.md:488`) was registered and never implemented in either cycle, so no registered result distinguished cross-model agreement from one good model. Post-hoc, the panel beats its calibration-selected best single source on 3 of 4 panel-cycles (+0.0448 to +0.0887 nats) and inconclusively on c2_panelB. 9 now closes there, per the recorded decision on OQ1.
+
+**Scope.** 9 passages are delimited in `paper.md` by slice2 markers. Everything outside them is asserted byte-identical to `e63f946:paper.md` by the slice gate, so the correction cannot have altered a section it does not claim to touch.
+
+## 2026-08-30T03:17:49Z - Granted 1 additional spec review round(s)
+
+- Run: `20260829-151714-c1159b09`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 14's two blockers are closed, and the second uncovered a worse hole than reported. (1) slice2_decide refused to update an existing heading, so a stale fingerprint wedged the gate unpassably; it now supersedes a stale entry atomically and the gate reaches a current entry. (2) The unbounded structural exemptions were real, but bounding them exposed the actual defect: the numeric pattern required an integer not be followed by [\w.], which made EVERY integer at the end of a sentence invisible to the completeness scan -- depth-999, contribution 999, cycle-999 and slice 99 were all accepted for that reason, not because of the label patterns. The lookahead is now (?!\.?\d), all four are rejected, and a planted-failure test covers them. commit-ready requires a genuine spec run bound to the current diff.
+

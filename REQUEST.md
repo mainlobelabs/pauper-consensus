@@ -1,97 +1,97 @@
-# Request: Slice 1 — corrected instrument and zero-cost re-analysis
+# Request: Slice 2 — paper corrections from slice 1's findings
 
-Workstream `20260828-181135-0d060fc4`, slice 1 of 2. Master: `MASTER_v3.md`.
-Specification: `MASTER_v3.md` §"Slice 1"; the frozen instrument it corrects is
-`exp/e1.py`, `exp/e1_v2.py` and `wct/cluster.py` under tag `prereg-v2-2026-08-16`.
+Workstream `20260828-181135-0d060fc4`, slice 2 of 4. Master: `MASTER_v3.md`.
+Evidence: `out/v3/reanalysis_*.json` (committed in e63f946) and the `V3 SLICE 1 OUTCOME`
+entry in `DECISIONS.md`.
 
 ## Thoughts / context
 
-> fix all things on this list, and prepare a new experiment
+> Do all three
 
-Three defects, each verified against the frozen cache before being written down. Full
-evidence in `MASTER_v3.md`; the short form:
+Rescoped from B10 and moved ahead of the registration by human decision, 2026-08-29: slice
+1's D2 result REFUTES `paper.md` §6.1 rather than qualifying it, the correction costs
+nothing (committed artifacts, zero inference), and a draft carrying two named authors
+should not sit on a claim its own instrument contradicts while an expensive registration is
+prepared.
 
-- **D1** `single_best_calibration_selected` is a registered arm (`prereg.yaml:166`,
-  `plan.md:488`, simulated at `m0/simulate.py:75`) that no analysis driver implements, and
-  `prereg_v2.yaml` drops it silently. Computed post-hoc over the v2 cache it reproduces the
-  committed WCT-U/WCT-EM points exactly and shows the cycle-2 panel B advantage over its own
-  best single source is +0.0329 [-0.0109, +0.0703] — inconclusive under the frozen rule.
-- **D2** the `uncapped` M6 ablation never sees a claim instance. `align_anchored` collapses
-  to one observation per `(agent, pid)` before `exp/e1.py:76-78` counts them, so
-  `n_claims == n_emitting` on 607/607 and 550/550 rows, max 3 = M. §6.1 compares signed
-  support against unsigned coverage count: a polarity result, not a capping result.
-- **D3** `exp/e1_v2.py:189` binds `audits` and discards it; neither cycle-2 summary carries
-  an alignment audit. The claims -> observations funnel that found cycle 1's defect is absent
-  from the run that produced the go.
+The three passages at issue, verbatim:
 
-This slice builds the corrected instrument beside the frozen one and re-runs every existing
-panel through it at zero inference cost. Its numbers set slice 2's delta and power, so it
-gates slice 2.
+- L32 (contribution 4): "A replication, across both cycles and all panels, of the
+  one-vote-per-source result: claim-instance counting reaches AUROC 0.502-0.606 while
+  unique-source support reaches 0.891-1.000."
+- L164 (§6.1): "**One vote per source, or nothing.** Claim-instance counting: AUROC
+  0.502-0.554 (cycle 1), 0.569-0.606 (cycle 2 ...). Unique-source support: 0.891-1.000 ...
+  Whatever agreement measures, it is who asserts a proposition, not how much text asserts it."
+- L200 (§9): "the one finding that needed no second cycle, because it never wavered:
+  agreement carries information exactly when each source gets one vote. Count text instead
+  of sources, and there is nothing there."
+
+None of these measured what they claim. `align_anchored` collapses to one observation per
+(agent, pid) BEFORE `exp/e1.py:76-78` counts, so the frozen `uncapped` arm scores
+`n_claims`, which equals `n_emitting` identically: capped and UNSIGNED. The comparison
+varies polarity, not capping. Measured separately (raw AUROC, `out/v3/`):
+
+| panel | capped+signed | capped+unsigned | uncapped+signed | uncapped+unsigned |
+|---|---|---|---|---|
+| c1_local | 0.9001 | 0.5069 | 0.9664 | 0.4484 |
+| c1_openrouter | 0.9911 | 0.5239 | 0.9875 | 0.4825 |
+| c2_panelA | 0.9353 | 0.6063 | 0.9456 | 0.5884 |
+| c2_panelB | 0.9323 | 0.5686 | 0.9530 | 0.5705 |
+
+Uncapped matches or beats capped on 4 of 4 panels. The effect is polarity.
+
+Two further corrections follow from slice 1: the registered arm
+`single_best_calibration_selected` was never implemented in either cycle, so nothing in the
+paper distinguishes cross-model agreement from one good model; and the panel's margin over
+the source its own calibration split selects is +0.045 to +0.089, inconclusive on c2_panelB.
 
 ## Constraints
 
-- **`prereg-v2-2026-08-16` stays byte-clean.** No edit to any file under `exp/`, `wct/` or
-  `m0/` that the tag contains. Corrections are NEW modules importing the frozen ones.
-  `git diff prereg-v2-2026-08-16 HEAD -- exp/ wct/ m0/` must be empty at slice exit; a
-  non-empty diff fails the slice rather than being waived. Human decision, 2026-08-28.
-- **No inference.** No OpenRouter, no `:1234` generation, no new embedding calls beyond what
-  `out/cache/embed` and `out/cache/nli` already hold. PyPI installation is permitted.
- AMENDED 2026-08-28 (recorded in DECISIONS.md and resolved at the harness human gate): the aligner self-identification probe MAY be computed for the cycle-2 corpus by local in-process CPU NLI only (exp3/probe_backfill.py, --confirm required), because A6 and this constraint as originally written are unsatisfiable together — the probe's pairs are cached only for panels whose driver ran it, and exp/e1_v2.py never did, which IS defect D3. No API, no OpenRouter, no :1234 endpoint, no quota, no network egress. Everything else in this constraint stands.
-- Python venv pinned to 3.12 via `uv`; 3.14 is the system default and lacks torch wheels.
-- Every number this slice computes over cycle-1 or cycle-2 caches is POST-HOC and labelled
-  so. It diagnoses those cycles; it never restates their registered verdicts.
-- Fixed seeds, recorded in every result row. No wall-clock nondeterminism.
-- Per `GOTCHAS.md`: no embedding or analysis call against `:1234` while generation is in
-  flight. No generation runs in this slice, so this is a tripwire, not a schedule.
-- New summaries are written to filenames distinct from the frozen `out/e1*_summary*.json`.
+- **No registered verdict is restated or altered.** Cycles 1 and 2 stand as published. Every
+  number added here is POST-HOC and labelled so, sourced to `out/v3/`.
+- **No inference.** Corrections read committed artifacts only.
+- **The v2 tag stays byte-clean**: no edit or addition under `exp/`, `wct/`, `m0/`.
+- Every figure quoted must be machine-checked against `out/v3/`, not transcribed by hand.
+- `paper.md` is the only prose file whose CONTENT this slice corrects. Also edited,
+  and declared here rather than silently: `MASTER_v3.md` (restructured into slices
+  2/3/4 under the human decision of 2026-08-29, before this run started),
+  `REQUEST.md` and `PLAN.md` (this slice's own scoping), and `DECISIONS.md`
+  (decision entries plus one slice-outcome entry).
 
 ## Non-goals
 
-- Cycle 3's registration, its corpus, its panels, its delta. That is slice 2.
-- Any generation call whatsoever.
-- Reopening cycle 1's or cycle 2's registered verdicts.
-- `wct/diffuse.py`, `wct/derive.py`, E2 propagation, and the rest of `EXPERIMENT.md` §5.
-- `paper.md` edits. The D1-D3 corrections land in slice 2 (B10).
+- Cycle-3 registration, corpus, panels, delta (slice 4); availability measurement (slice 3).
+- Re-running any analysis; `out/v3/` is the evidence and is already committed.
+- Rewriting sections the findings do not touch. §§6.2-6.4, 7, and the cycle-1/cycle-2
+  narrative stand except where they cite a corrected figure.
+- Any claim about cycle 3's outcome.
 
 ## Acceptance criteria
 
-- A1: New module carrying the corrected instrument, importing the frozen `exp/e1.py` and
-  `wct/cluster.py` rather than editing them. `git diff prereg-v2-2026-08-16 HEAD -- exp/
-  wct/ m0/` is empty at slice exit, asserted by the slice's own check.
-- A2: A claim-instance-preserving alignment path retaining every claim that passes
-  `T_ALIGN` with its `(agent, pid, obs, score)`, not only the per-agent argmax, so the true
-  uncapped count is recoverable. The capped observation set it yields is bit-identical to
-  `align_anchored`'s on the same inputs, asserted as a test.
-- A3: A genuine `uncapped` arm scored on that count, plus a signed uncapped variant, so
-  capping and polarity are separated instead of confounded. Reported beside the frozen arm,
-  whose value is reproduced unchanged.
-- A4: `single_best_calibration_selected` implemented as registered: source chosen on the
-  calibration split alone, identical calibration map and bootstrap as every other arm, with
-  the oracle-selected source reported beside it as the upper bound `m0/simulate.py:75`
-  already distinguishes.
-- A5: The covariate baseline refitted without the duplicated verbosity column and with a
-  real verbosity feature, reported as a sensitivity row against the frozen baseline.
-- A6: The cycle-1 alignment audit restored and emitted for every panel of both cycles:
-  aligner self-identification, lexical-reference recall, same-agent conflicts, and the
-  claims -> observations funnel.
-- A7: All four panel-cycles (cycle 1 local, cycle 1 OpenRouter, cycle 2 panel A, cycle 2
-  panel B) re-analysed under the corrected instrument, cache-only.
-- A8: Every arm the frozen instrument reports is reproduced byte-identically by the new
-  module wherever the correction does not touch it, so any movement is attributable.
-- A9: One command runs the whole slice and exits non-zero on any failed assertion.
-- A10: `DECISIONS.md` entry recording D1-D3, what moved, and what did not.
+- C1: §6.1 and contribution 4 restated as the polarity result the corrected instrument
+  measures, identifying the frozen `uncapped` arm as capped-and-unsigned with the mechanism
+  (`align_anchored` collapses per (agent,pid) before `exp/e1.py:76-78` counts), and
+  reporting the capping x polarity 2x2 in full at raw AUROC.
+- C2: §8 discloses that `single_best_calibration_selected` (`prereg.yaml:166`,
+  `plan.md:488`) was registered and never implemented in either cycle.
+- C3: Slice 1's single-source contrast reported at the prominence the registered failures
+  get, including that c2_panelB is inconclusive under the frozen decision rule.
+- C4: Every new number labelled POST-HOC and sourced to `out/v3/`.
+- C5: The D3 disclosure recorded: cycle 2's mapper could not be audited from cache because
+  its own driver discarded the audit; the probe was computed under a recorded amendment and
+  scores 0.9721 against cycle 1's 0.9724.
+- C6: A correction notice at the head of the paper naming what changed from draft v3 and
+  why, leaving the earlier draft's claims visible rather than silently replaced.
+- C7: A script checks every figure quoted in the revised sections against `out/v3/` and
+  exits non-zero on any mismatch; it runs in the slice gate.
+- C8: The v2 tag remains byte-clean, asserted in the gate.
 
 ## Open questions
 
-- OQ1: A2 must reproduce the frozen capped observation set exactly while retaining more.
-  Confirm it is a parallel function in the new module rather than a widened return on
-  `wct/cluster.align_anchored`, since the latter would touch a tagged file.
-- OQ2: A7 re-runs cycle 1, whose panels used a different loader (`exp/common.load_dataset`
-  and `load_generations` return per-cell dicts, not `run_generate_v2.load_cell_v2`'s shape).
-  Confirm the corrected module handles both loaders rather than the v2 one only.
-- OQ3: A8 asks for byte-identical reproduction of untouched arms. WCT-EM is fitted by EM
-  and may not be bit-reproducible across numpy versions in the same venv. Confirm the
-  assertion is exact equality on the frozen venv, or a stated tolerance.
-- OQ4: If A7 shows no panel beats its calibration-selected best single source, slice 2
-  registers a hypothesis already in trouble. Confirm slice 2 proceeds (the M=3 -> M=5
-  dose-response is still the informative test) or parks for a human go/no-go at this exit.
+- OQ1: RESOLVED (human, 2026-08-29). §9 closes on the SINGLE-SOURCE finding, not the
+  corrected polarity result. Rationale: it is the more consequential correction, because it
+  bears on whether the paper's central premise was ever tested at all, and ending there
+  makes the conclusion carry the paper's biggest open question rather than bury it.
+- OQ2: RESOLVED (human, 2026-08-29). The correction notice is a dated block at the head of
+  `paper.md`, not a separate file: unmissable, and it matches the project's own precedent of
+  superseding records that leave the original visible (`DECISIONS.md`, 2026-08-15).
