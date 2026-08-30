@@ -66,7 +66,7 @@ def verdict(art: dict) -> dict:
     so the difference is visible rather than averaged away.
     """
     cands = art.get("candidates") or []
-    pinned = [c for c in cands if c.get("tier") != "paid"]
+    pinned = [c for c in cands if c.get("tier") not in ("paid", "interim")]
     ok_pinned = [c for c in pinned if c.get("status") == "ok"]
     ok_any = [c for c in cands if c.get("status") == "ok"]
     sub = [c for c in cands if c.get("status") == "substituted"]
@@ -112,6 +112,16 @@ def verdict(art: dict) -> dict:
         "families_reachable": fams_reach,
         "n_families_reachable": n,
         "reachable_only_via_non_pinned_id": via_alt,
+        "interim_standins": [
+            {"agent": c["agent"], "family": c["family"], "model": c.get("model"),
+             "stands_in_for": c.get("stands_in_for"), "status": c.get("status"),
+             "reason": c.get("standin_reason"), "differs": c.get("standin_differs")}
+            for c in cands if c.get("tier") == "interim"],
+        "interim_note": (
+            "a stand-in shows the FAMILY is reachable while a pinned endpoint is "
+            "temporarily unreliable. It is not the registered model and does not make the "
+            "pinned id available; slice 4 must decide whether to register the stand-in id "
+            "or wait for the pinned endpoint to settle."),
         "reachable_note": (
             "families in `reachable_only_via_non_pinned_id` answered under an id the "
             "registration does not pin (a paid-tier twin of a withdrawn :free id). Cycle 3 "

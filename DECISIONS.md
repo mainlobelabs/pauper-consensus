@@ -422,11 +422,17 @@ Corrections derived from `out/v3/` at `e63f946` and machine-checked by `exp3/che
 - Decided by: jerry.mannings@gmail.com
 - Rationale: Round 7's five findings are closed and verified. sanitise() is now an ALLOWLIST -- it parses the error and keeps only code/message/type -- because regex-stripping the metadata object stopped at the first nested brace and left billing_email and account in the artifact; a string-valued error keeps its message rather than being replaced by a placeholder. A local /props failure now marks the candidate unverified instead of trusting its alias, since prereg_v2 pins qwen by GGUF path and parameter count. The gate requires the paid twins the verdict counts, binds each record's registered shape, and its imports are hoisted above first use. The plan's tasks describe the paid-twin scope and the single declared catalogue request.
 
-## 2026-08-30T11:51:08Z - V3 SLICE 3 OUTCOME: only 3 of 6 PINNED ids still answer, but 6 families are reachable; M=5 registrable.
+## 2026-08-30T11:51:22Z - Granted 1 additional spec review round(s)
 
-<!-- slice3-fingerprint: 177d990e82345a0c -->
+- Run: `20260830-134531-f0f0d997`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Round 8's five findings (no blockers) are closed and verified. REQUEST.md now authorises the single non-generation GET /api/v1/models, where scope belongs. A paid twin that falls back off the harness openrouter_paid binding now FAILS the gate rather than passing with a warning. The gate's paid-call accounting allows for superseded attempts, so a legitimate re-probe no longer makes the honest cumulative spend contradict the check. The artifact records source_commit as UNCOMMITTED (parent 87bfb7f) instead of quoting a commit that does not contain the probe code. The verdict's identity note no longer contradicts itself now that expected identity defaults to the requested id with one registered alias override.
 
-Measured 2026-08-30T11:50:37Z at commit `UNCOMMITTED (parent 87bfb7f)`, one attempt per endpoint, no automatic retry. Registration digest `8e4950f2a98a`. Paid spend: USD 0.000979 across 5 call(s).
+## 2026-08-30T12:12:25Z - V3 SLICE 3 OUTCOME: only 3 of 6 PINNED ids still answer, but 6 families are reachable; M=5 registrable.
+
+<!-- slice3-fingerprint: 40e91789d8108bc0 -->
+
+Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one attempt per endpoint, no automatic retry. Registration digest `8e4950f2a98a`. Paid spend: USD 0.001378 across 6 call(s).
 
 | agent | family | backend | status | detail |
 |---|---|---|---|---|
@@ -440,6 +446,7 @@ Measured 2026-08-30T11:50:37Z at commit `UNCOMMITTED (parent 87bfb7f)`, one atte
 | nemotron_paid | nvidia | openrouter | **ok** |  |
 | gptoss_paid | openai | openrouter | **ok** |  |
 | gemma_paid | google | openrouter | **ok** |  |
+| qwen_or | qwen | openrouter | **ok** |  |
 
 **Which registered panels still run.** panelA: NOT reproducible, broken by laguna; panelB: NOT reproducible, broken by gptoss, gemma. prereg_v2's rule is 'exact pinned id or the panel is DROPPED', so a paid-tier twin does not restore a panel whose registered id has gone.
 
@@ -450,10 +457,4 @@ Measured 2026-08-30T11:50:37Z at commit `UNCOMMITTED (parent 87bfb7f)`, one atte
 **Cost consequence for slice 4.** Cycle 2 ran four of six models on free tiers; 3 of those families now require a paid tier. At 450 calls per panel that is a budget line for the registration, not a mid-run discovery.
 
 **Consequence for slice 4.** The M=3 -> M=5 dose-response IS runnable: 6 families reachable with margin +1. Family-disjoint M=3 subsets available: 20. Slice 4 must pin the reachable ids (paid where the `:free` tier has been withdrawn or is rate limited), price the paid tiers, and record which registered panels survive (see above).
-
-## 2026-08-30T11:51:22Z - Granted 1 additional spec review round(s)
-
-- Run: `20260830-134531-f0f0d997`
-- Decided by: jerry.mannings@gmail.com
-- Rationale: Round 8's five findings (no blockers) are closed and verified. REQUEST.md now authorises the single non-generation GET /api/v1/models, where scope belongs. A paid twin that falls back off the harness openrouter_paid binding now FAILS the gate rather than passing with a warning. The gate's paid-call accounting allows for superseded attempts, so a legitimate re-probe no longer makes the honest cumulative spend contradict the check. The artifact records source_commit as UNCOMMITTED (parent 87bfb7f) instead of quoting a commit that does not contain the probe code. The verdict's identity note no longer contradicts itself now that expected identity defaults to the requested id with one registered alias override.
 

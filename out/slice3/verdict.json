@@ -39,6 +39,18 @@
     "zhipu"
   ],
   "identity_note": "6 of 6 reachable families answered under the id expected for them. Expected identity DEFAULTS to the id requested; prereg_v2.yaml pins an explicit alias override for one endpoint only (qwen on :8083, which legitimately answers as `ornith35`). A local candidate whose /props weights cannot be read counts as unverified, because that registration pins weights rather than an alias. Cycle 3 should pin an expected echo per panel member so its exact-id rule has an explicit target rather than a default.",
+  "interim_note": "a stand-in shows the FAMILY is reachable while a pinned endpoint is temporarily unreliable. It is not the registered model and does not make the pinned id available; slice 4 must decide whether to register the stand-in id or wait for the pinned endpoint to settle.",
+  "interim_standins": [
+    {
+      "agent": "qwen_or",
+      "differs": "registered local weights are Q4_K_M quantised; the hosted id is the provider's own build of the same family and nominal size",
+      "family": "qwen",
+      "model": "qwen/qwen3.8-27b",
+      "reason": "local :8083 endpoint intermittent while being worked on (owner, 2026-08-30)",
+      "stands_in_for": "qwen3.8-27b",
+      "status": "ok"
+    }
+  ],
   "m3_subsets": [
     "google+nvidia+openai",
     "google+nvidia+poolside",

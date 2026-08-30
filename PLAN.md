@@ -81,10 +81,12 @@ interpreted generously after the fact.
 
 ## Rollback
 
-`git revert` the slice commit. The diff comprises five new code files
+`git revert` the slice commit. The diff comprises four new code files
 (`exp3/availability.py`, `exp3/slice3_verdict.py`, `exp3/slice3_decide.py`,
-`run_slice3.sh`, plus the atomic-write helper added to the existing decide modules), two
-new test files (`tests/test_availability.py`, `tests/test_slice3_verdict.py`), two new
+`run_slice3.sh`) and edits to two existing ones (`exp3/decide.py`,
+`exp3/slice2_decide.py`, which gain the atomic-write helper), three
+new test files (`tests/test_availability.py`, `tests/test_slice3_verdict.py`,
+`tests/test_slice3_gate.py`), two new
 artifacts (`out/slice3/availability.json`, `out/slice3/verdict.json`), and edits to
 `REQUEST.md`, `PLAN.md` and `DECISIONS.md`. No paper text, no artifact under `out/v3/`, no
 generation-cache entry and no tag is touched; `git diff prereg-v2-2026-08-16 HEAD -- exp/

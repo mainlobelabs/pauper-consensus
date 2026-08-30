@@ -47,7 +47,7 @@ step "5/7 artifact validation"
 import hashlib, json, re, sys
 from pathlib import Path
 from exp3.availability import (REGISTRATION, SCHEMA_VERSION, candidates,
-                               candidates as _c, paid_variants)
+                               candidates as _c, paid_variants, interim_standins)
 art = json.loads(Path("out/slice3/availability.json").read_text())
 fails = []
 if art.get("schema_version") != SCHEMA_VERSION:
@@ -70,13 +70,15 @@ if not twins <= got:
     fails.append(f"paid twins missing from artifact: {sorted(twins - got)}; the verdict "
                  f"counts them, so their absence changes the margin")
 # extras are allowed ONLY as declared paid twins of a pinned :free id, never arbitrary
-allowed = pinned | {v["agent"] for v in paid_variants(_c(Path(".")))}
+allowed = (pinned | {v["agent"] for v in paid_variants(_c(Path(".")))}
+           | {v["agent"] for v in interim_standins(_c(Path(".")))})
 if got - allowed:
     fails.append(f"artifact carries undeclared candidates: {sorted(got - allowed)}")
 # name membership is not enough: a record could claim a different family, backend or model
 # and still pass, which would misattribute a family in the margin the registration rests on
 expect = {c["agent"]: c for c in _c(Path("."))}
 expect.update({v["agent"]: v for v in paid_variants(_c(Path(".")))})
+expect.update({v["agent"]: v for v in interim_standins(_c(Path(".")))})
 for c in art["candidates"]:
     e = expect.get(c["agent"])
     if not e:
@@ -90,7 +92,7 @@ for c in art["candidates"]:
             fails.append(f"{c['agent']}: paid twin not marked tier=paid")
         if c.get("pinned_free_id") != e.get("pinned_free_id"):
             fails.append(f"{c['agent']}: pinned_free_id mismatch")
-    if e.get("tier") == "paid" and not str(c.get("binding_used", "")).startswith("deepseek_paid"):
+    if e.get("tier") in ("paid", "interim") and not str(c.get("binding_used", "")).startswith("deepseek_paid"):
         fails.append(f"{c['agent']}: paid twin used {c.get('binding_used')!r}, not the "
                      f"harness openrouter_paid binding the request requires")
     ident = c.get("identity") or {}
@@ -119,8 +121,10 @@ for c in art["candidates"]:
     if c.get("status") != "fail" and c.get("http_status") != 200:
         fails.append(f"{c['agent']}: status {c.get('status')} with HTTP {c.get('http_status')}")
 # per-candidate paid accounting, not just the aggregate
+# an interim stand-in is billed like any other paid OpenRouter call; counting only
+# tier=="paid" made the coverage check disagree with the spend accounting
 paid = [c for c in art["candidates"]
-        if c.get("backend") == "hoonify" or c.get("tier") == "paid"]
+        if c.get("backend") == "hoonify" or c.get("tier") in ("paid", "interim")]
 sup = (art["spend"].get("superseded_paid_attempts") or {}).get("paid_calls", 0)
 if art["spend"]["paid_calls"] != len(paid) + sup:
     fails.append(f"spend records {art['spend']['paid_calls']} paid calls but "
@@ -142,10 +146,14 @@ if age_h > 24 * 14:
     fails.append(f"artifact is {age_h/24:.0f} days old; availability is a perishable fact")
 # no corpus content, no credential-shaped strings
 blob = json.dumps(art)
-for pat, what in ((r"ProofWriter|proofwriter", "corpus name"),
-                  (r"sk-[A-Za-z0-9]{8,}", "api key"), (r"Bearer\s+[A-Za-z0-9._\-]{8,}", "bearer token")):
-    if re.search(pat, blob):
-        fails.append(f"artifact contains a {what}")
+# reuse the sanitiser's own pattern: a gate that scans for fewer forms than the redactor
+# recognises will pass an artifact the redactor was meant to have cleaned
+from exp3.availability import _SECRET
+if re.search(r"ProofWriter|proofwriter", blob):
+    fails.append("artifact contains a corpus name")
+hit = _SECRET.search(blob)
+if hit:
+    fails.append(f"artifact contains a credential-shaped string: {hit.group(0)[:24]!r}")
 uncheckable = [c["agent"] for c in art["candidates"]
                if not (c.get("identity") or {}).get("checkable")]
 if uncheckable:

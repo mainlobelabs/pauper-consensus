@@ -69,6 +69,7 @@ PAID_OR_RATES = {
     "google/gemma-4-26b-a4b-it": {"in": 0.07, "out": 0.34},
     "poolside/laguna-xs-2.1": {"in": 0.06, "out": 0.12},
     "nvidia/nemotron-3-super-120b-a12b": {"in": 0.08, "out": 0.40},
+    "qwen/qwen3.8-27b": {"in": 0.42, "out": 2.55},
 }
 
 
@@ -95,6 +96,41 @@ def paid_binding() -> dict | None:
                     "key_env": (prov.get("key_envs") or ["OPENROUTER_API_KEY"])[0],
                     "source": str(HARNESS_TOML)}
     return None
+
+
+# Interim stand-ins for a pinned endpoint that is temporarily unreliable. Added
+# 2026-08-30 on the owner's instruction: the local :8083 server is being worked on and
+# flaps between answering and refusing, so the qwen FAMILY is probed via OpenRouter while
+# that settles. A stand-in establishes the family is reachable; it is NOT the registered
+# model and never counts toward the pinned total.
+#
+# NOTE the difference it does not erase: the registered local model is Qwen3.8-27B-Q4_K_M
+# (4-bit quantised GGUF); the OpenRouter id serves the same family and nominal size at the
+# provider's own precision. Same family, not the same weights.
+INTERIM_STANDINS = {
+    "qwen": {"model": "qwen/qwen3.8-27b", "backend": "openrouter",
+             "reason": "local :8083 endpoint intermittent while being worked on "
+                       "(owner, 2026-08-30)",
+             "differs": "registered local weights are Q4_K_M quantised; the hosted id is "
+                        "the provider's own build of the same family and nominal size"},
+}
+PAID_OR_RATES_EXTRA = {"qwen/qwen3.8-27b": {"in": 0.42, "out": 2.55}}
+
+
+def interim_standins(cands: list[dict]) -> list[dict]:
+    """Family stand-ins for pinned endpoints that are temporarily unreliable."""
+    out = []
+    for c in cands:
+        s = INTERIM_STANDINS.get(c["agent"])
+        if not s:
+            continue
+        b = paid_binding()
+        out.append(dict(c, model=s["model"], backend=s["backend"], base=(b or {}).get("base"),
+                        tier="interim", agent=f"{c['agent']}_or",
+                        stands_in_for=c["model"], standin_reason=s["reason"],
+                        standin_differs=s["differs"], expected_resolved=None,
+                        identity_evidence=None, binding=b))
+    return out
 
 
 def paid_variants(cands: list[dict]) -> list[dict]:
@@ -185,8 +221,21 @@ def candidates(root: Path) -> list[dict]:
                 "family": FAMILY.get(agent, f"UNMAPPED:{agent}"),
                 "backend": a["backend"], "model": a["model"],
                 "base": a.get("base"), "expected_resolved": a.get("expected_resolved"),
+                "identity_evidence": a.get("identity_evidence"),
             })
     return out
+
+
+def registered_weights(c: dict) -> str | None:
+    """The GGUF path prereg_v2 pins for this candidate, parsed from identity_evidence.
+
+    The registration pins qwen by model_path AND n_params precisely because the server
+    answers under a stale alias. Recording /props without comparing it left the alias echo
+    as the only check -- which is what identity_evidence exists to backstop.
+    """
+    ev = c.get("identity_evidence") or ""
+    m = re.search(r"model_path\s+(\S+\.gguf)", ev)
+    return m.group(1) if m else None
 
 
 def _local_weights(client) -> str | None:
@@ -227,6 +276,14 @@ def _identity(c: dict, echoed: str | None, weights: str | None = None) -> dict:
            "matches_expected": (echoed == expected) if echoed is not None else None}
     rec["loaded_weights"] = weights          # None means /props could not be read
     if c["backend"] == "local":
+        want = registered_weights(c)
+        rec["registered_weights"] = want
+        if want and weights:
+            rec["weights_match"] = (weights == want)
+            if not rec["weights_match"]:
+                rec["matches_expected"] = False
+                rec["note"] = (f"loaded weights {weights!r} are not the registered "
+                               f"{want!r}: the alias echo alone cannot detect this")
         # prereg_v2 pins qwen by GGUF path and parameter count precisely because the server
         # answers under a stale alias: an echo alone cannot tell the registered weights from
         # a different model loaded behind the same name. Unreadable weights => unverified.
@@ -356,7 +413,7 @@ def spend(records: list[dict], live_rates: dict | None = None) -> dict:
     total, bounded = 0.0, False
     calls = 0
     for r in records:
-        or_paid = r.get("tier") == "paid" and r.get("model") in PAID_OR_RATES
+        or_paid = r.get("tier") in ("paid", "interim") and r.get("model") in PAID_OR_RATES
         if r.get("backend") not in PAID_BACKENDS and not or_paid:
             continue
         calls += 1
@@ -465,7 +522,7 @@ def run(root: Path, timeout: float = 180.0, only: set[str] | None = None,
     from exp.smoke_v2 import _PROBE          # the frozen throwaway theory, imported
     allc = candidates(root)
     if include_paid:
-        allc = allc + paid_variants(allc)
+        allc = allc + paid_variants(allc) + interim_standins(allc)
     cands = [c for c in allc if not only or c["agent"] in only]
     if not cands:
         raise SystemExit(f"no candidate matches {sorted(only or [])}")
@@ -497,6 +554,8 @@ def run(root: Path, timeout: float = 180.0, only: set[str] | None = None,
         "source_commit": (f"UNCOMMITTED (parent {commit})" if dirty else commit),
         "source_commit_parent": commit,
         "source_tree_dirty": dirty,
+        "probe_source_sha256": hashlib.sha256(
+            Path(__file__).read_bytes()).hexdigest()[:16],
         "source_commit_note": (
             "the probe code was UNCOMMITTED when this ran, so this commit does not contain "
             "the implementation that produced the artifact" if dirty else
@@ -507,7 +566,11 @@ def run(root: Path, timeout: float = 180.0, only: set[str] | None = None,
                   "auxiliary_requests": [
                       {"what": "GET /api/v1/models", "why": "read paid rates live so a "
                        "stale hard-coded rate cannot misstate spend", "billable": False,
-                       "count": 1}],
+                       "count": 1},
+                      {"what": "GET <local>/props", "why": "read the loaded GGUF path so it "
+                       "can be compared with the weights prereg_v2 pins; the alias echo "
+                       "alone cannot detect a different model behind the same name",
+                       "billable": False, "scope": "local candidates only"}],
                   "item": "exp.smoke_v2._PROBE (throwaway theory; no corpus content)"},
         "candidates": records,
         "spend": spend(records, live_or_rates(
