@@ -26,18 +26,36 @@ PAIRS = [
 HAS_CUDA = torch.cuda.is_available()
 
 
+@pytest.fixture(autouse=True)
+def _never_write_the_frozen_cache(monkeypatch):
+    """No test in this file may write an NLI entry.
+
+    This module computes fp32 NLI. The frozen cache holds cycles 1-2's fp16 entries, and
+    the slice-4 gate pins its entry count precisely so a stray fp32 write is caught. Two
+    tests here previously wrote through: one patched cache.get but not cache.put, and one
+    exercised install() whose patched measure.nli defaults to use_cache=True.
+    """
+    monkeypatch.setattr(cache, "put", lambda *a, **k: None)
+
+
 def test_cache_key_matches_measure_exactly():
     """A GPU-written entry must be findable by the CPU path's key, and vice versa."""
     h = measure._h([f"{a}\x01{b}" for a, b in PAIRS])
     expected = cache.cache_key(kind="nli", model=measure.NLI_MODEL, h=h, n=len(PAIRS))
     seen = {}
-    real_get = cache.get
+    real_get, real_put = cache.get, cache.put
     cache.get = lambda kind, key: seen.setdefault("key", key) and None
+    # cache.put MUST be neutralised too: patching only `get` made this test compute a
+    # result and WRITE it, which put an fp32 entry into the frozen fp16 cache and was
+    # caught by the slice-4 gate's entry-count assertion.
+    wrote = []
+    cache.put = lambda kind, key, value: wrote.append(key)
     try:
         gpu.nli_gpu(PAIRS, device="cpu", use_cache=True)
     finally:
-        cache.get = real_get
+        cache.get, cache.put = real_get, real_put
     assert seen["key"] == expected
+    assert wrote == [expected], "the write path must use the same key as the read path"
 
 
 def test_columns_are_canonical_entail_neutral_contradict():
@@ -74,14 +92,51 @@ def test_gpu_fp32_agrees_with_cpu_fp32_and_never_flips_a_label():
     np.testing.assert_array_equal(c.argmax(1), g.argmax(1))
 
 
-def test_install_routes_measure_nli_and_is_reversible():
+def test_install_returns_a_handle_that_restores_the_exact_prior_callable():
+    """Reversibility must be a property of install(), not of the caller's finally block."""
     original = measure.nli
-    try:
-        dev = gpu.install(device="cpu")
-        assert dev == "cpu"
+    handle = gpu.install(device="cpu")
+    assert handle == "cpu"                       # back-compat with the device-string use
+    assert measure.nli is not original
+    out = measure.nli(PAIRS)
+    assert out.shape == (len(PAIRS), 3)
+    assert handle.uninstall() is True
+    assert measure.nli is original               # restored BY the API, not by the test
+
+
+def test_install_works_as_a_context_manager():
+    original = measure.nli
+    with gpu.install(device="cpu") as h:
         assert measure.nli is not original
-        out = measure.nli(PAIRS)
-        assert out.shape == (len(PAIRS), 3)
-    finally:
-        measure.nli = original
+        assert h.device == "cpu"
     assert measure.nli is original
+
+
+def test_uninstall_is_idempotent():
+    original = measure.nli
+    h = gpu.install(device="cpu")
+    assert h.uninstall() is True
+    assert h.uninstall() is False, "a second uninstall must be a no-op, not a re-restore"
+    assert measure.nli is original
+
+
+def test_nested_installs_restore_in_lifo_order():
+    original = measure.nli
+    outer = gpu.install(device="cpu")
+    outer_patch = measure.nli
+    inner = gpu.install(device="cpu")
+    assert inner.uninstall() is True
+    assert measure.nli is outer_patch, "inner must restore exactly what it replaced"
+    assert outer.uninstall() is True
+    assert measure.nli is original
+
+
+def test_uninstalling_an_older_handle_does_not_clobber_a_newer_install():
+    original = measure.nli
+    older = gpu.install(device="cpu")
+    newer = gpu.install(device="cpu")
+    newer_patch = measure.nli
+    assert older.uninstall() is True
+    assert measure.nli is newer_patch, "the live install was yanked out from under its owner"
+    newer.uninstall()
+    measure.nli = original          # older's patch is now unreachable by design (LIFO)

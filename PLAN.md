@@ -1,200 +1,238 @@
-# Plan: Slice 3 — five-family availability, measured
+# Plan: Slice 4 — cycle-3 registration
 
-Run `20260830-134531-f0f0d997`, workstream `20260828-181135-0d060fc4` slice 3 of 4.
-Request: `REQUEST.md`. Master: `MASTER_v3.md` §"Slice 3".
+Run `20260830-221830-30689369`, workstream `20260828-181135-0d060fc4` slice 4 of 4.
+Acceptance ids B1–B11 are `REQUEST.md` "Acceptance criteria" (NOT `MASTER_v3.md`'s B1–B9;
+round 1 of the plan relay caught that the earlier draft used the wrong numbering).
 
-**Revision 2** (round-1 plan-QA closure; non-normative note — the live spec is `## Approach`
-and the `## Tasks` fence). B1 removed the retries that contradicted one-probe-per-endpoint.
-B2 made the runner a single command with a cheap default and a `--probe` mode. B3 gave
-identity mismatch a defined status that cannot inflate the margin. B4 encoded the
-single-model-slot constraint with an overlap test. B5 added negative integration tests for
-every gate assertion. B6 made the paid spend calculated, not merely counted. A1 added
-artifact provenance and freshness. A2 added error sanitisation.
+Revised after plan-verdict round 1 (13 blockers, 1 advisory). Dispositions:
+
+- **B1 (corpus)** — the reviewer was right that changing the corpus needs *a new human
+  decision AND a request revision*. The decision existed; the revision did not. `REQUEST.md`
+  OQ1 is now SUPERSEDED to 9,805 items, with the prior text retained. Not reverted.
+- **B2 (paper)** — accepted without argument. "Any change to `paper.md`" is an explicit
+  non-goal, so the paper task is REMOVED from this slice. The fp16 disclosure is already
+  durably recorded in `DECISIONS.md` and `GOTCHAS.md`; publishing it belongs to a separately
+  authorised paper slice.
+- **B5 (smoke tests)** — accepted. The earlier draft wrongly claimed nothing would call an
+  endpoint; the constraints explicitly permit smoke tests as the only egress, and B4 cannot
+  be satisfied without them. New task T2.
+- **B6 (negatives)** — accepted, and it corrects a methodological error: negative-polarity
+  canonical propositions are never scored, so a raw FALSE-target fraction does not answer
+  B5. T1 now derives the projected count of scored POSITIVE-POLARITY negatives.
+- **B3, B4, B7–B13** — accepted as genuine gaps; see the tasks.
+- **A1 (rollback)** — accepted; the rollback no longer proposes tag deletion as the general case.
 
 ## Approach
 
-Slice 4 needs to know what can actually be registered. The five-family target has failed
-twice on availability, so this slice measures rather than assumes, and records the MARGIN,
-because the human decision of 2026-08-30 makes margin the deciding quantity: M=5 is
-registrable only if MORE than five families answer.
+Slice 4 writes the registration and the code implementing it, and tags both BEFORE any
+cycle-3 generation exists. Slice 1 supplied the measured margins and per-item variance,
+slice 2 the corrected paper, slice 3 the measured six-family availability with margin +1.
 
-**A real generation, never a catalogue lookup.** `prereg_v2.yaml` records the exact trap:
-the `:1234` catalogue lists `qwen3.8-27b` and 400s on completion. Any check that asks "is
-this model listed" reports it available when it is not. Each candidate therefore gets one
-attempted generation that must return usable content, reusing the frozen
-`exp/smoke_v2.py`'s throwaway theory — imported, not copied, so the probe shape stays the
-one the v2 freeze evidence used.
+**The registered primary** is panel vs calibration-selected best single source. From slice 1,
+under each cycle's OWN registered calibration map, the WCT-EM margin is +0.0448 (c1_local,
+temperature), +0.0887 (c1_openrouter, temperature), +0.0848 (c2_panelA, platt) and +0.0858
+(c2_panelB, platt) — the +0.0448 to +0.0887 range `REQUEST.md` states. The earlier draft's
+"+0.033 to +0.089" was wrong and is corrected here.
 
-**Identity decides the status, and the status decides the count** (B3). A model that answers
-under a different id is a substitution, which `prereg_v2`'s resolution rule forbids. The
-artifact therefore carries a three-valued status, not ok/fail: `ok` (answered AND the echoed
-id matches the registration's expected value), `substituted` (answered under an unexpected
-id), `fail` (no usable content). Only `ok` counts toward the pinned-family margin —
-`substituted` must never inflate it, since the whole question is whether the REGISTERED
-models are available. Substituted entries are reported separately as possible families for a
-NEW registration, which slice 4 adjudicates. qwen's known case — served on `:8083` under the
-stale alias `ornith35`, where that alias IS the registered expected echo — is the worked
-example of an `ok` whose requested and echoed ids differ legitimately.
+**The six families, ordered.** Slice 3 measured six reachable families of which exactly three
+still answer under their PINNED ids. That fact supplies the ordering rather than an arbitrary
+choice — identity assurance descending:
 
-**Families, not model ids.** `GOTCHAS.md` records the cycle-1 error directly: two ornith
-variants were nearly counted as two independent sources. Each candidate carries an explicit
-family attribution, and the count is over distinct families.
+| # | family | working id | tier | identity basis |
+|---|--------|-----------|------|----------------|
+| 1 | qwen | local `qwen3.8-27b` | local | weights: `model_path` + `n_params` |
+| 2 | zhipu | `zai-org/GLM-5.2` | free | pinned id still answers |
+| 3 | nvidia | `nvidia/nemotron-3-super-120b-a12b` | paid | pinned id still answers |
+| 4 | openai | `openai/gpt-oss-20b` | paid | paid twin; `:free` withdrawn |
+| 5 | google | `google/gemma-4-26b-a4b-it` | paid | paid twin; `:free` rate limited |
+| 6 | poolside | `poolside/laguna-xs-2.1` | paid | MARGIN; `:free` returned 429 |
 
-**Probing is separated from gating.** The probe spends money (Hoonify is paid) and touches
-external services, so it runs ONCE behind an explicit flag and writes an artifact; the gate
-validates that artifact and re-probes only when asked. A gate that re-probed on every run
-would spend on every re-run and make the slice's cost unbounded.
+M=3 = {1,2,3} — exactly the set whose pinned ids survive. M=4 = M=3 ∪ {4}. M=5 = M=4 ∪ {5}.
+Family 6 is the declared margin, smoke-tested and priced but not in the primary M=5 panel.
 
-**The verdict follows the recorded rule, not the operator's read of the number.** OQ1 fixes
-it in advance: >5 families answering means M=5 is registrable; exactly 5 means M=3/M=4
-primary with the fifth as a declared stretch arm; <5 means neither and slice 4 is told what
-exists. The verdict script applies that rule mechanically so the number cannot be
-interpreted generously after the fact.
+**The instrument changes and is registered as changed.** Cycles 1–2 ran NLI in fp16 (the
+checkpoint declares `dtype=float16`; transformers honours it on CPU), which is device
+dependent. Cycle 3 registers fp32 on GPU, device independent to 7.8e-06. The driver must
+FAIL CLOSED if that instrument is unavailable rather than silently falling back to fp16.
+
+**Corpus** is 9,805 items pinned at SHA-256
+`63ca8131b43b5c81681deed8bc705c6c2f6f1c56fdac929d9b1efb7584e504a1`, with cycle 2's 150 items a
+verified complete subset. NLI is no longer the binding constraint (~6.3 h on GPU); generation
+spend is, so B7's caps are the real control.
+
+`wct3/gpu.py` + `tests/test_wct3_gpu.py` were written during an investigation while the run was
+in `planning` and committed UNREVIEWED in `76d2c49`. T4 brings them under this slice's gates.
 
 ## Risks
 
-- **Spending on every gate run.** Mitigated by the probe/gate split above; the gate asserts
-  the artifact exists and is well-formed, and never calls an endpoint.
-- **A transient failure recorded as unavailability.** A single probe cannot distinguish a
-  dead model from a flaky minute. This is ACCEPTED rather than mitigated by retrying: the
-  request permits one attempt per endpoint, and retrying would change the measured protocol
-  and multiply paid calls. The artifact instead records the single attempt with its
-  sanitised error and latency, so a human can judge whether a re-probe is warranted and run
-  one deliberately. A `fail` in the artifact therefore means "did not answer on one
-  attempt at this timestamp", and the verdict wording must not overstate it as "unavailable".
-- **Reporting a listed-but-broken model as available.** The whole reason E1 requires a
-  generation; a test asserts the checker rejects a catalogue-only success.
-- **Leaking experimental content.** The probe is a throwaway theory, not a corpus item; the
-  gate asserts no corpus text appears in the artifact.
-- **Cost surprise.** One attempt per endpoint, no retries, the paid endpoint identified, and
-  the spend CALCULATED (B6) from recorded input/output token counts and the rates pinned in
-  `prereg_v2.yaml` ($1.40/$4.40 per 1M), emitted as USD with a conservative upper bound where
-  usage is not reported. The gate asserts the paid call count never exceeds one per candidate.
-- **A stale artifact passing as today's measurement** (A1). The artifact carries a schema
-  version, UTC timestamp, source commit and a digest of `prereg_v2.yaml`; the gate rejects an
-  artifact whose registration digest differs from the current file, and reports its age so an
-  old-but-well-formed file cannot silently serve as evidence of availability measured now.
-- **Credentials in a tracked artifact** (A2). Provider error text is normalised before
-  persistence: status and message retained, authorization headers, query credentials and
-  provider request metadata redacted. A test plants a fake bearer token in an error and
-  asserts it does not reach the artifact.
+- **Registering a number the artifacts do not contain.** Already happened twice: "2,353 items"
+  was a raw row count (true: 2,277), and the draft's margin range was wrong. Mitigation: no
+  numeric literal in `prereg_v3.yaml` is hand-typed; all are emitted by `exp3/prereg_v3_build.py`
+  from artifacts and independently RE-DERIVED by the gate, which fails on mismatch.
+- **Generation before the tag.** Mitigation: T5's driver refuses any non-dry run unless the
+  expected tag resolves to the tested tree; T7 asserts an empty cycle-3 artifact set at tag time.
+  Both are needed — an empty-artifact check alone cannot stop someone invoking the driver
+  between implementation and tagging (B8).
+- **Silent instrument downgrade.** If CUDA is missing the driver could fall back to fp16 and
+  void the registration. Mitigation: fail closed, record device/precision/cache-namespace in
+  every artifact, and ensure the CUDA check cannot pass by being skipped (B13).
+- **Mixing fp16-cached and fp32-computed NLI.** Smallest observed alignment margin is 0.0021,
+  exactly 1× the fp16→fp32 perturbation. Mitigation: distinct `WCT_CACHE` root, refuse to run
+  against the frozen root, and gate-assert the frozen `out/cache/nli` count is unchanged.
+- **Smoke tests contaminating experimental data.** Mitigation: T2 writes only to
+  `out/slice4/smoke/`, never the generation cache, and the gate asserts the cycle-3 artifact
+  set is empty regardless.
+- **Underpowered dose-response.** At n=9,805 the detectable increment is ~0.0101 nats. B2
+  requires this be STATED for M=3, M=4 and M=5, and if inadequate, said plainly.
 
 ## Rollback
 
-`git revert` the slice commit. The diff comprises four new code files
-(`exp3/availability.py`, `exp3/slice3_verdict.py`, `exp3/slice3_decide.py`,
-`run_slice3.sh`) and edits to two existing ones (`exp3/decide.py`,
-`exp3/slice2_decide.py`, which gain the atomic-write helper), three
-new test files (`tests/test_availability.py`, `tests/test_slice3_verdict.py`,
-`tests/test_slice3_gate.py`), two new
-artifacts (`out/slice3/availability.json`, `out/slice3/verdict.json`), and edits to
-`REQUEST.md`, `PLAN.md` and `DECISIONS.md`. No paper text, no artifact under `out/v3/`, no
-generation-cache entry and no tag is touched; `git diff prereg-v2-2026-08-16 HEAD -- exp/
-wct/ m0/` is empty before and after, and `out/v3/` stays identical to `e63f946`.
+Per-task and additive. `prereg_v3.yaml`, `exp3/corpus_v3.py`, `exp3/prereg_v3_build.py`,
+`exp3/smoke_v3.py`, `exp3/run_cycle3.py`, `run_slice4.sh` and their tests are NEW files:
+`git rm` them, or `git revert` the slice commit. The four added parquet files under `data/` are
+inputs only; deleting them reverts the corpus to the prior local set. `DECISIONS.md` is
+append-only — a wrong entry is superseded by a further entry, never edited away. No migration,
+no schema change, no state outside the repo. `paper.md` is untouched by this slice.
+
+**On the tag (A1):** `git tag -d` is NOT the general rollback. It is permissible only for a
+tag that is local, unpushed, and has no endpoint observation after it. Once the tag has been
+pushed or any cycle-3 generation exists, the tag STAYS and a superseding or withdrawn-
+registration record is added instead, because deleting it damages the audit trail the
+registration exists to provide and cannot retract remote copies.
 
 ## Tasks
 
 ```json
 [
   {
-    "id": "A1-probe",
-    "title": "exp3/availability.py: one real generation per candidate, identity and family recorded",
+    "id": "T1",
+    "title": "Corpus module: build, verify and pin the 9,805-item corpus (B5)",
     "depends_on": [],
-    "files": [
-      "exp3/availability.py",
-      "tests/test_availability.py"
-    ],
+    "files": ["exp3/corpus_v3.py", "tests/test_corpus_v3.py"],
     "acceptance": [
-      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and fails at `import httpx`. No PyPI egress: never pip install, never create a venv.",
-      "probes the six pinned candidates read FROM prereg_v2.yaml, AND (under --include-paid, per the 2026-08-30 human instruction) their paid-tier twins, resolved through the harness binding harness.toml [providers.deepseek_paid] kind=openrouter_paid. Twins are recorded with tier=paid and pinned_free_id; they are counted in families_reachable but never in the pinned total. Paid rates cover Hoonify (from prereg_v2.yaml) AND the four OpenRouter twins (read live from the catalogue, with a pinned fallback), and spend prefers the provider's reported usage.cost",
-      "each probe is an attempted GENERATION returning usable content; a model-list or health response is NOT success, and a test asserts a catalogue-only result is rejected",
-      "EXACTLY ONE attempt per endpoint, no automatic retry (B1): a retry would change the measured protocol and multiply paid calls. A re-probe is a deliberate second invocation whose artifact supersedes the first",
-      "LOCAL probes run strictly sequentially with no thread pool and no overlapping requests (B4, GOTCHAS single-model-slot): a mocked transport records call windows and a test FAILS if two local calls overlap",
-      "THREE-VALUED status (B3): `ok` = answered and the echoed id matches the registration's expected value; `substituted` = answered under an unexpected id; `fail` = no usable content. The schema is documented in the module docstring",
-      "records per candidate: family, backend, id requested, id echoed, expected echo from the registration, resolved weights where local, status, sanitised error, latency, and token usage",
-      "SANITISES error text before persistence (A2): status and message retained; authorization headers, query credentials and provider request metadata redacted. A test plants a fake bearer token in an error and asserts it never reaches the artifact",
-      "CALCULATES paid spend (B6) from recorded input/output tokens and the rates pinned in prereg_v2.yaml, emitting USD plus a conservative upper bound where usage is unreported",
-      "artifact carries PROVENANCE (A1): schema version, UTC timestamp, source commit, and a sha256 digest of prereg_v2.yaml",
-      "reuses exp.smoke_v2's throwaway probe item by import; no corpus or experimental content is sent",
-      "writes out/slice3/availability.json; requires --confirm to run, because it spends and touches external services",
-      "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked",
-      "declares its ONE auxiliary request: a single GET /api/v1/models per run to read live paid rates. It is not a generation probe and is not billable, and the artifact records it under probe.auxiliary_requests"
+      "load_corpus() returns exactly 9805 items from depth-3 and depth-5 across test/dev/train",
+      "corpus_sha256() == 63ca8131b43b5c81681deed8bc705c6c2f6f1c56fdac929d9b1efb7584e504a1",
+      "raises if any item_id collides; asserts 0 duplicates across configs and splits",
+      "verifies cycle 2's 150 items are a COMPLETE subset and raises if not",
+      "derives the PROJECTED COUNT OF SCORED POSITIVE-POLARITY NEGATIVES: candidate propositions whose ground-truth answer is false AND whose canonical surface is positive-polarity, since negative-polarity propositions are never scored; a raw FALSE-target fraction is explicitly NOT acceptable for B5",
+      "the projection states its assumptions and is labelled NOT a gate",
+      "records the six source parquet SHA-256s",
+      "writes no artifact of its own: it returns values for the registration to embed"
     ],
-    "targeted_checks": [
-      "cd \"$PWD\" && git diff --quiet prereg-v2-2026-08-16 HEAD -- exp/ wct/ m0/ && test -z \"$(git status --porcelain --untracked-files=all -- exp/ wct/ m0/)\"",
-      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_availability.py"
-    ],
-    "risk": "STANDARD",
-    "max_attempts": 3
+    "targeted_checks": ["PYTHONPATH=. WCT_CACHE=/home/jmannings/dev/waveconv/out/cache /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_corpus_v3.py"],
+    "risk": "STANDARD"
   },
   {
-    "id": "A2-verdict",
-    "title": "exp3/slice3_verdict.py: apply the recorded margin rule mechanically",
-    "depends_on": [
-      "A1-probe"
-    ],
-    "files": [
-      "exp3/slice3_verdict.py",
-      "tests/test_slice3_verdict.py"
-    ],
+    "id": "T2",
+    "title": "Bounded endpoint smoke tests to pin an expected echo per panel member (B4)",
+    "depends_on": [],
+    "files": ["exp3/smoke_v3.py", "tests/test_smoke_v3.py"],
     "acceptance": [
-      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and fails at `import httpx`. No PyPI egress: never pip install, never create a venv.",
-      "counts DISTINCT FAMILIES among candidates whose status is `ok` ONLY (B3): `substituted` never counts toward the pinned margin, and a test proves it does not",
-      "reports `substituted` candidates separately as possible families for a NEW registration, for slice 4 to adjudicate",
-      "a test proves two variants of one family count once (the cycle-1 ornith error)",
-      "applies the recorded rule from DECISIONS.md 2026-08-30 mechanically: >5 families => M=5 registrable; exactly 5 => M=3/M=4 primary with the fifth as a declared stretch arm; <5 => neither, and the available set is reported",
-      "reports the MARGIN explicitly (families ok, minus five), the deciding quantity under that rule",
-      "enumerates the family-disjoint M=3 subsets the ok set supports",
-      "tests cover all three branches with synthetic inputs INCLUDING the exactly-five boundary and a five-ok-plus-one-substituted case that must NOT be read as six",
-      "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked"
+      "probes all six pinned working ids plus the declared qwen OpenRouter fallback, at most ONE call each, and records the exact resolved serving identity returned",
+      "the local qwen endpoint is additionally verified by model_path and n_params, not by echoed id alone",
+      "fails on any identity mismatch against the expected echo, and records mismatches as substitution candidates rather than silently accepting them",
+      "writes ONLY to out/slice4/smoke/ and never to the generation cache, so no smoke output can be mistaken for cycle-3 data",
+      "credentials never reach any written artifact: reuse slice 3's allowlist sanitiser",
+      "is idempotent and records measured_at, and a test proves a mismatch fails the run"
     ],
-    "targeted_checks": [
-      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_slice3_verdict.py"
-    ],
-    "risk": "STANDARD",
-    "max_attempts": 3
+    "targeted_checks": ["cd /home/jmannings/dev/waveconv && PYTHONPATH=. /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_smoke_v3.py"],
+    "risk": "HIGH-RISK",
+    "lane_hint": "sonnet"
   },
   {
-    "id": "A3-gate",
-    "title": "run_slice3.sh: one command, fail-closed, and it never spends",
-    "depends_on": [
-      "A2-verdict"
-    ],
-    "files": [
-      "run_slice3.sh",
-      "exp3/slice3_decide.py",
-      "tests/test_slice3_gate.py"
-    ],
+    "id": "T3",
+    "title": "prereg_v3.yaml and its builder: every figure emitted from artifacts (B1,B2,B3,B5,B6,B7)",
+    "depends_on": ["T1", "T2"],
+    "files": ["prereg_v3.yaml", "exp3/prereg_v3_build.py", "tests/test_prereg_v3.py"],
     "acceptance": [
-      "ENVIRONMENT: run everything with /home/jmannings/dev/waveconv/.venv/bin/python (3.12). Bare `python` is system 3.14 without the project deps and fails at `import httpx`. No PyPI egress: never pip install, never create a venv.",
-      "ONE COMMAND, TWO MODES (B2): `run_slice3.sh --probe` performs the probes once, emits the artifact, computes the verdict and runs every assertion below; without the flag the same script validates the existing artifact and never calls an endpoint",
-      "asserts Python 3.12 and the uv pin; the tag-clean check across committed, working-tree and untracked state over exp/ wct/ m0/; and that out/v3/ plus out/e1*_summary*.json are byte-identical to their content at e63f946 via `git show`",
-      "asserts out/slice3/availability.json exists, is schema-valid, covers all six pinned candidates, and carries an identity record and a status for each",
-      "asserts artifact FRESHNESS (A1): its prereg_v2.yaml digest matches the current file, and its age is reported",
-      "asserts the paid call count never exceeds one per candidate, and echoes the calculated spend",
-      "asserts no corpus or experimental item text, and no credential-shaped string, appears in the artifact",
-      "NEGATIVE INTEGRATION TESTS (B5), each proving the gate FAILS: missing artifact; malformed artifact; incomplete candidate coverage; a catalogue-only success; a missing identity record; a mismatched registration digest; a changed frozen file including an UNTRACKED addition under exp/ wct/ m0/; a paid call count above the cap",
-      "appends a DECISIONS.md entry derived from the artifact and the verdict, fingerprinted so --check detects a STALE entry rather than merely a missing one, and superseding a stale entry atomically rather than wedging the gate",
-      "the gate's EXIT CODE is the pass signal, not its printed output; the targeted check asserts rc=0",
-      "no file under exp/, wct/ or m0/ is created or modified, tracked or untracked"
+      "B1: every field EXPERIMENT.md 3.1(4) requires; primary is panel vs calibration-selected best single source",
+      "B2: freezes ONE exact delta with the artifact and formula that produced it, derived from slice 1's WCT-EM margins under each cycle's own registered map (+0.0448, +0.0887, +0.0848, +0.0858), marked immutable-after-results; reports required n for M=3, M=4 AND M=5 against slice 1's measured per-item SD (0.184-0.313) and states the detectable increment at n=9805 (~0.0101 nats), saying plainly if any arm is underpowered",
+      "B3: names the six families in a FIXED ordering with working ids and tiers, and names the M=3, M=4, M=5 subsets explicitly as nested sets; declares family 6 (poolside/laguna) as margin with its promotion trigger, whether data accumulated before promotion remain usable, and who adjudicates",
+      "B4: pins an expected echo per panel member; registers the qwen local-to-OpenRouter fallback with its trigger, the fact that the fallback is the provider build and NOT the registered quantised weights, and the required disclosure on promotion",
+      "B5: corpus pinned by SHA-256 with the projected scored positive-polarity negative count stated as a projection and explicitly not a gate",
+      "B6: falsifiable predictions with adjudication rules; freezes the estimand, the uncertainty/test method, multiplicity handling across arms and maps, decision thresholds, and states the precise result that would REFUTE the dose-response",
+      "B7: per-tier rates taken from slice 3's measured evidence, calls and cost computed per registered panel including retries and promotion/fallback, a hard cumulative per-panel cap, and persistence semantics across re-runs; asserts paid ids are used wherever a paid tier exists",
+      "registers the instrument as fp32/GPU and records that cycles 1-2 were fp16, with the measured device-dependence figures",
+      "NO numeric literal is hand-typed: a test asserts every figure in the yaml is reproduced by re-running the builder"
     ],
-    "targeted_checks": [
-      "cd \"$PWD\" && bash run_slice3.sh; test $? -eq 0",
-      "cd \"$PWD\" && PYTHONPATH=\"$PWD\" /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_slice3_gate.py"
+    "targeted_checks": ["cd /home/jmannings/dev/waveconv && PYTHONPATH=. WCT_CACHE=/home/jmannings/dev/waveconv/out/cache /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_prereg_v3.py"],
+    "risk": "HIGH-RISK",
+    "lane_hint": "sonnet"
+  },
+  {
+    "id": "T4",
+    "title": "Bring the unreviewed GPU instrument under this slice's gates",
+    "depends_on": [],
+    "files": ["wct3/gpu.py", "tests/test_wct3_gpu.py"],
+    "acceptance": [
+      "reviewed against wct/measure.py: dedup, longest-first batching, canonical column order and cache key are identical",
+      "the precision divergence is deliberate, documented, and pinned by a test asserting fp32 weights despite the checkpoint declaring float16",
+      "a CUDA-gated test asserts gpu/fp32 and cpu/fp32 agree below 1e-4 with no argmax flips",
+      "install() is reversible and a test proves it restores measure.nli",
+      "wct/ is NOT modified: the v2 tag stays byte-clean"
     ],
-    "risk": "STANDARD",
-    "max_attempts": 3
+    "targeted_checks": ["cd /home/jmannings/dev/waveconv && PYTHONPATH=. WCT_CACHE=/home/jmannings/dev/waveconv/out/cache /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_wct3_gpu.py"],
+    "risk": "STANDARD"
+  },
+  {
+    "id": "T5",
+    "title": "Cycle-3 analysis driver, committed before generation (B8,B12,B13)",
+    "depends_on": ["T1", "T3"],
+    "files": ["exp3/run_cycle3.py", "tests/test_run_cycle3.py"],
+    "acceptance": [
+      "implements the registered primary, the nested M=3/M=4/M=5 dose-response, and the declared promotions; reads panels, caps and delta from prereg_v3.yaml and never restates them",
+      "B13 FAIL CLOSED: a non-dry run aborts unless the registered fp32/GPU instrument is active with a separate cache root; there is NO fp16 fallback path, and the check cannot pass by being skipped",
+      "refuses to run if WCT_CACHE resolves to the frozen out/cache root",
+      "records device, precision, model identity and cache namespace into every artifact it writes",
+      "B8: refuses any non-dry run unless tag prereg-v3-2026-08-30 exists and resolves to the tested tree",
+      "B12: generation is MODEL-MAJOR and strictly precedes analysis: one model completes its whole pass before the next begins, no concurrent model swaps, and no embedding or analysis call is issued while generation is active, because the local server has one model slot",
+      "failed or transient-error generations are NEVER written into the immutable artifact cache, and retries interact deterministically with the cumulative caps",
+      "enforces B7 per-panel cumulative caps persisted across re-runs, and aborts on cap breach",
+      "dry-run mode proves the driver executes end to end with ZERO generation calls"
+    ],
+    "targeted_checks": ["cd /home/jmannings/dev/waveconv && PYTHONPATH=. WCT_CACHE=/home/jmannings/dev/waveconv/out/cache /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_run_cycle3.py"],
+    "risk": "HIGH-RISK",
+    "lane_hint": "sonnet"
+  },
+  {
+    "id": "T6",
+    "title": "Fingerprinted DECISIONS.md entry derived from the registration (B11)",
+    "depends_on": ["T3"],
+    "files": ["exp3/decide_v3.py", "tests/test_decide_v3.py"],
+    "acceptance": [
+      "renders the slice-4 outcome entry FROM prereg_v3.yaml after all choices are frozen, never hand-written",
+      "embeds a fingerprint of the source registration so a stale entry is detectable",
+      "supersedes an existing stale entry atomically rather than refusing to update, which is the failure slice 2 hit",
+      "a planted stale-fingerprint test proves the check fails"
+    ],
+    "targeted_checks": ["cd /home/jmannings/dev/waveconv && PYTHONPATH=. /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_decide_v3.py"],
+    "risk": "STANDARD"
+  },
+  {
+    "id": "T7",
+    "title": "One-command slice gate and the human-gated tag workflow (B9,B10)",
+    "depends_on": ["T1", "T2", "T3", "T4", "T5", "T6"],
+    "files": ["run_slice4.sh", "tests/test_slice4_gate.py"],
+    "acceptance": [
+      "B10: ONE command builds the emitted registration, runs every slice assertion, runs the full pinned suite, and its EXIT CODE is the sole pass signal; every failed stage propagates non-zero and an integration test proves it",
+      "re-derives every numeric figure in prereg_v3.yaml independently and fails on any mismatch",
+      "B9 immutability: asserts out/v3/, out/slice3/ and out/e1*_summary*.json are byte-identical to committed content, checking tracked AND untracked files, and asserts the v2 tag is byte-clean over exp/ wct/ m0/",
+      "asserts out/cache/nli entry count is unchanged, so no fp32 leaked into the frozen cache",
+      "asserts the cycle-3 generation artifact set is EMPTY",
+      "re-runs frozen reproduction for all four panels under wct3.strict with WCT_LOCAL_BASE unroutable",
+      "tag creation is a SEPARATE explicit human-gated step, not automatic; it records the registration and immutability fingerprints at that commit and verifies the tag resolves to the tested tree",
+      "guards against gate-test recursion with SLICE4_GATE_RUNNING, as run_slice3.sh does",
+      "a planted-failure test proves EACH assertion fails when violated: no assertion may pass vacuously"
+    ],
+    "targeted_checks": ["cd /home/jmannings/dev/waveconv && PYTHONPATH=. SLICE4_GATE_RUNNING=1 WCT_CACHE=/home/jmannings/dev/waveconv/out/cache /home/jmannings/dev/waveconv/.venv/bin/python -m pytest -q tests/test_slice4_gate.py"],
+    "risk": "HIGH-RISK",
+    "lane_hint": "sonnet"
   }
 ]
 ```
 
 ## Open questions
 
-- OQ1, OQ2 (REQUEST): both RESOLVED at the human gate 2026-08-30 and recorded in
-  `DECISIONS.md`. M=5 requires margin; additional local families may be probed at zero cost
-  and reported separately as margin candidates, adopted by nobody until slice 4.
-- OQ3 (new, non-blocking): if a pinned model answers under an UNEXPECTED id, that is a
-  substitution and the candidate is unavailable under `prereg_v2`'s resolution rule — but it
-  may still be a usable family for a NEW registration, since cycle 3 pins its own panels.
-  The plan records such a case as `substituted` rather than collapsing it to `ok` or `fail`,
-  and leaves the adjudication to slice 4.
+None outstanding. OQ1 (corpus) superseded to 9,805 items, OQ2 (qwen pinning) resolved,
+OQ3 (tag name `prereg-v3-2026-08-30`) and OQ4 (budget cap authorised) resolved by the human
+on 2026-08-30. The generation SPEND itself is a later run's gate, not this slice's.

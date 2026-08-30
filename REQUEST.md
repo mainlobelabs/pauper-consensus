@@ -86,7 +86,21 @@ disappearance is absorbed by documented promotion rather than an unregistered su
 
 ## Open questions
 
-- OQ1: RESOLVED (human, 2026-08-30). Cycle 3 REUSES cycle 2's corpus — the 150
+- OQ1: SUPERSEDED (human, 2026-08-30, later the same day). Cycle 3's corpus is 9,805
+  ProofWriter items — depth-3 and depth-5, all three splits — pinned by SHA-256
+  `63ca8131b43b5c81681deed8bc705c6c2f6f1c56fdac929d9b1efb7584e504a1`. The earlier
+  resolution below was made when CPU NLI at 30 pairs/sec made anything larger infeasible;
+  it explicitly deferred the question to "once a CUDA torch build is available". That
+  build now exists and NLI runs at 2,500 pairs/sec fp32 on GPU, so the constraint that
+  forced 150 items is gone and the human chose to scale. Comparability is PRESERVED, not
+  traded away: cycle 2's 150 items are a verified COMPLETE SUBSET of the 9,805. The reuse
+  disclosure below still applies to that subset. What scaling buys is power: the M=3→M=5
+  dose-response increment — the thing cycle 3 exists to measure — is detectable to
+  ~0.0101 nats at n=9,805 versus ~0.081 nats at n=150. Consequences that must flow through
+  the registration: call volume 58,830, cost ~$121, NLI ~6.3 h. NOTE the prior figure of
+  "2,353 items" recorded in DECISIONS.md was a raw parquet ROW count; the filtered item
+  count of that set was 2,277. Superseded text follows.
+- OQ1 (superseded text): Cycle 3 REUSES cycle 2's corpus — the 150
   negation-family ProofWriter items with depth-5 enrichment, pinned by the same SHA-256.
   Comparability with the registered `+0.220` / `+0.272` results is worth more than
   independence from a cycle whose panels no longer exist, and the corpus itself was never
@@ -100,3 +114,9 @@ disappearance is absorbed by documented promotion rather than an unregistered su
   provider's own build rather than the registered quantised weights, are written into the
   registration so a switch is a documented event and not an unregistered substitution.
   This is the same discipline the sixth-family margin uses.
+
+- OQ3: RESOLVED (human, 2026-08-30). The registration tag is `prereg-v3-2026-08-30`,
+  following the v2 convention (`prereg-v2-2026-08-16`).
+- OQ4: RESOLVED (human, 2026-08-30). The generation budget implied by the 9,805-item
+  corpus — 58,830 calls, ~$121 at slice 3's measured paid-tier rates — is authorised as a
+  registered CAP. The cap is registered in this slice; the spend happens in a later run.

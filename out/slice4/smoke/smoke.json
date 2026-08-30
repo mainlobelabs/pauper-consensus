@@ -1,0 +1,203 @@
+{
+  "attempts_per_endpoint": 1,
+  "m_subsets": {
+    "3": [
+      1,
+      2,
+      3
+    ],
+    "4": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "5": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "measured_at": "2026-08-30T14:50:36Z",
+  "records": [
+    {
+      "agent": "qwen",
+      "echoed": "ornith35",
+      "family": "qwen",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "ornith35",
+        "expected": "ornith35",
+        "expected_source": "registered alias override",
+        "loaded_weights": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf",
+        "matches_expected": true,
+        "model_ftype": "Q4_K - Medium",
+        "n_params": null,
+        "n_params_endpoint_verifiable": false,
+        "n_params_note": "prereg_v2 pins n_params 27, but llama-server /props does not expose it; the verifiable half of the pin is model_path (+ model_ftype). Recorded as a known limit, not treated as a passed check.",
+        "registered_weights": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf",
+        "requested": "qwen3.8-27b",
+        "weights_match": true,
+        "weights_readable": true
+      },
+      "latency_s": 0.82,
+      "local_props": {
+        "model_alias": "ornith35",
+        "model_ftype": "Q4_K - Medium",
+        "model_path": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf",
+        "n_params": null,
+        "n_params_endpoint_verifiable": false
+      },
+      "model": "qwen3.8-27b",
+      "rank": 1,
+      "role": "panel_member",
+      "status": "ok",
+      "tier": "local",
+      "usage": {
+        "completion_tokens": 25,
+        "prompt_tokens": 17,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 42
+      }
+    },
+    {
+      "agent": "glm",
+      "echoed": null,
+      "error": "RuntimeError: OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. Set it, or run with backend='local'.",
+      "family": "zhipu",
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "zai-org/GLM-5.2",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "zai-org/GLM-5.2"
+      },
+      "latency_s": 0.0,
+      "model": "zai-org/GLM-5.2",
+      "rank": 2,
+      "role": "panel_member",
+      "status": "error",
+      "tier": "free"
+    },
+    {
+      "agent": "nemotron",
+      "echoed": null,
+      "error": "RuntimeError: OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. Set it, or run with backend='local'.",
+      "family": "nvidia",
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "nvidia/nemotron-3-super-120b-a12b",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "nvidia/nemotron-3-super-120b-a12b"
+      },
+      "latency_s": 0.0,
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "rank": 3,
+      "role": "panel_member",
+      "status": "error",
+      "tier": "paid"
+    },
+    {
+      "agent": "gptoss",
+      "echoed": null,
+      "error": "RuntimeError: OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. Set it, or run with backend='local'.",
+      "family": "openai",
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "openai/gpt-oss-20b",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "openai/gpt-oss-20b"
+      },
+      "latency_s": 0.0,
+      "model": "openai/gpt-oss-20b",
+      "rank": 4,
+      "role": "panel_member",
+      "status": "error",
+      "tier": "paid"
+    },
+    {
+      "agent": "gemma",
+      "echoed": null,
+      "error": "RuntimeError: OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. Set it, or run with backend='local'.",
+      "family": "google",
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "google/gemma-4-26b-a4b-it",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "google/gemma-4-26b-a4b-it"
+      },
+      "latency_s": 0.0,
+      "model": "google/gemma-4-26b-a4b-it",
+      "rank": 5,
+      "role": "panel_member",
+      "status": "error",
+      "tier": "paid"
+    },
+    {
+      "agent": "laguna",
+      "echoed": null,
+      "error": "RuntimeError: OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. Set it, or run with backend='local'.",
+      "family": "poolside",
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "poolside/laguna-xs-2.1",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "poolside/laguna-xs-2.1"
+      },
+      "latency_s": 0.0,
+      "model": "poolside/laguna-xs-2.1",
+      "rank": 6,
+      "role": "declared_margin",
+      "status": "error",
+      "tier": "paid"
+    },
+    {
+      "agent": "qwen_or",
+      "echoed": null,
+      "error": "RuntimeError: OPENROUTER_API_KEY is unset; the OpenRouter panel cannot run. Set it, or run with backend='local'.",
+      "family": "qwen",
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "qwen/qwen3.8-27b",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "qwen/qwen3.8-27b"
+      },
+      "latency_s": 0.0,
+      "model": "qwen/qwen3.8-27b",
+      "rank": 1,
+      "role": "declared_fallback_for_qwen",
+      "status": "error",
+      "tier": "paid"
+    }
+  ],
+  "smoke_max_tokens": 64
+}

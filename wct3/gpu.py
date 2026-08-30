@@ -151,12 +151,63 @@ def nli_gpu(pairs: list[tuple[str, str]], model_id: str = measure.NLI_MODEL,
     return out
 
 
-def install(device: str | None = None, batch: int = 512) -> str:
-    """Route wct.measure.nli through the GPU. Returns the device in use."""
+class _Installed:
+    """Handle returned by install(): restores the EXACT prior callable.
+
+    install() used to return only the device, so every caller had to remember to put
+    measure.nli back itself -- which meant the reversibility was a property of each
+    call site rather than of this module, and a test could only ever verify its own
+    cleanup. The handle owns the restore, works as a context manager, and is
+    idempotent so a double uninstall cannot clobber a later install.
+    """
+
+    def __init__(self, device: str, previous, patched) -> None:
+        self.device = device
+        self._previous = previous
+        self._patched = patched
+        self.active = True
+
+    def uninstall(self) -> bool:
+        """Restore the previous callable. Returns True if this call did the restoring."""
+        if not self.active:
+            return False
+        if measure.nli is self._patched:          # do not clobber a newer install
+            measure.nli = self._previous
+        self.active = False
+        return True
+
+    # Nested installs restore in LIFO order: each handle puts back exactly what it
+    # replaced. Uninstalling an older handle while a newer one is live deliberately
+    # leaves the newer patch in place rather than yanking it out from under its owner.
+
+    def __enter__(self) -> "_Installed":
+        return self
+
+    def __exit__(self, *exc) -> bool:
+        self.uninstall()
+        return False
+
+    def __str__(self) -> str:                      # back-compat: install() read as a device
+        return self.device
+
+    def __eq__(self, other) -> bool:
+        return self.device == other if isinstance(other, str) else NotImplemented
+
+    def __hash__(self) -> int:
+        return hash(self.device)
+
+
+def install(device: str | None = None, batch: int = 512) -> "_Installed":
+    """Route wct.measure.nli through the GPU.
+
+    Returns a handle whose .uninstall() restores the exact previous callable; it also
+    works as a context manager and compares equal to the device string.
+    """
     device = device or pick_device()
+    previous = measure.nli
 
     def _patched(pairs, model_id=measure.NLI_MODEL, batch=batch):
         return nli_gpu(pairs, model_id=model_id, batch=batch, device=device)
 
     measure.nli = _patched
-    return device
+    return _Installed(device, previous, _patched)

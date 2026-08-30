@@ -1,0 +1,571 @@
+protocol_version: v3
+tag: prereg-v3-2026-08-30
+freeze_discipline: This file and the analysis driver are committed and tagged BEFORE any cycle-3 generation
+  exists. The implementations ARE the registration.
+estimand: The fixed-panel difference in held-out log loss between the panel aggregate and the calibration-selected
+  best single source, over the item distribution. Models and roles are fixed experimental levels; uncertainty
+  generalises over items.
+instrument:
+  nli_model: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli
+  precision: fp32
+  device: cuda
+  implementation: wct3.gpu.nli_gpu
+  change_from_cycles_1_2: 'cycles 1-2 ran fp16, not fp32: the checkpoint config declares dtype=float16
+    and transformers honours it on CPU as well as GPU. This is registered as an INSTRUMENT CHANGE.'
+  measured_device_dependence:
+    cpu_fp32_vs_gpu_fp32:
+      max_abs: 7.8e-06
+      argmax_flips: 0
+    cpu_fp16_vs_gpu_fp16:
+      max_abs: 0.0044
+      argmax_flips: 1
+    cpu_fp16_vs_cpu_fp32:
+      max_abs: 0.0038
+      argmax_flips: 0
+    n_pairs: 800
+    conclusion: fp16 is device dependent; fp32 is not. fp32 is registered.
+  cache_isolation: 'cycle 3 uses a SEPARATE WCT_CACHE root. fp16-cached and fp32-computed NLI are never
+    mixed: the smallest observed alignment margin is 0.0021, exactly 1x the fp16->fp32 score perturbation.'
+  fail_closed: a non-dry run aborts if the registered fp32/GPU instrument is unavailable; there is no
+    fp16 fallback path
+dataset:
+  n_items: 9805
+  sha256: 63ca8131b43b5c81681deed8bc705c6c2f6f1c56fdac929d9b1efb7584e504a1
+  configs:
+  - depth-3
+  - depth-5
+  splits:
+  - test
+  - dev
+  - train
+  source_sha256:
+    proofwriter_depth-3_test.parquet: cb2d37e46c1ef92c850807850c6204f230751799d0bc3fbab82a40ce96a7235a
+    proofwriter_depth-3_dev.parquet: 7b06e85d5fa1adc30d67fb248d4016161ab156831f385f3700e61d8e6f3567bb
+    proofwriter_depth-3_train.parquet: 53e1f8c4ae2e4eb38101410fabc2a7dc90e3aa13bebb8fdcd578f01f8f0b3e8f
+    proofwriter_depth-5_test.parquet: 66d2dea934af4f01797656a2381ccb578710b7efec21023869e1a56811499046
+    proofwriter_depth-5_dev.parquet: 90efd42cbef1b0b6de90ad774c311ae5a4dcf8f8b1b40ff84cc553a73a4f4632
+    proofwriter_depth-5_train.parquet: 34e408adf8fd9ce6d38130a78d19aa1ba6f8414bee22e521f0a4da00fefac6fb
+  propositions: 162036
+  decidable: 91052
+  positive_polarity_negatives: 45526
+  cycle2_subset: true
+  comparability: cycle 2's 150 items are a verified COMPLETE SUBSET, so the registered +0.220/+0.272 results
+    remain comparable on that stratum. The shared item set means cycle 3's dose-response is evidence about
+    panel SIZE on this corpus, not independent evidence about the corpus.
+  capable_of_containing_falsehoods: true
+  projected_scored_positive_polarity_negatives:
+    M=5: 13400
+    M=3: 8040
+    per_item_agent_rate: 0.2733
+    assumptions:
+    - cycle-2 panelA alignment yield (123 scored negatives over 150 items x 3 agents) generalises to this
+      corpus and to the cycle-3 panel
+    - depth-3 items are the new majority and may align differently from the depth-5 items the rate was
+      measured on
+    - only 20.2% of scored propositions were negatives although 50.0% of decidable propositions are, so
+      models restate truths more readily than falsehoods; the projection inherits that asymmetry
+    is_gate: false
+    note: a PROJECTION, explicitly not an execution gate (B5)
+panels:
+  ordering_rule: 'identity assurance descending: the three families whose PINNED ids still answered in
+    slice 3, then the paid twins of the families whose :free tier was withdrawn or rate limited'
+  members:
+  - rank: 1
+    agent: qwen
+    family: qwen
+    model: qwen3.8-27b
+    tier: local
+    backend: local
+    role: panel_member
+    expected_resolved: ornith35
+    expected_source: registered alias override
+    identity_evidence: model_path /home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf
+    identity_basis: 'weights: model_path + n_params, NOT the echoed alias'
+    observed_echo_at_smoke: ornith35
+  - rank: 2
+    agent: glm
+    family: zhipu
+    model: zai-org/GLM-5.2
+    tier: free
+    backend: openrouter
+    role: panel_member
+    expected_resolved: zai-org/GLM-5.2
+    expected_source: requested id (default)
+  - rank: 3
+    agent: nemotron
+    family: nvidia
+    model: nvidia/nemotron-3-super-120b-a12b
+    tier: paid
+    backend: openrouter
+    role: panel_member
+    expected_resolved: nvidia/nemotron-3-super-120b-a12b
+    expected_source: requested id (default)
+  - rank: 4
+    agent: gptoss
+    family: openai
+    model: openai/gpt-oss-20b
+    tier: paid
+    backend: openrouter
+    role: panel_member
+    expected_resolved: openai/gpt-oss-20b
+    expected_source: requested id (default)
+  - rank: 5
+    agent: gemma
+    family: google
+    model: google/gemma-4-26b-a4b-it
+    tier: paid
+    backend: openrouter
+    role: panel_member
+    expected_resolved: google/gemma-4-26b-a4b-it
+    expected_source: requested id (default)
+  - rank: 6
+    agent: laguna
+    family: poolside
+    model: poolside/laguna-xs-2.1
+    tier: paid
+    backend: openrouter
+    role: declared_margin
+    expected_resolved: poolside/laguna-xs-2.1
+    expected_source: requested id (default)
+  nested_subsets:
+    M=3:
+    - 1
+    - 2
+    - 3
+    M=4:
+    - 1
+    - 2
+    - 3
+    - 4
+    M=5:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  nested_property: M=3 subset of M=4 subset of M=5, by rank
+  declared_margin:
+    rank: 6
+    agent: laguna
+    family: poolside
+    promotion_trigger: a primary member (ranks 1-5) fails its expected-echo check or becomes unreachable
+      for a whole panel pass
+    promoted_into: the vacated rank, preserving the nested subset structure
+    data_before_promotion: observations already collected under the vacated member are RETAINED and reported
+      separately; they are not merged into the promoted member's arm
+    adjudicator: the human owner, recorded in DECISIONS.md before the run resumes
+    disclosure: any promotion is disclosed in the results as a registered event
+  declared_fallback:
+    for: qwen
+    model: qwen/qwen3.8-27b
+    tier: paid
+    trigger: the local endpoint is unreachable or its loaded weights do not match
+    caveat: the fallback is the PROVIDER's own build, not the registered quantised Qwen3.8-27B-Q4_K_M
+      weights, so it is a different artifact answering for the same family
+    disclosure: promotion is disclosed and the affected items flagged
+smoke_evidence:
+  artifact: out/slice4/smoke/smoke.json
+  present: true
+  observed:
+    qwen:
+      echoed: ornith35
+      status: ok
+      weights_match: true
+      n_params: null
+    glm:
+      echoed: null
+      status: error
+      weights_match: null
+      n_params: null
+    nemotron:
+      echoed: null
+      status: error
+      weights_match: null
+      n_params: null
+    gptoss:
+      echoed: null
+      status: error
+      weights_match: null
+      n_params: null
+    gemma:
+      echoed: null
+      status: error
+      weights_match: null
+      n_params: null
+    laguna:
+      echoed: null
+      status: error
+      weights_match: null
+      n_params: null
+    qwen_or:
+      echoed: null
+      status: error
+      weights_match: null
+      n_params: null
+wct_definitions:
+  WCT-U: 'signed UNIQUE-SOURCE support: each canonical proposition scores the number of distinct sources
+    affirming it minus those denying it, with one observation per (agent, proposition) by construction
+    (M6). Frozen implementation: wct3/observe.py build_rows + to_arrays.'
+  WCT-EM: 'Dawid-Skene three-state latent-truth aggregation over the same observation matrix, estimating
+    per-agent confusion and a per-item latent state; PRIMARY arm. Frozen implementation: wct/aggregate.py.'
+  WCT-C: 'the supervised variant: the same observation matrix scored by a classifier fitted on the calibration
+    split, so it measures what a supervised reader could extract rather than what the unsupervised aggregate
+    does.'
+  covariate_baseline: logistic on qdep, n_emitting, n_claims, text_len/50 -- the arm every WCT arm must
+    beat to claim proposition-level signal rather than item difficulty.
+  single_best_calibration_selected: the best single source CHOSEN ON THE CALIBRATION SPLIT and then evaluated
+    on test; the honest comparator, as distinct from an oracle that peeks at test.
+m0_simulation_grid:
+  artifact: out/m0_ceiling.txt
+  sha256: 96550cb80ccdd2e8fa4335bec3fc6cb70a33672151319d8e6dad1a13fa6914f7
+  invariant: I8 effective panel size M_eff = M / (1 + (M-1)*rho)
+  why_registered: 'the dose-response prediction is about M_eff, not raw M: if inter-source error correlation
+    rho is high, adding sources buys little and a flat dose-response is the PREDICTED result rather than
+    a refutation of the panel'
+  excerpt:
+  - ==========================================================================
+  - I8  EFFECTIVE PANEL SIZE   M_eff = M / (1 + (M-1)*rho)
+  - ==========================================================================
+  - '   rho |  M_eff(M=4)  M_eff(M=5)  M_eff(M=8)  cap = 1/rho'
+  - '  0.00 |        4.00        5.00        8.00          inf'
+  - '  0.05 |        3.48        4.17        5.93        20.00'
+  - '  0.10 |        3.08        3.57        4.71        10.00'
+  - '  0.20 |        2.50        2.78        3.33         5.00'
+  - '  0.30 |        2.11        2.27        2.58         3.33'
+  - '  0.40 |        1.82        1.92        2.11         2.50'
+  - '  0.50 |        1.60        1.67        1.78         2.00'
+  - '  0.70 |        1.29        1.32        1.36         1.43'
+arms:
+- WCT-EM (primary)
+- WCT-U
+- WCT-C
+- covariate_baseline (the arm every WCT arm must beat)
+- single_best_calibration_selected (the registered comparator)
+- prevalence_only (constant; no calibration map)
+generation:
+  cell: cross_family_diverse_role only
+  roles:
+    schedule: latin_square(cross_family key order, [forward, backward, skeptic], item index)
+    prompts: wct/nodes.py build_prompt(item, role), frozen at the v2 tag
+    role_set:
+    - forward
+    - backward
+    - skeptic
+    - neutral
+    note: roles are rotated across families by the Latin square so role is not confounded with vendor
+      -- the confound cycle 1 could not rule out because it varied both at once
+  seed: 20260807
+  temperature: 0.7
+  max_tokens: 2000
+  scheduling: 'MODEL-MAJOR and strictly before analysis: one model completes its whole pass before the
+    next begins; no concurrent model swaps; no embedding or analysis call is issued while generation is
+    active, because the local server has a single model slot.'
+  failed_calls: never written to the immutable artifact cache
+delta:
+  value: 0.0448
+  units: nats of held-out log loss
+  formula: 'min over CONCLUSIVE panel-cycles (decision == ''go'') of the WCT-EM panel_vs_single_best_calibration_selected
+    delta_log_loss point estimate, each read under that cycle''s OWN registered calibration map ({''c1_local'':
+    ''temperature'', ''c1_openrouter'': ''temperature'', ''c2_panelA'': ''platt'', ''c2_panelB'': ''platt''})'
+  argmin: c1_local
+  inputs_conclusive:
+    c1_local: 0.04481
+    c1_openrouter: 0.08866
+    c2_panelA: 0.07622
+  excluded_inconclusive:
+    c2_panelB:
+      point: 0.03292
+      decision: inconclusive
+  n_conclusive: 3
+  n_panel_cycles: 4
+  artifact: out/v3/reanalysis_<panel-cycle>.json
+  immutable_after_results: true
+  rationale: cycle 3 must detect at least the smallest effect cycles 1-2 CONCLUSIVELY showed; the mean
+    or max would register a threshold the programme has not demonstrated it can meet, and including an
+    inconclusive cycle would lower the floor on the strength of a result that did not clear its own decision
+    rule
+power:
+  alpha: 0.05
+  power: 0.8
+  test: two-sided paired item-block bootstrap
+  delta: 0.0448
+  sd_items_observed:
+    min: 0.1606
+    max: 0.2514
+    source: slice 1 per-item SD across the CONCLUSIVE panel-cycles (the same set that derives delta)
+  primary:
+    M=3:
+      required_n_at_sd_min: 101
+      required_n_at_sd_max: 248
+      powered_at_registered_n: true
+    M=4:
+      required_n_at_sd_min: 101
+      required_n_at_sd_max: 248
+      powered_at_registered_n: true
+    M=5:
+      required_n_at_sd_min: 101
+      required_n_at_sd_max: 248
+      powered_at_registered_n: true
+  dose_response_increment:
+    detectable_at_registered_n: 0.0071
+    detectable_at_sd_min: 0.0045
+    n: 9805
+    note: this is the SMALLEST M=3->M=5 increment the registered n can detect. The primary contrast is
+      comfortably powered; the dose-response increment is the binding arm and this is its floor. If the
+      true increment is below this, the arm is underpowered and a null is uninterpretable -- stated here
+      rather than discovered afterwards.
+measured_margins_slice1:
+  c1_local:
+    map: temperature
+    arm: WCT-EM
+    point: 0.04481
+    lo: 0.01169
+    hi: 0.07869
+    sd_items: 0.17251
+    n_items: 100
+    decision: go
+    artifact_path:
+    - panel_vs_single_best_calibration_selected
+    - temperature
+    - WCT-EM
+  c1_openrouter:
+    map: temperature
+    arm: WCT-EM
+    point: 0.08866
+    lo: 0.04551
+    hi: 0.14209
+    sd_items: 0.2514
+    n_items: 100
+    decision: go
+    artifact_path:
+    - panel_vs_single_best_calibration_selected
+    - temperature
+    - WCT-EM
+  c2_panelA:
+    map: platt
+    arm: WCT-EM
+    point: 0.07622
+    lo: 0.04648
+    hi: 0.10684
+    sd_items: 0.1606
+    n_items: 100
+    decision: go
+    artifact_path:
+    - panel_vs_single_best_calibration_selected
+    - platt
+    - WCT-EM
+  c2_panelB:
+    map: platt
+    arm: WCT-EM
+    point: 0.03292
+    lo: -0.01087
+    hi: 0.07029
+    sd_items: 0.20454
+    n_items: 100
+    decision: inconclusive
+    artifact_path:
+    - panel_vs_single_best_calibration_selected
+    - platt
+    - WCT-EM
+measured_margins_slice1_registered_variant:
+  what: the registered S1_deny_self_contradiction variant of the same comparison, for the two cycles that
+    have it
+  used_for_delta: false
+  why_reported: the primary node is pinned in code (PRIMARY_PATH); reporting the variant alongside lets
+    a reader verify the selection instead of trusting it
+  values:
+    c2_panelA:
+      map: platt
+      arm: WCT-EM
+      point: 0.0848
+      lo: 0.04631
+      hi: 0.12138
+      sd_items: 0.19161
+      n_items: 100
+      decision: go
+      artifact_path:
+      - strata
+      - all_items
+      - S1_deny_filter
+      - panel_vs_single_best_calibration_selected
+      - platt
+      - WCT-EM
+    c2_panelB:
+      map: platt
+      arm: WCT-EM
+      point: 0.08584
+      lo: 0.02204
+      hi: 0.14605
+      sd_items: 0.31305
+      n_items: 100
+      decision: go
+      artifact_path:
+      - strata
+      - all_items
+      - S1_deny_filter
+      - panel_vs_single_best_calibration_selected
+      - platt
+      - WCT-EM
+predictions:
+  P1_primary:
+    claim: the panel aggregate beats the calibration-selected best single source by at least delta=0.0448
+      nats at M=5
+    supports: lower bound of the paired item-block bootstrap CI > delta
+    refutes: upper bound of the CI < delta
+    inconclusive: the CI spans delta
+  P2_dose_response:
+    claim: the margin over the best single source GROWS from M=3 to M=4 to M=5, as error decorrelation
+      predicts
+    estimand: margin(M=5) - margin(M=3), paired on items
+    supports: the paired increment's CI lower bound exceeds 0 AND the M=3 -> M=4 -> M=5 point estimates
+      are monotone increasing
+    refutes: the increment's CI upper bound is below the detectable floor while the primary contrast is
+      significant -- i.e. the panel helps but adding sources does not, which is evidence against the decorrelation
+      premise rather than against the panel
+    inconclusive: the increment's CI spans the detectable floor
+    multiplicity: P1 and P2 are the only registered confirmatory tests. Across the three aggregation arms
+      (WCT-U, WCT-EM, WCT-C) and two calibration maps, WCT-EM under the registered map is PRIMARY and
+      the rest are reported as registered sensitivity, not as additional chances to succeed. No alpha
+      is spent on them.
+exclusions: items with no decidable proposition; agents returning no parseable claim for an item; observations
+  whose alignment score is below T_ALIGN. Exclusion rules are frozen here and applied identically to every
+  arm.
+analysis_splits:
+  calibration_fraction: 0.5
+  split_seed: 20260807
+  note: calibration/test split is drawn once from the pinned corpus and reused by every arm, so arms differ
+    only in aggregation
+cost:
+  rate_source: slice 3 measured paid-tier rates (USD per 1M tokens)
+  token_projection:
+    prompt_tokens_per_call: 900
+    completion_tokens_per_call: 2000
+    basis: registered max_tokens; prompt length projected from the corpus theory+question distribution
+  panels:
+    M=3:
+      calls: 29415
+      usd: 8.55
+      usd_with_retry: 10.26
+      per_member:
+        qwen:
+          tier: local
+          calls: 9805
+          usd: 0.0
+          note: no metered rate at this tier
+        glm:
+          tier: free
+          calls: 9805
+          usd: 0.0
+          note: no metered rate at this tier
+        nemotron:
+          tier: paid
+          calls: 9805
+          rate_in: 0.08
+          rate_out: 0.4
+          usd: 8.55
+    M=4:
+      calls: 39220
+      usd: 11.36
+      usd_with_retry: 13.63
+      per_member:
+        qwen:
+          tier: local
+          calls: 9805
+          usd: 0.0
+          note: no metered rate at this tier
+        glm:
+          tier: free
+          calls: 9805
+          usd: 0.0
+          note: no metered rate at this tier
+        nemotron:
+          tier: paid
+          calls: 9805
+          rate_in: 0.08
+          rate_out: 0.4
+          usd: 8.55
+        gptoss:
+          tier: paid
+          calls: 9805
+          rate_in: 0.03
+          rate_out: 0.13
+          usd: 2.81
+    M=5:
+      calls: 49025
+      usd: 18.65
+      usd_with_retry: 22.38
+      per_member:
+        qwen:
+          tier: local
+          calls: 9805
+          usd: 0.0
+          note: no metered rate at this tier
+        glm:
+          tier: free
+          calls: 9805
+          usd: 0.0
+          note: no metered rate at this tier
+        nemotron:
+          tier: paid
+          calls: 9805
+          rate_in: 0.08
+          rate_out: 0.4
+          usd: 8.55
+        gptoss:
+          tier: paid
+          calls: 9805
+          rate_in: 0.03
+          rate_out: 0.13
+          usd: 2.81
+        gemma:
+          tier: paid
+          calls: 9805
+          rate_in: 0.07
+          rate_out: 0.34
+          usd: 7.29
+  contingencies:
+    sixth_family_promotion:
+      when: a primary member fails its echo check or becomes unreachable
+      tier: paid
+      calls: 9805
+      rate_in: 0.06
+      rate_out: 0.12
+      usd: 2.88
+      note: a promoted member runs a FULL pass, so this is additive, not a swap
+    qwen_openrouter_fallback:
+      when: the local qwen endpoint is unreachable or its weights do not match
+      tier: paid
+      calls: 9805
+      rate_in: 0.42
+      rate_out: 2.55
+      usd: 53.71
+      note: qwen is free while local; the fallback is metered, so this contingency is the single largest
+        unbudgeted risk in the design
+  retry_allowance: 0.2
+  authorised_volume:
+    calls: 58830
+    basis: 9805 items x 6 families (M=5 plus the declared margin)
+    usd_authorised: 121.0
+    usd_authorisation_source: REQUEST.md OQ4, human 2026-08-30
+    usd_estimated_worst_case: 90.29
+    note: OQ4's ~$121 was a scaling estimate made before per-tier rates were applied; the rate-derived
+      worst case is lower. The CAP is held at the authorised $121 so the run cannot exceed what was authorised,
+      and the estimate is reported separately rather than quietly replacing the authorisation.
+  hard_cap:
+    per_panel_cumulative_calls:
+      M=3: 35298
+      M=4: 47064
+      M=5: 58830
+    per_panel_cumulative_usd:
+      M=3: 10.26
+      M=4: 13.63
+      M=5: 22.38
+    run_total_usd: 121.0
+    persistence: both counters are persisted to out/cycle3/caps.json and survive re-runs; a re-run RESUMES
+      them rather than resetting, charges before the call so a crash cannot re-run free, and aborts on
+      breach of either the call cap or the dollar cap
+    retries_count_against_caps: true
+    paid_ids_required: where a paid tier exists the paid id is registered and used; :free ids are not
+      pinned, since slice 3 measured them 429ing and a full panel pass cannot rely on them
+analysis_code_freeze: exp3/run_cycle3.py and its dependencies are committed at the tag. Any change after
+  the tag is a protocol amendment and must be recorded in DECISIONS.md.

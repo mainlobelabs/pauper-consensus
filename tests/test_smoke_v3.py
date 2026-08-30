@@ -1,0 +1,204 @@
+"""exp3.smoke_v3 pins an expected echo per panel member without becoming a data source (B4)."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import pytest
+
+from exp3 import smoke_v3 as S
+
+
+class FakeResp:
+    def __init__(self, status=200, payload=None, text=""):
+        self.status_code = status
+        self._p = payload or {}
+        self.text = text
+    def json(self):
+        return self._p
+
+
+class FakeHTTP:
+    """Counts calls, so 'exactly one attempt' is a tested property, not a comment."""
+    calls: list = []
+    def __init__(self, *a, **k): pass
+    def __enter__(self): return self
+    def __exit__(self, *a): return False
+    def post(self, url, json=None, headers=None):
+        FakeHTTP.calls.append({"url": url, "model": (json or {}).get("model"),
+                               "max_tokens": (json or {}).get("max_tokens")})
+        return FakeResp(200, {"model": (json or {}).get("model"),
+                              "usage": {"total_tokens": 7}})
+    def get(self, url):
+        return FakeResp(200, {"model_path": "/home/jmannings/.lmstudio/models/unsloth/"
+                                            "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf"})
+
+
+@pytest.fixture(autouse=True)
+def _no_network(monkeypatch, tmp_path):
+    import httpx
+    FakeHTTP.calls = []
+    monkeypatch.setattr(httpx, "Client", FakeHTTP)
+    monkeypatch.setattr(S, "SMOKE_DIR", tmp_path / "smoke")
+    class FakeClient:
+        def __init__(self, backend, timeout=None, base_url=None):
+            self.base = base_url or "https://openrouter.ai/api/v1"
+            self.key = "sk-secret-value"
+    monkeypatch.setattr("wct.nodes.Client", FakeClient)
+
+
+def test_exactly_one_call_per_endpoint():
+    S.run(include_fallback=True)
+    assert len(FakeHTTP.calls) == len(S.PANEL) + 1
+    models = [c["model"] for c in FakeHTTP.calls]
+    assert len(models) == len(set(models)), "an endpoint was probed more than once"
+
+
+def test_smoke_is_cheap_by_construction():
+    S.run(include_fallback=False)
+    assert all(c["max_tokens"] == S.SMOKE_MAX_TOKENS <= 64 for c in FakeHTTP.calls)
+
+
+def test_panel_ordering_and_nested_subsets():
+    ranks = [c["rank"] for c in S.PANEL]
+    assert ranks == [1, 2, 3, 4, 5, 6]
+    assert S.M_SUBSETS[3] == (1, 2, 3)
+    assert set(S.M_SUBSETS[3]) < set(S.M_SUBSETS[4]) < set(S.M_SUBSETS[5])
+    assert 6 not in S.M_SUBSETS[5], "rank 6 is the declared margin, not a primary member"
+    assert S.PANEL[5]["role"] == "declared_margin"
+
+
+def test_local_member_is_pinned_by_weights_not_by_echo():
+    r = S.run(include_fallback=False, only={"qwen"})
+    ident = r["records"][0]["identity"]
+    assert ident["registered_weights"].endswith("Qwen3.8-27B-Q4_K_M.gguf")
+    assert ident["weights_match"] is True
+    assert ident["weights_readable"] is True
+
+
+def test_local_member_fails_when_weights_cannot_be_read(monkeypatch):
+    monkeypatch.setattr(S, "local_props", lambda *a, **k: {})
+    r = S.run(include_fallback=False, only={"qwen"})
+    ident = r["records"][0]["identity"]
+    assert ident["matches_expected"] is False
+    assert "could not be read" in (ident.get("note") or "")
+
+
+def test_wrong_weights_behind_the_same_alias_is_caught(monkeypatch):
+    monkeypatch.setattr(S, "local_props", lambda *a, **k: {"model_path": "/models/something-else.gguf"})
+    res = S.run(include_fallback=False, only={"qwen"})
+    with pytest.raises(S.SmokeError, match="DIFFERENT model"):
+        S.verify(res)
+
+
+def test_identity_mismatch_is_a_substitution_not_a_pass(monkeypatch):
+    def bad_post(self, url, json=None, headers=None):
+        FakeHTTP.calls.append({"url": url, "model": (json or {}).get("model"),
+                               "max_tokens": (json or {}).get("max_tokens")})
+        return FakeResp(200, {"model": "some/other-model"})
+    monkeypatch.setattr(FakeHTTP, "post", bad_post)
+    res = S.run(include_fallback=False, only={"glm"})
+    with pytest.raises(S.SmokeError, match="DIFFERENT model"):
+        S.verify(res)
+
+
+def test_unreachable_endpoint_is_reported_not_silently_dropped(monkeypatch):
+    def dead(self, url, json=None, headers=None):
+        return FakeResp(429, {}, text='{"error":{"code":429,"message":"rate limited"}}')
+    monkeypatch.setattr(FakeHTTP, "post", dead)
+    res = S.run(include_fallback=False, only={"gemma"})
+    with pytest.raises(S.SmokeError, match="unreachable"):
+        S.verify(res)
+    rep = S.verify(res, require_all=False)
+    assert rep["unreachable"] == ["gemma"]
+
+
+def test_no_credential_reaches_the_artifact(monkeypatch):
+    def dead(self, url, json=None, headers=None):
+        return FakeResp(401, {}, text=json_dumps_with_secret())
+    def json_dumps_with_secret():
+        return json.dumps({"error": {"code": 401, "message": "bad key",
+                                     "metadata": {"raw": {"api_key": "sk-live-DEADBEEF"},
+                                                  "billing_email": "a@b.com"}}})
+    monkeypatch.setattr(FakeHTTP, "post", dead)
+    res = S.run(include_fallback=False, only={"gptoss"})
+    blob = json.dumps(res)
+    assert "sk-live-DEADBEEF" not in blob
+    assert "billing_email" not in blob
+    assert "a@b.com" not in blob
+
+
+def test_writes_only_under_the_smoke_dir(tmp_path):
+    res = S.run(include_fallback=False)
+    written = list((tmp_path / "smoke").rglob("*"))
+    assert [p.name for p in written if p.is_file()] == ["smoke.json"]
+    saved = json.loads((tmp_path / "smoke" / "smoke.json").read_text())
+    assert saved["attempts_per_endpoint"] == 1
+    assert saved["measured_at"].endswith("Z")
+
+
+def test_expected_echoes_are_produced_for_the_registration():
+    res = S.run(include_fallback=False)
+    echoes = S.expected_echoes(res)
+    assert echoes["glm"] == "zai-org/GLM-5.2"
+    assert len(echoes) == len(S.PANEL)
+
+
+def test_n_params_gap_is_recorded_not_silently_passed(monkeypatch):
+    """/props does not expose n_params; the entry must say so rather than imply a check."""
+    monkeypatch.setattr(S, "local_props", lambda *a, **k: {
+        "model_path": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/"
+                      "Qwen3.8-27B-Q4_K_M.gguf",
+        "model_ftype": "Q4_K_M", "n_params": None,
+        "n_params_endpoint_verifiable": False})
+    r = S.run(include_fallback=False, only={"qwen"})
+    ident = r["records"][0]["identity"]
+    assert ident["n_params_endpoint_verifiable"] is False
+    assert "does not expose it" in ident["n_params_note"]
+    assert ident["weights_match"] is True, "the verifiable half must still be checked"
+
+
+def test_n_params_is_reported_when_the_endpoint_does_expose_it(monkeypatch):
+    monkeypatch.setattr(S, "local_props", lambda *a, **k: {
+        "model_path": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/"
+                      "Qwen3.8-27B-Q4_K_M.gguf",
+        "model_ftype": "Q4_K_M", "n_params": 27_000_000_000,
+        "n_params_endpoint_verifiable": True})
+    r = S.run(include_fallback=False, only={"qwen"})
+    ident = r["records"][0]["identity"]
+    assert ident["n_params_endpoint_verifiable"] is True
+    assert "n_params_note" not in ident
+
+
+def test_tag_ready_is_false_when_a_member_was_never_probed():
+    res = {"records": [{"agent": "qwen", "status": "ok",
+                        "identity": {"matches_expected": True}}]}
+    ok, reasons = S.tag_ready(res)
+    assert ok is False
+    assert any("never probed" in r for r in reasons)
+
+
+def test_tag_ready_is_false_on_an_unreachable_member():
+    recs = [{"agent": c["agent"], "status": "ok", "identity": {"matches_expected": True}}
+            for c in S.PANEL] + [{"agent": S.QWEN_FALLBACK["agent"], "status": "ok",
+                                  "identity": {"matches_expected": True}}]
+    recs[2]["status"] = "error"
+    ok, reasons = S.tag_ready({"records": recs})
+    assert ok is False and any("no observed echo to pin" in r for r in reasons)
+
+
+def test_tag_ready_is_false_on_an_identity_mismatch():
+    recs = [{"agent": c["agent"], "status": "ok", "identity": {"matches_expected": True}}
+            for c in S.PANEL] + [{"agent": S.QWEN_FALLBACK["agent"], "status": "ok",
+                                  "identity": {"matches_expected": True}}]
+    recs[1]["identity"]["matches_expected"] = False
+    ok, reasons = S.tag_ready({"records": recs})
+    assert ok is False and any("did not match" in r for r in reasons)
+
+
+def test_tag_ready_is_true_only_when_every_member_and_the_fallback_are_observed():
+    recs = [{"agent": c["agent"], "status": "ok", "identity": {"matches_expected": True}}
+            for c in S.PANEL] + [{"agent": S.QWEN_FALLBACK["agent"], "status": "ok",
+                                  "identity": {"matches_expected": True}}]
+    ok, reasons = S.tag_ready({"records": recs})
+    assert ok is True and reasons == []

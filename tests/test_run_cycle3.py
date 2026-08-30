@@ -1,0 +1,324 @@
+"""The cycle-3 driver fails closed on every registered precondition (B8, B12, B13)."""
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import pytest
+
+from exp3 import run_cycle3 as R
+
+
+@pytest.fixture(scope="module")
+def reg():
+    return R.load_registration()
+
+
+# ------------------------------------------------------------------ B13 instrument
+
+def test_no_cuda_fails_closed_rather_than_using_fp16(reg, monkeypatch):
+    import torch
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: False)
+    with pytest.raises(R.RegistrationError, match="NO\n?\\s*fp16 fallback|fp16 fallback"):
+        R.assert_registered_instrument(reg)
+
+
+def test_missing_torch_fails_closed(reg, monkeypatch):
+    import builtins
+    real = builtins.__import__
+    def no_torch(name, *a, **k):
+        if name == "torch":
+            raise ImportError("boom")
+        return real(name, *a, **k)
+    monkeypatch.setattr(builtins, "__import__", no_torch)
+    with pytest.raises(R.RegistrationError, match="torch unavailable"):
+        R.assert_registered_instrument(reg)
+
+
+def test_a_registration_demanding_fp16_is_refused():
+    with pytest.raises(R.RegistrationError, match="demands fp32/cuda"):
+        R.assert_registered_instrument(
+            {"instrument": {"precision": "fp16", "device": "cuda", "nli_model": "x"}})
+
+
+@pytest.mark.skipif(not __import__("torch").cuda.is_available(), reason="no CUDA device")
+def test_with_cuda_the_instrument_is_fp32_and_recorded(reg):
+    info = R.assert_registered_instrument(reg)
+    assert info["device"].startswith("cuda")
+    assert info["precision"] == "fp32"
+    assert info["gpu_name"] and info["torch"]
+
+
+# ------------------------------------------------------------------ cache isolation
+
+def test_frozen_cache_root_is_refused(monkeypatch):
+    monkeypatch.setenv("WCT_CACHE", str(R.FROZEN_CACHE))
+    with pytest.raises(R.RegistrationError, match="frozen root"):
+        R.assert_cache_isolation()
+
+
+def test_unset_cache_root_is_refused(monkeypatch):
+    monkeypatch.delenv("WCT_CACHE", raising=False)
+    with pytest.raises(R.RegistrationError, match="WCT_CACHE is unset"):
+        R.assert_cache_isolation()
+
+
+def test_separate_cache_root_is_accepted(monkeypatch, tmp_path):
+    monkeypatch.setenv("WCT_CACHE", str(tmp_path))
+    assert R.assert_cache_isolation() == str(tmp_path.resolve())
+
+
+# ------------------------------------------------------------------ B8 the tag
+
+def test_missing_tag_blocks_generation(reg, monkeypatch):
+    monkeypatch.setattr(R, "_git", lambda *a: "")
+    with pytest.raises(R.RegistrationError, match="does not exist"):
+        R.assert_tagged(reg)
+
+
+def test_tag_pointing_at_a_different_tree_blocks_generation(reg, monkeypatch):
+    def fake(*a):
+        if a[0] == "tag":
+            return reg["tag"]
+        if a[:2] == ("rev-parse", f"{reg['tag']}^{{tree}}"):
+            return "a" * 40
+        if a[0] == "rev-parse":
+            return "b" * 40
+        return ""
+    monkeypatch.setattr(R, "_git", fake)
+    with pytest.raises(R.RegistrationError, match="not the code that was registered"):
+        R.assert_tagged(reg)
+
+
+def test_uncommitted_registered_code_blocks_generation(reg, monkeypatch):
+    def fake(*a):
+        if a[0] == "tag":
+            return reg["tag"]
+        if a[0] == "rev-parse":
+            return "c" * 40
+        if a[0] == "status":
+            return " M exp3/run_cycle3.py"
+        return ""
+    monkeypatch.setattr(R, "_git", fake)
+    with pytest.raises(R.RegistrationError, match="uncommitted changes"):
+        R.assert_tagged(reg)
+
+
+# ------------------------------------------------------------------ B12 scheduling
+
+def test_generation_is_model_major():
+    s = R.Scheduler()
+    s.begin_generation("qwen")
+    with pytest.raises(R.RegistrationError, match="MODEL-MAJOR"):
+        s.begin_generation("glm")
+    s.end_generation("qwen")
+    s.begin_generation("glm")           # only now
+
+
+def test_no_measurement_during_an_open_generation_pass():
+    s = R.Scheduler()
+    s.begin_generation("qwen")
+    with pytest.raises(R.RegistrationError, match="during an open generation pass"):
+        s.guard_measurement()
+    with pytest.raises(R.RegistrationError, match="cannot analyse while"):
+        s.begin_analysis()
+
+
+def test_generation_cannot_restart_after_analysis():
+    s = R.Scheduler()
+    s.begin_generation("qwen"); s.end_generation("qwen"); s.begin_analysis()
+    with pytest.raises(R.RegistrationError, match="cannot start after analysis"):
+        s.begin_generation("glm")
+
+
+def test_a_model_cannot_run_two_passes():
+    s = R.Scheduler()
+    s.begin_generation("qwen"); s.end_generation("qwen")
+    with pytest.raises(R.RegistrationError, match="already completed"):
+        s.begin_generation("qwen")
+
+
+# ------------------------------------------------------------------ B7 caps
+
+def test_caps_persist_across_runs(reg, tmp_path):
+    p = tmp_path / "caps.json"
+    c = R.Caps.load(reg, p)
+    start = c.remaining("M=5")
+    c.charge("M=5", 10)
+    again = R.Caps.load(reg, p)
+    assert again.remaining("M=5") == start - 10, "a re-run reset the counter"
+
+
+def test_cap_breach_aborts(reg, tmp_path):
+    c = R.Caps.load(reg, tmp_path / "caps.json")
+    with pytest.raises(R.RegistrationError, match="cumulative cap"):
+        c.charge("M=5", c.limits["M=5"] + 1)
+
+
+def test_cap_is_charged_before_the_call(reg, tmp_path):
+    """Charging after the call would let a crash re-run for free."""
+    p = tmp_path / "caps.json"
+    c = R.Caps.load(reg, p)
+    c.charge("M=3", 5)
+    assert json.loads(p.read_text())["used"]["M=3"] == 5
+
+
+# ------------------------------------------------------------------ panels + dry run
+
+def test_nested_subsets_are_actually_nested(reg):
+    a = {m["agent"] for m in R.panel_members(reg, 3)}
+    b = {m["agent"] for m in R.panel_members(reg, 4)}
+    c = {m["agent"] for m in R.panel_members(reg, 5)}
+    assert a < b < c and len(a) == 3 and len(c) == 5
+
+
+def test_dry_run_issues_zero_generation_calls(monkeypatch):
+    called = []
+    monkeypatch.setattr(R, "assert_tagged", lambda r: called.append("tag"))
+    out = R.run(m=5, dry_run=True)
+    assert out["generated"] == 0
+    assert called == [], "a dry run must not even check the tag; it issues nothing"
+    assert out["planned_calls"] == out["n_items"] * 5
+    assert out["preflight"]["dry_run"] is True
+
+
+# ------------------------------------------------------------------ generation workflow
+
+class FakeGen:
+    def __init__(self, error=None):
+        self.error = error
+        self.trace = "step 1: the cat is kind."
+
+
+class FakeClient:
+    """Records every call so scheduling and retry behaviour are observable."""
+    calls: list = []
+    fail_first_n = 0
+
+    def __init__(self, backend, base_url=None, **k):
+        self.backend = backend
+
+    def generate(self, item, agent, model, role, seed, temperature, max_tokens,
+                 expected_resolved=None):
+        FakeClient.calls.append({"agent": agent, "item": item.item_id, "role": role})
+        n = len([c for c in FakeClient.calls if c["item"] == item.item_id
+                 and c["agent"] == agent])
+        if n <= FakeClient.fail_first_n:
+            return FakeGen(error="transient")
+        return FakeGen()
+
+
+class FakeItem:
+    def __init__(self, i):
+        self.item_id = f"item-{i}"
+
+
+@pytest.fixture
+def fake_gen(monkeypatch):
+    FakeClient.calls = []
+    FakeClient.fail_first_n = 0
+    monkeypatch.setattr("wct.nodes.Client", FakeClient)
+    return FakeClient
+
+
+def test_generation_is_model_major_across_the_panel(reg, fake_gen, tmp_path):
+    members = R.panel_members(reg, 3)
+    items = [FakeItem(i) for i in range(4)]
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    sched = R.Scheduler()
+    cell, reports = R.generate_panel(reg, members, items, caps, "M=3", sched)
+    order = [c["agent"] for c in fake_gen.calls]
+    # each agent's calls must be contiguous: one model completes before the next starts
+    seen, blocks = set(), []
+    for a in order:
+        if not blocks or blocks[-1] != a:
+            assert a not in seen, f"{a} resumed after another model ran"
+            blocks.append(a); seen.add(a)
+    assert len(blocks) == len(members)
+    assert len(cell) == len(items)
+    assert sched.completed == [m["agent"] for m in members]
+
+
+def test_every_attempt_including_retries_charges_the_cap(reg, fake_gen, tmp_path):
+    fake_gen.fail_first_n = 1                    # each item fails once, then succeeds
+    members = R.panel_members(reg, 3)[:1]
+    items = [FakeItem(i) for i in range(3)]
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    before = caps.remaining("M=3")
+    R.generate_panel(reg, members, items, caps, "M=3", R.Scheduler())
+    spent = before - caps.remaining("M=3")
+    assert spent == 6, f"3 items x 2 attempts should charge 6, charged {spent}"
+
+
+def test_retries_are_bounded_and_failures_are_not_cached(reg, fake_gen, tmp_path):
+    fake_gen.fail_first_n = 99                   # never succeeds
+    members = R.panel_members(reg, 3)[:1]
+    items = [FakeItem(i) for i in range(2)]
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    cell, reports = R.generate_panel(reg, members, items, caps, "M=3", R.Scheduler())
+    assert cell == {}, "a failing generation must not enter the cell"
+    assert reports[0]["n_failed_items"] == 2
+    assert len(fake_gen.calls) == 4, "retries must be bounded at max_attempts"
+
+
+def test_cap_breach_stops_generation(reg, fake_gen, tmp_path):
+    members = R.panel_members(reg, 3)[:1]
+    items = [FakeItem(i) for i in range(5)]
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    caps.used["M=3"] = caps.limits["M=3"] - 2     # only two calls left
+    with pytest.raises(R.RegistrationError, match="cumulative cap"):
+        R.generate_panel(reg, members, items, caps, "M=3", R.Scheduler())
+
+
+# ------------------------------------------------------------------ promotion
+
+def test_margin_is_promoted_into_the_vacated_rank(reg):
+    members = R.panel_members(reg, 5)
+    failed = members[2]["agent"]
+    promoted, event = R.promote(reg, members, failed)
+    assert event["promoted"] == R.margin_member(reg)["agent"]
+    assert event["vacated"] == failed
+    assert [m["rank"] for m in promoted] == [m["rank"] for m in members]
+    assert failed not in {m["agent"] for m in promoted}
+    assert "retained" in event["prior_data"]
+
+
+def test_promoting_an_agent_not_in_the_panel_is_refused(reg):
+    with pytest.raises(R.RegistrationError, match="not in this panel"):
+        R.promote(reg, R.panel_members(reg, 3), "nobody")
+
+
+def test_no_reserve_left_is_refused(reg):
+    members = R.panel_members(reg, 5) + [R.margin_member(reg)]
+    with pytest.raises(R.RegistrationError, match="no reserve left"):
+        R.promote(reg, members, members[0]["agent"])
+
+
+def test_qwen_declares_a_fallback(reg):
+    assert R.fallback_for(reg, "qwen") is not None
+    assert R.fallback_for(reg, "glm") is None
+
+
+# ------------------------------------------------------------------ dose response
+
+def test_dose_response_detects_growth_and_flatness():
+    grow = {3: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
+                "delta_log_loss": {"point": 0.03}}}}},
+            5: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
+                "delta_log_loss": {"point": 0.06}}}}}}
+    d = R.dose_response(grow, "platt")
+    assert d["monotone_increasing"] is True
+    assert d["increment_M3_to_M5"] == pytest.approx(0.03)
+
+    flat = {3: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
+                "delta_log_loss": {"point": 0.06}}}}},
+            5: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
+                "delta_log_loss": {"point": 0.03}}}}}}
+    f = R.dose_response(flat, "platt")
+    assert f["monotone_increasing"] is False
+    assert f["increment_M3_to_M5"] < 0
+
+
+def test_missing_registration_is_an_error(tmp_path):
+    with pytest.raises(R.RegistrationError, match="is missing"):
+        R.load_registration(tmp_path / "nope.yaml")
