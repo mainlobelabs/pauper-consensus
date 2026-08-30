@@ -151,7 +151,7 @@ def test_caps_persist_across_runs(reg, tmp_path):
 
 def test_cap_breach_aborts(reg, tmp_path):
     c = R.Caps.load(reg, tmp_path / "caps.json")
-    with pytest.raises(R.RegistrationError, match="cumulative cap"):
+    with pytest.raises(R.RegistrationError, match="cumulative CALL cap"):
         c.charge("M=5", c.limits["M=5"] + 1)
 
 
@@ -175,11 +175,12 @@ def test_nested_subsets_are_actually_nested(reg):
 def test_dry_run_issues_zero_generation_calls(monkeypatch):
     called = []
     monkeypatch.setattr(R, "assert_tagged", lambda r: called.append("tag"))
-    out = R.run(m=5, dry_run=True)
+    out = R.run(dry_run=True)
     assert out["generated"] == 0
     assert called == [], "a dry run must not even check the tag; it issues nothing"
-    assert out["planned_calls"] == out["n_items"] * 5
+    assert out["planned_calls"] == out["n_items"] * 5, "the union is the largest panel"
     assert out["preflight"]["dry_run"] is True
+    assert out["sizes"] == [3, 4, 5]
 
 
 # ------------------------------------------------------------------ generation workflow
@@ -266,7 +267,7 @@ def test_cap_breach_stops_generation(reg, fake_gen, tmp_path):
     items = [FakeItem(i) for i in range(5)]
     caps = R.Caps.load(reg, tmp_path / "caps.json")
     caps.used["M=3"] = caps.limits["M=3"] - 2     # only two calls left
-    with pytest.raises(R.RegistrationError, match="cumulative cap"):
+    with pytest.raises(R.RegistrationError, match="cumulative CALL cap"):
         R.generate_panel(reg, members, items, caps, "M=3", R.Scheduler())
 
 
@@ -301,22 +302,111 @@ def test_qwen_declares_a_fallback(reg):
 
 # ------------------------------------------------------------------ dose response
 
-def test_dose_response_detects_growth_and_flatness():
-    grow = {3: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
-                "delta_log_loss": {"point": 0.03}}}}},
-            5: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
-                "delta_log_loss": {"point": 0.06}}}}}}
-    d = R.dose_response(grow, "platt")
-    assert d["monotone_increasing"] is True
-    assert d["increment_M3_to_M5"] == pytest.approx(0.03)
+def _margins(vals_by_m, n=400, spread=0.02, seed=0):
+    """Synthetic per-item margins with a known mean, for adjudication tests."""
+    import numpy as np
+    rng = np.random.default_rng(seed)
+    ids = [f"i{k}" for k in range(n)]
+    return {m: {"margin": rng.normal(v, spread, n), "item_ids": ids,
+                "selected_single": "x", "map": "platt"}
+            for m, v in vals_by_m.items()}
 
-    flat = {3: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
-                "delta_log_loss": {"point": 0.06}}}}},
-            5: {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
-                "delta_log_loss": {"point": 0.03}}}}}}
-    f = R.dose_response(flat, "platt")
-    assert f["monotone_increasing"] is False
-    assert f["increment_M3_to_M5"] < 0
+
+def test_dose_response_supports_when_the_ci_clears_the_floor():
+    d = R.dose_response(_margins({3: 0.02, 5: 0.10}), floor=0.0071, n_boot=300)
+    assert d["verdict"] == "supports"
+    assert d["ci"]["lo"] > d["detectable_floor"]
+    assert d["monotone_increasing"] is True
+
+
+def test_dose_response_refutes_when_the_ci_is_below_the_floor():
+    d = R.dose_response(_margins({3: 0.06, 5: 0.06}, spread=0.005), floor=0.05, n_boot=300)
+    assert d["verdict"] == "refutes"
+    assert d["ci"]["hi"] < d["detectable_floor"]
+
+
+def test_dose_response_inconclusive_when_the_ci_spans_the_floor():
+    d = R.dose_response(_margins({3: 0.05, 5: 0.058}, spread=0.08), floor=0.0071, n_boot=300)
+    assert d["verdict"] == "inconclusive"
+    assert d["ci"]["lo"] <= d["detectable_floor"] <= d["ci"]["hi"]
+
+
+def test_the_three_verdicts_are_mutually_exclusive():
+    """lo > floor and hi < floor cannot both hold, so exactly one verdict applies."""
+    for vals, spread, floor in (({3: 0.02, 5: 0.10}, 0.02, 0.0071),
+                                ({3: 0.06, 5: 0.06}, 0.005, 0.05),
+                                ({3: 0.05, 5: 0.058}, 0.08, 0.0071)):
+        d = R.dose_response(_margins(vals, spread=spread), floor=floor, n_boot=300)
+        lo, hi = d["ci"]["lo"], d["ci"]["hi"]
+        assert lo <= hi
+        assert sum([lo > floor, hi < floor]) <= 1, "two verdicts fired at once"
+        assert d["verdict"] in {"supports", "refutes", "inconclusive"}
+    assert d["adjudication"]["mutually_exclusive"] is True
+
+
+def test_monotonicity_is_reported_but_not_part_of_the_verdict():
+    d = R.dose_response(_margins({3: 0.10, 5: 0.02}), floor=0.0071, n_boot=300)
+    assert d["monotone_increasing"] is False
+    assert d["verdict"] == "refutes"          # decided by the CI, not by monotonicity
+
+
+def test_dose_response_uses_the_item_block_bootstrap():
+    d = R.dose_response(_margins({3: 0.02, 5: 0.10}), floor=0.0071, n_boot=300)
+    assert d["ci"]["n_boot"] > 0 and d["ci"]["alpha"] == 0.05
+    assert d["n_shared_items"] == 400
+
+
+# ------------------------------------------------------------------ dollar caps (B7)
+
+def test_dollar_cap_is_enforced_not_just_calls(reg, tmp_path):
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    paid = next(a for a in caps.rates)
+    assert caps.price(paid) > 0, "a metered agent must have a nonzero per-call price"
+    caps.usd_limits[list(caps.usd_limits)[0]] = 0.0001
+    panel = list(caps.usd_limits)[0]
+    with pytest.raises(R.RegistrationError, match="USD cap"):
+        caps.charge(panel, 1, agent=paid)
+
+
+def test_run_total_usd_authorisation_is_enforced(reg, tmp_path):
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    paid = next(a for a in caps.rates)
+    caps.run_total_usd = 0.0001
+    for p in caps.usd_limits:
+        caps.usd_limits[p] = 1e9
+    with pytest.raises(R.RegistrationError, match="run-total USD authorisation"):
+        caps.charge("M=3", 1, agent=paid)
+
+
+def test_usd_spend_persists_across_runs(reg, tmp_path):
+    p = tmp_path / "caps.json"
+    caps = R.Caps.load(reg, p)
+    paid = next(a for a in caps.rates)
+    caps.charge("M=3", 2, agent=paid)
+    again = R.Caps.load(reg, p)
+    assert again.usd_used["M=3"] == pytest.approx(caps.usd_used["M=3"])
+    assert again.usd_used["M=3"] > 0
+
+
+def test_unmetered_tier_costs_nothing(reg, tmp_path):
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    assert caps.price("qwen") == 0.0
+    caps.charge("M=3", 1, agent="qwen")
+    assert caps.usd_used.get("M=3", 0.0) == 0.0
+
+
+# ------------------------------------------------------------------ latin square
+
+def test_roles_rotate_across_models_not_just_items(reg, fake_gen, tmp_path):
+    members = R.panel_members(reg, 3)
+    items = [FakeItem(i) for i in range(4)]
+    caps = R.Caps.load(reg, tmp_path / "caps.json")
+    R.generate_panel(reg, members, items, caps, "M=3", R.Scheduler())
+    by_item = {}
+    for c in fake_gen.calls:
+        by_item.setdefault(c["item"], set()).add(c["role"])
+    assert any(len(v) > 1 for v in by_item.values()), \
+        "every model got the same role on an item: role is confounded with item"
 
 
 def test_missing_registration_is_an_error(tmp_path):

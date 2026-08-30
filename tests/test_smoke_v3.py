@@ -196,9 +196,29 @@ def test_tag_ready_is_false_on_an_identity_mismatch():
     assert ok is False and any("did not match" in r for r in reasons)
 
 
+def _complete_records():
+    """Every member observed, including the local endpoint's full identity pin."""
+    recs = []
+    for c in S.PANEL:
+        ident = {"matches_expected": True}
+        if c["backend"] == "local":
+            ident["n_params_endpoint_verifiable"] = True
+        recs.append({"agent": c["agent"], "status": "ok", "identity": ident})
+    recs.append({"agent": S.QWEN_FALLBACK["agent"], "status": "ok",
+                 "identity": {"matches_expected": True}})
+    return recs
+
+
 def test_tag_ready_is_true_only_when_every_member_and_the_fallback_are_observed():
-    recs = [{"agent": c["agent"], "status": "ok", "identity": {"matches_expected": True}}
-            for c in S.PANEL] + [{"agent": S.QWEN_FALLBACK["agent"], "status": "ok",
-                                  "identity": {"matches_expected": True}}]
-    ok, reasons = S.tag_ready({"records": recs})
+    ok, reasons = S.tag_ready({"records": _complete_records()})
     assert ok is True and reasons == []
+
+
+def test_tag_ready_is_false_when_only_half_the_local_identity_pin_is_checkable():
+    """model_path alone is not the registered pin; n_params is the other half."""
+    recs = _complete_records()
+    local = next(r for r in recs if r["agent"] == "qwen")
+    local["identity"]["n_params_endpoint_verifiable"] = False
+    ok, reasons = S.tag_ready({"records": recs})
+    assert ok is False
+    assert any("n_params" in r for r in reasons)

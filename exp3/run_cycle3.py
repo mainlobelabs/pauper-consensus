@@ -122,37 +122,94 @@ def assert_tagged(reg: dict) -> dict:
 
 @dataclass
 class Caps:
-    """Hard cumulative per-panel call caps, persisted across re-runs."""
+    """Hard cumulative per-panel CALL and DOLLAR caps, persisted across re-runs.
+
+    The registration claims both counters persist and that the run aborts on breach of
+    either. An earlier version tracked only calls, so the dollar authorisation was a
+    number in a document rather than an enforced limit -- and the dollar cap is the one
+    that actually protects the human's account, because a contingency (a promoted member,
+    a qwen fallback onto a metered tier) can stay inside the call cap while multiplying
+    spend.
+    """
 
     limits: dict
+    usd_limits: dict
+    run_total_usd: float
+    rates: dict
+    tokens: dict
     used: dict = field(default_factory=dict)
+    usd_used: dict = field(default_factory=dict)
     path: Path = CAPS_PATH
 
     @classmethod
     def load(cls, reg: dict, path: Path = CAPS_PATH) -> "Caps":
-        limits = reg["cost"]["hard_cap"]["per_panel_cumulative_calls"]
-        used = {}
-        if path.exists():
-            used = json.loads(path.read_text()).get("used", {})
-        return cls(limits=limits, used=used, path=path)
+        cost = reg["cost"]
+        cap = cost["hard_cap"]
+        state = json.loads(path.read_text()) if path.exists() else {}
+        rates = {}
+        for panel in cost["panels"].values():
+            for agent, rec in panel["per_member"].items():
+                if "rate_in" in rec:
+                    rates[agent] = {"in": rec["rate_in"], "out": rec["rate_out"]}
+        for name, c in (cost.get("contingencies") or {}).items():
+            if "rate_in" in c:
+                rates[name] = {"in": c["rate_in"], "out": c["rate_out"]}
+        return cls(limits=cap["per_panel_cumulative_calls"],
+                   usd_limits=cap.get("per_panel_cumulative_usd", {}),
+                   run_total_usd=float(cap.get("run_total_usd", 0.0)),
+                   rates=rates, tokens=cost["token_projection"],
+                   used=state.get("used", {}), usd_used=state.get("usd_used", {}),
+                   path=path)
+
+    def price(self, agent: str) -> float:
+        """Projected USD for one call by this agent. Unmetered tiers cost 0."""
+        r = self.rates.get(agent)
+        if not r:
+            return 0.0
+        return (self.tokens["prompt_tokens_per_call"] * r["in"]
+                + self.tokens["completion_tokens_per_call"] * r["out"]) / 1e6
 
     def remaining(self, panel: str) -> int:
         return self.limits[panel] - self.used.get(panel, 0)
 
-    def charge(self, panel: str, n: int = 1) -> None:
-        """Charge BEFORE the call, so a crash cannot lose the charge and re-run free."""
+    def remaining_usd(self, panel: str) -> float:
+        return round(self.usd_limits.get(panel, self.run_total_usd)
+                     - self.usd_used.get(panel, 0.0), 6)
+
+    def remaining_run_usd(self) -> float:
+        return round(self.run_total_usd - sum(self.usd_used.values()), 6)
+
+    def charge(self, panel: str, n: int = 1, agent: str | None = None) -> None:
+        """Charge calls AND dollars BEFORE the request, so a crash cannot re-run free."""
         if self.used.get(panel, 0) + n > self.limits[panel]:
             raise RegistrationError(
-                f"panel {panel} cumulative cap {self.limits[panel]} would be exceeded "
+                f"panel {panel} cumulative CALL cap {self.limits[panel]} would be exceeded "
                 f"(used {self.used.get(panel, 0)}, requesting {n}). Caps persist across "
                 f"re-runs by design; raising one is a protocol amendment.")
+        usd = self.price(agent) * n if agent else 0.0
+        if usd:
+            if self.usd_used.get(panel, 0.0) + usd > self.usd_limits.get(
+                    panel, self.run_total_usd) + 1e-9:
+                raise RegistrationError(
+                    f"panel {panel} cumulative USD cap "
+                    f"{self.usd_limits.get(panel, self.run_total_usd)} would be exceeded "
+                    f"(used {self.usd_used.get(panel, 0.0):.4f}, requesting {usd:.4f})")
+            if sum(self.usd_used.values()) + usd > self.run_total_usd + 1e-9:
+                raise RegistrationError(
+                    f"run-total USD authorisation {self.run_total_usd} would be exceeded "
+                    f"(used {sum(self.usd_used.values()):.4f}, requesting {usd:.4f}). This "
+                    f"is the human's authorised budget; raising it is not a code change.")
         self.used[panel] = self.used.get(panel, 0) + n
+        if usd:
+            self.usd_used[panel] = round(self.usd_used.get(panel, 0.0) + usd, 6)
         self.persist()
 
     def persist(self) -> None:
         self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.path.write_text(json.dumps({"used": self.used, "limits": self.limits},
-                                        indent=2, sort_keys=True))
+        self.path.write_text(json.dumps(
+            {"used": self.used, "usd_used": self.usd_used, "limits": self.limits,
+             "usd_limits": self.usd_limits, "run_total_usd": self.run_total_usd},
+            indent=2, sort_keys=True))
 
 
 # ---------------------------------------------------------------- scheduling (B12)
@@ -247,7 +304,8 @@ def fallback_for(reg: dict, agent: str) -> dict | None:
 # ---------------------------------------------------------------- generation (B12)
 
 def generate_member(reg: dict, member: dict, items: list, caps: Caps, panel: str,
-                    sched: Scheduler, max_attempts: int = 2) -> dict:
+                    sched: Scheduler, member_index: int = 0,
+                    max_attempts: int = 2) -> dict:
     """One model's COMPLETE pass. Charges before each call; never caches a failure.
 
     Retries are bounded and deterministic, and every attempt charges the cap, so a
@@ -263,9 +321,12 @@ def generate_member(reg: dict, member: dict, items: list, caps: Caps, panel: str
     errors: list[dict] = []
     try:
         for idx, item in enumerate(items):
-            role = roles[idx % len(roles)]          # Latin-square rotation by item index
+            # Latin square: the offset must include the MEMBER, or every model gets the
+            # same role on the same item and role is perfectly confounded with item --
+            # the opposite of what rotating roles is for.
+            role = roles[(idx + member_index) % len(roles)]
             for attempt in range(1, max_attempts + 1):
-                caps.charge(panel, 1)               # charge BEFORE, including retries
+                caps.charge(panel, 1, agent=member["agent"])   # calls AND dollars, before
                 g = client.generate(
                     item, agent=member["agent"], model=member["model"], role=role,
                     seed=gen_cfg["seed"], temperature=gen_cfg["temperature"],
@@ -287,8 +348,8 @@ def generate_panel(reg: dict, members: list[dict], items: list, caps: Caps,
                    panel: str, sched: Scheduler) -> tuple[dict, list[dict]]:
     """MODEL-MAJOR: each model completes its whole pass before the next begins."""
     per_agent, reports = {}, []
-    for member in members:                      # strictly sequential, one slot at a time
-        rep = generate_member(reg, member, items, caps, panel, sched)
+    for mi, member in enumerate(members):       # strictly sequential, one slot at a time
+        rep = generate_member(reg, member, items, caps, panel, sched, member_index=mi)
         per_agent[member["agent"]] = rep["generations"]
         reports.append({k: v for k, v in rep.items() if k != "generations"})
     cell: dict = {}
@@ -316,6 +377,7 @@ def analyse_panel(reg: dict, items: list, cell: dict, calib_ids: set, sched: Sch
     is_calib = np.array([i in calib_ids for i in riids])
     u, s = observe.instance_arrays(rows)
     res = v3arms.analyse(rows, agents, y, V, riids, X, is_calib, u, s)
+    res["_per_item_margin"] = per_item_margin(rows, agents, y, V, riids, is_calib)
     res["n_items_analysed"] = len(set(riids))
     res["agents"] = agents
     res["alignment_audit"] = audits[:0]          # audits are large; summarised not inlined
@@ -327,15 +389,96 @@ def _margin(res: dict, mapname: str, arm: str = "WCT-EM") -> float | None:
     return node["delta_log_loss"]["point"] if node else None
 
 
-def dose_response(by_m: dict, mapname: str) -> dict:
-    """P2: does the margin over the best single source GROW with panel size?"""
-    pts = {m: _margin(res, mapname) for m, res in sorted(by_m.items())}
-    have = {m: v for m, v in pts.items() if v is not None}
-    monotone = all(b >= a for a, b in zip(list(have.values()), list(have.values())[1:]))
-    increment = (have[max(have)] - have[min(have)]) if len(have) >= 2 else None
-    return {"margin_by_M": have, "monotone_increasing": monotone,
-            "increment_M3_to_M5": increment,
-            "estimand": "margin(M=5) - margin(M=3), paired on items"}
+def per_item_margin(rows, agents, y, V, iids, is_calib, mapname: str = "platt"):
+    """Per-item (single-best loss - panel loss) on TEST items.
+
+    Positive means the panel beat the calibration-selected best single source on that
+    item. Built from the same pieces wct3.arms uses -- same scores, same both-maps fit,
+    same calibration-only selection -- so the dose-response is measured on the registered
+    quantity rather than a lookalike.
+    """
+    import numpy as np
+    from wct import aggregate as agg
+    from wct3.arms import _both_maps
+
+    te = ~is_calib
+    panel_score = agg.em_logodds(V, agg.wct_em(V)[1])
+    panel_p = _both_maps(panel_score, y, is_calib, allow_nonpositive=True)[mapname]
+    singles = {a: _both_maps(agg.wct_u(V[:, [j]]), y, is_calib, allow_nonpositive=True)[mapname]
+               for j, a in enumerate(agents)}
+    # selection on CALIBRATION only, never test
+    exact = {a: agg.log_loss(singles[a][is_calib], y[is_calib]) for a in agents}
+    chosen = min(exact, key=exact.get)
+
+    def loss(p):
+        q = np.clip(p, 1e-12, 1 - 1e-12)
+        return -(y * np.log(q) + (1 - y) * np.log(1 - q))
+
+    margin = (loss(singles[chosen]) - loss(panel_p))[te]
+    return {"margin": margin, "item_ids": [i for i, c in zip(iids, is_calib) if not c],
+            "selected_single": chosen, "map": mapname}
+
+
+def dose_response(by_m: dict, floor: float, mapname: str = "platt",
+                  n_boot: int = 2000, seed: int = 20260807) -> dict:
+    """P2 with the registered uncertainty method and MUTUALLY EXCLUSIVE verdicts.
+
+    `by_m` maps panel size -> per_item_margin() output. The increment is
+    margin(M=max) - margin(M=min), paired on the items both panels scored, with a
+    percentile CI from the same item-block bootstrap the frozen contrasts use.
+
+    The three verdicts partition the outcome space: lo > floor and hi < floor cannot both
+    hold because lo <= hi. An earlier formulation could report SUPPORTS and REFUTES at
+    once for a CI wholly inside (0, floor).
+    """
+    import numpy as np
+    from wct import stats
+
+    sizes = sorted(by_m)
+    if len(sizes) < 2:
+        return {"verdict": "not evaluable", "reason": "fewer than two panel sizes"}
+    lo_m, hi_m = sizes[0], sizes[-1]
+    a, b = by_m[lo_m], by_m[hi_m]
+    shared = [i for i in a["item_ids"] if i in set(b["item_ids"])]
+    ia = {i: k for k, i in enumerate(a["item_ids"])}
+    ib = {i: k for k, i in enumerate(b["item_ids"])}
+    da = np.array([a["margin"][ia[i]] for i in shared])
+    db = np.array([b["margin"][ib[i]] for i in shared])
+    paired = db - da                       # per-item increment from M=lo to M=hi
+
+    ci = stats.item_bootstrap(shared, lambda rows: float(np.mean(paired[rows])),
+                              n_boot=n_boot, seed=seed)
+    points = {m: float(np.mean(by_m[m]["margin"])) for m in sizes}
+    monotone = all(points[x] <= points[y] for x, y in zip(sizes, sizes[1:]))
+
+    lo, hi = ci.get("lo"), ci.get("hi")
+    if lo is None or hi is None:
+        verdict = "inconclusive"
+    elif lo > floor:
+        verdict = "supports"               # increment significantly ABOVE the floor
+    elif hi < floor:
+        verdict = "refutes"                # increment significantly BELOW the floor
+    else:
+        verdict = "inconclusive"           # CI spans the floor
+    return {
+        "estimand": f"margin(M={hi_m}) - margin(M={lo_m}), paired on items",
+        "margin_by_M": points,
+        "monotone_increasing": monotone,
+        "increment": ci.get("point"),
+        "ci": {"lo": lo, "hi": hi, "n_boot": ci.get("n_boot"), "alpha": 0.05},
+        "detectable_floor": floor,
+        "verdict": verdict,
+        "n_shared_items": len(shared),
+        "adjudication": {
+            "supports": "CI lower bound > detectable floor",
+            "refutes": "CI upper bound < detectable floor",
+            "inconclusive": "CI spans the detectable floor",
+            "mutually_exclusive": True,
+            "note": ("monotonicity is REPORTED but is not part of the verdict: it is not a "
+                     "test and adding it as a conjunct would make the three outcomes "
+                     "non-exhaustive"),
+        },
+    }
 
 
 # ---------------------------------------------------------------- orchestration
@@ -352,42 +495,83 @@ def preflight(reg: dict, dry_run: bool) -> dict:
     return report
 
 
-def run(m: int = 5, dry_run: bool = True, registration: Path = PREREG,
-        out_dir: Path = Path("out/cycle3"), limit: int | None = None) -> dict:
-    """Execute the registered workflow. Refuses to generate unless every guard passes."""
+def run(dry_run: bool = True, registration: Path = PREREG,
+        out_dir: Path = Path("out/cycle3"), limit: int | None = None,
+        sizes: tuple[int, ...] = (3, 4, 5)) -> dict:
+    """The whole registered workflow: ONE generation pass, then every nested panel.
+
+    Generating per-M would regenerate the shared members and, worse, place a later
+    model's generation AFTER an earlier panel's analysis -- violating the registered
+    "generation strictly before analysis" discipline (B12) while looking like three tidy
+    runs. The union of the largest panel is generated once, in model-major order, and
+    the nested subsets are then analysed from that single cell.
+    """
     reg = load_registration(registration)
-    members = panel_members(reg, m)
+    union = panel_members(reg, max(sizes))
     report = preflight(reg, dry_run)
     sched = Scheduler()
     caps = Caps.load(reg)
-    panel = f"M={m}"
+    panel_label = f"M={max(sizes)}"
 
     if dry_run:
-        # exercise the scheduling contract without issuing anything
-        for member in members:
+        for member in union:
             sched.begin_generation(member["agent"])
             sched.end_generation(member["agent"])
         sched.begin_analysis()
-        return {"panel": panel, "members": [x["agent"] for x in members],
+        return {"sizes": list(sizes), "union": [x["agent"] for x in union],
                 "n_items": reg["dataset"]["n_items"],
-                "planned_calls": reg["dataset"]["n_items"] * len(members),
-                "cap_remaining": caps.remaining(panel), "generated": 0,
-                "preflight": report, "delta": reg["delta"]["value"]}
+                "planned_calls": reg["dataset"]["n_items"] * len(union),
+                "cap_remaining": caps.remaining(panel_label),
+                "cap_remaining_usd": caps.remaining_usd(panel_label),
+                "generated": 0, "preflight": report, "delta": reg["delta"]["value"]}
 
+    import numpy as np
     from exp3 import corpus_v3
+
     items = corpus_v3.load_corpus()
     if limit:
         items = items[:limit]
-    split_seed = reg["analysis_splits"]["split_seed"]
-    frac = reg["analysis_splits"]["calibration_fraction"]
-    import numpy as np
-    rng = np.random.default_rng(split_seed)
+    split = reg["analysis_splits"]
+    rng = np.random.default_rng(split["split_seed"])
     ids = sorted(i.item_id for i in items)
-    calib_ids = set(rng.permutation(ids)[: int(len(ids) * frac)].tolist())
+    calib_ids = set(rng.permutation(ids)[: int(len(ids) * split["calibration_fraction"])].tolist())
 
-    cell, gen_reports = generate_panel(reg, members, items, caps, panel, sched)
+    # ---- ONE generation pass over the union, model-major, before any analysis
+    events: list[dict] = []
+    members = list(union)
+    cell, gen_reports = generate_panel(reg, members, items, caps, panel_label, sched)
+
+    # ---- registered contingencies, applied before analysis so the panel is fixed
+    for rep in gen_reports:
+        if rep["n_ok"] == 0:
+            agent = rep["agent"]
+            fb = fallback_for(reg, agent)
+            if fb:
+                events.append({"event": "fallback", "for": agent,
+                               "to": fb["model"], "caveat": fb["caveat"]})
+            else:
+                members, ev = promote(reg, members, agent)
+                events.append(ev)
+
     sched.begin_analysis()
-    res = analyse_panel(reg, items, cell, calib_ids, sched)
+
+    # ---- every nested subset from the SAME cell
+    mapname = "platt"
+    by_m, per_m_margin = {}, {}
+    for m in sizes:
+        want = {x["agent"] for x in panel_members(reg, m)}
+        sub = {iid: {a: g for a, g in ags.items() if a in want}
+               for iid, ags in cell.items()}
+        sub = {iid: ags for iid, ags in sub.items() if len(ags) >= 2}
+        res = analyse_panel(reg, items, sub, calib_ids, sched)
+        by_m[m] = res
+        pim = res.pop("_per_item_margin", None)
+        if pim:
+            per_m_margin[m] = pim
+
+    floor = reg["power"]["dose_response_increment"]["detectable_at_registered_n"]
+    dr = (dose_response(per_m_margin, floor=floor, mapname=mapname)
+          if len(per_m_margin) >= 2 else {"verdict": "not evaluable"})
 
     provenance = {
         "registration_tag": reg["tag"],
@@ -395,12 +579,15 @@ def run(m: int = 5, dry_run: bool = True, registration: Path = PREREG,
         "instrument": report["instrument"],
         "cache_namespace": report["cache"],
         "delta": reg["delta"]["value"],
-        "caps_used": caps.used,
+        "caps_used_calls": caps.used,
+        "caps_used_usd": caps.usd_used,
+        "events": events,
     }
     out_dir.mkdir(parents=True, exist_ok=True)
-    payload = {"panel": panel, "members": [x["agent"] for x in members],
-               "generation_reports": gen_reports, "results": res,
-               "provenance": provenance}
-    (out_dir / f"cycle3_{panel}.json").write_text(json.dumps(payload, indent=2,
-                                                            sort_keys=True, default=str))
+    payload = {"sizes": list(sizes), "union": [x["agent"] for x in members],
+               "generation_reports": gen_reports,
+               "results_by_M": {str(k): v for k, v in by_m.items()},
+               "dose_response": dr, "provenance": provenance}
+    (out_dir / "cycle3_results.json").write_text(
+        json.dumps(payload, indent=2, sort_keys=True, default=str))
     return payload

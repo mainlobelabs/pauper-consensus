@@ -215,6 +215,13 @@ def tag_ready(result: dict | None = None) -> tuple[bool, list[str]]:
             reasons.append(f"{c['agent']}: {r.get('status')} — no observed echo to pin")
         elif (r.get("identity") or {}).get("matches_expected") is not True:
             reasons.append(f"{c['agent']}: identity did not match the registered target")
+        elif (c["backend"] == "local"
+              and (r.get("identity") or {}).get("n_params_endpoint_verifiable") is not True):
+            # prereg_v2 pins this endpoint by model_path AND n_params. /props exposes only
+            # the former, so "ok" here means half the pin was checked. Recording that as a
+            # pass would let the registration claim an identity check it never performed.
+            reasons.append(f"{c['agent']}: n_params half of the identity pin is not "
+                           f"endpoint-verifiable (/props does not expose it)")
     fb = by_agent.get(QWEN_FALLBACK["agent"])
     if fb is None or fb.get("status") != "ok":
         reasons.append(f"{QWEN_FALLBACK['agent']}: declared fallback unverified")

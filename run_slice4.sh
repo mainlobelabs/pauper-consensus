@@ -15,13 +15,19 @@ S3EV="1bf61ba"
 V3TAG="$("$PY" -c "import yaml;print(yaml.safe_load(open('prereg_v3.yaml'))['tag'])")"
 export PYTHONPATH="$ROOT"
 export WCT_CACHE="${WCT_CACHE:-$ROOT/out/cache}"
-# the suite contains tests that INVOKE this gate; without this marker the
-# gate -> pytest -> gate cycle never terminates
-export SLICE4_GATE_RUNNING=1
-SMOKE=0; DOTAG=0
+# The suite contains planted-failure tests that INVOKE this gate. A boolean marker
+# stopped the recursion by skipping them entirely, which meant the gate's own suite
+# stage never exercised a single one of its assertions -- the gate certified itself
+# while its self-tests were switched off. A DEPTH counter stops the recursion without
+# disabling them: at depth 1 the planted tests run and re-enter the gate at depth 2,
+# where the suite stage is skipped instead.
+export SLICE4_GATE_DEPTH=$(( ${SLICE4_GATE_DEPTH:-0} + 1 ))
+if [ "$SLICE4_GATE_DEPTH" -ge 2 ]; then export SLICE4_GATE_RUNNING=1; fi
+SMOKE=0; DOTAG=0; ALLOW_INCOMPLETE=0
 for a in "$@"; do
   [ "$a" = "--smoke" ] && SMOKE=1
   [ "$a" = "--tag" ] && DOTAG=1
+  [ "$a" = "--allow-incomplete-smoke" ] && ALLOW_INCOMPLETE=1
 done
 step() { printf '\n=== %s ===\n' "$1"; }
 
@@ -114,6 +120,10 @@ else
 fi
 
 step "8/10 frozen reproduction, all four panels, cache-only"
+if [ "$SLICE4_GATE_DEPTH" -ge 2 ]; then
+  echo "depth $SLICE4_GATE_DEPTH: reproduction skipped (covered at depth 1); the planted"
+  echo "  tests re-entering here target the cheaper assertions above"
+else
 WCT_LOCAL_BASE=http://127.0.0.1:9 "$PY" - <<'PYX'
 import sys
 from wct3 import strict
@@ -128,9 +138,14 @@ for p in ("c1_local", "c1_openrouter", "c2_panelA", "c2_panelB"):
 if bad:
     print(f"FAIL: reproduction broke for {bad}"); sys.exit(1)
 PYX
+fi
 
 step "9/10 full pinned suite"
-"$PY" -m pytest -q tests/
+if [ "$SLICE4_GATE_DEPTH" -ge 2 ]; then
+  echo "depth $SLICE4_GATE_DEPTH: suite stage skipped to break recursion"
+else
+  "$PY" -m pytest -q tests/
+fi
 
 step "10/10 DECISIONS entry current (B11)"
 # no `|| true`: a failing render must propagate, or the stage is not gated at all
@@ -138,7 +153,19 @@ step "10/10 DECISIONS entry current (B11)"
 "$PY" -m exp3.decide_v3 --check || { echo "FAIL: DECISIONS entry stale"; exit 1; }
 
 step "7c/10 smoke evidence completeness (B4)"
-"$PY" -m exp3.smoke_v3 || true
+if "$PY" -m exp3.smoke_v3 --check-tag-ready; then
+  SMOKE_COMPLETE=1
+else
+  SMOKE_COMPLETE=0
+  if [ "$ALLOW_INCOMPLETE" != "1" ]; then
+    echo
+    echo "FAIL: smoke evidence is incomplete, so B4 is unmet and the slice is NOT done."
+    echo "      Re-run with OPENROUTER_API_KEY set:  ./run_slice4.sh --smoke"
+    echo "      To acknowledge and continue anyway:  ./run_slice4.sh --allow-incomplete-smoke"
+    exit 1
+  fi
+  echo "  (continuing under --allow-incomplete-smoke; B4 remains UNMET)"
+fi
 if [ "$DOTAG" = "1" ]; then
   step "TAG $V3TAG (human-gated)"
   # B4 requires an OBSERVED echo per member; tagging on defaults would freeze a
@@ -169,4 +196,10 @@ else
   printf '\n=== TAG NOT CREATED (pass --tag; separate human-gated step) ===\n'
 fi
 
-printf '\nSLICE 4 GATE PASSED\n'
+if [ "$SMOKE_COMPLETE" = "1" ] && [ "$DOTAG" = "1" ]; then
+  printf '\nSLICE 4 GATE PASSED — registration tagged\n'
+elif [ "$SMOKE_COMPLETE" = "1" ]; then
+  printf '\nSLICE 4 GATE PASSED — ready to tag (pass --tag)\n'
+else
+  printf '\nSLICE 4 GATE PASSED with B4 UNMET (incomplete smoke evidence); NOT taggable\n'
+fi

@@ -416,13 +416,21 @@ predictions:
   P2_dose_response:
     claim: the margin over the best single source GROWS from M=3 to M=4 to M=5, as error decorrelation
       predicts
-    estimand: margin(M=5) - margin(M=3), paired on items
-    supports: the paired increment's CI lower bound exceeds 0 AND the M=3 -> M=4 -> M=5 point estimates
-      are monotone increasing
-    refutes: the increment's CI upper bound is below the detectable floor while the primary contrast is
-      significant -- i.e. the panel helps but adding sources does not, which is evidence against the decorrelation
-      premise rather than against the panel
-    inconclusive: the increment's CI spans the detectable floor
+    estimand: margin(M=5) - margin(M=3), paired on the items both panels scored
+    uncertainty_method: percentile CI from the item-block bootstrap, 2000 resamples, seed 20260807, alpha
+      0.05 -- the same method the frozen contrasts use
+    decision_variable: the paired increment's CI against the detectable floor
+    supports: CI lower bound > detectable floor
+    refutes: CI upper bound < detectable floor -- the panel may still beat the best single source while
+      ADDING sources buys nothing, which is evidence against the decorrelation premise rather than against
+      the panel
+    inconclusive: the CI spans the detectable floor
+    mutually_exclusive: lower > floor and upper < floor cannot both hold because lower <= upper, so exactly
+      one verdict applies. An earlier formulation combined a lower-bound-above-zero test with a monotonicity
+      conjunct and could fire SUPPORTS and REFUTES at once for a CI lying wholly between 0 and the floor.
+    monotonicity: 'reported for M=3 -> M=4 -> M=5 but NOT part of the verdict: it is a description, not
+      a test, and adding it as a conjunct would leave the outcomes non-exhaustive'
+    implementation: exp3.run_cycle3.dose_response
     multiplicity: P1 and P2 are the only registered confirmatory tests. Across the three aggregation arms
       (WCT-U, WCT-EM, WCT-C) and two calibration maps, WCT-EM under the registered map is PRIMARY and
       the rest are reported as registered sensitivity, not as additional chances to succeed. No alpha

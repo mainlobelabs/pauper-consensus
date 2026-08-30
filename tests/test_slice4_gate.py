@@ -23,15 +23,23 @@ NLI = ROOT / "out/cache/nli"
 # These tests SPAWN the gate, and the gate runs this suite. Skipping when the gate is the
 # caller is what stops run_slice4.sh recursing; run them directly to exercise them.
 pytestmark = [
-    pytest.mark.skipif(bool(os.environ.get("SLICE4_GATE_RUNNING")),
-                       reason="invoked by the gate; would recurse"),
+    # Skip whenever ANY slice gate is the caller. Guarding only on SLICE4 meant slice 3's
+    # gate -- which runs the same suite -- spawned a slice-4 gate per planted test, each
+    # of which runs the whole suite again.
+    pytest.mark.skipif(
+        bool(os.environ.get("SLICE4_GATE_RUNNING")
+             or os.environ.get("SLICE3_GATE_RUNNING")
+             or int(os.environ.get("SLICE4_GATE_DEPTH", "0") or 0) >= 2),
+        reason="invoked by a slice gate; would recurse"),
     pytest.mark.skipif(not GATE.exists(), reason="no gate script"),
 ]
 
 
-def _run(timeout: int = 1800) -> subprocess.CompletedProcess:
-    return subprocess.run(["bash", str(GATE)], cwd=ROOT, capture_output=True,
-                          text=True, timeout=timeout)
+def _run(timeout: int = 1800, *args: str) -> subprocess.CompletedProcess:
+    """Invoke the gate. --allow-incomplete-smoke keeps these tests about the assertion
+    under test rather than about the (separately gated) smoke evidence."""
+    return subprocess.run(["bash", str(GATE), "--allow-incomplete-smoke", *args],
+                          cwd=ROOT, capture_output=True, text=True, timeout=timeout)
 
 
 @pytest.fixture
@@ -47,7 +55,9 @@ def test_gate_script_declares_every_required_assertion():
     for needle in ("byte-clean", "out/v3", "out/slice3", "e1", "nli", "EMPTY",
                    "re-derived", "corpus", "reproduction", "pytest", "decide_v3"):
         assert needle in t, f"gate does not mention {needle!r}"
-    assert "SLICE4_GATE_RUNNING=1" in t, "missing recursion guard"
+    assert "SLICE4_GATE_DEPTH" in t, "missing recursion guard"
+    assert "suite stage skipped to break recursion" in t, \
+        "the guard must limit DEPTH, not disable the planted tests entirely"
     assert "set -euo pipefail" in t, "gate does not fail fast"
 
 
@@ -64,7 +74,13 @@ def test_registration_drift_fails(restore_prereg):
     PREREG.write_text(yaml.safe_dump(d, sort_keys=False))
     r = _run()
     assert r.returncode != 0
-    assert "differs from the builder" in r.stdout
+    # A planted figure propagates: n_items feeds the power calc, so the independent
+    # validator may catch it at whichever cross-check fires first, before step 6b's
+    # rebuild-diff. Assert the CATCH, not which check did the catching -- pinning the
+    # message would make this test brittle against exactly the kind of extra validation
+    # it wants to encourage.
+    assert ("FAIL: independent validation" in r.stdout
+            or "differs from the builder" in r.stdout), r.stdout[-1500:]
 
 
 def test_wrong_delta_fails(restore_prereg):
@@ -73,7 +89,8 @@ def test_wrong_delta_fails(restore_prereg):
     PREREG.write_text(yaml.safe_dump(d, sort_keys=False))
     r = _run()
     assert r.returncode != 0
-    assert "differs from the builder" in r.stdout
+    assert ("differs from the builder" in r.stdout
+            or "delta" in r.stdout.lower()), r.stdout[-1500:]
 
 
 def test_extra_entry_in_the_frozen_nli_cache_fails():
@@ -118,7 +135,7 @@ def test_modified_slice3_evidence_fails():
         target.write_bytes(backup + b"\n")
         r = _run()
         assert r.returncode != 0
-        assert "differs from HEAD" in r.stdout
+        assert "out/slice3" in r.stdout and "differs from" in r.stdout, r.stdout[-1200:]
     finally:
         target.write_bytes(backup)
 
@@ -129,7 +146,7 @@ def test_untracked_file_under_slice3_evidence_fails():
     try:
         r = _run()
         assert r.returncode != 0
-        assert "uncommitted or untracked" in r.stdout
+        assert "path set differs" in r.stdout, r.stdout[-1200:]
     finally:
         planted.unlink(missing_ok=True)
 
@@ -164,3 +181,24 @@ def test_gate_passes_on_the_real_tree():
     r = _run()
     assert r.returncode == 0, r.stdout[-3000:]
     assert "SLICE 4 GATE PASSED" in r.stdout
+
+
+def test_incomplete_smoke_evidence_fails_the_default_command():
+    """B4 unmet must be a non-zero exit, not a note under a PASSED banner."""
+    r = subprocess.run(["bash", str(GATE)], cwd=ROOT, capture_output=True,
+                       text=True, timeout=1800)
+    ok, _ = __import__("exp3.smoke_v3", fromlist=["x"]).tag_ready()
+    if ok:
+        assert r.returncode == 0
+    else:
+        assert r.returncode != 0, "gate passed while B4 was unmet"
+        assert "B4 is unmet" in r.stdout
+
+
+def test_banner_does_not_claim_taggable_when_smoke_is_incomplete():
+    r = _run()
+    assert r.returncode == 0
+    ok, _ = __import__("exp3.smoke_v3", fromlist=["x"]).tag_ready()
+    if not ok:
+        assert "B4 UNMET" in r.stdout and "NOT taggable" in r.stdout
+        assert "ready to tag" not in r.stdout

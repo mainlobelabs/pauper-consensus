@@ -29,10 +29,22 @@ cycle-3 generation exists. Slice 1 supplied the measured margins and per-item va
 slice 2 the corrected paper, slice 3 the measured six-family availability with margin +1.
 
 **The registered primary** is panel vs calibration-selected best single source. From slice 1,
-under each cycle's OWN registered calibration map, the WCT-EM margin is +0.0448 (c1_local,
-temperature), +0.0887 (c1_openrouter, temperature), +0.0848 (c2_panelA, platt) and +0.0858
-(c2_panelB, platt) — the +0.0448 to +0.0887 range `REQUEST.md` states. The earlier draft's
-"+0.033 to +0.089" was wrong and is corrected here.
+under each cycle's OWN registered calibration map and the BASE instrument, the WCT-EM margin
+is +0.0448 (c1_local, temperature, go), +0.0887 (c1_openrouter, temperature, go), +0.0762
+(c2_panelA, platt, go) and +0.0329 (c2_panelB, platt, INCONCLUSIVE — its CI spans zero).
+
+**Correction (this plan previously misquoted these).** An earlier revision listed +0.0848 and
++0.0858 for the cycle-2 panels. Those are the registered S1_deny_self_contradiction VARIANT,
+not the base instrument. The base reading is the correct one and `REQUEST.md` decides it: the
+request states the margin held "on three of four panel-cycles, and inconclusively on the
+fourth". Under the base instrument that is exactly what the artifacts say. Under the variant
+all four are conclusive, which contradicts the request — and it would also compare cycle 1's
+base against cycle 2's variant, since cycle 1 has no variant level at all. Both readings give
+the same +0.0448 to +0.0887 range because the endpoints come from cycle 1 either way, so the
+range alone cannot distinguish them; the conclusive COUNT can. delta is derived from the
+conclusive cycles only, so it is +0.0448 and the inconclusive +0.0329 does not lower the
+floor. The variant is reported in the registration as declared sensitivity, and
+`exp3/validate_v3.py` re-checks this against REQUEST.md independently of the builder.
 
 **The six families, ordered.** Slice 3 measured six reachable families of which exactly three
 still answer under their PINNED ids. That fact supplies the ordering rather than an arbitrary
