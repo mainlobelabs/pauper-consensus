@@ -458,3 +458,24 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 
 **Consequence for slice 4.** The M=3 -> M=5 dose-response IS runnable: 6 families reachable with margin +1. Family-disjoint M=3 subsets available: 20. Slice 4 must pin the reachable ids (paid where the `:free` tier has been withdrawn or is rate limited), price the paid tiers, and record which registered panels survive (see above).
 
+## 2026-08-30T12:23:11Z - Cycle 3 pins all SIX reachable families. The M=3 -> M=4 -> M=5 dose-response is drawn as NESTED subsets of a fixed ordering, and the sixth family is the declared margin: it is pinned and smoke-tested but not in the primary M=5 panel, so one disappearance mid-run is absorbed by promotion rather than by an unregistered substitution.
+
+- Run: `20260830-221830-30689369`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Slice 3 measured six reachable families with margin +1. Nested subsets make the dose-response a within-panel comparison: M=3 is a subset of M=4 is a subset of M=5, so a change in the margin over the best single source is attributable to ADDING a source rather than to swapping panels. Independent panels at each size would confound panel composition with panel size, which is the confound cycle 1 already demonstrated when two panels of the same size returned opposite verdicts. Pinning the sixth as a declared margin follows the recorded rule of 2026-08-30: registering M=5 on a bare five would force an unregistered substitution or an abandoned arm on one disappearance, which is what prereg_v2's exact-pinned-id rule exists to prevent.
+- Alternatives: Pin five and hold the sixth only as a replacement: rejected, it leaves the replacement unsmoke-tested and its promotion undocumented at registration time. Independent panels per size: rejected, it confounds composition with size.
+
+## 2026-08-30T12:32:11Z - Cycle 3 reuses cycle 2's corpus (150 negation-family ProofWriter items, depth-5 enriched, same SHA-256) and pins qwen as the LOCAL qwen3.8-27b with qwen/qwen3.8-27b on OpenRouter as a declared fallback registered in advance.
+
+- Run: `20260830-221830-30689369`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Corpus: comparability with the registered +0.220/+0.272 results is worth more than independence from a cycle whose panels are gone, and the corpus was never what failed. The reuse is disclosed, including that a shared item set makes cycle 3's dose-response evidence about panel SIZE on this corpus rather than independent evidence about the corpus. qwen: the local endpoint carries the registered weights, pinned by model_path and n_params, which is the only candidate whose identity can be verified beyond an echoed id; it is intermittent only because the owner is working on it. Declaring the OpenRouter build as a fallback in advance converts a mid-run switch from an unregistered substitution into a documented promotion -- the same discipline as the sixth-family margin.
+- Alternatives: Fresh corpus draw: rejected, it forfeits comparability for independence from a cycle whose panels no longer exist. Pinning the OpenRouter qwen outright: rejected, it would abandon the only endpoint whose weights the registration can verify, and the owner reports the local one will be stable.
+
+## 2026-08-30T12:42:17Z - Cycle 3's corpus is ALL 2,353 locally available ProofWriter items (1,405 depth-3/test + 948 depth-5/test), not cycle 2's 150-item subset and not a larger download. This supersedes the earlier 'reuse cycle 2's corpus' decision of 2026-08-30.
+
+- Run: `20260830-221830-30689369`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Human instruction 2026-08-30: use what is already local, scale later. The power calculation from slice 1's measured margins (+0.033 to +0.089 nats, per-item SD 0.16-0.25) shows 150 items cannot power the dose-response: detecting a 0.03-nat increment needs ~1,103 items and a 0.02-nat increment ~2,481. 2,353 items powers roughly a 0.02-nat increment, which is the largest defensible design available without new downloads. Cost is ~$29 in API spend. The binding constraint is CPU NLI at a MEASURED 30 pairs/sec: 2,353 items x 6 agents is ~12.4M pairs, about 4.8 days of continuous CPU. Cycle 2's 150 items remain a subset, so comparability with the registered +0.220/+0.272 results is preserved on that stratum.
+- Alternatives: 150 items (cycle 2's corpus): rejected, the dose-response would be badly underpowered and a null uninterpretable. 10,000 items: rejected for now, ~20 days of CPU NLI at the measured rate; revisit once a CUDA torch build is available, since two GPUs are present but this venv's torch is 2.13.0+cpu.
+
