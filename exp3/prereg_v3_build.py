@@ -177,7 +177,10 @@ def panel_block(expected_echoes: dict | None) -> dict:
             m["expected_source"] = "requested id (default)"
         if c.get("identity_evidence"):
             m["identity_evidence"] = c["identity_evidence"]
-            m["identity_basis"] = "weights: model_path + n_params, NOT the echoed alias"
+            m["identity_basis"] = (
+                "weights: model_path from /props, and n_params read from that file's own "
+                "GGUF metadata -- NOT the echoed alias, which cannot distinguish the "
+                "registered quantised weights from another model behind the same name")
         if expected_echoes and c["agent"] in expected_echoes:
             m["observed_echo_at_smoke"] = expected_echoes[c["agent"]]
         members.append(m)
@@ -303,15 +306,30 @@ def cost_block(n_items: int) -> dict:
                      "replacing the authorisation."),
         },
         "hard_cap": {
-            # Contingency passes are FULL passes, so a call cap covering only the base
-            # panel would abort a registered contingency partway through -- the same
-            # defect the dollar cap had.
+            # Contingency passes are FULL passes, so a cap covering only the base panel
+            # would abort a registered contingency partway through. But a per-panel cap
+            # ABOVE the authorised volume is not a cap either: the human authorised
+            # 58,830 calls, so that is the ceiling and every per-panel cap is clamped to
+            # it. A contingency that would breach the authorisation aborts, which is the
+            # correct outcome -- raising it is a human decision, not a code change.
+            "run_total_calls": all_six_calls,
             "per_panel_cumulative_calls": {
-                f"M={M}": math.ceil((panels[f"M={M}"]["calls"]
-                                     + n_items * len(contingencies)) * (1 + retry))
+                f"M={M}": min(
+                    math.ceil((panels[f"M={M}"]["calls"] + n_items) * (1 + retry)),
+                    all_six_calls)
                 for M in (3, 4, 5)},
             "per_panel_calls_includes": ["base panel", "retry allowance",
-                                         *contingencies.keys()],
+                                         "one contingency pass",
+                                         "clamped to the authorised run total"],
+            "contingency_call_semantics": {
+                "qwen_openrouter_fallback": ("SUBSTITUTION: the same items are generated "
+                                             "by a different endpoint, so the call count "
+                                             "is unchanged and only the price moves from "
+                                             "free to metered"),
+                "sixth_family_promotion": ("ADDITIVE: the vacated member's calls were "
+                                           "already spent and failed, so the promoted "
+                                           "member's pass is new volume"),
+            },
             # A per-panel USD cap covering only the base panel is not a cap on what the
             # RUN can spend: both registered contingencies (a promoted sixth family, and
             # the qwen fallback moving a free local member onto a metered tier) are full
@@ -532,7 +550,8 @@ def build(expected_echoes: dict | None = None) -> dict:
                                        "resamples, seed 20260807, alpha 0.05 -- the same "
                                        "method the frozen contrasts use"),
                 "decision_variable": "the paired increment's CI against the detectable floor",
-                "supports": "CI lower bound > detectable floor",
+                "supports": ("CI lower bound > detectable floor AND the margin is "
+                             "non-decreasing at every step M=3 -> M=4 -> M=5"),
                 "refutes": ("CI upper bound < detectable floor -- the panel may still beat "
                             "the best single source while ADDING sources buys nothing, "
                             "which is evidence against the decorrelation premise rather "
@@ -544,9 +563,13 @@ def build(expected_echoes: dict | None = None) -> dict:
                                        "lower-bound-above-zero test with a monotonicity "
                                        "conjunct and could fire SUPPORTS and REFUTES at "
                                        "once for a CI lying wholly between 0 and the floor."),
-                "monotonicity": ("reported for M=3 -> M=4 -> M=5 but NOT part of the "
-                                 "verdict: it is a description, not a test, and adding it "
-                                 "as a conjunct would leave the outcomes non-exhaustive"),
+                "monotonicity": ("NECESSARY for support, because the registered claim is "
+                                 "growth THROUGH the nested sizes: a panel that falls at "
+                                 "M=4 and recovers at M=5 contradicts it while still "
+                                 "producing a clean endpoint increment. It is not "
+                                 "sufficient on its own, and the outcomes stay exhaustive "
+                                 "and exclusive because `refutes` depends only on the "
+                                 "interval"),
                 "implementation": "exp3.run_cycle3.dose_response",
                 "multiplicity": (
                     "P1 and P2 are the only registered confirmatory tests. Across the three "

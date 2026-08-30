@@ -40,7 +40,7 @@ PANEL: tuple[dict, ...] = (
      "model": "qwen3.8-27b", "tier": "local", "base": "http://127.0.0.1:8083/v1",
      "expected_resolved": "ornith35",
      "identity_evidence": "model_path /home/jmannings/.lmstudio/models/unsloth/"
-                          "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf"},
+                          "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf n_params 27"},
     {"rank": 2, "agent": "glm", "family": "zhipu", "backend": "openrouter",
      "model": "zai-org/GLM-5.2", "tier": "free"},
     {"rank": 3, "agent": "nemotron", "family": "nvidia", "backend": "openrouter",
@@ -89,6 +89,83 @@ def local_props(base: str, timeout: float) -> dict:
         return {}
 
 
+def registered_n_params(c: dict) -> float | None:
+    """The parameter count (in billions) that the registration pins for this candidate."""
+    import re
+
+    m = re.search(r"n_params\s+([\d.]+)", c.get("identity_evidence") or "")
+    return float(m.group(1)) if m else None
+
+
+def gguf_metadata(path: str) -> dict:
+    """Read identity metadata from the GGUF file itself.
+
+    llama-server's /props exposes model_path but NOT n_params, and prereg_v2 pins qwen by
+    BOTH. The weights file carries its own size label, so the pin is verifiable after all:
+    /props says WHICH file is loaded, and the file says what it contains. That chain is
+    stronger than either half alone -- an echoed alias cannot detect a swapped file, and a
+    file on disk says nothing about what is loaded.
+    """
+    import struct
+
+    SZ = {0: 1, 1: 1, 2: 2, 3: 2, 4: 4, 5: 4, 6: 4, 7: 1, 10: 8, 11: 8, 12: 8}
+    FMT = {0: "<B", 1: "<b", 2: "<H", 3: "<h", 4: "<I", 5: "<i", 6: "<f", 7: "<?",
+           10: "<Q", 11: "<q", 12: "<d"}
+    try:
+        with open(path, "rb") as f:
+            if f.read(4) != b"GGUF":
+                return {}
+            _ver, _nt, nkv = struct.unpack("<IQQ", f.read(20))
+
+            def rstr() -> str:
+                n, = struct.unpack("<Q", f.read(8))
+                return f.read(n).decode("utf-8", "replace")
+
+            def skip(tp: int, count: int = 1) -> None:
+                if tp == 8:
+                    for _ in range(count):
+                        n, = struct.unpack("<Q", f.read(8))
+                        f.seek(n, 1)
+                elif tp == 9:
+                    for _ in range(count):
+                        et, = struct.unpack("<I", f.read(4))
+                        n, = struct.unpack("<Q", f.read(8))
+                        skip(et, n)
+                else:
+                    f.seek(SZ[tp] * count, 1)
+
+            out: dict = {}
+            for _ in range(nkv):
+                k = rstr()
+                tp, = struct.unpack("<I", f.read(4))
+                if tp in FMT:
+                    v = struct.unpack(FMT[tp], f.read(SZ[tp]))[0]
+                    if "param" in k or "size_label" in k or "block_count" in k:
+                        out[k] = v
+                elif tp == 8:
+                    v = rstr()
+                    if k in ("general.name", "general.size_label", "general.architecture",
+                             "general.basename"):
+                        out[k] = v
+                else:
+                    skip(tp)
+            return out
+    except Exception:                                    # noqa: BLE001
+        return {}
+
+
+def parse_n_params_billions(meta: dict) -> float | None:
+    """Parameter count in billions, from an exact count or the size label."""
+    import re
+
+    exact = meta.get("general.parameter_count")
+    if isinstance(exact, (int, float)) and exact > 0:
+        return round(float(exact) / 1e9, 2)
+    label = str(meta.get("general.size_label") or "")
+    m = re.match(r"^\s*([\d.]+)\s*B\s*$", label, re.I)
+    return float(m.group(1)) if m else None
+
+
 def _local_props(base: str, timeout: float) -> str | None:
     """Back-compat shim: just the model_path, which is what _identity compares."""
     return local_props(base, timeout).get("model_path")
@@ -110,6 +187,13 @@ def probe_one(c: dict, timeout: float = 120.0) -> dict:
         if c["backend"] == "local":
             props = local_props(base, timeout)
             weights = props.get("model_path")
+            if weights:
+                meta = gguf_metadata(weights)
+                n_b = parse_n_params_billions(meta)
+                props["n_params_billions"] = n_b
+                props["n_params_source"] = "GGUF metadata of the loaded model_path"
+                props["gguf_metadata"] = meta
+                props["n_params_endpoint_verifiable"] = n_b is not None
             rec["local_props"] = props
         key = getattr(client, "key", None)
         headers = {"Authorization": f"Bearer {key}"} if key else {}
@@ -132,14 +216,25 @@ def probe_one(c: dict, timeout: float = 120.0) -> dict:
     rec["identity"] = _identity(c, rec.get("echoed"), weights)
     if c["backend"] == "local":
         rec["identity"]["model_ftype"] = props.get("model_ftype")
-        rec["identity"]["n_params"] = props.get("n_params")
+        rec["identity"]["n_params"] = props.get("n_params_billions")
+        rec["identity"]["n_params_source"] = props.get("n_params_source")
         rec["identity"]["n_params_endpoint_verifiable"] = props.get(
             "n_params_endpoint_verifiable", False)
-        if not props.get("n_params_endpoint_verifiable"):
+        want_n = registered_n_params(c)
+        got_n = props.get("n_params_billions")
+        rec["identity"]["registered_n_params"] = want_n
+        if got_n is None:
             rec["identity"]["n_params_note"] = (
-                "prereg_v2 pins n_params 27, but llama-server /props does not expose it; "
-                "the verifiable half of the pin is model_path (+ model_ftype). Recorded "
-                "as a known limit, not treated as a passed check.")
+                "the loaded weights file carries no readable parameter count, so the "
+                "n_params half of the pin could not be checked")
+            rec["identity"]["matches_expected"] = False
+        elif want_n is not None and abs(got_n - want_n) > 0.05:
+            rec["identity"]["n_params_match"] = False
+            rec["identity"]["matches_expected"] = False
+            rec["identity"]["n_params_note"] = (
+                f"loaded weights report {got_n}B parameters, registration pins {want_n}B")
+        else:
+            rec["identity"]["n_params_match"] = True
     return rec
 
 
@@ -216,12 +311,12 @@ def tag_ready(result: dict | None = None) -> tuple[bool, list[str]]:
         elif (r.get("identity") or {}).get("matches_expected") is not True:
             reasons.append(f"{c['agent']}: identity did not match the registered target")
         elif (c["backend"] == "local"
-              and (r.get("identity") or {}).get("n_params_endpoint_verifiable") is not True):
+              and (r.get("identity") or {}).get("n_params_match") is not True):
             # prereg_v2 pins this endpoint by model_path AND n_params. /props exposes only
-            # the former, so "ok" here means half the pin was checked. Recording that as a
-            # pass would let the registration claim an identity check it never performed.
-            reasons.append(f"{c['agent']}: n_params half of the identity pin is not "
-                           f"endpoint-verifiable (/props does not expose it)")
+            # the former, but the loaded weights file carries its own size label, so both
+            # halves are checkable and both must pass.
+            reasons.append(f"{c['agent']}: n_params half of the identity pin did not "
+                           f"verify against the loaded weights file")
     fb = by_agent.get(QWEN_FALLBACK["agent"])
     if fb is None or fb.get("status") != "ok":
         reasons.append(f"{QWEN_FALLBACK['agent']}: declared fallback unverified")

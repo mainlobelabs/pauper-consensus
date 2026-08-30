@@ -152,8 +152,29 @@ def test_caps_persist_across_runs(reg, tmp_path):
 
 def test_cap_breach_aborts(reg, tmp_path):
     c = R.Caps.load(reg, tmp_path / "caps.json")
+    c.run_total_calls = None                     # isolate the per-panel cap
     with pytest.raises(R.RegistrationError, match="cumulative CALL cap"):
         c.charge("M=5", c.limits["M=5"] + 1)
+
+
+def test_run_total_call_authorisation_is_a_ceiling(reg, tmp_path):
+    """A per-panel cap above the authorised volume would not be a cap at all."""
+    c = R.Caps.load(reg, tmp_path / "caps.json")
+    assert c.run_total_calls == 58830
+    assert all(v <= c.run_total_calls for v in c.limits.values()), \
+        "a per-panel cap exceeds the authorised run total"
+    with pytest.raises(R.RegistrationError, match="run-total CALL authorisation"):
+        c.charge("M=3", c.run_total_calls + 1)
+
+
+def test_run_total_call_cap_spans_panels(reg, tmp_path):
+    """Spend on one panel must consume the shared authorisation, not sit in a silo."""
+    p = tmp_path / "caps.json"
+    c = R.Caps.load(reg, p)
+    c.charge("M=3", 100)
+    c.charge("M=4", 100)
+    again = R.Caps.load(reg, p)
+    assert sum(again.used.values()) == 200
 
 
 def test_cap_is_charged_before_the_call(reg, tmp_path):

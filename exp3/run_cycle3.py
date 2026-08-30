@@ -137,6 +137,7 @@ class Caps:
     run_total_usd: float
     rates: dict
     tokens: dict
+    run_total_calls: int | None = None
     used: dict = field(default_factory=dict)
     usd_used: dict = field(default_factory=dict)
     path: Path = CAPS_PATH
@@ -156,7 +157,8 @@ class Caps:
                 # key by the AGENT the runtime charges under; keying by the contingency
                 # label priced every contingency call at $0
                 rates[c.get("agent", name)] = {"in": c["rate_in"], "out": c["rate_out"]}
-        return cls(limits=cap["per_panel_cumulative_calls"],
+        return cls(run_total_calls=int(cap.get("run_total_calls", 0)) or None,
+                   limits=cap["per_panel_cumulative_calls"],
                    usd_limits=cap.get("per_panel_cumulative_usd", {}),
                    run_total_usd=float(cap.get("run_total_usd", 0.0)),
                    rates=rates, tokens=cost["token_projection"],
@@ -183,6 +185,11 @@ class Caps:
 
     def charge(self, panel: str, n: int = 1, agent: str | None = None) -> None:
         """Charge calls AND dollars BEFORE the request, so a crash cannot re-run free."""
+        if self.run_total_calls is not None and sum(self.used.values()) + n > self.run_total_calls:
+            raise RegistrationError(
+                f"run-total CALL authorisation {self.run_total_calls} would be exceeded "
+                f"(used {sum(self.used.values())}, requesting {n}). This is the volume the "
+                f"human authorised; raising it is not a code change.")
         if self.used.get(panel, 0) + n > self.limits[panel]:
             raise RegistrationError(
                 f"panel {panel} cumulative CALL cap {self.limits[panel]} would be exceeded "
@@ -210,7 +217,8 @@ class Caps:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(
             {"used": self.used, "usd_used": self.usd_used, "limits": self.limits,
-             "usd_limits": self.usd_limits, "run_total_usd": self.run_total_usd},
+             "usd_limits": self.usd_limits, "run_total_usd": self.run_total_usd,
+             "run_total_calls": self.run_total_calls},
             indent=2, sort_keys=True))
 
 
@@ -754,6 +762,15 @@ def run(dry_run: bool = True, registration: Path = PREREG,
         res = analyse_panel(reg, items, sub, calib_ids, sched, min_agents=m)
         res["primary"] = primary_verdict(res, reg["delta"]["value"], mapname)
         res["min_agents_required"] = m
+        # every artifact carries its own instrument stamp: a reader must not have to
+        # correlate a result with a separate provenance block to know what measured it
+        res["instrument"] = {
+            **(report.get("instrument") or {}),
+            "cache_namespace": report.get("cache"),
+            "registration_tag": reg["tag"],
+            "delta_applied": reg["delta"]["value"],
+            "primary_map": mapname,
+        }
         by_m[m] = res
         pim = res.pop("_per_item_margin", None)
         if pim:

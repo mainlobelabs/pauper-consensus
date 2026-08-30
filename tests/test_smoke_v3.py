@@ -144,30 +144,36 @@ def test_expected_echoes_are_produced_for_the_registration():
     assert len(echoes) == len(S.PANEL)
 
 
-def test_n_params_gap_is_recorded_not_silently_passed(monkeypatch):
-    """/props does not expose n_params; the entry must say so rather than imply a check."""
+def test_unreadable_weights_file_fails_the_n_params_half(monkeypatch):
+    """If the count cannot be read, that is a failed check, not a silent pass."""
     monkeypatch.setattr(S, "local_props", lambda *a, **k: {
         "model_path": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/"
-                      "Qwen3.8-27B-Q4_K_M.gguf",
-        "model_ftype": "Q4_K_M", "n_params": None,
-        "n_params_endpoint_verifiable": False})
+                      "Qwen3.8-27B-Q4_K_M.gguf", "model_ftype": "Q4_K_M"})
+    monkeypatch.setattr(S, "gguf_metadata", lambda p: {})
     r = S.run(include_fallback=False, only={"qwen"})
     ident = r["records"][0]["identity"]
-    assert ident["n_params_endpoint_verifiable"] is False
-    assert "does not expose it" in ident["n_params_note"]
-    assert ident["weights_match"] is True, "the verifiable half must still be checked"
+    assert ident["matches_expected"] is False
+    assert "could not be checked" in ident["n_params_note"]
+    assert ident["weights_match"] is True, "the model_path half must still be checked"
 
 
-def test_n_params_is_reported_when_the_endpoint_does_expose_it(monkeypatch):
+def test_both_halves_of_the_pin_verify_against_the_loaded_file(monkeypatch):
     monkeypatch.setattr(S, "local_props", lambda *a, **k: {
         "model_path": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/"
-                      "Qwen3.8-27B-Q4_K_M.gguf",
-        "model_ftype": "Q4_K_M", "n_params": 27_000_000_000,
-        "n_params_endpoint_verifiable": True})
+                      "Qwen3.8-27B-Q4_K_M.gguf", "model_ftype": "Q4_K_M"})
+    monkeypatch.setattr(S, "gguf_metadata", lambda p: {"general.size_label": "27B"})
+    # the real :8083 server answers under its registered alias, not the requested id
+    def aliased(self, url, json=None, headers=None):
+        FakeHTTP.calls.append({"url": url, "model": (json or {}).get("model"),
+                               "max_tokens": (json or {}).get("max_tokens")})
+        return FakeResp(200, {"model": "ornith35"})
+    monkeypatch.setattr(FakeHTTP, "post", aliased)
     r = S.run(include_fallback=False, only={"qwen"})
     ident = r["records"][0]["identity"]
-    assert ident["n_params_endpoint_verifiable"] is True
-    assert "n_params_note" not in ident
+    assert ident["weights_match"] is True
+    assert ident["n_params_match"] is True
+    assert ident["registered_n_params"] == 27.0
+    assert ident["matches_expected"] is True
 
 
 def test_tag_ready_is_false_when_a_member_was_never_probed():
@@ -202,7 +208,7 @@ def _complete_records():
     for c in S.PANEL:
         ident = {"matches_expected": True}
         if c["backend"] == "local":
-            ident["n_params_endpoint_verifiable"] = True
+            ident["n_params_match"] = True
         recs.append({"agent": c["agent"], "status": "ok", "identity": ident})
     recs.append({"agent": S.QWEN_FALLBACK["agent"], "status": "ok",
                  "identity": {"matches_expected": True}})
@@ -218,7 +224,41 @@ def test_tag_ready_is_false_when_only_half_the_local_identity_pin_is_checkable()
     """model_path alone is not the registered pin; n_params is the other half."""
     recs = _complete_records()
     local = next(r for r in recs if r["agent"] == "qwen")
-    local["identity"]["n_params_endpoint_verifiable"] = False
+    local["identity"]["n_params_match"] = False
     ok, reasons = S.tag_ready({"records": recs})
     assert ok is False
     assert any("n_params" in r for r in reasons)
+
+
+def test_n_params_is_read_from_the_gguf_not_from_props():
+    """/props does not expose n_params; the loaded weights file does."""
+    meta = S.gguf_metadata("/home/jmannings/.lmstudio/models/unsloth/"
+                           "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf")
+    if not meta:
+        pytest.skip("weights file not present")
+    assert S.parse_n_params_billions(meta) == 27.0
+    assert meta["general.size_label"] == "27B"
+
+
+def test_a_missing_or_unreadable_gguf_yields_no_count():
+    assert S.gguf_metadata("/nonexistent/model.gguf") == {}
+    assert S.parse_n_params_billions({}) is None
+
+
+def test_registered_n_params_is_parsed_from_the_evidence():
+    q = next(c for c in S.PANEL if c["backend"] == "local")
+    assert S.registered_n_params(q) == 27.0
+    assert S.registered_n_params({"identity_evidence": "model_path /x.gguf"}) is None
+
+
+def test_a_wrong_parameter_count_fails_the_identity_check(monkeypatch):
+    monkeypatch.setattr(S, "local_props", lambda *a, **k: {
+        "model_path": "/home/jmannings/.lmstudio/models/unsloth/"
+                      "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf"})
+    monkeypatch.setattr(S, "gguf_metadata", lambda p: {"general.size_label": "7B"})
+    res = S.run(include_fallback=False, only={"qwen"})
+    ident = res["records"][0]["identity"]
+    assert ident["n_params_match"] is False
+    assert ident["matches_expected"] is False
+    with pytest.raises(S.SmokeError, match="DIFFERENT model"):
+        S.verify(res)

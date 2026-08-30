@@ -502,7 +502,7 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 
 ## V3 SLICE 4 OUTCOME: cycle 3 registered at delta=0.0448 nats on 9805 items, M=3/M=4/M=5 nested, fp32/cuda instrument.
 
-- registration-fingerprint: `5d05f9718b8547a8`
+- registration-fingerprint: `ed39feb9d849de8e`
 - Registration: `prereg_v3.yaml` (tag `prereg-v3-2026-08-30`)
 
 **Corpus.** 9805 items, SHA-256 `63ca8131b43b5c81...`, 91,052 decidable propositions of which 45,526 are positive-polarity negatives. cycle 2's 150 items are a verified COMPLETE SUBSET, so the registered +0.220/+0.272 results remain comparable on that stratum. The shared item set means cycle 3's dose-response is evidence about panel SIZE on this corpus, not independent evidence about the corpus. Projected SCORED positive-polarity negatives at M=5: 13,400 — a projection, is_gate=False.
@@ -521,4 +521,10 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 - Run: `20260830-221830-30689369`
 - Decided by: user
 - Rationale: Human instruction 2026-08-31: 'keep iterating to get this done you have full control'. Rounds 1-2 findings are addressed in cea4035 and ad64dcf; the relay reports the verdict STALE against the current diff, so the fixes are unreviewed. Two rounds to review the current code.
+
+## 2026-08-30T16:27:12Z - Gate 265a695c resolved: Grant further spec review rounds and continue; the previous findings were bound to an older diff.
+
+- Run: `20260830-221830-30689369`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: Human instruction 2026-08-31: 'keep iterating to get this done you have full control'. The gate was raised when the spec budget hit 3/3, before rounds were granted (budget is now 5). Rounds 1-3 findings are addressed in cea4035, ad64dcf and 911ef0b, and the relay itself reports the prior verdict STALE against the current diff, so the fixes are unreviewed rather than rejected. Continue reviewing the CURRENT diff. B4 (observed echoes for the five OpenRouter members and the qwen fallback) is not closable in this session because OPENROUTER_API_KEY is unavailable; the gate exits 2 and refuses --tag so the slice cannot be mistaken for finished.
 

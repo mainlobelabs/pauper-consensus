@@ -195,11 +195,55 @@ def check_subsets(doc: dict) -> list[str]:
     return ["panel ordering and nesting verified"]
 
 
+def check_adjudication_matches_the_driver(doc: dict) -> list[str]:
+    """The registration and the committed driver must implement the SAME rule.
+
+    "The implementations ARE the registration" only holds if the two agree. A yaml that
+    says one thing while run_cycle3 does another leaves a reader unable to tell which was
+    applied -- and the yaml is what a replicator reads.
+    """
+    import inspect
+
+    from exp3 import run_cycle3
+
+    dr = inspect.getsource(run_cycle3.dose_response)
+    pv = inspect.getsource(run_cycle3.primary_verdict)
+    p2 = doc["predictions"]["P2_dose_response"]
+
+    if "non-decreasing at every step" in p2["supports"]:
+        if "and monotone" not in dr:
+            _fail("P2 registers monotonicity as necessary for support, but "
+                  "dose_response does not require it")
+    elif "and monotone" in dr:
+        _fail("dose_response requires monotonicity for support, but P2 does not register it")
+
+    if "lo > floor" not in dr.replace("lo > floor", "lo > floor"):
+        pass
+    for needle, where in (("hi < floor", "refutes"), ("lo > floor", "supports")):
+        if needle not in dr:
+            _fail(f"dose_response does not implement the registered {where} rule")
+
+    pa = doc.get("primary_adjudication", {})
+    if pa.get("map") != "platt":
+        _fail("the registered primary map is not the one the driver reads")
+    if "FROZEN_DELTA" not in pv:
+        _fail("primary_verdict does not acknowledge wct3.arms' frozen delta, so it may be "
+              "silently adjudicating at 0.02 instead of the registered delta")
+    if str(pa.get("arms_frozen_delta")) != "0.02":
+        _fail("the registration does not record arms' frozen delta, so a reader cannot "
+              "tell which threshold was applied")
+
+    caps = doc["cost"]["hard_cap"]
+    if any(v > caps["run_total_calls"] for v in caps["per_panel_cumulative_calls"].values()):
+        _fail("a per-panel call cap exceeds the authorised run total, so it is not a cap")
+    return ["registration and driver implement the same adjudication"]
+
+
 def validate(path: Path = PREREG) -> list[str]:
     doc = yaml.safe_load(path.read_text())
     notes: list[str] = []
-    for fn in (check_required_fields, check_subsets, check_margins_against_request,
-               check_power, check_cost, check_corpus):
+    for fn in (check_required_fields, check_subsets, check_adjudication_matches_the_driver,
+               check_margins_against_request, check_power, check_cost, check_corpus):
         notes.extend(fn(doc))
     return notes
 
