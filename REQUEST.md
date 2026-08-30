@@ -96,8 +96,11 @@ disappearance is absorbed by documented promotion rather than an unregistered su
   traded away: cycle 2's 150 items are a verified COMPLETE SUBSET of the 9,805. The reuse
   disclosure below still applies to that subset. What scaling buys is power: the M=3→M=5
   dose-response increment — the thing cycle 3 exists to measure — is detectable to
-  ~0.0101 nats at n=9,805 versus ~0.081 nats at n=150. Consequences that must flow through
-  the registration: call volume 58,830, cost ~$121, NLI ~6.3 h. NOTE the prior figure of
+  ~0.010 nats at n=9,805 versus ~0.08 nats at n=150. Consequences that must flow through
+  the registration: call volume 58,830, cost ~$121, NLI ~6.3 h. NOTE: the ~0.010 figure
+  here was a PRE-ARTIFACT estimate from a crude n*delta^2 basis. The registration derives
+  the floor from slice 1's measured per-item SDs and reports 0.0071 nats; where the two
+  differ the DERIVED value governs, and `exp3/validate_v3.py` recomputes it. NOTE the prior figure of
   "2,353 items" recorded in DECISIONS.md was a raw parquet ROW count; the filtered item
   count of that set was 2,277. Superseded text follows.
 - OQ1 (superseded text): Cycle 3 REUSES cycle 2's corpus — the 150

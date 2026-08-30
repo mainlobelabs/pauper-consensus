@@ -305,6 +305,7 @@ def fallback_for(reg: dict, agent: str) -> dict | None:
 
 def generate_member(reg: dict, member: dict, items: list, caps: Caps, panel: str,
                     sched: Scheduler, member_index: int = 0,
+                    panel_agents: list[str] | None = None,
                     max_attempts: int = 2) -> dict:
     """One model's COMPLETE pass. Charges before each call; never caches a failure.
 
@@ -313,6 +314,7 @@ def generate_member(reg: dict, member: dict, items: list, caps: Caps, panel: str
     """
     from wct import nodes
 
+    panel_agents = panel_agents or [member["agent"]]
     sched.begin_generation(member["agent"])
     client = nodes.Client(member["backend"], base_url=member.get("base"))
     gen_cfg = reg["generation"]
@@ -321,10 +323,11 @@ def generate_member(reg: dict, member: dict, items: list, caps: Caps, panel: str
     errors: list[dict] = []
     try:
         for idx, item in enumerate(items):
-            # Latin square: the offset must include the MEMBER, or every model gets the
-            # same role on the same item and role is perfectly confounded with item --
-            # the opposite of what rotating roles is for.
-            role = roles[(idx + member_index) % len(roles)]
+            # The registered schedule names wct.nodes.latin_square, so call it rather
+            # than re-deriving the rotation: a private offset that happens to agree
+            # today is not the frozen schedule, and an earlier version rotated on the
+            # item index alone, giving every model the same role on the same item.
+            role = nodes.latin_square(panel_agents, roles, idx)[member["agent"]]
             for attempt in range(1, max_attempts + 1):
                 caps.charge(panel, 1, agent=member["agent"])   # calls AND dollars, before
                 g = client.generate(
@@ -348,8 +351,10 @@ def generate_panel(reg: dict, members: list[dict], items: list, caps: Caps,
                    panel: str, sched: Scheduler) -> tuple[dict, list[dict]]:
     """MODEL-MAJOR: each model completes its whole pass before the next begins."""
     per_agent, reports = {}, []
+    agent_order = [m["agent"] for m in members]
     for mi, member in enumerate(members):       # strictly sequential, one slot at a time
-        rep = generate_member(reg, member, items, caps, panel, sched, member_index=mi)
+        rep = generate_member(reg, member, items, caps, panel, sched, member_index=mi,
+                              panel_agents=agent_order)
         per_agent[member["agent"]] = rep["generations"]
         reports.append({k: v for k, v in rep.items() if k != "generations"})
     cell: dict = {}
@@ -363,6 +368,9 @@ def generate_panel(reg: dict, members: list[dict], items: list, caps: Caps,
 
 def analyse_panel(reg: dict, items: list, cell: dict, calib_ids: set, sched: Scheduler,
                   min_agents: int = 2) -> dict:
+    """`min_agents` must be the panel size for a panel-size claim to mean anything:
+    at min_agents=2 an "M=5" result can rest on two sources for some items, which is
+    precisely the quantity the dose-response is trying to vary."""
     """The registered analysis for one panel: arms, primary, and the comparator."""
     import numpy as np
     from exp.common import complete_items
@@ -387,6 +395,36 @@ def analyse_panel(reg: dict, items: list, cell: dict, calib_ids: set, sched: Sch
 def _margin(res: dict, mapname: str, arm: str = "WCT-EM") -> float | None:
     node = res.get("panel_vs_single_best_calibration_selected", {}).get(mapname, {}).get(arm)
     return node["delta_log_loss"]["point"] if node else None
+
+
+def primary_verdict(res: dict, delta: float, mapname: str, arm: str = "WCT-EM") -> dict:
+    """P1 adjudicated against the REGISTERED delta.
+
+    wct3.arms carries FROZEN_DELTA = 0.02 -- cycle 2's registered value -- and its
+    `decision` field is computed against that. It must stay 0.02 or slice 1's frozen
+    reproduction breaks, so cycle 3 cannot reuse that field: copying delta=0.0448 into
+    provenance while the verdict was decided at 0.02 would register one threshold and
+    apply another. The verdict is therefore computed here, from the interval.
+    """
+    node = (res.get("panel_vs_single_best_calibration_selected", {})
+               .get(mapname, {}).get(arm))
+    if not node:
+        return {"verdict": "not evaluable", "reason": f"no {arm} contrast under {mapname}"}
+    d = node["delta_log_loss"]
+    lo, hi, point = d.get("lo"), d.get("hi"), d.get("point")
+    if lo is None or hi is None:
+        verdict = "inconclusive"
+    elif lo > delta:
+        verdict = "supports"
+    elif hi < delta:
+        verdict = "refutes"
+    else:
+        verdict = "inconclusive"
+    return {"verdict": verdict, "point": point, "ci": {"lo": lo, "hi": hi},
+            "delta_applied": delta, "map": mapname, "arm": arm,
+            "note": ("adjudicated against the cycle-3 registered delta, NOT wct3.arms' "
+                     "FROZEN_DELTA (0.02), which belongs to cycle 2"),
+            "arms_frozen_delta_ignored": 0.02}
 
 
 def per_item_margin(rows, agents, y, V, iids, is_calib, mapname: str = "platt"):
@@ -438,17 +476,32 @@ def dose_response(by_m: dict, floor: float, mapname: str = "platt",
     if len(sizes) < 2:
         return {"verdict": "not evaluable", "reason": "fewer than two panel sizes"}
     lo_m, hi_m = sizes[0], sizes[-1]
-    a, b = by_m[lo_m], by_m[hi_m]
-    shared = [i for i in a["item_ids"] if i in set(b["item_ids"])]
-    ia = {i: k for k, i in enumerate(a["item_ids"])}
-    ib = {i: k for k, i in enumerate(b["item_ids"])}
-    da = np.array([a["margin"][ia[i]] for i in shared])
-    db = np.array([b["margin"][ib[i]] for i in shared])
-    paired = db - da                       # per-item increment from M=lo to M=hi
+
+    def by_item(rec: dict) -> dict:
+        """Mean margin PER ITEM.
+
+        per_item_margin returns one value per PROPOSITION, so item_ids repeat. Indexing
+        id -> position keeps only the last proposition of each item and silently drops
+        the rest, and leaving the repeats in weights each item by how many propositions
+        it happens to contain. The estimand is per ITEM, so propositions are averaged
+        within their item first.
+        """
+        acc: dict[str, list] = {}
+        for iid, v in zip(rec["item_ids"], rec["margin"]):
+            acc.setdefault(iid, []).append(float(v))
+        return {k: float(np.mean(v)) for k, v in acc.items()}
+
+    per_item = {m: by_item(by_m[m]) for m in sizes}
+    shared = sorted(set(per_item[lo_m]) & set(per_item[hi_m]))
+    if not shared:
+        return {"verdict": "not evaluable", "reason": "no items scored by both panels"}
+    da = np.array([per_item[lo_m][i] for i in shared])
+    db = np.array([per_item[hi_m][i] for i in shared])
+    paired = db - da                       # per-ITEM increment from M=lo to M=hi
 
     ci = stats.item_bootstrap(shared, lambda rows: float(np.mean(paired[rows])),
                               n_boot=n_boot, seed=seed)
-    points = {m: float(np.mean(by_m[m]["margin"])) for m in sizes}
+    points = {m: float(np.mean(list(per_item[m].values()))) for m in sizes}
     monotone = all(points[x] <= points[y] for x, y in zip(sizes, sizes[1:]))
 
     lo, hi = ci.get("lo"), ci.get("hi")
@@ -541,17 +594,37 @@ def run(dry_run: bool = True, registration: Path = PREREG,
     members = list(union)
     cell, gen_reports = generate_panel(reg, members, items, caps, panel_label, sched)
 
-    # ---- registered contingencies, applied before analysis so the panel is fixed
-    for rep in gen_reports:
-        if rep["n_ok"] == 0:
-            agent = rep["agent"]
-            fb = fallback_for(reg, agent)
-            if fb:
-                events.append({"event": "fallback", "for": agent,
-                               "to": fb["model"], "caveat": fb["caveat"]})
-            else:
-                members, ev = promote(reg, members, agent)
-                events.append(ev)
+    # ---- registered contingencies, EXECUTED before analysis so the panel is fixed.
+    # Recording the event without generating the replacement would leave the panel one
+    # source short while the artifact claimed a promotion had happened.
+    substitutions: dict[str, str] = {}          # original agent -> replacement agent
+    for rep in list(gen_reports):
+        if rep["n_ok"]:
+            continue
+        agent = rep["agent"]
+        fb = fallback_for(reg, agent)
+        if fb:
+            original = next(m for m in members if m["agent"] == agent)
+            repl = {**original, "agent": f"{agent}_fallback", "model": fb["model"],
+                    "tier": fb["tier"], "backend": "openrouter", "base": None,
+                    "expected_resolved": fb["model"]}
+            repl.pop("identity_evidence", None)   # provider build, not the pinned weights
+            events.append({"event": "fallback", "for": agent, "to": fb["model"],
+                           "caveat": fb["caveat"], "executed": True})
+            members = [repl if m["agent"] == agent else m for m in members]
+        else:
+            members, ev = promote(reg, members, agent)
+            repl = next(m for m in members if m["agent"] == ev["promoted"])
+            events.append({**ev, "executed": True})
+
+        # the replacement's FULL pass, still model-major and still before any analysis
+        r2 = generate_member(reg, repl, items, caps, panel_label, sched,
+                             member_index=max(repl.get("rank", 1) - 1, 0),
+                             panel_agents=[m["agent"] for m in members])
+        gen_reports.append({k: v for k, v in r2.items() if k != "generations"})
+        for iid, g in r2["generations"].items():
+            cell.setdefault(iid, {})[repl["agent"]] = g
+        substitutions[agent] = repl["agent"]
 
     sched.begin_analysis()
 
@@ -559,11 +632,14 @@ def run(dry_run: bool = True, registration: Path = PREREG,
     mapname = "platt"
     by_m, per_m_margin = {}, {}
     for m in sizes:
-        want = {x["agent"] for x in panel_members(reg, m)}
+        want = {substitutions.get(x["agent"], x["agent"])
+                for x in panel_members(reg, m)}
         sub = {iid: {a: g for a, g in ags.items() if a in want}
                for iid, ags in cell.items()}
-        sub = {iid: ags for iid, ags in sub.items() if len(ags) >= 2}
-        res = analyse_panel(reg, items, sub, calib_ids, sched)
+        sub = {iid: ags for iid, ags in sub.items() if len(ags) >= m}
+        res = analyse_panel(reg, items, sub, calib_ids, sched, min_agents=m)
+        res["primary"] = primary_verdict(res, reg["delta"]["value"], mapname)
+        res["min_agents_required"] = m
         by_m[m] = res
         pim = res.pop("_per_item_margin", None)
         if pim:
@@ -582,6 +658,7 @@ def run(dry_run: bool = True, registration: Path = PREREG,
         "caps_used_calls": caps.used,
         "caps_used_usd": caps.usd_used,
         "events": events,
+        "substitutions": substitutions,
     }
     out_dir.mkdir(parents=True, exist_ok=True)
     payload = {"sizes": list(sizes), "union": [x["agent"] for x in members],

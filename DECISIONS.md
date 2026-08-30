@@ -502,7 +502,7 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 
 ## V3 SLICE 4 OUTCOME: cycle 3 registered at delta=0.0448 nats on 9805 items, M=3/M=4/M=5 nested, fp32/cuda instrument.
 
-- registration-fingerprint: `e48a00b75cbc20fe`
+- registration-fingerprint: `b57559d08b192a0f`
 - Registration: `prereg_v3.yaml` (tag `prereg-v3-2026-08-30`)
 
 **Corpus.** 9805 items, SHA-256 `63ca8131b43b5c81...`, 91,052 decidable propositions of which 45,526 are positive-polarity negatives. cycle 2's 150 items are a verified COMPLETE SUBSET, so the registered +0.220/+0.272 results remain comparable on that stratum. The shared item set means cycle 3's dose-response is evidence about panel SIZE on this corpus, not independent evidence about the corpus. Projected SCORED positive-polarity negatives at M=5: 13,400 — a projection, is_gate=False.

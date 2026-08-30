@@ -73,7 +73,7 @@ def test_registration_drift_fails(restore_prereg):
     d["dataset"]["n_items"] = 12345
     PREREG.write_text(yaml.safe_dump(d, sort_keys=False))
     r = _run()
-    assert r.returncode != 0
+    assert r.returncode == 1, r.stdout[-800:]
     # A planted figure propagates: n_items feeds the power calc, so the independent
     # validator may catch it at whichever cross-check fires first, before step 6b's
     # rebuild-diff. Assert the CATCH, not which check did the catching -- pinning the
@@ -88,7 +88,7 @@ def test_wrong_delta_fails(restore_prereg):
     d["delta"]["value"] = 0.999
     PREREG.write_text(yaml.safe_dump(d, sort_keys=False))
     r = _run()
-    assert r.returncode != 0
+    assert r.returncode == 1, r.stdout[-800:]
     assert ("differs from the builder" in r.stdout
             or "delta" in r.stdout.lower()), r.stdout[-1500:]
 
@@ -99,7 +99,7 @@ def test_extra_entry_in_the_frozen_nli_cache_fails():
     planted.write_text('{"probs": [[0.1, 0.2, 0.7]]}')
     try:
         r = _run()
-        assert r.returncode != 0
+        assert r.returncode == 1, r.stdout[-800:]
         assert "fp32 leaked" in r.stdout
     finally:
         planted.unlink(missing_ok=True)
@@ -110,7 +110,7 @@ def test_untracked_file_under_the_frozen_surface_fails():
     planted.write_text("# planted\n")
     try:
         r = _run()
-        assert r.returncode != 0
+        assert r.returncode == 1, r.stdout[-800:]
         assert "untracked paths under the frozen surface" in r.stdout
     finally:
         planted.unlink(missing_ok=True)
@@ -122,7 +122,7 @@ def test_modified_frozen_evidence_fails():
     try:
         target.write_bytes(backup + b"\n")
         r = _run()
-        assert r.returncode != 0
+        assert r.returncode == 1, r.stdout[-800:]
         assert "differs from" in r.stdout
     finally:
         target.write_bytes(backup)
@@ -134,7 +134,7 @@ def test_modified_slice3_evidence_fails():
     try:
         target.write_bytes(backup + b"\n")
         r = _run()
-        assert r.returncode != 0
+        assert r.returncode == 1, r.stdout[-800:]
         assert "out/slice3" in r.stdout and "differs from" in r.stdout, r.stdout[-1200:]
     finally:
         target.write_bytes(backup)
@@ -145,7 +145,7 @@ def test_untracked_file_under_slice3_evidence_fails():
     planted.write_text("{}")
     try:
         r = _run()
-        assert r.returncode != 0
+        assert r.returncode == 1, r.stdout[-800:]
         assert "path set differs" in r.stdout, r.stdout[-1200:]
     finally:
         planted.unlink(missing_ok=True)
@@ -159,7 +159,7 @@ def test_cycle3_generation_artifact_before_the_tag_fails():
     planted.write_text("{}")
     try:
         r = _run()
-        assert r.returncode != 0
+        assert r.returncode == 1, r.stdout[-800:]
         assert "generation artifacts exist before the tag" in r.stdout
     finally:
         planted.unlink(missing_ok=True)
@@ -173,14 +173,19 @@ def test_corpus_hash_mismatch_fails(monkeypatch, restore_prereg):
     d["dataset"]["sha256"] = "0" * 64
     PREREG.write_text(yaml.safe_dump(d, sort_keys=False))
     r = _run()
-    assert r.returncode != 0
+    assert r.returncode == 1, r.stdout[-800:]
 
 
 def test_gate_passes_on_the_real_tree():
-    """The happy path, last: an always-failing gate proves nothing either."""
+    """The happy path, last: an always-failing gate proves nothing either.
+
+    0 when every assertion including B4 is met; 2 when only B4 is outstanding. Never 1,
+    which would mean a real assertion broke.
+    """
     r = _run()
-    assert r.returncode == 0, r.stdout[-3000:]
-    assert "SLICE 4 GATE PASSED" in r.stdout
+    ok, _ = __import__("exp3.smoke_v3", fromlist=["x"]).tag_ready()
+    assert r.returncode == (0 if ok else 2), r.stdout[-2000:]
+    assert "FAIL:" not in r.stdout
 
 
 def test_incomplete_smoke_evidence_fails_the_default_command():
@@ -195,10 +200,14 @@ def test_incomplete_smoke_evidence_fails_the_default_command():
         assert "B4 is unmet" in r.stdout
 
 
-def test_banner_does_not_claim_taggable_when_smoke_is_incomplete():
+def test_the_acknowledge_flag_cannot_produce_a_green_exit():
+    """--allow-incomplete-smoke distinguishes known-incomplete from broken; it must not
+    turn an unmet acceptance criterion into exit 0."""
     r = _run()
-    assert r.returncode == 0
     ok, _ = __import__("exp3.smoke_v3", fromlist=["x"]).tag_ready()
-    if not ok:
-        assert "B4 UNMET" in r.stdout and "NOT taggable" in r.stdout
-        assert "ready to tag" not in r.stdout
+    if ok:
+        assert r.returncode == 0
+    else:
+        assert r.returncode == 2, "acknowledged-incomplete must be 2, never 0"
+        assert "Not taggable" in r.stdout
+        assert "GATE PASSED" not in r.stdout

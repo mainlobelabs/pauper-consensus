@@ -196,10 +196,20 @@ else
   printf '\n=== TAG NOT CREATED (pass --tag; separate human-gated step) ===\n'
 fi
 
+# EXIT CODE IS THE PASS SIGNAL (B10), and "all assertions met" is the only 0.
+#   0 = every assertion met, including B4
+#   2 = every OTHER assertion met, B4 unmet, acknowledged via --allow-incomplete-smoke
+#   1 = an assertion failed
+# --allow-incomplete-smoke must not be able to turn an unmet criterion into a green
+# exit; it only distinguishes "known-incomplete" from "broken".
 if [ "$SMOKE_COMPLETE" = "1" ] && [ "$DOTAG" = "1" ]; then
   printf '\nSLICE 4 GATE PASSED — registration tagged\n'
+  exit 0
 elif [ "$SMOKE_COMPLETE" = "1" ]; then
   printf '\nSLICE 4 GATE PASSED — ready to tag (pass --tag)\n'
+  exit 0
 else
-  printf '\nSLICE 4 GATE PASSED with B4 UNMET (incomplete smoke evidence); NOT taggable\n'
+  printf '\nSLICE 4 INCOMPLETE: every assertion met EXCEPT B4 (no observed echo for\n'
+  printf '  every panel member). Not taggable. Exit code 2 = known-incomplete, not passed.\n'
+  exit 2
 fi

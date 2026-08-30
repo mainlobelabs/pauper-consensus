@@ -412,3 +412,81 @@ def test_roles_rotate_across_models_not_just_items(reg, fake_gen, tmp_path):
 def test_missing_registration_is_an_error(tmp_path):
     with pytest.raises(R.RegistrationError, match="is missing"):
         R.load_registration(tmp_path / "nope.yaml")
+
+
+# ------------------------------------------------------------------ per-item aggregation
+
+def test_dose_response_averages_propositions_within_an_item():
+    """per_item_margin is proposition-level; ids repeat. Weighting by proposition count,
+    or keeping only the last proposition per item, are both wrong for an item-level estimand."""
+    import numpy as np
+    # item A has 3 propositions (last one an outlier), item B has 1
+    lo = {"margin": np.array([0.0, 0.0, 0.0, 0.0]),
+          "item_ids": ["A", "A", "A", "B"], "selected_single": "x", "map": "platt"}
+    hi = {"margin": np.array([0.10, 0.10, 1.00, 0.10]),
+          "item_ids": ["A", "A", "A", "B"], "selected_single": "x", "map": "platt"}
+    d = R.dose_response({3: lo, 5: hi}, floor=0.0, n_boot=200)
+    # A's mean is (0.10+0.10+1.00)/3 = 0.40, B's is 0.10 -> increment mean = 0.25
+    assert d["increment"] == pytest.approx(0.25, abs=1e-9)
+    assert d["n_shared_items"] == 2, "items, not propositions"
+    # last-proposition indexing would give (1.00 + 0.10)/2 = 0.55
+    assert d["increment"] != pytest.approx(0.55, abs=1e-9)
+
+
+# ------------------------------------------------------------------ registered delta
+
+def _contrast(point, lo, hi):
+    return {"panel_vs_single_best_calibration_selected": {"platt": {"WCT-EM": {
+        "delta_log_loss": {"point": point, "lo": lo, "hi": hi}}}}}
+
+
+def test_primary_is_adjudicated_at_the_registered_delta_not_arms_frozen_002():
+    """A CI clearing 0.02 but not 0.0448 must NOT count as support."""
+    from wct3.arms import FROZEN_DELTA
+    assert FROZEN_DELTA == 0.02, "this test exists because arms is frozen at 0.02"
+    res = _contrast(0.035, 0.025, 0.045)
+    v = R.primary_verdict(res, delta=0.0448, mapname="platt")
+    assert v["verdict"] == "inconclusive"
+    assert v["delta_applied"] == 0.0448
+    # the same interval WOULD have supported at arms' frozen delta
+    assert R.primary_verdict(res, delta=0.02, mapname="platt")["verdict"] == "supports"
+
+
+def test_primary_verdicts_are_mutually_exclusive():
+    for point, lo, hi in ((0.09, 0.06, 0.12), (0.01, 0.00, 0.02), (0.05, 0.01, 0.09)):
+        v = R.primary_verdict(_contrast(point, lo, hi), delta=0.0448, mapname="platt")
+        assert v["verdict"] in {"supports", "refutes", "inconclusive"}
+        assert sum([lo > 0.0448, hi < 0.0448]) <= 1
+
+
+# ------------------------------------------------------------------ panel size means panel size
+
+def test_an_M5_result_requires_five_sources(reg, fake_gen, tmp_path, monkeypatch):
+    """min_agents=2 would let an 'M=5' item rest on two sources -- the very quantity
+    the dose-response varies."""
+    import inspect
+    src = inspect.getsource(R.run)
+    assert "min_agents=m" in src, "analysis must require the full panel"
+    assert "len(ags) >= m" in src, "subset filter must require the full panel"
+
+
+# ------------------------------------------------------------------ contingencies execute
+
+def test_fallback_generates_the_replacement_and_reaches_the_cell(reg, fake_gen, tmp_path,
+                                                                 monkeypatch):
+    """A recorded contingency that never generates leaves the panel a source short."""
+    import inspect
+    src = inspect.getsource(R.run)
+    assert "generate_member(reg, repl" in src, "the replacement is never generated"
+    assert "cell.setdefault(iid, {})[repl" in src, "replacement never reaches the cell"
+    assert "substitutions" in src, "subset filtering must follow substitutions"
+
+
+def test_latin_square_comes_from_the_frozen_helper(reg):
+    import inspect
+    from wct import nodes
+    src = inspect.getsource(R.generate_member)
+    assert "nodes.latin_square" in src, "the registered schedule names wct.nodes.latin_square"
+    roles = ["forward", "backward", "skeptic"]
+    a = nodes.latin_square(["x", "y", "z"], roles, 0)
+    assert len(set(a.values())) == 3, "each agent gets a distinct role at a given index"

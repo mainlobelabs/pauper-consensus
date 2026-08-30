@@ -261,10 +261,8 @@ def cost_block(n_items: int) -> dict:
     }
 
     all_six_calls = n_items * (len(PANEL))
-    worst_usd = round(
-        panels["M=5"]["usd"]
-        + contingencies["sixth_family_promotion"]["usd"]
-        + contingencies["qwen_openrouter_fallback"]["usd"], 2)
+    cont_usd = round(sum(c["usd"] for c in contingencies.values()), 2)
+    worst_usd = round(panels["M=5"]["usd"] + cont_usd, 2)
     worst_with_retry = round(worst_usd * (1 + retry), 2)
 
     return {
@@ -276,6 +274,17 @@ def cost_block(n_items: int) -> dict:
         "panels": panels,
         "contingencies": contingencies,
         "retry_allowance": retry,
+        "requests_per_registered_call": {
+            "max": 8,
+            "basis": ("wct.nodes.Client._call allows 2 model attempts and up to 6 "
+                      "rate-limit resumptions per generate(); a 429 means the request "
+                      "was never served"),
+            "billing_note": ("only a SERVED request produces tokens, so the dollar cap "
+                             "bounds spend even though the HTTP request count can exceed "
+                             "the registered call count"),
+            "cap_unit": ("the registered call cap counts generate() calls -- one per "
+                         "(item, member) -- not HTTP requests"),
+        },
         "authorised_volume": {
             "calls": all_six_calls,
             "basis": f"{n_items} items x {len(PANEL)} families (M=5 plus the declared margin)",
@@ -292,8 +301,16 @@ def cost_block(n_items: int) -> dict:
             "per_panel_cumulative_calls": {
                 f"M={M}": math.ceil(panels[f"M={M}"]["calls"] * (1 + retry))
                 for M in (3, 4, 5)},
+            # A per-panel USD cap covering only the base panel is not a cap on what the
+            # RUN can spend: both registered contingencies (a promoted sixth family, and
+            # the qwen fallback moving a free local member onto a metered tier) are full
+            # extra passes. The M=5 base is far cheaper than the qwen fallback alone, so
+            # a base-only cap would abort a legitimate registered contingency.
             "per_panel_cumulative_usd": {
-                f"M={M}": round(panels[f"M={M}"]["usd_with_retry"], 2) for M in (3, 4, 5)},
+                f"M={M}": round((panels[f"M={M}"]["usd"] + cont_usd) * (1 + retry), 2)
+                for M in (3, 4, 5)},
+            "per_panel_usd_includes": ["base panel", "retry allowance",
+                                       *contingencies.keys()],
             "run_total_usd": 121.00,
             "persistence": ("both counters are persisted to out/cycle3/caps.json and survive "
                             "re-runs; a re-run RESUMES them rather than resetting, charges "
@@ -457,7 +474,11 @@ def build(expected_echoes: dict | None = None) -> dict:
                 "schedule": "latin_square(cross_family key order, [forward, backward, "
                             "skeptic], item index)",
                 "prompts": "wct/nodes.py build_prompt(item, role), frozen at the v2 tag",
-                "role_set": ["forward", "backward", "skeptic", "neutral"],
+                # EXACTLY the three roles the schedule names. An earlier version listed
+                # a fourth ("neutral") that the schedule did not cover, so the registered
+                # rotation and the implemented rotation disagreed -- and a role prompt
+                # that is not in the schedule is not frozen by it.
+                "role_set": ["forward", "backward", "skeptic"],
                 "note": ("roles are rotated across families by the Latin square so role is "
                          "not confounded with vendor -- the confound cycle 1 could not rule "
                          "out because it varied both at once"),
@@ -528,6 +549,26 @@ def build(expected_echoes: dict | None = None) -> dict:
             "items with no decidable proposition; agents returning no parseable claim for an "
             "item; observations whose alignment score is below T_ALIGN. Exclusion rules are "
             "frozen here and applied identically to every arm."),
+        "panel_membership_rule": {
+            "min_agents_per_item": "equal to the panel size M",
+            "why": ("an item analysed under M=5 must actually carry five sources. A lower "
+                    "threshold would let an 'M=5' result rest on two sources for some "
+                    "items, which is exactly the quantity the dose-response varies, so "
+                    "the arms would differ by less than their labels claim"),
+            "consequence": ("items where any member produced no parseable claim are "
+                            "dropped from that panel's analysis, and the retained item "
+                            "count is reported per M"),
+        },
+        "primary_adjudication": {
+            "delta": "the registered delta above, NOT wct3.arms.FROZEN_DELTA",
+            "arms_frozen_delta": 0.02,
+            "why": ("wct3.arms carries cycle 2's frozen delta of 0.02 and must keep it or "
+                    "slice 1's frozen reproduction breaks. Cycle 3 therefore adjudicates "
+                    "in exp3.run_cycle3.primary_verdict against its own registered delta; "
+                    "reading arms' `decision` field would register one threshold and "
+                    "apply another"),
+            "implementation": "exp3.run_cycle3.primary_verdict",
+        },
         "analysis_splits": {
             "calibration_fraction": 0.5, "split_seed": 20260807,
             "note": "calibration/test split is drawn once from the pinned corpus and reused "

@@ -94,7 +94,7 @@ in `planning` and committed UNREVIEWED in `76d2c49`. T4 brings them under this s
 - **Smoke tests contaminating experimental data.** Mitigation: T2 writes only to
   `out/slice4/smoke/`, never the generation cache, and the gate asserts the cycle-3 artifact
   set is empty regardless.
-- **Underpowered dose-response.** At n=9,805 the detectable increment is ~0.0101 nats. B2
+- **Underpowered dose-response.** At n=9,805 the detectable increment is 0.0071 nats (derived from slice 1's measured per-item SDs; an earlier ~0.0101 estimate used a cruder basis and is superseded). B2
   requires this be STATED for M=3, M=4 and M=5, and if inadequate, said plainly.
 
 ## Rollback
@@ -158,7 +158,7 @@ registration exists to provide and cannot retract remote copies.
     "files": ["prereg_v3.yaml", "exp3/prereg_v3_build.py", "tests/test_prereg_v3.py"],
     "acceptance": [
       "B1: every field EXPERIMENT.md 3.1(4) requires; primary is panel vs calibration-selected best single source",
-      "B2: freezes ONE exact delta with the artifact and formula that produced it, derived from slice 1's WCT-EM margins under each cycle's own registered map (+0.0448, +0.0887, +0.0848, +0.0858), marked immutable-after-results; reports required n for M=3, M=4 AND M=5 against slice 1's measured per-item SD (0.184-0.313) and states the detectable increment at n=9805 (~0.0101 nats), saying plainly if any arm is underpowered",
+      "B2: freezes ONE exact delta with the artifact and formula that produced it, derived from slice 1's WCT-EM margins under each cycle's own registered map and the BASE instrument (+0.0448 go, +0.0887 go, +0.0762 go, +0.0329 INCONCLUSIVE), derived from the CONCLUSIVE cycles only, marked immutable-after-results; reports required n for M=3, M=4 AND M=5 against the measured per-item SD of those cycles (0.1606-0.2514) and states the detectable increment at n=9805 (0.0071 nats, derived), saying plainly if any arm is underpowered",
       "B3: names the six families in a FIXED ordering with working ids and tiers, and names the M=3, M=4, M=5 subsets explicitly as nested sets; declares family 6 (poolside/laguna) as margin with its promotion trigger, whether data accumulated before promotion remain usable, and who adjudicates",
       "B4: pins an expected echo per panel member; registers the qwen local-to-OpenRouter fallback with its trigger, the fact that the fallback is the provider build and NOT the registered quantised weights, and the required disclosure on promotion",
       "B5: corpus pinned by SHA-256 with the projected scored positive-polarity negative count stated as a projection and explicitly not a gate",
