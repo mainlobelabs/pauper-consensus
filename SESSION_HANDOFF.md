@@ -16,7 +16,10 @@ frozen NLI cache count, and that no cycle-3 generation existed at tag time.
 ## What you need to do
 
 1. **Review** — the registration is frozen; anything after this is an amendment.
-2. **Push** — every commit and the tag are local; pushing is human-only:
+2. **Push** — pushing is human-only. `origin` has TWO push URLs (CodeCommit and the
+   private GitHub mirror `jwmannings/waveconv1`), so one push goes to both. Check what
+   is outstanding with `git branch -vv`, then push the branch AND the tag — a
+   registration tag that never leaves this machine is not a registration:
    `git push origin e1-results-and-paper && git push origin prereg-v3-2026-08-30`
 3. **Cycle 3 can then generate.** The driver refuses to run until the tag
    resolves to the tested tree, which it now does. Budget is $210 authorised
