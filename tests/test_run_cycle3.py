@@ -77,14 +77,13 @@ def test_missing_tag_blocks_generation(reg, monkeypatch):
         R.assert_tagged(reg)
 
 
-def test_tag_pointing_at_a_different_tree_blocks_generation(reg, monkeypatch):
+def test_registered_code_differing_from_the_tag_blocks_generation(reg, monkeypatch):
+    """The guard compares the registered SURFACE against the tag, not the whole tree."""
     def fake(*a):
         if a[0] == "tag":
             return reg["tag"]
-        if a[:2] == ("rev-parse", f"{reg['tag']}^{{tree}}"):
-            return "a" * 40
-        if a[0] == "rev-parse":
-            return "b" * 40
+        if a[0] == "diff":
+            return "wct3/gpu.py"        # registered code moved after the tag
         return ""
     monkeypatch.setattr(R, "_git", fake)
     with pytest.raises(R.RegistrationError, match="not the code that was registered"):
@@ -624,3 +623,40 @@ def test_smooth_growth_through_every_step_supports():
     assert d["monotone_increasing"] is True
     assert d["verdict"] == "supports"
     assert all(s["non_decreasing"] for s in d["steps"])
+
+
+def test_the_tag_guard_covers_code_but_not_documentation(reg, monkeypatch):
+    """A whole-tree pin would block generation on a README edit, pressuring people to
+    stop documenting or to re-tag. The surface is what can change a RESULT."""
+    assert "prereg_v3.yaml" in R.REGISTERED_SURFACE
+    for pkg in ("exp3", "wct3", "wct"):
+        assert pkg in R.REGISTERED_SURFACE
+    assert not any(s.endswith(".md") for s in R.REGISTERED_SURFACE)
+
+    calls = []
+    def fake(*a):
+        calls.append(a)
+        if a[0] == "tag":
+            return reg["tag"]
+        if a[0] == "diff":
+            return ""            # no registered code changed
+        if a[0] == "status":
+            return ""
+        return "t" * 40
+    monkeypatch.setattr(R, "_git", fake)
+    out = R.assert_tagged(reg)
+    assert out["tag"] == reg["tag"]
+    diff_call = next(c for c in calls if c[0] == "diff")
+    assert set(R.REGISTERED_SURFACE) <= set(diff_call), "the diff must be scoped to the surface"
+
+
+def test_a_change_to_registered_code_after_the_tag_blocks_generation(reg, monkeypatch):
+    def fake(*a):
+        if a[0] == "tag":
+            return reg["tag"]
+        if a[0] == "diff":
+            return "exp3/run_cycle3.py"
+        return ""
+    monkeypatch.setattr(R, "_git", fake)
+    with pytest.raises(R.RegistrationError, match="registered code has changed"):
+        R.assert_tagged(reg)

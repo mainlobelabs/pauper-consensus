@@ -29,6 +29,8 @@ from pathlib import Path
 import yaml
 
 PREREG = Path("prereg_v3.yaml")
+# Everything whose content can change a RESULT. Documentation is deliberately excluded.
+REGISTERED_SURFACE = ("prereg_v3.yaml", "exp3", "wct3", "wct", "exp", "m0")
 FROZEN_CACHE = Path("out/cache").resolve()
 CAPS_PATH = Path("out/cycle3/caps.json")
 
@@ -106,16 +108,24 @@ def assert_tagged(reg: dict) -> dict:
         raise RegistrationError(
             f"registration tag {tag!r} does not exist. The tag precedes the data: until it "
             f"exists the protocol is a draft and no cycle-3 inference may run.")
-    tagged = _git("rev-parse", f"{tag}^{{tree}}")
-    head = _git("rev-parse", "HEAD^{tree}")
-    if not tagged or tagged != head:
+    # Compare the REGISTERED SURFACE, not the whole tree. "The implementations ARE the
+    # registration" is a claim about the code and the registration document; a whole-tree
+    # pin also freezes README edits and handoff notes, so any later documentation commit
+    # would block generation and push people to either stop documenting or re-tag. Both
+    # are worse than scoping the check to what actually produces results.
+    changed = _git("diff", "--name-only", tag, "HEAD", "--", *REGISTERED_SURFACE)
+    if changed:
         raise RegistrationError(
-            f"tag {tag!r} resolves to tree {tagged[:12]!r} but HEAD is {head[:12]!r}: the "
-            f"code about to run is not the code that was registered.")
-    dirty = _git("status", "--porcelain", "--", "exp3", "wct3", "prereg_v3.yaml")
+            f"registered code has changed since {tag!r}:\n{changed}\n"
+            f"The code about to run is not the code that was registered. Any change here "
+            f"is a protocol amendment and needs a new registration.")
+    dirty = _git("status", "--porcelain", "--", *REGISTERED_SURFACE)
     if dirty:
         raise RegistrationError(f"uncommitted changes to registered code:\n{dirty}")
-    return {"tag": tag, "tree": tagged}
+    return {"tag": tag, "tree": _git("rev-parse", f"{tag}^{{tree}}"),
+            "surface": list(REGISTERED_SURFACE),
+            "surface_note": ("documentation outside this surface may change after the tag "
+                             "without invalidating the registration")}
 
 
 # ---------------------------------------------------------------- caps (B7)
