@@ -56,6 +56,14 @@ body {
   margin: 0.2em 1.5em 0.7em;
   text-align: center;
 }
+.subtitle {
+  text-align: center;
+  font-size: 10.5pt;
+  font-style: italic;
+  color: #333;
+  line-height: 1.4;
+  margin: -0.35em 3em 0.8em;
+}
 .authors { text-align: center; font-size: 11.5pt; margin: 0 0 0.15em; }
 .affil { text-align: center; font-size: 9.5pt; color: #444; margin: 0 0 0.5em; }
 .meta { text-align: center; font-size: 9pt; color: #555; margin: 0.1em 0; }
@@ -134,7 +142,7 @@ FIGURES = [
         "| content-only, **v2-refit (unregistered)** | reason_included | 0.15716 | 0.33963 | +0.18247 | (not computed) | sensitivity |",
         """<div class="figure">
 <img src="figures/fig1-cells.png" alt="Calibrated delta over the frozen bar, all six pre-registered cells">
-<div class="figcap">Figure 1. Calibrated delta over the frozen model-free bar, all six pre-registered cells (v2, 8,000 claims, all fits frozen from v1). Dashed line: the pre-registered GO threshold (+0.02 nats). All four test cells are green; the base_zeroshot cells are the reference arm. Numbers: eval_v2.json.</div>
+<div class="figcap">Figure 1. Calibrated delta over the frozen model-free bar, all six pre-registered cells (v2, 8,000 claims; calibration maps and bars frozen from v1, EM refit unsupervised on the v2 votes). Dashed line: the pre-registered GO threshold (+0.02 nats). All four test cells are green; the base_zeroshot cells are the reference arm. Numbers: eval_v2.json.</div>
 </div>""",
     ),
     (
@@ -169,7 +177,7 @@ def main() -> None:
     idx = text.index("\n## ")
     head, body = text[: idx].strip(), text[idx + 1 :].strip()
 
-    title = authors = affil = meta_lines = None
+    title = authors = affil = subtitle = meta_lines = None
     for line in head.splitlines():
         s = line.strip()
         if not s or s == "---":
@@ -178,6 +186,8 @@ def main() -> None:
             title = s[2:].strip()
         elif s.startswith("**") and "Mannings" in s:
             authors = s
+        elif s.startswith("*") and s.endswith("*") and not s.startswith("**"):
+            subtitle = s.strip("*")
         elif s.startswith("\u00b9"):
             affil = s
         elif s:
@@ -188,6 +198,8 @@ def main() -> None:
     parts = []
     if title:
         parts.append(f'<div class="title">{title}</div>')
+    if subtitle:
+        parts.append(f'<div class="subtitle">{subtitle}</div>')
     if authors:
         parts.append(
             '<div class="authors">'
