@@ -26,7 +26,7 @@
     tagged commits are preserved in the imported history under firstpass/.
 -->
 
-# The Flip Was in the Instrument: Two Pre-Registered LLM Studies
+# Pauper Consensus: Two Pre-Registered LLM Studies
 
 **Jeremiah Mannings**¹, **Andryo Marzuki**¹
 
