@@ -692,11 +692,11 @@ All Study 1 content is under `firstpass/`, imported with its full commit history
 
 [32] Tafjord, O., Dalvi Mishra, B., & Clark, P. (2021). ProofWriter: Generating implications, proofs, and abductive statements over natural language. *Findings of ACL 2021*.
 
-[33] Laurer, M., van Atteveldt, W., Casas, A., & Welbers, K. (2024). Less annotating, more classifying. *Political Analysis*, 32(3).
+[33] Laurer, M., van Atteveldt, W., Casas, A., & Welbers, K. (2024). Less annotating, more classifying. *Political Analysis*, 32(1), 84-100.
 
 [34] Li, Y., Rubinstein, B., & Cohn, T. (2019). Exploiting worker correlation for label aggregation in crowdsourcing. *ICML 2019*.
 
-[35] *Unsupervised process reward models.* arXiv:2605.10158. https://arxiv.org/abs/2605.10158
+[35] Gadetsky, A., Kodryan, M., Panigrahi, S. S., Guo, H., & Brbic, M. (2026). *Unsupervised process reward models.* arXiv:2605.10158. https://arxiv.org/abs/2605.10158
 
 ---
 
