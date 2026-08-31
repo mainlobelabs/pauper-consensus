@@ -26,7 +26,7 @@
     tagged commits are preserved in the imported history under firstpass/.
 -->
 
-# The Flip Was in the Instrument: Two Pre-Registered Studies, One Retracted Claim, and a Cost-Quantified Jury of Small Language Models
+# The Flip Was in the Instrument: Two Pre-Registered LLM Studies
 
 **Jeremiah Mannings**¹, **Andryo Marzuki**¹
 
