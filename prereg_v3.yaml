@@ -89,8 +89,8 @@ panels:
     agent: glm
     family: zhipu
     model: zai-org/GLM-5.2
-    tier: free
-    backend: openrouter
+    tier: paid
+    backend: hoonify
     role: panel_member
     expected_resolved: zai-org/GLM-5.2
     expected_source: requested id (default)
@@ -103,6 +103,7 @@ panels:
     role: panel_member
     expected_resolved: nvidia/nemotron-3-super-120b-a12b
     expected_source: requested id (default)
+    observed_echo_at_smoke: nvidia/nemotron-3-super-120b-a12b
   - rank: 4
     agent: gptoss
     family: openai
@@ -112,6 +113,7 @@ panels:
     role: panel_member
     expected_resolved: openai/gpt-oss-20b
     expected_source: requested id (default)
+    observed_echo_at_smoke: openai/gpt-oss-20b
   - rank: 5
     agent: gemma
     family: google
@@ -121,6 +123,7 @@ panels:
     role: panel_member
     expected_resolved: google/gemma-4-26b-a4b-it
     expected_source: requested id (default)
+    observed_echo_at_smoke: google/gemma-4-26b-a4b-it
   - rank: 6
     agent: laguna
     family: poolside
@@ -130,6 +133,7 @@ panels:
     role: declared_margin
     expected_resolved: poolside/laguna-xs-2.1
     expected_source: requested id (default)
+    observed_echo_at_smoke: poolside/laguna-xs-2.1
   nested_subsets:
     M=3:
     - 1
@@ -175,6 +179,36 @@ smoke_evidence:
       status: ok
       weights_match: true
       n_params: 27.0
+    glm:
+      echoed: null
+      status: fail
+      weights_match: null
+      n_params: null
+    nemotron:
+      echoed: nvidia/nemotron-3-super-120b-a12b
+      status: ok
+      weights_match: null
+      n_params: null
+    gptoss:
+      echoed: openai/gpt-oss-20b
+      status: ok
+      weights_match: null
+      n_params: null
+    gemma:
+      echoed: google/gemma-4-26b-a4b-it
+      status: ok
+      weights_match: null
+      n_params: null
+    laguna:
+      echoed: poolside/laguna-xs-2.1
+      status: ok
+      weights_match: null
+      n_params: null
+    qwen_or:
+      echoed: qwen/qwen3.8-27b
+      status: ok
+      weights_match: null
+      n_params: null
 wct_definitions:
   WCT-U: 'signed UNIQUE-SOURCE support: each canonical proposition scores the number of distinct sources
     affirming it minus those denying it, with one observation per (agent, proposition) by construction
@@ -446,8 +480,8 @@ cost:
   panels:
     M=3:
       calls: 29415
-      usd: 8.55
-      usd_with_retry: 10.26
+      usd: 107.19
+      usd_with_retry: 128.63
       per_member:
         qwen:
           tier: local
@@ -455,10 +489,11 @@ cost:
           usd: 0.0
           note: no metered rate at this tier
         glm:
-          tier: free
+          tier: paid
           calls: 9805
-          usd: 0.0
-          note: no metered rate at this tier
+          rate_in: 1.4
+          rate_out: 4.4
+          usd: 98.64
         nemotron:
           tier: paid
           calls: 9805
@@ -467,8 +502,8 @@ cost:
           usd: 8.55
     M=4:
       calls: 39220
-      usd: 11.36
-      usd_with_retry: 13.63
+      usd: 110.0
+      usd_with_retry: 132.0
       per_member:
         qwen:
           tier: local
@@ -476,10 +511,11 @@ cost:
           usd: 0.0
           note: no metered rate at this tier
         glm:
-          tier: free
+          tier: paid
           calls: 9805
-          usd: 0.0
-          note: no metered rate at this tier
+          rate_in: 1.4
+          rate_out: 4.4
+          usd: 98.64
         nemotron:
           tier: paid
           calls: 9805
@@ -494,8 +530,8 @@ cost:
           usd: 2.81
     M=5:
       calls: 49025
-      usd: 18.65
-      usd_with_retry: 22.38
+      usd: 117.29
+      usd_with_retry: 140.75
       per_member:
         qwen:
           tier: local
@@ -503,10 +539,11 @@ cost:
           usd: 0.0
           note: no metered rate at this tier
         glm:
-          tier: free
+          tier: paid
           calls: 9805
-          usd: 0.0
-          note: no metered rate at this tier
+          rate_in: 1.4
+          rate_out: 4.4
+          usd: 98.64
         nemotron:
           tier: paid
           calls: 9805
@@ -558,7 +595,7 @@ cost:
     basis: 9805 items x 6 families (M=5 plus the declared margin)
     usd_authorised: 121.0
     usd_authorisation_source: REQUEST.md OQ4, human 2026-08-30
-    usd_estimated_worst_case: 90.29
+    usd_estimated_worst_case: 208.66
     note: OQ4's ~$121 was a scaling estimate made before per-tier rates were applied; the rate-derived
       worst case is lower. The CAP is held at the authorised $121 so the run cannot exceed what was authorised,
       and the estimate is reported separately rather than quietly replacing the authorisation.
@@ -579,9 +616,9 @@ cost:
       sixth_family_promotion: 'ADDITIVE: the vacated member''s calls were already spent and failed, so
         the promoted member''s pass is new volume'
     per_panel_cumulative_usd:
-      M=3: 78.17
-      M=4: 81.54
-      M=5: 90.29
+      M=3: 196.54
+      M=4: 199.91
+      M=5: 208.66
     per_panel_usd_includes:
     - base panel
     - retry allowance

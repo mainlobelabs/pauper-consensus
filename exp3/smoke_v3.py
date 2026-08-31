@@ -29,6 +29,31 @@ from pathlib import Path
 
 from exp3.availability import _identity, registered_weights, sanitise  # noqa: F401
 
+def load_harness_env() -> bool:
+    """Populate provider credentials the way every other harness surface does.
+
+    solon-harness keeps its keys in ~/.config/solon/harness.env (override with
+    SOLON_ENV_FILE) precisely so headless runs pick up OPENROUTER_API_KEY without
+    sourcing a shell profile. Reading it through model_client.load_env_file means this
+    probe authenticates through the SAME resolution path as the relay's own reviewers,
+    rather than depending on whoever happened to export what into this shell -- which is
+    why the first attempt reported five endpoints unreachable that were merely
+    unauthenticated. Env vars already present always win, so an explicit export still
+    overrides the file.
+    """
+    import sys
+
+    for cand in (Path.home() / "dev/solon-harness/bin",):
+        if cand.is_dir() and str(cand) not in sys.path:
+            sys.path.insert(0, str(cand))
+    try:
+        import model_client                                  # noqa: F401
+        model_client.load_env_file()
+        return True
+    except Exception:                                        # noqa: BLE001
+        return False
+
+
 SMOKE_DIR = Path("out/slice4/smoke")
 SMOKE_MAX_TOKENS = 64          # a smoke test proves reachability, not capability
 
@@ -41,8 +66,12 @@ PANEL: tuple[dict, ...] = (
      "expected_resolved": "ornith35",
      "identity_evidence": "model_path /home/jmannings/.lmstudio/models/unsloth/"
                           "Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf n_params 27"},
-    {"rank": 2, "agent": "glm", "family": "zhipu", "backend": "openrouter",
-     "model": "zai-org/GLM-5.2", "tier": "free"},
+    # hoonify, NOT openrouter: OpenRouter has no such model id (HTTP 400 "not a valid
+    # model ID"), and both prereg_v2 and slice 3's availability record pin this family to
+    # the Hoonify endpoint. Registering the wrong backend would have failed every glm
+    # generation in cycle 3.
+    {"rank": 2, "agent": "glm", "family": "zhipu", "backend": "hoonify",
+     "model": "zai-org/GLM-5.2", "tier": "paid"},
     {"rank": 3, "agent": "nemotron", "family": "nvidia", "backend": "openrouter",
      "model": "nvidia/nemotron-3-super-120b-a12b", "tier": "paid"},
     {"rank": 4, "agent": "gptoss", "family": "openai", "backend": "openrouter",
@@ -241,6 +270,7 @@ def probe_one(c: dict, timeout: float = 120.0) -> dict:
 def run(timeout: float = 120.0, include_fallback: bool = True,
         only: set[str] | None = None) -> dict:
     """Probe every panel member once and record its resolved serving identity."""
+    load_harness_env()
     targets = [c for c in PANEL if not only or c["agent"] in only]
     if include_fallback and (not only or QWEN_FALLBACK["agent"] in only):
         targets = targets + [QWEN_FALLBACK]

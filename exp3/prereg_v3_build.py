@@ -233,6 +233,10 @@ def cost_block(n_items: int) -> dict:
     """
     rates = dict(PAID_OR_RATES)
     rates.update(PAID_OR_RATES_EXTRA)
+    # GLM-5.2 is served by Hoonify, which is metered and an order of magnitude dearer
+    # than the OpenRouter tiers. prereg_v2 records $1.40/$4.40 per 1M. Pricing it as a
+    # free tier understated the run by ~$99 -- most of the authorised budget.
+    rates.setdefault("zai-org/GLM-5.2", {"in": 1.40, "out": 4.40})
     tok_out, tok_in = 2000, 900
     retry = 0.20
 
