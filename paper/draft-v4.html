@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>The Flip Was in the Instrument: Two Pre-Registered Passes from Cross-Model Proposition Aggregation to a Cost-Quantified Jury of Small Language Models</title>
+<title>The Flip Was in the Instrument: Two Pre-Registered Passes, One Retracted Claim, and a Cost-Quantified Jury of Small Language Models</title>
 <style>
 @page {
   size: A4;
@@ -14,7 +14,7 @@
     color: #777;
   }
   @top-left {
-    content: "The Flip Was in the Instrument, v5.1, 2026-08-29";
+    content: "The Flip Was in the Instrument, v5.2, 2026-08-31";
     font-family: "Liberation Serif", serif;
     font-size: 8pt;
     color: #999;
@@ -100,15 +100,15 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 </style>
 </head>
 <body>
-<div class="titleblock"><div class="title">The Flip Was in the Instrument: Two Pre-Registered Passes from Cross-Model Proposition Aggregation to a Cost-Quantified Jury of Small Language Models</div><div class="authors"><strong>Jeremiah Mannings</strong>¹, <strong>Andryo Marzuki</strong>¹</div><div class="affil">¹ Main Lobe Labs</div><div class="meta">v5.1 · 2026-08-29 · DOI: <a href="https://doi.org/10.5281/zenodo.22159835">https://doi.org/10.5281/zenodo.22159835</a><br>Code and artifacts: <a href="https://github.com/mainlobelabs/pauper-consensus">https://github.com/mainlobelabs/pauper-consensus</a> (git tags prereg-waveconsensus-v1, prereg-waveconsensus-v2; tag names keep the original working name, the repository was renamed after the registrations were cut)</div></div><hr class="rule">
+<div class="titleblock"><div class="title">The Flip Was in the Instrument: Two Pre-Registered Passes, One Retracted Claim, and a Cost-Quantified Jury of Small Language Models</div><div class="authors"><strong>Jeremiah Mannings</strong>¹, <strong>Andryo Marzuki</strong>¹</div><div class="affil">¹ Main Lobe Labs</div><div class="meta">v5.2 · 2026-08-31 · DOI: <a href="https://doi.org/10.5281/zenodo.22159835">https://doi.org/10.5281/zenodo.22159835</a><br>Code and artifacts: <a href="https://github.com/mainlobelabs/pauper-consensus">https://github.com/mainlobelabs/pauper-consensus</a> (git tags prereg-waveconsensus-v1, prereg-waveconsensus-v2, prereg-v3-2026-08-30; tag names keep the original working name, the repository was renamed after the registrations were cut)</div></div><hr class="rule">
 <h2>Abstract</h2>
-<p>We study when agreement across large language models is a trustworthy instrument for verification, and what it costs. We report two pre-registered passes of one measurement program. In Pass 1 ("the flip"), the same frozen proposition-aggregation protocol returned opposite primary verdicts on two three-model panels over synthetic reasoning traces (−0.159 vs +0.122 nats, both 95% CIs excluding zero); a post-hoc diagnosis identified two instrument defects (a calibration map without an intercept, and a corpus that could barely contain falsehoods) and a git-tagged second cycle confirmed the central repair (+0.220 and +0.272 nats) while falsifying two companion predictions. Pass 2 carries the instrument-integrity lesson into open news. A jury of twelve 3–4B local language-model configurations (four families × three arms) votes PASS / FAIL / NOT_STATED on 8,000 labeled claims constructed from 200 real news articles (96,000 votes in 13.2 hours on one Mac Studio); the votes are aggregated by a Dawid–Skene EM calibration fitted once on a smaller prior corpus and applied frozen. We call this jury protocol Pauper Consensus. The pre-registered headline gate passes: +0.20289 nats of log-loss over a frozen model-free baseline (95% article-block bootstrap CI [0.18737, 0.21740]), all four pre-registered test cells green. The registered null was a mis-specified sum statistic (instrument defect three; §4.2, §8), its stored one-sided p-value is 1.0 by construction, and the post-hoc delta-form contrast puts the observed delta above all 10,000 realizations; the prior, smaller jury was INCONCLUSIVE as registered, and the registered prediction that the model-free bar's value would transfer across corpora fails. In the pre-registered system-level gate test against a single 27B model, both routes co-fail the only two unsupported claims (0/2 catch; false-claim rates 0.3396% vs 0.3419%, bootstrap CI [0.0, 5e-05]), so the jury route passes on the registered "comparable within 10 percentage points and strictly cheaper" branch at 0.956× the 27B's per-claim cost. The flagship 4-voter arm carries 2.09 effective votes per claim (Kish n_eff), and the binding resource is memory (48 GB for the 27B, about 29 GB for the jury), not arithmetic: the jury runs on second-hand consumer silicon at an estimated ~5× lower operating cost per 10,000 votes (2080 Ti tier; the measured owned-hardware figure is 2.6×; §6) and 7.6× lower capital cost. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost, not the model.</p>
+<p>We study when agreement across large language models is a trustworthy instrument for verification, and what it costs. We report two pre-registered passes of one measurement program. In Pass 1 ("the flip"), the same frozen proposition-aggregation protocol returned opposite primary verdicts on two three-model panels over synthetic reasoning traces (−0.159 vs +0.122 nats, both 95% CIs excluding zero); a post-hoc diagnosis identified two instrument defects (a calibration map without an intercept, and a corpus that could barely contain falsehoods) and a git-tagged second cycle confirmed the central repair (+0.220 and +0.272 nats) while falsifying two companion predictions. A 2026-08-29 correction to the Pass 1 draft retracts one of its invariants (the "one vote per source" reading of the claim-instance contrast, which actually measured polarity — signed vs unsigned counting — not capping) and first reports, post-hoc, the contrast the correction exposes: the panel beats the calibration-selected best single source by +0.0448 to +0.0887 nats on 3 of 4 panel-cycles, inconclusively on the fourth; a third cycle (prereg-v3, git tag prereg-v3-2026-08-30) is registered to test whether that margin grows with panel size. Pass 2 carries the instrument-integrity lesson into open news. A jury of twelve 3–4B local language-model configurations (four families × three arms) votes PASS / FAIL / NOT_STATED on 8,000 labeled claims constructed from 200 real news articles (96,000 votes in 13.2 hours on one Mac Studio); the votes are aggregated by a Dawid–Skene EM calibration fitted once on a smaller prior corpus and applied frozen. We call this jury protocol Pauper Consensus. The pre-registered headline gate passes: +0.20289 nats of log-loss over a frozen model-free baseline (95% article-block bootstrap CI [0.18737, 0.21740]), all four pre-registered test cells green. The registered null was a mis-specified sum statistic (instrument defect three; §4.2, §8), its stored one-sided p-value is 1.0 by construction, and the post-hoc delta-form contrast puts the observed delta above all 10,000 realizations; the prior, smaller jury was INCONCLUSIVE as registered, and the registered prediction that the model-free bar's value would transfer across corpora fails. In the pre-registered system-level gate test against a single 27B model, both routes co-fail the only two unsupported claims (0/2 catch; false-claim rates 0.3396% vs 0.3419%, bootstrap CI [0.0, 5e-05]), so the jury route passes on the registered "comparable within 10 percentage points and strictly cheaper" branch at 0.956× the 27B's per-claim cost. The flagship 4-voter arm carries 2.09 effective votes per claim (Kish n_eff), and the binding resource is memory (48 GB for the 27B, about 29 GB for the jury), not arithmetic: the jury runs on second-hand consumer silicon at an estimated ~5× lower operating cost per 10,000 votes (2080 Ti tier; the measured owned-hardware figure is 2.6×; §6) and 7.6× lower capital cost. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost, not the model.</p>
 <p><strong>Keywords:</strong> fact verification; LLM juries; Dawid–Skene estimation; weak supervision; pre-registration; calibration transfer; inference cost; consumer hardware; news fact-checking</p>
 <hr />
 <h2>1. Introduction</h2>
 <p>Pooling several language models on the same prompt and treating agreement as evidence of correctness is now standard practice. It is well established at the <em>answer</em> level [1,2], and a fast-growing 2026 literature asks when label aggregation of LLM judges is sound: dependence-aware Ising models [7], confounder-aware aggregation [8], the observation that nine frontier judges behave like two effective votes [9], and a co-failure ceiling on routing and voting [14]. What that literature has not yet done, to our knowledge, is treat the whole measurement apparatus (the calibration map, the corpus, the vote accounting, the hardware, the price) as the object under test, under pre-registration.</p>
 <p>We report two pre-registered passes of one program.</p>
-<p><strong>Pass 1</strong> [25] ran the same frozen proposition-aggregation protocol on two three-model panels over 150 synthetic reasoning items. The primary metric, held-out delta log-loss of a three-state Dawid–Skene EM arm against a covariate baseline, flipped sign between panels: Panel A STOP (−0.159 nats), Panel B GO (+0.122 nats), both 95% CIs excluding zero. Report either panel alone and you are confidently wrong. The post-hoc diagnosis found two instrument defects, not two truths: (i) the registered calibration map was a single temperature (no intercept), while the baseline logistic regression had one, so only the baseline could match the base rate; re-fitting with an intercept-bearing Platt map flipped Panel A to GO and took all 12 panel × stratum × arm combinations to GO, with every rank-based metric invariant; and (ii) the corpus could barely contain a falsehood: the alignment layer scored 0 of 607 negative-polarity propositions, and the test splits held 14–16 negatives. The diagnosis became three falsifiable predictions, frozen and git-tagged before any new generation; Cycle 2 confirmed the central prediction (+0.220 [+0.160, +0.280] nats on a new Panel A, +0.272 [+0.180, +0.353] on the continued Panel B) and falsified the other two.</p>
+<p><strong>Pass 1</strong> [25] ran the same frozen proposition-aggregation protocol on two three-model panels over 150 synthetic reasoning items. The primary metric, held-out delta log-loss of a three-state Dawid–Skene EM arm against a covariate baseline, flipped sign between panels: Panel A STOP (−0.159 nats), Panel B GO (+0.122 nats), both 95% CIs excluding zero. Report either panel alone and you are confidently wrong. The post-hoc diagnosis found two instrument defects, not two truths: (i) the registered calibration map was a single temperature (no intercept), while the baseline logistic regression had one, so only the baseline could match the base rate; re-fitting with an intercept-bearing Platt map flipped Panel A to GO and took all 12 panel × stratum × arm combinations to GO, with every rank-based metric invariant; and (ii) the corpus could barely contain a falsehood: the alignment layer scored 0 of 607 negative-polarity propositions, and the test splits held 14–16 negatives. The diagnosis became three falsifiable predictions, frozen and git-tagged before any new generation; Cycle 2 confirmed the central prediction (+0.220 [+0.160, +0.280] nats on a new Panel A, +0.272 [+0.180, +0.353] on the continued Panel B) and falsified the other two. A 2026-08-29 correction to the standalone draft then retracted one of the draft's invariants — "one vote per source or nothing" — because the frozen arm behind the contrast is capped and unsigned, so it measured polarity (signed vs unsigned counting), not capping; the corrected finding is that polarity carries the signal (§2.5). The correction also first reports, post-hoc, the contrast that matters for pooling — the panel versus the best single source its own calibration split selects — and that contrast is what a third cycle is now registered to test as its primary, across panel sizes (§2.7).</p>
 <p><strong>Pass 2</strong> (this work) applies the instrument-integrity lesson to open news. We build a labeled corpus of 8,000 claims from 200 real news articles with a cutoff-gap design: events after every voter's training cutoff, so verdicts must rest on the article text. A jury of twelve 3–4B local language-model configurations (four model families × three arms: base zero-shot, and two fine-tuned adapters trained under reason-included and votes-only conditions) votes PASS / FAIL / NOT_STATED on every claim: 96,000 votes in two sequential phases (the core eight configurations, then the four votes-only), each phase served 6-way in parallel via llama.cpp on a Mac Studio M3 Ultra, in 13.2 hours. The votes are aggregated by a three-state MAP-EM Dawid–Skene model [3,4] with a per-arm affine calibration map, both fitted once on a smaller prior corpus (v1, 1,200 claims) and applied <strong>frozen</strong>. We name the protocol <strong>Pauper Consensus</strong>, after the small, cheap local models that make up the jury. Two pre-registered questions:</p>
 <ul>
 <li><strong>P8 (capability):</strong> does the frozen, transferred calibration beat a frozen model-free content bar on the larger corpus, clearing a pre-registered GO gate (point Δ ≥ +0.02 nats and 95% article-block bootstrap CI excluding zero)?</li>
@@ -117,7 +117,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <p>Both are answered exactly as the gates are written. The capability gate <strong>passes</strong>: the frozen calibration clears the bar by <strong>+0.20289 nats</strong> (95% CI [0.18737, 0.21740]) in the headline cell, with all four pre-registered test cells green and the observed delta above all 10,000 realizations of the post-hoc delta-form contrast (the registered sum-statistic null is mis-specified by construction, instrument defect three; §4.2). The system gate <strong>passes via branch (b)</strong>, and only via branch (b): both routes co-fail the only two unsupported claims in the stream (12–0 jury agreement on each, and PASS from the 27B), their false-claim rates are statistically indistinguishable (0.3396% vs 0.3419%; bootstrap CI [0.0, 5e-05]), and the jury route is strictly cheaper (0.781× length-adjusted; 0.956× on the unadjusted v1 token proxy).</p>
 <p>Our contributions:</p>
 <ol>
-<li><strong>A two-pass, pre-registered measurement of when LLM agreement is a trustworthy instrument.</strong> Pass 1 shows the same frozen protocol returning opposite verdicts on two panels because the instrument, not the hypothesis, was broken; Pass 2 shows the repaired instrument giving a pre-registered, replication-ready result on open news.</li>
+<li><strong>A two-pass, pre-registered measurement of when LLM agreement is a trustworthy instrument.</strong> Pass 1 shows the same frozen protocol returning opposite verdicts on two panels because the instrument, not the hypothesis, was broken; Pass 2 shows the repaired instrument giving a pre-registered, replication-ready result on open news. Pass 1's 2026-08-29 correction notice — a retracted invariant, a never-implemented registered arm reported for the first time post-hoc, and a third cycle registered against the corrected estimand — is part of the measurement program: no registered verdict from either completed cycle is restated by it (§2.5, §2.7).</li>
 <li><strong>Frozen cross-corpus transfer of Dawid–Skene calibration</strong> as a first-class, falsifiable claim: the EM weights and the per-arm affine maps are fitted once on the v1 corpus and applied frozen on v2, and they clear a pre-registered bar (+0.20289 nats, all four test cells green). The companion registered prediction (P9) that the <em>model-free</em> bar's value would transfer <strong>fails</strong>, which we report at equal prominence.</li>
 <li><strong>A pre-registered system-level boundary between a small-model jury and a single 27B model</strong>, quantified head-to-head on the same 8,000 claims (93.962% agreement with the 12-config majority; the 27B stricter on 4.3% of majority-PASS cells) and on a defendant claim stream with a mechanical pass criterion.</li>
 <li><strong>Measured per-vote cost on owned hardware</strong>, including the hardware barrier itself: the binding constraint is memory, not arithmetic (48 GB GDDR7 for the 27B versus about 29 GB for the full jury), so the jury runs on second-hand consumer silicon at 7.6× lower capital and ~5× lower (estimated, Turing tier; §6) operating cost per 10,000 votes.</li>
@@ -126,9 +126,9 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <p>Section 2 compresses Pass 1. Section 3 describes the Pass 2 instrument. Section 4 reports the capability results (v1 INCONCLUSIVE, v2 GO, the failed P9). Section 5 reports the system gate. Section 6 is the cost and hardware analysis. Sections 7–10 discuss, limit, conclude, and document reproducibility.</p>
 <hr />
 <h2>2. Pass 1: The flip was in the instrument</h2>
-<p>Pass 1 is reported in this section; the standalone preprint ("The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model Proposition Aggregation", draft v3) is folded into the same Zenodo record and is cited as [25]. Pass 1 fixes the design rules that Pass 2 follows.</p>
+<p>Pass 1 is reported in this section; the standalone preprint ("The Flip Was in the Instrument: Two Pre-Registered Cycles of Cross-Model Proposition Aggregation", draft v3) is folded into the same Zenodo record, carries a 2026-08-29 correction notice, and is cited as [25]; the correction is ported into §2.5. Pass 1 fixes the design rules that Pass 2 follows.</p>
 <h3>2.1 Setup and the Cycle 1 flip</h3>
-<p>The question of Pass 1: does inter-model agreement on individual <em>propositions inside reasoning traces</em> predict proposition truth, as it does for final answers? The instrument: 150 ProofWriter OWA items (a synthetic, decidable closed world; ground truth by construction), split 50/100 calibration/test; two three-model panels sharing no model family (one local, one OpenRouter); a fixed extractor plus embedding+NLI alignment converting traces into canonical propositions; one observation per agent per proposition (one vote per source); arms WCT-U (uniform), WCT-EM (three-state Dawid–Skene), WCT-C (calibration labels), a covariate logistic-regression baseline, and ablations. The registered primary: held-out delta log-loss of WCT-EM versus the baseline, GO at δ = 0.02 nats.</p>
+<p>The question of Pass 1: does inter-model agreement on individual <em>propositions inside reasoning traces</em> predict proposition truth, as it does for final answers? The instrument: 150 ProofWriter OWA items (a synthetic, decidable closed world; ground truth by construction), split 50/100 calibration/test; two three-model panels sharing no model family (one local, one OpenRouter); a fixed extractor plus embedding+NLI alignment converting traces into canonical propositions; one observation per agent per proposition, signed by the polarity of what the source asserts (one signed observation per source; the corrected reading, §2.5); arms WCT-U (uniform), WCT-EM (three-state Dawid–Skene), WCT-C (calibration labels), a covariate logistic-regression baseline, and ablations. The registered primary: held-out delta log-loss of WCT-EM versus the baseline, GO at δ = 0.02 nats.</p>
 <p>Cycle 1 ran the identical frozen protocol on both panels. The primary metric flipped:</p>
 <table>
 <thead>
@@ -181,14 +181,114 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 </tbody>
 </table>
 <h3>2.4 Invariants, and the design rules for Pass 2</h3>
-<p>Robust across both cycles: (i) <strong>one vote per source or nothing</strong>: claim-instance counting gives AUROC 0.50–0.61 while unique-source support gives 0.89–1.00; (ii) the signal is real wherever measured: within-item permutation null p = 0.001 in every stratum, panel, and cycle; (iii) <strong>ranking is panel-robust, calibration is not</strong>: every verdict flip in the study lives in calibration-sensitive metrics.</p>
+<p>Robust across both cycles: (i) <strong>polarity, not capping, carries the signal</strong> (corrected 2026-08-29; §2.5): draft v3 reported this as "one vote per source or nothing: claim-instance counting gives AUROC 0.50–0.61 while unique-source support gives 0.89–1.00", but the frozen arm is capped and unsigned, so the contrast measured signed vs unsigned counting; varying the two separately (POST-HOC, §2.5) leaves every signed arm at ≥ 0.9001 and no unsigned arm above 0.6063; (ii) the signal is real wherever measured: within-item permutation null p = 0.001 in every stratum, panel, and cycle; (iii) <strong>ranking is panel-robust, calibration is not</strong>: every verdict flip in the study lives in calibration-sensitive metrics.</p>
 <p>Four design rules carry into Pass 2:</p>
 <ul>
 <li><strong>R1. Tag the protocol before any inference.</strong> The implementation at the tag is the registration; prose is commentary.</li>
 <li><strong>R2. The calibration map must carry an intercept.</strong> Every voter's error is modeled by a class-conditional, affine (Platt-like) map, never a bare temperature.</li>
 <li><strong>R3. The corpus must be able to contain falsehoods.</strong> A registered label distribution, with negatives that the instrument can actually see.</li>
-<li><strong>R4. One vote per source.</strong> A verbose model or a long trace does not get more votes than a terse one.</li>
+<li><strong>R4. One signed observation per source.</strong> A verbose model or a long trace does not get more votes than a terse one; what a vote records is the polarity of what the source asserts, and the sign is what carries the signal (§2.5).</li>
 </ul>
+<h3>2.5 Correction to the one-vote-per-source claim (2026-08-29)</h3>
+<p>Draft v3 [25] reported as an invariant that proposition-level agreement carries information <em>because each source gets one vote</em>, and that counting claim instances instead destroys the signal (AUROC 0.50–0.61 vs 0.89–1.00). Those numbers are correct readings of the frozen arms. What was wrong is what that arm <em>is</em>: <code>cluster.align_anchored</code> collapses to one observation per (agent, proposition) before <code>exp/e1.py:76-78</code> counts them, so the "claim-instance" count is identically the number of agents that mentioned the proposition — capped, and unsigned. The contrast draft v3 read as <em>capped vs uncapped</em> was in fact <em>signed vs unsigned</em>: it varied polarity while holding capping fixed.</p>
+<p>Varying the two separately (POST-HOC, panel level, raw test AUROC on the unmapped score over each panel's all-items stratum, from <code>firstpass/out/v3/</code>; four aggregate panel results — no per-stratum claim is made from them):</p>
+<table>
+<thead>
+<tr>
+<th>Panel-cycle</th>
+<th>Capped + signed</th>
+<th>Capped + unsigned</th>
+<th>Uncapped + signed</th>
+<th>Uncapped + unsigned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c1 local panel</td>
+<td>0.9001</td>
+<td>0.5069</td>
+<td>0.9664</td>
+<td>0.4484</td>
+</tr>
+<tr>
+<td>c1 openrouter panel</td>
+<td>0.9911</td>
+<td>0.5239</td>
+<td>0.9875</td>
+<td>0.4825</td>
+</tr>
+<tr>
+<td>c2 panel A</td>
+<td>0.9353</td>
+<td>0.6063</td>
+<td>0.9456</td>
+<td>0.5884</td>
+</tr>
+<tr>
+<td>c2 panel B</td>
+<td>0.9323</td>
+<td>0.5686</td>
+<td>0.9530</td>
+<td>0.5705</td>
+</tr>
+</tbody>
+</table>
+<p>Removing the per-source cap costs nothing measurable: uncapped signed beats capped on three of four panel-cycles (by 0.0662, 0.0103, 0.0207) and is 0.0036 lower on the fourth (c1 openrouter, 0.9911 capped vs 0.9875 uncapped); read together, the cap makes no difference either way. Removing the sign destroys everything: no unsigned arm exceeds 0.6063 anywhere, while every signed arm is at least 0.9001. Counting is not the operative step, polarity is. The one-vote-per-source cap remains this instrument's design rule (R4); whether it is <em>necessary</em> is untested — this measurement never tested it.</p>
+<p>The correction also records a registration gap: the arm that would distinguish cross-model agreement from one good model, <code>single_best_calibration_selected</code>, was registered in <code>prereg.yaml:166</code> and <code>plan.md:488</code>, dropped from <code>prereg_v2.yaml</code>'s arm list without comment, and never implemented in either cycle. Measured now over the frozen caches, with the source chosen on the calibration split alone, under each cycle's own registered calibration map (POST-HOC, first report):</p>
+<table>
+<thead>
+<tr>
+<th>Panel-cycle</th>
+<th>Registered map</th>
+<th>Selected source</th>
+<th>Panel (WCT-EM) over that source</th>
+<th>Decision (δ = 0.02)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c1 local panel</td>
+<td>temperature</td>
+<td>qwen</td>
+<td>+0.0448 [+0.0117, +0.0787]</td>
+<td><strong>go</strong></td>
+</tr>
+<tr>
+<td>c1 openrouter panel</td>
+<td>temperature</td>
+<td>nemotron</td>
+<td>+0.0887 [+0.0455, +0.1421]</td>
+<td><strong>go</strong></td>
+</tr>
+<tr>
+<td>c2 panel A</td>
+<td>platt</td>
+<td>glm</td>
+<td>+0.0762 [+0.0465, +0.1068]</td>
+<td><strong>go</strong></td>
+</tr>
+<tr>
+<td>c2 panel B</td>
+<td>platt</td>
+<td>gptoss</td>
+<td>+0.0329 [−0.0109, +0.0703]</td>
+<td><strong>inconclusive</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The consequence, stated plainly: no registered result in either cycle distinguishes cross-model agreement from one well-chosen model. The margin is real, small — a fraction of the +0.220/+0.272 reported against the covariate baseline — unregistered, and absent on one panel. It is the whole of what pooling buys over choosing well. No registered verdict from cycle 1 or cycle 2 is restated or altered by this correction; every figure above is POST-HOC and read from the committed artifacts (<code>out/v3/</code> at <code>e63f946</code>). The pre-correction text remains available at <code>firstpass/</code> at <code>e63f946</code> (§10).</p>
+<h3>2.6 Instrument precision: the NLI instrument ran in fp16 (disclosed 2026-08-30)</h3>
+<p>The alignment instrument (MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli) declares <code>dtype=float16</code> in its checkpoint config, and the frozen pipeline honoured it on CPU as well as GPU: cycles 1 and 2 were measured in fp16. fp16 alignment scores are device-dependent — cpu/fp16 vs gpu/fp16 diverge by up to 4.4e-03 with argmax flips on the same 800-pair corpus, while cpu/fp32 vs gpu/fp32 diverge by 7.8e-06 with none — and CPU fp16 is 2.7× slower than CPU fp32, so the frozen path took the slowest, least accurate, and least reproducible option. Cycle 3 registers the instrument as fp32 on GPU (an instrument change, registered rather than silent), with a separate cache root, a pinned frozen-cache count of 1,826 NLI entries, and a driver that fails closed on a precision mismatch instead of falling back.</p>
+<p>Published results are unaffected: re-aligning cycle-2 panel A under fp32 reproduced all 1,565 observations exactly (0 label flips, none added or dropped; maximum alignment-score movement 2.1e-03). The caveat is scale: the smallest observed threshold margin is 0.0021, exactly one fp16→fp32 perturbation-size, so zero flips at 150 items is not a guarantee at 9,805, and fp16 and fp32 values must never be mixed in one analysis.</p>
+<h3>2.7 What cycle 3 registered (prereg-v3, 2026-08-30)</h3>
+<p>The open question the correction exposed — whether the panel beats the best single source, and whether that margin grows with panel size — is the third registration, frozen and git-tagged (<code>prereg-v3-2026-08-30</code>) before any cycle-3 generation.</p>
+<ul>
+<li><strong>Estimand:</strong> the fixed-panel difference in held-out log loss between the panel aggregate and the calibration-selected best single source — the contrast §2.5 first reports post-hoc.</li>
+<li><strong>P1 (primary):</strong> at M=5, the panel aggregate beats the best single source by at least Δ = 0.0448 nats — the smallest margin cycles 1–2 showed conclusively (0.04481 / 0.08866 / 0.07622; the inconclusive c2 panel B value, 0.03292, is excluded by the registration's own rule rather than allowed to lower the floor). Supports: bootstrap CI lower bound &gt; Δ; refutes: upper bound &lt; Δ.</li>
+<li><strong>P2 (dose–response):</strong> the margin over the best single source grows from M=3 to M=4 to M=5, as error decorrelation predicts (estimand: margin(M=5) − margin(M=3), paired on the items both panels scored). The registered n can detect increments of 0.0071 nats or more; below that floor the arm is underpowered and a null is uninterpretable — stated in the registration rather than discovered afterwards.</li>
+<li><strong>Corpus and instrument:</strong> 9,805 items, capable of containing falsehoods, with cycle 2's 150 a verified complete subset so the +0.220/+0.272 results remain comparable on that stratum; instrument fp32/CUDA (§2.6); six model families; 58,830 calls; USD 210 authorised (raised from a USD 121 scaling estimate that had priced one family as free tier) against a USD 208.66 worst case — USD 1.34 of headroom, deliberately thin; the run aborts on breach rather than overrunning. Power 0.80, two-sided paired item-block bootstrap.</li>
+</ul>
+<p>At the time of this revision the registration is tagged and the run is gated on the tag; no cycle-3 results are reported here.</p>
 <hr />
 <h2>3. Pass 2: The instrument</h2>
 <h3>3.1 Task and voting contract</h3>
@@ -594,7 +694,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <hr />
 <h2>7. Discussion</h2>
 <h3>7.1 The two-pass arc</h3>
-<p>Pass 1 and Pass 2 are one argument. In Pass 1, a frozen protocol produced opposite verdicts on two panels, and the diagnosis (missing intercept, corpus that could not hold falsehoods) turned out to be about the <em>instrument</em>. The repaired instrument then confirmed its central prediction in a tagged, replicable second cycle. Pass 2 imports the repair: the calibration map carries intercepts (per-arm affine maps, rule R2), the corpus carries a registered 25% FAIL mass and 2.0% negative polarity (rule R3), every vote is one source (rule R4), and the protocol is tagged before the first inference call (rule R1). The payoff is not just that the v2 headline gate passes; it is that it passes <em>frozen</em>: every fit (EM weights, calibration maps, bars) was determined by v1 data before any v2 vote existed. A post-hoc fit could always clear a post-hoc bar; this one could not.</p>
+<p>Pass 1 and Pass 2 are one argument. In Pass 1, a frozen protocol produced opposite verdicts on two panels, and the diagnosis (missing intercept, corpus that could not hold falsehoods) turned out to be about the <em>instrument</em>. The repaired instrument then confirmed its central prediction in a tagged, replicable second cycle. Pass 2 imports the repair: the calibration map carries intercepts (per-arm affine maps, rule R2), the corpus carries a registered 25% FAIL mass and 2.0% negative polarity (rule R3), every vote is one signed observation per source (rule R4, as corrected in §2.5), and the protocol is tagged before the first inference call (rule R1). The payoff is not just that the v2 headline gate passes; it is that it passes <em>frozen</em>: every fit (EM weights, calibration maps, bars) was determined by v1 data before any v2 vote existed. A post-hoc fit could always clear a post-hoc bar; this one could not.</p>
 <p>The v1 INCONCLUSIVE is part of the evidence, not a footnote. It is the small-corpus reading of the same instrument: +0.093 content-bar delta, no GO, every CI crossing zero. Scale and polarity shift move the same frozen fits from inconclusive to decisive, which is what a transfer claim is supposed to look like.</p>
 <h3>7.2 Where the jury stands, and where it does not</h3>
 <p>We report the negatives at the same prominence as the positives:</p>
@@ -602,6 +702,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <li><strong>The 27B is more accurate.</strong> 95.887% vs 93.912% three-state, 99.119% vs 98.25% gate-binary, 99.398% vs 98.05% FAIL recall. If the budget is "one good verdict per claim," buy the 27B.</li>
 <li><strong>The catch is 0/2 on both routes.</strong> The pre-registered system test cannot distinguish the two gates on this corpus; the jury passes on cost, not on detection.</li>
 <li><strong>P9 failed.</strong> The model-free bar's value does not transfer; only the learned calibration does.</li>
+<li><strong>The pooling margin over the best single source is small and unregistered.</strong> +0.0448 to +0.0887 nats on 3 of 4 Pass 1 panel-cycles, inconclusive on the fourth (§2.5): a fraction of the margin against the covariate baseline, and the whole of what pooling buys over choosing one source well. Cycle 3 is registered to test whether it grows with panel size (§2.7); until that run lands, it is a post-hoc observation, not a registered result.</li>
 <li><strong>n_eff is 2.085.</strong> The flagship arm is two independent voters, not twelve. The jury's diversity is real (four families × three arms) but substantially correlated; co-failure is the expected failure mode, and the two co-failed claims in §5.2 are its empirical specimen.</li>
 <li><strong>The 27B phase had 50 missing verdicts (0.625%)</strong> and 6 missing verdicts inside the gate; strict-parse discipline keeps them out, but they are part of the record.</li>
 </ul>
@@ -632,23 +733,25 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <li><strong>One 27B, one quantization, one serving config.</strong> The head-to-head is against qwen3.8-27b FP8 at temperature 0; other frontier models may sit at different points on the boundary.</li>
 <li><strong>The defendant is the 27B.</strong> Both routes consume the same defendant claims; defendant errors propagate identically into both gates (as registered).</li>
 <li><strong>The implementer is also the 27B.</strong> The coding agent that built the corpus tools, the harness, and the prompt contracts runs on the same model that serves as self-review control, defendant, and judge. The registered gates and labels were human-set and frozen before inference (rule R1), which is the control for this conflict; residual risk concentrates in the drafted prompt contracts, whose frozen text is in the registration for inspection.</li>
-<li><strong>Pass 1's world is synthetic.</strong> The mechanism results (intercept, one-vote-per-source, rank robustness) are what we expect to transfer; Pass 1 effect sizes are not claimed for open news. Its co-primary was reading-sensitive, the registered second NLI stack was never run, and the two cycles share half a corpus plus one panel.</li>
+<li><strong>Pass 1's world is synthetic.</strong> The mechanism results (intercept, polarity-carries-the-signal, rank robustness) are what we expect to transfer; Pass 1 effect sizes are not claimed for open news. Its co-primary was reading-sensitive, the registered second NLI stack was never run, and the two cycles share half a corpus plus one panel.</li>
+<li><strong>The pooling margin is unregistered and small.</strong> The arm that would distinguish cross-model agreement from one good model (<code>single_best_calibration_selected</code>, registered in <code>prereg.yaml:166</code>) was never implemented in either cycle and is reported for the first time post-hoc in §2.5: +0.0448 to +0.0887 nats over the calibration-selected best single source on 3 of 4 panel-cycles, inconclusive on the fourth. The registered primary compares against a covariate baseline, so it establishes that proposition-level vote scores carry signal — not that <em>cross-model</em> agreement is what carries it. Cycle 3 is registered to close this gap (§2.7); until then the pooling claim rests on the post-hoc margin.</li>
+<li><strong>The NLI instrument ran in fp16 in cycles 1–2.</strong> The checkpoint declares <code>dtype=float16</code> and the frozen pipeline honoured it on CPU too; fp16 scores are device-dependent (4.4e-03 CPU-vs-GPU divergence with argmax flips) and 2.7× slower than fp32 on CPU. Cycle 3 registers fp32 (§2.6). Published results reproduce exactly under fp32 (1,565 observations, 0 label flips), but the smallest observed threshold margin (0.0021) is one fp16→fp32 perturbation, so near-threshold sensitivity grows with corpus size.</li>
 <li><strong>The registered null was mis-specified (instrument defect three).</strong> The Pass 2 permutation statistic is a <em>sum</em> of two log-losses while the observed value is their <em>difference</em>; its stored one-sided p-value is 1.0 by construction, and the paper reports the post-hoc delta-form contrast as a descriptive supplement instead. With Pass 1's missing-intercept calibration map and polarity-poor corpus, this is the third instrument defect the program surfaced; the headline GO does not depend on the registered p-value (§4.2).</li>
 </ul>
 <hr />
 <h2>9. Conclusion</h2>
-<p>Agreement across language models is a measurement instrument, and like any instrument it can be broken in ways the analyst does not see until a second panel disagrees. Pass 1 found the break (a missing intercept, a corpus that could not hold falsehoods) and repaired it under a git tag; Pass 2 carried the repaired instrument into open news and let frozen, pre-registered gates decide what the result means. The frozen calibration clears the bar (+0.20289 nats, CI [0.18737, 0.21740], all four test cells green; the registered sum-statistic null is mis-specified by construction, instrument defect three, §4.2); the model-free shortcut does not transfer (P9 FALSE); the system route co-fails the 27B on exactly two fine-grained errors and passes on the registered cheaper-and-indistinguishable branch (0.781× length-adjusted; 0.956× on the unadjusted proxy). The flagship 4-voter arm carries 2.09 effective votes per claim, and the hardware barrier between the two routes is a 48 GB GDDR7 memory, not an arithmetic gap. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost. This paper measures that instrument twice, with the gates left open.</p>
+<p>Agreement across language models is a measurement instrument, and like any instrument it can be broken in ways the analyst does not see until a second panel disagrees. Pass 1 found the break (a missing intercept, a corpus that could not hold falsehoods), repaired it under a git tag, and then had one of its invariants retracted by its own correction notice (the one-vote-per-source reading; what carries the signal is polarity, §2.5) — registering the exposed contrast, the panel versus the best single source, as the primary of a third cycle on 9,805 items (§2.7); Pass 2 carried the repaired instrument into open news and let frozen, pre-registered gates decide what the result means. The frozen calibration clears the bar (+0.20289 nats, CI [0.18737, 0.21740], all four test cells green; the registered sum-statistic null is mis-specified by construction, instrument defect three, §4.2); the model-free shortcut does not transfer (P9 FALSE); the system route co-fails the 27B on exactly two fine-grained errors and passes on the registered cheaper-and-indistinguishable branch (0.781× length-adjusted; 0.956× on the unadjusted proxy). The flagship 4-voter arm carries 2.09 effective votes per claim, and the hardware barrier between the two routes is a 48 GB GDDR7 memory, not an arithmetic gap. The honest unit of account for LLM-based verification is the instrument: protocol, corpus, hardware, and cost. This paper measures that instrument twice, corrects it where it was wrong, and leaves a third gate open.</p>
 <hr />
 <h2>10. Reproducibility and artifacts</h2>
 <ul>
-<li><strong>Repository:</strong> https://github.com/mainlobelabs/pauper-consensus (transferred from the marzukia account 2026-08-29; the old URL redirects). The method is named Pauper Consensus; the repository was renamed from wave-consensus after both registrations were cut, so the frozen tag names below keep the original working name. Git tags: <code>prereg-waveconsensus-v1</code> (corpus v1, adapters commit 1273339), <code>prereg-waveconsensus-v2</code> (prereg-v2.yaml + sha256 manifest over frozen inputs, tools frozen at tag).</li>
+<li><strong>Repository:</strong> https://github.com/mainlobelabs/pauper-consensus (transferred from the marzukia account 2026-08-29; the old URL redirects). The method is named Pauper Consensus; the repository was renamed from wave-consensus after both registrations were cut, so the frozen tag names below keep the original working name. Git tags: <code>prereg-waveconsensus-v1</code> (corpus v1, adapters commit 1273339), <code>prereg-waveconsensus-v2</code> (prereg-v2.yaml + sha256 manifest over frozen inputs, tools frozen at tag), <code>prereg-v3-2026-08-30</code> (cycle-3 registration: 9,805 items, primary = the panel-versus-best-single-source contrast, Δ = 0.0448 nats; the original tag existed only on the source machine and was recreated on this repository on 2026-08-31 with the exact annotation values from the upstream gate script, pointing at the same commit and tree — ea242fb, tree 1e90f28e — as the source-machine tag).</li>
 <li><strong>Registration:</strong> <code>prereg-v2.yaml</code> at <code>prereg-waveconsensus-v2</code>; "implementations are the registration."</li>
 <li><strong>Frozen v1 inputs:</strong> <code>corpus-v2/frozen/v1_baselines.json</code> (sha256 <code>2d011f2d1339b7b4d238a0aaae485a133a5bec525f6480d3639440a70fed39a8</code>): per-arm calibration maps, covariate bars, EM/calibration/covariate specs, v1 splits, and the reproduced v1 test reference used for the tool's smoke test (content-only deltas +0.093 ri / +0.097 vo; full-bar +0.0151 ri / +0.0191 vo).</li>
 <li><strong>Runs:</strong> <code>runs/2026-08-28-v2-jury/</code> (jury launch log with JURY LAUNCH COMPLETE 2026-08-29 00:37:54, per-model vote rows, <code>eval_v2.json</code> with all capability numbers); <code>runs/2026-08-29-v2-27b/</code> (self-review 8,000 calls, defendant 200 + judge 600, <code>judge.jsonl</code> with verbatim claims and adjudication reasons, <code>gate_analysis.json</code> with all system-gate and cost numbers).</li>
 <li><strong>RNG streams:</strong> EM point estimate 20260827 (5 restarts); bootstrap 20260828 (2,000 article-block resamples, 0 restarts); null 20260829 (10,000 permutations); gate bootstrap 20260827 (2,000 resamples).</li>
 <li><strong>Hardware:</strong> jury on marzuki-helium (Mac Studio M3 Ultra) via llama.cpp/omlx, ports 8102–8107, 13.2 h; 27B phase on marzuki-hydrogen (vLLM, RTX PRO 5000 Blackwell 48 GB), 12,028 s total (defendant 520 s, self-review 10,651 s, judge 857 s). Spend caps persisted across re-runs (27B: 10,000; per juror: 8,000).</li>
 <li><strong>Corpora:</strong> v1 (30 articles, 1,200 propositions) at tag <code>prereg-waveconsensus-v1</code>; v2 (200 articles, 8,000 propositions) with contamination-gate run in <code>corpus-v2/gate/runs/2026-08-28/</code>.</li>
-<li><strong>Pass 1:</strong> §2 of this paper (standalone preprint draft v3 folded into the same record; [25]); protocol tag and frozen artifacts in the repository (tag <code>prereg-waveconsensus-v1</code>).</li>
+<li><strong>Pass 1 and cycle-3 artifacts:</strong> all Pass 1 / cycle-3 content — prereg v1–v3, the cycle-3 corpus, run outputs including the committed generation cache (2,176 files, 18 MB), the instrument code, and the working documents (DECISIONS, GOTCHAS, SESSION_HANDOFF) — is under <code>firstpass/</code>, imported with its full commit history (junction commit e3186c9, 2026-08-31; upstream HEAD 76d005d is an ancestor of the repository history). The 2026-08-29 correction notice and the corrected §6.1 table are in <code>firstpass/paper.md</code>; the reanalysis artifacts behind every §2.5/§2.7 number are in <code>firstpass/out/v3/reanalysis_*.json</code> (committed at e63f946); the fp16 disclosure is in <code>firstpass/DECISIONS.md</code> (entry 2026-08-30T13:19:59Z) and <code>firstpass/GOTCHAS.md</code>.</li>
 </ul>
 <hr />
 <h2>References</h2>
@@ -676,7 +779,7 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <p>[22] Chan, C.-M., et al. (2023). ChatEval: Towards better LLM-based evaluators through multi-agent debate. arXiv:2308.07201.</p>
 <p>[23] He, H., Li, Y., et al. (2025). Debating truth: Debate-driven claim verification with multiple large language model agents. arXiv:2507.19090.</p>
 <p>[24] Chowdhury, M., Beg, N. J., et al. (2026). Courtroom-style multi-agent debate with progressive RAG and role-switching for controversial claim verification. arXiv:2603.28488.</p>
-<p>[25] Mannings, J., &amp; Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Standalone draft v3, folded into this paper (§2). Zenodo (single record for both passes). https://doi.org/10.5281/zenodo.22159835</p>
+<p>[25] Mannings, J., &amp; Marzuki, A. (2026). The Flip Was in the Instrument: Two pre-registered cycles of cross-model proposition aggregation. Standalone draft v3, with the 2026-08-29 correction notice, folded into this paper (§2; the correction is ported into §2.5, the pre-correction text at <code>firstpass/</code> @ e63f946). Zenodo (single record for both passes). https://doi.org/10.5281/zenodo.22159835</p>
 <p>[26] Niimi, Y. (2025). A simple ensemble strategy for LLM inference: Towards more stable text classification. arXiv:2504.18884.</p>
 <p>[27] Sahnan, D., Corney, D., Larraz, I., et al. (2026). Can LLMs automate fact-checking article writing? <em>TACL 2026</em>. arXiv:2503.17684.</p>
 <p>[28] Pan, G., Chodnekar, V., Roy, A., &amp; Wang, H. (2025). A cost-benefit analysis of on-premise large language model deployment: Breaking even with commercial LLM services. arXiv:2509.18101.</p>
@@ -684,6 +787,6 @@ hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 <p>[30] Fernandez, J., Na, C., Tiwari, V., Bisk, Y., Luccioni, S., &amp; Strubell, E. (2025). Energy considerations of large language model inference and efficiency optimizations. arXiv:2504.17674.</p>
 <p>[31] Liu, Y., Liu, Y., Zhang, X., Chen, X., &amp; Yan, R. (2025). The truth becomes clearer through debate! Multi-agent systems with large language models unmask fake news. arXiv:2505.08532.</p>
 <hr />
-<p><em>Data availability: corpora, prompts, frozen fits, run manifests, and analysis tools are in the repository linked above at the cited git tags. Verbatim defendant claims and judge adjudications are in <code>runs/2026-08-29-v2-27b/judge.jsonl</code>.</em></p>
+<p><em>Data availability: corpora, prompts, frozen fits, run manifests, and analysis tools are in the repository linked above at the cited git tags; Pass 1 and cycle-3 artifacts (prereg v1–v3, the 9,805-item corpus, run outputs, the committed generation cache, the correction notice, and the reanalysis artifacts behind §2.5/§2.7) are under <code>firstpass/</code> with full commit history preserved. Verbatim defendant claims and judge adjudications are in <code>runs/2026-08-29-v2-27b/judge.jsonl</code>.</em></p>
 </body>
 </html>
