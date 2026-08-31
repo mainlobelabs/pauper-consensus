@@ -22,6 +22,12 @@ from exp3.smoke_v3 import M_SUBSETS, PANEL, QWEN_FALLBACK
 OUT = Path("prereg_v3.yaml")
 TAG = "prereg-v3-2026-08-30"
 
+# Human authorisation, raised 2026-08-31 from $121 once GLM was priced correctly.
+# The original figure was set against an estimate that treated GLM as a free tier; at
+# Hoonify's metered $1.40/$4.40 per 1M that one family is ~$99 of the run.
+AUTHORISED_USD = 210.00
+AUTHORISATION_SOURCE = "REQUEST.md OQ4, human 2026-08-31 (supersedes the $121 of 2026-08-30)"
+
 # Each cycle's OWN registered calibration map. Reading a cycle under the other
 # cycle's map is not what was registered and inflates the spread.
 REGISTERED_MAP = {"c1_local": "temperature", "c1_openrouter": "temperature",
@@ -300,14 +306,16 @@ def cost_block(n_items: int) -> dict:
         "authorised_volume": {
             "calls": all_six_calls,
             "basis": f"{n_items} items x {len(PANEL)} families (M=5 plus the declared margin)",
-            "usd_authorised": 121.00,
-            "usd_authorisation_source": "REQUEST.md OQ4, human 2026-08-30",
+            "usd_authorised": AUTHORISED_USD,
+            "usd_authorisation_source": AUTHORISATION_SOURCE,
             "usd_estimated_worst_case": worst_with_retry,
-            "note": ("OQ4's ~$121 was a scaling estimate made before per-tier rates were "
-                     "applied; the rate-derived worst case is lower. The CAP is held at "
-                     "the authorised $121 so the run cannot exceed what was authorised, "
-                     "and the estimate is reported separately rather than quietly "
-                     "replacing the authorisation."),
+            "note": ("The original $121 was a scaling estimate that priced GLM-5.2 as a "
+                     "free tier. It is served by Hoonify at $1.40/$4.40 per 1M, which "
+                     "makes that one family ~$99 of the run and put the true worst case "
+                     "at $208.66 -- over the authorisation. The owner raised the "
+                     "authorisation to $210 on 2026-08-31 rather than trim the corpus. "
+                     "Headroom over the worst case is deliberately thin; the run aborts "
+                     "on breach rather than continuing."),
         },
         "hard_cap": {
             # Contingency passes are FULL passes, so a cap covering only the base panel
@@ -344,7 +352,7 @@ def cost_block(n_items: int) -> dict:
                 for M in (3, 4, 5)},
             "per_panel_usd_includes": ["base panel", "retry allowance",
                                        *contingencies.keys()],
-            "run_total_usd": 121.00,
+            "run_total_usd": AUTHORISED_USD,
             "persistence": ("both counters are persisted to out/cycle3/caps.json and survive "
                             "re-runs; a re-run RESUMES them rather than resetting, charges "
                             "before the call so a crash cannot re-run free, and aborts on "

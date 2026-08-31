@@ -120,6 +120,11 @@ disappearance is absorbed by documented promotion rather than an unregistered su
 
 - OQ3: RESOLVED (human, 2026-08-30). The registration tag is `prereg-v3-2026-08-30`,
   following the v2 convention (`prereg-v2-2026-08-16`).
-- OQ4: RESOLVED (human, 2026-08-30). The generation budget implied by the 9,805-item
-  corpus — 58,830 calls, ~$121 at slice 3's measured paid-tier rates — is authorised as a
-  registered CAP. The cap is registered in this slice; the spend happens in a later run.
+- OQ4: RESOLVED (human, 2026-08-31, superseding 2026-08-30). The generation budget for
+  the 9,805-item corpus is authorised at **$210** as a registered CAP, with the corpus
+  kept at 9,805 items. The earlier $121 was set against an estimate that priced
+  `zai-org/GLM-5.2` as a free tier; it is served by Hoonify at $1.40/$4.40 per 1M, which
+  makes that single family ~$99 of the run and the true worst case $208.66. The owner
+  chose to raise the authorisation rather than cut the corpus to ~8,429 items. The cap is
+  registered in this slice; the spend happens in a later run.
+- OQ4 (superseded text): 58,830 calls, ~$121 at slice 3's measured paid-tier rates.

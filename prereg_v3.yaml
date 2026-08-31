@@ -94,6 +94,7 @@ panels:
     role: panel_member
     expected_resolved: zai-org/GLM-5.2
     expected_source: requested id (default)
+    observed_echo_at_smoke: zai-org/GLM-5.2
   - rank: 3
     agent: nemotron
     family: nvidia
@@ -180,8 +181,8 @@ smoke_evidence:
       weights_match: true
       n_params: 27.0
     glm:
-      echoed: null
-      status: fail
+      echoed: zai-org/GLM-5.2
+      status: ok
       weights_match: null
       n_params: null
     nemotron:
@@ -593,12 +594,14 @@ cost:
   authorised_volume:
     calls: 58830
     basis: 9805 items x 6 families (M=5 plus the declared margin)
-    usd_authorised: 121.0
-    usd_authorisation_source: REQUEST.md OQ4, human 2026-08-30
+    usd_authorised: 210.0
+    usd_authorisation_source: REQUEST.md OQ4, human 2026-08-31 (supersedes the $121 of 2026-08-30)
     usd_estimated_worst_case: 208.66
-    note: OQ4's ~$121 was a scaling estimate made before per-tier rates were applied; the rate-derived
-      worst case is lower. The CAP is held at the authorised $121 so the run cannot exceed what was authorised,
-      and the estimate is reported separately rather than quietly replacing the authorisation.
+    note: The original $121 was a scaling estimate that priced GLM-5.2 as a free tier. It is served by
+      Hoonify at $1.40/$4.40 per 1M, which makes that one family ~$99 of the run and put the true worst
+      case at $208.66 -- over the authorisation. The owner raised the authorisation to $210 on 2026-08-31
+      rather than trim the corpus. Headroom over the worst case is deliberately thin; the run aborts on
+      breach rather than continuing.
   hard_cap:
     run_total_calls: 58830
     per_panel_cumulative_calls:
@@ -624,7 +627,7 @@ cost:
     - retry allowance
     - sixth_family_promotion
     - qwen_openrouter_fallback
-    run_total_usd: 121.0
+    run_total_usd: 210.0
     persistence: both counters are persisted to out/cycle3/caps.json and survive re-runs; a re-run RESUMES
       them rather than resetting, charges before the call so a crash cannot re-run free, and aborts on
       breach of either the call cap or the dollar cap

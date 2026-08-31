@@ -502,7 +502,7 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 
 ## V3 SLICE 4 OUTCOME: cycle 3 registered at delta=0.0448 nats on 9805 items, M=3/M=4/M=5 nested, fp32/cuda instrument.
 
-- registration-fingerprint: `ed39feb9d849de8e`
+- registration-fingerprint: `b211b9497d72ebbe`
 - Registration: `prereg_v3.yaml` (tag `prereg-v3-2026-08-30`)
 
 **Corpus.** 9805 items, SHA-256 `63ca8131b43b5c81...`, 91,052 decidable propositions of which 45,526 are positive-polarity negatives. cycle 2's 150 items are a verified COMPLETE SUBSET, so the registered +0.220/+0.272 results remain comparable on that stratum. The shared item set means cycle 3's dose-response is evidence about panel SIZE on this corpus, not independent evidence about the corpus. Projected SCORED positive-polarity negatives at M=5: 13,400 — a projection, is_gate=False.
@@ -511,11 +511,11 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 
 **Power.** The primary needs 248 items at the worst observed per-item SD (0.2514) and has 9805. The binding arm is the dose-response increment, detectable to 0.0071 nats at this n. this is the SMALLEST M=3->M=5 increment the registered n can detect. The primary contrast is comfortably powered; the dose-response increment is the binding arm and this is its floor. If the true increment is below this, the arm is underpowered and a null is uninterpretable -- stated here rather than discovered afterwards.
 
-**Panels.** 6 families, fixed ordering (1:qwen(local), 2:glm(free), 3:nemotron(paid), 4:gptoss(paid), 5:gemma(paid), 6:laguna(paid)). M=3 subset of M=4 subset of M=5, by rank. Rank 6 (laguna) is the declared margin; qwen carries a declared fallback to qwen/qwen3.8-27b. Ordering rule: identity assurance descending: the three families whose PINNED ids still answered in slice 3, then the paid twins of the families whose :free tier was withdrawn or rate limited.
+**Panels.** 6 families, fixed ordering (1:qwen(local), 2:glm(paid), 3:nemotron(paid), 4:gptoss(paid), 5:gemma(paid), 6:laguna(paid)). M=3 subset of M=4 subset of M=5, by rank. Rank 6 (laguna) is the declared margin; qwen carries a declared fallback to qwen/qwen3.8-27b. Ordering rule: identity assurance descending: the three families whose PINNED ids still answered in slice 3, then the paid twins of the families whose :free tier was withdrawn or rate limited.
 
 **Instrument.** fp32 on cuda. cycles 1-2 ran fp16, not fp32: the checkpoint config declares dtype=float16 and transformers honours it on CPU as well as GPU. This is registered as an INSTRUMENT CHANGE. Measured over 800 pairs: fp16 across devices 0.0044 max with 1 argmax flip(s); fp32 across devices 7.8e-06 with 0. A non-dry run aborts if the registered fp32/gpu instrument is unavailable; there is no fp16 fallback path.
 
-**Cost.** Authorised volume 58,830 calls, cap $121.0 (source: REQUEST.md OQ4, human 2026-08-30); rate-derived worst case $90.29 including the 20% retry allowance and both registered contingencies (sixth_family_promotion, qwen_openrouter_fallback). both counters are persisted to out/cycle3/caps.json and survive re-runs; a re-run RESUMES them rather than resetting, charges before the call so a crash cannot re-run free, and aborts on breach of either the call cap or the dollar cap
+**Cost.** Authorised volume 58,830 calls, cap $210.0 (source: REQUEST.md OQ4, human 2026-08-31 (supersedes the $121 of 2026-08-30)); rate-derived worst case $208.66 including the 20% retry allowance and both registered contingencies (sixth_family_promotion, qwen_openrouter_fallback). both counters are persisted to out/cycle3/caps.json and survive re-runs; a re-run RESUMES them rather than resetting, charges before the call so a crash cannot re-run free, and aborts on breach of either the call cap or the dollar cap
 ## 2026-08-30T16:06:00Z - Granted 2 additional spec review round(s)
 
 - Run: `20260830-221830-30689369`
@@ -527,4 +527,11 @@ Measured 2026-08-30T12:11:30Z at commit `UNCOMMITTED (parent 32fead0)`, one atte
 - Run: `20260830-221830-30689369`
 - Decided by: jerry.mannings@gmail.com
 - Rationale: Human instruction 2026-08-31: 'keep iterating to get this done you have full control'. The gate was raised when the spec budget hit 3/3, before rounds were granted (budget is now 5). Rounds 1-3 findings are addressed in cea4035, ad64dcf and 911ef0b, and the relay itself reports the prior verdict STALE against the current diff, so the fixes are unreviewed rather than rejected. Continue reviewing the CURRENT diff. B4 (observed echoes for the five OpenRouter members and the qwen fallback) is not closable in this session because OPENROUTER_API_KEY is unavailable; the gate exits 2 and refuses --tag so the slice cannot be mistaken for finished.
+
+## 2026-08-31T00:16:12Z - The cycle-3 generation budget is raised to $210 and the corpus stays at 9,805 items. This supersedes the $121 authorisation of 2026-08-30.
+
+- Run: `20260830-221830-30689369`
+- Decided by: jerry.mannings@gmail.com
+- Rationale: The $121 figure was set against a cost model that priced zai-org/GLM-5.2 as a free tier. Two errors were found when the slice-4 smoke probe actually called the endpoints instead of trusting the panel table: glm was registered against the WRONG BACKEND (openrouter returns HTTP 400 'not a valid model ID'; both prereg_v2 and slice 3's availability record pin that family to Hoonify), and Hoonify is metered at $1.40/$4.40 per 1M. Correctly priced, glm alone is $98.64 at 9,805 items -- 84% of the M=5 base of $117.29, $140.75 with the 20% retry allowance, and $208.66 worst case including both registered contingencies. That exceeded the authorisation, so validate_v3 failed and the registration could not be frozen. The owner chose to raise the authorisation rather than reduce n: the alternatives were ~8,429 items to fit the M=5 base within $121, or ~5,685 to fit the worst case, and cutting to 8,429 would lower the dose-response detectable floor benefit that motivated scaling to 9,805 in the first place. Headroom over the worst case is thin ($1.34); the run charges before each call and aborts on breach rather than continuing.
+- Alternatives: Cut the corpus to ~8,429 items to fit $121: rejected by the owner, it forfeits power that the scaling decision was made to buy. Cut to ~5,685 to fit the worst case including contingencies: rejected for the same reason, more strongly. Drop the zhipu family: rejected, it would break the registered six-family design and the +1 margin that makes M=5 registrable. Find a cheaper GLM route: not pursued now; if one is found later it is a protocol amendment, not a silent substitution.
 

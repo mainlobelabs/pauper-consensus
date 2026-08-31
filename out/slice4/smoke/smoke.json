@@ -20,7 +20,7 @@
       5
     ]
   },
-  "measured_at": "2026-08-31T00:07:52Z",
+  "measured_at": "2026-08-31T00:16:33Z",
   "records": [
     {
       "agent": "qwen",
@@ -46,7 +46,7 @@
         "weights_match": true,
         "weights_readable": true
       },
-      "latency_s": 0.72,
+      "latency_s": 0.75,
       "local_props": {
         "gguf_metadata": {
           "general.architecture": "qwen35",
@@ -79,26 +79,31 @@
     },
     {
       "agent": "glm",
-      "echoed": null,
-      "error": "HTTP 400: {\"code\": 400, \"message\": \"zai-org/GLM-5.2 is not a valid model ID\"}",
+      "echoed": "zai-org/GLM-5.2",
       "family": "zhipu",
-      "http_status": 400,
+      "http_status": 200,
       "identity": {
         "checkable": true,
-        "echo_present": false,
-        "echoed": null,
+        "echo_present": true,
+        "echoed": "zai-org/GLM-5.2",
         "expected": "zai-org/GLM-5.2",
         "expected_source": "requested id (default)",
         "loaded_weights": null,
-        "matches_expected": null,
+        "matches_expected": true,
         "requested": "zai-org/GLM-5.2"
       },
-      "latency_s": 0.3,
+      "latency_s": 1.42,
       "model": "zai-org/GLM-5.2",
       "rank": 2,
       "role": "panel_member",
-      "status": "fail",
-      "tier": "free"
+      "status": "ok",
+      "tier": "paid",
+      "usage": {
+        "completion_tokens": 64,
+        "prompt_tokens": 19,
+        "prompt_tokens_details": null,
+        "total_tokens": 83
+      }
     },
     {
       "agent": "nemotron",
@@ -115,7 +120,7 @@
         "matches_expected": true,
         "requested": "nvidia/nemotron-3-super-120b-a12b"
       },
-      "latency_s": 1.19,
+      "latency_s": 1.07,
       "model": "nvidia/nemotron-3-super-120b-a12b",
       "rank": 3,
       "role": "panel_member",
@@ -160,7 +165,7 @@
         "matches_expected": true,
         "requested": "openai/gpt-oss-20b"
       },
-      "latency_s": 0.58,
+      "latency_s": 1.44,
       "model": "openai/gpt-oss-20b",
       "rank": 4,
       "role": "panel_member",
@@ -173,18 +178,18 @@
           "image_tokens": 0,
           "reasoning_tokens": 20
         },
-        "cost": 9.98e-06,
+        "cost": 6.38e-06,
         "cost_details": {
           "upstream_inference_completions_cost": 4.8e-06,
-          "upstream_inference_cost": 9.98e-06,
-          "upstream_inference_prompt_cost": 5.18e-06
+          "upstream_inference_cost": 6.38e-06,
+          "upstream_inference_prompt_cost": 1.58e-06
         },
         "is_byok": false,
         "prompt_tokens": 74,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cache_write_tokens": 0,
-          "cached_tokens": 0,
+          "cached_tokens": 64,
           "video_tokens": 0
         },
         "total_tokens": 106
@@ -205,7 +210,7 @@
         "matches_expected": true,
         "requested": "google/gemma-4-26b-a4b-it"
       },
-      "latency_s": 0.86,
+      "latency_s": 1.31,
       "model": "google/gemma-4-26b-a4b-it",
       "rank": 5,
       "role": "panel_member",
@@ -218,11 +223,11 @@
           "image_tokens": 0,
           "reasoning_tokens": 0
         },
-        "cost": 2.6e-06,
+        "cost": 1.28e-06,
         "cost_details": {
-          "upstream_inference_completions_cost": 6e-07,
-          "upstream_inference_cost": 2.6e-06,
-          "upstream_inference_prompt_cost": 2e-06
+          "upstream_inference_completions_cost": 4.4e-07,
+          "upstream_inference_cost": 1.28e-06,
+          "upstream_inference_prompt_cost": 8.4e-07
         },
         "is_byok": false,
         "prompt_tokens": 20,
@@ -250,7 +255,7 @@
         "matches_expected": true,
         "requested": "poolside/laguna-xs-2.1"
       },
-      "latency_s": 0.67,
+      "latency_s": 0.72,
       "model": "poolside/laguna-xs-2.1",
       "rank": 6,
       "role": "declared_margin",
@@ -263,18 +268,18 @@
           "image_tokens": 0,
           "reasoning_tokens": 64
         },
-        "cost": 9.78e-06,
+        "cost": 9.3e-06,
         "cost_details": {
           "upstream_inference_completions_cost": 7.68e-06,
-          "upstream_inference_cost": 9.78e-06,
-          "upstream_inference_prompt_cost": 2.1e-06
+          "upstream_inference_cost": 9.3e-06,
+          "upstream_inference_prompt_cost": 1.62e-06
         },
         "is_byok": false,
         "prompt_tokens": 51,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cache_write_tokens": 0,
-          "cached_tokens": 32,
+          "cached_tokens": 48,
           "video_tokens": 0
         },
         "total_tokens": 115
@@ -295,34 +300,34 @@
         "matches_expected": true,
         "requested": "qwen/qwen3.8-27b"
       },
-      "latency_s": 1.23,
+      "latency_s": 1.26,
       "model": "qwen/qwen3.8-27b",
       "rank": 1,
       "role": "declared_fallback_for_qwen",
       "status": "ok",
       "tier": "paid",
       "usage": {
-        "completion_tokens": 32,
+        "completion_tokens": 27,
         "completion_tokens_details": {
           "audio_tokens": 0,
           "image_tokens": 0,
-          "reasoning_tokens": 27
+          "reasoning_tokens": 23
         },
-        "cost": 0.000104975,
+        "cost": 0.00010705,
         "cost_details": {
-          "upstream_inference_completions_cost": 8.16e-05,
-          "upstream_inference_cost": 0.000104975,
-          "upstream_inference_prompt_cost": 2.3375e-05
+          "upstream_inference_completions_cost": 8.64e-05,
+          "upstream_inference_cost": 0.00010705,
+          "upstream_inference_prompt_cost": 2.065e-05
         },
         "is_byok": false,
-        "prompt_tokens": 55,
+        "prompt_tokens": 59,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cache_write_tokens": 0,
           "cached_tokens": 0,
           "video_tokens": 0
         },
-        "total_tokens": 87
+        "total_tokens": 86
       }
     }
   ],
