@@ -26,3 +26,20 @@ cache/
 
 # OS
 .DS_Store
+
+# firstpass/ import (mainlobelabs/waveconv1, branch e1-results-and-paper @ 76d005d,
+# merged 2026-08-31 with full history preserved). Its corpus and generation cache
+# are committed reproducibility artifacts, so un-ignore them inside the subtree.
+!firstpass/
+!firstpass/data/
+!firstpass/data/*.parquet
+!firstpass/out/cache/
+
+# firstpass/-scoped ignores carried over from the upstream repo
+firstpass/.agent/
+firstpass/artifacts/
+firstpass/out/cache/embed/
+firstpass/out/cache/nli/
+firstpass/out/cache-gpu-fp32/
+firstpass/out/cycle3/
+firstpass/signal-*.pdf

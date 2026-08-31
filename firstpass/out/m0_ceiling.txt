@@ -1,0 +1,81 @@
+==========================================================================
+I8  EFFECTIVE PANEL SIZE   M_eff = M / (1 + (M-1)*rho)
+==========================================================================
+   rho |  M_eff(M=4)  M_eff(M=5)  M_eff(M=8)  cap = 1/rho
+  0.00 |        4.00        5.00        8.00          inf
+  0.05 |        3.48        4.17        5.93        20.00
+  0.10 |        3.08        3.57        4.71        10.00
+  0.20 |        2.50        2.78        3.33         5.00
+  0.30 |        2.11        2.27        2.58         3.33
+  0.40 |        1.82        1.92        2.11         2.50
+  0.50 |        1.60        1.67        1.78         2.00
+  0.70 |        1.29        1.32        1.36         1.43
+
+  No panel size ever exceeds 1/rho effective votes. Measure rho in E0,
+  then read the ceiling off this table BEFORE committing to a delta.
+
+==========================================================================
+I11 MAJORITY GAIN vs ORACLE CEILING (M=5, Gaussian copula, 400,000 sims)
+==========================================================================
+ p_single   rho_phi  majority     gain    oracle  headroom
+     0.60    -0.002     0.683   +0.083     0.990    +0.390
+     0.60     0.125     0.650   +0.050     0.963    +0.363
+     0.60     0.263     0.631   +0.031     0.922    +0.322
+     0.70     0.001     0.838   +0.138     0.998    +0.298
+     0.70     0.117     0.789   +0.089     0.985    +0.285
+     0.70     0.248     0.756   +0.056     0.962    +0.262
+     0.80     0.001     0.942   +0.142     1.000    +0.200
+     0.80     0.101     0.902   +0.102     0.996    +0.196
+     0.80     0.224     0.867   +0.067     0.985    +0.185
+
+  'headroom' bounds E3's achievable effect. If the pilot's measured
+  headroom is below delta, the end-to-end gate is unwinnable — stop there.
+  This oracle is deliberately generous: it credits the panel whenever
+  ANY source is right, which no unsupervised selector can achieve. It
+  is an upper bound, so it can only rule gates OUT, never in.
+
+==========================================================================
+I9/I10  UNIFORM (WCT-U) vs LATENT-TRUTH EM (WCT-EM) — neither uses labels
+==========================================================================
+
+  homogeneous   p=.70 for all sources
+      calib_single: 0.6965  (sd across panels 0.0147)
+     oracle_single: 0.7186  (sd across panels 0.0141)
+           uniform: 0.8382  (sd across panels 0.0097)
+             ds_em: 0.8343  (sd across panels 0.0150)
+         oracle_wt: 0.8382  (sd across panels 0.0097)
+
+  heterogeneous p in [.52,.93]
+      calib_single: 0.9052  (sd across panels 0.0508)
+     oracle_single: 0.9059  (sd across panels 0.0512)
+           uniform: 0.8548  (sd across panels 0.0653)
+             ds_em: 0.9120  (sd across panels 0.0564)
+         oracle_wt: 0.9223  (sd across panels 0.0464)
+
+  PAIRED WCT-EM - WCT-U (heterogeneous): +0.0572  95% CI [+0.0432, +0.0724] over 30 panels
+  Share of the uniform -> oracle-weight gap recovered: 87%  95% CI [77%, 96%]
+  Achievable single-source baseline (calibration-selected): 0.9052
+  Oracle single source (needs labels, upper bound only): 0.9059
+  WCT-EM uses no truth labels. A heterogeneous panel is the regime a
+  mixed free-model pool is in, so WCT-U alone would understate it.
+
+==========================================================================
+SAMPLE SIZES (paired, 80% power, alpha=.05 two-sided)
+==========================================================================
+  continuous paired rubric / graded-preference difference:
+    d_z=0.5   -> n =   32 items
+    d_z=0.4   -> n =   50 items
+    d_z=0.3   -> n =   88 items
+    d_z=0.25  -> n =  126 items
+    d_z=0.2   -> n =  197 items
+  binarised win/loss (sign test) vs the same effect kept graded:
+     win rate     d_z  n graded  n binary  penalty
+         0.70   0.524        29        42    1.44x
+         0.65   0.385        53        80    1.50x
+         0.60   0.253       123       189    1.54x
+         0.55   0.126       498       778    1.56x
+    -> penalty converges to the sign-test ARE against the t-test on normal data: pi/2 = 1.57x
+  E1 within-item AUROC, 40 items, sd across items 0.15:
+    se=0.0237, 95% half-width +/-0.046 -> smallest detectable AUROC 0.546
+
+all ceiling invariants passed

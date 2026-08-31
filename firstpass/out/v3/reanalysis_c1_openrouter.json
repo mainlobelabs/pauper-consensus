@@ -1,0 +1,4033 @@
+{
+  "agents": [
+    "gemma",
+    "gptoss",
+    "nemotron"
+  ],
+  "alignment_audit": {
+    "aligner_self_identification": {
+      "accuracy": 0.9724,
+      "n_probes": 1483,
+      "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+      "status": "computed",
+      "wrong_polarity": 0,
+      "wrong_proposition": 41
+    },
+    "claims": 15599,
+    "funnel": {
+      "claims": 15599,
+      "instances": 2640,
+      "note": "NOT monotone. Alignment scores each claim against up to top_k=8 targets, so one claim can pass against more than one and instances may exceed claims. The invariant is observations <= instances: observations are the per-(agent, proposition) argmax subset of instances.",
+      "observations": 1121
+    },
+    "lexical_reference": {
+      "n_predicted": 1121,
+      "n_reference": 1398,
+      "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+      "recall_mean": 0.6782
+    },
+    "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+    "observations": 1121,
+    "same_agent_conflicts": 195,
+    "status": "POST-HOC"
+  },
+  "arms": {
+    "WCT-C": {
+      "platt": {
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.99197,
+        "test_log_loss": 0.0722
+      },
+      "platt_params": {
+        "a": 0.71244,
+        "b": 0.7731
+      },
+      "temperature": {
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.99197,
+        "test_log_loss": 0.09732
+      },
+      "temperature_t": 1.2123
+    },
+    "WCT-EM": {
+      "platt": {
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.99197,
+        "test_log_loss": 0.06621
+      },
+      "platt_params": {
+        "a": 0.512313,
+        "b": 1.0786
+      },
+      "temperature": {
+        "test_accuracy": 0.97115,
+        "test_auroc": 0.99197,
+        "test_log_loss": 0.10686
+      },
+      "temperature_t": 1.6695
+    },
+    "WCT-U": {
+      "platt": {
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.99113,
+        "test_log_loss": 0.0671
+      },
+      "platt_params": {
+        "a": 1.72315,
+        "b": 1.3864
+      },
+      "temperature": {
+        "test_accuracy": 0.96795,
+        "test_auroc": 0.99113,
+        "test_log_loss": 0.12338
+      },
+      "temperature_t": 0.4906
+    },
+    "capped_signed": {
+      "platt": {
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.99113,
+        "test_log_loss": 0.0671
+      },
+      "platt_params": {
+        "a": 1.72315,
+        "b": 1.3864
+      },
+      "temperature": {
+        "test_accuracy": 0.96795,
+        "test_auroc": 0.99113,
+        "test_log_loss": 0.12338
+      },
+      "temperature_t": 0.4906
+    },
+    "capped_unsigned": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.52385,
+        "test_log_loss": 0.19844
+      },
+      "platt_params": {
+        "a": 0.328861,
+        "b": 1.6211
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.52385,
+        "test_log_loss": 0.22428
+      },
+      "temperature_t": 0.9477
+    },
+    "covariate_baseline": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.65616,
+        "test_log_loss": 0.21116
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.65616,
+        "test_log_loss": 0.21116
+      }
+    },
+    "covariate_dedup": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.69283,
+        "test_log_loss": 0.20769
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.69283,
+        "test_log_loss": 0.20769
+      }
+    },
+    "covariate_frozen": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.65616,
+        "test_log_loss": 0.21116
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.65616,
+        "test_log_loss": 0.21116
+      }
+    },
+    "covariate_frozen_ml": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.75108,
+        "test_log_loss": 0.18087
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.75108,
+        "test_log_loss": 0.18087
+      }
+    },
+    "covariate_verbosity": {
+      "platt": {
+        "test_accuracy": 0.9391,
+        "test_auroc": 0.61098,
+        "test_log_loss": 0.23771
+      },
+      "temperature": {
+        "test_accuracy": 0.9391,
+        "test_auroc": 0.61098,
+        "test_log_loss": 0.23771
+      }
+    },
+    "prevalence_only": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.5,
+        "test_log_loss": 0.19662
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.5,
+        "test_log_loss": 0.19662
+      }
+    },
+    "single:gemma": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.76163,
+        "test_log_loss": 0.17184
+      },
+      "platt_params": {
+        "a": 1.47055,
+        "b": 2.3747
+      },
+      "temperature": {
+        "test_accuracy": 0.42628,
+        "test_auroc": 0.76163,
+        "test_log_loss": 0.58539
+      },
+      "temperature_t": 0.7071
+    },
+    "single:gptoss": {
+      "platt": {
+        "test_accuracy": 0.96474,
+        "test_auroc": 0.96716,
+        "test_log_loss": 0.09645
+      },
+      "platt_params": {
+        "a": 2.37299,
+        "b": 1.7577
+      },
+      "temperature": {
+        "test_accuracy": 0.82692,
+        "test_auroc": 0.96716,
+        "test_log_loss": 0.22859
+      },
+      "temperature_t": 0.3462
+    },
+    "single:nemotron": {
+      "platt": {
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.95122,
+        "test_log_loss": 0.09734
+      },
+      "platt_params": {
+        "a": 3.69402,
+        "b": 1.2445
+      },
+      "temperature": {
+        "test_accuracy": 0.85577,
+        "test_auroc": 0.95122,
+        "test_log_loss": 0.17945
+      },
+      "temperature_t": 0.25
+    },
+    "single_best_calibration_selected": {
+      "platt": {
+        "agent": "nemotron",
+        "test_accuracy": 0.98077,
+        "test_auroc": 0.95122,
+        "test_log_loss": 0.09734
+      },
+      "temperature": {
+        "agent": "nemotron",
+        "test_accuracy": 0.85577,
+        "test_auroc": 0.95122,
+        "test_log_loss": 0.17945
+      }
+    },
+    "single_oracle": {
+      "platt": {
+        "agent": "gptoss",
+        "note": "chosen on TEST; an upper bound no unlabelled method reaches",
+        "test_accuracy": 0.96474,
+        "test_auroc": 0.96716,
+        "test_log_loss": 0.09645
+      },
+      "temperature": {
+        "agent": "nemotron",
+        "note": "chosen on TEST; an upper bound no unlabelled method reaches",
+        "test_accuracy": 0.85577,
+        "test_auroc": 0.95122,
+        "test_log_loss": 0.17945
+      }
+    },
+    "uncapped_signed": {
+      "platt": {
+        "test_accuracy": 0.97115,
+        "test_auroc": 0.98754,
+        "test_log_loss": 0.12447
+      },
+      "platt_params": {
+        "a": 1.124711,
+        "b": 1.1852
+      },
+      "temperature": {
+        "test_accuracy": 0.97115,
+        "test_auroc": 0.98754,
+        "test_log_loss": 0.19786
+      },
+      "temperature_t": 0.7312
+    },
+    "uncapped_unsigned": {
+      "platt": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.4825,
+        "test_log_loss": 0.19945
+      },
+      "platt_params": {
+        "a": 0.093176,
+        "b": 1.8909
+      },
+      "temperature": {
+        "test_accuracy": 0.95513,
+        "test_auroc": 0.4825,
+        "test_log_loss": 0.27961
+      },
+      "temperature_t": 2.1025
+    }
+  },
+  "co_primary_precision_at_k": {
+    "platt": {
+      "WCT-EM": 1.0,
+      "WCT-U": 1.0,
+      "covariate_baseline": 0.9693,
+      "decision": "inconclusive",
+      "delta": 0.05,
+      "difference": {
+        "hi": 0.0543,
+        "lo": 0.00909,
+        "n_boot": 2000,
+        "point": 0.0307,
+        "se": 0.01149
+      },
+      "k": 228
+    },
+    "temperature": {
+      "WCT-EM": 1.0,
+      "WCT-U": 1.0,
+      "covariate_baseline": 0.9693,
+      "decision": "inconclusive",
+      "delta": 0.05,
+      "difference": {
+        "hi": 0.0543,
+        "lo": 0.00909,
+        "n_boot": 2000,
+        "point": 0.0307,
+        "se": 0.01149
+      },
+      "k": 228
+    }
+  },
+  "covariate_sensitivity": {
+    "note": "SENSITIVITY. covariate_frozen is the registered matrix INCLUDING its duplicated column; dedup drops the duplicate; verbosity adds the per-item verbosity the registration named but the matrix never carried. Reported beside the frozen baseline, never instead.",
+    "rows": {
+      "dedup": {
+        "test_auroc": 0.69283,
+        "test_log_loss": 0.20769,
+        "vs_frozen_baseline": {
+          "platt": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.00538,
+              "lo": 0.00233,
+              "n_items": 100,
+              "point": 0.00378,
+              "sd_items": 0.00789
+            }
+          }
+        }
+      },
+      "frozen_ml": {
+        "test_auroc": 0.75108,
+        "test_log_loss": 0.18087,
+        "vs_frozen_baseline": {
+          "platt": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.05,
+              "lo": 0.01738,
+              "n_items": 100,
+              "point": 0.03328,
+              "sd_items": 0.08527
+            }
+          }
+        }
+      },
+      "verbosity": {
+        "test_auroc": 0.61098,
+        "test_log_loss": 0.23771,
+        "vs_frozen_baseline": {
+          "platt": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.00518,
+              "lo": -0.04885,
+              "n_items": 100,
+              "point": -0.02373,
+              "sd_items": 0.11328
+            }
+          }
+        }
+      }
+    }
+  },
+  "frozen_reproduction": {
+    "all_match": true,
+    "checks": [
+      {
+        "expected": 0.12338,
+        "got": 0.12338,
+        "key": "arms.WCT-U.test_log_loss",
+        "match": true
+      },
+      {
+        "expected": 0.99113,
+        "got": 0.99113,
+        "key": "arms.WCT-U.test_auroc",
+        "match": true
+      },
+      {
+        "expected": 0.96795,
+        "got": 0.96795,
+        "key": "arms.WCT-U.test_accuracy",
+        "match": true
+      },
+      {
+        "expected": 0.10686,
+        "got": 0.10686,
+        "key": "arms.WCT-EM.test_log_loss",
+        "match": true
+      },
+      {
+        "expected": 0.99197,
+        "got": 0.99197,
+        "key": "arms.WCT-EM.test_auroc",
+        "match": true
+      },
+      {
+        "expected": 0.97115,
+        "got": 0.97115,
+        "key": "arms.WCT-EM.test_accuracy",
+        "match": true
+      },
+      {
+        "expected": 0.09732,
+        "got": 0.09732,
+        "key": "arms.WCT-C.test_log_loss",
+        "match": true
+      },
+      {
+        "expected": 0.99197,
+        "got": 0.99197,
+        "key": "arms.WCT-C.test_auroc",
+        "match": true
+      },
+      {
+        "expected": 0.98077,
+        "got": 0.98077,
+        "key": "arms.WCT-C.test_accuracy",
+        "match": true
+      },
+      {
+        "expected": 0.22428,
+        "got": 0.22428,
+        "key": "arms.uncapped.test_log_loss",
+        "match": true
+      },
+      {
+        "expected": 0.52385,
+        "got": 0.52385,
+        "key": "arms.uncapped.test_auroc",
+        "match": true
+      },
+      {
+        "expected": 0.95513,
+        "got": 0.95513,
+        "key": "arms.uncapped.test_accuracy",
+        "match": true
+      },
+      {
+        "expected": 0.19662,
+        "got": 0.19662,
+        "key": "arms.prevalence_only.test_log_loss",
+        "match": true
+      },
+      {
+        "expected": 0.5,
+        "got": 0.5,
+        "key": "arms.prevalence_only.test_auroc",
+        "match": true
+      },
+      {
+        "expected": 0.95513,
+        "got": 0.95513,
+        "key": "arms.prevalence_only.test_accuracy",
+        "match": true
+      },
+      {
+        "expected": 0.21116,
+        "got": 0.21116,
+        "key": "covariate_frozen.test_log_loss",
+        "match": true
+      },
+      {
+        "expected": 0.1069,
+        "got": 0.1069,
+        "key": "primary.WCT-U.point",
+        "match": true
+      },
+      {
+        "expected": 0.01705,
+        "got": 0.01705,
+        "key": "primary.WCT-U.lo",
+        "match": true
+      },
+      {
+        "expected": 0.18418,
+        "got": 0.18418,
+        "key": "primary.WCT-U.hi",
+        "match": true
+      },
+      {
+        "expected": 0.12249,
+        "got": 0.12249,
+        "key": "primary.WCT-EM.point",
+        "match": true
+      },
+      {
+        "expected": 0.03667,
+        "got": 0.03667,
+        "key": "primary.WCT-EM.lo",
+        "match": true
+      },
+      {
+        "expected": 0.19722,
+        "got": 0.19722,
+        "key": "primary.WCT-EM.hi",
+        "match": true
+      },
+      {
+        "expected": 0.13211,
+        "got": 0.13211,
+        "key": "primary.WCT-C.point",
+        "match": true
+      },
+      {
+        "expected": 0.04323,
+        "got": 0.04323,
+        "key": "primary.WCT-C.lo",
+        "match": true
+      },
+      {
+        "expected": 0.2078,
+        "got": 0.2078,
+        "key": "primary.WCT-C.hi",
+        "match": true
+      },
+      {
+        "expected": 228,
+        "got": 228,
+        "key": "co_primary.k",
+        "match": true
+      },
+      {
+        "expected": 1.0,
+        "got": 1.0,
+        "key": "co_primary.WCT-EM",
+        "match": true
+      },
+      {
+        "expected": 1.0,
+        "got": 1.0,
+        "key": "co_primary.WCT-U",
+        "match": true
+      },
+      {
+        "expected": 0.9693,
+        "got": 0.9693,
+        "key": "co_primary.covariate_baseline",
+        "match": true
+      },
+      {
+        "expected": 1.0,
+        "got": 1.0,
+        "key": "within_item_auroc.point",
+        "match": true
+      },
+      {
+        "expected": 1.0,
+        "got": 1.0,
+        "key": "within_item_auroc.lo",
+        "match": true
+      },
+      {
+        "expected": 1.0,
+        "got": 1.0,
+        "key": "within_item_auroc.hi",
+        "match": true
+      },
+      {
+        "expected": "go",
+        "got": "go",
+        "key": "within_item_auroc.decision",
+        "match": true
+      },
+      {
+        "expected": 0.001,
+        "got": 0.001,
+        "key": "permutation_null.p",
+        "match": true
+      },
+      {
+        "expected": 0.99197,
+        "got": 0.99197,
+        "key": "permutation_null.observed",
+        "match": true
+      },
+      {
+        "expected": 0.60709,
+        "got": 0.60709,
+        "key": "permutation_null.null_mean",
+        "match": true
+      },
+      {
+        "expected": 0.09235,
+        "got": 0.09235,
+        "key": "permutation_null.null_sd",
+        "match": true
+      },
+      {
+        "expected": 1000,
+        "got": 1000,
+        "key": "permutation_null.n_perm",
+        "match": true
+      },
+      {
+        "expected": "go",
+        "got": "go",
+        "key": "primary.WCT-U.decision",
+        "match": true
+      },
+      {
+        "expected": "go",
+        "got": "go",
+        "key": "primary.WCT-EM.decision",
+        "match": true
+      },
+      {
+        "expected": "go",
+        "got": "go",
+        "key": "primary.WCT-C.decision",
+        "match": true
+      }
+    ],
+    "cycle": 1,
+    "map": "temperature",
+    "mismatches": [],
+    "n_checks": 41,
+    "n_mismatched": 0,
+    "source": "out/e1_summary_openrouter.json"
+  },
+  "frozen_reproduction_all_strata": {
+    "all_match": true,
+    "n_strata": 2,
+    "per_stratum": {
+      "all_items": {
+        "n_checks": 41,
+        "n_mismatched": 0
+      },
+      "negation_theories": {
+        "n_checks": 41,
+        "n_mismatched": 0
+      }
+    }
+  },
+  "m6_2x2": {
+    "auroc_note": "raw_auroc is AUROC of the UNMAPPED score and is the quantity the signal question asks. A fitted calibration map may take a NEGATIVE slope on an arm carrying no signal (c1_local capped_unsigned: Platt a=-0.0639), which reverses the ranking and flips mapped AUROC about 0.5 -- a calibration artifact, not a ranking fact. Mapped values are given under BOTH maps so each cycle reads its own registered one.",
+    "cells": {
+      "capped_signed": {
+        "platt": {
+          "test_accuracy": 0.98077,
+          "test_auroc": 0.99113,
+          "test_log_loss": 0.0671
+        },
+        "platt_slope": 1.72315,
+        "raw_auroc": 0.99113,
+        "temperature": {
+          "test_accuracy": 0.96795,
+          "test_auroc": 0.99113,
+          "test_log_loss": 0.12338
+        }
+      },
+      "capped_unsigned": {
+        "platt": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.52385,
+          "test_log_loss": 0.19844
+        },
+        "platt_slope": 0.328861,
+        "raw_auroc": 0.52385,
+        "temperature": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.52385,
+          "test_log_loss": 0.22428
+        }
+      },
+      "uncapped_signed": {
+        "platt": {
+          "test_accuracy": 0.97115,
+          "test_auroc": 0.98754,
+          "test_log_loss": 0.12447
+        },
+        "platt_slope": 1.124711,
+        "raw_auroc": 0.98754,
+        "temperature": {
+          "test_accuracy": 0.97115,
+          "test_auroc": 0.98754,
+          "test_log_loss": 0.19786
+        }
+      },
+      "uncapped_unsigned": {
+        "platt": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.4825,
+          "test_log_loss": 0.19945
+        },
+        "platt_slope": 0.093176,
+        "raw_auroc": 0.4825,
+        "temperature": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.4825,
+          "test_log_loss": 0.27961
+        }
+      }
+    },
+    "note": "rows = capping, columns = polarity. paper.md 6.1 claims the ROW contrast (one vote per source) but the frozen arms only vary the COLUMN (signed vs unsigned), because n_claims == n_emitting."
+  },
+  "n_items": 150,
+  "n_props": 484,
+  "n_test_negatives": 14,
+  "panel": "c1_openrouter",
+  "panel_vs_single_best_calibration_selected": {
+    "platt": {
+      "WCT-C": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.08378,
+          "lo": 0.004,
+          "n_items": 100,
+          "point": 0.03744,
+          "sd_items": 0.20703
+        }
+      },
+      "WCT-EM": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.09334,
+          "lo": 0.01093,
+          "n_items": 100,
+          "point": 0.04266,
+          "sd_items": 0.2193
+        }
+      },
+      "WCT-U": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.09766,
+          "lo": 0.00694,
+          "n_items": 100,
+          "point": 0.04232,
+          "sd_items": 0.23918
+        }
+      }
+    },
+    "temperature": {
+      "WCT-C": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.14653,
+          "lo": 0.0571,
+          "n_items": 100,
+          "point": 0.09828,
+          "sd_items": 0.22951
+        }
+      },
+      "WCT-EM": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.14209,
+          "lo": 0.04551,
+          "n_items": 100,
+          "point": 0.08866,
+          "sd_items": 0.2514
+        }
+      },
+      "WCT-U": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.12838,
+          "lo": 0.02713,
+          "n_items": 100,
+          "point": 0.07306,
+          "sd_items": 0.2653
+        }
+      }
+    }
+  },
+  "permutation_null": {
+    "platt": {
+      "n_perm": 1000,
+      "null_mean": 0.60709,
+      "null_sd": 0.09235,
+      "observed": 0.99197,
+      "p": 0.001
+    },
+    "temperature": {
+      "n_perm": 1000,
+      "null_mean": 0.60709,
+      "null_sd": 0.09235,
+      "observed": 0.99197,
+      "p": 0.001
+    }
+  },
+  "prevalence": 0.9401,
+  "prevalence_only_vs_covariate": {
+    "decision": "inconclusive",
+    "delta": 0.02,
+    "delta_log_loss": {
+      "hi": 0.03717,
+      "lo": -0.00529,
+      "n_items": 100,
+      "point": 0.01674,
+      "sd_items": 0.11183
+    }
+  },
+  "primary_vs_covariate_frozen": {
+    "platt": {
+      "WCT-C": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.21694,
+          "lo": 0.08197,
+          "n_items": 100,
+          "point": 0.15273,
+          "sd_items": 0.34332
+        }
+      },
+      "WCT-EM": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.21858,
+          "lo": 0.09271,
+          "n_items": 100,
+          "point": 0.15795,
+          "sd_items": 0.32093
+        }
+      },
+      "WCT-U": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.21812,
+          "lo": 0.09368,
+          "n_items": 100,
+          "point": 0.15761,
+          "sd_items": 0.31597
+        }
+      },
+      "capped_signed": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.21812,
+          "lo": 0.09368,
+          "n_items": 100,
+          "point": 0.15761,
+          "sd_items": 0.31597
+        }
+      },
+      "capped_unsigned": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.03067,
+          "lo": -0.00411,
+          "n_items": 100,
+          "point": 0.01365,
+          "sd_items": 0.09322
+        }
+      },
+      "single:gemma": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.07719,
+          "lo": 0.01251,
+          "n_items": 100,
+          "point": 0.04465,
+          "sd_items": 0.17069
+        }
+      },
+      "single:gptoss": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.17318,
+          "lo": 0.07662,
+          "n_items": 100,
+          "point": 0.12355,
+          "sd_items": 0.24737
+        }
+      },
+      "single:nemotron": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.1791,
+          "lo": 0.05321,
+          "n_items": 100,
+          "point": 0.11529,
+          "sd_items": 0.31793
+        }
+      },
+      "uncapped_signed": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.19175,
+          "lo": 0.02396,
+          "n_items": 100,
+          "point": 0.11171,
+          "sd_items": 0.43782
+        }
+      },
+      "uncapped_unsigned": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.03361,
+          "lo": -0.00732,
+          "n_items": 100,
+          "point": 0.01313,
+          "sd_items": 0.10748
+        }
+      }
+    },
+    "temperature": {
+      "WCT-C": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.2078,
+          "lo": 0.04323,
+          "n_items": 100,
+          "point": 0.13211,
+          "sd_items": 0.41942
+        }
+      },
+      "WCT-EM": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.19722,
+          "lo": 0.03667,
+          "n_items": 100,
+          "point": 0.12249,
+          "sd_items": 0.41114
+        }
+      },
+      "WCT-U": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.18418,
+          "lo": 0.01705,
+          "n_items": 100,
+          "point": 0.1069,
+          "sd_items": 0.42431
+        }
+      },
+      "capped_signed": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.18418,
+          "lo": 0.01705,
+          "n_items": 100,
+          "point": 0.1069,
+          "sd_items": 0.42431
+        }
+      },
+      "capped_unsigned": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": -0.00094,
+          "lo": -0.02936,
+          "n_items": 100,
+          "point": -0.01494,
+          "sd_items": 0.07225
+        }
+      },
+      "single:gemma": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": -0.28891,
+          "lo": -0.44117,
+          "n_items": 100,
+          "point": -0.36475,
+          "sd_items": 0.39437
+        }
+      },
+      "single:gptoss": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.07267,
+          "lo": -0.09097,
+          "n_items": 100,
+          "point": -0.00705,
+          "sd_items": 0.40633
+        }
+      },
+      "single:nemotron": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.11203,
+          "lo": -0.04675,
+          "n_items": 100,
+          "point": 0.03383,
+          "sd_items": 0.40288
+        }
+      },
+      "uncapped_signed": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.1532,
+          "lo": -0.07387,
+          "n_items": 100,
+          "point": 0.04811,
+          "sd_items": 0.5939
+        }
+      },
+      "uncapped_unsigned": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": -0.03417,
+          "lo": -0.10762,
+          "n_items": 100,
+          "point": -0.06912,
+          "sd_items": 0.18742
+        }
+      }
+    }
+  },
+  "primary_vs_covariate_ml": {
+    "platt": {
+      "WCT-C": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.18431,
+          "lo": 0.04952,
+          "n_items": 100,
+          "point": 0.11944,
+          "sd_items": 0.34486
+        }
+      },
+      "WCT-EM": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.18648,
+          "lo": 0.06093,
+          "n_items": 100,
+          "point": 0.12467,
+          "sd_items": 0.32051
+        }
+      },
+      "WCT-U": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.18334,
+          "lo": 0.06179,
+          "n_items": 100,
+          "point": 0.12432,
+          "sd_items": 0.31206
+        }
+      },
+      "capped_signed": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.18334,
+          "lo": 0.06179,
+          "n_items": 100,
+          "point": 0.12432,
+          "sd_items": 0.31206
+        }
+      },
+      "capped_unsigned": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.00125,
+          "lo": -0.0417,
+          "n_items": 100,
+          "point": -0.01964,
+          "sd_items": 0.10945
+        }
+      },
+      "single:gemma": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.0394,
+          "lo": -0.0158,
+          "n_items": 100,
+          "point": 0.01137,
+          "sd_items": 0.13765
+        }
+      },
+      "single:gptoss": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.13896,
+          "lo": 0.04587,
+          "n_items": 100,
+          "point": 0.09027,
+          "sd_items": 0.23593
+        }
+      },
+      "single:nemotron": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.14726,
+          "lo": 0.0166,
+          "n_items": 100,
+          "point": 0.08201,
+          "sd_items": 0.33461
+        }
+      },
+      "uncapped_signed": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.15996,
+          "lo": -0.00928,
+          "n_items": 100,
+          "point": 0.07843,
+          "sd_items": 0.43459
+        }
+      },
+      "uncapped_unsigned": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.00339,
+          "lo": -0.04544,
+          "n_items": 100,
+          "point": -0.02016,
+          "sd_items": 0.1241
+        }
+      }
+    },
+    "temperature": {
+      "WCT-C": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.17529,
+          "lo": 0.01097,
+          "n_items": 100,
+          "point": 0.09883,
+          "sd_items": 0.42159
+        }
+      },
+      "WCT-EM": {
+        "decision": "go",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.16652,
+          "lo": 0.00386,
+          "n_items": 100,
+          "point": 0.08921,
+          "sd_items": 0.41278
+        }
+      },
+      "WCT-U": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.15141,
+          "lo": -0.01599,
+          "n_items": 100,
+          "point": 0.07361,
+          "sd_items": 0.42511
+        }
+      },
+      "capped_signed": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.15141,
+          "lo": -0.01599,
+          "n_items": 100,
+          "point": 0.07361,
+          "sd_items": 0.42511
+        }
+      },
+      "capped_unsigned": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": -0.02299,
+          "lo": -0.07574,
+          "n_items": 100,
+          "point": -0.04823,
+          "sd_items": 0.13521
+        }
+      },
+      "single:gemma": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": -0.32352,
+          "lo": -0.47337,
+          "n_items": 100,
+          "point": -0.39803,
+          "sd_items": 0.38093
+        }
+      },
+      "single:gptoss": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.04204,
+          "lo": -0.12393,
+          "n_items": 100,
+          "point": -0.04033,
+          "sd_items": 0.40951
+        }
+      },
+      "single:nemotron": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.08301,
+          "lo": -0.08155,
+          "n_items": 100,
+          "point": 0.00055,
+          "sd_items": 0.42147
+        }
+      },
+      "uncapped_signed": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.12063,
+          "lo": -0.11032,
+          "n_items": 100,
+          "point": 0.01483,
+          "sd_items": 0.59502
+        }
+      },
+      "uncapped_unsigned": {
+        "decision": "stop",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": -0.0571,
+          "lo": -0.15239,
+          "n_items": 100,
+          "point": -0.1024,
+          "sd_items": 0.24072
+        }
+      }
+    }
+  },
+  "seed": 20260807,
+  "single_best_vs_covariate": {
+    "platt": {
+      "decision": "go",
+      "delta": 0.02,
+      "delta_log_loss": {
+        "hi": 0.1791,
+        "lo": 0.05321,
+        "n_items": 100,
+        "point": 0.11529,
+        "sd_items": 0.31793
+      }
+    },
+    "temperature": {
+      "decision": "inconclusive",
+      "delta": 0.02,
+      "delta_log_loss": {
+        "hi": 0.11203,
+        "lo": -0.04675,
+        "n_items": 100,
+        "point": 0.03383,
+        "sd_items": 0.40288
+      }
+    }
+  },
+  "single_source": {
+    "by_map": {
+      "platt": {
+        "calibration_log_loss_per_agent": {
+          "gemma": 0.26018,
+          "gptoss": 0.17825,
+          "nemotron": 0.09567
+        },
+        "calibration_selected": "nemotron",
+        "oracle_selected": "gptoss"
+      },
+      "temperature": {
+        "calibration_log_loss_per_agent": {
+          "gemma": 0.59516,
+          "gptoss": 0.26831,
+          "nemotron": 0.11568
+        },
+        "calibration_selected": "nemotron",
+        "oracle_selected": "nemotron"
+      }
+    },
+    "note": "selected on CALIBRATION log-loss alone, SEPARATELY UNDER EACH MAP: the choice is not map-invariant (c1_local: temperature->qwen, Platt->ornith). `oracle_selected` is chosen on test and is an UPPER BOUND no unlabelled method can reach (m0/ceiling.py:128-134); it is never the baseline. Read the row for the map your cycle registered."
+  },
+  "status": "POST-HOC",
+  "strata": {
+    "all_items": {
+      "agents": [
+        "gemma",
+        "gptoss",
+        "nemotron"
+      ],
+      "alignment_audit": {
+        "aligner_self_identification": {
+          "accuracy": 0.9724,
+          "n_probes": 1483,
+          "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+          "status": "computed",
+          "wrong_polarity": 0,
+          "wrong_proposition": 41
+        },
+        "claims": 15599,
+        "funnel": {
+          "claims": 15599,
+          "instances": 2640,
+          "note": "NOT monotone. Alignment scores each claim against up to top_k=8 targets, so one claim can pass against more than one and instances may exceed claims. The invariant is observations <= instances: observations are the per-(agent, proposition) argmax subset of instances.",
+          "observations": 1121
+        },
+        "lexical_reference": {
+          "n_predicted": 1121,
+          "n_reference": 1398,
+          "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+          "recall_mean": 0.6782
+        },
+        "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+        "observations": 1121,
+        "same_agent_conflicts": 195,
+        "status": "POST-HOC"
+      },
+      "arms": {
+        "WCT-C": {
+          "platt": {
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.99197,
+            "test_log_loss": 0.0722
+          },
+          "platt_params": {
+            "a": 0.71244,
+            "b": 0.7731
+          },
+          "temperature": {
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.99197,
+            "test_log_loss": 0.09732
+          },
+          "temperature_t": 1.2123
+        },
+        "WCT-EM": {
+          "platt": {
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.99197,
+            "test_log_loss": 0.06621
+          },
+          "platt_params": {
+            "a": 0.512313,
+            "b": 1.0786
+          },
+          "temperature": {
+            "test_accuracy": 0.97115,
+            "test_auroc": 0.99197,
+            "test_log_loss": 0.10686
+          },
+          "temperature_t": 1.6695
+        },
+        "WCT-U": {
+          "platt": {
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.99113,
+            "test_log_loss": 0.0671
+          },
+          "platt_params": {
+            "a": 1.72315,
+            "b": 1.3864
+          },
+          "temperature": {
+            "test_accuracy": 0.96795,
+            "test_auroc": 0.99113,
+            "test_log_loss": 0.12338
+          },
+          "temperature_t": 0.4906
+        },
+        "capped_signed": {
+          "platt": {
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.99113,
+            "test_log_loss": 0.0671
+          },
+          "platt_params": {
+            "a": 1.72315,
+            "b": 1.3864
+          },
+          "temperature": {
+            "test_accuracy": 0.96795,
+            "test_auroc": 0.99113,
+            "test_log_loss": 0.12338
+          },
+          "temperature_t": 0.4906
+        },
+        "capped_unsigned": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.52385,
+            "test_log_loss": 0.19844
+          },
+          "platt_params": {
+            "a": 0.328861,
+            "b": 1.6211
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.52385,
+            "test_log_loss": 0.22428
+          },
+          "temperature_t": 0.9477
+        },
+        "covariate_baseline": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.65616,
+            "test_log_loss": 0.21116
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.65616,
+            "test_log_loss": 0.21116
+          }
+        },
+        "covariate_dedup": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.69283,
+            "test_log_loss": 0.20769
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.69283,
+            "test_log_loss": 0.20769
+          }
+        },
+        "covariate_frozen": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.65616,
+            "test_log_loss": 0.21116
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.65616,
+            "test_log_loss": 0.21116
+          }
+        },
+        "covariate_frozen_ml": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.75108,
+            "test_log_loss": 0.18087
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.75108,
+            "test_log_loss": 0.18087
+          }
+        },
+        "covariate_verbosity": {
+          "platt": {
+            "test_accuracy": 0.9391,
+            "test_auroc": 0.61098,
+            "test_log_loss": 0.23771
+          },
+          "temperature": {
+            "test_accuracy": 0.9391,
+            "test_auroc": 0.61098,
+            "test_log_loss": 0.23771
+          }
+        },
+        "prevalence_only": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.5,
+            "test_log_loss": 0.19662
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.5,
+            "test_log_loss": 0.19662
+          }
+        },
+        "single:gemma": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.76163,
+            "test_log_loss": 0.17184
+          },
+          "platt_params": {
+            "a": 1.47055,
+            "b": 2.3747
+          },
+          "temperature": {
+            "test_accuracy": 0.42628,
+            "test_auroc": 0.76163,
+            "test_log_loss": 0.58539
+          },
+          "temperature_t": 0.7071
+        },
+        "single:gptoss": {
+          "platt": {
+            "test_accuracy": 0.96474,
+            "test_auroc": 0.96716,
+            "test_log_loss": 0.09645
+          },
+          "platt_params": {
+            "a": 2.37299,
+            "b": 1.7577
+          },
+          "temperature": {
+            "test_accuracy": 0.82692,
+            "test_auroc": 0.96716,
+            "test_log_loss": 0.22859
+          },
+          "temperature_t": 0.3462
+        },
+        "single:nemotron": {
+          "platt": {
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.95122,
+            "test_log_loss": 0.09734
+          },
+          "platt_params": {
+            "a": 3.69402,
+            "b": 1.2445
+          },
+          "temperature": {
+            "test_accuracy": 0.85577,
+            "test_auroc": 0.95122,
+            "test_log_loss": 0.17945
+          },
+          "temperature_t": 0.25
+        },
+        "single_best_calibration_selected": {
+          "platt": {
+            "agent": "nemotron",
+            "test_accuracy": 0.98077,
+            "test_auroc": 0.95122,
+            "test_log_loss": 0.09734
+          },
+          "temperature": {
+            "agent": "nemotron",
+            "test_accuracy": 0.85577,
+            "test_auroc": 0.95122,
+            "test_log_loss": 0.17945
+          }
+        },
+        "single_oracle": {
+          "platt": {
+            "agent": "gptoss",
+            "note": "chosen on TEST; an upper bound no unlabelled method reaches",
+            "test_accuracy": 0.96474,
+            "test_auroc": 0.96716,
+            "test_log_loss": 0.09645
+          },
+          "temperature": {
+            "agent": "nemotron",
+            "note": "chosen on TEST; an upper bound no unlabelled method reaches",
+            "test_accuracy": 0.85577,
+            "test_auroc": 0.95122,
+            "test_log_loss": 0.17945
+          }
+        },
+        "uncapped_signed": {
+          "platt": {
+            "test_accuracy": 0.97115,
+            "test_auroc": 0.98754,
+            "test_log_loss": 0.12447
+          },
+          "platt_params": {
+            "a": 1.124711,
+            "b": 1.1852
+          },
+          "temperature": {
+            "test_accuracy": 0.97115,
+            "test_auroc": 0.98754,
+            "test_log_loss": 0.19786
+          },
+          "temperature_t": 0.7312
+        },
+        "uncapped_unsigned": {
+          "platt": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.4825,
+            "test_log_loss": 0.19945
+          },
+          "platt_params": {
+            "a": 0.093176,
+            "b": 1.8909
+          },
+          "temperature": {
+            "test_accuracy": 0.95513,
+            "test_auroc": 0.4825,
+            "test_log_loss": 0.27961
+          },
+          "temperature_t": 2.1025
+        }
+      },
+      "co_primary_precision_at_k": {
+        "platt": {
+          "WCT-EM": 1.0,
+          "WCT-U": 1.0,
+          "covariate_baseline": 0.9693,
+          "decision": "inconclusive",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.0543,
+            "lo": 0.00909,
+            "n_boot": 2000,
+            "point": 0.0307,
+            "se": 0.01149
+          },
+          "k": 228
+        },
+        "temperature": {
+          "WCT-EM": 1.0,
+          "WCT-U": 1.0,
+          "covariate_baseline": 0.9693,
+          "decision": "inconclusive",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.0543,
+            "lo": 0.00909,
+            "n_boot": 2000,
+            "point": 0.0307,
+            "se": 0.01149
+          },
+          "k": 228
+        }
+      },
+      "covariate_sensitivity": {
+        "note": "SENSITIVITY. covariate_frozen is the registered matrix INCLUDING its duplicated column; dedup drops the duplicate; verbosity adds the per-item verbosity the registration named but the matrix never carried. Reported beside the frozen baseline, never instead.",
+        "rows": {
+          "dedup": {
+            "test_auroc": 0.69283,
+            "test_log_loss": 0.20769,
+            "vs_frozen_baseline": {
+              "platt": {
+                "decision": "stop",
+                "delta": 0.02,
+                "delta_log_loss": {
+                  "hi": 0.00538,
+                  "lo": 0.00233,
+                  "n_items": 100,
+                  "point": 0.00378,
+                  "sd_items": 0.00789
+                }
+              }
+            }
+          },
+          "frozen_ml": {
+            "test_auroc": 0.75108,
+            "test_log_loss": 0.18087,
+            "vs_frozen_baseline": {
+              "platt": {
+                "decision": "go",
+                "delta": 0.02,
+                "delta_log_loss": {
+                  "hi": 0.05,
+                  "lo": 0.01738,
+                  "n_items": 100,
+                  "point": 0.03328,
+                  "sd_items": 0.08527
+                }
+              }
+            }
+          },
+          "verbosity": {
+            "test_auroc": 0.61098,
+            "test_log_loss": 0.23771,
+            "vs_frozen_baseline": {
+              "platt": {
+                "decision": "stop",
+                "delta": 0.02,
+                "delta_log_loss": {
+                  "hi": -0.00518,
+                  "lo": -0.04885,
+                  "n_items": 100,
+                  "point": -0.02373,
+                  "sd_items": 0.11328
+                }
+              }
+            }
+          }
+        }
+      },
+      "frozen_reproduction": {
+        "all_match": true,
+        "checks": [
+          {
+            "expected": 0.12338,
+            "got": 0.12338,
+            "key": "arms.WCT-U.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.99113,
+            "got": 0.99113,
+            "key": "arms.WCT-U.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.96795,
+            "got": 0.96795,
+            "key": "arms.WCT-U.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.10686,
+            "got": 0.10686,
+            "key": "arms.WCT-EM.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.99197,
+            "got": 0.99197,
+            "key": "arms.WCT-EM.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.97115,
+            "got": 0.97115,
+            "key": "arms.WCT-EM.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.09732,
+            "got": 0.09732,
+            "key": "arms.WCT-C.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.99197,
+            "got": 0.99197,
+            "key": "arms.WCT-C.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.98077,
+            "got": 0.98077,
+            "key": "arms.WCT-C.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.22428,
+            "got": 0.22428,
+            "key": "arms.uncapped.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.52385,
+            "got": 0.52385,
+            "key": "arms.uncapped.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.95513,
+            "got": 0.95513,
+            "key": "arms.uncapped.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.19662,
+            "got": 0.19662,
+            "key": "arms.prevalence_only.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.5,
+            "got": 0.5,
+            "key": "arms.prevalence_only.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.95513,
+            "got": 0.95513,
+            "key": "arms.prevalence_only.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.21116,
+            "got": 0.21116,
+            "key": "covariate_frozen.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.1069,
+            "got": 0.1069,
+            "key": "primary.WCT-U.point",
+            "match": true
+          },
+          {
+            "expected": 0.01705,
+            "got": 0.01705,
+            "key": "primary.WCT-U.lo",
+            "match": true
+          },
+          {
+            "expected": 0.18418,
+            "got": 0.18418,
+            "key": "primary.WCT-U.hi",
+            "match": true
+          },
+          {
+            "expected": 0.12249,
+            "got": 0.12249,
+            "key": "primary.WCT-EM.point",
+            "match": true
+          },
+          {
+            "expected": 0.03667,
+            "got": 0.03667,
+            "key": "primary.WCT-EM.lo",
+            "match": true
+          },
+          {
+            "expected": 0.19722,
+            "got": 0.19722,
+            "key": "primary.WCT-EM.hi",
+            "match": true
+          },
+          {
+            "expected": 0.13211,
+            "got": 0.13211,
+            "key": "primary.WCT-C.point",
+            "match": true
+          },
+          {
+            "expected": 0.04323,
+            "got": 0.04323,
+            "key": "primary.WCT-C.lo",
+            "match": true
+          },
+          {
+            "expected": 0.2078,
+            "got": 0.2078,
+            "key": "primary.WCT-C.hi",
+            "match": true
+          },
+          {
+            "expected": 228,
+            "got": 228,
+            "key": "co_primary.k",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "co_primary.WCT-EM",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "co_primary.WCT-U",
+            "match": true
+          },
+          {
+            "expected": 0.9693,
+            "got": 0.9693,
+            "key": "co_primary.covariate_baseline",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "within_item_auroc.point",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "within_item_auroc.lo",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "within_item_auroc.hi",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "within_item_auroc.decision",
+            "match": true
+          },
+          {
+            "expected": 0.001,
+            "got": 0.001,
+            "key": "permutation_null.p",
+            "match": true
+          },
+          {
+            "expected": 0.99197,
+            "got": 0.99197,
+            "key": "permutation_null.observed",
+            "match": true
+          },
+          {
+            "expected": 0.60709,
+            "got": 0.60709,
+            "key": "permutation_null.null_mean",
+            "match": true
+          },
+          {
+            "expected": 0.09235,
+            "got": 0.09235,
+            "key": "permutation_null.null_sd",
+            "match": true
+          },
+          {
+            "expected": 1000,
+            "got": 1000,
+            "key": "permutation_null.n_perm",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "primary.WCT-U.decision",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "primary.WCT-EM.decision",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "primary.WCT-C.decision",
+            "match": true
+          }
+        ],
+        "cycle": 1,
+        "map": "temperature",
+        "mismatches": [],
+        "n_checks": 41,
+        "n_mismatched": 0,
+        "source": "out/e1_summary_openrouter.json"
+      },
+      "m6_2x2": {
+        "auroc_note": "raw_auroc is AUROC of the UNMAPPED score and is the quantity the signal question asks. A fitted calibration map may take a NEGATIVE slope on an arm carrying no signal (c1_local capped_unsigned: Platt a=-0.0639), which reverses the ranking and flips mapped AUROC about 0.5 -- a calibration artifact, not a ranking fact. Mapped values are given under BOTH maps so each cycle reads its own registered one.",
+        "cells": {
+          "capped_signed": {
+            "platt": {
+              "test_accuracy": 0.98077,
+              "test_auroc": 0.99113,
+              "test_log_loss": 0.0671
+            },
+            "platt_slope": 1.72315,
+            "raw_auroc": 0.99113,
+            "temperature": {
+              "test_accuracy": 0.96795,
+              "test_auroc": 0.99113,
+              "test_log_loss": 0.12338
+            }
+          },
+          "capped_unsigned": {
+            "platt": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.52385,
+              "test_log_loss": 0.19844
+            },
+            "platt_slope": 0.328861,
+            "raw_auroc": 0.52385,
+            "temperature": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.52385,
+              "test_log_loss": 0.22428
+            }
+          },
+          "uncapped_signed": {
+            "platt": {
+              "test_accuracy": 0.97115,
+              "test_auroc": 0.98754,
+              "test_log_loss": 0.12447
+            },
+            "platt_slope": 1.124711,
+            "raw_auroc": 0.98754,
+            "temperature": {
+              "test_accuracy": 0.97115,
+              "test_auroc": 0.98754,
+              "test_log_loss": 0.19786
+            }
+          },
+          "uncapped_unsigned": {
+            "platt": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.4825,
+              "test_log_loss": 0.19945
+            },
+            "platt_slope": 0.093176,
+            "raw_auroc": 0.4825,
+            "temperature": {
+              "test_accuracy": 0.95513,
+              "test_auroc": 0.4825,
+              "test_log_loss": 0.27961
+            }
+          }
+        },
+        "note": "rows = capping, columns = polarity. paper.md 6.1 claims the ROW contrast (one vote per source) but the frozen arms only vary the COLUMN (signed vs unsigned), because n_claims == n_emitting."
+      },
+      "n_items": 150,
+      "n_props": 484,
+      "n_test_negatives": 14,
+      "panel": "c1_openrouter",
+      "panel_vs_single_best_calibration_selected": {
+        "platt": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.08378,
+              "lo": 0.004,
+              "n_items": 100,
+              "point": 0.03744,
+              "sd_items": 0.20703
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.09334,
+              "lo": 0.01093,
+              "n_items": 100,
+              "point": 0.04266,
+              "sd_items": 0.2193
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.09766,
+              "lo": 0.00694,
+              "n_items": 100,
+              "point": 0.04232,
+              "sd_items": 0.23918
+            }
+          }
+        },
+        "temperature": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.14653,
+              "lo": 0.0571,
+              "n_items": 100,
+              "point": 0.09828,
+              "sd_items": 0.22951
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.14209,
+              "lo": 0.04551,
+              "n_items": 100,
+              "point": 0.08866,
+              "sd_items": 0.2514
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.12838,
+              "lo": 0.02713,
+              "n_items": 100,
+              "point": 0.07306,
+              "sd_items": 0.2653
+            }
+          }
+        }
+      },
+      "permutation_null": {
+        "platt": {
+          "n_perm": 1000,
+          "null_mean": 0.60709,
+          "null_sd": 0.09235,
+          "observed": 0.99197,
+          "p": 0.001
+        },
+        "temperature": {
+          "n_perm": 1000,
+          "null_mean": 0.60709,
+          "null_sd": 0.09235,
+          "observed": 0.99197,
+          "p": 0.001
+        }
+      },
+      "prevalence": 0.9401,
+      "prevalence_only_vs_covariate": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.03717,
+          "lo": -0.00529,
+          "n_items": 100,
+          "point": 0.01674,
+          "sd_items": 0.11183
+        }
+      },
+      "primary_vs_covariate_frozen": {
+        "platt": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.21694,
+              "lo": 0.08197,
+              "n_items": 100,
+              "point": 0.15273,
+              "sd_items": 0.34332
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.21858,
+              "lo": 0.09271,
+              "n_items": 100,
+              "point": 0.15795,
+              "sd_items": 0.32093
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.21812,
+              "lo": 0.09368,
+              "n_items": 100,
+              "point": 0.15761,
+              "sd_items": 0.31597
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.21812,
+              "lo": 0.09368,
+              "n_items": 100,
+              "point": 0.15761,
+              "sd_items": 0.31597
+            }
+          },
+          "capped_unsigned": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.03067,
+              "lo": -0.00411,
+              "n_items": 100,
+              "point": 0.01365,
+              "sd_items": 0.09322
+            }
+          },
+          "single:gemma": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.07719,
+              "lo": 0.01251,
+              "n_items": 100,
+              "point": 0.04465,
+              "sd_items": 0.17069
+            }
+          },
+          "single:gptoss": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.17318,
+              "lo": 0.07662,
+              "n_items": 100,
+              "point": 0.12355,
+              "sd_items": 0.24737
+            }
+          },
+          "single:nemotron": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.1791,
+              "lo": 0.05321,
+              "n_items": 100,
+              "point": 0.11529,
+              "sd_items": 0.31793
+            }
+          },
+          "uncapped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.19175,
+              "lo": 0.02396,
+              "n_items": 100,
+              "point": 0.11171,
+              "sd_items": 0.43782
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.03361,
+              "lo": -0.00732,
+              "n_items": 100,
+              "point": 0.01313,
+              "sd_items": 0.10748
+            }
+          }
+        },
+        "temperature": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.2078,
+              "lo": 0.04323,
+              "n_items": 100,
+              "point": 0.13211,
+              "sd_items": 0.41942
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.19722,
+              "lo": 0.03667,
+              "n_items": 100,
+              "point": 0.12249,
+              "sd_items": 0.41114
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.18418,
+              "lo": 0.01705,
+              "n_items": 100,
+              "point": 0.1069,
+              "sd_items": 0.42431
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.18418,
+              "lo": 0.01705,
+              "n_items": 100,
+              "point": 0.1069,
+              "sd_items": 0.42431
+            }
+          },
+          "capped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.00094,
+              "lo": -0.02936,
+              "n_items": 100,
+              "point": -0.01494,
+              "sd_items": 0.07225
+            }
+          },
+          "single:gemma": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.28891,
+              "lo": -0.44117,
+              "n_items": 100,
+              "point": -0.36475,
+              "sd_items": 0.39437
+            }
+          },
+          "single:gptoss": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.07267,
+              "lo": -0.09097,
+              "n_items": 100,
+              "point": -0.00705,
+              "sd_items": 0.40633
+            }
+          },
+          "single:nemotron": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.11203,
+              "lo": -0.04675,
+              "n_items": 100,
+              "point": 0.03383,
+              "sd_items": 0.40288
+            }
+          },
+          "uncapped_signed": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.1532,
+              "lo": -0.07387,
+              "n_items": 100,
+              "point": 0.04811,
+              "sd_items": 0.5939
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.03417,
+              "lo": -0.10762,
+              "n_items": 100,
+              "point": -0.06912,
+              "sd_items": 0.18742
+            }
+          }
+        }
+      },
+      "primary_vs_covariate_ml": {
+        "platt": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.18431,
+              "lo": 0.04952,
+              "n_items": 100,
+              "point": 0.11944,
+              "sd_items": 0.34486
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.18648,
+              "lo": 0.06093,
+              "n_items": 100,
+              "point": 0.12467,
+              "sd_items": 0.32051
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.18334,
+              "lo": 0.06179,
+              "n_items": 100,
+              "point": 0.12432,
+              "sd_items": 0.31206
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.18334,
+              "lo": 0.06179,
+              "n_items": 100,
+              "point": 0.12432,
+              "sd_items": 0.31206
+            }
+          },
+          "capped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.00125,
+              "lo": -0.0417,
+              "n_items": 100,
+              "point": -0.01964,
+              "sd_items": 0.10945
+            }
+          },
+          "single:gemma": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.0394,
+              "lo": -0.0158,
+              "n_items": 100,
+              "point": 0.01137,
+              "sd_items": 0.13765
+            }
+          },
+          "single:gptoss": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.13896,
+              "lo": 0.04587,
+              "n_items": 100,
+              "point": 0.09027,
+              "sd_items": 0.23593
+            }
+          },
+          "single:nemotron": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.14726,
+              "lo": 0.0166,
+              "n_items": 100,
+              "point": 0.08201,
+              "sd_items": 0.33461
+            }
+          },
+          "uncapped_signed": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.15996,
+              "lo": -0.00928,
+              "n_items": 100,
+              "point": 0.07843,
+              "sd_items": 0.43459
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.00339,
+              "lo": -0.04544,
+              "n_items": 100,
+              "point": -0.02016,
+              "sd_items": 0.1241
+            }
+          }
+        },
+        "temperature": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.17529,
+              "lo": 0.01097,
+              "n_items": 100,
+              "point": 0.09883,
+              "sd_items": 0.42159
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.16652,
+              "lo": 0.00386,
+              "n_items": 100,
+              "point": 0.08921,
+              "sd_items": 0.41278
+            }
+          },
+          "WCT-U": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.15141,
+              "lo": -0.01599,
+              "n_items": 100,
+              "point": 0.07361,
+              "sd_items": 0.42511
+            }
+          },
+          "capped_signed": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.15141,
+              "lo": -0.01599,
+              "n_items": 100,
+              "point": 0.07361,
+              "sd_items": 0.42511
+            }
+          },
+          "capped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.02299,
+              "lo": -0.07574,
+              "n_items": 100,
+              "point": -0.04823,
+              "sd_items": 0.13521
+            }
+          },
+          "single:gemma": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.32352,
+              "lo": -0.47337,
+              "n_items": 100,
+              "point": -0.39803,
+              "sd_items": 0.38093
+            }
+          },
+          "single:gptoss": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.04204,
+              "lo": -0.12393,
+              "n_items": 100,
+              "point": -0.04033,
+              "sd_items": 0.40951
+            }
+          },
+          "single:nemotron": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.08301,
+              "lo": -0.08155,
+              "n_items": 100,
+              "point": 0.00055,
+              "sd_items": 0.42147
+            }
+          },
+          "uncapped_signed": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.12063,
+              "lo": -0.11032,
+              "n_items": 100,
+              "point": 0.01483,
+              "sd_items": 0.59502
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.0571,
+              "lo": -0.15239,
+              "n_items": 100,
+              "point": -0.1024,
+              "sd_items": 0.24072
+            }
+          }
+        }
+      },
+      "seed": 20260807,
+      "single_best_vs_covariate": {
+        "platt": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.1791,
+            "lo": 0.05321,
+            "n_items": 100,
+            "point": 0.11529,
+            "sd_items": 0.31793
+          }
+        },
+        "temperature": {
+          "decision": "inconclusive",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.11203,
+            "lo": -0.04675,
+            "n_items": 100,
+            "point": 0.03383,
+            "sd_items": 0.40288
+          }
+        }
+      },
+      "single_source": {
+        "by_map": {
+          "platt": {
+            "calibration_log_loss_per_agent": {
+              "gemma": 0.26018,
+              "gptoss": 0.17825,
+              "nemotron": 0.09567
+            },
+            "calibration_selected": "nemotron",
+            "oracle_selected": "gptoss"
+          },
+          "temperature": {
+            "calibration_log_loss_per_agent": {
+              "gemma": 0.59516,
+              "gptoss": 0.26831,
+              "nemotron": 0.11568
+            },
+            "calibration_selected": "nemotron",
+            "oracle_selected": "nemotron"
+          }
+        },
+        "note": "selected on CALIBRATION log-loss alone, SEPARATELY UNDER EACH MAP: the choice is not map-invariant (c1_local: temperature->qwen, Platt->ornith). `oracle_selected` is chosen on test and is an UPPER BOUND no unlabelled method can reach (m0/ceiling.py:128-134); it is never the baseline. Read the row for the map your cycle registered."
+      },
+      "status": "POST-HOC",
+      "stratum": "all_items",
+      "within_item_auroc": {
+        "platt": {
+          "decision": "go",
+          "hi": 1.0,
+          "lo": 1.0,
+          "n_boot": 1000,
+          "point": 1.0,
+          "se": 0.0
+        },
+        "temperature": {
+          "decision": "go",
+          "hi": 1.0,
+          "lo": 1.0,
+          "n_boot": 1000,
+          "point": 1.0,
+          "se": 0.0
+        }
+      }
+    },
+    "negation_theories": {
+      "agents": [
+        "gemma",
+        "gptoss",
+        "nemotron"
+      ],
+      "alignment_audit": {
+        "aligner_self_identification": {
+          "accuracy": 0.9777,
+          "n_probes": 807,
+          "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+          "status": "computed",
+          "wrong_polarity": 0,
+          "wrong_proposition": 18
+        },
+        "claims": 8489,
+        "funnel": {
+          "claims": 8489,
+          "instances": 1397,
+          "note": "NOT monotone. Alignment scores each claim against up to top_k=8 targets, so one claim can pass against more than one and instances may exceed claims. The invariant is observations <= instances: observations are the per-(agent, proposition) argmax subset of instances.",
+          "observations": 593
+        },
+        "lexical_reference": {
+          "n_predicted": 593,
+          "n_reference": 736,
+          "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+          "recall_mean": 0.6819
+        },
+        "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+        "observations": 593,
+        "same_agent_conflicts": 108,
+        "status": "POST-HOC"
+      },
+      "arms": {
+        "WCT-C": {
+          "platt": {
+            "test_accuracy": 0.98802,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05355
+          },
+          "platt_params": {
+            "a": 0.718314,
+            "b": 0.1169
+          },
+          "temperature": {
+            "test_accuracy": 0.98802,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05629
+          },
+          "temperature_t": 1.3567
+        },
+        "WCT-EM": {
+          "platt": {
+            "test_accuracy": 0.98802,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05453
+          },
+          "platt_params": {
+            "a": 0.528575,
+            "b": -0.3844
+          },
+          "temperature": {
+            "test_accuracy": 0.98802,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.04803
+          },
+          "temperature_t": 2.0544
+        },
+        "WCT-U": {
+          "platt": {
+            "test_accuracy": 0.98204,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05784
+          },
+          "platt_params": {
+            "a": 1.878289,
+            "b": -0.0001
+          },
+          "temperature": {
+            "test_accuracy": 0.98204,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05905
+          },
+          "temperature_t": 0.5387
+        },
+        "capped_signed": {
+          "platt": {
+            "test_accuracy": 0.98204,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05784
+          },
+          "platt_params": {
+            "a": 1.878289,
+            "b": -0.0001
+          },
+          "temperature": {
+            "test_accuracy": 0.98204,
+            "test_auroc": 1.0,
+            "test_log_loss": 0.05905
+          },
+          "temperature_t": 0.5387
+        },
+        "capped_unsigned": {
+          "platt": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.55439,
+            "test_log_loss": 0.325
+          },
+          "platt_params": {
+            "a": 0.410889,
+            "b": 0.6016
+          },
+          "temperature": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.55439,
+            "test_log_loss": 0.33468
+          },
+          "temperature_t": 1.501
+        },
+        "covariate_baseline": {
+          "platt": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31898
+          },
+          "temperature": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31898
+          }
+        },
+        "covariate_dedup": {
+          "platt": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31576
+          },
+          "temperature": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31576
+          }
+        },
+        "covariate_frozen": {
+          "platt": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31898
+          },
+          "temperature": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31898
+          }
+        },
+        "covariate_frozen_ml": {
+          "platt": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.75817,
+            "test_log_loss": 0.29586
+          },
+          "temperature": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.75817,
+            "test_log_loss": 0.29586
+          }
+        },
+        "covariate_verbosity": {
+          "platt": {
+            "test_accuracy": 0.92216,
+            "test_auroc": 0.70121,
+            "test_log_loss": 0.27279
+          },
+          "temperature": {
+            "test_accuracy": 0.92216,
+            "test_auroc": 0.70121,
+            "test_log_loss": 0.27279
+          }
+        },
+        "prevalence_only": {
+          "platt": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.5,
+            "test_log_loss": 0.32604
+          },
+          "temperature": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.5,
+            "test_log_loss": 0.32604
+          }
+        },
+        "single:gemma": {
+          "platt": {
+            "test_accuracy": 0.85629,
+            "test_auroc": 0.7577,
+            "test_log_loss": 0.2887
+          },
+          "platt_params": {
+            "a": 1.726125,
+            "b": 1.507
+          },
+          "temperature": {
+            "test_accuracy": 0.4491,
+            "test_auroc": 0.7577,
+            "test_log_loss": 0.59109
+          },
+          "temperature_t": 0.5868
+        },
+        "single:gptoss": {
+          "platt": {
+            "test_accuracy": 0.96407,
+            "test_auroc": 0.97829,
+            "test_log_loss": 0.14329
+          },
+          "platt_params": {
+            "a": 3.372099,
+            "b": 0.2664
+          },
+          "temperature": {
+            "test_accuracy": 0.8982,
+            "test_auroc": 0.97829,
+            "test_log_loss": 0.15918
+          },
+          "temperature_t": 0.2741
+        },
+        "single:nemotron": {
+          "platt": {
+            "test_accuracy": 0.99401,
+            "test_auroc": 0.96032,
+            "test_log_loss": 0.08933
+          },
+          "platt_params": {
+            "a": 3.314139,
+            "b": 0.5963
+          },
+          "temperature": {
+            "test_accuracy": 0.89222,
+            "test_auroc": 0.96032,
+            "test_log_loss": 0.11548
+          },
+          "temperature_t": 0.2741
+        },
+        "single_best_calibration_selected": {
+          "platt": {
+            "agent": "nemotron",
+            "test_accuracy": 0.99401,
+            "test_auroc": 0.96032,
+            "test_log_loss": 0.08933
+          },
+          "temperature": {
+            "agent": "nemotron",
+            "test_accuracy": 0.89222,
+            "test_auroc": 0.96032,
+            "test_log_loss": 0.11548
+          }
+        },
+        "single_oracle": {
+          "platt": {
+            "agent": "nemotron",
+            "note": "chosen on TEST; an upper bound no unlabelled method reaches",
+            "test_accuracy": 0.99401,
+            "test_auroc": 0.96032,
+            "test_log_loss": 0.08933
+          },
+          "temperature": {
+            "agent": "nemotron",
+            "note": "chosen on TEST; an upper bound no unlabelled method reaches",
+            "test_accuracy": 0.89222,
+            "test_auroc": 0.96032,
+            "test_log_loss": 0.11548
+          }
+        },
+        "uncapped_signed": {
+          "platt": {
+            "test_accuracy": 0.98802,
+            "test_auroc": 0.9937,
+            "test_log_loss": 0.11281
+          },
+          "platt_params": {
+            "a": 1.087875,
+            "b": 0.1415
+          },
+          "temperature": {
+            "test_accuracy": 0.98802,
+            "test_auroc": 0.9937,
+            "test_log_loss": 0.11877
+          },
+          "temperature_t": 0.8996
+        },
+        "uncapped_unsigned": {
+          "platt": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.51284,
+            "test_log_loss": 0.32429
+          },
+          "platt_params": {
+            "a": 0.092906,
+            "b": 1.065
+          },
+          "temperature": {
+            "test_accuracy": 0.91617,
+            "test_auroc": 0.51284,
+            "test_log_loss": 0.37224
+          },
+          "temperature_t": 3.546
+        }
+      },
+      "co_primary_precision_at_k": {
+        "platt": {
+          "WCT-EM": 1.0,
+          "WCT-U": 1.0,
+          "covariate_baseline": 0.94531,
+          "decision": "go",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.09093,
+            "lo": 0.02143,
+            "n_boot": 2000,
+            "point": 0.05469,
+            "se": 0.01825
+          },
+          "k": 128
+        },
+        "temperature": {
+          "WCT-EM": 1.0,
+          "WCT-U": 1.0,
+          "covariate_baseline": 0.94531,
+          "decision": "go",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.09093,
+            "lo": 0.02143,
+            "n_boot": 2000,
+            "point": 0.05469,
+            "se": 0.01825
+          },
+          "k": 128
+        }
+      },
+      "covariate_sensitivity": {
+        "note": "SENSITIVITY. covariate_frozen is the registered matrix INCLUDING its duplicated column; dedup drops the duplicate; verbosity adds the per-item verbosity the registration named but the matrix never carried. Reported beside the frozen baseline, never instead.",
+        "rows": {
+          "dedup": {
+            "test_auroc": 0.69608,
+            "test_log_loss": 0.31576,
+            "vs_frozen_baseline": {
+              "platt": {
+                "decision": "stop",
+                "delta": 0.02,
+                "delta_log_loss": {
+                  "hi": 0.00631,
+                  "lo": 0.0013,
+                  "n_items": 55,
+                  "point": 0.00371,
+                  "sd_items": 0.00956
+                }
+              }
+            }
+          },
+          "frozen_ml": {
+            "test_auroc": 0.75817,
+            "test_log_loss": 0.29586,
+            "vs_frozen_baseline": {
+              "platt": {
+                "decision": "go",
+                "delta": 0.02,
+                "delta_log_loss": {
+                  "hi": 0.04718,
+                  "lo": 0.00419,
+                  "n_items": 55,
+                  "point": 0.02613,
+                  "sd_items": 0.08003
+                }
+              }
+            }
+          },
+          "verbosity": {
+            "test_auroc": 0.70121,
+            "test_log_loss": 0.27279,
+            "vs_frozen_baseline": {
+              "platt": {
+                "decision": "inconclusive",
+                "delta": 0.02,
+                "delta_log_loss": {
+                  "hi": 0.09956,
+                  "lo": -0.01906,
+                  "n_items": 55,
+                  "point": 0.04408,
+                  "sd_items": 0.22213
+                }
+              }
+            }
+          }
+        }
+      },
+      "frozen_reproduction": {
+        "all_match": true,
+        "checks": [
+          {
+            "expected": 0.05905,
+            "got": 0.05905,
+            "key": "arms.WCT-U.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "arms.WCT-U.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.98204,
+            "got": 0.98204,
+            "key": "arms.WCT-U.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.04803,
+            "got": 0.04803,
+            "key": "arms.WCT-EM.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "arms.WCT-EM.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.98802,
+            "got": 0.98802,
+            "key": "arms.WCT-EM.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.05629,
+            "got": 0.05629,
+            "key": "arms.WCT-C.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "arms.WCT-C.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.98802,
+            "got": 0.98802,
+            "key": "arms.WCT-C.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.33468,
+            "got": 0.33468,
+            "key": "arms.uncapped.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.55439,
+            "got": 0.55439,
+            "key": "arms.uncapped.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.91617,
+            "got": 0.91617,
+            "key": "arms.uncapped.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.32604,
+            "got": 0.32604,
+            "key": "arms.prevalence_only.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.5,
+            "got": 0.5,
+            "key": "arms.prevalence_only.test_auroc",
+            "match": true
+          },
+          {
+            "expected": 0.91617,
+            "got": 0.91617,
+            "key": "arms.prevalence_only.test_accuracy",
+            "match": true
+          },
+          {
+            "expected": 0.31898,
+            "got": 0.31898,
+            "key": "covariate_frozen.test_log_loss",
+            "match": true
+          },
+          {
+            "expected": 0.26682,
+            "got": 0.26682,
+            "key": "primary.WCT-U.point",
+            "match": true
+          },
+          {
+            "expected": 0.21072,
+            "got": 0.21072,
+            "key": "primary.WCT-U.lo",
+            "match": true
+          },
+          {
+            "expected": 0.33381,
+            "got": 0.33381,
+            "key": "primary.WCT-U.hi",
+            "match": true
+          },
+          {
+            "expected": 0.27741,
+            "got": 0.27741,
+            "key": "primary.WCT-EM.point",
+            "match": true
+          },
+          {
+            "expected": 0.2229,
+            "got": 0.2229,
+            "key": "primary.WCT-EM.lo",
+            "match": true
+          },
+          {
+            "expected": 0.34282,
+            "got": 0.34282,
+            "key": "primary.WCT-EM.hi",
+            "match": true
+          },
+          {
+            "expected": 0.27004,
+            "got": 0.27004,
+            "key": "primary.WCT-C.point",
+            "match": true
+          },
+          {
+            "expected": 0.21127,
+            "got": 0.21127,
+            "key": "primary.WCT-C.lo",
+            "match": true
+          },
+          {
+            "expected": 0.33966,
+            "got": 0.33966,
+            "key": "primary.WCT-C.hi",
+            "match": true
+          },
+          {
+            "expected": 128,
+            "got": 128,
+            "key": "co_primary.k",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "co_primary.WCT-EM",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "co_primary.WCT-U",
+            "match": true
+          },
+          {
+            "expected": 0.94531,
+            "got": 0.94531,
+            "key": "co_primary.covariate_baseline",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "within_item_auroc.point",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "within_item_auroc.lo",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "within_item_auroc.hi",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "within_item_auroc.decision",
+            "match": true
+          },
+          {
+            "expected": 0.001,
+            "got": 0.001,
+            "key": "permutation_null.p",
+            "match": true
+          },
+          {
+            "expected": 1.0,
+            "got": 1.0,
+            "key": "permutation_null.observed",
+            "match": true
+          },
+          {
+            "expected": 0.62019,
+            "got": 0.62019,
+            "key": "permutation_null.null_mean",
+            "match": true
+          },
+          {
+            "expected": 0.09333,
+            "got": 0.09333,
+            "key": "permutation_null.null_sd",
+            "match": true
+          },
+          {
+            "expected": 1000,
+            "got": 1000,
+            "key": "permutation_null.n_perm",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "primary.WCT-U.decision",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "primary.WCT-EM.decision",
+            "match": true
+          },
+          {
+            "expected": "go",
+            "got": "go",
+            "key": "primary.WCT-C.decision",
+            "match": true
+          }
+        ],
+        "cycle": 1,
+        "map": "temperature",
+        "mismatches": [],
+        "n_checks": 41,
+        "n_mismatched": 0,
+        "source": "out/e1_summary_openrouter.json"
+      },
+      "m6_2x2": {
+        "auroc_note": "raw_auroc is AUROC of the UNMAPPED score and is the quantity the signal question asks. A fitted calibration map may take a NEGATIVE slope on an arm carrying no signal (c1_local capped_unsigned: Platt a=-0.0639), which reverses the ranking and flips mapped AUROC about 0.5 -- a calibration artifact, not a ranking fact. Mapped values are given under BOTH maps so each cycle reads its own registered one.",
+        "cells": {
+          "capped_signed": {
+            "platt": {
+              "test_accuracy": 0.98204,
+              "test_auroc": 1.0,
+              "test_log_loss": 0.05784
+            },
+            "platt_slope": 1.878289,
+            "raw_auroc": 1.0,
+            "temperature": {
+              "test_accuracy": 0.98204,
+              "test_auroc": 1.0,
+              "test_log_loss": 0.05905
+            }
+          },
+          "capped_unsigned": {
+            "platt": {
+              "test_accuracy": 0.91617,
+              "test_auroc": 0.55439,
+              "test_log_loss": 0.325
+            },
+            "platt_slope": 0.410889,
+            "raw_auroc": 0.55439,
+            "temperature": {
+              "test_accuracy": 0.91617,
+              "test_auroc": 0.55439,
+              "test_log_loss": 0.33468
+            }
+          },
+          "uncapped_signed": {
+            "platt": {
+              "test_accuracy": 0.98802,
+              "test_auroc": 0.9937,
+              "test_log_loss": 0.11281
+            },
+            "platt_slope": 1.087875,
+            "raw_auroc": 0.9937,
+            "temperature": {
+              "test_accuracy": 0.98802,
+              "test_auroc": 0.9937,
+              "test_log_loss": 0.11877
+            }
+          },
+          "uncapped_unsigned": {
+            "platt": {
+              "test_accuracy": 0.91617,
+              "test_auroc": 0.51284,
+              "test_log_loss": 0.32429
+            },
+            "platt_slope": 0.092906,
+            "raw_auroc": 0.51284,
+            "temperature": {
+              "test_accuracy": 0.91617,
+              "test_auroc": 0.51284,
+              "test_log_loss": 0.37224
+            }
+          }
+        },
+        "note": "rows = capping, columns = polarity. paper.md 6.1 claims the ROW contrast (one vote per source) but the frozen arms only vary the COLUMN (signed vs unsigned), because n_claims == n_emitting."
+      },
+      "n_items": 78,
+      "n_props": 250,
+      "n_test_negatives": 14,
+      "panel": "c1_openrouter",
+      "panel_vs_single_best_calibration_selected": {
+        "platt": {
+          "WCT-C": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.13843,
+              "lo": -0.00028,
+              "n_items": 55,
+              "point": 0.05709,
+              "sd_items": 0.27936
+            }
+          },
+          "WCT-EM": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.13477,
+              "lo": -0.00096,
+              "n_items": 55,
+              "point": 0.05592,
+              "sd_items": 0.27277
+            }
+          },
+          "WCT-U": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.13449,
+              "lo": -0.00226,
+              "n_items": 55,
+              "point": 0.05248,
+              "sd_items": 0.27604
+            }
+          }
+        },
+        "temperature": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.16884,
+              "lo": 0.01954,
+              "n_items": 55,
+              "point": 0.08511,
+              "sd_items": 0.29229
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.16996,
+              "lo": 0.03117,
+              "n_items": 55,
+              "point": 0.09247,
+              "sd_items": 0.27357
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.16497,
+              "lo": 0.01964,
+              "n_items": 55,
+              "point": 0.08189,
+              "sd_items": 0.28468
+            }
+          }
+        }
+      },
+      "permutation_null": {
+        "platt": {
+          "n_perm": 1000,
+          "null_mean": 0.62019,
+          "null_sd": 0.09333,
+          "observed": 1.0,
+          "p": 0.001
+        },
+        "temperature": {
+          "n_perm": 1000,
+          "null_mean": 0.62019,
+          "null_sd": 0.09333,
+          "observed": 1.0,
+          "p": 0.001
+        }
+      },
+      "prevalence": 0.884,
+      "prevalence_only_vs_covariate": {
+        "decision": "inconclusive",
+        "delta": 0.02,
+        "delta_log_loss": {
+          "hi": 0.04128,
+          "lo": -0.0424,
+          "n_items": 55,
+          "point": -0.00187,
+          "sd_items": 0.1594
+        }
+      },
+      "primary_vs_covariate_frozen": {
+        "platt": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.34111,
+              "lo": 0.21481,
+              "n_items": 55,
+              "point": 0.27266,
+              "sd_items": 0.24596
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33889,
+              "lo": 0.21513,
+              "n_items": 55,
+              "point": 0.27148,
+              "sd_items": 0.24004
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33487,
+              "lo": 0.21184,
+              "n_items": 55,
+              "point": 0.26805,
+              "sd_items": 0.23991
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33487,
+              "lo": 0.21184,
+              "n_items": 55,
+              "point": 0.26805,
+              "sd_items": 0.23991
+            }
+          },
+          "capped_unsigned": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.03289,
+              "lo": -0.03877,
+              "n_items": 55,
+              "point": -0.00358,
+              "sd_items": 0.13412
+            }
+          },
+          "single:gemma": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.10291,
+              "lo": -0.02042,
+              "n_items": 55,
+              "point": 0.04055,
+              "sd_items": 0.23737
+            }
+          },
+          "single:gptoss": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.27692,
+              "lo": 0.09596,
+              "n_items": 55,
+              "point": 0.18731,
+              "sd_items": 0.34275
+            }
+          },
+          "single:nemotron": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.28556,
+              "lo": 0.14215,
+              "n_items": 55,
+              "point": 0.21557,
+              "sd_items": 0.26483
+            }
+          },
+          "uncapped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.32334,
+              "lo": 0.11202,
+              "n_items": 55,
+              "point": 0.22946,
+              "sd_items": 0.39895
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.04058,
+              "lo": -0.04422,
+              "n_items": 55,
+              "point": -0.00248,
+              "sd_items": 0.16133
+            }
+          }
+        },
+        "temperature": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33966,
+              "lo": 0.21127,
+              "n_items": 55,
+              "point": 0.27004,
+              "sd_items": 0.24892
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.34282,
+              "lo": 0.2229,
+              "n_items": 55,
+              "point": 0.27741,
+              "sd_items": 0.23101
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33381,
+              "lo": 0.21072,
+              "n_items": 55,
+              "point": 0.26682,
+              "sd_items": 0.23987
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33381,
+              "lo": 0.21072,
+              "n_items": 55,
+              "point": 0.26682,
+              "sd_items": 0.23987
+            }
+          },
+          "capped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.01765,
+              "lo": -0.04698,
+              "n_items": 55,
+              "point": -0.01492,
+              "sd_items": 0.1222
+            }
+          },
+          "single:gemma": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.14758,
+              "lo": -0.36084,
+              "n_items": 55,
+              "point": -0.25856,
+              "sd_items": 0.39929
+            }
+          },
+          "single:gptoss": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.27142,
+              "lo": 0.07033,
+              "n_items": 55,
+              "point": 0.17145,
+              "sd_items": 0.3762
+            }
+          },
+          "single:nemotron": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.25922,
+              "lo": 0.10887,
+              "n_items": 55,
+              "point": 0.18493,
+              "sd_items": 0.28041
+            }
+          },
+          "uncapped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31969,
+              "lo": 0.10334,
+              "n_items": 55,
+              "point": 0.22419,
+              "sd_items": 0.40995
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.00149,
+              "lo": -0.10753,
+              "n_items": 55,
+              "point": -0.0538,
+              "sd_items": 0.20396
+            }
+          }
+        }
+      },
+      "primary_vs_covariate_ml": {
+        "platt": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31634,
+              "lo": 0.18899,
+              "n_items": 55,
+              "point": 0.24653,
+              "sd_items": 0.24453
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31489,
+              "lo": 0.1894,
+              "n_items": 55,
+              "point": 0.24536,
+              "sd_items": 0.2403
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31095,
+              "lo": 0.18627,
+              "n_items": 55,
+              "point": 0.24192,
+              "sd_items": 0.23862
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31095,
+              "lo": 0.18627,
+              "n_items": 55,
+              "point": 0.24192,
+              "sd_items": 0.23862
+            }
+          },
+          "capped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.00885,
+              "lo": -0.06877,
+              "n_items": 55,
+              "point": -0.0297,
+              "sd_items": 0.14569
+            }
+          },
+          "single:gemma": {
+            "decision": "inconclusive",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.06922,
+              "lo": -0.03825,
+              "n_items": 55,
+              "point": 0.01442,
+              "sd_items": 0.20791
+            }
+          },
+          "single:gptoss": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.25526,
+              "lo": 0.06934,
+              "n_items": 55,
+              "point": 0.16118,
+              "sd_items": 0.33993
+            }
+          },
+          "single:nemotron": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.26695,
+              "lo": 0.11076,
+              "n_items": 55,
+              "point": 0.18944,
+              "sd_items": 0.28806
+            }
+          },
+          "uncapped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.30007,
+              "lo": 0.08784,
+              "n_items": 55,
+              "point": 0.20333,
+              "sd_items": 0.39764
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.01516,
+              "lo": -0.07353,
+              "n_items": 55,
+              "point": -0.02861,
+              "sd_items": 0.16793
+            }
+          }
+        },
+        "temperature": {
+          "WCT-C": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31411,
+              "lo": 0.18559,
+              "n_items": 55,
+              "point": 0.24392,
+              "sd_items": 0.24774
+            }
+          },
+          "WCT-EM": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.31762,
+              "lo": 0.19696,
+              "n_items": 55,
+              "point": 0.25128,
+              "sd_items": 0.23056
+            }
+          },
+          "WCT-U": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.30973,
+              "lo": 0.18508,
+              "n_items": 55,
+              "point": 0.2407,
+              "sd_items": 0.23865
+            }
+          },
+          "capped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.30973,
+              "lo": 0.18508,
+              "n_items": 55,
+              "point": 0.2407,
+              "sd_items": 0.23865
+            }
+          },
+          "capped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.00126,
+              "lo": -0.08214,
+              "n_items": 55,
+              "point": -0.04105,
+              "sd_items": 0.1517
+            }
+          },
+          "single:gemma": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.17725,
+              "lo": -0.38154,
+              "n_items": 55,
+              "point": -0.28469,
+              "sd_items": 0.3872
+            }
+          },
+          "single:gptoss": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.24706,
+              "lo": 0.04449,
+              "n_items": 55,
+              "point": 0.14532,
+              "sd_items": 0.37537
+            }
+          },
+          "single:nemotron": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.24267,
+              "lo": 0.07692,
+              "n_items": 55,
+              "point": 0.15881,
+              "sd_items": 0.30935
+            }
+          },
+          "uncapped_signed": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.29708,
+              "lo": 0.07833,
+              "n_items": 55,
+              "point": 0.19806,
+              "sd_items": 0.40917
+            }
+          },
+          "uncapped_unsigned": {
+            "decision": "stop",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": -0.01801,
+              "lo": -0.14326,
+              "n_items": 55,
+              "point": -0.07992,
+              "sd_items": 0.2363
+            }
+          }
+        }
+      },
+      "seed": 20260807,
+      "single_best_vs_covariate": {
+        "platt": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.28556,
+            "lo": 0.14215,
+            "n_items": 55,
+            "point": 0.21557,
+            "sd_items": 0.26483
+          }
+        },
+        "temperature": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.25922,
+            "lo": 0.10887,
+            "n_items": 55,
+            "point": 0.18493,
+            "sd_items": 0.28041
+          }
+        }
+      },
+      "single_source": {
+        "by_map": {
+          "platt": {
+            "calibration_log_loss_per_agent": {
+              "gemma": 0.39274,
+              "gptoss": 0.20035,
+              "nemotron": 0.16296
+            },
+            "calibration_selected": "nemotron",
+            "oracle_selected": "nemotron"
+          },
+          "temperature": {
+            "calibration_log_loss_per_agent": {
+              "gemma": 0.56284,
+              "gptoss": 0.20207,
+              "nemotron": 0.1699
+            },
+            "calibration_selected": "nemotron",
+            "oracle_selected": "nemotron"
+          }
+        },
+        "note": "selected on CALIBRATION log-loss alone, SEPARATELY UNDER EACH MAP: the choice is not map-invariant (c1_local: temperature->qwen, Platt->ornith). `oracle_selected` is chosen on test and is an UPPER BOUND no unlabelled method can reach (m0/ceiling.py:128-134); it is never the baseline. Read the row for the map your cycle registered."
+      },
+      "status": "POST-HOC",
+      "stratum": "negation_theories",
+      "within_item_auroc": {
+        "platt": {
+          "decision": "go",
+          "hi": 1.0,
+          "lo": 1.0,
+          "n_boot": 1000,
+          "point": 1.0,
+          "se": 0.0
+        },
+        "temperature": {
+          "decision": "go",
+          "hi": 1.0,
+          "lo": 1.0,
+          "n_boot": 1000,
+          "point": 1.0,
+          "se": 0.0
+        }
+      }
+    }
+  },
+  "stratum": "all_items",
+  "within_item_auroc": {
+    "platt": {
+      "decision": "go",
+      "hi": 1.0,
+      "lo": 1.0,
+      "n_boot": 1000,
+      "point": 1.0,
+      "se": 0.0
+    },
+    "temperature": {
+      "decision": "go",
+      "hi": 1.0,
+      "lo": 1.0,
+      "n_boot": 1000,
+      "point": 1.0,
+      "se": 0.0
+    }
+  }
+}

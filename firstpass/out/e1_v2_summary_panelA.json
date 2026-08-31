@@ -1,0 +1,701 @@
+{
+  "coverage": {
+    "cached": 450,
+    "missing": 0,
+    "planned": 450
+  },
+  "strata": {
+    "all_items": {
+      "S1_deny_filter": {
+        "arms": {
+          "WCT-C": {
+            "platt_params": {
+              "a": 0.674384,
+              "b": 0.334
+            },
+            "temperature_ablation_t": 1.3567,
+            "test_auroc": 0.94014,
+            "test_log_loss": 0.19101,
+            "test_log_loss_temperature": 0.19195
+          },
+          "WCT-EM": {
+            "platt_params": {
+              "a": 0.370263,
+              "b": 0.1844
+            },
+            "temperature_ablation_t": 2.5596,
+            "test_auroc": 0.93781,
+            "test_log_loss": 0.18943,
+            "test_log_loss_temperature": 0.18901
+          },
+          "WCT-U": {
+            "platt_params": {
+              "a": 1.436861,
+              "b": -0.0479
+            },
+            "temperature_ablation_t": 0.7071,
+            "test_auroc": 0.94101,
+            "test_log_loss": 0.19024,
+            "test_log_loss_temperature": 0.19067
+          },
+          "prevalence_only": {
+            "test_auroc": 0.5,
+            "test_log_loss": 0.50465
+          },
+          "uncapped": {
+            "test_auroc": 0.6063,
+            "test_log_loss": 0.49033
+          }
+        },
+        "audit": {
+          "denies": 321,
+          "dropped": 153
+        },
+        "co_primary_precision_at_k": {
+          "WCT-EM": 0.97794,
+          "covariate_baseline": 0.88235,
+          "decision": "go",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.12546,
+            "lo": 0.06366,
+            "n_boot": 2000,
+            "point": 0.09559,
+            "se": 0.01595
+          },
+          "k": 272
+        },
+        "covariate_test_log_loss": {
+          "gd": 0.46019,
+          "ml": 0.46992
+        },
+        "permutation_null": {
+          "n_perm": 1000,
+          "null_mean": 0.61187,
+          "null_sd": 0.03262,
+          "observed": 0.93781,
+          "p": 0.001
+        },
+        "primary": {
+          "WCT-C_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.32625,
+              "lo": 0.18573,
+              "n_items": 100,
+              "point": 0.2558,
+              "sd_items": 0.37542
+            }
+          },
+          "WCT-C_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33905,
+              "lo": 0.18307,
+              "n_items": 100,
+              "point": 0.26041,
+              "sd_items": 0.41818
+            }
+          },
+          "WCT-EM_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.32818,
+              "lo": 0.18657,
+              "n_items": 100,
+              "point": 0.25655,
+              "sd_items": 0.37485
+            }
+          },
+          "WCT-EM_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.34045,
+              "lo": 0.184,
+              "n_items": 100,
+              "point": 0.26116,
+              "sd_items": 0.41872
+            }
+          },
+          "WCT-U_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.32625,
+              "lo": 0.18731,
+              "n_items": 100,
+              "point": 0.25607,
+              "sd_items": 0.36875
+            }
+          },
+          "WCT-U_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33919,
+              "lo": 0.18539,
+              "n_items": 100,
+              "point": 0.26069,
+              "sd_items": 0.4124
+            }
+          }
+        },
+        "within_item_auroc": {
+          "decision": "go",
+          "delta": 0.55,
+          "hi": 0.96373,
+          "lo": 0.89394,
+          "n_boot": 1000,
+          "point": 0.92727,
+          "se": 0.01822
+        }
+      },
+      "agents": [
+        "glm",
+        "laguna",
+        "qwen"
+      ],
+      "depth_descriptives": {
+        "0": {
+          "n_props": 126,
+          "unanimity_rate": 0.7857,
+          "unanimous_correct": 0.9697,
+          "vote_correctness": 0.9625
+        },
+        "1": {
+          "n_props": 109,
+          "unanimity_rate": 0.422,
+          "unanimous_correct": 1.0,
+          "vote_correctness": 0.9667
+        },
+        "2": {
+          "n_props": 131,
+          "unanimity_rate": 0.4504,
+          "unanimous_correct": 0.9831,
+          "vote_correctness": 0.8776
+        },
+        "3": {
+          "n_props": 119,
+          "unanimity_rate": 0.3782,
+          "unanimous_correct": 0.9333,
+          "vote_correctness": 0.8281
+        },
+        "4": {
+          "n_props": 66,
+          "unanimity_rate": 0.2121,
+          "unanimous_correct": 0.9286,
+          "vote_correctness": 0.7868
+        },
+        "5": {
+          "n_props": 56,
+          "unanimity_rate": 0.3036,
+          "unanimous_correct": 0.8824,
+          "vote_correctness": 0.8655
+        },
+        "pooled_qdep_ge4": {
+          "n_props": 122,
+          "unanimous_correct": 0.9032
+        }
+      },
+      "instrument_primary": {
+        "arms": {
+          "WCT-C": {
+            "platt_params": {
+              "a": 0.664187,
+              "b": 0.4921
+            },
+            "temperature_ablation_t": 1.3808,
+            "test_auroc": 0.93895,
+            "test_log_loss": 0.21837,
+            "test_log_loss_temperature": 0.21612
+          },
+          "WCT-EM": {
+            "platt_params": {
+              "a": 0.357256,
+              "b": 1.0704
+            },
+            "temperature_ablation_t": 2.5356,
+            "test_auroc": 0.93119,
+            "test_log_loss": 0.23241,
+            "test_log_loss_temperature": 0.25765
+          },
+          "WCT-U": {
+            "platt_params": {
+              "a": 0.967575,
+              "b": 0.9512
+            },
+            "temperature_ablation_t": 0.9236,
+            "test_auroc": 0.9353,
+            "test_log_loss": 0.22341,
+            "test_log_loss_temperature": 0.23979
+          },
+          "prevalence_only": {
+            "test_auroc": 0.5,
+            "test_log_loss": 0.50465
+          },
+          "uncapped": {
+            "test_auroc": 0.6063,
+            "test_log_loss": 0.49033
+          }
+        },
+        "co_primary_precision_at_k": {
+          "WCT-EM": 0.97426,
+          "covariate_baseline": 0.88235,
+          "decision": "go",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.1194,
+            "lo": 0.05904,
+            "n_boot": 2000,
+            "point": 0.09191,
+            "se": 0.01555
+          },
+          "k": 272
+        },
+        "covariate_test_log_loss": {
+          "gd": 0.46019,
+          "ml": 0.46992
+        },
+        "permutation_null": {
+          "n_perm": 1000,
+          "null_mean": 0.60783,
+          "null_sd": 0.0327,
+          "observed": 0.93119,
+          "p": 0.001
+        },
+        "primary": {
+          "WCT-C_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.29512,
+              "lo": 0.1701,
+              "n_items": 100,
+              "point": 0.23325,
+              "sd_items": 0.33132
+            }
+          },
+          "WCT-C_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.30758,
+              "lo": 0.16784,
+              "n_items": 100,
+              "point": 0.23786,
+              "sd_items": 0.36473
+            }
+          },
+          "WCT-EM_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.2804,
+              "lo": 0.16005,
+              "n_items": 100,
+              "point": 0.21985,
+              "sd_items": 0.31906
+            }
+          },
+          "WCT-EM_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.29125,
+              "lo": 0.15779,
+              "n_items": 100,
+              "point": 0.22446,
+              "sd_items": 0.34991
+            }
+          },
+          "WCT-U_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.28841,
+              "lo": 0.16597,
+              "n_items": 100,
+              "point": 0.2274,
+              "sd_items": 0.32594
+            }
+          },
+          "WCT-U_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.2997,
+              "lo": 0.16333,
+              "n_items": 100,
+              "point": 0.23201,
+              "sd_items": 0.35761
+            }
+          }
+        },
+        "within_item_auroc": {
+          "decision": "go",
+          "delta": 0.55,
+          "hi": 0.95996,
+          "lo": 0.88978,
+          "n_boot": 1000,
+          "point": 0.92439,
+          "se": 0.01836
+        }
+      },
+      "n_items": 150,
+      "n_props": 607,
+      "n_test_negatives": 81,
+      "prevalence": 0.799,
+      "stratum": "all_items"
+    },
+    "all_items_S2": {
+      "S1_deny_filter": {
+        "arms": {
+          "WCT-C": {
+            "platt_params": {
+              "a": 0.669018,
+              "b": 0.3524
+            },
+            "temperature_ablation_t": 1.3567,
+            "test_auroc": 0.94037,
+            "test_log_loss": 0.19029,
+            "test_log_loss_temperature": 0.19174
+          },
+          "WCT-EM": {
+            "platt_params": {
+              "a": 0.380115,
+              "b": 0.1952
+            },
+            "temperature_ablation_t": 2.4874,
+            "test_auroc": 0.93715,
+            "test_log_loss": 0.1886,
+            "test_log_loss_temperature": 0.18857
+          },
+          "WCT-U": {
+            "platt_params": {
+              "a": 1.478523,
+              "b": -0.086
+            },
+            "temperature_ablation_t": 0.6831,
+            "test_auroc": 0.94124,
+            "test_log_loss": 0.18935,
+            "test_log_loss_temperature": 0.18961
+          },
+          "prevalence_only": {
+            "test_auroc": 0.5,
+            "test_log_loss": 0.50456
+          },
+          "uncapped": {
+            "test_auroc": 0.60859,
+            "test_log_loss": 0.48934
+          }
+        },
+        "audit": {
+          "denies": 322,
+          "dropped": 153
+        },
+        "co_primary_precision_at_k": {
+          "WCT-EM": 0.97794,
+          "covariate_baseline": 0.88603,
+          "decision": "go",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.125,
+            "lo": 0.06343,
+            "n_boot": 2000,
+            "point": 0.09191,
+            "se": 0.0158
+          },
+          "k": 272
+        },
+        "covariate_test_log_loss": {
+          "gd": 0.46054,
+          "ml": 0.46987
+        },
+        "permutation_null": {
+          "n_perm": 1000,
+          "null_mean": 0.61495,
+          "null_sd": 0.03236,
+          "observed": 0.93715,
+          "p": 0.001
+        },
+        "primary": {
+          "WCT-C_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.32877,
+              "lo": 0.1858,
+              "n_items": 100,
+              "point": 0.25693,
+              "sd_items": 0.37905
+            }
+          },
+          "WCT-C_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.33957,
+              "lo": 0.18425,
+              "n_items": 100,
+              "point": 0.26131,
+              "sd_items": 0.42047
+            }
+          },
+          "WCT-EM_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.3302,
+              "lo": 0.18729,
+              "n_items": 100,
+              "point": 0.25782,
+              "sd_items": 0.38041
+            }
+          },
+          "WCT-EM_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.34157,
+              "lo": 0.18403,
+              "n_items": 100,
+              "point": 0.2622,
+              "sd_items": 0.42277
+            }
+          },
+          "WCT-U_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.32848,
+              "lo": 0.18777,
+              "n_items": 100,
+              "point": 0.25737,
+              "sd_items": 0.37462
+            }
+          },
+          "WCT-U_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.34013,
+              "lo": 0.18619,
+              "n_items": 100,
+              "point": 0.26175,
+              "sd_items": 0.41678
+            }
+          }
+        },
+        "within_item_auroc": {
+          "decision": "go",
+          "delta": 0.55,
+          "hi": 0.95975,
+          "lo": 0.89034,
+          "n_boot": 1000,
+          "point": 0.92424,
+          "se": 0.01852
+        }
+      },
+      "agents": [
+        "glm",
+        "laguna",
+        "qwen"
+      ],
+      "depth_descriptives": {
+        "0": {
+          "n_props": 126,
+          "unanimity_rate": 0.7857,
+          "unanimous_correct": 0.9697,
+          "vote_correctness": 0.9625
+        },
+        "1": {
+          "n_props": 109,
+          "unanimity_rate": 0.4495,
+          "unanimous_correct": 1.0,
+          "vote_correctness": 0.9671
+        },
+        "2": {
+          "n_props": 131,
+          "unanimity_rate": 0.4504,
+          "unanimous_correct": 0.9831,
+          "vote_correctness": 0.8806
+        },
+        "3": {
+          "n_props": 119,
+          "unanimity_rate": 0.3782,
+          "unanimous_correct": 0.9333,
+          "vote_correctness": 0.8316
+        },
+        "4": {
+          "n_props": 66,
+          "unanimity_rate": 0.2273,
+          "unanimous_correct": 0.9333,
+          "vote_correctness": 0.7883
+        },
+        "5": {
+          "n_props": 57,
+          "unanimity_rate": 0.2982,
+          "unanimous_correct": 0.8824,
+          "vote_correctness": 0.8667
+        },
+        "pooled_qdep_ge4": {
+          "n_props": 123,
+          "unanimous_correct": 0.9062
+        }
+      },
+      "instrument_primary": {
+        "arms": {
+          "WCT-C": {
+            "platt_params": {
+              "a": 0.662057,
+              "b": 0.4962
+            },
+            "temperature_ablation_t": 1.4048,
+            "test_auroc": 0.93891,
+            "test_log_loss": 0.21778,
+            "test_log_loss_temperature": 0.21711
+          },
+          "WCT-EM": {
+            "platt_params": {
+              "a": 0.370546,
+              "b": 1.0208
+            },
+            "temperature_ablation_t": 2.4634,
+            "test_auroc": 0.93142,
+            "test_log_loss": 0.22828,
+            "test_log_loss_temperature": 0.25173
+          },
+          "WCT-U": {
+            "platt_params": {
+              "a": 0.99751,
+              "b": 0.929
+            },
+            "temperature_ablation_t": 0.9236,
+            "test_auroc": 0.9355,
+            "test_log_loss": 0.22125,
+            "test_log_loss_temperature": 0.23944
+          },
+          "prevalence_only": {
+            "test_auroc": 0.5,
+            "test_log_loss": 0.50456
+          },
+          "uncapped": {
+            "test_auroc": 0.60859,
+            "test_log_loss": 0.48934
+          }
+        },
+        "co_primary_precision_at_k": {
+          "WCT-EM": 0.97059,
+          "covariate_baseline": 0.88603,
+          "decision": "go",
+          "delta": 0.05,
+          "difference": {
+            "hi": 0.11879,
+            "lo": 0.05947,
+            "n_boot": 2000,
+            "point": 0.08456,
+            "se": 0.01539
+          },
+          "k": 272
+        },
+        "covariate_test_log_loss": {
+          "gd": 0.46054,
+          "ml": 0.46987
+        },
+        "permutation_null": {
+          "n_perm": 1000,
+          "null_mean": 0.60959,
+          "null_sd": 0.03256,
+          "observed": 0.93142,
+          "p": 0.001
+        },
+        "primary": {
+          "WCT-C_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.29681,
+              "lo": 0.16966,
+              "n_items": 100,
+              "point": 0.23375,
+              "sd_items": 0.33772
+            }
+          },
+          "WCT-C_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.30886,
+              "lo": 0.16794,
+              "n_items": 100,
+              "point": 0.23813,
+              "sd_items": 0.37037
+            }
+          },
+          "WCT-EM_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.28516,
+              "lo": 0.16287,
+              "n_items": 100,
+              "point": 0.22376,
+              "sd_items": 0.32716
+            }
+          },
+          "WCT-EM_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.29579,
+              "lo": 0.16001,
+              "n_items": 100,
+              "point": 0.22814,
+              "sd_items": 0.35781
+            }
+          },
+          "WCT-U_vs_covariate_gd": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.29212,
+              "lo": 0.16645,
+              "n_items": 100,
+              "point": 0.22967,
+              "sd_items": 0.33324
+            }
+          },
+          "WCT-U_vs_covariate_ml": {
+            "decision": "go",
+            "delta": 0.02,
+            "delta_log_loss": {
+              "hi": 0.30276,
+              "lo": 0.16425,
+              "n_items": 100,
+              "point": 0.23405,
+              "sd_items": 0.36409
+            }
+          }
+        },
+        "within_item_auroc": {
+          "decision": "go",
+          "delta": 0.55,
+          "hi": 0.95996,
+          "lo": 0.88978,
+          "n_boot": 1000,
+          "point": 0.92439,
+          "se": 0.01836
+        }
+      },
+      "n_items": 150,
+      "n_props": 608,
+      "n_test_negatives": 81,
+      "prevalence": 0.7977,
+      "stratum": "all_items_S2"
+    }
+  }
+}

@@ -1,0 +1,735 @@
+{
+  "candidates": [
+    {
+      "agent": "qwen",
+      "backend": "local",
+      "base": "http://127.0.0.1:8083/v1",
+      "binding_used": "nodes.Client(local)",
+      "content_chars": 340,
+      "error": "",
+      "expected_resolved": "ornith35",
+      "family": "qwen",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "ornith35",
+        "expected": "ornith35",
+        "expected_source": "registered alias override",
+        "loaded_weights": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf",
+        "matches_expected": true,
+        "registered_weights": "/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf",
+        "requested": "qwen3.8-27b",
+        "weights_match": true,
+        "weights_readable": true
+      },
+      "identity_evidence": "The :8083 llama-server answers under stale launch alias 'ornith35' \u2014 NOT the ornith-1.0-35b model of v1 panel A. Verified 2026-08-16 via /props: model_path /home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf, n_params 27,320,697,856, aliases ['ornith35','qwen3.8-27b']. The registered request id is qwen3.8-27b; the registered expected echo is ornith35; any other echo is a substitution and aborts. The :1234 LM Studio catalogue lists qwen3.8-27b but 400s on completion (smoke 2026-08-15) and is not used.",
+      "identity_verified": true,
+      "latency_s": 4.4,
+      "live_call": true,
+      "model": "qwen3.8-27b",
+      "panel": "panelA",
+      "resolved": "ornith35",
+      "status": "ok",
+      "usage": {
+        "completion_tokens": 279,
+        "prompt_tokens": 96,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 375
+      }
+    },
+    {
+      "agent": "laguna",
+      "backend": "openrouter",
+      "base": null,
+      "binding_used": "nodes.Client(openrouter)",
+      "content_chars": 0,
+      "error": "HTTP 429: {\"code\": 429, \"message\": \"Provider returned error\"}",
+      "expected_resolved": null,
+      "family": "poolside",
+      "http_status": 429,
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "poolside/laguna-xs-2.1:free",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "poolside/laguna-xs-2.1:free"
+      },
+      "identity_evidence": null,
+      "latency_s": 0.52,
+      "live_call": true,
+      "model": "poolside/laguna-xs-2.1:free",
+      "panel": "panelA",
+      "resolved": null,
+      "status": "fail",
+      "usage": {}
+    },
+    {
+      "agent": "glm",
+      "backend": "hoonify",
+      "base": null,
+      "binding_used": "nodes.Client(hoonify)",
+      "content_chars": 492,
+      "error": "",
+      "expected_resolved": null,
+      "family": "zhipu",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "zai-org/GLM-5.2",
+        "expected": "zai-org/GLM-5.2",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "zai-org/GLM-5.2"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 2.02,
+      "live_call": true,
+      "model": "zai-org/GLM-5.2",
+      "panel": "panelA",
+      "resolved": "zai-org/GLM-5.2",
+      "status": "ok",
+      "usage": {
+        "completion_tokens": 138,
+        "prompt_tokens": 93,
+        "prompt_tokens_details": {
+          "cached_tokens": 64
+        },
+        "total_tokens": 231
+      }
+    },
+    {
+      "agent": "nemotron",
+      "backend": "openrouter",
+      "base": null,
+      "binding_used": "nodes.Client(openrouter)",
+      "content_chars": 1117,
+      "error": "",
+      "expected_resolved": null,
+      "family": "nvidia",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "nvidia/nemotron-3-super-120b-a12b:free",
+        "expected": "nvidia/nemotron-3-super-120b-a12b:free",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "nvidia/nemotron-3-super-120b-a12b:free"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 3.92,
+      "live_call": true,
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "panel": "panelB",
+      "resolved": "nvidia/nemotron-3-super-120b-a12b:free",
+      "status": "ok",
+      "usage": {
+        "completion_tokens": 294,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "reasoning_tokens": 238
+        },
+        "cost": 0,
+        "cost_details": {
+          "upstream_inference_completions_cost": 0,
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0
+        },
+        "is_byok": false,
+        "prompt_tokens": 103,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0
+        },
+        "total_tokens": 397
+      }
+    },
+    {
+      "agent": "gptoss",
+      "backend": "openrouter",
+      "base": null,
+      "binding_used": "nodes.Client(openrouter)",
+      "content_chars": 0,
+      "error": "HTTP 404: {\"code\": 404, \"message\": \"This model is unavailable for free. The paid version is available now - use this slug instead: openai/gpt-oss-20b\"}",
+      "expected_resolved": null,
+      "family": "openai",
+      "http_status": 404,
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "openai/gpt-oss-20b:free",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "openai/gpt-oss-20b:free"
+      },
+      "identity_evidence": null,
+      "latency_s": 0.06,
+      "live_call": true,
+      "model": "openai/gpt-oss-20b:free",
+      "panel": "panelB",
+      "resolved": null,
+      "status": "fail",
+      "usage": {}
+    },
+    {
+      "agent": "gemma",
+      "backend": "openrouter",
+      "base": null,
+      "binding_used": "nodes.Client(openrouter)",
+      "content_chars": 0,
+      "error": "HTTP 429: {\"code\": 429, \"message\": \"Provider returned error\"}",
+      "expected_resolved": null,
+      "family": "google",
+      "http_status": 429,
+      "identity": {
+        "checkable": true,
+        "echo_present": false,
+        "echoed": null,
+        "expected": "google/gemma-4-26b-a4b-it:free",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": null,
+        "requested": "google/gemma-4-26b-a4b-it:free"
+      },
+      "identity_evidence": null,
+      "latency_s": 0.3,
+      "live_call": true,
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "panel": "panelB",
+      "resolved": null,
+      "status": "fail",
+      "usage": {}
+    },
+    {
+      "agent": "laguna_paid",
+      "backend": "openrouter",
+      "base": "https://openrouter.ai/api/v1",
+      "binding": {
+        "base": "https://openrouter.ai/api/v1",
+        "key_env": "OPENROUTER_API_KEY",
+        "kind": "openrouter_paid",
+        "provider": "deepseek_paid",
+        "source": "/home/jmannings/dev/solon-harness/harness.toml"
+      },
+      "binding_used": "deepseek_paid",
+      "content_chars": 1755,
+      "error": "",
+      "expected_resolved": null,
+      "family": "poolside",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "poolside/laguna-xs-2.1",
+        "expected": "poolside/laguna-xs-2.1",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "poolside/laguna-xs-2.1"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 2.78,
+      "live_call": true,
+      "model": "poolside/laguna-xs-2.1",
+      "panel": "panelA",
+      "pinned_free_id": "poolside/laguna-xs-2.1:free",
+      "resolved": "poolside/laguna-xs-2.1",
+      "status": "ok",
+      "tier": "paid",
+      "usage": {
+        "completion_tokens": 422,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "reasoning_tokens": 358
+        },
+        "cost": 5.736e-05,
+        "cost_details": {
+          "upstream_inference_completions_cost": 5.064e-05,
+          "upstream_inference_cost": 5.736e-05,
+          "upstream_inference_prompt_cost": 6.72e-06
+        },
+        "is_byok": false,
+        "prompt_tokens": 128,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "video_tokens": 0
+        },
+        "total_tokens": 550
+      }
+    },
+    {
+      "agent": "nemotron_paid",
+      "backend": "openrouter",
+      "base": "https://openrouter.ai/api/v1",
+      "binding": {
+        "base": "https://openrouter.ai/api/v1",
+        "key_env": "OPENROUTER_API_KEY",
+        "kind": "openrouter_paid",
+        "provider": "deepseek_paid",
+        "source": "/home/jmannings/dev/solon-harness/harness.toml"
+      },
+      "binding_used": "deepseek_paid",
+      "content_chars": 442,
+      "error": "",
+      "expected_resolved": null,
+      "family": "nvidia",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "nvidia/nemotron-3-super-120b-a12b",
+        "expected": "nvidia/nemotron-3-super-120b-a12b",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "nvidia/nemotron-3-super-120b-a12b"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 1.89,
+      "live_call": true,
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "panel": "panelB",
+      "pinned_free_id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "resolved": "nvidia/nemotron-3-super-120b-a12b",
+      "status": "ok",
+      "tier": "paid",
+      "usage": {
+        "completion_tokens": 120,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "reasoning_tokens": 54
+        },
+        "cost": 5.6755e-05,
+        "cost_details": {
+          "upstream_inference_completions_cost": 4.8e-05,
+          "upstream_inference_cost": 5.6755e-05,
+          "upstream_inference_prompt_cost": 8.755e-06
+        },
+        "is_byok": false,
+        "prompt_tokens": 103,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0
+        },
+        "total_tokens": 223
+      }
+    },
+    {
+      "agent": "gptoss_paid",
+      "backend": "openrouter",
+      "base": "https://openrouter.ai/api/v1",
+      "binding": {
+        "base": "https://openrouter.ai/api/v1",
+        "key_env": "OPENROUTER_API_KEY",
+        "kind": "openrouter_paid",
+        "provider": "deepseek_paid",
+        "source": "/home/jmannings/dev/solon-harness/harness.toml"
+      },
+      "binding_used": "deepseek_paid",
+      "content_chars": 650,
+      "error": "",
+      "expected_resolved": null,
+      "family": "openai",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "openai/gpt-oss-20b",
+        "expected": "openai/gpt-oss-20b",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "openai/gpt-oss-20b"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 3.54,
+      "live_call": true,
+      "model": "openai/gpt-oss-20b",
+      "panel": "panelB",
+      "pinned_free_id": "openai/gpt-oss-20b:free",
+      "resolved": "openai/gpt-oss-20b",
+      "status": "ok",
+      "tier": "paid",
+      "usage": {
+        "completion_tokens": 173,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "reasoning_tokens": 115
+        },
+        "cost": 2.022e-05,
+        "cost_details": {
+          "upstream_inference_completions_cost": 1.73e-05,
+          "upstream_inference_cost": 2.022e-05,
+          "upstream_inference_prompt_cost": 2.92e-06
+        },
+        "is_byok": false,
+        "prompt_tokens": 146,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0
+        },
+        "total_tokens": 319
+      }
+    },
+    {
+      "agent": "gemma_paid",
+      "backend": "openrouter",
+      "base": "https://openrouter.ai/api/v1",
+      "binding": {
+        "base": "https://openrouter.ai/api/v1",
+        "key_env": "OPENROUTER_API_KEY",
+        "kind": "openrouter_paid",
+        "provider": "deepseek_paid",
+        "source": "/home/jmannings/dev/solon-harness/harness.toml"
+      },
+      "binding_used": "deepseek_paid",
+      "content_chars": 196,
+      "error": "",
+      "expected_resolved": null,
+      "family": "google",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "google/gemma-4-26b-a4b-it",
+        "expected": "google/gemma-4-26b-a4b-it",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "google/gemma-4-26b-a4b-it"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 1.34,
+      "live_call": true,
+      "model": "google/gemma-4-26b-a4b-it",
+      "panel": "panelB",
+      "pinned_free_id": "google/gemma-4-26b-a4b-it:free",
+      "resolved": "google/gemma-4-26b-a4b-it",
+      "status": "ok",
+      "tier": "paid",
+      "usage": {
+        "completion_tokens": 61,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "cost": 3.39e-05,
+        "cost_details": {
+          "upstream_inference_completions_cost": 2.44e-05,
+          "upstream_inference_cost": 3.39e-05,
+          "upstream_inference_prompt_cost": 9.5e-06
+        },
+        "is_byok": false,
+        "prompt_tokens": 95,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0
+        },
+        "total_tokens": 156
+      }
+    },
+    {
+      "agent": "qwen_or",
+      "backend": "openrouter",
+      "base": "https://openrouter.ai/api/v1",
+      "binding": {
+        "base": "https://openrouter.ai/api/v1",
+        "key_env": "OPENROUTER_API_KEY",
+        "kind": "openrouter_paid",
+        "provider": "deepseek_paid",
+        "source": "/home/jmannings/dev/solon-harness/harness.toml"
+      },
+      "binding_used": "deepseek_paid",
+      "content_chars": 447,
+      "error": "",
+      "expected_resolved": null,
+      "family": "qwen",
+      "http_status": 200,
+      "identity": {
+        "checkable": true,
+        "echo_present": true,
+        "echoed": "qwen/qwen3.8-27b",
+        "expected": "qwen/qwen3.8-27b",
+        "expected_source": "requested id (default)",
+        "loaded_weights": null,
+        "matches_expected": true,
+        "requested": "qwen/qwen3.8-27b"
+      },
+      "identity_evidence": null,
+      "identity_verified": true,
+      "latency_s": 1.96,
+      "live_call": true,
+      "model": "qwen/qwen3.8-27b",
+      "panel": "panelA",
+      "resolved": "qwen/qwen3.8-27b",
+      "standin_differs": "registered local weights are Q4_K_M quantised; the hosted id is the provider's own build of the same family and nominal size",
+      "standin_reason": "local :8083 endpoint intermittent while being worked on (owner, 2026-08-30)",
+      "stands_in_for": "qwen3.8-27b",
+      "status": "ok",
+      "tier": "interim",
+      "usage": {
+        "completion_tokens": 123,
+        "completion_tokens_details": {
+          "audio_tokens": 0,
+          "image_tokens": 0,
+          "reasoning_tokens": 63
+        },
+        "cost": 0.00047235,
+        "cost_details": {
+          "upstream_inference_completions_cost": 0.0003936,
+          "upstream_inference_cost": 0.00047235,
+          "upstream_inference_prompt_cost": 7.875e-05
+        },
+        "is_byok": false,
+        "prompt_tokens": 175,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "video_tokens": 0
+        },
+        "total_tokens": 298
+      }
+    }
+  ],
+  "measured_at": "2026-08-30T12:11:30Z",
+  "probe": {
+    "attempts_per_endpoint": 1,
+    "auxiliary_requests": [
+      {
+        "billable": false,
+        "count": 1,
+        "what": "GET /api/v1/models",
+        "why": "read paid rates live so a stale hard-coded rate cannot misstate spend"
+      },
+      {
+        "billable": false,
+        "scope": "local candidates only",
+        "what": "GET <local>/props",
+        "why": "read the loaded GGUF path so it can be compared with the weights prereg_v2 pins; the alias echo alone cannot detect a different model behind the same name"
+      }
+    ],
+    "item": "exp.smoke_v2._PROBE (throwaway theory; no corpus content)",
+    "retries": 0,
+    "timeout_s": 180.0
+  },
+  "probe_source_sha256": "c45de9fc8916b978",
+  "registration": "prereg_v2.yaml",
+  "registration_sha256": "8e4950f2a98a266ccae5c5c3b25f7ea4b016ef6ff9460d6002ebfb3a0adcc0d0",
+  "schema_version": 1,
+  "source_commit": "UNCOMMITTED (parent 32fead0)",
+  "source_commit_note": "the probe code was UNCOMMITTED when this ran, so this commit does not contain the implementation that produced the artifact",
+  "source_commit_parent": "32fead0",
+  "source_tree_dirty": true,
+  "spend": {
+    "binding": {
+      "base": "https://openrouter.ai/api/v1",
+      "key_env": "OPENROUTER_API_KEY",
+      "kind": "openrouter_paid",
+      "provider": "deepseek_paid",
+      "source": "/home/jmannings/dev/solon-harness/harness.toml"
+    },
+    "cost_basis": "provider-reported usage.cost where present, else tokens x rates",
+    "is_upper_bound": false,
+    "paid_backends": [
+      "hoonify"
+    ],
+    "paid_calls": 6,
+    "per_call": [
+      {
+        "agent": "glm",
+        "backend": "hoonify",
+        "model": "zai-org/GLM-5.2",
+        "tier": "pinned",
+        "usage": {
+          "completion_tokens": 138,
+          "prompt_tokens": 93,
+          "prompt_tokens_details": {
+            "cached_tokens": 64
+          },
+          "total_tokens": 231
+        }
+      },
+      {
+        "agent": "laguna_paid",
+        "backend": "openrouter",
+        "model": "poolside/laguna-xs-2.1",
+        "tier": "paid",
+        "usage": {
+          "completion_tokens": 422,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 358
+          },
+          "cost": 5.736e-05,
+          "cost_details": {
+            "upstream_inference_completions_cost": 5.064e-05,
+            "upstream_inference_cost": 5.736e-05,
+            "upstream_inference_prompt_cost": 6.72e-06
+          },
+          "is_byok": false,
+          "prompt_tokens": 128,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 32,
+            "video_tokens": 0
+          },
+          "total_tokens": 550
+        }
+      },
+      {
+        "agent": "nemotron_paid",
+        "backend": "openrouter",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "tier": "paid",
+        "usage": {
+          "completion_tokens": 120,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 54
+          },
+          "cost": 5.6755e-05,
+          "cost_details": {
+            "upstream_inference_completions_cost": 4.8e-05,
+            "upstream_inference_cost": 5.6755e-05,
+            "upstream_inference_prompt_cost": 8.755e-06
+          },
+          "is_byok": false,
+          "prompt_tokens": 103,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 223
+        }
+      },
+      {
+        "agent": "gptoss_paid",
+        "backend": "openrouter",
+        "model": "openai/gpt-oss-20b",
+        "tier": "paid",
+        "usage": {
+          "completion_tokens": 173,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 115
+          },
+          "cost": 2.022e-05,
+          "cost_details": {
+            "upstream_inference_completions_cost": 1.73e-05,
+            "upstream_inference_cost": 2.022e-05,
+            "upstream_inference_prompt_cost": 2.92e-06
+          },
+          "is_byok": false,
+          "prompt_tokens": 146,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 319
+        }
+      },
+      {
+        "agent": "gemma_paid",
+        "backend": "openrouter",
+        "model": "google/gemma-4-26b-a4b-it",
+        "tier": "paid",
+        "usage": {
+          "completion_tokens": 61,
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0
+          },
+          "cost": 3.39e-05,
+          "cost_details": {
+            "upstream_inference_completions_cost": 2.44e-05,
+            "upstream_inference_cost": 3.39e-05,
+            "upstream_inference_prompt_cost": 9.5e-06
+          },
+          "is_byok": false,
+          "prompt_tokens": 95,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "video_tokens": 0
+          },
+          "total_tokens": 156
+        }
+      }
+    ],
+    "rates_are_live": true,
+    "rates_provenance": {
+      "hoonify": "prereg_v2.yaml panelA.cost_note",
+      "openrouter_paid": "read LIVE from the openrouter /api/v1/models catalogue at probe time where available, else the fallback pinned in this module. NOT in prereg_v2.yaml, because cycle 2 registered only the :free ids. Slice 4 must pin them."
+    },
+    "rates_usd_per_1m": {
+      "google/gemma-4-26b-a4b-it": {
+        "in": 0.07,
+        "out": 0.34
+      },
+      "hoonify": {
+        "in": 1.4,
+        "out": 4.4
+      },
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "in": 0.08,
+        "out": 0.4
+      },
+      "openai/gpt-oss-20b": {
+        "in": 0.03,
+        "out": 0.13
+      },
+      "poolside/laguna-xs-2.1": {
+        "in": 0.06,
+        "out": 0.12
+      },
+      "qwen/qwen3.8-27b": {
+        "in": 0.42,
+        "out": 2.55
+      }
+    },
+    "usd": 0.001378
+  }
+}

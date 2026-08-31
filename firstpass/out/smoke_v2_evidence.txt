@@ -1,0 +1,41 @@
+R0 A2 smoke evidence for the v2 freeze (prereg_v2.yaml panels.*.smoke_test)
+
+Run 1 — 2026-08-15, owner's shell (exp/smoke_v2.py, full candidate list),
+verbatim output:
+
+  env: loaded 8 keys: OPENROUTER_API_KEY, ORNITH_URL, ORNITH_MODEL,
+  OPENROUTER_API_KEY_2, OPENROUTER_API_KEY_3, OPENROUTER_API_KEY_4,
+  HOONIFY_API_KEY, GEMINI_API_KEY
+  FAIL panelA'  qwen-local [local] qwen3.8-27b: HTTPStatusError: Client error
+  '400 Bad Request' for url 'http://localhost:1234/v1/chat/completions'
+  ok   panelA'  laguna-or  [openrouter] poolside/laguna-xs-2.1:free:
+  content=12ch reasoning=2146ch answer_line=True 9.8s
+  resolved=poolside/laguna-xs-2.1:free
+  ok   panelA'  glm-hoon   [hoonify] zai-org/GLM-5.2: content=246ch
+  reasoning=814ch answer_line=True 3.1s resolved=zai-org/GLM-5.2
+  ok   panelB   nemotron   [openrouter] nvidia/nemotron-3-super-120b-a12b:free:
+  content=201ch reasoning=261ch answer_line=True 1.5s
+  resolved=nvidia/nemotron-3-super-120b-a12b:free
+  ok   panelB   gptoss     [openrouter] openai/gpt-oss-20b:free: content=993ch
+  reasoning=271ch answer_line=True 20.3s resolved=openai/gpt-oss-20b:free
+  ok   panelB   gemma      [openrouter] google/gemma-4-26b-a4b-it:free:
+  content=443ch reasoning=0ch answer_line=True 10.2s
+  resolved=google/gemma-4-26b-a4b-it:free
+  5/6 endpoints pass
+
+Diagnosis of the one failure: qwen3.8-27b is served by the llama.cpp server on
+:8083, not the :1234 LM Studio instance (whose catalogue lists the id but 400s
+on completion). :8083 answers under stale launch alias 'ornith35'; identity
+verified 2026-08-16 via /props: model_path
+/home/jmannings/.lmstudio/models/unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-Q4_K_M.gguf,
+n_params 27,320,697,856, aliases ['ornith35', 'qwen3.8-27b'].
+
+Run 2 — 2026-08-16, after pinning base http://127.0.0.1:8083/v1 and expected
+echo 'ornith35' (exp/smoke_v2.py local-only; no credentials involved):
+
+  ok   panelA'  qwen-local [local] qwen3.8-27b: content=166ch reasoning=503ch
+  answer_line=True 4.1s resolved=ornith35
+  1/1 endpoints pass
+
+6/6 pinned endpoints pass. Smoke calls were cached to a scratch WCT_CACHE and
+never touch out/cache/.

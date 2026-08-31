@@ -1,0 +1,320 @@
+{
+  "coverage": {
+    "cached": 720,
+    "missing": 0,
+    "planned": 720
+  },
+  "strata": {
+    "all_items": {
+      "agents": [
+        "gemma",
+        "gptoss",
+        "nemotron"
+      ],
+      "alignment_audit": {
+        "aligner_self_identification": {
+          "accuracy": 0.9724,
+          "n_probes": 1483,
+          "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+          "wrong_polarity": 0,
+          "wrong_proposition": 41
+        },
+        "claims": 15599,
+        "lexical_reference": {
+          "n_predicted": 1121,
+          "n_reference": 1398,
+          "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+          "recall_mean": 0.6782
+        },
+        "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+        "observations": 1121,
+        "same_agent_conflicts": 195
+      },
+      "arms": {
+        "WCT-C": {
+          "test_accuracy": 0.98077,
+          "test_auroc": 0.99197,
+          "test_log_loss": 0.09732
+        },
+        "WCT-EM": {
+          "test_accuracy": 0.97115,
+          "test_auroc": 0.99197,
+          "test_log_loss": 0.10686
+        },
+        "WCT-U": {
+          "test_accuracy": 0.96795,
+          "test_auroc": 0.99113,
+          "test_log_loss": 0.12338
+        },
+        "covariate_baseline": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.65616,
+          "test_log_loss": 0.21116
+        },
+        "prevalence_only": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.5,
+          "test_log_loss": 0.19662
+        },
+        "uncapped": {
+          "test_accuracy": 0.95513,
+          "test_auroc": 0.52385,
+          "test_log_loss": 0.22428
+        }
+      },
+      "co_primary_precision_at_k": {
+        "WCT-EM": 1.0,
+        "WCT-U": 1.0,
+        "covariate_baseline": 0.9693,
+        "k": 228
+      },
+      "em_parameters": {
+        "agents": [
+          "gemma",
+          "gptoss",
+          "nemotron"
+        ],
+        "coverage_given_false": [
+          0.4545,
+          0.6828,
+          0.9467
+        ],
+        "coverage_given_true": [
+          0.493,
+          0.8585,
+          0.8858
+        ],
+        "false_positive_rate": [
+          0.104,
+          0.0237,
+          0.2298
+        ],
+        "note": "estimated from the vote matrix alone; no truth labels consumed",
+        "sensitivity": [
+          0.8281,
+          0.9842,
+          0.9985
+        ]
+      },
+      "n_items": 150,
+      "n_props": 484,
+      "permutation_null": {
+        "n_perm": 1000,
+        "null_mean": 0.60709,
+        "null_sd": 0.09235,
+        "observed": 0.99197,
+        "p": 0.001
+      },
+      "prevalence": 0.9401,
+      "primary_delta_log_loss_vs_covariate": {
+        "WCT-C": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.2078,
+            "lo": 0.04323,
+            "n_items": 100,
+            "point": 0.13211,
+            "sd_items": 0.41942
+          }
+        },
+        "WCT-EM": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.19722,
+            "lo": 0.03667,
+            "n_items": 100,
+            "point": 0.12249,
+            "sd_items": 0.41114
+          }
+        },
+        "WCT-U": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.18418,
+            "lo": 0.01705,
+            "n_items": 100,
+            "point": 0.1069,
+            "sd_items": 0.42431
+          }
+        }
+      },
+      "stratum": "all_items",
+      "temperatures": {
+        "WCT-C": 1.212,
+        "WCT-EM": 1.669,
+        "WCT-U": 0.491
+      },
+      "within_item_auroc": {
+        "decision": "go",
+        "delta": 0.55,
+        "hi": 1.0,
+        "lo": 1.0,
+        "n_boot": 1000,
+        "point": 1.0,
+        "se": 0.0
+      }
+    },
+    "negation_theories": {
+      "agents": [
+        "gemma",
+        "gptoss",
+        "nemotron"
+      ],
+      "alignment_audit": {
+        "aligner_self_identification": {
+          "accuracy": 0.9777,
+          "n_probes": 807,
+          "note": "PRIMARY mapper diagnostic. Each canonical proposition's own surface text and its negated form are fed back as pseudo-claims; no model output, no reasoning and no truth label is involved, so a failure here is unambiguously a measurement failure.",
+          "wrong_polarity": 0,
+          "wrong_proposition": 18
+        },
+        "claims": 8489,
+        "lexical_reference": {
+          "n_predicted": 593,
+          "n_reference": 736,
+          "note": "SECONDARY and deliberately partial. The lexical reference fires only on near-verbatim non-conditional restatements, so it covers a small fraction of observations. Recall against it is meaningful; PRECISION against it is not reported, because an aligner observation absent from a low-coverage reference is unlabelled rather than wrong.",
+          "recall_mean": 0.6819
+        },
+        "note": "measures the MAPPER, not whether the agent was right (that is panel accuracy, in E0).",
+        "observations": 593,
+        "same_agent_conflicts": 108
+      },
+      "arms": {
+        "WCT-C": {
+          "test_accuracy": 0.98802,
+          "test_auroc": 1.0,
+          "test_log_loss": 0.05629
+        },
+        "WCT-EM": {
+          "test_accuracy": 0.98802,
+          "test_auroc": 1.0,
+          "test_log_loss": 0.04803
+        },
+        "WCT-U": {
+          "test_accuracy": 0.98204,
+          "test_auroc": 1.0,
+          "test_log_loss": 0.05905
+        },
+        "covariate_baseline": {
+          "test_accuracy": 0.8982,
+          "test_auroc": 0.69608,
+          "test_log_loss": 0.31898
+        },
+        "prevalence_only": {
+          "test_accuracy": 0.91617,
+          "test_auroc": 0.5,
+          "test_log_loss": 0.32604
+        },
+        "uncapped": {
+          "test_accuracy": 0.91617,
+          "test_auroc": 0.55439,
+          "test_log_loss": 0.33468
+        }
+      },
+      "co_primary_precision_at_k": {
+        "WCT-EM": 1.0,
+        "WCT-U": 1.0,
+        "covariate_baseline": 0.94531,
+        "k": 128
+      },
+      "em_parameters": {
+        "agents": [
+          "gemma",
+          "gptoss",
+          "nemotron"
+        ],
+        "coverage_given_false": [
+          0.4232,
+          0.7208,
+          0.95
+        ],
+        "coverage_given_true": [
+          0.4923,
+          0.9069,
+          0.8942
+        ],
+        "false_positive_rate": [
+          0.1288,
+          0.0269,
+          0.1164
+        ],
+        "note": "estimated from the vote matrix alone; no truth labels consumed",
+        "sensitivity": [
+          0.8127,
+          0.9871,
+          0.9973
+        ]
+      },
+      "n_items": 78,
+      "n_props": 250,
+      "permutation_null": {
+        "n_perm": 1000,
+        "null_mean": 0.62019,
+        "null_sd": 0.09333,
+        "observed": 1.0,
+        "p": 0.001
+      },
+      "prevalence": 0.884,
+      "primary_delta_log_loss_vs_covariate": {
+        "WCT-C": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.33966,
+            "lo": 0.21127,
+            "n_items": 55,
+            "point": 0.27004,
+            "sd_items": 0.24892
+          }
+        },
+        "WCT-EM": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.34282,
+            "lo": 0.2229,
+            "n_items": 55,
+            "point": 0.27741,
+            "sd_items": 0.23101
+          }
+        },
+        "WCT-U": {
+          "decision": "go",
+          "delta": 0.02,
+          "delta_log_loss": {
+            "hi": 0.33381,
+            "lo": 0.21072,
+            "n_items": 55,
+            "point": 0.26682,
+            "sd_items": 0.23987
+          }
+        }
+      },
+      "stratum": "negation_theories",
+      "temperatures": {
+        "WCT-C": 1.357,
+        "WCT-EM": 2.054,
+        "WCT-U": 0.539
+      },
+      "within_item_auroc": {
+        "decision": "go",
+        "delta": 0.55,
+        "hi": 1.0,
+        "lo": 1.0,
+        "n_boot": 1000,
+        "point": 1.0,
+        "se": 0.0
+      }
+    },
+    "noneg_theories": {
+      "error": "test split contains a single class; truth discrimination is undefined here by construction",
+      "n_items": 72,
+      "n_props": 234,
+      "prevalence": 1.0,
+      "stratum": "noneg_theories"
+    }
+  }
+}
