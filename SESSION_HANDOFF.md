@@ -4,39 +4,24 @@ State after the GPU/instrument work and slice 4 (cycle-3 registration).
 
 ## Where things stand
 
-**Slice 4 is NOT conformant yet.** Three acceptance criteria are outstanding,
-and they are a chain rather than three separate jobs:
+**Slice 4 is complete and the registration is TAGGED.**
 
-| id | state | why |
-|----|-------|-----|
-| B4 | **unmet** | no observed echo for the 5 OpenRouter members + the declared fallback; needs `OPENROUTER_API_KEY`. The local qwen member now verifies FULLY (both `model_path` and `n_params`). |
-| B9 | **unmet** | the tag cannot be created while B4 is unmet — the gate refuses |
-| B11 | **regenerates** | the DECISIONS entry is rendered from the registration; it goes stale whenever the registration changes and is rewritten by the next gate run |
+    ./run_slice4.sh   -> exit 0, "SLICE 4 GATE PASSED — registration tagged"
+    git tag           -> prereg-v3-2026-08-30  (tree 1e90f28ef074)
 
-Everything else is built, gated and committed, and the cross-model spec review
-has been through four rounds. Do not read "gate passed" as "slice done": the
-gate exits **2** precisely to say "every assertion met EXCEPT B4".
-
-    ./run_slice4.sh            -> exit 2  (every assertion met EXCEPT B4)
-    ./run_slice4.sh --smoke    -> needs OPENROUTER_API_KEY; closes B4
-    ./run_slice4.sh --tag      -> refuses while B4 is unmet
-
-Exit codes are the pass signal: `0` everything met, `2` only B4 outstanding,
-`1` a real assertion failed.
+All eleven acceptance criteria are met. The tag annotation records the
+registration fingerprint, the corpus SHA-256, the pinned evidence commits, the
+frozen NLI cache count, and that no cycle-3 generation existed at tag time.
 
 ## What you need to do
 
-1. **Export `OPENROUTER_API_KEY`** (it is not in my environment, any dotenv, or
-   any profile I could read — it was exported in your interactive shell when
-   slice 3 ran).
-2. `./run_slice4.sh --smoke` — probes the six panel endpoints + the qwen
-   fallback, ONE call each at 64 max_tokens (cents). This writes the observed
-   echoes that B4 requires.
-3. Re-run `./run_slice4.sh`. If it exits 0, `./run_slice4.sh --tag` creates
-   `prereg-v3-2026-08-30`, annotated with the registration and evidence
-   fingerprints.
-4. **Push** — every commit on this branch is local; pushing is human-only.
-   Check with `git log --oneline origin/e1-results-and-paper..HEAD`, then:  `git push origin e1-results-and-paper`
+1. **Review** — the registration is frozen; anything after this is an amendment.
+2. **Push** — every commit and the tag are local; pushing is human-only:
+   `git push origin e1-results-and-paper && git push origin prereg-v3-2026-08-30`
+3. **Cycle 3 can then generate.** The driver refuses to run until the tag
+   resolves to the tested tree, which it now does. Budget is $210 authorised
+   against a $208.66 worst case — **$1.34 of headroom**, so it aborts on breach
+   rather than overrunning. Watch that.
 
 ## Commits this session
 
@@ -93,13 +78,15 @@ is reported as declared sensitivity.
 
 ## Known gaps, stated plainly
 
-- **B4 unmet.** Five remote endpoints and the fallback have no observed echo.
-- **B9 unmet.** No tag exists, so cycle 3 may not generate.
+- **Budget headroom is $1.34.** GLM via Hoonify is ~$99 of the run. If any contingency
+  fires beyond the registered allowance the run aborts, by design. Raising the cap is a
+  human decision and a protocol amendment.
 - **B11 is fingerprint-bound.** It reports STALE whenever the registration is rebuilt;
   running the gate rewrites it. That is by design, not a defect.
-- **Spec conformance is not yet clean.** Five review rounds have run; each found real
-  defects and each was addressed. The last verdict still lists B4/B9 (the credential
-  chain) plus items fixed after it was issued. Expect the next round to find more — treat a
+- **Spec conformance.** Five review rounds ran and each found real defects, all
+  addressed. Verdicts are bound to a diff hash, so one issued before the last fixes
+  reads stale — re-run `relay.py spec` to judge the final tree rather than trusting an
+  older verdict or my summary. Expect the next round to find more — treat a
   `conforms: true` verdict, not my summary, as the completion signal.
 - **n_params: CLOSED.** `/props` does not expose it, but the loaded weights file does:
   the GGUF header of the `model_path` that `/props` reports carries
