@@ -6,6 +6,7 @@ Usage:
 Strips the DRAFT NOTES html comment, builds a centered title block,
 and applies the paper stylesheet.
 """
+import os
 import re
 import sys
 from pathlib import Path
@@ -15,6 +16,7 @@ import markdown
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "paper" / "draft-v4.md"
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "paper" / "draft-v4.pdf"
+HEADER = os.environ.get("PAPER_HEADER", "The Flip Was in the Instrument, v5.2, 2026-08-31")
 
 CSS = """
 @page {
@@ -27,7 +29,7 @@ CSS = """
     color: #777;
   }
   @top-left {
-    content: "The Flip Was in the Instrument, v5.2, 2026-08-31";
+    content: "/*HEADER*/";
     font-family: "Liberation Serif", serif;
     font-size: 8pt;
     color: #999;
@@ -58,6 +60,16 @@ body {
 .affil { text-align: center; font-size: 9.5pt; color: #444; margin: 0 0 0.5em; }
 .meta { text-align: center; font-size: 9pt; color: #555; margin: 0.1em 0; }
 hr.rule { border: none; border-top: 1.3pt solid #141414; margin: 0.9em 0 1.1em; }
+h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 1.5em 0 0.7em;
+  padding-bottom: 3pt;
+  border-bottom: 1.4pt solid #141414;
+  page-break-before: always;
+  page-break-after: avoid;
+  text-align: left;
+}
 h2 {
   font-size: 12.5pt;
   font-weight: bold;
@@ -111,6 +123,8 @@ a { color: #1a4f8b; text-decoration: none; }
 sup { font-size: 7.5pt; }
 hr { border: none; border-top: 0.6pt solid #ccc; margin: 1.4em 0; }
 """
+
+CSS = CSS.replace("/*HEADER*/", HEADER)
 
 
 # Figures are PDF-only: injected at build time, never in draft-v4.md.
